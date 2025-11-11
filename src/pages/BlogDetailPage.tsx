@@ -29,53 +29,304 @@ const blogPosts = {
     date: 'October 28, 2025',
     readTime: '6 min read',
     category: 'Marine Applications',
-    image: 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=1200&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800&h=500&fit=crop',
     content: `
-      <p>When it comes to boat building or marine applications, choosing the right plywood is absolutely critical. Marine plywood isn't just regular plywood that can handle a bit of water—it's a specialized product engineered to withstand the harsh marine environment for years.</p>
-
-      <h2>What Makes Marine Plywood Special?</h2>
-      <p>Marine plywood is manufactured using BWP (Boiling Water Proof) grade adhesives, typically phenolic resin, which creates an incredibly strong bond that won't fail even when exposed to prolonged moisture or boiling water. This is fundamentally different from standard plywood that uses urea-formaldehyde adhesives.</p>
-
-      <h2>Key Features to Look For</h2>
+      <p>Marine plywood is designed to withstand the harsh conditions of marine environments, including constant exposure to water, high humidity, and extreme temperature changes. It is not just regular plywood; it is manufactured using BWP (Boiling Water Proof) grade adhesives that ensure durability and longevity.</p>
+      <h2>Key Features of Marine Plywood</h2>
       <ul>
-        <li><strong>BWP Grade Certification:</strong> Ensure the plywood is certified to IS 303 standards for BWP grade.</li>
-        <li><strong>Core Construction:</strong> Look for plywood with no voids or gaps in the core layers.</li>
-        <li><strong>Face Veneer Quality:</strong> Marine applications require smooth, defect-free face veneers that can be finished properly.</li>
-        <li><strong>Thickness Consistency:</strong> Precision-calibrated thickness ensures proper fitting and structural integrity.</li>
+        <li><strong>BWP Grade Certification:</strong> Certified marine plywood meets IS 303 standards for BWP grade, ensuring resistance to water and fungi.</li>
+        <li><strong>Core Construction:</strong> The core layers are void-free, which prevents delamination under pressure or moisture exposure.</li>
+        <li><strong>Face Veneer Quality:</strong> Smooth, defect-free veneers allow for easy finishing and polishing.</li>
+        <li><strong>Thickness Consistency:</strong> Precise thickness ensures proper fitting, stability, and overall structural integrity.</li>
       </ul>
-
-      <h2>Common Marine Applications</h2>
-      <p>Marine plywood is ideal for:</p>
-      <ul>
-        <li>Boat hulls and decking</li>
-        <li>Dock construction</li>
-        <li>Coastal homes and structures</li>
-        <li>Bathroom and kitchen applications in high-humidity environments</li>
-        <li>Swimming pool surrounds</li>
-      </ul>
-
-      <h2>Installation Best Practices</h2>
-      <p>Even the best marine plywood needs proper installation:</p>
+      <h2>Applications</h2>
+      <p>Marine plywood is ideal for building boat hulls, decking, coastal homes, docks, and even high-humidity indoor areas like bathrooms and kitchens.</p>
+      <h2>Installation Tips</h2>
       <ol>
-        <li>Always seal cut edges with marine-grade sealant or epoxy</li>
-        <li>Use stainless steel or bronze fasteners to prevent corrosion</li>
-        <li>Apply proper marine varnish or paint for UV and weather protection</li>
-        <li>Ensure adequate ventilation to prevent moisture buildup</li>
-        <li>Regular maintenance and inspection are essential</li>
+        <li>Seal all cut edges with marine-grade epoxy or sealant.</li>
+        <li>Use stainless steel or bronze fasteners to prevent corrosion.</li>
+        <li>Apply marine varnish or paint for UV and water protection.</li>
+        <li>Maintain proper ventilation to avoid moisture buildup.</li>
+        <li>Regularly inspect the plywood for any signs of damage.</li>
       </ol>
-
-      <h2>Why Choose The Trees Marine Plywood?</h2>
-      <p>Our Ananta Marine plywood is manufactured using premium Gurjan face veneers and phenolic resin adhesive. Each sheet undergoes rigorous quality testing including 72-hour boiling water immersion tests. We back our marine plywood with a 25-year warranty, demonstrating our confidence in its long-term performance.</p>
-
-      <h2>Conclusion</h2>
-      <p>Investing in quality marine plywood is essential for any water-related application. While it may cost more upfront than standard plywood, the longevity, safety, and peace of mind it provides make it the only sensible choice for marine environments.</p>
-
-      <p>Contact our technical team for guidance on selecting the right grade and thickness for your specific project.</p>
+      <p>Choosing high-quality marine plywood ensures the longevity and safety of any project involving water exposure. The Trees Ananta Marine plywood is manufactured with premium Gurjan veneers and comes with a 25-year warranty.</p>
     `,
     tags: ['Marine Plywood', 'BWP Grade', 'Boat Building', 'Construction Tips'],
   },
-  // Add more blog posts as needed
+
+  '2': {
+    id: '2',
+    title: '5 Signs You Need to Upgrade Your Kitchen Plywood',
+    excerpt: 'Kitchen plywood faces wear and tear. Discover when to replace cabinets or surfaces to avoid damage.',
+    author: 'Swetha Reddy',
+    authorBio: 'Interior Designer with 10+ years of experience in kitchen and home design',
+    date: 'November 1, 2025',
+    readTime: '5 min read',
+    category: 'Kitchen Applications',
+    image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=500&fit=crop',
+    content: `
+      <p>Kitchens are one of the most frequently used spaces in a home. Over time, plywood used for cabinets, drawers, and countertops may deteriorate due to moisture, heat, or daily wear.</p>
+      <h2>5 Signs You Need to Replace Your Kitchen Plywood</h2>
+      <ul>
+        <li><strong>Warped Surfaces:</strong> Cabinets or shelves that bend or bow are a sign that the plywood has lost structural integrity.</li>
+        <li><strong>Delamination:</strong> Layers of plywood separating indicate water damage or poor-quality material.</li>
+        <li><strong>Visible Cracks or Holes:</strong> Surface damage reduces the lifespan of your kitchen furniture and may harbor bacteria.</li>
+        <li><strong>Foul Odors:</strong> Persistent smells often mean moisture has seeped into the plywood layers.</li>
+        <li><strong>Loose Joints or Hinges:</strong> Hardware coming loose is a clear indication that the plywood has weakened.</li>
+      </ul>
+      <p>Regular inspection and maintenance can extend the life of kitchen plywood, but once these signs appear, it’s best to replace the affected parts with high-quality moisture-resistant plywood.</p>
+    `,
+    tags: ['Kitchen Plywood', 'Home Maintenance', 'Renovation', 'MR Plywood'],
+  },
+
+  '3': {
+    id: '3',
+    title: 'Fire Resistant Plywood – Safety First',
+    excerpt: 'Fire-resistant plywood reduces flame spread and improves building safety.',
+    author: 'Ananta Bhatt',
+    authorBio: 'Safety Engineer specializing in fireproof materials',
+    date: 'October 15, 2025',
+    readTime: '7 min read',
+    category: 'Safety',
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=500&fit=crop',
+    content: `
+      <p>Fire safety is a critical consideration in modern construction. Fire-resistant plywood is engineered to slow down the spread of flames and provide additional safety in case of a fire.</p>
+      <h2>How Fire-Resistant Plywood Works</h2>
+      <p>Special adhesives and fire-retardant chemicals are used during the manufacturing process to enhance the plywood’s resistance to heat and flame. This does not make it fireproof, but it significantly delays ignition and burning.</p>
+      <h2>Applications</h2>
+      <ul>
+        <li>Wall and ceiling panels in commercial and residential buildings</li>
+        <li>Partitions in public spaces like schools, hospitals, and offices</li>
+        <li>Furniture in high-risk areas</li>
+        <li>Decorative elements that require additional fire protection</li>
+      </ul>
+      <p>Investing in fire-resistant plywood helps meet building codes and ensures the safety of occupants. Proper installation and maintenance further maximize its effectiveness.</p>
+    `,
+    tags: ['Fire Safety', 'Plywood', 'Construction', 'Building Codes'],
+  },
+
+  '4': {
+    id: '4',
+    title: 'Sustainable Forestry and Plywood Manufacturing',
+    excerpt: 'Using FSC-certified plywood supports responsible forestry and eco-friendly manufacturing.',
+    author: 'Vajra Singh',
+    authorBio: 'Environmental Consultant & Wood Industry Expert',
+    date: 'September 30, 2025',
+    readTime: '6 min read',
+    category: 'Sustainability',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=500&fit=crop',
+    content: `
+      <p>Sustainability in the wood industry is crucial for preserving forests and minimizing environmental impact. FSC-certified plywood ensures that the wood is sourced responsibly.</p>
+      <h2>Benefits of Sustainable Plywood</h2>
+      <ul>
+        <li><strong>Environmental Protection:</strong> Reduces deforestation and maintains biodiversity.</li>
+        <li><strong>Quality Assurance:</strong> Sustainable plywood is often more durable and of higher quality.</li>
+        <li><strong>Eco-Friendly Manufacturing:</strong> Manufacturers use low-VOC adhesives and finishes.</li>
+        <li><strong>Traceability:</strong> FSC certification allows you to trace the source of the wood back to responsibly managed forests.</li>
+      </ul>
+      <p>Choosing sustainable plywood contributes to environmental protection and supports responsible business practices in the wood industry.</p>
+    `,
+    tags: ['Sustainability', 'FSC Certified', 'Eco-Friendly', 'Plywood Manufacturing'],
+  },
+
+  '5': {
+    id: '5',
+    title: 'MR Plywood vs. BWR Plywood – Understanding the Difference',
+    excerpt: 'Learn the difference between moisture-resistant and boil-water-resistant plywood for your projects.',
+    author: 'Ramesh Verma',
+    authorBio: 'Construction Material Specialist with 12+ years of experience',
+    date: 'October 5, 2025',
+    readTime: '6 min read',
+    category: 'Construction Tips',
+    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&h=500&fit=crop',
+    content: `
+      <p>Plywood comes in various grades, and choosing the right type can prevent damage and extend the life of your project. MR (Moisture Resistant) and BWR (Boiling Water Resistant) plywood are two common types used in construction and furniture making.</p>
+      <h2>MR Plywood</h2>
+      <p>MR plywood is designed for indoor use in areas with moderate moisture levels. It resists occasional water contact but is not suitable for areas with high humidity or direct water exposure.</p>
+      <h2>BWR Plywood</h2>
+      <p>BWR plywood is engineered to withstand high moisture conditions and is often used in kitchens, bathrooms, and exterior applications. It uses phenolic resin adhesives that prevent delamination even when exposed to boiling water.</p>
+      <h2>Choosing the Right Plywood</h2>
+      <p>For furniture that is exposed to occasional moisture, MR plywood is sufficient. For kitchens, bathrooms, and outdoor applications, BWR plywood is the preferred choice.</p>
+    `,
+    tags: ['MR Plywood', 'BWR Plywood', 'Construction Materials', 'Furniture'],
+  },
+
+  '6': {
+    id: '6',
+    title: 'Top 5 Plywood Finishes for Modern Interiors',
+    excerpt: 'Discover different plywood finishes that enhance the look and durability of your interiors.',
+    author: 'Neha Sharma',
+    authorBio: 'Interior Architect and Material Designer',
+    date: 'September 20, 2025',
+    readTime: '5 min read',
+    category: 'Interior Design',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=500&fit=crop',
+    content: `
+      <p>Plywood is versatile, but its appearance can be greatly enhanced with the right finishes. From matte textures to glossy surfaces, finishing plywood improves both aesthetics and durability.</p>
+      <h2>1. Laminated Finish</h2>
+      <p>Laminates provide a protective layer and come in various colors and textures, making it ideal for modern kitchen cabinets and furniture.</p>
+      <h2>2. Veneer Finish</h2>
+      <p>Veneer adds a natural wood appearance while retaining the strength of plywood. It is widely used in premium furniture.</p>
+      <h2>3. Melamine Finish</h2>
+      <p>Melamine coatings are durable, water-resistant, and easy to clean, perfect for high-traffic areas.</p>
+      <h2>4. PU Lacquer Finish</h2>
+      <p>Polyurethane lacquer gives a glossy or semi-glossy finish and protects against scratches and stains.</p>
+      <h2>5. Paint Finish</h2>
+      <p>Painted plywood can be customized to any color scheme and provides additional protection against moisture.</p>
+      <p>Selecting the right finish enhances both aesthetics and longevity of plywood installations in your interiors.</p>
+    `,
+    tags: ['Plywood Finishes', 'Interior Design', 'Furniture', 'Home Decor'],
+  },
+
+  '7': {
+    id: '7',
+    title: 'How to Maintain Your Plywood Furniture',
+    excerpt: 'Plywood furniture lasts longer with proper care. Learn effective maintenance tips.',
+    author: 'Amit Desai',
+    authorBio: 'Furniture Designer and Home Care Expert',
+    date: 'September 10, 2025',
+    readTime: '5 min read',
+    category: 'Furniture Care',
+    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&h=500&fit=crop',
+    content: `
+      <p>Plywood furniture is durable and versatile, but like all wood products, it requires regular maintenance to maintain its appearance and structural integrity.</p>
+      <h2>Tips for Maintaining Plywood Furniture</h2>
+      <ul>
+        <li>Clean surfaces with a soft, damp cloth and avoid harsh chemicals.</li>
+        <li>Polish furniture periodically to maintain shine and protection.</li>
+        <li>Keep furniture away from direct sunlight and excessive moisture.</li>
+        <li>Repair minor scratches promptly to prevent further damage.</li>
+        <li>Use coasters, mats, and protective covers to reduce wear and tear.</li>
+      </ul>
+      <p>Following these simple maintenance tips extends the life and beauty of your plywood furniture.</p>
+    `,
+    tags: ['Plywood Care', 'Furniture Maintenance', 'Home Tips', 'Durability'],
+  },
+
+  '8': {
+    id: '8',
+    title: 'Innovations in Plywood Manufacturing',
+    excerpt: 'Modern technologies are transforming plywood production for higher quality and sustainability.',
+    author: 'Vikram Mehta',
+    authorBio: 'Industrial Engineer in Wood Manufacturing',
+    date: 'August 25, 2025',
+    readTime: '6 min read',
+    category: 'Industry Insights',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop',
+    content: `
+      <p>The plywood industry has evolved significantly over the past decades. Innovations in adhesives, automated cutting, and eco-friendly processes have enhanced both quality and sustainability.</p>
+      <h2>Modern Manufacturing Techniques</h2>
+      <ul>
+        <li>High-precision veneer slicing for consistent thickness.</li>
+        <li>Advanced adhesive formulations for stronger bonding.</li>
+        <li>Computer-controlled hot pressing for uniform quality.</li>
+        <li>Use of low-VOC and water-based adhesives for environmental safety.</li>
+      </ul>
+      <p>These innovations allow manufacturers to produce durable, high-quality plywood that meets modern construction and interior design needs while remaining environmentally responsible.</p>
+    `,
+    tags: ['Plywood Manufacturing', 'Innovation', 'Sustainability', 'Wood Industry'],
+  },
+
+  '9': {
+    id: '9',
+    title: 'Top Applications of BWR Plywood',
+    excerpt: 'BWR plywood is widely used for wet areas. Discover its most common applications in homes and offices.',
+    author: 'Sneha Kapoor',
+    authorBio: 'Construction Materials Consultant',
+    date: 'August 15, 2025',
+    readTime: '5 min read',
+    category: 'Construction Tips',
+    image: 'https://images.unsplash.com/photo-1614963617870-c2e6b4a5be6f?w=800&h=500&fit=crop',
+    content: `
+      <p>BWR (Boiling Water Resistant) plywood is a versatile material suitable for areas exposed to water and high humidity. Its resistance to delamination makes it ideal for kitchens, bathrooms, and outdoor use.</p>
+      <h2>Common Applications</h2>
+      <ul>
+        <li>Kitchen cabinets and countertops</li>
+        <li>Bathroom vanities and shelves</li>
+        <li>Outdoor furniture exposed to rain and moisture</li>
+        <li>Partitions in commercial spaces</li>
+        <li>Wall paneling in high-humidity environments</li>
+      </ul>
+      <p>Choosing BWR plywood ensures durability and reduces maintenance costs over time, making it a practical solution for both residential and commercial projects.</p>
+    `,
+    tags: ['BWR Plywood', 'Construction', 'Wet Areas', 'Durable Materials'],
+  },
+
+  '10': {
+    id: '10',
+    title: 'How to Choose Plywood for Your Furniture Projects',
+    excerpt: 'Selecting the right plywood grade is key to building durable and stylish furniture.',
+    author: 'Arjun Rao',
+    authorBio: 'Furniture Designer & Woodworking Expert',
+    date: 'July 30, 2025',
+    readTime: '6 min read',
+    category: 'Furniture',
+    image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&h=500&fit=crop',
+    content: `
+      <p>Choosing the correct type of plywood for furniture is essential for durability, aesthetics, and cost-effectiveness. Factors like moisture exposure, intended use, and finish should be considered.</p>
+      <h2>Factors to Consider</h2>
+      <ul>
+        <li><strong>Grade:</strong> MR, BWR, or marine-grade depending on moisture exposure.</li>
+        <li><strong>Veneer Quality:</strong> Smooth veneers allow for better finishing and polishing.</li>
+        <li><strong>Thickness:</strong> Adequate thickness ensures strength and stability.</li>
+        <li><strong>Adhesive Type:</strong> Phenolic resin adhesives offer superior water resistance.</li>
+        <li><strong>Eco-Friendly Certification:</strong> FSC-certified plywood supports sustainability.</li>
+      </ul>
+      <p>Proper selection ensures that your furniture remains functional, beautiful, and durable for years to come.</p>
+    `,
+    tags: ['Furniture Plywood', 'Material Selection', 'Woodworking', 'MR vs BWR'],
+  },
+
+  '11': {
+    id: '11',
+    title: 'Common Mistakes to Avoid When Installing Plywood',
+    excerpt: 'Incorrect plywood installation can reduce its lifespan. Learn key mistakes to avoid.',
+    author: 'Ritika Jain',
+    authorBio: 'Construction Engineer and Material Consultant',
+    date: 'July 15, 2025',
+    readTime: '5 min read',
+    category: 'Installation Tips',
+    image: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800&h=500&fit=crop',
+    content: `
+      <p>Even high-quality plywood can fail if installed incorrectly. Understanding common mistakes helps prevent structural issues and extends the life of your plywood installations.</p>
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Ignoring proper sealing of cut edges, leading to water damage.</li>
+        <li>Using wrong fasteners, which can cause rusting and weakening.</li>
+        <li>Skipping surface preparation, affecting adhesive bonding and finish.</li>
+        <li>Failing to provide ventilation, which leads to moisture buildup.</li>
+        <li>Overloading shelves or furniture beyond the plywood’s capacity.</li>
+      </ul>
+      <p>Proper installation, following manufacturer guidelines, and routine maintenance can prevent these issues and ensure plywood performs optimally.</p>
+    `,
+    tags: ['Plywood Installation', 'Construction Tips', 'Durability', 'Maintenance'],
+  },
+
+  '12': {
+    id: '12',
+    title: 'The Benefits of Using Gurjan Wood in Plywood',
+    excerpt: 'Gurjan wood is renowned for its durability and strength. Learn why it is preferred in premium plywood.',
+    author: 'Vikrant Joshi',
+    authorBio: 'Wood Specialist and Quality Control Expert',
+    date: 'June 30, 2025',
+    readTime: '6 min read',
+    category: 'Wood Types',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=500&fit=crop',
+    content: `
+      <p>Gurjan wood is a tropical hardwood known for its density, durability, and resistance to decay. It is widely used in premium plywood for both construction and furniture applications.</p>
+      <h2>Key Benefits</h2>
+      <ul>
+        <li><strong>High Strength:</strong> Ideal for load-bearing applications and furniture requiring stability.</li>
+        <li><strong>Durability:</strong> Resistant to termites, fungi, and moisture damage.</li>
+        <li><strong>Excellent Finish:</strong> Smooth surface for veneers and superior polish quality.</li>
+        <li><strong>Long Lifespan:</strong> Ensures that plywood made with Gurjan wood lasts decades with proper care.</li>
+      </ul>
+      <p>Using Gurjan wood in plywood guarantees high performance and long-term reliability, making it a preferred choice for premium projects.</p>
+    `,
+    tags: ['Gurjan Wood', 'Premium Plywood', 'Durability', 'Wood Types'],
+  },
 };
+
 
 export function BlogDetailPage({ blogId, onBack, onNavigate }: BlogDetailPageProps) {
   const post = blogPosts[blogId as keyof typeof blogPosts];
