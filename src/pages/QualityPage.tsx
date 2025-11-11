@@ -97,11 +97,31 @@ export default function QualityPage({ onNavigate }: QualityPageProps) {
       />
 
       {/* Stats */}
-      <GridContainer className="py-20">
-        <div className="col-span-12">
-          <AnimatedStats stats={qualityStats} />
-        </div>
-      </GridContainer>
+      {/* Stats */}
+<GridContainer className="py-20">
+  <div className="col-span-12">
+    <div className="flex flex-wrap justify-between items-center text-center gap-6">
+      {qualityStats.map((stat, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="flex-1 min-w-[120px]"
+        >
+          <div className="text-4xl md:text-5xl font-bold text-trees-secondary">
+            {stat.value}{stat.suffix}
+          </div>
+          <div className="text-sm md:text-base text-gray-600 mt-2">
+            {stat.label}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</GridContainer>
+
 
       {/* Quality Process */}
       <div className="bg-gradient-to-br from-gray-50 to-white py-20">
@@ -227,67 +247,44 @@ export default function QualityPage({ onNavigate }: QualityPageProps) {
           viewport={{ once: true }}
           className="col-span-12 lg:col-span-6"
         >
-          <AdvancedCard variant="glass" gradient className="p-8 h-full flex flex-col justify-center">
-            <h3 className="text-2xl mb-6 text-white">Quality Guarantee</h3>
-            <div className="space-y-4 mb-8">
-              {[
-                'Every product is batch tested and certified',
-                'Test reports available on request',
-                'Warranty backed by quality assurance',
-                'Third-party lab verification',
-                'Continuous improvement programs',
-                'Customer quality feedback system'
-              ].map((point, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-4 h-4 text-white" />
-                  </div>
-                  <p className="text-white/90">{point}</p>
-                </div>
-              ))}
-            </div>
-            <button
-              onClick={() => window.location.href = '/downloads'}
-              className="px-8 py-4 bg-white text-trees-primary rounded-xl hover:shadow-lg transition-all"
-            >
-              Download Test Certificates
-            </button>
-          </AdvancedCard>
+          
         </motion.div>
       </GridContainer>
 
       {/* Factory Tour CTA */}
-      <div className="bg-gradient-to-br from-gray-50 to-white py-20">
-        <GridContainer>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="col-span-12 text-center"
-          >
-            <Factory className="w-16 h-16 text-trees-primary mx-auto mb-6" />
-            <h2 className="text-3xl mb-4 text-trees-secondary">See Quality in Action</h2>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
-              Schedule a factory tour to witness our quality control process firsthand. 
-              See how we test and certify every sheet of plywood.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => window.location.href = '/contact'}
-                className="px-8 py-4 bg-gradient-to-r from-trees-primary to-trees-secondary text-white rounded-xl hover:shadow-lg transition-all"
-              >
-                Schedule Factory Visit
-              </button>
-              <button
-                onClick={() => window.location.href = '/samples'}
-                className="px-8 py-4 bg-white border-2 border-trees-primary text-trees-primary rounded-xl hover:bg-gray-50 transition-all"
-              >
-                Request Test Samples
-              </button>
-            </div>
-          </motion.div>
-        </GridContainer>
+      {/* Factory Tour CTA */}
+<div className="bg-gradient-to-br from-gray-50 to-white py-20">
+  <GridContainer>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="col-span-12 text-center"
+    >
+      <Factory className="w-16 h-16 text-trees-primary mx-auto mb-6" />
+      <h2 className="text-3xl mb-4 text-trees-secondary">See Quality in Action</h2>
+      <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
+        Schedule a factory tour to witness our quality control process firsthand. 
+        See how we test and certify every sheet of plywood.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          onClick={() => onNavigate('contact')}
+          className="px-8 py-4 bg-gradient-to-r from-trees-primary to-trees-secondary text-white rounded-xl hover:shadow-lg transition-all"
+        >
+          Schedule Factory Visit
+        </button>
+        <button
+          onClick={() => onNavigate('sample-request')}
+          className="px-8 py-4 bg-white border-2 border-trees-primary text-trees-primary rounded-xl hover:bg-gray-50 transition-all"
+        >
+          Request Test Samples
+        </button>
       </div>
+    </motion.div>
+  </GridContainer>
+</div>
+
     </div>
   );
 }

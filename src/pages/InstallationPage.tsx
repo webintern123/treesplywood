@@ -176,10 +176,7 @@ export default function InstallationPage({ onNavigate }: InstallationPageProps) 
           viewport={{ once: true }}
           className="col-span-12 lg:col-span-8"
         >
-          <AdvancedCard gradient={false} hoverEffect="3d" className="p-8">
-            <h2 className="text-2xl mb-6 text-[#432011]">Book Installation Service</h2>
-            {/* Form content remains the same */}
-          </AdvancedCard>
+          
         </motion.div>
 
         {/* Sidebar Info */}
@@ -190,7 +187,7 @@ export default function InstallationPage({ onNavigate }: InstallationPageProps) 
           className="col-span-12 lg:col-span-4 space-y-6"
         >
           <AdvancedCard gradient={true} hoverEffect="3d" className="p-6">
-            <h3 className="text-xl mb-4 text-white">Installation Process</h3>
+            <h3 className="text-lg mb-4 text-[#432011]">Installation Process</h3>
             {/* Process steps remain the same */}
           </AdvancedCard>
 

@@ -110,11 +110,30 @@ export default function SustainabilityPage({ onNavigate }: SustainabilityPagePro
       />
 
       {/* Stats Section */}
-      <GridContainer className="py-20">
-        <div className="col-span-12">
-          <AnimatedStats stats={sustainabilityStats} />
-        </div>
-      </GridContainer>
+      {/* Stats Section - Single Line */}
+<GridContainer className="py-20">
+  <div className="col-span-12">
+    <div className="flex flex-wrap justify-between items-center text-center gap-6">
+      {sustainabilityStats.map((stat, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="flex-1 min-w-[120px]"
+        >
+          <div className="text-3xl md:text-4xl font-bold text-trees-secondary">
+            {stat.value}{stat.suffix}
+          </div>
+          <div className="text-sm md:text-base text-gray-600 mt-1">
+            {stat.label}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</GridContainer>
 
       {/* Vision Section */}
       <ParallaxSection>
