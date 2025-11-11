@@ -31,7 +31,7 @@ import QualityPage from './pages/QualityPage';
 import InstallationPage from './pages/InstallationPage';
 import ProfessionalsPage from './pages/ProfessionalsPage';
 
-type Page = 'home' | 'products' | 'about' | 'blogs' | 'blog-detail' | 'dealers' | 'calculator' | 'projects' | 'contact' | 'product-detail' | 'faq' | 'resources' | 'privacy' | 'terms' | 'warranty' | 'downloads' | 'samples' | 'sample-request' | 'comparison' | 'sustainability' | 'quality' | 'installation' | 'professionals' | '404'|'floating-cta';
+type Page = 'home' | 'products' | 'about' | 'blogs' | 'blog-detail' | 'dealers' | 'calculator' | 'projects' | 'contact' | 'product-detail' | 'faq' | 'resources' | 'privacy' | 'terms' | 'warranty' | 'downloads' | 'samples' | 'sample-request' | 'comparison' | 'sustainability' | 'quality' | 'installation' | 'professionals' | '404';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -69,7 +69,6 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  
   return (
     <ErrorBoundary>
       <div 
@@ -128,13 +127,7 @@ export default function App() {
             />
           )}
           {currentPage === 'about' && <AboutPage onNavigate={handleNavigate} />}
-         {currentPage === 'blogs' && (
-  <BlogsPage 
-    onBlogSelect={handleBlogSelect} 
-    onNavigate={handleNavigate} 
-  />
-)}
-
+          {currentPage === 'blogs' && <BlogsPage onBlogSelect={handleBlogSelect} />}
           {currentPage === 'blog-detail' && selectedBlogId && (
             <BlogDetailPage 
               blogId={selectedBlogId} 
@@ -166,9 +159,7 @@ export default function App() {
       </div>
 
       {/* Floating CTA Buttons */}
-      {/* Floating CTA Page */}
-{currentPage === 'floating-cta' && <FloatingCTA onNavigate={handleNavigate} />}
-
+      {currentPage !== 'contact' && <FloatingCTA onNavigate={handleNavigate} />}
       
       {/* Back to Top Button */}
       <BackToTop />
