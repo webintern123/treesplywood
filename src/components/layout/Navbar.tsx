@@ -42,7 +42,6 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
       id: 'resources', 
       type: 'dropdown',
       items: [
-        { name: 'Resource Hub', id: 'resources', description: 'All resources in one place', icon: Briefcase },
         { name: 'Projects Gallery', id: 'projects', description: 'Inspiring project showcase', icon: Lightbulb },
         { name: 'Blogs & Articles', id: 'blogs', description: 'Industry insights & tips', icon: BookOpen },
         { name: 'Downloads Center', id: 'downloads', description: 'Catalogs, guides & certificates', icon: Download },

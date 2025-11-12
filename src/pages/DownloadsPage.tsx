@@ -26,6 +26,7 @@ import {
   BreadcrumbSeparator,
 } from '../components/ui/breadcrumb';
 
+
 interface DownloadItem {
   id: string;
   title: string;
@@ -66,7 +67,7 @@ const downloadItems: DownloadItem[] = [
     date: '2024-10-28',
     downloads: 1823,
     popular: true,
-    fileUrl: '/downloads/E-Catalogue-Archidply-Plywood-Company.pdf' 
+    fileUrl: '/downloads/Plywood Thickness sheet.docx' 
   },
   {
     id: '3',
@@ -78,7 +79,7 @@ const downloadItems: DownloadItem[] = [
     date: '2024-10-25',
     downloads: 1456,
     featured: true,
-    fileUrl: '/downloads/E-Catalogue-Archidply-Plywood-Company.pdf' 
+    fileUrl: '/downloads/Plywood Thickness sheet.docx' 
   },
   {
     id: '4',
@@ -113,7 +114,7 @@ const downloadItems: DownloadItem[] = [
     size: '4.1 MB',
     date: '2024-10-10',
     downloads: 876,
-    fileUrl: '/downloads/E-Catalogue-Archidply-Plywood-Company.pdf' 
+    fileUrl: '/downloads/Plywood Thickness sheet.docx' 
   },
   {
     id: '7',
@@ -158,7 +159,7 @@ const downloadItems: DownloadItem[] = [
     size: '1.8 MB',
     date: '2024-09-25',
     downloads: 1567,
-    fileUrl: '/downloads/E-Catalogue-Archidply-Plywood-Company.pdf' 
+    fileUrl: '/downloads/Plywood Thickness sheet.docx' 
   },
   {
     id: '11',
@@ -169,7 +170,7 @@ const downloadItems: DownloadItem[] = [
     size: '4.2 MB',
     date: '2024-09-20',
     downloads: 2089,
-    fileUrl: '/downloads/E-Catalogue-Archidply-Plywood-Company.pdf' 
+    fileUrl: '/downloads/Plywood Thickness sheet.docx' 
   },
   {
     id: '12',
@@ -202,7 +203,7 @@ const downloadItems: DownloadItem[] = [
     size: '3.9 MB',
     date: '2024-09-05',
     downloads: 987,
-    fileUrl: '/downloads/E-Catalogue-Archidply-Plywood-Company.pdf' 
+    fileUrl: '/downloads/Plywood Thickness sheet.docx' 
   },
   {
     id: '15',
@@ -213,7 +214,7 @@ const downloadItems: DownloadItem[] = [
     size: '7.5 MB',
     date: '2024-09-01',
     downloads: 432,
-    fileUrl: '/downloads/E-Catalogue-Archidply-Plywood-Company.pdf' 
+    fileUrl: '/downloads/Plywood Thickness sheet.docx' 
   },
   {
     id: '16',
@@ -237,7 +238,7 @@ const downloadItems: DownloadItem[] = [
     date: '2024-11-03',
     downloads: 567,
     recent: true,
-    fileUrl: '/downloads/E-Catalogue-Archidply-Plywood-Company.pdf' 
+    fileUrl: '/downloads/Plywood Thickness sheet.docx' 
   },
   {
     id: '18',
@@ -597,15 +598,27 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                         <span className="px-2 py-1 bg-gray-100 rounded">{item.fileType}</span>
                         <span>{item.size}</span>
                       </div>
-                      <ModernButton
-                        variant="primary"
-                        size="sm"
-                        icon={<Download className="w-4 h-4" />}
-                        onClick={() => handleDownload(item)}
-                        className="w-full"
-                      >
-                        Download
-                      </ModernButton>
+                      <div className="flex gap-2">
+  <ModernButton
+    variant="primary"
+    size="sm"
+    icon={<Download className="w-4 h-4" />}
+    onClick={() => handleDownload(item)}
+    className="flex-1"
+  >
+    Download
+  </ModernButton>
+
+  <ModernButton
+    variant="outline"
+    size="sm"
+    icon={<FileText className="w-4 h-4" />}
+    onClick={() => window.open(item.fileUrl, '_blank')}
+    className="flex-1"
+  >
+    View
+  </ModernButton>
+</div>
                     </ModernCard>
                   </motion.div>
                 );
@@ -719,15 +732,28 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                       <span>•</span>
                       <span>{item.downloads} DL</span>
                     </div>
-                    <ModernButton
-                      variant="primary"
-                      size="sm"
-                      icon={<Download className="w-4 h-4" />}
-                      onClick={() => handleDownload(item)}
-                      className="w-full"
-                    >
-                      Download
-                    </ModernButton>
+                    <div className="flex gap-2">
+  <ModernButton
+    variant="primary"
+    size="sm"
+    icon={<Download className="w-4 h-4" />}
+    onClick={() => handleDownload(item)}
+    className="flex-1"
+  >
+    Download
+  </ModernButton>
+
+  <ModernButton
+    variant="outline"
+    size="sm"
+    icon={<FileText className="w-4 h-4" />}
+    onClick={() => window.open(item.fileUrl, '_blank')}
+    className="flex-1"
+  >
+    View
+  </ModernButton>
+</div>
+
                   </ModernCard>
                 </motion.div>
               );
