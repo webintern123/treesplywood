@@ -6,9 +6,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"), // this is enough
     },
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
   },
   build: {
     target: "esnext",

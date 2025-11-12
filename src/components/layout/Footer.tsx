@@ -4,7 +4,9 @@ import { Input } from '../ui/input';
 import { ModernButton } from '../design-system/ModernButton';
 import { MagneticButton } from '../design-system/MagneticButton';
 import { XIcon } from '../icons/XIcon';
-import logoImage from '../../assets/logo.png';
+import logoImage from '@/assets/logo.png';
+
+
 
 
 interface FooterProps {
