@@ -17,85 +17,69 @@ export function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Arjun Mehta',
+      name: 'Ramesh K. ',
       role: 'Principal Architect',
-      company: 'Mehta Design Studio',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop',
-      quote: 'The Trees Plywood has been our go-to supplier for high-end residential projects. The consistency in quality and the Gurjan face veneer finish is unmatched. Their technical support team is exceptional.',
+      city: 'Bengaluru ',
+      
+      quote: 'We didn’t expect the quality of Tree’s Plywood to be this good. Best Decision!',
       rating: 5,
     },
     {
-      name: 'Priya Sharma',
+      name: 'Priya S. ',
       role: 'Interior Designer',
-      company: 'Luxe Interiors',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop',
-      quote: 'We specified their Bhima (Marine Grade) plywood for a luxury yacht interior. Two years later, zero delamination. The calibrated thickness made our joinery work seamless. Highly recommended.',
+      city: 'Hyderabad',
+      
+      quote: ' I recommend you all to grab these for all your needs, very strong.',
       rating: 5,
     },
     {
-      name: 'Rajesh Kumar',
+      name: 'Anil M. ',
       role: 'Project Manager',
-      company: 'BuildRight Construction',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop',
-      quote: 'For commercial projects, reliability is everything. The Trees delivers on time, every time. Their Agni (Fire-Resistant) plywood helped us meet strict building codes without compromise.',
+      city: 'Chennai',
+      
+      quote: 'I bought fire-retardant plywood from this company. The customer care is nice and delivered product on time.',
       rating: 5,
     },
     {
-      name: 'Kavita Desai',
+      name: 'Sangeeta R.',
       role: 'Senior Designer',
-      company: 'Urban Living Spaces',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop',
-      quote: 'Outstanding product quality and customer service. The Samrat plywood transformed our luxury apartment project. The natural grain patterns are simply stunning.',
+      city: 'Mumbai',
+      
+      quote: 'I must say from start to end, your entire process is smooth and reasonable.',
       rating: 5,
     },
     {
-      name: 'Vikram Singh',
-      role: 'Furniture Manufacturer',
-      company: 'Artisan Crafts Ltd',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
-      quote: 'We use Trees Plywood for all our premium furniture lines. The calibrated thickness ensures precision joinery every time. Our clients love the finish quality.',
+      name: 'Arjun M.',
+      role: 'Architect',
+      city: 'Mumbai',
+      
+      quote: 'The quality is consistently premium. Their Gurjan finish and technical support make every project smoother.',
       rating: 5,
     },
     {
-      name: 'Anjali Nair',
-      role: 'Hotel Interior Designer',
-      company: 'Coastal Hospitality Design',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop',
-      quote: 'For our beachfront resort project, the Bhima (Marine Grade) plywood performed exceptionally. Even after three years in high humidity, no warping or delamination.',
+      name: 'Rajesh K.',
+      role: 'Project Manager',
+      city: 'Bengaluru',
+      quote: 'Agni fire-resistant plywood helped us meet safety codes easily. Always delivered on time.',
       rating: 5,
     },
     {
-      name: 'Rahul Gupta',
-      role: 'Construction Contractor',
-      company: 'Prime Builders',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop',
-      quote: 'Reliable delivery, consistent quality, and competitive pricing. Trees Plywood has been our trusted partner for over 50 commercial projects.',
+      name: 'Kavita D.',
+      role: ' Senior Designer',
+      city: ' Hyderabad',
+      
+      quote: 'Samrat added a beautiful finish to our luxury apartments. Clients loved the natural grain.',
       rating: 5,
     },
     {
-      name: 'Meera Patel',
-      role: 'Residential Architect',
-      company: 'Modern Home Designs',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop',
-      quote: 'The sustainable sourcing and FSC certification align with our firm\'s values. Plus, the product quality is simply unmatched in the market.',
+      name: 'Vikram S.',
+      role: 'Furniture Manufacturer ',
+      city: ' Chennai',
+      
+      quote: 'Zero-gap calibrated sheets mean perfect joinery every time. Our furniture quality improved drastically.',
       rating: 5,
     },
-    {
-      name: 'Sameer Khan',
-      role: 'Joinery Specialist',
-      company: 'Precision Woodworks',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop',
-      quote: 'The dimensional accuracy is incredible. Every sheet is exactly to spec, which saves us hours in calibration. This is professional-grade plywood.',
-      rating: 5,
-    },
-    {
-      name: 'Deepa Rao',
-      role: 'Retail Store Designer',
-      company: 'Boutique Interiors',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop',
-      quote: 'We designed 15 high-end retail stores using Trees Plywood. The fire-rated options gave us safety compliance, and the aesthetic finish impressed every client.',
-      rating: 5,
-    },
+   
   ];
 
   return (
@@ -103,13 +87,13 @@ export function Testimonials() {
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-4 border border-trees-primary/20">
           <Star className="w-4 h-4 text-trees-primary fill-trees-primary" />
-          <span className="text-trees-primary font-semibold text-sm">Client Testimonials</span>
+          <span className="text-trees-primary font-semibold text-sm">Tree’s Plywood Customer Testimonials </span>
         </div>
         <h2 className="text-trees-primary text-4xl font-semibold mb-3">
           Trusted by Professionals
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          Hear from architects, designers, and builders who rely on our plywood
+          What Tree’s Plywood Customers are Saying About Tree’s Plywood?
         </p>
       </div>
 
@@ -155,16 +139,16 @@ export function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                <ImageWithFallback
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover ring-2 ring-trees-primary/20"
-                />
-                <div>
-                  <h4 className="font-semibold text-trees-secondary">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  <p className="text-xs text-trees-primary font-medium">{testimonial.company}</p>
-                </div>
+               <div className="w-12 h-12 rounded-full bg-trees-primary/10 flex items-center justify-center text-trees-primary font-semibold text-lg ring-2 ring-trees-primary/20">
+  {testimonial.name.charAt(0)}
+</div>
+
+<div>
+  <h4 className="font-semibold text-trees-secondary">{testimonial.name}</h4>
+  <p className="text-sm text-gray-600">{testimonial.role}</p>
+  <p className="text-xs text-trees-primary font-medium">{testimonial.city}</p>
+</div>
+
               </div>
             </div>
           ))}

@@ -3,7 +3,7 @@ import {
   Image as ImageIcon, Shield, CheckCircle2, Layers, TestTube, PackageCheck, 
   Truck, Trophy, Star, TrendingUp, Mail, Play, BookOpen, ArrowUpRight, 
   MapPin, Calculator, Download, HelpCircle, FileText, Package, ChevronRight,
-  Factory, Zap, Users, Globe, Plus, Minus
+  Factory, Zap, Users, Globe, Plus, Minus,Lightbulb,Palette,LifeBuoy, Headphones
 } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import heroImage from '../assets/hero.png';
@@ -24,6 +24,30 @@ import { motion, useScroll, useSpring } from 'motion/react';
 import { useState, useRef, useEffect } from 'react';
 import { toast } from 'sonner';
 import { validateEmail } from '../utils/validation';
+
+// Typewriter Taglines Component
+function TypewriterTaglines({ taglines }: { taglines: string[] }) {
+  const [index, setIndex] = useState(0);
+  const [display, setDisplay] = useState('');
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDisplay(taglines[index].slice(0, charIndex + 1));
+      setCharIndex((prev) => {
+        if (prev + 1 === taglines[index].length) {
+          setTimeout(() => setIndex((i) => (i + 1) % taglines.length), 2000);
+          return 0;
+        }
+        return prev + 1;
+      });
+    }, 80);
+    return () => clearInterval(interval);
+  }, [charIndex, index, taglines]);
+
+  return <h3 className="text-xl font-semibold text-gray-700 text-center mb-10">{display}</h3>;
+}
+
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -109,51 +133,52 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Building Excellence with Premium Plywood "
-        subtitle="India's Most Trusted Plywood Brand"
-        description="Discover premium quality plywood solutions. From marine-grade waterproofing to sustainable forestry, we deliver unmatched quality for your dream spaces."
-        images={[
-          heroImage,
-          'https://images.unsplash.com/photo-1598954385478-53e5b3c970ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aW1iZXIlMjB3b29kJTIwcGlsZXxlbnwxfHx8fDE3NjIyMzU1NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-          'https://images.unsplash.com/photo-1649059270820-aa674ea81f70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwaW5kdXN0cnklMjBzYXdtaWxsfGVufDF8fHx8MTc2MjIzNTU0OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-          'https://images.unsplash.com/photo-1629085281900-455f2f1fc5ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbHl3b29kJTIwbWFudWZhY3R1cmluZ3xlbnwxfHx8fDE3NjIyMzU1NDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-        ]}
-        autoSlideInterval={5000}
-        badge="Premium Since 1998"
-        badgeIcon={Sparkles}
-        height="xl"
-        overlayOpacity="medium"
-        showIndicators={true}
-        stats={[
-          { value: '25+', label: 'Years Excellence' },
-          { value: '500+', label: 'Dealers' },
-          { value: '10,000+', label: 'Projects' },
-        ]}
-        actions={
-          <div className="flex flex-wrap gap-4">
-            <MagneticButton strength={0.2}>
-              <ModernButton
-                variant="light"
-                size="xl"
-                icon={<ArrowRight className="w-6 h-6" />}
-                onClick={() => onNavigate('products')}
-              >
-                Explore Products
-              </ModernButton>
-            </MagneticButton>
-            <MagneticButton strength={0.2}>
-              <ModernButton
-                variant="outline-light"
-                size="xl"
-                icon={<Calculator className="w-6 h-6" />}
-                onClick={() => onNavigate('calculator')}
-              >
-                Calculate Needs
-              </ModernButton>
-            </MagneticButton>
-          </div>
-        }
-      />
+  title={`Born from Nature,\nBuilt for Generations`}
+  subtitle="India’s No.1 Leading Brand: Certified & Trusted"
+  description="Tree’s Plywood keeps your spaces Safe, Warm, and long-lasting with Eco-Safe Practices, Tested Durability, and a Touch of Nature."
+  images={[
+    heroImage,
+    'https://images.unsplash.com/photo-1598954385478-53e5b3c970ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aW1iZXIlMjB3b29kJTIwcGlsZXxlbnwxfHx8fDE3NjIyMzU1NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    'https://images.unsplash.com/photo-1649059270820-aa674ea81f70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwaW5kdXN0cnklMjBzYXdtaWxsfGVufDF8fHx8MTc2MjIzNTU0OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    'https://images.unsplash.com/photo-1629085281900-455f2f1fc5ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbHl3b29kJTIwbWFudWZhY3R1cmluZ3xlbnwxfHx8fDE3NjIyMzU1NDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+  ]}
+  autoSlideInterval={5000}
+  badge="Crafting Stronger Homes Since 1998"
+  badgeIcon={Sparkles}
+  height="xl"
+  overlayOpacity="medium"
+  showIndicators={true}
+  stats={[
+    { value: '25+', label: 'Years of Expertise' },
+    { value: '500+', label: 'Dealer Partners Across India' },
+    { value: '10,000+', label: 'Homes & Projects Delivered with Trust.' },
+  ]}
+  actions={
+    <div className="flex flex-wrap gap-4">
+      <MagneticButton strength={0.2}>
+        <ModernButton
+          variant="light"
+          size="xl"
+          icon={<ArrowRight className="w-6 h-6" />}
+          onClick={() => onNavigate('products')}
+        >
+          Explore Products
+        </ModernButton>
+      </MagneticButton>
+      <MagneticButton strength={0.2}>
+        <ModernButton
+          variant="outline-light"
+          size="xl"
+          icon={<Calculator className="w-6 h-6" />}
+          onClick={() => onNavigate('calculator')}
+        >
+          Calculate Needs
+        </ModernButton>
+      </MagneticButton>
+    </div>
+  }
+/>
+
 
       {/* Quick Highlights - Moved Below Hero */}
       <section className="relative -mt-16 z-10">
@@ -191,11 +216,68 @@ export function HomePage({ onNavigate }: HomePageProps) {
   <div className="container mx-auto px-6">
     <AnimatedStats
       stats={[
-        { value: '25+', label: 'Years Excellence', icon: Award },
-        { value: '500+', label: 'Dealers', icon: Users },
-        { value: '10,000+', label: 'Projects', icon: Trophy },
+        { value: '25+', label: 'Years Expertise', icon: Award },
+        { value: '500+', label: 'Dealer Partners Across India', icon: Users },
+        { value: '10,000+', label: 'Homes & Projects Delivered with Trust.', icon: Trophy },
       ]}
     />
+  </div>
+</section>
+{/* Nature-Strength / Layered Features Section */}
+<section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+  <div className="container mx-auto px-6">
+    <ModernSectionHeader
+      badge="Nature-Strength, Industry-Tested"
+      badgeIcon={Sparkles}
+      title="Tree’s Plywood Strength, Layer by Layer"
+      subtitle="From marine-grade waterproofing to zero-emission plywood, Tree’s Plywood blends strength, safety, and sustainability in every layer — perfect for kitchens, wardrobes, and heavy-duty projects alike."
+    />
+
+    {/* Optional Rotating Taglines */}
+    <div className="text-center mb-10">
+     <TypewriterTaglines
+  taglines={[
+    'Strength of Earth, Soul of Nature.',
+    'Built to Protect. Designed to Last.',
+    'Earth. Nature. Strength.',
+    'More Than Sheets - We Build Legacies.'
+  ]}
+/>
+
+    </div>
+
+    {/* Layered Strength Features */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { icon: Leaf, title: 'E0/E1 Zero-Emission Plywood' },
+        { icon: Shield, title: '100% BWP Waterproof Protection' },
+        { icon: TrendingUp, title: 'Fire-Retardant Technology' }, // replace with actual icon
+        { icon: Trophy, title: 'Anti-Termite & Borer Shield' },
+        { icon: Layers, title: 'Hexadic Calibrated Finish' },
+        { icon: Award, title: 'IS:10701 Certified Structural Grade' },
+        { icon: Ship, title: 'IS:710 Certified Marine Grade' },
+        { icon: Globe, title: 'FSC Eco-Friendly' },
+        { icon: Star, title: 'Long-Life Warranty' },
+      ].map((feature, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+          className="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl flex items-start gap-4"
+        >
+          <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0">
+            <feature.icon className="w-6 h-6 text-trees-primary" />
+          </div>
+          <p className="text-gray-800 font-semibold">{feature.title}</p>
+        </motion.div>
+      ))}
+    </div>
+
+    <div className="text-center mt-12 text-gray-700 font-medium">
+      Trusted Plywood for Homes, Designers & Builders Across India.
+    </div>
   </div>
 </section>
 
@@ -207,45 +289,45 @@ export function HomePage({ onNavigate }: HomePageProps) {
             badge="Our Advantages"
             badgeIcon={Sparkles}
             title="Why Choose The Trees Plywood"
-            subtitle="Experience the difference that quality, innovation, and trust make in every sheet"
+            subtitle="At Tree’s Plywood, we deliver durable, sustainable, and high-quality plywood and doors that meet the various needs of our customers. With a focus on strength, innovation, and eco-friendly practices, we create products that last for generations while staying affordable and reliable.  From modern homes to large commercial projects, Tree’s Plywood combines certified quality with modern design needs."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: Shield,
-                title: '100% Waterproof BWP',
-                description: 'Boiling Water Proof grade with marine-quality adhesives for ultimate protection in wet areas',
+                title: 'Guaranteed Quality & Support',
+                description: 'We stand by our products with repair and replacement assurance.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: Award,
-                title: 'IS:710 Certified',
-                description: 'All products meet Indian Standards with rigorous quality testing and certifications',
+                title: 'IS:10701 Structural Grade Certified',
+                description: 'Trusted by 700+ architects and builders for superior load-bearing strength.',
                 color: 'from-amber-500 to-orange-600'
               },
               {
                 icon: Leaf,
-                title: 'E0 Emission Standards',
-                description: 'Eco-friendly manufacturing with zero harmful emissions for healthier indoor air quality',
+                title: 'Made for Your Needs',
+                description: 'Customized solutions for homeowners, designers, and contractors.',
                 color: 'from-green-500 to-emerald-600'
               },
               {
                 icon: Trophy,
-                title: 'Up to 30-Year Warranty',
-                description: 'Industry-leading warranty coverage backed by confidence in our manufacturing excellence',
+                title: 'Affordable. Reliable. Long-Lasting.',
+                description: 'High performance without the high price',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: Layers,
-                title: 'Zero Core Gaps',
-                description: 'Precision-calibrated sheets with 15-layer construction ensuring superior strength',
+                title: 'Tested & Certified Strength',
+                description: ' Each sheet goes through rigorous quality checks for durability',
                 color: 'from-red-500 to-pink-600'
               },
               {
                 icon: Factory,
-                title: 'Advanced Manufacturing',
-                description: 'State-of-the-art facilities with 50+ quality checks per sheet for consistent excellence',
+                title: 'Precision Cutting & On-Time Delivery',
+                description: 'Ready-to-use panels that save you time on every project',
                 color: 'from-indigo-500 to-blue-600'
               },
             ].map((feature, idx) => (
@@ -283,6 +365,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
+      
 
       {/* Featured Products */}
       <section className="section-padding">
@@ -290,81 +373,85 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <ModernSectionHeader
             badge="Our Products"
             badgeIcon={Package}
-            title="Premium Plywood Collection"
-            subtitle="Choose from our range of marine-grade, boiling waterproof plywood designed for every application"
+            title="Explore Premium Tree’s Plywood Collection"
+            subtitle="Discover our wide range of plywood and doors, crafted for style & comfort. Find the perfect match for every space and need.  Strong, sustainable, and engineered for real performance, explore plywood crafted from kitchens to commercial builds."
           />
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Samrat',
-                subtitle: 'Supreme Quality',
-                desc: 'Premium plywood for high-end interiors with 30-year warranty',
-                features: ['30 Years Warranty', 'BWP IS:710', 'E0 Emission'],
-                badge: 'Best Seller',
-                img: 'https://images.unsplash.com/photo-1761294364419-fcbfe2059dca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3b29kJTIwdmVuZWVyfGVufDF8fHx8MTc2MTk5MjIxNnww&ixlib=rb-4.1.0&q=80&w=1080'
-              },
-              {
-                title: 'Bhima',
-                subtitle: 'The Legend',
-                desc: 'Marine-grade performance for exceptional wet area solutions',
-                features: ['Lifetime Guarantee', 'Marine Grade', 'BWP IS:710'],
-                badge: 'Marine Grade',
-                img: 'https://images.unsplash.com/photo-1693948568453-a3564f179a84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJpbmUlMjBncmFkZSUyMHBseXdvb2R8ZW58MXx8fHwxNzYxOTkyMjE2fDA&ixlib=rb-4.1.0&q=80&w=1080'
-              },
-              {
-                title: 'Ananta',
-                subtitle: 'Endless Strength',
-                desc: 'Built for high-load applications with zero core gaps',
-                features: ['Lifetime Guarantee', '15 Layers', 'Zero Gaps'],
-                badge: 'Premium',
-                img: 'https://images.unsplash.com/photo-1554230253-017daba2b631?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwcGx5d29vZCUyMHdvb2QlMjB0ZXh0dXJlfGVufDF8fHx8MTc2MTk5MjIxNXww&ixlib=rb-4.1.0&q=80&w=1080'
-              },
-            ].map((product, idx) => (
-              <ModernCard key={idx} variant="elevated">
-                <div className="relative h-64 rounded-t-2xl overflow-hidden group">
-                  <ImageWithFallback
-                    src={product.img}
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute top-4 right-4">
-                    <span className="px-4 py-1.5 rounded-full bg-trees-primary text-white text-sm font-bold shadow-lg">
-                      {product.badge}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-  <h3 className="text-3xl font-bold mb-1 text-white">{product.title}</h3>
-  <p className="text-white/90">{product.subtitle}</p>
-</div>
+  {[
+    {
+      title: 'Samrat',
+      subtitle: 'Supreme Quality',
+      desc: 'Reliable and cost-effective for everyday interiors',
+      features: ['MR Grades', 'BWR Grades', 'Termite & borer safe', 'Durable', 'Long-lasting', 'Economical'],
+      badge: 'Best Seller',
+      img: 'https://images.unsplash.com/photo-1761294364419-fcbfe2059dca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3b29kJTIwdmVuZWVyfGVufDF8fHx8MTc2MTk5MjIxNnww&ixlib=rb-4.1.0&q=80&w=1080',
+      
+    },
+    {
+      title: 'Bhima',
+      subtitle: 'The Legend',
+      desc: 'High-strength plywood for heavy-duty performance.',
+      features: ['Structural Grade (IS:10701)', 'High load-bearing & screw-holding strength', 'Triple preservative treatment'],
+      badge: 'Marine Grade',
+      img: 'https://images.unsplash.com/photo-1693948568453-a3564f179a84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJpbmUlMjBncmFkZSUyMHBseXdvb2R8ZW58MXx8fHwxNzYxOTkyMjE2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      
+    },
+    {
+      title: 'Ananta',
+      subtitle: 'Endless Strength',
+      desc: 'Built for high-load applications with zero core gaps',
+      features: ['100% BWP / Marine Grade', 'IS:10701 Structural Certified', 'Anti-Termite & Anti-Fungal Protection'],
+      badge: 'Premium',
+      img: 'https://images.unsplash.com/photo-1554230253-017daba2b631?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwcGx5d29vZCUyMHdvb2QlMjB0ZXh0dXJlfGVufDF8fHx8MTc2MTk5MjIxNXww&ixlib=rb-4.1.0&q=80&w=1080',
+      
+    },
+  ].map((product, idx) => (
+    <ModernCard key={idx} variant="elevated">
+      <div className="relative h-64 rounded-t-2xl overflow-hidden group">
+        <ImageWithFallback
+          src={product.img}
+          alt={product.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        <div className="absolute top-4 right-4">
+          <span className="px-4 py-1.5 rounded-full bg-trees-primary text-white text-sm font-bold shadow-lg">
+            {product.badge}
+          </span>
+        </div>
+        <div className="absolute bottom-4 left-4">
+          <h3 className="text-3xl font-bold mb-1 text-white">{product.title}</h3>
+          <p className="text-white/90">{product.subtitle}</p>
+        </div>
+      </div>
+      
+      <div className="p-6 space-y-4">
+        <p className="text-gray-700">{product.desc}</p>
+        
+        <div className="flex flex-wrap gap-2">
+          {product.features.map((feature, i) => (
+            <span key={i} className="px-3 py-1 rounded-lg bg-gray-100 text-gray-800 text-sm font-medium">
+              {feature}
+            </span>
+          ))}
+        </div>
 
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  <p className="text-gray-700">{product.desc}</p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {product.features.map((feature, i) => (
-                      <span key={i} className="px-3 py-1 rounded-lg bg-gray-100 text-gray-800 text-sm font-medium">
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <ModernButton
-                    variant="outline"
-                    size="md"
-                    fullWidth
-                    icon={<ChevronRight className="w-5 h-5" />}
-                    onClick={() => onNavigate('products')}
-                  >
-                    View Details
-                  </ModernButton>
-                </div>
-              </ModernCard>
-            ))}
-          </div>
+       
+
+        <ModernButton
+          variant="outline"
+          size="md"
+          fullWidth
+          icon={<ChevronRight className="w-5 h-5" />}
+          onClick={() => onNavigate('products')}
+        >
+          View Details
+        </ModernButton>
+      </div>
+    </ModernCard>
+  ))}
+</div>
 
           <div className="text-center mt-12">
             <ModernButton
@@ -378,23 +465,223 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
+     {/* How is Tree’s Plywood Different & Legacy in Numbers Section */}
+<section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+  <div className="container mx-auto px-6">
+    {/* Modern Section Header */}
+    <ModernSectionHeader
+      badge="Our Promise"
+      badgeIcon={Sparkles}
+      title="How is Tree’s Plywood Different?"
+      subtitle="At Tree’s Plywood, we go beyond ordinary plywood by combining certified strength, long-lasting durability, and eco-friendly innovation. Every product is crafted to deliver Value & Trust."
+    />
+
+    {/* Key Features */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {[
+        { icon: Award, title: 'Fire Retardant & Termite Proof Technology' },
+        { icon: Ship, title: 'Marine & Moisture Resistant Options' },
+        { icon: Leaf, title: 'E0/E1 Zero Emission Eco-Friendly Plywood' },
+        { icon: Layers, title: 'Advanced Hexadic Calibrated Tech for Mirror Finish' },
+        { icon: TestTube, title: 'Vacuum-Impregnated Anti-Fungal & Anti-Bacterial Coating' },
+        { icon: Award, title: 'Superior Adhesives & Imported High-Density Timber' },
+      ].map((feature, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+          className="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl flex items-start gap-4"
+        >
+          <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0">
+            <feature.icon className="w-6 h-6 text-trees-primary" />
+          </div>
+          <p className="text-gray-800 font-semibold">{feature.title}</p>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Spacer between sections */}
+    <div className="my-16"></div>
+
+    {/* Our Legacy in Numbers */}
+    <div className="container mx-auto px-6 text-center mt-16">
+
+      <h2 className="text-3xl font-bold text-gray-900 mb-2">
+        Our Legacy in Numbers
+      </h2>
+      <p className="text-gray-700 font-medium mb-8">
+        Decades of Excellence, Innovation, and Customer Satisfaction
+      </p>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { value: '15,000+', label: 'Projects Completed' },
+          { value: '25,000+', label: 'Happy Customers' },
+          { value: '50+', label: 'Industry Awards' },
+          { value: '100%', label: 'Eco-Friendly' },
+        ].map((stat, idx) => (
+          <div
+            key={idx}
+            className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow"
+          >
+            <h3 className="text-3xl font-bold text-trees-primary">{stat.value}</h3>
+            <p className="text-gray-700 font-medium mt-2">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+{/* Our Approach Section */}
+<section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+  <div className="container mx-auto px-6">
+    <ModernSectionHeader
+      badge="Our Approach"
+      badgeIcon={Lightbulb}
+      title="From Concept to Completion"
+      subtitle="From the very first to the final delivery, we ensure every step is handled with care and attention."
+    />
+
+    <div className="max-w-5xl mx-auto mt-12 relative">
+      {/* Vertical line */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-trees-primary via-trees-secondary to-trees-primary/20" />
+
+      {/* Approach Steps */}
+      {[
+        {
+          title: 'Consultation',
+          description: 'We take time to understand your unique needs and project goals.',
+          icon: Users,
+          side: 'left',
+        },
+        {
+          title: 'Customization',
+          description: 'Your needs, ideas, your way—products built exactly to your wants.',
+          icon: Palette,
+          side: 'right',
+        },
+        {
+          title: 'Manufacturing',
+          description: 'Certified materials and top-notch quality you can trust.',
+          icon: Factory,
+          side: 'left',
+        },
+        {
+          title: 'Delivery',
+          description: 'Right on time, with precision cutting and hassle-free service.',
+          icon: Truck,
+          side: 'right',
+        },
+        {
+          title: 'Support',
+          description: 'We will be there for you no matter what - lifetime assistance, repair, and replacement guaranteed.',
+          icon: Headphones,
+          side: 'left',
+        },
+      ].map((step, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, x: step.side === 'left' ? -50 : 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+          className="relative grid grid-cols-2 gap-8 mb-16"
+        >
+          {/* Left Side */}
+          <div className={step.side === 'left' ? 'text-right' : ''}>
+            {step.side === 'left' && (
+              <div className="pr-8">
+                <div className="inline-block bg-white rounded-2xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                  <div className="flex items-center justify-end gap-4 mb-3">
+                    <div className="w-14 h-14 rounded-xl bg-trees-primary/10 flex items-center justify-center">
+                      <step.icon className="w-7 h-7 text-trees-primary" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900">{step.title}</h4>
+                  </div>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Center Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-2">
+            <motion.div
+              whileHover={{ scale: 1.2, rotate: 180 }}
+              className="w-6 h-6 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary border-4 border-white shadow-lg"
+            />
+          </div>
+
+          {/* Right Side */}
+          <div className={step.side === 'right' ? '' : ''}>
+            {step.side === 'right' && (
+              <div className="pl-8">
+                <div className="inline-block bg-white rounded-2xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-14 h-14 rounded-xl bg-trees-primary/10 flex items-center justify-center">
+                      <step.icon className="w-7 h-7 text-trees-primary" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900">{step.title}</h4>
+                  </div>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+{/* Trusted By Industry Leaders */}
+<section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+  <div className="container mx-auto px-6 text-center">
+    <h3 className="text-3xl font-bold text-gray-900 mb-2">Trusted By Industry Leaders</h3>
+    <p className="text-gray-600 mb-12">
+      Partnering with the best in architecture, construction, and design
+    </p>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Card Component */}
+      {[
+        { count: '150+', label: 'Leading Architects' },
+        { count: '200+', label: 'Builders & Premium Construction Companies' },
+        { count: '300+', label: 'Interior Designers' },
+        { count: '100+', label: 'Corporate Offices & Spaces' },
+        { count: '50+', label: 'Government Projects' },
+        { count: '80+', label: 'Hospitality & Hotels & Resorts' },
+      ].map((item, idx) => (
+        <div
+          key={idx}
+          className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300"
+        >
+          <span className="text-5xl font-extrabold text-trees-primary mb-4 block">{item.count}</span>
+          <p className="text-gray-700 font-medium">{item.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Manufacturing Process - Using AnimatedProcess Component */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="How We Make It"
+            badge="How Tree’s Plywood Creates Strength?"
             badgeIcon={Factory}
             title="Our Manufacturing Process"
-            subtitle="From premium wood selection to final quality testing, every step ensures excellence"
+            subtitle="Every sheet of Tree’s Plywood is crafted with care, from selecting the right wood to the final quality seal."
           />
 
           <AnimatedProcess 
             steps={[
-              { number: '01', icon: Layers, title: 'Wood Selection', description: 'Finest Gurjan veneers from sustainable forests' },
-              { number: '02', icon: TestTube, title: 'Advanced Bonding', description: 'BWP grade adhesive technology' },
-              { number: '03', icon: PackageCheck, title: 'Quality Testing', description: '50+ quality checks per sheet' },
-              { number: '04', icon: Truck, title: 'Ready to Deliver', description: 'Calibrated and warranty certified' },
+              { number: '01', icon: Layers, title: 'Responsible Wood Selection', description: 'Handpicked Gurjan & hardwood veneers sourced from sustainable, certified forests.' },
+              { number: '02', icon: TestTube, title: 'Advanced Bonding Technology', description: 'Engineered with BWP-grade PF adhesives for long-lasting strength and moisture resistance.' },
+              { number: '03', icon: PackageCheck, title: '50+ Quality Checks', description: 'Every sheet undergoes strict testing for durability, density, moisture, bonding, and performance.' },
+              { number: '04', icon: Truck, title: 'Calibrated & Ready to Deliver', description: 'Perfectly smooth, dimensionally stable, and backed by a warranty before it reaches your project.' },
             ]}
           />
         </div>
@@ -406,36 +693,36 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <ModernSectionHeader
             badge="Where We're Used"
             badgeIcon={Hammer}
-            title="Application Areas"
-            subtitle="From kitchens to commercial buildings, our plywood adapts to your vision"
+            title="Where Tree’s Plywood Performs Best?"
+            subtitle="-	Strong, Reliable, Built for Every Space"
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
                 title: 'Kitchen Cabinets', 
-                description: 'Perfect for moisture-prone areas with superior water resistance and durability', 
+                description: 'Built to handle daily moisture, heat, and heavy use.', 
                 img: 'https://images.unsplash.com/photo-1649083048428-3d8ed23a3ce0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwaW50ZXJpb3IlMjBkZXNpZ258ZW58MXx8fHwxNzYyMTQ0MTAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-                badges: ['BWP Grade', 'Water Resistant', 'Anti-Termite'],
+                badges: ['	BWP/MR Grade Options', 'Superior Water Resistance', 'Anti-Termite & Anti-Borer Protection'],
                 badge: 'Popular'
               },
               { 
                 title: 'Furniture', 
-                description: 'Wardrobes, beds, and custom woodwork with premium finish and strength', 
+                description: 'Ideal for wardrobes, beds, shelves, and custom designs requiring a flawless finish.', 
                 img: 'https://images.unsplash.com/photo-1695687349399-452a14c409be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBmdXJuaXR1cmUlMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwxfHx8fDE3NjE5OTAwODh8MA&ixlib=rb-4.1.0&q=80&w=1080',
-                badges: ['Zero Gaps', 'Calibrated', '15 Layers']
+                badges: ['Calibrated Smooth Surface', '	Zero Core Gaps', 'Premium Strength Layers']
               },
               { 
-                title: 'Commercial', 
-                description: 'Structural support for offices, retail spaces, and high-traffic zones', 
+                title: 'Commercial spaces', 
+                description: 'Made for high-traffic areas that demand long-lasting reliability and strength.', 
                 img: 'https://images.unsplash.com/photo-1693661391267-ad955aeeb564?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwYnVpbGRpbmclMjBjb25zdHJ1Y3Rpb258ZW58MXx8fHwxNzYxODg3MDA2fDA&ixlib=rb-4.1.0&q=80&w=1080',
-                badges: ['High Load', 'Durable', 'Certified']
+                badges: ['High Load-Bearing Strength', 'Durable & Stable', 'Certified']
               },
               { 
-                title: 'Marine Areas', 
+                title: 'Marine Applications', 
                 description: 'Boat decks, coastal homes, and outdoor installations with marine-grade quality', 
                 img: 'https://images.unsplash.com/photo-1630414818380-ce90b58af597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2F0JTIwZGVjayUyMG1hcmluZSUyMHdvb2R8ZW58MXx8fHwxNzYxOTkwMDg5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-                badges: ['Marine Grade', '100% BWP', 'Lifetime Warranty'],
+                badges: ['100% BWP Marine Grade', 'Salt & Humidity Resistant', 'Lifetime Warranty'],
                 badge: 'Premium'
               },
             ].map((app, idx) => (
@@ -456,12 +743,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Testimonials Section */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Client Reviews"
-            badgeIcon={Star}
-            title="Trusted by Professionals"
-            subtitle="See why architects, designers, and builders choose The Trees Plywood"
-          />
+          
           <Testimonials />
         </div>
       </section>
@@ -489,14 +771,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
           >
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
               <Sparkles className="w-5 h-5" />
-              <span>Ready to Start Your Project?</span>
+              <span>Ready to Build Something Strong?</span>
             </div>
             
             <h2 className="text-white mb-6">
-              Experience Excellence in Every Sheet
+              Let’s Create Spaces That Last Longer
             </h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Connect with our team for personalized consultation and discover why thousands of builders trust The Trees Plywood.
+              Talk to our team for Expert Guidance, Custom Solutions, and Plywood you can trust for any project — Big or Small.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -526,46 +808,91 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="section-padding">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Have Questions?"
+            badge="Ask Us Anything - Tree’s Plywood"
             badgeIcon={HelpCircle}
             title="Frequently Asked Questions"
-            subtitle="Quick answers to common questions about our plywood"
+            subtitle="Clear Answers, Honest Guidance, Support you can Trust."
           />
 
           <div className="max-w-4xl mx-auto space-y-4">
             {[
               {
-                q: 'What is BWP plywood and why is it important?',
-                a: 'BWP (Boiling Water Proof) plywood is manufactured with phenolic resin adhesive that makes it 100% waterproof. It\'s essential for wet areas like kitchens, bathrooms, and coastal homes as it resists moisture, fungus, and termites. Our BWP plywood meets IS:710 standards for superior quality.'
-              },
+  q: "Are Your Products Suitable For Commercial & Industrial Spaces?",
+  a: `Yes! Our structural-grade products like Bhima, Agni, and Vajra are designed for:
+
+• Offices
+• Retail showrooms
+• Hotels
+• Industrial furniture
+• High-traffic public spaces
+
+They offer greater load-bearing capacity, safety, and durability.`
+},
+
               {
-                q: 'Which plywood grade should I choose for kitchen cabinets?',
-                a: 'For kitchen cabinets, we strongly recommend BWP grade plywood like Samrat (premium) or Bhima (marine grade). These grades offer maximum moisture resistance, zero core gaps, and come with extended warranties (15-30 years), ensuring your kitchen stands the test of time.'
-              },
+  q: "What makes Tree’s Plywood Different from Other Brands?",
+  a: `We go beyond basic plywood by offering:
+●	E0/E1 low-emission safety (health-friendly for homes)
+●	Zero-core-gap construction
+●	High-density hardwood core
+●	Fire Guard & ATBS termite protection
+●	Hexadic 6x calibrated smooth finish
+●	50+ quality checks per sheet
+Our products are built for long-term performance, backed by industry-leading warranties.
+`
+},
               {
-                q: 'What warranty do you offer on your plywood products?',
-                a: 'Our warranty varies by product grade: Samrat comes with 30 years, Bhima and Ananta have lifetime guarantees. All warranties cover manufacturing defects, delamination, and termite damage when used as per guidelines. Warranty certificates are provided with every purchase.'
-              },
-              {
-                q: 'How can I calculate how much plywood I need for my project?',
-                a: 'Use our free Plywood Calculator tool available on this website. Simply enter your room dimensions and select the application (cabinets, furniture, flooring, etc.). The calculator provides accurate sheet estimates with wastage considerations. You can also download and print the estimate.'
-              },
-              {
-                q: 'What makes The Trees Plywood different from other brands?',
-                a: 'We offer E0 emission certification (healthier air quality), zero core gap construction, marine-grade BWP adhesive, precision calibration, and 50+ quality checks per sheet. Our sustainable sourcing and industry-leading warranties (up to lifetime) set us apart in quality and trust.'
-              },
-              {
-                q: 'Is your plywood eco-friendly and safe for indoor use?',
-                a: 'Yes! All our plywood meets E0 emission standards, meaning minimal formaldehyde release for healthier indoor air. We source wood from certified sustainable forests and use eco-friendly manufacturing processes. Our products are completely safe for homes, schools, and hospitals.'
-              },
-              {
-                q: 'Where can I buy The Trees Plywood?',
-                a: 'We have 500+ authorized dealers across India. Use our Dealer Locator tool to find the nearest stockist. You can also request free samples through our website or contact our team for bulk orders and project quotations.'
-              },
-              {
-                q: 'Do you provide installation services or guidance?',
-                a: 'Yes! We offer comprehensive installation guides, video tutorials, and professional support. For large projects, we can connect you with certified installers in your area. Our technical team is available for consultation on best practices and project planning.'
-              },
+  q: "How Do I Know How Much Plywood My Project Needs?",
+  a: `●	You can use our Free Plywood Calculator on the website.
+●	Just enter the measurements and select the application (kitchen, wardrobes, wall panels, etc.).
+●	You’ll get an accurate sheet estimate, including optional wastage allowance.
+●	Our team can also help you plan BOQs for bigger projects.
+`
+},
+               {
+  q: "What Warranty do Tree’s Plywood Products Come With?",
+  a: `Each product carries a warranty based on its grade:
+●	Ananta & Bhima - Lifetime Guarantee
+●	Agni — 15 Years
+●	Samrat — 10 Years
+●	Vajra — 15 Years
+●	Ujval — 10 Years
+All warranties cover manufacturing defects, termite/borer damage, and delamination when used as recommended
+`
+},
+               {
+  q: "Which Plywood is Best for Kitchen Cabinets?",
+  a: `For kitchens, we recommend BWP/MR-resistant plywood like our premium ranges:
+●	Ananta (BWP Marine Grade)
+●	Bhima (Structural Marine Grade)
+Both offer maximum moisture protection, superior bonding, and long-term durability - perfect for daily kitchen use.
+`
+},
+               {
+  q: "Is your plywood eco-friendly and safe for homes?",
+  a: `Yes! All our plywood is made using:
+●	E0 low-formaldehyde adhesives
+●	Sustainably sourced timber
+●	Energy-efficient manufacturing practices
+This makes Tree’s Plywood safe for homes, schools, hospitals, commercial interiors, and environmentally conscious projects.
+`
+},
+               {
+  q: "Where can I buy Tree’s Plywood?",
+  a: `●	We have 500+ authorized dealers across India.
+●	Simply use our Find Dealer tool to locate a nearby store.
+●	You can also request free samples, get pricing, or place a bulk project order directly through our website or customer support.
+`
+},
+               {
+  q: "Do You Offer Installation Support?",
+  a: `Yes, we provide:
+●	Installation guides
+●	Step-by-step video tutorials
+●	Expert technical support
+For large projects, we can connect you with trained carpenters and certified installers in your area.
+`
+},
             ].map((faq, idx) => (
               <motion.div
                 key={idx}
@@ -638,14 +965,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm text-white font-semibold mb-8">
               <Mail className="w-5 h-5" />
-              <span>Stay Updated</span>
+              <span>Stay Connected with Tree’s Plywood</span>
             </div>
 
             <h2 className="text-white mb-6">
-              Get Expert Tips & Exclusive Offers
+              Get Expert tips, Design ideas, and offers straight to your inbox.
             </h2>
             <p className="text-xl text-gray-300 mb-10">
-              Join 10,000+ professionals receiving monthly insights on plywood selection and design trends.
+              Join thousands of homeowners, architects, and builders who trust our updates.
             </p>
 
             <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
@@ -669,7 +996,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </form>
 
             <p className="text-gray-400 text-sm mt-6">
-              We respect your privacy. Unsubscribe anytime. By subscribing, you agree to our{' '}
+             We respect your privacy. Unsubscribe any time. By subscribing, you agree to our{' '}
               <button
                 onClick={() => onNavigate('privacy')}
                 className="text-white hover:underline"

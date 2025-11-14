@@ -87,9 +87,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  To be India's most trusted plywood manufacturer by delivering uncompromising quality, 
-                  sustainable practices, and innovative solutions that transform spaces and exceed expectations. 
-                  We're committed to building foundations for dreams—one sheet at a time.
+                  ●	Innovate plywood for every need and every space <br></br>
+●	Guide customers with clear, practical solutions<br></br>
+●	Respect nature through eco-friendly manufacturing<br></br>
+●	Build long-term relationships with trust, quality.
+ 
+
                 </p>
               </div>
             </motion.div>
@@ -107,10 +110,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  To set the global standard for plywood excellence while championing environmental stewardship 
-                  and empowering communities through ethical manufacturing. We envision a future where quality, 
-                  sustainability, and innovation converge to create lasting value.
-                </p>
+                  To be India’s most trusted plywood brand by making every home and project stronger, safer, and more beautiful.                </p>
               </div>
             </motion.div>
           </div>

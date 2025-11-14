@@ -50,22 +50,22 @@ export function Footer({ onNavigate }: FooterProps = {}) {
                 className="h-16 w-auto mb-6 brightness-0 invert"
               />
               <p className="text-white/80 text-lg mb-8 max-w-md leading-relaxed">
-                Premium quality plywood crafted with precision. Building sustainable futures since 2000.
+                Strong, sustainable, and crafted with care - building better spaces for over 25 years.
               </p>
               
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-3 mb-8">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
                   <Award className="w-4 h-4 text-white" />
-                  <span className="text-white text-sm font-medium">ISO Certified</span>
+                  <span className="text-white text-sm font-medium">IS:10701 Certified</span>
                 </div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
                   <Leaf className="w-4 h-4 text-white" />
-                  <span className="text-white text-sm font-medium">FSC Certified</span>
+                  <span className="text-white text-sm font-medium">ISI Marked Products</span>
                 </div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
                   <Shield className="w-4 h-4 text-white" />
-                  <span className="text-white text-sm font-medium">BIS Approved</span>
+                  <span className="text-white text-sm font-medium">BWP Grade Options Available</span>
                 </div>
               </div>
               

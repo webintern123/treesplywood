@@ -18,7 +18,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '..
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
+  BreadcrumbLink,  
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,

@@ -4,26 +4,26 @@ export function Certifications() {
   const certifications = [
     {
       icon: Award,
-      name: 'ISO 9001:2015',
-      description: 'Quality Management',
+      name: ' IS:10701',
+      description: 'Structural Grade',
       color: 'from-blue-500 to-blue-600',
     },
     {
       icon: Shield,
-      name: 'ISO 14001',
-      description: 'Environmental Management',
+      name: 'ISO Certified',
+      description: 'Quality Management',
       color: 'from-green-500 to-green-600',
     },
     {
       icon: Leaf,
-      name: 'FSC Certified',
-      description: 'Sustainable Forestry',
+      name: 'E0/E1',
+      description: 'Zero Emission  ',
       color: 'from-trees-primary to-trees-secondary',
     },
     {
       icon: CheckCircle,
-      name: 'BIS Approved',
-      description: 'Bureau of Indian Standards',
+      name: 'FSC',
+      description: 'Eco-Friendly',
       color: 'from-orange-500 to-orange-600',
     },
   ];
@@ -32,10 +32,10 @@ export function Certifications() {
     <section className="glass-strong rounded-xl p-10">
       <div className="text-center mb-8">
         <h3 className="text-trees-primary text-2xl font-semibold mb-2">
-          Certifications & Standards
+          Certified Excellence
         </h3>
         <p className="text-gray-600">
-          Committed to quality, safety, and environmental responsibility
+          Recognized certifications ensuring quality and sustainability
         </p>
       </div>
 
@@ -43,7 +43,8 @@ export function Certifications() {
         {certifications.map((cert, index) => (
           <div 
             key={index}
-            className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 group"
+            className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
+
           >
             <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${cert.color} rounded-full mb-4 group-hover:scale-110 transition-transform`}>
               <cert.icon className="w-8 h-8 text-white" />

@@ -139,9 +139,15 @@ export function PageHero({
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-white mb-6"
             >
-              <TextReveal delay={0.5}>
-                {title}
-              </TextReveal>
+             <TextReveal delay={0.5}>
+  {title.split('\n').map((line, idx) => (
+    <span key={idx}>
+      {line}
+      <br />
+    </span>
+  ))}
+</TextReveal>
+
             </motion.h1>
 
             {/* Subtitle */}
