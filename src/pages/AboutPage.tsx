@@ -24,18 +24,19 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
     <div className="min-h-screen bg-white">
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Crafting Excellence for Over 25 Years"
-        subtitle="From Heritage to Innovation"
-        description="From a small family venture to India's trusted plywood manufacturer, The Trees has been pioneering quality, sustainability, and innovation in every sheet we produce."
+        title={"Strength You Can Trust,\nDecades of Craft & Commitment"}
+        subtitle="Innovation Rooted in Our Legacy"
+        description="What began as a small family initiative has grown into one of India’s most trusted plywood brands. For more than two decades, Tree’s Plywood has stood for quality, sustainability, and meaningful innovation - layer by layer, sheet by sheet."
         image="https://images.unsplash.com/photo-1533692336500-b85cd007c172?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbHl3b29kJTIwbWFudWZhY3R1cmluZyUyMGZhY3Rvcnl8ZW58MXx8fHwxNzYyMjM0ODMxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-        badge="Since 1998"
+        badge="25+ Years Strong"
         badgeIcon={Sparkles}
         height="lg"
         overlayOpacity="medium"
         stats={[
-          { value: '25+', label: 'Years Experience' },
-          { value: '500+', label: 'Team Members' },
-          { value: '10,000+', label: 'Projects Completed' },
+          { value: '500+', label: 'Dedicated Professionals' },
+          { value: '10,000+', label: 'Projects Built with Trust ' },
+          { value: '500+ Dealers', label: 'Across India & Expanding' },
+          
         ]}
         actions={
           <div className="flex flex-wrap gap-4">
@@ -46,7 +47,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 icon={<ArrowRight className="w-5 h-5" />}
                 onClick={() => onNavigate('products')}
               >
-                Our Products
+                Explore Our Products
               </ModernButton>
             </MagneticButton>
             <MagneticButton strength={0.2}>
@@ -56,20 +57,23 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 icon={<Calendar className="w-5 h-5" />}
                 onClick={() => onNavigate('contact')}
               >
-                Schedule Visit
+                Book a Visit
               </ModernButton>
             </MagneticButton>
           </div>
         }
       />
-
+      
+      
+      
+     
       {/* Mission & Vision */}
       <section className="section-padding bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
             badge="Our Purpose"
             badgeIcon={Compass}
-            title="Mission & Vision"
+            title="Experience That’s Built Into Every Sheet"
             subtitle="The principles that guide our journey and define our future"
           />
 
@@ -87,11 +91,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  ●	Innovate plywood for every need and every space <br></br>
-●	Guide customers with clear, practical solutions<br></br>
-●	Respect nature through eco-friendly manufacturing<br></br>
-●	Build long-term relationships with trust, quality.
- 
+                  Our goal is to offer plywood that’s strong, safe, and reliable — created responsibly and improved through constant innovation. We help homeowners, designers, and builders bring their ideas to life with confidence.
 
                 </p>
               </div>
@@ -110,7 +110,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  To be India’s most trusted plywood brand by making every home and project stronger, safer, and more beautiful.                </p>
+                  Our vision is to lead with excellence by combining nature-friendly manufacturing, modern technology, thoughtful service, and community-first values.
+The Values That Guide Us
+
+
+ </p>
               </div>
             </motion.div>
           </div>
@@ -145,25 +149,29 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <span>Our Story</span>
               </div>
 
-              <h2>Building Dreams with Quality & Trust</h2>
+              <h2>Built on Trust, Growing with Purpose</h2>
               
               <div className="space-y-4 text-gray-700">
                 <p>
-                  Founded in 1998, The Trees Plywood began with a simple mission: to provide India's builders and homeowners with plywood they could trust. What started as a small manufacturing unit has grown into one of the country's most respected plywood brands.
+                  Today, our advanced facilities produce thousands of sheets every month — but our core values of trust, quality, and customer satisfaction remain unchanged. But our values remain the same:<br></br>
+✔  Uncompromised Quality<br></br>
+✔  Sustainable Sourcing<br></br>
+✔  Honest Guidance<br></br>
+✔  Customer-First Service<br></br>
+
+From kitchens and furniture to large-scale constructions, every sheet we deliver carries a promise of excellence.
+ 
+
                 </p>
-                <p>
-                  Today, we operate state-of-the-art facilities equipped with German technology, producing over 100,000 sheets monthly. But our core values remain unchanged—uncompromising quality, sustainable practices, and customer satisfaction above all.
-                </p>
-                <p>
-                  From marine-grade plywood for coastal homes to premium veneers for luxury interiors, every sheet that leaves our facility carries 25+ years of expertise and our commitment to excellence.
-                </p>
+                
               </div>
 
               <div className="flex flex-wrap gap-4 pt-4">
                 {[
-                  { icon: CheckCircle2, text: 'ISO 9001:2015 Certified' },
-                  { icon: Leaf, text: 'FSC Certified Forests' },
-                  { icon: Shield, text: 'IS:710 Compliance' },
+                  { icon: CheckCircle2, text: 'ISO 9001:2015 – Quality Management' },
+                  { icon: Leaf, text: 'FSC Certified – Responsible Forestry' },
+                  { icon: Shield, text: 'IS:710 -  Marine Grade Compliance.' },
+                   { icon: CheckCircle2, text: '	E0/E1 - Low Emission' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-trees-primary font-medium">
                     <item.icon className="w-5 h-5" />
@@ -209,8 +217,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           <ModernSectionHeader
             badge="Our Journey"
             badgeIcon={Calendar}
-            title="25+ Years of Excellence"
-            subtitle="From humble beginnings to industry leadership—our story of growth and innovation"
+            title="25+ Years Timeline of Growth & Innovation"
+            subtitle="From a humble start to becoming a trusted plywood name across India — here’s how our story unfolded."
           />
 
           <div className="max-w-5xl mx-auto">
@@ -223,50 +231,50 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               {[
                 {
                   year: '1998',
-                  title: 'The Beginning',
-                  description: 'Founded with a vision to provide quality plywood. Started with a small manufacturing unit producing 5,000 sheets/month.',
+                  title: 'Where It All Began',
+                  description: 'Tree’s Plywood began with a simple goal: to create plywood people could trust. Our first unit made just 5,000 sheets a month — but it laid the foundation for everything we’ve built since.',
                   icon: Sparkles,
                   side: 'left'
                 },
                 {
                   year: '2005',
-                  title: 'Expansion & Growth',
-                  description: 'Doubled production capacity to 50,000 sheets/month. Established dealer network across 10 states.',
+                  title: 'Growing Strong',
+                  description: 'As demand grew, we expanded too — increasing production to 50,000 sheets a month and building a dealer network across 10 states.',
                   icon: TrendingUp,
                   side: 'right'
                 },
                 {
                   year: '2010',
-                  title: 'Quality Certification',
-                  description: 'Achieved ISO 9001:2015 certification. Introduced marine-grade BWP plywood with 30-year warranty.',
+                  title: 'Raising Quality Standards',
+                  description: 'We earned ISO 9001:2015 certification and launched BWP marine-grade plywood with long warranties, raising the bar for quality in the industry.',
                   icon: Award,
                   side: 'left'
                 },
                 {
                   year: '2015',
-                  title: 'Pan-India Presence',
-                  description: 'Crossed 500+ authorized dealers nationwide. Launched premium furniture-grade plywood range.',
+                  title: 'Nationwide Presence',
+                  description: 'With 500+ dealers across India, Tree’s Plywood became a recognized name.We launched our premium range for furniture and interior applications.',
                   icon: Globe,
                   side: 'right'
                 },
                 {
                   year: '2018',
-                  title: 'Technology Upgrade',
-                  description: 'Invested in German hot press technology and automated calibration systems for precision manufacturing.',
+                  title: 'Technology for Tomorrow',
+                  description: 'We invested in German hot-press machinery and automated calibration systems, elevating precision, bonding, and surface finish.',
                   icon: Factory,
                   side: 'left'
                 },
                 {
                   year: '2020',
-                  title: 'Green Leadership',
-                  description: 'Achieved E0 emission standards and FSC certification. Reduced carbon footprint by 40%.',
+                  title: 'Greener, Safer, Better',
+                  description: 'We achieved E0 emission standards and FSC certification, reducing our carbon footprint by 40% while making our plywood safer for homes and families.',
                   icon: Leaf,
                   side: 'right'
                 },
                 {
                   year: '2024',
-                  title: 'Industry Leader',
-                  description: 'Production capacity exceeds 100,000 sheets/month. Serving 10,000+ projects with 98% customer satisfaction.',
+                  title: 'Leading the Way',
+                  description: 'With a capacity of over 100,000 sheets a month and 10,000+ completed projects, Tree’s Plywood continues to grow as a trusted and innovation-driven brand.',
                   icon: Trophy,
                   side: 'left'
                 },
@@ -337,16 +345,16 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           <ModernSectionHeader
             badge="How We Make It"
             badgeIcon={Factory}
-            title="Our Manufacturing Excellence"
-            subtitle="From sustainably sourced timber to precision-calibrated sheets"
+            title="Designed for Performance, Built with Precision"
+            subtitle="Every sheet we produce reflects the care we put into our process — from responsibly sourced timber to precision-calibrated finish. Quality is built into every layer."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { num: '01', icon: Leaf, title: 'Sustainable Sourcing', desc: 'FSC-certified Gurjan veneers from ethical forests' },
-              { num: '02', icon: Factory, title: 'Advanced Bonding', desc: 'BWP-grade adhesive with low VOC emissions' },
-              { num: '03', icon: Shield, title: '50+ Quality Checks', desc: 'Rigorous testing for strength and durability' },
-              { num: '04', icon: Sparkles, title: 'Precision Calibration', desc: 'Perfect thickness and zero core gaps' },
+              { icon: Leaf, title: 'Responsible Sourcing', desc: 'FSC-certified Gurjan and hardwood sourced responsibly.' },
+              {  icon: Factory, title: 'Strong Bonding', desc: 'BWP-grade, low-VOC adhesives for lasting strength.' },
+              {  icon: Shield, title: 'Quality Checked', desc: '50+ tests for bonding, moisture, and durability.' },
+              {  icon: Sparkles, title: 'Precision Calibrated', desc: 'Perfect thickness, smooth finish, zero core gaps.' },
             ].map((step, idx) => (
               <motion.div
                 key={idx}
@@ -356,7 +364,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <div className="text-6xl font-bold text-trees-primary/10 mb-4">{step.num}</div>
+                
                 <div className="w-14 h-14 rounded-xl bg-trees-primary/10 flex items-center justify-center mb-4">
                   <step.icon className="w-7 h-7 text-trees-primary" />
                 </div>
@@ -379,8 +387,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           <ModernSectionHeader
             badge="Our Capabilities"
             badgeIcon={Building}
-            title="World-Class Infrastructure"
-            subtitle="State-of-the-art facilities and cutting-edge technology for unmatched quality"
+            title="State of the Art Facility"
+            subtitle="Advanced infrastructure and smart technology are powering every sheet we make."
           />
 
           {/* Key Stats with Visual Cards */}
@@ -388,8 +396,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             {[
               { icon: Building, value: '150,000', label: 'Sq Ft Facility', suffix: '+', gradient: 'from-blue-500 to-blue-600' },
               { icon: Factory, value: '100,000', label: 'Sheets/Month', suffix: '+', gradient: 'from-trees-primary to-orange-600' },
-              { icon: Users, value: '500', label: 'Skilled Workforce', suffix: '+', gradient: 'from-green-500 to-green-600' },
-              { icon: Gauge, value: '24/7', label: 'Production', suffix: '', gradient: 'from-purple-500 to-purple-600' },
+              { icon: Users, value: '500', label: 'Experts', suffix: '+', gradient: 'from-green-500 to-green-600' },
+              { icon: Gauge, value: '24/7', label: 'Operations', suffix: '', gradient: 'from-purple-500 to-purple-600' },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -449,10 +457,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <div className="p-8">
                   <ul className="space-y-4">
                     {[
-                      '6 German hot press machines for superior bonding',
-                      'Automated thickness calibration system (±0.1mm accuracy)',
-                      'CNC veneer cutting and splicing machines',
-                      'High-capacity dryers with humidity control',
+                      'We use modern technology to make every sheet strong, smooth, and reliable.',
+                      '6 German hot-press machines for better bonding',
+                      'Automated calibration system for perfect thickness (±0.1 mm)',
+                      'CNC machines for precise veneer cutting and joining',
+                      'High-capacity dryers with proper humidity control',
                     ].map((item, idx) => (
                       <motion.li
                         key={idx}
@@ -503,10 +512,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <div className="p-8">
                   <ul className="space-y-4">
                     {[
-                      'ISO-certified testing facility with 50+ checkpoints',
-                      'Boil test, bond strength, and moisture resistance testing',
-                      'Formaldehyde emission testing (E0 compliance)',
-                      'Digital thickness and flatness measurement',
+                      'Every sheet passes through a strict testing process to ensure top-notch performance.',
+                      'ISO-certified lab with 50+ quality checks',
+                      'Boiling water, bond strength & moisture resistance tests',
+                      'Formaldehyde (E0) emission testing for safer indoor use',
+                      'Digital tools to measure thickness and flatness accurately',
+
                     ].map((item, idx) => (
                       <motion.li
                         key={idx}
@@ -557,10 +568,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <div className="p-8">
                   <ul className="space-y-4">
                     {[
-                      '100,000+ sheets per month production capacity',
-                      'Multiple size options: 8\'x4\', 7\'x4\', 6\'x4\', 7\'x3\'',
-                      'Thickness range: 4mm to 25mm in all grades',
-                      'Custom sizing and special orders available',
+                      'We are equipped to meet projects of every size with consistent quality.',
+'100,000+ sheets produced every month',
+'Sizes available: 8x4, 7x4, 6x4, 7x3',
+'Thickness range: 4 mm to 25 mm across all grades',
+'Custom sizes and special orders available',
                     ].map((item, idx) => (
                       <motion.li
                         key={idx}
@@ -611,10 +623,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <div className="p-8">
                   <ul className="space-y-4">
                     {[
-                      'Climate-controlled warehousing (25,000 sq ft)',
-                      'Humidity-maintained storage to prevent warping',
-                      'Pan-India distribution network via 500+ dealers',
-                      'Fleet of delivery vehicles for timely dispatch',
+                      'Your products stay protected and arrive on time, every time.',
+'Climate-controlled warehouse (25,000 sq. ft)',
+'Humidity-maintained storage to prevent warping',
+'Pan-India supply through 500+ dealers',
+'Dedicated delivery fleet for quick and safe dispatch.',
                     ].map((item, idx) => (
                       <motion.li
                         key={idx}
@@ -665,10 +678,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                   <Factory className="w-10 h-10 text-white" />
                 </motion.div>
                 
-                <h4 className="text-4xl font-bold text-white mb-4">Want to See Our Facility?</h4>
+                <h4 className="text-4xl font-bold text-white mb-4">Want to see how we make it?</h4>
                 <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-                  Schedule a factory visit and witness our manufacturing excellence firsthand. 
-                  See how we transform raw timber into premium plywood.
+                  Visit our factory and watch how raw timber turns into strong, beautiful plywood.
                 </p>
                 
                 <MagneticButton strength={0.3}>
@@ -679,7 +691,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                     onClick={() => onNavigate('contact')}
                     className="shadow-xl hover:shadow-2xl"
                   >
-                    Schedule Factory Visit
+                    Book a Factory Visit
                   </ModernButton>
                 </MagneticButton>
               </div>
@@ -694,7 +706,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           <ModernSectionHeader
             badge="Our Values"
             badgeIcon={Heart}
-            title="What Drives Us"
+            title="What Guides Us Every Day"
             subtitle="The principles that guide everything we do"
           />
 
@@ -702,33 +714,33 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             {[
               {
                 icon: Target,
-                title: 'Precision Engineering',
-                desc: 'Every sheet meets exacting standards within microns of tolerance'
+                title: 'Precision in Every Sheet',
+                desc: 'We make sure every sheet is crafted with care and accuracy, so you always get consistent, reliable quality.'
               },
               {
                 icon: Leaf,
-                title: 'Environmental Care',
-                desc: 'Sustainable forestry practices and E0 emission standards'
+                title: 'Caring for the Environment',
+                desc: 'We use responsibly sourced wood and low-emission processes because good products should also be good for the planet.'
               },
               {
                 icon: Zap,
-                title: 'Innovation First',
-                desc: 'Continuous R&D to push boundaries of plywood technology'
+                title: 'Innovation at Heart',
+                desc: 'We keep improving through research and new technology, making our plywood stronger, safer, and better.'
               },
               {
                 icon: Users,
-                title: 'Customer Focus',
-                desc: 'Building lasting relationships through quality and service'
+                title: 'Customers Come First',
+                desc: 'We believe in long-term relationships built on trust, support, and genuine service.'
               },
               {
                 icon: Globe,
-                title: 'Pan-India Reach',
-                desc: '500+ authorized dealers across every major city'
+                title: 'Across India, Close to You',
+                desc: 'With 500+ authorized dealers, our products are easily available wherever you are.'
               },
               {
                 icon: TrendingUp,
-                title: 'Future Ready',
-                desc: 'Investing in technology for tomorrow\'s challenges'
+                title: 'Ready for the Future',
+                desc: 'We invest in new tools, technology, and ideas to ensure we stay ahead of tomorrow’s needs.'
               },
             ].map((value, idx) => (
               <ModernCard key={idx} variant="elevated">
@@ -851,8 +863,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               <Users className="w-12 h-12 text-trees-primary" />
               <h4 className="text-2xl font-bold text-gray-900">Join Our Growing Team</h4>
               <p className="text-gray-600 max-w-2xl">
-                We're always looking for talented individuals who share our passion for quality and innovation. 
-                Explore career opportunities at The Trees Plywood.
+                We’re always happy to meet people who care about quality and innovation as much as we do. Explore opportunities to grow with Tree’s Plywood.
               </p>
               <ModernButton
                 variant="primary"
@@ -860,7 +871,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 icon={<ArrowRight className="w-5 h-5" />}
                 onClick={() => onNavigate('contact')}
               >
-                View Career Opportunities
+                View Open Roles
               </ModernButton>
             </div>
           </motion.div>
@@ -896,23 +907,25 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <span>Sustainability</span>
               </div>
 
-              <h2>Committed to Our Planet</h2>
+              <h2>Caring for Our Planet, One Sheet at a Time</h2>
               
               <div className="space-y-4 text-gray-700">
                 <p>
-                  Sustainability isn't just a buzzword for us—it's embedded in our DNA. We source 100% of our timber from FSC-certified forests, ensuring responsible forestry practices that protect biodiversity and forest ecosystems.
+                  At Tree’s Plywood, sustainability is not just a promise; it’s part of who we are. We source all our timber from FSC-certified forests, ensuring the wood we use comes from responsibly managed and protected environments.
                 </p>
                 <p>
-                  Our manufacturing processes use low-VOC adhesives that meet stringent E0 emission standards, making our plywood safe for your family and the environment. We've also implemented energy-efficient systems that reduce our carbon footprint by 40%.
+                  We also use low-VOC, E0 emission adhesives, making our plywood safer for your family and kinder to the planet. Over the years, our energy-efficient processes have helped us cut our carbon footprint by 40% and we're still working to do better.
                 </p>
               </div>
 
               <div className="space-y-3">
+                
                 {[
-                  'FSC-Certified Sustainable Forests',
-                  'E0 Emission Standards',
-                  '40% Reduced Carbon Footprint',
-                  'Zero-Waste Manufacturing Process',
+'	Wood sourced from responsibly managed forests',
+'Low-emission, eco-friendly manufacturing',
+'Energy & water-efficient processes',
+'Long-lasting products that reduce waste',
+                  
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-trees-primary/10 flex items-center justify-center">
@@ -937,12 +950,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       {/* Testimonials Section */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Client Stories"
-            badgeIcon={Users}
-            title="What Our Clients Say"
-            subtitle="Hear from professionals who have trusted The Trees for their projects"
-          />
+          
           <Testimonials />
         </div>
       </section>
@@ -967,10 +975,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             </div>
             
             <h2 className="text-white mb-6">
-              Ready to Experience The Trees Difference?
+              Want to feel the Tree’s Plywood difference for yourself?
             </h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Join thousands of satisfied customers who trust The Trees for their projects. Quality plywood backed by 25+ years of expertise.
+              Join thousands of happy customers who trust our plywood for their homes and projects.
+ Quality you can feel, backed by 25+ years of experience.
+
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">

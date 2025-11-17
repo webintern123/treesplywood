@@ -392,7 +392,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       title: 'Bhima',
       subtitle: 'The Legend',
       desc: 'High-strength plywood for heavy-duty performance.',
-      features: ['Structural Grade (IS:10701)', 'High load-bearing & screw-holding strength', 'Triple preservative treatment'],
+      features: ['Structural Grade (IS:10701)', 'High load-bearing ', 'Triple preservative treatment'],
       badge: 'Marine Grade',
       img: 'https://images.unsplash.com/photo-1693948568453-a3564f179a84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJpbmUlMjBncmFkZSUyMHBseXdvb2R8ZW58MXx8fHwxNzYxOTkyMjE2fDA&ixlib=rb-4.1.0&q=80&w=1080',
       
