@@ -178,27 +178,27 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       icon: Phone, 
       title: 'Call Us', 
       info: '+91 9091 744744', 
-      sub: 'Mon-Sat, 9 AM - 6 PM',
+      sub: 'We’re available Monday–Saturday, 9 AM to 6 PM.',
       action: () => window.location.href = 'tel:+919091744744'
     },
     { 
       icon: MessageCircle, 
       title: 'WhatsApp', 
       info: '+91 9091 744744', 
-      sub: 'Quick Chat Available',
+      sub: 'Quick chat support anytime.',
       action: () => window.open('https://wa.me/919091744744', '_blank')
     },
     { 
       icon: Mail, 
       title: 'Email Us', 
       info: 'info@treesplywood.com', 
-      sub: '24/7 Support Available',
+      sub: 'Reach out anytime — we offer 24/7 support.',
       action: () => window.location.href = 'mailto:info@treesplywood.com'
     },
     { 
       icon: MapPin, 
       title: 'Visit Us', 
-      info: 'Mumbai, Maharashtra', 
+      info: 'Hyderabad, Telangana', 
       sub: 'View on Map',
       action: () => window.open('https://maps.google.com', '_blank')
     },
@@ -226,18 +226,18 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     <div className="min-h-screen bg-white">
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Let's Connect"
-        subtitle="Your Vision, Our Expertise"
-        description="Have questions about our products? Need expert consultation? Our dedicated team is ready to help you find the perfect plywood solution for your project."
+        title="We’re Just a Call Away – Let’s Connect"
+        subtitle="Need help choosing plywood? Your project matters to us."
+        description="Whether you need product details, guidance, or expert suggestions, our team is always ready to support you and help you choose the right plywood."
         image="https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-        badge="24/7 Support Available"
+        badge="You Dream It, We Help Build It"
         badgeIcon={MessageSquare}
         height="md"
         overlayOpacity="medium"
         stats={[
-          { value: '<1hr', label: 'Response Time' },
-          { value: '24/7', label: 'Available' },
-          { value: '15+', label: 'Years Experience' },
+          { value: '<1hr', label: 'Quick Response' },
+          { value: '24/7', label: 'Always Available' },
+          { value: '15+', label: 'Experience You Can Trust' },
         ]}
         actions={
           <div className="flex flex-wrap gap-4">
@@ -264,6 +264,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           </div>
         }
       />
+      
 
       {/* Contact Info Cards */}
       <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
@@ -298,6 +299,57 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               </motion.div>
             ))}
           </div>
+          <section className="w-full py-20 bg-white">
+  <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    {/* Left Side Image */}
+    <div className="w-full">
+      <img
+        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902"
+        alt="Support"
+        className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-xl"
+      />
+    </div>
+
+    {/* Right Side Text */}
+    <div className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+        We’re Here Whenever You Need Us
+      </h2>
+
+      <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+        Our customers are other than Tree’s Plywood family; we are so happy to hear from you 
+        and get in touch with us anytime. If you are having a product issue, partnership idea, 
+        or want any technical assistance, feel free to reach out.
+      </p>
+
+      <ul className="space-y-3 text-gray-700 text-lg md:text-xl">
+        <li className="flex items-start gap-3">
+          <span className="text-green-600 text-2xl mt-1">✔</span>
+          Certified & Safe Products
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-green-600 text-2xl mt-1">✔</span>
+          Affordable Pricing
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-green-600 text-2xl mt-1">✔</span>
+          Pan-India Availability
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-green-600 text-2xl mt-1">✔</span>
+          Customized Design Support
+        </li>
+      </ul>
+
+      <p className="mt-6 text-gray-900 text-2xl md:text-3xl font-bold">
+        “Buy Strength, Build Trust”
+      </p>
+    </div>
+  </div>
+</section>
+
+      
 
           {/* Main Contact Section */}
           <div className="grid lg:grid-cols-2 gap-12">
@@ -315,8 +367,8 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                       <Send className="w-4 h-4 text-trees-primary" />
                       <span className="text-sm font-semibold text-trees-primary">Send a Message</span>
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-2">Get in Touch</h2>
-                    <p className="text-gray-600">Fill out the form and our team will respond within 24 hours</p>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-2">Get in Touch - Request a Sample</h2>
+                    <p className="text-gray-600">Try our sample request option to get an At Home / Digital Consultation service for free by filling out this form. Our team will get in touch within 24 hours.</p>
                   </div>
 
                   {submitted ? (
@@ -428,6 +480,34 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                   )}
                 </div>
               </ModernCard>
+              {/* Why Visit Us Card */}
+<ModernCard variant="elevated">
+  <div className="p-6">
+    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-trees-primary/10 rounded-full mb-4">
+      <Sparkles className="w-4 h-4 text-trees-primary" />
+      <span className="text-sm font-semibold text-trees-primary">Why Visit Us?</span>
+    </div>
+    
+    <h3 className="text-xl font-bold text-gray-900 mb-4">Experience Tree’s Plywood in Person</h3>
+    
+    <ul className="grid grid-cols-2 gap-y-2 gap-x-4 text-gray-700 text-sm">
+      {[
+        'See Our Products Up Close',
+        'Get Advice From Our Experts',
+        'Explore Customization Options',
+        'Experience The Quality Yourself',
+        'Meet Our Friendly Team',
+        'Get Advice From Our Experts',
+      ].map((item, idx) => (
+        <li key={idx} className="flex items-start gap-2">
+          {item && <CheckCircle2 className="w-4 h-4 text-green-600 mt-1" />}
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+</ModernCard>
+
             </motion.div>
 
             {/* Right Column - Map & Info */}
@@ -452,7 +532,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                       <MapPin className="w-16 h-16 mx-auto text-trees-primary mb-4" />
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">Visit Our Showroom</h3>
                       <p className="text-gray-700 font-semibold mb-1">The Trees Plywood</p>
-                      <p className="text-gray-600">Mumbai, Maharashtra, India</p>
+                      <p className="text-gray-600">Hyderabad, Telangana, India</p>
                       <div className="mt-4 flex items-center justify-center gap-2 text-trees-primary font-semibold">
                         <Navigation className="w-4 h-4" />
                         <span className="text-sm">Get Directions</span>
@@ -500,7 +580,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900">Follow Us</h3>
                   </div>
-                  <p className="text-gray-600 mb-6">Stay connected with us on social media for updates, inspiration, and more</p>
+                  <p className="text-gray-600 mb-6">Stay connected for updates, ideas, and the latest from Tree’s Plywood.</p>
                   <div className="flex flex-wrap gap-3">
                     {socialLinks.map((social, idx) => (
                       <button
@@ -520,14 +600,57 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           </div>
         </div>
       </section>
+      {/* Unique Find a Dealer Section */}
+<section className="section-padding bg-gray-50">
+  <div className="container mx-auto px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
+        Find a Dealer Near You
+      </h2>
+      <p className="text-gray-700 text-lg md:text-xl">
+        Looking for a Tree’s Plywood dealer in your city? Check out our main warehouse locations.
+      </p>
+    </div>
+
+    <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        { state: 'Andhra Pradesh', city: 'Vijayawada' },
+        { state: 'Telangana', city: 'Hyderabad' },
+        { state: 'Karnataka', city: 'Bengaluru' },
+        { state: 'Tamil Nadu', city: 'Chennai' },
+      ].map((location, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard variant="elevated" className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
+            <div className="text-trees-primary text-2xl font-bold mb-2">{location.state}</div>
+            <div className="text-gray-800 font-semibold">{location.city}</div>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+
+    <div className="text-center mt-8">
+      <p className="text-gray-700 font-semibold text-lg md:text-xl">
+        More Cities Coming Soon!
+      </p>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Quick Actions Section */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Need Something Specific?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Looking for Something Specific?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Quick links to help you find what you're looking for
+              Here are quick links to help you find what you need:
             </p>
           </div>
           
@@ -536,15 +659,15 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               { 
                 icon: Building2, 
                 title: 'Find a Dealer', 
-                desc: 'Locate authorized dealers near you',
+                desc: 'Locate an authorized Tree’s Plywood dealer near you.',
                 page: 'dealers',
                 color: 'text-blue-600',
                 bg: 'bg-blue-50'
               },
               { 
                 icon: Calendar, 
-                title: 'Request Sample', 
-                desc: 'Order free product samples',
+                title: 'Request a Sample', 
+                desc: 'Get free product samples delivered to you.',
                 page: 'samples',
                 color: 'text-green-600',
                 bg: 'bg-green-50'
@@ -552,7 +675,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               { 
                 icon: Sparkles, 
                 title: 'Download Catalog', 
-                desc: 'Get our product brochures',
+                desc: 'Browse and download our product brochures.',
                 page: 'downloads',
                 color: 'text-purple-600',
                 bg: 'bg-purple-50'
@@ -560,7 +683,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               { 
                 icon: MessageSquare, 
                 title: 'View FAQs', 
-                desc: 'Quick answers to common questions',
+                desc: 'Find quick answers to commonly asked questions.',
                 page: 'faq',
                 color: 'text-orange-600',
                 bg: 'bg-orange-50'
@@ -612,14 +735,14 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           >
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
               <Sparkles className="w-5 h-5" />
-              <span>Ready to Start?</span>
+              <span>Ready to Begin?</span>
             </div>
             
             <h2 className="text-white mb-6">
-              Let's Build Something Amazing Together
+              Let’s Build Something Great Together
             </h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Our expert team is ready to help you with consultation, product selection, and technical support
+              Our team is here to help you with product guidance, expert suggestions, and technical support whenever you need it.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">

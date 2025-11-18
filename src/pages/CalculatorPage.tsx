@@ -177,17 +177,17 @@ interface CalculatorPageProps {
       {/* Enhanced Hero Section */}
       <PageHero
         title="Plywood Calculator"
-        subtitle="Estimate Your Requirements"
-        description="Calculate exactly how much plywood you need for your project with our smart estimation tool."
+        subtitle="Estimate What You Need - Quick & Easy"
+        description="Figure out exactly how much plywood your project requires with our simple, fast, and accurate calculation tool."
         image="https://images.unsplash.com/photo-1560184984-40825b480203?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwd29ya3Nob3AlMjBjYXJwZW50cnl8ZW58MXx8fHwxNzYyMjM0ODMzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-        badge="Smart Tool"
+        badge="Quick Estimate Tool"
         badgeIcon={Calculator}
         height="sm"
         overlayOpacity="medium"
         stats={[
           { value: 'Accurate', label: 'Results' },
-          { value: 'Instant', label: 'Calculation' },
-          { value: 'Free', label: 'Tool' },
+          { value: 'Instant', label: 'Calculations' },
+          { value: 'Completely', label: 'Free' },
         ]}
       />
 
@@ -195,10 +195,10 @@ interface CalculatorPageProps {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Smart Planning"
+            badge="Easy & Smarter Planning "
             badgeIcon={Target}
             title="Why Use Our Calculator?"
-            subtitle="Save time, money, and reduce waste with accurate project planning"
+            subtitle="Plan better, save money, and cut down waste with quick and accurate plywood calculations."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
@@ -206,25 +206,25 @@ interface CalculatorPageProps {
               {
                 icon: Target,
                 title: 'Accurate Estimates',
-                desc: 'Precise calculations based on standard sheet sizes and real dimensions',
+                desc: 'Get perfect calculations based on actual sheet sizes and your project dimensions.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: DollarSign,
-                title: 'Cost Savings',
-                desc: 'Avoid over-ordering with smart wastage calculations and budgeting',
+                title: 'Save Money',
+                desc: 'Avoid buying extra material with smart wastage and budgeting suggestions.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: Clock,
                 title: 'Save Time',
-                desc: 'Instant results without manual calculations or complex spreadsheets',
+                desc: 'Instant results — no need for manual math or complicated spreadsheets.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: TrendingDown,
                 title: 'Reduce Waste',
-                desc: 'Optimize material usage with customizable buffer recommendations',
+                desc: 'Use materials efficiently with helpful buffer recommendations tailored to your project.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((benefit, idx) => (
@@ -428,12 +428,12 @@ interface CalculatorPageProps {
               <div>
                 <h3 className="text-blue-900 mb-2">How to Use This Calculator</h3>
                 <ul className="text-sm text-blue-800 space-y-1">
-                  <li>• Select your preferred measurement unit (sq. ft or sq. m)</li>
-                  <li>• Choose the standard sheet size or enter custom dimensions</li>
-                  <li>• Select plywood type and thickness</li>
+                  <li>• Choose your measurement unit (sq. ft or sq. m)</li>
+                  <li>• Select the sheet size or enter custom dimensions</li>
+                  <li>• Pick the plywood type and thickness</li>
                   <li>• Enter the total area of your project</li>
-                  <li>• Adjust wastage buffer based on project complexity</li>
-                  <li>• Click "Calculate" to see results</li>
+                  <li>• Adjust the wastage buffer based on how complex your work is</li>
+                  <li>• Click “Calculate” to get your sheet estimate.</li>
                 </ul>
               </div>
             </div>
@@ -503,7 +503,7 @@ interface CalculatorPageProps {
                 <div className="text-center py-12">
                   <Calculator className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                   <p className="text-gray-500 text-sm">
-                    Enter project details and click "Calculate" to see results
+                    Fill in your project details and hit “Calculate” to view your estimate.
                   </p>
                 </div>
               )}
@@ -516,10 +516,10 @@ interface CalculatorPageProps {
                 Pro Tips
               </h4>
               <ul className="text-xs text-amber-800 space-y-2">
-                <li>• Add 10-15% extra for complex designs</li>
-                <li>• Consider grain direction for matching</li>
-                <li>• Order extra sheets for future repairs</li>
-                <li>• Check availability before finalizing</li>
+                <li>• Add 10–15% extra if your design has curves, cutouts, or detailed work</li>
+                <li>• Keep grain direction in mind for a consistent finish</li>
+                <li>• Order a couple of extra sheets for future touch-ups or replacements</li>
+                <li>• Check stock availability before finalizing your order</li>
               </ul>
             </div>
           </div>
@@ -531,7 +531,7 @@ interface CalculatorPageProps {
         <ModernSectionHeader
           badge="Examples"
           title="Common Project Requirements"
-          subtitle="Reference guide for typical plywood requirements"
+          subtitle="Use this quick guide to understand typical plywood needs for different spaces."
         />
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -570,7 +570,7 @@ interface CalculatorPageProps {
           badge="More Tools"
           badgeIcon={Calculator}
           title="Explore Related Tools"
-          subtitle="Complete your planning with our suite of professional tools"
+          subtitle="Use these helpful tools to plan your project with confidence."
         />
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -587,7 +587,7 @@ interface CalculatorPageProps {
                 </div>
                 <h3>Product Comparison</h3>
                 <p className="text-gray-600">
-                  Compare specifications, features, and warranties side-by-side to choose the perfect product
+                  Compare features, specs, and warranties to find plywood.
                 </p>
                 <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
                   Compare Products
@@ -610,7 +610,7 @@ interface CalculatorPageProps {
                 </div>
                 <h3>Request Samples</h3>
                 <p className="text-gray-600">
-                  Get free physical samples delivered to feel the quality before making your decision
+                  Order free samples and feel the quality yourself before making a choice.
                 </p>
                 <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
                   Request Samples
@@ -633,7 +633,7 @@ interface CalculatorPageProps {
                 </div>
                 <h3>Downloads Center</h3>
                 <p className="text-gray-600">
-                  Access product catalogs, technical specifications, and installation guides
+                  Browse catalogs, technical sheets, and installation guides—all in one place.
                 </p>
                 <ModernButton variant="outline" icon={<Download className="w-4 h-4" />} fullWidth>
                   Browse Downloads
@@ -675,9 +675,10 @@ interface CalculatorPageProps {
                 How accurate is the calculator?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 leading-relaxed">
-                Our calculator provides industry-standard accuracy based on actual standard sheet dimensions 
-                (8'x4', 7'x4', etc.) and typical wastage patterns. The results are within 95-98% accuracy 
-                for standard projects. For complex designs with unusual cuts, we recommend adding 15-20% wastage buffer.
+               ●	The calculator gives results close to real project needs based on standard sheet sizes (8'×4', 7'×4', etc.) and common wastage patterns.<br></br>
+●	You can expect 95–98% accuracy for most projects.<br></br>
+●	For complex designs or unusual cuts, add a 15–20% buffer.
+
               </AccordionContent>
             </AccordionItem>
 
@@ -687,10 +688,10 @@ interface CalculatorPageProps {
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 leading-relaxed">
                 <ul className="space-y-2 mt-2">
-                  <li><strong>5-10%:</strong> Simple projects with straight cuts (shelves, basic furniture)</li>
-                  <li><strong>10-15%:</strong> Standard projects (cabinets, wardrobes, standard rooms)</li>
-                  <li><strong>15-20%:</strong> Complex designs (intricate patterns, curved cuts, matching grains)</li>
-                  <li><strong>20-25%:</strong> Very complex or commercial projects with minimal tolerance for errors</li>
+                  <li><strong>5-10%:</strong> Simple straight-cut work (shelves, basic furniture)</li>
+                  <li><strong>10-15%:</strong> Standard projects (cabinets, wardrobes, room interiors)</li>
+                  <li><strong>15-20%:</strong> Detailed designs (curves, patterns, grain matching)</li>
+                  <li><strong>20-25%:</strong> Complex or commercial work with tight accuracy requirements</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
@@ -700,10 +701,10 @@ interface CalculatorPageProps {
                 Can I save my calculations?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 leading-relaxed">
-                Currently, you can download a PDF report of your calculation results by clicking the 
-                "Download Report" button. We're working on adding a feature to save multiple calculations 
-                to your account for future reference. You can also take screenshots or print the page 
-                for your records.
+                You can download a PDF report using the “Download Report” button.
+ Saving multiple calculations is coming soon.
+ For now, you can also take a screenshot or print the page.
+
               </AccordionContent>
             </AccordionItem>
 
@@ -712,22 +713,18 @@ interface CalculatorPageProps {
                 Can I use custom sheet sizes?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 leading-relaxed">
-                Yes! While the calculator defaults to standard sheet sizes for convenience, you can enter 
-                custom dimensions if your project requires non-standard sizes. Custom sizes may have different 
-                availability - contact our team to confirm. Most projects work best with standard 
-                sizes to minimize wastage.
+                Yes. You can enter custom sheet dimensions if your project needs them.
+ Standard sizes are recommended to reduce wastage, but custom sizes are possible—just check availability with our team
+
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="thickness" className="bg-white border border-gray-200 rounded-2xl px-6">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                Does thickness affect the number of sheets needed?
+                Does thickness change the number of sheets needed?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 leading-relaxed">
-                Thickness doesn't affect the number of sheets needed for covering area, but it's important 
-                for structural strength and weight. Thicker sheets (16mm-19mm) are recommended for 
-                heavy furniture and structural applications. Thinner sheets (6mm-12mm) are ideal for wall 
-                paneling and cabinet backs. The calculator helps you plan for the right thickness for your needs.
+                No. Thickness doesn’t affect the sheet count for covering an area.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -771,7 +768,7 @@ interface CalculatorPageProps {
                 <div className="flex-1">
                   <h3 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">Product Comparison</h3>
                   <p className="text-sm text-gray-600 mb-4">
-                    Compare different plywood grades side-by-side to find the perfect match for your project requirements and budget.
+                    Compare features, specs, and warranties side-by-side to find the plywood that fits your needs.
                   </p>
                   <div className="flex items-center gap-2 text-trees-primary font-semibold text-sm group-hover:gap-3 transition-all">
                     <span>Compare Products</span>
@@ -795,7 +792,7 @@ interface CalculatorPageProps {
                 <div className="flex-1">
                   <h3 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">Request Samples</h3>
                   <p className="text-sm text-gray-600 mb-4">
-                    After calculating your requirements, order free samples to test quality, finish, and durability before purchase.
+                    Order free samples and feel the quality yourself before making a choice.
                   </p>
                   <div className="flex items-center gap-2 text-trees-primary font-semibold text-sm group-hover:gap-3 transition-all">
                     <span>Request Samples</span>
