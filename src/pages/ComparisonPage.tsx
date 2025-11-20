@@ -313,9 +313,9 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Product Comparison Tool"
-        subtitle="Smart Comparison"
-        description="Compare different plywood grades side-by-side to find the perfect match for your project requirements and make informed decisions."
+        title="Smart Plywood Comparison Tool"
+        subtitle="Choose Smarter, Build Better, Compare Easily"
+        description="Find the right plywood side-by-side by checking features, strength, and applications in one place. Compare up to four products and see which one fits your space, budget, and needs."
         image="https://images.unsplash.com/photo-1755938031302-9e0b890cdecd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwc2FtcGxlcyUyMGRpc3BsYXl8ZW58MXx8fHwxNzYyMjU0NzI2fDA&ixlib=rb-4.1.0&q=80&w=1080"
         badge="Compare Products"
         badgeIcon={Scale}
@@ -323,7 +323,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
         overlayOpacity="medium"
         stats={[
           { value: '10+', label: 'Products' },
-          { value: '13', label: 'Attributes' },
+          { value: '13', label: 'Key Features' },
           { value: '4', label: 'Max Compare' },
         ]}
       />
@@ -333,30 +333,30 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
         <section className="section-padding bg-gray-50 -mx-6 px-6">
           <div className="container mx-auto">
             <ModernSectionHeader
-              badge="Benefits"
+              badge="Your Advantages"
               badgeIcon={Target}
               title="Why Use Our Comparison Tool?"
-              subtitle="Make data-driven decisions with comprehensive side-by-side product analysis"
+              subtitle="Make confident choices with clear, side-by-side product details."
             />
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
                   icon: Shield,
-                  title: 'Technical Specs',
-                  desc: 'Compare thickness, water resistance, durability ratings, and IS standards',
+                  title: 'Technical Details',
+                  desc: 'Check thickness, waterproof ratings, durability, and IS certifications—all in one view.',
                   color: 'from-blue-500 to-blue-600'
                 },
                 {
                   icon: Zap,
-                  title: 'Use Cases',
-                  desc: 'See which products are best suited for marine, interior, or exterior applications',
+                  title: 'Right Application Fit',
+                  desc: 'See which plywood works best for kitchens, furniture, marine use, or commercial spaces.',
                   color: 'from-green-500 to-green-600'
                 },
                 {
                   icon: TrendingUp,
-                  title: 'Value Analysis',
-                  desc: 'Compare warranty periods, certifications, and quality standards to maximize ROI',
+                  title: 'Better Value Insights',
+                  desc: 'Compare warranties, certifications, and quality features to choose the best option for your budget.',
                   color: 'from-purple-500 to-purple-600'
                 },
               ].map((benefit, idx) => (
@@ -386,7 +386,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
             badge="Interactive Tool"
             badgeIcon={Scale}
             title="Select & Compare Products"
-            subtitle="Choose up to 4 products to see detailed specifications and features comparison"
+            subtitle="Pick up to four products and instantly compare their features, specifications, and uses."
           />
 
           {/* Selector Controls */}
@@ -450,9 +450,9 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center mx-auto mb-6">
                   <Plus className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-trees-secondary mb-2">Start Comparing Products</h3>
+                <h3 className="text-trees-secondary mb-2">Start Comparing</h3>
                 <p className="text-gray-600 mb-6">
-                  Select products from the dropdown above to see a detailed side-by-side comparison of specifications, features, and use cases.
+                  Choose your products from the list above to view a clear, side-by-side comparison of their strengths, grades, and applications.
                 </p>
                 <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
                   <div className="flex items-center gap-2">
@@ -460,7 +460,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                     <span>Compare up to 4 products</span>
                   </div>
                   <span>•</span>
-                  <span>13 comparison attributes</span>
+                  <span>13 Key Attributes</span>
                 </div>
               </ModernCard>
             </motion.div>
@@ -716,8 +716,8 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
           <ModernSectionHeader
             badge="Our Impact"
             badgeIcon={TrendingUp}
-            title="Comparison Tool Success Metrics"
-            subtitle="Real numbers from thousands of professionals who've made smarter decisions using our tool"
+            title="How This Tool Helps You Choose Better"
+            subtitle="Real numbers from thousands of builders, designers, and homeowners who used this tool to make smarter decisions."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -725,23 +725,23 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
               { 
                 value: '10,000+', 
                 label: 'Comparisons Completed', 
-                desc: 'Products analyzed by professionals',
+                desc: 'Professionals across India have used this tool to review products.',
                 icon: Scale,
                 color: 'from-blue-500 to-blue-600',
                 bgColor: 'bg-blue-50'
               },
               { 
                 value: '13', 
-                label: 'Attributes Analyzed', 
-                desc: 'Comprehensive data points per product',
+                label: 'Key Attributes Checked', 
+                desc: 'Every product is compared on strength, durability, and more.',
                 icon: Shield,
                 color: 'from-green-500 to-green-600',
                 bgColor: 'bg-green-50'
               },
               { 
                 value: '95%', 
-                label: 'Decision Confidence', 
-                desc: 'Users feel more confident in their choice',
+                label: 'Confidence Rate', 
+                desc: 'Most users feel assured about their final choice after using the tool.',
                 icon: Target,
                 color: 'from-purple-500 to-purple-600',
                 bgColor: 'bg-purple-50'
@@ -749,7 +749,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
               { 
                 value: '4', 
                 label: 'Products Maximum', 
-                desc: 'Compare up to 4 products side-by-side',
+                desc: 'See all your options clearly before you decide.',
                 icon: Layers,
                 color: 'from-orange-500 to-orange-600',
                 bgColor: 'bg-orange-50'
@@ -817,12 +817,10 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                   <Info className="w-6 h-6 text-trees-primary" />
                 </div>
                 <div className="flex-1 text-left">
-                  <h4 className="text-trees-secondary mb-2">Why These Numbers Matter</h4>
+                  <h4 className="text-trees-secondary mb-2">Why it Matters</h4>
                   <p className="text-gray-600 leading-relaxed">
-                    Our comparison tool has helped over <strong>10,000 professionals</strong> make data-driven decisions. 
-                    With <strong>13 comprehensive attributes</strong> covering everything from water resistance to warranty periods, 
-                    users report <strong>95% confidence</strong> in their final choice. The ability to compare <strong>up to 4 products</strong> 
-                    simultaneously ensures you see all options before committing.
+                    Our comparison tool has helped over <strong>10,000 users</strong> to choose the right plywood for their project.  
+                    With <strong>13 detailed attributes</strong> and an easy 4-product comparison, people feel more informed, more confident, and better prepared to choose the plywood that truly fits their needs.
                   </p>
                 </div>
               </div>
@@ -833,36 +831,36 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
         {/* How to Use */}
         <section>
           <ModernSectionHeader
-            badge="Guide"
+            badge="Your Steps"
             badgeIcon={HelpCircle}
-            title="How to Use the Comparison Tool"
-            subtitle="Simple 4-step process to compare and choose the right plywood"
+            title="Compare Products in 4 Easy Steps"
+            subtitle="A quick step by step guide to help you pick the right plywood with ease."
           />
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
               {
                 step: '1',
-                title: 'Select Products',
-                desc: 'Choose 2-4 products from the dropdown menu to compare',
+                title: 'Select Your Products',
+                desc: 'Choose any 2–4 products from the list to begin comparing.',
                 icon: Plus,
               },
               {
                 step: '2',
-                title: 'Review Specs',
-                desc: 'Examine 14 key attributes including grade, thickness, and ratings',
+                title: 'Check the Details',
+                desc: 'Review important specs like grade, thickness, strength, and performance ratings.',
                 icon: Scale,
               },
               {
                 step: '3',
-                title: 'Compare Features',
-                desc: 'Check use cases, certifications, and warranty details',
+                title: 'Compare What Matters',
+                desc: 'Look at applications, certifications, warranties, and key features side-by-side.',
                 icon: Check,
               },
               {
                 step: '4',
-                title: 'Make Decision',
-                desc: 'View details or export comparison as PDF for reference',
+                title: 'Choose with Confidence',
+                desc: 'View full details or download your comparison as a PDF for later reference.',
                 icon: Download,
               },
             ].map((step, idx) => (
@@ -894,8 +892,8 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
             <ModernSectionHeader
               badge="Success Stories"
               badgeIcon={Star}
-              title="What Professionals Say"
-              subtitle="Hear from architects and contractors who used our comparison tool"
+              title="What People Say"
+              subtitle="Hear from customers, homeowners, and professionals who trust Tree’s Plywood."
             />
             <Testimonials />
           </div>
@@ -907,7 +905,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
             badge="Got Questions?"
             badgeIcon={HelpCircle}
             title="Comparison Tool FAQ"
-            subtitle="Common questions about using our product comparison feature"
+            subtitle="Helpful answers to common questions about using our product comparison feature."
           />
 
           <div className="max-w-3xl mx-auto">
@@ -917,62 +915,65 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                   How many products can I compare at once?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  You can compare up to 4 products simultaneously. This allows for a comprehensive side-by-side 
-                  analysis without overwhelming the comparison table. For best results, we recommend comparing 
-                  2-3 products from similar categories (e.g., all BWP grade plywood) to make meaningful comparisons.
+                  You can compare up to 4 products at the same time. This keeps the table clear and easy to read while giving you enough options to make a confident choice.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="attributes" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  What attributes are compared?
+                  What details does the comparison show?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Our comparison tool evaluates 13 key attributes: Grade, Thickness Range, Water Resistance (5-star 
-                  rating), Durability (5-star rating), Best Use Cases, Marine Suitability, Interior/Exterior 
-                  Use, Termite Resistance, Fire Retardant Properties, Bendability, Warranty Period, and IS Standards 
-                  Certification. This comprehensive analysis helps you make informed decisions.
+                  The tool compares all major plywood features including: <br></br>
+●	Grade   <br></br>
+●	Thickness range   <br></br>
+●	Water & termite resistance    <br></br>
+●	Durability <br></br>
+●	Applications   <br></br>
+●	Marine/interior/exterior suitability   <br></br>
+●	Fire safety features   <br></br>
+●	Warranty  <br></br>
+●	IS certifications   <br></br>
+
+These details help you understand what each product is built for.
+
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="export" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I export the comparison?
+                  Can I download the comparison?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes! Click the "Export PDF" button to download your comparison as a PDF document. This is perfect 
-                  for sharing with clients, team members, or keeping for future reference. The exported file includes 
-                  all selected products and their complete attribute comparison in an easy-to-read format.
+                  Yes, you can download your comparison as a PDF. This is useful for sharing with your team, carpenter, designer, or keeping a record for future planning.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="recommendations" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  How do I know which product is best for my project?
+                  How do I choose the right plywood for my project?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Look at the "Best For" attribute which suggests ideal applications for each product. Also check 
-                  the use case indicators (Marine, Interior, Exterior) and specific features like fire retardancy or 
-                  termite resistance based on your requirements. If you need personalized guidance, use the "Request 
-                  Samples" or "Talk to Expert" buttons to connect with our product specialists.
+                 ●	Check the “Best For” suggestion under each product.<br></br>
+●	It tells you the ideal use — like kitchens, wardrobes, heavy-duty projects, marine areas, or interiors.<br></br>
+●	If you’re unsure, you can request a free sample or talk to our team for guidance.<br></br>
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="ratings" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  What do the star ratings mean?
+                  Does price show up in the comparison?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Our 5-star rating system evaluates Water Resistance and Durability. 5 stars indicates the highest 
-                  performance level (BWP grade with marine-grade waterproofing and maximum durability). 4 stars shows 
-                  excellent performance (BWR grade), and 3 stars represents good performance for interior applications. 
-                  These ratings are based on IS standards testing and real-world performance data.
+                  Not right now. Plywood prices change by region and quantity, so you can contact us for the best quote after comparing features.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
 
             <div className="text-center mt-12">
-              <p className="text-gray-600 mb-6">Still have questions about product comparison?</p>
+              <p className="text-gray-600 mb-6">Still Have Questions?</p>
               <ModernButton
                 variant="outline"
                 icon={<HelpCircle className="w-5 h-5" />}
@@ -989,8 +990,8 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
           <ModernSectionHeader
             badge="More Tools"
             badgeIcon={Zap}
-            title="Explore Other Tools"
-            subtitle="Use our complete suite of tools to plan and execute your plywood projects"
+            title="Explore Our Other Tools"
+            subtitle="Plan your project better with our full set of helpful tools."
           />
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -1007,7 +1008,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                   <div className="flex-1">
                     <h3 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">Plywood Calculator</h3>
                     <p className="text-sm text-gray-600 mb-4">
-                      Calculate the exact quantity of plywood needed for your project with accurate measurements and material estimates.
+                      Work out how many sheets you need with quick and accurate measurements.
                     </p>
                     <div className="flex items-center gap-2 text-trees-primary font-semibold text-sm group-hover:gap-3 transition-all">
                       <span>Open Calculator</span>
@@ -1031,7 +1032,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                   <div className="flex-1">
                     <h3 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">Request Samples</h3>
                     <p className="text-sm text-gray-600 mb-4">
-                      After comparing products, order free samples to test quality, finish, and durability before making your final decision.
+                      Seen a product you like? Order free samples to check the strength, finish, and quality before deciding.
                     </p>
                     <div className="flex items-center gap-2 text-trees-primary font-semibold text-sm group-hover:gap-3 transition-all">
                       <span>Request Samples</span>
@@ -1054,11 +1055,10 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
               <span className="text-white font-semibold text-sm">Need Expert Help?</span>
             </div>
             <h2 className="text-white mb-4">
-              Not Sure Which Product to Choose?
+              Confused About Which Product to Pick?
             </h2>
             <p className="text-white/90 mb-8">
-              Our product experts can help you select the right plywood for your specific project requirements 
-              and provide personalized recommendations based on your use case.
+              Our team is here to guide you. Tell us your project needs, and we’ll help you choose the right plywood with clear, simple recommendations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MagneticButton strength={0.2}>
@@ -1094,10 +1094,10 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
               <span className="text-white font-semibold text-sm">Product Updates</span>
             </div>
             <h2 className="text-white mb-4">
-              Get Notified About New Products
+              Stay Updated on New Products
             </h2>
             <p className="text-white/90 mb-8">
-              Subscribe to receive updates when we add new products to compare, plus exclusive comparison guides and buying tips.
+              Subscribe to get alerts when we add new items, plus helpful comparison tips and buying guides.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1122,7 +1122,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
               </MagneticButton>
             </motion.div>
             <p className="text-white/70 text-sm mt-4">
-              Join 3,000+ professionals getting product insights
+              Join 3,000+ professionals who receive our product insights.
             </p>
           </div>
         </section>
@@ -1134,10 +1134,10 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
             <span className="text-trees-primary font-semibold text-sm">Ready to Choose?</span>
           </div>
           <h2 className="text-trees-secondary mb-4">
-            Found the Perfect Product?
+            Found the Right Product?
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            View detailed specifications, request free samples, or browse our complete product catalog to explore all options.
+            Check full specifications, order free samples, or explore our complete range before you decide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <MagneticButton strength={0.2}>
