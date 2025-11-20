@@ -141,10 +141,10 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
   ];
 
   const quickStats = [
-    { value: '50+', label: 'Downloadable Resources' },
-    { value: '200+', label: 'Project Inspirations' },
-    { value: '500+', label: 'Dealers Nationwide' },
-    { value: '24/7', label: 'Support Available' },
+    { value: '50+', label: 'Resources Download' },
+    { value: '200+', label: 'Project Inspiration Ideas ' },
+    { value: '500+', label: 'Dealers Across India' },
+    { value: '24/7', label: 'Support' },
   ];
 
   return (
@@ -178,8 +178,8 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
       {/* Hero Section */}
       <PageHero
         title="Resources & Tools Hub"
-        subtitle="Everything You Need in One Place"
-        description="From planning tools and product catalogs to installation guides and expert support—find all the resources you need to make informed decisions and bring your projects to life."
+        subtitle="Your One-Stop Space for Planning & Support"
+        description="Explore tools, guides, catalogs, and helpful resources—all designed to make your plywood selection and project planning easier and more confident."
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNvdXJjZXMlMjB0b29scyUyMGxpYnJhcnl8ZW58MXx8fHwxNzYyMjM0ODMxfDA&ixlib=rb-4.1.0&q=80&w=1080"
         badge="Complete Resource Library"
         badgeIcon={Sparkles}
@@ -192,10 +192,10 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Why Choose Our Resources"
+            badge="Why Use Our Resources?"
             badgeIcon={Target}
-            title="Everything You Need to Succeed"
-            subtitle="Comprehensive tools, guides, and support designed to help you at every stage of your project journey"
+            title="Everything You Need, All in One Place"
+            subtitle="Our tools, guides, and support are created to help you plan better, choose confidently, and complete your projects smoothly."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
@@ -203,25 +203,25 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
               {
                 icon: Target,
                 title: 'Save Time',
-                desc: 'Quick access to calculators, comparisons, and documentation in one place',
+                desc: 'Find calculators, comparisons, guides, and documents—all in one spot.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: Rocket,
-                title: 'Make Better Decisions',
-                desc: 'Data-driven tools and expert insights to choose the right products',
+                title: 'Make Smarter Choices',
+                desc: 'Use expert tips and clear data to select the right plywood for your needs.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: Clock,
-                title: 'Always Available',
-                desc: '24/7 access to tools, downloads, and support resources whenever you need',
+                title: 'Access Anytime',
+                desc: 'Tools and downloads are available 24/7, whenever you need them.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: Users,
-                title: 'Expert Support',
-                desc: 'Professional guidance from installation services to technical specifications',
+                title: 'Get Expert Help',
+                desc: 'From technical details to installation guidance, our team is here to support you.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((benefit, idx) => (
@@ -251,10 +251,10 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
           <div className="space-y-20">
             <div>
               <ModernSectionHeader
-                badge="Explore All Resources"
+                badge="All Resources in One Place"
                 badgeIcon={Sparkles}
-                title="Browse by Category"
-                subtitle="Access our comprehensive library of tools, guides, and resources organized to help you at every stage of your project journey"
+                title="Choose a Category"
+                subtitle="See our comprehensive library of tools, guides, and resources organized to help you at every stage of your project journey"
               />
 
               <div className="space-y-12">
@@ -329,10 +329,10 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Most Popular"
+            badge="Most Used Customer Favourites"
             badgeIcon={Star}
-            title="Featured Resources"
-            subtitle="Our most accessed and valuable resources to jumpstart your project"
+            title="Our Top Resources"
+            subtitle="Top-used tools and guides to help you get started quickly."
           />
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -340,24 +340,24 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
               {
                 icon: Calculator,
                 title: 'Plywood Calculator',
-                description: 'Our #1 tool for accurate material estimation',
-                stats: '10K+ uses/month',
+                description: 'Accurate material estimation made easy.',
+                stats: '10,000+ uses every month',
                 color: 'from-blue-500 to-blue-600',
                 page: 'calculator'
               },
               {
                 icon: Download,
                 title: 'Product Catalogs',
-                description: 'Complete specifications and technical data',
-                stats: '50+ documents',
+                description: 'All specifications, technical details, and product data in one place.',
+                stats: '50+ downloadable files',
                 color: 'from-trees-primary to-trees-secondary',
                 page: 'downloads'
               },
               {
                 icon: Lightbulb,
                 title: 'Project Gallery',
-                description: 'Real installations for design inspiration',
-                stats: '200+ projects',
+                description: 'Browse real projects and get inspired for your next design.',
+                stats: '200+ completed spaces',
                 color: 'from-orange-500 to-red-500',
                 page: 'projects'
               },
@@ -406,18 +406,18 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-white mb-4">Trusted by Professionals Nationwide</h2>
+            <h2 className="text-white mb-4">Helping Professionals and Homeowners Every Day</h2>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              Our resources help thousands of professionals, architects, and homeowners make better decisions every day
+             Our tools and resources guide thousands of architects, builders, and families in making confident material choices.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { value: '50K+', label: 'Monthly Users', icon: Users },
-              { value: '98%', label: 'Satisfaction Rate', icon: Star },
-              { value: '10K+', label: 'Downloads/Month', icon: TrendingUp },
-              { value: '24/7', label: 'Always Available', icon: Shield },
+              { value: '98%', label: 'User Satisfaction', icon: Star },
+              { value: '10K+', label: 'Downloads Every Month', icon: TrendingUp },
+              { value: '24/7', label: ' Access Anytime', icon: Shield },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -442,10 +442,10 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Customer Stories"
+            badge="Success Stories"
             badgeIcon={Star}
-            title="What Our Users Say"
-            subtitle="Hear from professionals who use our resources daily to deliver exceptional results"
+            title="What People Say"
+            subtitle="Hear from customers, homeowners, and professionals who trust Tree’s Plywood."
           />
           <Testimonials />
         </div>
@@ -455,84 +455,76 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Got Questions?"
+            badge="Need Help?"
             badgeIcon={HelpCircle}
-            title="Resources FAQ"
-            subtitle="Common questions about accessing and using our resource library"
+            title="Resource Center FAQ"
+            subtitle="Answered many customer questions to help you use our tools, downloads, and guide easily"
           />
 
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="access" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Are all resources free to access?
+                  Do I need an account to access the resources?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes! All our digital resources including the plywood calculator, product comparison tool, 
-                  downloads center, and project gallery are completely free to access. Some services like 
-                  professional installation and sample requests may have associated costs for shipping or service 
-                  fees, but all educational and planning resources are free.
+                  No, you can use all tools, guides, and downloads without any signing in. Creating an account is optional and only needed if you want to save preferences or updates.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="updates" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  How often are resources updated?
+                  Are the guides suitable for homeowners too?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  We continuously update our resource library. Product catalogs and technical specifications are 
-                  updated quarterly or when new products launch. Our blog is updated weekly with new articles. 
-                  The project gallery adds new installations monthly. Calculator tools and technical documents are 
-                  reviewed and updated as needed to ensure accuracy.
+                  Yes. Our resources are designed for both beginners and professionals. They are Easy to understand, simple to follow, and useful for planning any project.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="download" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I download resources for offline use?
+                  How do I know which tool to use?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes! Our Downloads Center offers PDF versions of product catalogs, technical specifications, 
-                  installation guides, and certification documents that you can download and use offline. 
-                  Interactive tools like the calculator need to be accessed online, but you can save or print 
-                  your calculation results.
+                 Each tool has a simple description:<br></br>
+●	Calculator → for material estimation<br></br>
+●	Comparison Tool → for choosing the right plywood<br></br>
+●	Downloads → for specs & catalogs<br></br>
+●	Blogs → for tips & learning<br></br>
+
+You can pick what suits your need, or ask our team for help.<br></br>
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="professional" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Are there special resources for professionals?
+                  Can I get printed catalogs instead of PDFs?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Absolutely! Our "For Professionals" section offers specialized resources including CAD files, 
-                  BIM objects, technical drawings, bulk pricing information, and dedicated technical support. 
-                  Architects, contractors, and designers can also request sample kits and access installation 
-                  training materials. Register as a professional to unlock additional resources.
+                  Yes. You can request physical catalogs, and we’ll deliver them to you (delivery charges may apply depending on location).
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="support" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  What if I can't find what I'm looking for?
+                 Can professionals access detailed technical data?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  If you can't find a specific resource, please contact our support team through the Contact page. 
-                  We're always happy to help you find the information you need or create new resources based on 
-                  customer requests. You can also check our FAQ section for quick answers or use the dealer 
-                  locator to speak with a local expert.
+                  Yes. We offer CAD files, size charts, technical drawings, and certification documents specifically for architects, builders, and contractors.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
 
             <div className="text-center mt-12">
-              <p className="text-gray-600 mb-6">Still need assistance?</p>
+              <p className="text-gray-600 mb-6">Want more Help?</p>
               <ModernButton
                 variant="outline"
                 size="lg"
                 icon={<MessageSquare className="w-5 h-5" />}
                 onClick={() => onNavigate?.('contact')}
               >
-                Contact Our Support Team
+                Get in touch with our support team — we’re here to help.
               </ModernButton>
             </div>
           </div>

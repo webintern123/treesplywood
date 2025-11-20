@@ -65,20 +65,22 @@ export function AdvancedCard({
       onMouseLeave={handleMouseLeave}
       onClick={onClick} // ← add this
       whileHover={getHoverEffect()}
-      className={`${variantClass} rounded-2xl relative overflow-hidden ${className}`}
+      className={`${variantClass} rounded-2xl relative overflow-hidden group ${className}`}
+
       style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
     >
       {gradient && (
-        <motion.div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100"
-          style={{
-            background: 'radial-gradient(circle at 50% 0%, rgba(160, 82, 44, 0.15), transparent 70%)',
-          }}
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        />
-      )}
+  <motion.div
+    className="absolute inset-0"
+    style={{
+      background: 'radial-gradient(circle at 50% 0%, rgba(160, 82, 44, 0.15), transparent 70%)',
+    }}
+    initial={{ opacity: 1 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0 }}
+  />
+)}
+
 
       <motion.div
         className="absolute inset-0 opacity-0"
