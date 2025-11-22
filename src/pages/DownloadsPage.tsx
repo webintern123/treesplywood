@@ -46,7 +46,7 @@ interface DownloadItem {
 const downloadItems: DownloadItem[] = [
   {
     id: '1',
-    title: 'Complete Product Catalog 2024',
+    title: 'Complete 2024 Product Catalog',
     description: 'Comprehensive catalog featuring all our plywood products with specifications and applications.',
     category: 'catalog',
     fileType: 'PDF',
@@ -59,7 +59,7 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '2',
-    title: 'Bhima Marine Grade Technical Datasheet',
+    title: 'Bhima Marine Grade – Technical Sheet',
     description: 'Detailed technical specifications, test results, and performance data for Bhima marine grade plywood.',
     category: 'technical',
     fileType: 'PDF',
@@ -71,8 +71,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '3',
-    title: 'BWP Grade Installation Guide',
-    description: 'Step-by-step installation instructions for Boiling Water Proof plywood applications.',
+    title: 'BWP Grade – Installation Guide',
+    description: 'Clear step-by-step instructions for installing BWP plywood in kitchens, bathrooms, and wet areas.',
     category: 'installation',
     fileType: 'PDF',
     size: '5.7 MB',
@@ -84,7 +84,7 @@ const downloadItems: DownloadItem[] = [
   {
     id: '4',
     title: 'IS 303 & IS 710 Certifications',
-    description: 'Official certification documents proving compliance with Indian Standards.',
+    description: 'Official documents showing compliance with Indian Standards for quality and safety.',
     category: 'certification',
     fileType: 'PDF',
     size: '3.2 MB',
@@ -94,8 +94,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '5',
-    title: 'Complete Product Range Brochure',
-    description: 'Marketing brochure featuring all plywood and door products with specifications.',
+    title: 'Complete Product Range – Brochure',
+    description: 'Overview of all plywood and door products with quick specs and application ideas.',
     category: 'brochure',
     fileType: 'PDF',
     size: '8.4 MB',
@@ -107,8 +107,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '6',
-    title: 'Agni Fire Retardant Plywood Technical Sheet',
-    description: 'Technical specifications and fire safety test results (IS:5509) for Agni fire retardant plywood.',
+    title: 'Agni Fire-Retardant Plywood – Technical Sheet',
+    description: 'Fire-safety details, IS:5509 test results, and full specifications for Agni FR plywood.',
     category: 'technical',
     fileType: 'PDF',
     size: '4.1 MB',
@@ -118,8 +118,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '7',
-    title: 'Samrat Premium Plywood Brochure',
-    description: 'Premium range specifications and applications for Samrat plywood with 30-year warranty.',
+    title: 'Samrat Premium Plywood – Brochure',
+    description: 'Premium range details, features, and uses. Comes with a 30-year warranty overview.',
     category: 'brochure',
     fileType: 'PDF',
     size: '6.8 MB',
@@ -130,7 +130,7 @@ const downloadItems: DownloadItem[] = [
   {
     id: '8',
     title: 'FSC Certification Documents',
-    description: 'Forest Stewardship Council certification proving sustainable sourcing.',
+    description: 'Proof of responsible, sustainable timber sourcing.',
     category: 'certification',
     fileType: 'PDF',
     size: '2.9 MB',
@@ -140,8 +140,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '9',
-    title: 'Installation Video Collection',
-    description: 'Complete video tutorials for installing various types of plywood.',
+    title: 'Installation Videos – Complete Pack',
+    description: 'A collection of installation tutorials for different plywood applications.',
     category: 'video',
     fileType: 'ZIP',
     size: '245 MB',
@@ -153,7 +153,7 @@ const downloadItems: DownloadItem[] = [
   {
     id: '10',
     title: 'Product Comparison Chart',
-    description: 'Side-by-side comparison of all plywood grades with specifications.',
+    description: 'A simple side-by-side comparison of all plywood grades for quick decision-making.',
     category: 'technical',
     fileType: 'PDF',
     size: '1.8 MB',
@@ -163,8 +163,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '11',
-    title: 'Ananta Structural Plywood Technical Guide',
-    description: 'Complete technical specifications for Ananta structural plywood with 15-layer construction.',
+    title: 'Ananta Structural Plywood – Technical Guide',
+    description: 'Full technical guide for Ananta plywood, including 15-layer construction details.',
     category: 'technical',
     fileType: 'PDF',
     size: '4.2 MB',
@@ -174,8 +174,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '12',
-    title: 'Vajra Resilient Plywood Brochure',
-    description: 'Comprehensive guide for Vajra unbreakable plywood with 20-year warranty.',
+    title: 'Vajra Plywood – Brochure',
+    description: 'Features, benefits, and warranty details for the tough and durable Vajra range.',
     category: 'brochure',
     fileType: 'PDF',
     size: '5.6 MB',
@@ -185,8 +185,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '13',
-    title: 'Ujval Interior Plywood Catalog',
-    description: 'Detailed catalog for Ujval IS:303 grade interior plywood applications.',
+    title: 'Ujval Interior Plywood – Catalog',
+    description: 'All details for Ujval IS:303 interior plywood with suggested applications.',
     category: 'catalog',
     fileType: 'PDF',
     size: '7.8 MB',
@@ -196,8 +196,8 @@ const downloadItems: DownloadItem[] = [
   },
   {
     id: '14',
-    title: 'Flush Doors & Block Board Specifications',
-    description: 'Technical specifications for our flush doors and block board core panels.',
+    title: 'Flush Doors & Block Board – Specifications',
+    description: 'Specs and details for flush doors and block board products.',
     category: 'technical',
     fileType: 'PDF',
     size: '3.9 MB',
@@ -208,7 +208,7 @@ const downloadItems: DownloadItem[] = [
   {
     id: '15',
     title: 'Quality Assurance Manual',
-    description: 'Our comprehensive quality control processes and testing procedures.',
+    description: 'A complete look at our testing methods, quality checks, and control processes.',
     category: 'technical',
     fileType: 'PDF',
     size: '7.5 MB',
@@ -219,7 +219,7 @@ const downloadItems: DownloadItem[] = [
   {
     id: '16',
     title: 'Environmental Policy & Sustainability Report',
-    description: 'Detailed report on our sustainability initiatives and environmental commitments.',
+    description: 'Our commitments, eco-friendly practices, and sustainability goals.',
     category: 'certification',
     fileType: 'PDF',
     size: '6.2 MB',
@@ -231,7 +231,7 @@ const downloadItems: DownloadItem[] = [
   {
     id: '17',
     title: 'Warranty Terms & Conditions',
-    description: 'Complete warranty information for all product ranges with claim procedures.',
+    description: 'Clear details on warranty coverage and how to file a claim.',
     category: 'technical',
     fileType: 'PDF',
     size: '2.1 MB',
@@ -243,7 +243,7 @@ const downloadItems: DownloadItem[] = [
   {
     id: '18',
     title: 'Kitchen & Bathroom Application Guide',
-    description: 'Best practices for using plywood in high-moisture environments.',
+    description: 'Practical tips for using plywood safely in moisture-heavy areas.',
     category: 'installation',
     fileType: 'PDF',
     size: '4.8 MB',
@@ -331,18 +331,18 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Downloads & Resources"
-        subtitle="Complete Resource Library"
-        description="Access our comprehensive library of product catalogs, technical datasheets, certifications, installation guides, and video resources - all in one place."
+        title="Downloads & Resources Center"
+        subtitle="Your Go-To Library for All Product Info & Tree’s Documents"
+        description="Find brochures, datasheets, specs, certificates, and helpful guides ready to download anytime to plan, compare, and build with confidence."
         image="https://images.unsplash.com/photo-1693045181254-08462917f681?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb3dubG9hZCUyMGRvY3VtZW50cyUyMHBkZnxlbnwxfHx8fDE3NjIyMzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080"
-        badge="Resource Center"
+        badge="Our Source Hub"
         badgeIcon={FolderOpen}
         height="md"
         overlayOpacity="medium"
         stats={[
-          { value: '18+', label: 'Resources Available' },
-          { value: '20K+', label: 'Total Downloads' },
-          { value: 'Free', label: 'All Resources' },
+          { value: '18+', label: 'Files Available ' },
+          { value: '20K+', label: 'Instant Downloads ' },
+          { value: 'Free', label: 'Access to All Resources ' },
         ]}
       />
 
@@ -350,36 +350,36 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Why Download?"
+            badge="Why Download & How Useful?"
             badgeIcon={Target}
-            title="Everything You Need at Your Fingertips"
-            subtitle="Access comprehensive product information, technical specifications, and guidance documents instantly"
+            title="Everything You’re Looking For, Instantly Accessible"
+            subtitle="Get quick access to brochures, product details, and useful guides in one place."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
             {[
               {
                 icon: Lightbulb,
-                title: 'Instant Access',
-                desc: 'Download product catalogs, specs, and guides 24/7 without waiting',
+                title: 'Quick Access ',
+                desc: 'Download brochures & guides anytime without waiting in seconds.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: Shield,
-                title: 'Official Documents',
-                desc: 'Verified certifications and authentic technical documentation',
+                title: 'Trusted Information ',
+                desc: 'Verified documents like catalogs, specification sheets, & certifications.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: CheckCircle2,
-                title: 'Always Updated',
-                desc: 'Latest versions with current specifications and compliance info',
+                title: 'Latest Versions',
+                desc: 'updated specs with new versions and compliance details the latest information.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: Award,
-                title: 'Professional Quality',
-                desc: 'High-resolution PDFs perfect for presentations and proposals',
+                title: 'Presentation Ready ',
+                desc: 'Clean, high-resolution PDFs for professional use, client work or project planning.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((benefit, idx) => (
@@ -407,10 +407,10 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Resource Types"
+            badge="Resource Library"
             badgeIcon={FolderOpen}
-            title="Browse by Category"
-            subtitle="Our comprehensive resource library organized by type for easy access"
+            title="Choose a Category"
+            subtitle="We have gathered all documents in one place for quick access, so you can quickly browse and download."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -419,7 +419,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                 icon: Book,
                 category: 'catalog',
                 name: 'Product Catalogs',
-                description: 'Complete product range with specifications and applications',
+                description: 'Complete list of all plywood and door products with features, specs, and applications.',
                 color: 'from-blue-500 to-blue-600',
                 count: downloadItems.filter(i => i.category === 'catalog').length
               },
@@ -427,7 +427,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                 icon: FileText,
                 category: 'technical',
                 name: 'Technical Datasheets',
-                description: 'Detailed specifications, test results, and performance data',
+                description: 'Detailed technical info, test results, and performance data.',
                 color: 'from-purple-500 to-purple-600',
                 count: downloadItems.filter(i => i.category === 'technical').length
               },
@@ -435,7 +435,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                 icon: Award,
                 category: 'certification',
                 name: 'Certifications',
-                description: 'Official compliance documents and quality certifications',
+                description: 'Verified Quality approvals and standard Safety & compliance documents.',
                 color: 'from-green-500 to-green-600',
                 count: downloadItems.filter(i => i.category === 'certification').length
               },
@@ -443,7 +443,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                 icon: ImageIcon,
                 category: 'brochure',
                 name: 'Product Brochures',
-                description: 'Marketing materials with product highlights and features',
+                description: 'Quick highlights, benefits, and product overviews.',
                 color: 'from-orange-500 to-orange-600',
                 count: downloadItems.filter(i => i.category === 'brochure').length
               },
@@ -451,7 +451,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                 icon: Download,
                 category: 'installation',
                 name: 'Installation Guides',
-                description: 'Step-by-step installation instructions and best practices',
+                description: 'Clear & simple steps for smooth installation.',
                 color: 'from-amber-500 to-amber-600',
                 count: downloadItems.filter(i => i.category === 'installation').length
               },
@@ -459,7 +459,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                 icon: Video,
                 category: 'video',
                 name: 'Video Resources',
-                description: 'Tutorial videos and installation demonstrations',
+                description: 'Helpful tutorials, videos, practical demos, and walkthroughs to help you understand better',
                 color: 'from-red-500 to-red-600',
                 count: downloadItems.filter(i => i.category === 'video').length
               },
@@ -487,7 +487,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                   </p>
                   <div className="flex items-center justify-between pt-3 border-t border-gray-200">
                     <span className="text-xs font-semibold text-gray-500">
-                      {cat.count} {cat.count === 1 ? 'Resource' : 'Resources'}
+                      {cat.count} {cat.count === 1 ? 'Resource' : 'Files-Download'}
                     </span>
                     <ChevronRight className="w-4 h-4 text-trees-primary group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -502,10 +502,10 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
         {/* Search and Filter Section */}
         <section>
           <ModernSectionHeader
-            badge="Find Resources"
+            badge="Browse Resources Library"
             badgeIcon={Search}
-            title="Search & Filter"
-            subtitle="Quickly find the exact resources you need using our powerful search and filter tools"
+            title="Search & Filter Easily"
+            subtitle="Use the search bar or filters to quickly find the documents you need."
           />
 
           <ModernCard variant="elevated" className="p-8">
@@ -514,7 +514,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <Input
                   type="text"
-                  placeholder="Search by title or description..."
+                  placeholder="Search by title or keyword…"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-12 h-12 bg-white border-gray-200"
@@ -538,7 +538,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
 
             <div className="flex items-center justify-between flex-wrap gap-4">
               <p className="text-gray-600">
-                Showing <span className="font-semibold text-trees-primary">{filteredItems.length}</span> of {downloadItems.length} resources
+                Showing <span className="font-semibold text-trees-primary">{filteredItems.length}</span> of {downloadItems.length} files
               </p>
               <div className="flex gap-2 flex-wrap">
                 {Object.entries(categoryIcons).map(([category, Icon]) => {
@@ -565,76 +565,79 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
         {/* Popular Downloads */}
         {selectedCategory === 'all' && popularDownloads.length > 0 && (
           <section>
-            <ModernSectionHeader
-              badge="Most Downloaded"
-              badgeIcon={TrendingUp}
-              title="Popular Resources"
-              subtitle="Our most frequently downloaded resources trusted by professionals"
-            />
+  <ModernSectionHeader
+    badge="Most Downloaded"
+    badgeIcon={TrendingUp}
+    title="Top Picks"
+    subtitle="Here are the documents people download the most - quick, helpful, and trusted by professionals."
+  />
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {popularDownloads.map((item, idx) => {
-                const Icon = categoryIcons[item.category];
-                return (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                  >
-                    <ModernCard variant="elevated" className="p-6 h-full">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className={`p-2.5 rounded-lg ${categoryColors[item.category]}`}>
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <Badge variant="outline" className="bg-trees-primary/10 text-trees-primary border-trees-primary/20 text-xs">
-                          <TrendingUp className="w-3 h-3 mr-1" />
-                          Popular
-                        </Badge>
-                      </div>
-                      <h4 className="text-trees-primary mb-2 line-clamp-2">{item.title}</h4>
-                      <div className="flex items-center gap-3 mb-4 text-xs text-gray-500">
-                        <span className="px-2 py-1 bg-gray-100 rounded">{item.fileType}</span>
-                        <span>{item.size}</span>
-                      </div>
-                      <div className="flex gap-2">
-  <ModernButton
-    variant="primary"
-    size="sm"
-    icon={<Download className="w-4 h-4" />}
-    onClick={() => handleDownload(item)}
-    className="flex-1"
-  >
-    Download
-  </ModernButton>
-
-  <ModernButton
-    variant="outline"
-    size="sm"
-    icon={<FileText className="w-4 h-4" />}
-    onClick={() => window.open(item.fileUrl, '_blank')}
-    className="flex-1"
-  >
-    View
-  </ModernButton>
-</div>
-                    </ModernCard>
-                  </motion.div>
-                );
-              })}
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+ {/* changed to 2 columns on large */}
+    {popularDownloads.map((item, idx) => {
+      const Icon = categoryIcons[item.category];
+      return (
+        <motion.div
+          key={item.id}
+          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard variant="elevated" className="p-8 h-full min-w-[300px] group hover:shadow-2xl transition-all">
+            <div className="flex items-start justify-between mb-4">
+              <div className={`p-3 rounded-lg ${categoryColors[item.category]}`}>
+                <Icon className="w-6 h-6" />
+              </div>
+              <Badge variant="outline" className="bg-trees-primary/10 text-trees-primary border-trees-primary/20 text-xs">
+                <TrendingUp className="w-3 h-3 mr-1" />
+                Trending
+              </Badge>
             </div>
-          </section>
+            <h4 className="text-xl text-trees-primary mb-3 line-clamp-2 group-hover:text-trees-secondary transition-colors">
+              {item.title}
+            </h4>
+            <div className="flex items-center gap-3 mb-4 text-sm text-gray-500">
+              <span className="px-2 py-1 bg-gray-100 rounded">{item.fileType}</span>
+              <span>{item.size}</span>
+            </div>
+            <div className="flex gap-3">
+              <ModernButton
+                variant="primary"
+                size="sm"
+                icon={<Download className="w-4 h-4" />}
+                onClick={() => handleDownload(item)}
+                className="flex-1"
+              >
+                Download
+              </ModernButton>
+              <ModernButton
+                variant="outline"
+                size="sm"
+                icon={<FileText className="w-4 h-4" />}
+                onClick={() => window.open(item.fileUrl, '_blank')}
+                className="flex-1"
+              >
+                View
+              </ModernButton>
+            </div>
+          </ModernCard>
+        </motion.div>
+      );
+    })}
+  </div>
+</section>
+
         )}
 
         {/* Recent Additions */}
         {selectedCategory === 'all' && recentDownloads.length > 0 && (
           <section>
             <ModernSectionHeader
-              badge="Just Added"
+              badge="Recently Added"
               badgeIcon={Clock}
-              title="Recent Additions"
-              subtitle="Newly added resources with the latest information and updates"
+              title="Latest Resources & Updates"
+              subtitle="New documents with updated info, guides, and policies."
             />
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -691,11 +694,11 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
         {/* All Downloads Grid */}
         <section>
           <ModernSectionHeader
-            badge={selectedCategory === 'all' ? 'All Resources' : selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
+            badge={selectedCategory === 'all' ? 'Complete Resources at Your Fingertips' : selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
             badgeIcon={FolderOpen}
-            title={selectedCategory === 'all' ? 'Complete Resource Library' : `${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Resources`}
+            title={selectedCategory === 'all' ? 'Download What You Need — Anytime' : `${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Resources`}
             subtitle={selectedCategory === 'all' 
-              ? 'Browse our complete collection of downloadable resources'
+              ? 'See our full collection of brochures, technical sheets, certifications, and guides. All documents are easy to download and ready to use.'
               : `All available ${selectedCategory} resources`
             }
           />
@@ -794,18 +797,18 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-white mb-4">Download Center Impact</h2>
+            <h2 className="text-white mb-4">Our Highlights</h2>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              Trusted by thousands of professionals for accurate, comprehensive product information
+              Our documents help builders, architects, and homeowners find the right information—fast and hassle-free.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { value: '18+', label: 'Resources Available', icon: FolderOpen },
-              { value: '20K+', label: 'Total Downloads', icon: Download },
-              { value: '6', label: 'Resource Categories', icon: Book },
-              { value: '100%', label: 'Free Access', icon: Star },
+              { value: '18+', label: 'helpful documents', icon: FolderOpen },
+              { value: '20,000+', label: 'downloads by industry experts', icon: Download },
+              { value: '6', label: 'easy-to-browse categories', icon: Book },
+              { value: '100%', label: 'free for everyone', icon: Star },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -830,10 +833,10 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="User Feedback"
+            badge="Success Stories"
             badgeIcon={Star}
-            title="What Professionals Say"
-            subtitle="Hear from architects, contractors, and designers who rely on our resources"
+            title="What Our Partners & Experts Say"
+            subtitle="Real Designers, builders, and architects share their experience with Tree’s Plywood."
           />
           <Testimonials />
         </div>
@@ -843,9 +846,9 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
       <section className="section-padding bg-white">
         <PageContainer>
           <ModernSectionHeader
-            badge="Got Questions?"
+            badge="Download Center FAQ"
             badgeIcon={HelpCircle}
-            title="Download Center FAQ"
+            title="Quick Answers to Common Questions"
             subtitle="Common questions about accessing and using our resource library"
           />
 
@@ -853,63 +856,56 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="access" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Are all downloads free?
+                   All the downloads are free?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes! All resources in our Download Center are completely free to access and download. 
-                  We believe in providing comprehensive product information to help you make informed decisions. 
-                  No registration or subscription required - simply click download and get instant access to 
-                  any resource you need.
+                  Yes. Every brochure, catalog, and guide in our Download Center is completely free. No sign-ups, no forms, just click and download.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="updates" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  How often are resources updated?
+                  How frequently do you update the documents?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  We regularly update our resource library to ensure all information is current and accurate. 
-                  Product catalogs are updated quarterly, technical datasheets are revised when specifications 
-                  change, and certifications are uploaded as soon as they're renewed. Check the "Recent Additions" 
-                  section to see our latest uploads, and the date shown on each resource indicates when it was 
-                  last updated.
+                  We update our resources regularly so you always get the latest information.
+Product catalogs are refreshed every few months, technical sheets are updated when specifications change, and new certificates are added as soon as they’re issued.
+ 
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="formats" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  What file formats are available?
+                  How many file formats are available to Download?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Most resources are available as high-resolution PDF files that can be viewed on any device 
-                  and easily printed. Video resources are provided as ZIP files containing MP4 videos. All PDFs 
-                  are optimized for both screen viewing and professional printing. File sizes are clearly indicated 
-                  so you can choose appropriate resources based on your connection speed and storage capacity.
+                  ●	Most documents are available as  PDF files that work on any device.<br></br>
+●	Some video guides may come as ZIP files.<br></br>
+●	PDFs are high quality and can be printed without any issues.<br></br>
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="usage" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I share downloaded resources?
+                  Is these documents are Sharable with my team or clients?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes, you can share our resources with clients, colleagues, or team members for legitimate 
-                  business purposes. We encourage architects, designers, and contractors to use our catalogs 
-                  and datasheets in presentations and proposals. However, please don't republish or redistribute 
-                  them publicly. For large-scale distribution or commercial use, please contact us for permission.
+                 ●	Yes, you’re free to share our documents for your project or business use.<br></br>
+●	Architects, designers, and contractors often use them during presentations or planning.  <br></br>
+●	We only request that the files are not republished online without permission.  <br></br>
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="custom" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I request custom documentation?
+                  Can you provide customised documents for a project?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Absolutely! If you need specific technical information, custom specifications, or documentation 
-                  for a particular project, our technical team can create customized resources for you. This is 
-                  especially helpful for architects and contractors working on large projects with specific 
-                  requirements. Contact our support team with your needs and we'll prepare the documentation 
-                  you require.
+                  ●	Yes, If you need specific technical details, custom specs, or project-based documents, our team can prepare them for you. <br></br>
+●	Just share your requirements and we’ll help you out.  <br></br>
+
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -945,11 +941,11 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
               <Mail className="w-4 h-4 text-white" />
-              <span className="text-white font-semibold text-sm">Get Notified</span>
+              <span className="text-white font-semibold text-sm">Get Resources</span>
             </div>
-            <h2 className="text-white mb-6">Get Updates on New Resources</h2>
+            <h2 className="text-white mb-6">Never Miss an Update</h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Be the first to know when we add new technical datasheets, product catalogs, certifications, and installation guides
+              We’ll let you know whenever new catalogs, datasheets, or resources are added.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
@@ -968,7 +964,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
               </MagneticButton>
             </div>
             <p className="text-sm text-white/70">
-              Join 5,000+ professionals • Instant notifications • Unsubscribe anytime
+              Join 5,000+ professionals | Easy updates | Unsubscribe anytime
             </p>
           </motion.div>
         </div>
@@ -986,11 +982,11 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
             >
               <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-6">
                 <Sparkles className="w-4 h-4 text-trees-primary" />
-                <span className="text-trees-primary font-semibold text-sm">Custom Solutions</span>
+                <span className="text-trees-primary font-semibold text-sm">Custom Project Documents</span>
               </div>
-              <h2 className="text-trees-secondary mb-6">Need Custom Documentation?</h2>
+              <h2 className="text-trees-secondary mb-6">Not there What You are Looking For?</h2>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Can't find what you're looking for? Our technical team will create custom resources tailored to your specific project needs
+                Tell us what you’re working on, and we’ll create the right document for you. From product details to technical notes.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center">
@@ -1001,7 +997,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                     icon={<Mail className="w-6 h-6" />}
                     onClick={() => onNavigate?.('contact')}
                   >
-                    Request Custom Resources
+                    Request Custom Document 
                   </ModernButton>
                 </MagneticButton>
                 <ModernButton
@@ -1010,7 +1006,9 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
                   icon={<MessageSquare className="w-6 h-6" />}
                   onClick={() => onNavigate?.('professionals')}
                 >
-                  Talk to A&D Team
+                  Speak With A&D Team
+
+
                 </ModernButton>
               </div>
             </motion.div>

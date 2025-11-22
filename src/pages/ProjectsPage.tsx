@@ -37,10 +37,10 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       id: 1,
       title: 'Modern Residential Villa',
       category: 'Residential',
-      location: 'Mumbai, India',
+      location: 'Hyderabad, India ',
       year: '2024',
       image: 'https://images.unsplash.com/photo-1708157644517-06892bf1b96e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMGhvbWUlMjB3b29kJTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc2MTk4NzQ4Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Full interior paneling and custom cabinetry using our Samrat plywood. The natural grain finish complements the contemporary architecture.',
+      description: 'Interior works fully include wall paneling and custom cabinets made with Samrat plywood. The warm grain finish matched the clean, modern look of the home.',
       products: ['Samrat', 'Ujval'],
       icon: Home,
       area: '4,500 sq ft',
@@ -53,7 +53,7 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       location: 'Bangalore, India',
       year: '2024',
       image: 'https://images.unsplash.com/photo-1622140739492-f82f386260b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwd29vZCUyMGludGVyaW9yJTIwZGVzaWdufGVufDF8fHx8MTc2MTk4NzQ4Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Feature walls, booth seating, and bar fixtures crafted from our Ananta plywood. Specified for high traffic and easy maintenance.',
+      description: 'Ananta plywood is chosen for its durability and easy upkeep in high-traffic spaces, built for Feature walls, seating, and bar elements.',
       products: ['Ananta', 'Samrat'],
       icon: Store,
       area: '3,200 sq ft',
@@ -66,7 +66,7 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       location: 'Delhi NCR, India',
       year: '2023',
       image: 'https://images.unsplash.com/photo-1725913137143-8f160e27852c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjB3b3Jrc3BhY2UlMjB3b29kJTIwcGFuZWxzfGVufDF8fHx8MTc2MTk4NzQ4Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Acoustic panels, workstation partitions, and conference room finishes. Our Agni (Fire-Resistant) plywood met stringent fire safety codes.',
+      description: 'Agni fire-rated plywood, created for Acoustic panels, partitions, and meeting room finishes to meet strict safety standards',
       products: ['Agni', 'Ananta'],
       icon: Briefcase,
       area: '12,000 sq ft',
@@ -79,7 +79,7 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       location: 'Goa, India',
       year: '2023',
       image: 'https://images.unsplash.com/photo-1631562836199-afa0a3ea4602?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMGxvYmJ5JTIwd29vZCUyMGRlc2lnbnxlbnwxfHx8fDE3NjE5ODc0ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Guest room paneling, lobby features, and outdoor furniture using Bhima (Marine Grade) plywood. Coastal environment demanded maximum moisture resistance.',
+      description: 'Bhima (Marine Grade) plywood is ideal for humid, coastal weather, made for Guest rooms, lobby features, and outdoor pieces.',
       products: ['Bhima', 'Samrat'],
       icon: Building2,
       area: '8,500 sq ft',
@@ -89,10 +89,10 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       id: 5,
       title: 'High-End Retail Store',
       category: 'Retail',
-      location: 'Chennai, India',
+      location: 'Nellore, India ',
       year: '2023',
       image: 'https://images.unsplash.com/photo-1564691848938-d0fc26235733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXRhaWwlMjBzdG9yZSUyMHdvb2QlMjBmaXh0dXJlc3xlbnwxfHx8fDE3NjE5ODc0ODR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Display fixtures, shelving systems, and fitting rooms. Premium Samrat plywood provides luxury aesthetic while maintaining structural integrity.',
+      description: 'Samrat plywood for a premium, clean look created for Display shelves, fixtures, and changing rooms finishes.',
       products: ['Samrat', 'Ananta'],
       icon: Store,
       area: '2,800 sq ft',
@@ -105,20 +105,20 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       location: 'Multiple Locations',
       year: '2023',
       image: 'https://images.unsplash.com/photo-1631669394390-baf737ef47de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBpbnRlcmlvciUyMHBseXdvb2QlMjBmdXJuaXR1cmV8ZW58MXx8fHwxNzYxOTg3NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Partnership with leading furniture designer for contemporary seating and table collection. Our calibrated thickness ensures precision joinery.',
+      description: 'Collaborative furniture line featuring chairs and tables. Precise calibration ensured perfect joinery and smooth finishes every time.',
       products: ['Samrat', 'Bhima'],
       icon: Home,
-      area: 'Various',
+      area: 'Multiple',
       featured: false,
     },
     {
       id: 7,
       title: 'Luxury Apartment Complex',
       category: 'Residential',
-      location: 'Pune, India',
+      location: 'Chennai, India',
       year: '2024',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBhcGFydG1lbnQlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjE5ODc0ODR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Complete interior solutions for 24 premium apartments including wardrobes, kitchen cabinets, and decorative panels.',
+      description: 'Complete fit-outs for 24 premium apartments including kitchens, wardrobes, and decorative paneling.',
       products: ['Samrat', 'Ujval', 'Ananta'],
       icon: Home,
       area: '36,000 sq ft',
@@ -128,10 +128,10 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       id: 8,
       title: 'Educational Institution',
       category: 'Commercial',
-      location: 'Hyderabad, India',
+      location: 'Vijayawada, India ',
       year: '2024',
       image: 'https://images.unsplash.com/photo-1562774053-701939374585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBjbGFzc3Jvb20lMjB3b29kJTIwZnVybml0dXJlfGVufDF8fHx8MTc2MTk4NzQ4NHww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Fire-rated panels, classroom furniture, and library fixtures. Agni plywood provided essential fire safety compliance.',
+      description: 'Agni plywood for dependable safety and long-term use is made for Fire-rated panels, classroom furniture, and library units.',
       products: ['Agni', 'Ananta'],
       icon: Building2,
       area: '15,000 sq ft',
@@ -141,10 +141,10 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       id: 9,
       title: 'Spa & Wellness Center',
       category: 'Hospitality',
-      location: 'Kerala, India',
+      location: 'Hyderabad, India ',
       year: '2023',
       image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGElMjB3ZWxsbmVzcyUyMHdvb2QlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjE5ODc0ODR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'High-humidity resistant treatments rooms and relaxation areas using Bhima marine-grade plywood.',
+      description: 'Bhima marine-grade plywood to withstand constant humidity is built with Treatment rooms and relaxation areas.',
       products: ['Bhima', 'Vajra'],
       icon: Building2,
       area: '5,500 sq ft',
@@ -188,16 +188,17 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Projects That Inspire"
-        subtitle="Real Spaces, Real Results"
-        description="Explore stunning interiors and constructions brought to life with The Trees premium plywood solutions across residential, commercial, and hospitality sectors."
+        title="Inspiring Ideas Turned into Beautiful Spaces"
+        subtitle="Real Quality You Can See"
+        description="Take a look at the homes, offices, and commercial spaces built using Tree’s Plywood.
+Every project reflects our commitment to quality, strength, and thoughtful design."
         image="https://images.unsplash.com/photo-1678555815116-52c1b10517f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBpbnRlcmlvciUyMGRlc2lnbiUyMHBseXdvb2R8ZW58MXx8fHwxNzYyMjM0ODMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-        badge="Featured Projects"
+        badge="Our Signature Projects"
         badgeIcon={Award}
         height="lg"
         overlayOpacity="medium"
         stats={[
-          { value: '10,000+', label: 'Completed Projects' },
+          { value: '10,000+', label: 'Projects Completed ' },
           { value: '500+', label: 'Featured Works' },
           { value: '98%', label: 'Client Satisfaction' },
         ]}
@@ -207,36 +208,36 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Why We Showcase"
+            badge="Why We Share Our Projects"
             badgeIcon={Target}
-            title="Real Projects, Real Inspiration"
-            subtitle="Discover how leading architects, designers, and contractors trust The Trees Plywood for their most ambitious projects"
+            title="Real Creations, Real Stories."
+            subtitle="See how architects, designers, and contractors use Tree’s Plywood to bring their ideas to life."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
             {[
               {
                 icon: Lightbulb,
-                title: 'Design Inspiration',
-                desc: 'Get inspired by real-world applications and creative possibilities',
+                title: 'Design Ideas',
+                desc: 'Explore how our plywood is used in actual homes, offices, and commercial spaces.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: CheckCircle2,
-                title: 'Proven Performance',
-                desc: 'See how our products perform in diverse environments and applications',
+                title: 'Proven Quality',
+                desc: 'View projects that show how well our products hold up in different conditions & environments.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: Users,
-                title: 'Professional Trust',
-                desc: 'Join thousands of architects and designers who choose The Trees',
+                title: 'Trusted by Professionals',
+                desc: 'Join thousands of architects and designers who choose Tree’s for quality, reliability, and performance.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: Trophy,
-                title: 'Award-Winning',
-                desc: 'Many featured projects have won prestigious design and architecture awards',
+                title: 'Award-Winning Work',
+                desc: 'Many of the projects featured here have received recognition in design and architecture.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((benefit, idx) => (
@@ -264,10 +265,10 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
         {/* Category Filter Section */}
         <section>
           <ModernSectionHeader
-            badge="Browse Projects"
+            badge="See Our Worked Projects"
             badgeIcon={Filter}
-            title="Explore by Category"
-            subtitle="Filter projects by type to find inspiration relevant to your needs"
+            title="Find What Inspires You"
+            subtitle="Find projects based on the type of space you’re working on."
           />
 
           {/* Filter Buttons */}
@@ -408,14 +409,14 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
             >
               <h2 className="text-white mb-4">Our Project Impact</h2>
               <p className="text-white/90 text-lg max-w-2xl mx-auto">
-                Transforming spaces across India with quality, innovation, and sustainable solutions
+                Creating better spaces across India with quality materials and dependable service.
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { value: '10,000+', label: 'Completed Projects', icon: Building2 },
-                { value: '50M+', label: 'Sq. Ft. Covered', icon: Grid3x3 },
+                { value: '10,000+', label: 'Projects Completed', icon: Building2 },
+                { value: '50M+', label: 'Spaces Built with Our Products', icon: Grid3x3 },
                 { value: '98%', label: 'On-Time Delivery', icon: TrendingUp },
                 { value: '15+', label: 'Years Experience', icon: Shield },
               ].map((stat, idx) => (
@@ -441,36 +442,36 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
         {/* How We Work Process */}
         <section>
           <ModernSectionHeader
-            badge="Our Process"
+            badge="How We Help You"
             badgeIcon={Zap}
-            title="How We Support Your Projects"
+            title="A Smooth Process from Planning to Completion"
             subtitle="From concept to completion, we provide end-to-end support for architects, designers, and contractors"
           />
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
               {
-                step: '01',
+              
                 title: 'Consultation',
-                description: 'Discuss your project requirements and specifications with our technical team',
+                description: 'Share your project details with our team so we understand exactly what you need.',
                 icon: MessageSquare,
               },
               {
-                step: '02',
+                
                 title: 'Product Selection',
-                description: 'Choose from our range based on application, performance needs, and aesthetics',
+                description: 'We help you choose the right plywood based on usage, durability, and design style.',
                 icon: CheckCircle2,
               },
               {
-                step: '03',
-                title: 'Sampling & Testing',
-                description: 'Receive samples for approval and conduct any required testing or certification',
+                
+                title: 'Samples & Approval',
+                description: 'Get product samples to check finish, strength, and quality before moving ahead.',
                 icon: Award,
               },
               {
-                step: '04',
-                title: 'Delivery & Support',
-                description: 'On-time delivery with post-installation technical support and guidance',
+                
+                title: 'Delivery & After-Support',
+                description: 'Enjoy timely delivery and ongoing technical help even after installation.',
                 icon: Sparkles,
               },
             ].map((step, idx) => (
@@ -483,9 +484,7 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
               >
                 <ModernCard variant="elevated" className="p-6 h-full">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="text-4xl font-bold text-trees-primary/20">
-                      {step.step}
-                    </div>
+                    
                     <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0">
                       <step.icon className="w-6 h-6 text-trees-primary" />
                     </div>
@@ -505,8 +504,8 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
           <ModernSectionHeader
             badge="Success Stories"
             badgeIcon={Star}
-            title="What Professionals Say"
-            subtitle="Hear from architects, designers, and contractors who trust The Trees Plywood for their projects"
+            title="What Our Partners & Experts Say"
+            subtitle="Real Designers, builders, and architects share their experience with Tree’s Plywood."
           />
           <Testimonials />
         </div>
@@ -516,10 +515,10 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       <section className="section-padding bg-white">
         <PageContainer>
           <ModernSectionHeader
-            badge="Got Questions?"
+            badge="Need Help?"
             badgeIcon={HelpCircle}
-            title="Project Gallery FAQ"
-            subtitle="Common questions about our featured projects and how we can help with yours"
+            title="We’ve Got Answers"
+            subtitle="Quick answers about our featured projects and how we can support yours."
           />
 
           <div className="max-w-3xl mx-auto">
@@ -529,57 +528,43 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
                   Can I submit my project to be featured?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Absolutely! We love showcasing beautiful work done with our products. If you've completed a 
-                  project using The Trees Plywood, please contact our marketing team with high-quality photos, 
-                  project details, and product information. Selected projects will be featured on our website 
-                  and social media channels with full credit to the architect/designer.
+                  Yes, If you have completed a project using Tree’s Plywood, share your photos and details with our team. Selected projects will be featured on our website and social pages as well.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="connect" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I connect with the architects/designers of featured projects?
+                  Can I connect with the architects or designers shown here?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  With the permission of our featured professionals, we're happy to facilitate introductions. 
-                  Contact us with details about which project interests you and your requirements. We respect 
-                  the privacy of our partners and will only share contact information with their explicit consent.
+                  We can help with that. If the featured professional agrees, we’ll connect you. Just tell us which project you’re interested in.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="products" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Which products were used in a specific project?
+                  How do I know which products were used in a project?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Each project card lists the specific The Trees products used. For detailed specifications, 
-                  thickness requirements, finishes, and technical data sheets, visit our Products page or 
-                  Downloads Center. Our technical team can also provide product recommendations for similar 
-                  applications to what you see in our featured projects.
+                  Each project mentions the plywood types used. If you need more details like thickness or finishes, visit our Products or Downloads page. Our team can also suggest the best products for similar work.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="support" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Do you provide support for projects like these?
+                  Do you support project planning like this?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes! Our Architecture & Design team provides comprehensive support including product 
-                  specification assistance, sample coordination, technical documentation, installation guidance, 
-                  and post-project support. We work closely with architects, designers, and contractors from 
-                  concept through completion. Contact our A&D team to discuss your project needs.
+                  Yes. Our team helps with product selection, samples, technical guidance, and installation support. We work with architects, designers, and contractors from start to finish.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="samples" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I request samples of products used in these projects?
+                  Can I request samples of the materials used?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Absolutely! You can request free samples of any products featured in our project gallery 
-                  through our Sample Request page. Specify which project inspired you and which products you'd 
-                  like to evaluate. We'll send physical samples directly to your office or project site. 
-                  For architects and designers, we also offer larger format samples for client presentations.
+                  Of course. You can request free samples of any plywood shown in the gallery. Tell us which project inspired you, and we’ll send samples to your office or site.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -613,9 +598,12 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-white mb-6">Ready to Create Your Own Masterpiece?</h2>
+            <h2 className="text-white mb-6">Ready to Bring Your Project to Life?</h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Our Architecture & Design team works with professionals on specification, sampling, and technical support
+              
+              Our Architecture & Design team is here to help with product selection, samples, and technical 
+guidance—every step of the way.
+
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">

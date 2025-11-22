@@ -96,10 +96,11 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
               onClick={() => onNavigate('home')}
             >
               <img 
-                src={logoImage} 
-                alt="The Trees Plywood" 
-                className="h-14 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-110"
-              />
+  src={logoImage} 
+  alt="The Trees Plywood" 
+  className="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-110"
+/>
+
             </div>
 
             {/* Desktop Navigation */}

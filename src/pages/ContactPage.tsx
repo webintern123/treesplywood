@@ -200,7 +200,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       title: 'Visit Us', 
       info: 'Hyderabad, Telangana', 
       sub: 'View on Map',
-      action: () => window.open('https://maps.google.com', '_blank')
+      action: () => window.open('https://www.google.com/maps/search/Plot+3-538,+1st+floor+Sri+Krishna+Heights,+Madhapur+Hyderabad+500018,+India/@17.4358388,78.3714818,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D', '_blank')
     },
   ];
 
@@ -226,7 +226,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     <div className="min-h-screen bg-white">
       {/* Enhanced Hero Section */}
       <PageHero
-        title="We’re Just a Call Away – Let’s Connect"
+        title={"We’re Just a Call Away \n – Let’s Connect"}
         subtitle="Need help choosing plywood? Your project matters to us."
         description="Whether you need product details, guidance, or expert suggestions, our team is always ready to support you and help you choose the right plywood."
         image="https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
