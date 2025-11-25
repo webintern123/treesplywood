@@ -178,7 +178,7 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbPage className="text-trees-primary font-semibold">
-                  Project Gallery
+                     Project Gallery
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
@@ -186,10 +186,10 @@ export function ProjectsPage({ onNavigate }: ProjectsPageProps) {
         </div>
       </div>
 
-      {/* Enhanced Hero Section */}
-      <PageHero
-        title="Inspiring Ideas Turned into Beautiful Spaces"
-        subtitle="Real Quality You Can See"
+      {/* Enhanced Hero Section */}  
+      <PageHero  
+        title={"Inspiring Ideas Turned \n into Beautiful Spaces"}
+        subtitle="Real Quality  You Can See"
         description="Take a look at the homes, offices, and commercial spaces built using Tree’s Plywood.
 Every project reflects our commitment to quality, strength, and thoughtful design."
         image="https://images.unsplash.com/photo-1678555815116-52c1b10517f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBpbnRlcmlvciUyMGRlc2lnbiUyMHBseXdvb2R8ZW58MXx8fHwxNzYyMjM0ODMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -229,6 +229,7 @@ Every project reflects our commitment to quality, strength, and thoughtful desig
                 color: 'from-green-500 to-green-600'
               },
               {
+                
                 icon: Users,
                 title: 'Trusted by Professionals',
                 desc: 'Join thousands of architects and designers who choose Tree’s for quality, reliability, and performance.',

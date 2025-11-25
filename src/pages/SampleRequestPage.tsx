@@ -53,7 +53,7 @@ const availableSamples: SampleProduct[] = [
     type: 'Structural BWP', 
     thickness: '19mm', 
     size: '6" × 6"',
-    description: 'Heavy-duty structural grade for load-bearing applications'
+    description: 'Built for heavy load-bearing and long-term strength.'
   },
   { 
     id: '3', 
@@ -61,7 +61,7 @@ const availableSamples: SampleProduct[] = [
     type: 'Fire-Resistant', 
     thickness: '12mm', 
     size: '6" × 6"',
-    description: 'IS:5509 certified fire retardant plywood for safety compliance'
+    description: 'IS:5509 certified fire-retardant plywood for safer spaces.'
   },
   { 
     id: '4', 
@@ -69,7 +69,7 @@ const availableSamples: SampleProduct[] = [
     type: 'Marine Grade', 
     thickness: '12mm', 
     size: '6" × 6"',
-    description: 'BWP grade marine plywood for high-moisture environments'
+    description: 'BWP marine-grade plywood is designed for high-moisture areas.'
   },
   { 
     id: '5', 
@@ -77,7 +77,7 @@ const availableSamples: SampleProduct[] = [
     type: 'Premium BWP', 
     thickness: '12mm', 
     size: '6" × 6"',
-    description: 'Luxury grade with smooth finish and 30-year warranty'
+    description: 'Smooth finish, premium quality, and a 30-year warranty.'
   },
   { 
     id: '6', 
@@ -85,7 +85,7 @@ const availableSamples: SampleProduct[] = [
     type: 'Premium BWP', 
     thickness: '19mm', 
     size: '6" × 6"',
-    description: 'Thick premium plywood for high-end furniture'
+    description: 'Ideal for luxury furniture and long-lasting interiors.'
   },
   { 
     id: '7', 
@@ -93,7 +93,7 @@ const availableSamples: SampleProduct[] = [
     type: 'Resilient BWP', 
     thickness: '12mm', 
     size: '6" × 6"',
-    description: 'Unbreakable construction with impact resistance'
+    description: 'High-strength, impact-resistant plywood for tough use.'
   },
   { 
     id: '8', 
@@ -101,7 +101,7 @@ const availableSamples: SampleProduct[] = [
     type: 'IS:303 Interior', 
     thickness: '9mm', 
     size: '6" × 6"',
-    description: 'Cost-effective interior grade for dry environments'
+    description: 'Budget-friendly interior plywood for dry spaces.'
   },
   // Door Products
   { 
@@ -110,7 +110,7 @@ const availableSamples: SampleProduct[] = [
     type: 'Core Panel BWR', 
     thickness: '19mm', 
     size: '6" × 6"',
-    description: 'Boiling water resistant core for door manufacturing'
+    description: 'Moisture-resistant core, perfect for door construction.'
   },
   { 
     id: '10', 
@@ -118,7 +118,7 @@ const availableSamples: SampleProduct[] = [
     type: 'Sample Panel', 
     thickness: '32mm', 
     size: '6" × 12"',
-    description: 'Complete door panel sample with frame and finish'
+    description: 'A mini door panel with frame and finish for review. '
   }
 ];
 
@@ -161,7 +161,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
     e.preventDefault();
     
     if (selectedSamples.length === 0) {
-      toast.error('Please select at least one sample');
+      toast.error('You need to choose at least 1 sample.');
       return;
     }
 
@@ -221,18 +221,18 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Request Free Samples"
-        subtitle="Experience Quality First-Hand"
-        description="Test our premium plywood samples before making a purchase decision. Request up to 5 free samples with delivery across India within 3-5 business days."
+        title={"See the Quality Yourself\n – Try Before You Buy"}
+        subtitle="Touch, See, Feel, and Test our plywood in real life."
+        description="Choose up to 5 samples and get them delivered to your doorstep at no extra cost."
         image="https://images.unsplash.com/photo-1581619529755-12154d726205?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwc2FtcGxlcyUyMHRlc3Rpbmd8ZW58MXx8fHwxNzYyMjM2MDAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-        badge="Free Samples"
+        badge="Request Free Samples"
         badgeIcon={Package}
         height="md"
         overlayOpacity="medium"
         stats={[
-          { value: '10+', label: 'Sample Products' },
+          { value: '10+', label: 'Sample Options' },
           { value: 'Free', label: 'Delivery' },
-          { value: '3-5', label: 'Business Days' },
+          { value: '3-5', label: 'Days Dispatch' },
         ]}
       />
 
@@ -240,36 +240,36 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Why Samples?"
+            badge="Why Take Samples?"
             badgeIcon={Target}
-            title="Experience Before You Invest"
-            subtitle="Make informed decisions by testing our premium plywood quality, finish, and durability first-hand"
+            title="Because Seeing Is Believing  - See the Quality for Yourself"
+            subtitle="Before you choose a product, get a sample test of its strength, finish, and overall build."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
             {[
               {
                 icon: Shield,
-                title: 'Test Quality',
-                desc: 'Verify construction, layers, and adhesive strength before bulk purchase',
+                title: 'Check the Quality',
+                desc: 'Look at the layers, feel the finish, and judge the strength before placing a bigger order.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: Award,
-                title: 'Compare Grades',
-                desc: 'Side-by-side comparison of different grades and finishes',
+                title: 'Compare Easily',
+                desc: 'Keep samples side-by-side to understand the difference between grades and textures.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: Users,
-                title: 'Client Approval',
-                desc: 'Present physical samples to clients for material approval',
+                title: 'Get Client Approval',
+                desc: 'Share physical samples with clients so they can approve the exact material.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: CheckCircle,
-                title: 'Verify Match',
-                desc: 'Ensure color, texture, and finish match project requirements',
+                title: 'Match Your Design',
+                desc: 'Confirm the colour, grain, and finish to fit your project perfectly.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((benefit, idx) => (
@@ -297,36 +297,36 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Process"
+            badge="Step by Step Process"
             badgeIcon={Box}
-            title="How Sample Request Works"
-            subtitle="Simple 4-step process to get premium plywood samples delivered to your doorstep"
+            title="How It Works"
+            subtitle="Getting your plywood samples is quick and simple. Here’s the process:"
           />
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { 
                 icon: Package, 
-                title: 'Select Samples', 
-                desc: 'Choose up to 5 samples from our complete range',
+                title: 'Choose Your Samples', 
+                desc: 'Select up to 5 options from our range.',
                 step: '1'
               },
               { 
                 icon: FileCheck, 
-                title: 'Fill Details', 
-                desc: 'Provide delivery information and project requirements',
+                title: 'Share Your Details', 
+                desc: 'Tell us where to deliver and what you’re planning.',
                 step: '2'
               },
               { 
                 icon: Truck, 
                 title: 'Free Delivery', 
-                desc: 'Samples delivered within 3-5 business days across India',
+                desc: 'We’ll send your samples within 3–5 working days, anywhere in India.',
                 step: '3'
               },
               { 
                 icon: Clock, 
-                title: 'Test & Evaluate', 
-                desc: 'Test quality, compare options, and make informed decision',
+                title: '	Check & Compare', 
+                desc: ' See the quality, explore the finish, and pick what suits your project best.',
                 step: '4'
               }
             ].map((step, idx) => (
@@ -357,10 +357,10 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
       <section className="section-padding bg-gray-50">
         <PageContainer>
           <ModernSectionHeader
-            badge="Request Form"
+            badge="Get Free Samples Here"
             badgeIcon={Package}
-            title="Select Samples & Submit Request"
-            subtitle="Choose the products you want to test and provide delivery details"
+            title="Choose Your Samples & Submit Your Request"
+            subtitle="Pick the products you would like to test and share your delivery details"
           />
 
           {/* Notice for Dealers */}
@@ -369,8 +369,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
               <Award className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
               <div>
                 <p className="text-sm text-amber-900">
-                  <strong>For Dealers & Business Partners:</strong> This form is for customer sample requests (max 5 pieces). 
-                  If you're interested in dealership, bulk display sample kits, or business partnership, please visit our{' '}
+                  <strong>Note for Dealers & Partners:</strong> This form is for customer sample requests only (maximum 5 pieces). If you need dealership details, display kits, or bulk business support,{' '}
                   <button 
                     onClick={() => onNavigate?.('dealers')}
                     className="text-amber-700 font-semibold underline hover:text-amber-800"
@@ -391,7 +390,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                 <div className="mb-12">
                   <h3 className="text-trees-secondary mb-6 flex items-center gap-2">
                     <Package className="w-6 h-6 text-trees-primary" />
-                    Select Samples (Maximum 5)
+                    Select Samples (Up to 5)
                   </h3>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -516,7 +515,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                       </div>
 
                       <div>
-                        <Label htmlFor="company">Company Name</Label>
+                        <Label htmlFor="company">Company / Firm (Optional)</Label>
                         <div className="relative mt-2">
                           <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                           <Input
@@ -550,7 +549,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                           </SelectContent>
                         </Select>
                         <p className="text-xs text-gray-500 mt-2">
-                          <strong>For Dealers:</strong> Please visit our{' '}
+                          <strong>For Dealers:</strong> If you’re looking for dealership or display kits, please visit our{' '}
                           <button 
                             type="button"
                             onClick={() => onNavigate?.('dealers')}
@@ -558,7 +557,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                           >
                             Dealers Page
                           </button>{' '}
-                          for partnership opportunities and display sample kits.
+                             for the right options.
                         </p>
                       </div>
 
@@ -584,7 +583,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                     </div>
 
                     <div>
-                      <Label htmlFor="address">Delivery Address *</Label>
+                      <Label htmlFor="address">Address Details *</Label>
                       <div className="relative mt-2">
                         <MapPin className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                         <Textarea
@@ -592,7 +591,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                           name="address"
                           value={formData.address}
                           onChange={handleInputChange}
-                          placeholder="Street address, building name, floor"
+                          placeholder="Project AddressStreet name, building/flat details"
                           className="pl-10 min-h-[80px]"
                           required
                         />
@@ -607,7 +606,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                           name="city"
                           value={formData.city}
                           onChange={handleInputChange}
-                          placeholder="Mumbai"
+                          placeholder="City"
                           className="mt-2"
                           required
                         />
@@ -620,7 +619,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                           name="state"
                           value={formData.state}
                           onChange={handleInputChange}
-                          placeholder="Maharashtra"
+                          placeholder="State"
                           className="mt-2"
                           required
                         />
@@ -633,7 +632,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                           name="pincode"
                           value={formData.pincode}
                           onChange={handleInputChange}
-                          placeholder="400001"
+                          placeholder="pincode"
                           className="mt-2"
                           required
                         />
@@ -649,7 +648,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                           name="projectDetails"
                           value={formData.projectDetails}
                           onChange={handleInputChange}
-                          placeholder="Tell us about your project, timeline, and specific requirements..."
+                          placeholder="Tell Us More Share your project needs, timelines, and any specific requirements…"
                           className="pl-10 min-h-[120px]"
                         />
                       </div>
@@ -658,8 +657,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                     <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl">
                       <Clock className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                       <p className="text-sm text-amber-800">
-                        <strong>Delivery Timeline:</strong> Samples will be delivered within 3-5 business days. 
-                        You will receive tracking information via email and SMS.
+                        <strong>Delivery Information:</strong> Samples are delivered in 3–5 working days. Tracking details will be shared via email and SMS once dispatched.
                       </p>
                     </div>
 
@@ -670,7 +668,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                       type="submit"
                       className="w-full"
                     >
-                      Request Free Samples
+                        Free Sample Request 
                     </ModernButton>
                   </form>
                 </div>
@@ -681,29 +679,29 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
             <div className="lg:col-span-1 space-y-6">
                <ModernCard variant="elevated" className="p-6 bg-white shadow-md">
     <h4 className="text-trees-secondary mb-4 flex items-center gap-2">
-      <CheckCircle className="w-5 h-5 text-trees-primary" />
-      Why Request Samples?
+      
+         How Helpful are Request Samples?
     </h4>
     <ul className="space-y-3 text-gray-700 text-sm">
       <li className="flex items-start gap-2">
         <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Test quality and durability</span>
+        <span>Check the quality and strength</span>
       </li>
       <li className="flex items-start gap-2">
         <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Compare grades and finishes</span>
+        <span>Compare different grades and finishes</span>
       </li>
       <li className="flex items-start gap-2">
         <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Present to clients</span>
+        <span>Show options to your clients</span>
       </li>
       <li className="flex items-start gap-2">
         <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Verify color and texture</span>
+        <span>Confirm colours, textures, and look</span>
       </li>
       <li className="flex items-start gap-2">
         <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Make informed decisions</span>
+        <span>Make a confident purchase decision.</span>
       </li>
     </ul>
   </ModernCard>
@@ -712,40 +710,40 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
               <ModernCard variant="elevated" className="p-6">
                 <h4 className="text-trees-secondary mb-4 flex items-center gap-2">
                   <Shield className="w-5 h-5 text-trees-primary" />
-                  Sample Policy
+                  Sample Guidelines
                 </h4>
                 <div className="space-y-3 text-sm text-gray-700">
                   <p className="flex items-start gap-2">
                     <span className="text-trees-primary">•</span>
-                    Maximum 5 samples per request
+                       Up to 5 samples per request
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-trees-primary">•</span>
-                    Free delivery across India
+                       Free delivery anywhere in India
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-trees-primary">•</span>
-                    One request per 30 days
+                       One request every 30 days
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-trees-primary">•</span>
-                    3-5 business days delivery
+                      Delivered in 3–5 working days
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-trees-primary">•</span>
-                    Samples are non-returnable
+                       Samples are non-returnable
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-trees-primary">•</span>
-                    For bulk orders, contact sales
+                       For bulk needs, please contact our sales team
                   </p>
                 </div>
               </ModernCard>
 
               <ModernCard variant="elevated" className="p-6">
-                <h4 className="text-trees-secondary mb-4">Need Help?</h4>
+                <h4 className="text-trees-secondary mb-4">Need Help in Choosing?</h4>
                 <p className="text-sm text-gray-600 mb-4">
-                  Our team is here to assist you with sample selection and product recommendations.
+                  Our team is always ready to guide you with sample selection and product suggestions.
                 </p>
                 <ModernButton
                   variant="outline"
@@ -754,7 +752,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                   onClick={() => onNavigate?.('contact')}
                   className="w-full"
                 >
-                  Contact Support
+                    Contact Our Support Team
                 </ModernButton>
               </ModernCard>
             </div>
@@ -776,17 +774,17 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-white mb-4">Trusted Sample Program</h2>
+            <h2 className="text-white mb-4">Our Sample Program - Trusted by Professionals</h2>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              Thousands of professionals trust our sample program for quality evaluation
+              See the quality first with our fast and reliable sample service.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { value: '15K+', label: 'Samples Delivered', icon: Package },
-              { value: '3-5', label: 'Days Delivery', icon: Truck },
-              { value: '98%', label: 'Satisfaction Rate', icon: Star },
+              { value: '15,000+', label: 'Samples Delivered', icon: Package },
+              { value: '3-5', label: 'Quick Delivery', icon: Truck },
+              { value: '98%', label: 'Happy Customers', icon: Star },
               { value: '10+', label: 'Product Options', icon: Box },
             ].map((stat, idx) => (
               <motion.div
@@ -814,8 +812,8 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
           <ModernSectionHeader
             badge="Success Stories"
             badgeIcon={Star}
-            title="What Professionals Say"
-            subtitle="Hear from architects, designers, and contractors who tested our samples"
+            title="What Professionals Say About Us"
+            subtitle="Real feedback from the people who use Tree’s Plywood every day."
           />
           <Testimonials />
         </div>
@@ -825,9 +823,9 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
       <section className="section-padding bg-white">
         <PageContainer>
           <ModernSectionHeader
-            badge="Got Questions?"
+            badge="Have Questions?"
             badgeIcon={HelpCircle}
-            title="Sample Request FAQ"
+            title="Sample Request Help"
             subtitle="Common questions about our free sample program and delivery process"
           />
 
@@ -835,13 +833,10 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="eligible" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Who can request samples?
+                  Who can request a sample?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Our sample program is open to professionals including architects, interior designers, 
-                  contractors, builders, carpenters, and homeowners planning projects. Students and educators 
-                  can request samples for educational purposes with valid documentation. <strong>Note:</strong> For 
-                  dealership inquiries and bulk display sample kits, please visit our{' '}
+                 Anyone working on a project can request samples — architects, designers, contractors, builders, carpenters, and homeowners. Students can also request samples with a valid ID.{' '}
                   <button 
                     onClick={() => onNavigate?.('dealers')}
                     className="text-trees-primary font-semibold underline hover:text-trees-secondary"
@@ -856,60 +851,49 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                   How long does delivery take?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Samples are typically delivered within 3-5 business days across India. You'll receive tracking 
-                  information via email and SMS once your samples are dispatched. Delivery times may vary slightly 
-                  for remote locations. All deliveries are handled by reliable courier partners to ensure safe 
-                  arrival of your samples.
+                  ●	Most samples reach within 3–5 working days.<br></br>
+●	We’ll share a tracking link once they’re shipped. <br></br>
+●	Remote locations may take a bit longer. <br></br>
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="cost" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Is the sample program really free?
+                  Is the sample really free?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes! Our sample program is completely free including both the samples and delivery charges. 
-                  There are no hidden costs, processing fees, or minimum order requirements. We believe in letting 
-                  our product quality speak for itself. You can request up to 5 samples once every 30 days at no 
-                  cost to help you make informed purchasing decisions.
-                </AccordionContent>
+                  Yes, it’s completely free, no charges and no hidden fees. You can request up to 5 samples once every 30 days.                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="testing" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  How should I test the samples?
+                  How do I check the sample quality?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Our samples are 6"×6" pieces (larger for doors) that allow comprehensive testing. Check the 
-                  number of layers, adhesive quality, finish smoothness, and color consistency. Test for water 
-                  resistance by placing water drops on the surface. Examine the edge finish and core construction. 
-                  Compare different grades side-by-side. For specific tests like boiling water resistance, contact 
-                  our technical team for guidance.
+                  Look at the layers, smoothness, finish, and core strength. You can also test for light moisture resistance at home. For advanced tests (boiling, load tests), our technical team can guide you.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="order" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I order after testing samples?
+                  Can I order after checking the samples?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Absolutely! Once you've evaluated the samples and selected the products you need, you can order 
-                  through our dealer network or contact our sales team directly. We'll connect you with the nearest 
-                  authorized dealer for competitive pricing and availability. Our team can also provide technical 
-                  specifications, installation guidance, and bulk order discounts for large projects.
+                  Of course! Once you’ve decided, we’ll connect you to the nearest dealer or our sales team to help you place the order.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
 
             <div className="text-center mt-12">
-              <p className="text-gray-600 mb-6">Still have questions about samples?</p>
+              <p className="text-gray-600 mb-6">Need More Help with Samples?</p>
               <ModernButton
                 variant="outline"
                 size="lg"
                 icon={<MessageSquare className="w-5 h-5" />}
                 onClick={() => onNavigate?.('contact')}
               >
-                Contact Our Team
+                Get in Touch with Our Team
               </ModernButton>
             </div>
           </div>
@@ -932,17 +916,17 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
               <Mail className="w-4 h-4 text-white" />
-              <span className="text-white font-semibold text-sm">Sample Updates</span>
+              <span className="text-white font-semibold text-sm">New Sample Alerts </span>
             </div>
-            <h2 className="text-white mb-6">Get Notified About New Samples</h2>
+            <h2 className="text-white mb-6">Don’t Miss New Sample Launches</h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Be the first to know when new sample products are added, receive quality testing tips, and get exclusive sample program updates
+              We’ll send you updates whenever new samples are available, along with helpful tips on checking quality and choosing the right materials.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
               <input
                 type="email"
-                placeholder="Enter your email address"
+                placeholder="Your Email Address"
                 className="flex-1 px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60"
               />
               <MagneticButton strength={0.2}>
@@ -955,7 +939,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
               </MagneticButton>
             </div>
             <p className="text-sm text-white/70">
-              Join 3,000+ professionals • Sample updates • Testing tips • Unsubscribe anytime
+              Join 3000+ professionals who stay updated | Unsubscribe anytime.
             </p>
           </motion.div>
         </div>
@@ -973,11 +957,11 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
             >
               <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-6">
                 <Sparkles className="w-4 h-4 text-trees-primary" />
-                <span className="text-trees-primary font-semibold text-sm">Ready to Test?</span>
+                <span className="text-trees-primary font-semibold text-sm">Ready to See the Difference?</span>
               </div>
-              <h2 className="text-trees-secondary mb-6">Ready to Experience Premium Quality?</h2>
+              <h2 className="text-trees-secondary mb-6">Test the Quality First by Trying Yourself</h2>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Request your free samples today and discover why thousands of professionals choose The Trees plywood
+                Request your sample kit and experience why our plywood is trusted nationwide.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center">
@@ -991,7 +975,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                       formSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    Request Samples Now
+                    Request Samples
                   </ModernButton>
                 </MagneticButton>
                 <ModernButton

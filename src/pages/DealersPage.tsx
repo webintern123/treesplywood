@@ -60,9 +60,9 @@ const dealers: Dealer[] = [
     city: 'Madhapur',
     district: 'Hyderabad',
     state: 'Telangana',
-    address: 'Plot 3-538, 1st floor, Sri Krishna Heights, 100 feet road, Ayyappa Society, Madhapur',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
     phone: '+91 9091744744',
-    email: 'hyderabad@thetreesplywood.com',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
     type: 'Premium Partner',
     rating: 4.9,
@@ -70,13 +70,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '2',
-    name: 'Secunderabad Premium Woods',
-    city: 'Secunderabad',
+    name: 'Premium Woods',
+    city: 'Madhapur, Hyderabad',
     district: 'Hyderabad',
     state: 'Telangana',
-    address: 'Plot 45, SD Road, Near Paradise Circle, Secunderabad',
-    phone: '+91 9876543211',
-    email: 'secunderabad@thetreesplywood.com',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 7:00 PM',
     type: 'Authorized Dealer',
     rating: 4.8,
@@ -84,13 +84,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '3',
-    name: 'Warangal Timber Mart',
-    city: 'Warangal',
-    district: 'Warangal',
+    name: 'Timber Mart',
+    city: 'Madhapur',
+    district: ' Hyderabad',
     state: 'Telangana',
-    address: '12-3-456, Main Road, Hanamkonda, Warangal',
-    phone: '+91 9845123457',
-    email: 'warangal@thetreesplywood.com',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:30 AM - 6:30 PM',
     type: 'Distributor',
     rating: 4.7,
@@ -100,13 +100,13 @@ const dealers: Dealer[] = [
   // Andhra Pradesh
   {
     id: '4',
-    name: 'Visakhapatnam Elite Plywood',
-    city: 'Visakhapatnam',
-    district: 'Visakhapatnam',
-    state: 'Andhra Pradesh',
-    address: 'Plot 67, Dwarakanagar Main Road, Visakhapatnam',
-    phone: '+91 9876543212',
-    email: 'vizag@thetreesplywood.com',
+    name: 'Elite Plywood',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
     type: 'Premium Partner',
     rating: 4.9,
@@ -114,13 +114,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '5',
-    name: 'Vijayawada Premium Woods',
-    city: 'Vijayawada',
-    district: 'Vijayawada',
-    state: 'Andhra Pradesh',
-    address: '45-2, MG Road, Labbipet, Vijayawada',
-    phone: '+91 9845123458',
-    email: 'vijayawada@thetreesplywood.com',
+    name: 'Premium Woods',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 7:00 PM',
     type: 'Authorized Dealer',
     rating: 4.8,
@@ -128,13 +128,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '6',
-    name: 'Tirupati Timber Solutions',
-    city: 'Tirupati',
-    district: 'Tirupati',
-    state: 'Andhra Pradesh',
-    address: '234, Renigunta Road, Near Railway Station, Tirupati',
-    phone: '+91 9876543213',
-    email: 'tirupati@thetreesplywood.com',
+    name: ' Timber Solutions',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
     type: 'Distributor',
     rating: 4.7,
@@ -142,13 +142,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '7',
-    name: 'Guntur Wood Industries',
-    city: 'Guntur',
-    district: 'Guntur',
-    state: 'Andhra Pradesh',
-    address: '56, Arundalpet Main Road, Guntur',
-    phone: '+91 9845123459',
-    email: 'guntur@thetreesplywood.com',
+    name: ' Wood Industries',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:30 AM - 6:30 PM',
     type: 'Authorized Dealer',
     rating: 4.6,
@@ -158,13 +158,13 @@ const dealers: Dealer[] = [
   // Maharashtra
   {
     id: '8',
-    name: 'Mumbai Premium Plywood Center',
-    city: 'Malad',
-    district: 'Mumbai Suburban',
-    state: 'Maharashtra',
-    address: 'Shop 12-15, Malad Industrial Estate, Link Road, Malad West',
-    phone: '+91 9876543210',
-    email: 'mumbai@thetreesplywood.com',
+    name: 'Premium Plywood Center',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 7:00 PM',
     type: 'Authorized Dealer',
     rating: 4.8,
@@ -172,13 +172,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '9',
-    name: 'Pune Premium Woods',
-    city: 'Pimpri-Chinchwad',
-    district: 'Pune',
-    state: 'Maharashtra',
-    address: '56, Pimpri-Chinchwad, MIDC Industrial Area, Pune',
-    phone: '+91 9822345678',
-    email: 'pune@thetreesplywood.com',
+    name: 'Premium Woods',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:30 PM',
     type: 'Distributor',
     rating: 4.7,
@@ -186,13 +186,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '10',
-    name: 'Thane Wood Mart',
-    city: 'Thane',
-    district: 'Thane',
-    state: 'Maharashtra',
-    address: '89, Ghodbunder Road, Near Teen Haath Naka, Thane West',
-    phone: '+91 9876543214',
-    email: 'thane@thetreesplywood.com',
+    name: ' Wood Mart',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 7:00 PM',
     type: 'Premium Partner',
     rating: 4.8,
@@ -202,13 +202,13 @@ const dealers: Dealer[] = [
   // Karnataka
   {
     id: '11',
-    name: 'Bangalore Wood Solutions',
-    city: 'Peenya',
-    district: 'Bangalore Urban',
-    state: 'Karnataka',
-    address: '45/2, Peenya Industrial Area, 4th Phase, Bangalore',
-    phone: '+91 9845123456',
-    email: 'bangalore@thetreesplywood.com',
+    name: 'Wood Solutions',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:30 AM - 6:30 PM',
     type: 'Distributor',
     rating: 4.7,
@@ -216,13 +216,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '12',
-    name: 'Mysore Premium Plywood',
-    city: 'Mysore',
-    district: 'Mysore',
-    state: 'Karnataka',
-    address: '123, KRS Road, Metagalli, Mysore',
-    phone: '+91 9845123460',
-    email: 'mysore@thetreesplywood.com',
+    name: ' Premium Plywood',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
     type: 'Authorized Dealer',
     rating: 4.6,
@@ -232,13 +232,13 @@ const dealers: Dealer[] = [
   // Tamil Nadu
   {
     id: '13',
-    name: 'Chennai Elite Plywood Hub',
-    city: 'Mount Road',
-    district: 'Chennai',
-    state: 'Tamil Nadu',
-    address: '789, Anna Salai, Mount Road, Chennai',
-    phone: '+91 9841234567',
-    email: 'chennai@thetreesplywood.com',
+    name: ' Elite Plywood Hub',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
     type: 'Premium Partner',
     rating: 4.8,
@@ -246,13 +246,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '14',
-    name: 'Coimbatore Wood Industries',
-    city: 'Coimbatore',
-    district: 'Coimbatore',
-    state: 'Tamil Nadu',
-    address: '456, Avinashi Road, Peelamedu, Coimbatore',
-    phone: '+91 9841234568',
-    email: 'coimbatore@thetreesplywood.com',
+    name: ' Wood Industries',
+    city: 'Madhapur',
+    district: ' Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:30 PM',
     type: 'Authorized Dealer',
     rating: 4.7,
@@ -262,13 +262,13 @@ const dealers: Dealer[] = [
   // Delhi
   {
     id: '15',
-    name: 'Delhi NCR Timber Mart',
-    city: 'Rohini',
-    district: 'North Delhi',
-    state: 'Delhi',
-    address: 'Plot 234, Sector 8, Rohini Industrial Area, Delhi',
-    phone: '+91 9810123456',
-    email: 'delhi@thetreesplywood.com',
+    name: 'Timber Mart',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 7:00 PM',
     type: 'Authorized Dealer',
     rating: 4.6,
@@ -276,13 +276,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '16',
-    name: 'South Delhi Premium Woods',
-    city: 'Saket',
-    district: 'South Delhi',
-    state: 'Delhi',
-    address: '78, Press Enclave Road, Saket, New Delhi',
-    phone: '+91 9810123457',
-    email: 'southdelhi@thetreesplywood.com',
+    name: 'Premium Woods',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:30 PM',
     type: 'Premium Partner',
     rating: 4.8,
@@ -292,13 +292,13 @@ const dealers: Dealer[] = [
   // Gujarat
   {
     id: '17',
-    name: 'Ahmedabad Plywood Depot',
-    city: 'Naroda',
-    district: 'Ahmedabad',
-    state: 'Gujarat',
-    address: '78, Naroda Industrial Estate, Ahmedabad',
-    phone: '+91 9825678901',
-    email: 'ahmedabad@thetreesplywood.com',
+    name: ' Plywood Depot',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
     type: 'Premium Partner',
     rating: 4.8,
@@ -306,13 +306,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '18',
-    name: 'Surat Timber Solutions',
-    city: 'Surat',
-    district: 'Surat',
-    state: 'Gujarat',
-    address: '234, Udhna Industrial Area, Surat',
-    phone: '+91 9825678902',
-    email: 'surat@thetreesplywood.com',
+    name: 'Timber Solutions',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:30 PM',
     type: 'Authorized Dealer',
     rating: 4.7,
@@ -322,13 +322,13 @@ const dealers: Dealer[] = [
   // West Bengal
   {
     id: '19',
-    name: 'Kolkata Wood Industry',
-    city: 'Park Street',
-    district: 'Kolkata',
-    state: 'West Bengal',
-    address: '12/A, Park Street Area, Kolkata',
-    phone: '+91 9831234567',
-    email: 'kolkata@thetreesplywood.com',
+    name: ' Wood Industry',
+    city: 'Madhapur',
+    district: ' Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:30 AM - 6:00 PM',
     type: 'Authorized Dealer',
     rating: 4.5,
@@ -338,13 +338,13 @@ const dealers: Dealer[] = [
   // Rajasthan
   {
     id: '20',
-    name: 'Jaipur Timber World',
-    city: 'Sitapura',
-    district: 'Jaipur',
-    state: 'Rajasthan',
-    address: '234, Sitapura Industrial Area, Jaipur',
-    phone: '+91 9829123456',
-    email: 'jaipur@thetreesplywood.com',
+    name: 'Timber World',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
     type: 'Authorized Dealer',
     rating: 4.6,
@@ -354,13 +354,13 @@ const dealers: Dealer[] = [
   // Uttar Pradesh
   {
     id: '21',
-    name: 'Noida Premium Plywood',
-    city: 'Noida',
-    district: 'Noida',
-    state: 'Uttar Pradesh',
-    address: 'Plot 56, Sector 63, Noida',
-    phone: '+91 9876543215',
-    email: 'noida@thetreesplywood.com',
+    name: 'Premium Plywood',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 7:00 PM',
     type: 'Premium Partner',
     rating: 4.8,
@@ -368,13 +368,13 @@ const dealers: Dealer[] = [
   },
   {
     id: '22',
-    name: 'Lucknow Wood Mart',
-    city: 'Lucknow',
-    district: 'Lucknow',
-    state: 'Uttar Pradesh',
-    address: '789, Aliganj Industrial Area, Lucknow',
-    phone: '+91 9876543216',
-    email: 'lucknow@thetreesplywood.com',
+    name: 'Wood Mart',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:30 PM',
     type: 'Authorized Dealer',
     rating: 4.7,
@@ -385,12 +385,12 @@ const dealers: Dealer[] = [
   {
     id: '23',
     name: 'Indore Timber Hub',
-    city: 'Indore',
-    district: 'Indore',
-    state: 'Madhya Pradesh',
-    address: '123, Sanwer Road Industrial Area, Indore',
-    phone: '+91 9876543217',
-    email: 'indore@thetreesplywood.com',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
     type: 'Distributor',
     rating: 4.6,
@@ -399,12 +399,12 @@ const dealers: Dealer[] = [
   {
     id: '24',
     name: 'Bhopal Premium Woods',
-    city: 'Bhopal',
-    district: 'Bhopal',
-    state: 'Madhya Pradesh',
-    address: '456, Govindpura Industrial Area, Bhopal',
-    phone: '+91 9876543218',
-    email: 'bhopal@thetreesplywood.com',
+    city: 'Madhapur',
+    district: 'Hyderabad',
+    state: 'Telangana',
+    address: 'Plot 3-538, 1st Floor, Sri Krishna Heights, 100 Feet Road',
+    phone: '+91 9091744744',
+    email: 'info@thetreesplywood.com',
     hours: 'Mon-Sat: 9:00 AM - 6:30 PM',
     type: 'Authorized Dealer',
     rating: 4.7,
@@ -504,11 +504,11 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Find Your Nearest Dealer"
-        subtitle="Advanced Dealer Locator"
-        description="Search dealers by state, district, and type across India. Connect with our authorized dealers for premium plywood solutions and expert consultation."
+        title="Your Nearest Tree’s Plywood Dealer"
+        subtitle="Use our Dealer Finder to quickly locate verified stores across India."
+        description="Search by state or district and connect with trusted partners for product availability and guidance."
         image="https://images.unsplash.com/photo-1708464679987-db85ae0f60d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwZGVhbGVyJTIwc2hvd3Jvb218ZW58MXx8fHwxNzYyMjM0ODM1fDA&ixlib=rb-4.1.0&q=80&w=1080"
-        badge="24+ Locations"
+        badge="24+ Dealer Locations Near You"
         badgeIcon={Map}
         height="lg"
         overlayOpacity="medium"
@@ -516,6 +516,9 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
           { value: `${dealers.length}+`, label: 'Dealers' },
           { value: `${totalStates}`, label: 'States' },
           { value: `${totalDistricts}+`, label: 'Districts' },
+          { value: 'Pan-India', label: 'Dealers' },
+          { value: 'Fast', label: 'Support ' },
+          { value: 'Verified', label: 'Partners' },
         ]}
         actions={
           <div className="flex flex-wrap gap-4">
@@ -527,7 +530,7 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
                 iconPosition="left"
                 onClick={() => onNavigate('contact')}
               >
-                Contact Support
+                Need Help? Contact Support
               </ModernButton>
             </MagneticButton>
           </div>
@@ -538,10 +541,10 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Quick Guide"
+            badge="Easy Steps"
             badgeIcon={Lightbulb}
-            title="How to Find Your Nearest Dealer"
-            subtitle="Advanced filtering system to help you locate dealers quickly"
+            title="Find a Dealer Near You"
+            subtitle="Follow these easy steps to locate an authorized Tree’s Plywood dealer near you:"
           />
           
           <div className="grid md:grid-cols-4 gap-6">
@@ -549,29 +552,29 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
               {
                 step: '1',
                 icon: Map,
-                title: 'Select State',
-                desc: 'Choose your state from 11+ states across India',
+                title: 'Choose Your State',
+                desc: 'Pick your state from our list of locations across India.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 step: '2',
                 icon: Building2,
-                title: 'Choose District',
-                desc: 'Filter by district for more precise results',
+                title: 'Select Your District',
+                desc: ' Narrow it down by choosing your district for closer results.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 step: '3',
                 icon: Filter,
-                title: 'Filter by Type',
-                desc: 'Select dealer type: Partner, Dealer, or Distributor',
+                title: 'Pick Dealer Type',
+                desc: 'Choose whether you want a Partner, Dealer, or Distributor.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 step: '4',
                 icon: Phone,
                 title: 'Connect & Visit',
-                desc: 'View details and contact for consultation',
+                desc: ' View contact details and get in touch for product availability or guidance.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((step, idx) => (
@@ -603,36 +606,36 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
       {/* Why Choose Our Dealers */}
       <section>
         <ModernSectionHeader
-          badge="Our Network"
+          badge="Our Dealer Network"
           badgeIcon={Award}
-          title="Why Choose Our Authorized Dealers"
-          subtitle="Trusted partners delivering quality products and expert service across India"
+          title="Why Buy from Our Authorized Dealers"
+          subtitle="Get genuine products and reliable service from trusted partners across India."
         />
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           {[
             {
               icon: Award,
-              title: 'Certified Partners',
-              desc: 'All dealers are authorized and trained by us',
+              title: 'Trusted & Trained Partners',
+              desc: 'Every dealer follows our quality and service standards.',
               color: 'from-blue-500 to-blue-600'
             },
             {
               icon: CheckCircle,
-              title: 'Quality Assured',
-              desc: 'Genuine products with proper documentation',
+              title: 'Original Products Only',
+              desc: 'Guaranteed genuine plywood with proper documents.',
               color: 'from-green-500 to-green-600'
             },
             {
               icon: Users,
-              title: 'Expert Guidance',
-              desc: 'Knowledgeable staff for product consultation',
+              title: 'Expert Help Anytime',
+              desc: 'Get advice on grades, thickness, and applications.',
               color: 'from-purple-500 to-purple-600'
             },
             {
               icon: Globe,
-              title: 'Pan-India Coverage',
-              desc: `${dealers.length}+ locations across ${totalStates} states`,
+              title: 'Across India',
+              desc: ' Expanding network covering major cities.',
               color: 'from-orange-500 to-orange-600'
             },
           ].map((benefit, idx) => (
@@ -660,8 +663,8 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
         <ModernSectionHeader
           badge="Advanced Search"
           badgeIcon={Search}
-          title="Find Dealers with Advanced Filters"
-          subtitle="Search by location, filter by state, district, and dealer type for precise results"
+          title="Find the Right Dealer Near You Easily"
+          subtitle="Use filters to locate the right Tree’s Plywood dealer near you. Search by state, district, dealer type, or name for quick and accurate results."
         />
 
         <ModernCard variant="elevated" className="p-6">
@@ -744,7 +747,7 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
         {/* Results Count and Active Filters */}
         <div className="flex flex-wrap items-center gap-2">
           <p className="text-gray-600">
-            Showing <Badge variant="secondary" className="mx-1">{filteredDealers.length}</Badge> dealer{filteredDealers.length !== 1 ? 's' : ''}
+            Showing <Badge variant="secondary" className="mx-1">{filteredDealers.length}</Badge> Dealer{filteredDealers.length !== 1 ? 's' : ''}
           </p>
           {selectedState !== 'All States' && (
             <Badge variant="outline" className="gap-1">
@@ -870,10 +873,10 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
       {/* Become a Dealer - Comprehensive Section */}
       <section className="space-y-12">
         <ModernSectionHeader
-          badge="Partnership Opportunity"
+          badge="Grow With Us"
           badgeIcon={Award}
-          title="Become an Authorized Dealer"
-          subtitle="Join India's fastest growing premium plywood brand and build a profitable business with comprehensive support"
+          title="Become Our Authorized Dealer"
+          subtitle="Grow with one of India’s fastest-growing plywood brands. Join us as an authorized dealer and build a strong, profitable business with full support from our team."
         />
 
         {/* Dealer Benefits */}
@@ -881,20 +884,20 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
           {[
             {
               icon: Award,
-              title: 'Exclusive Products',
-              desc: 'Access to premium product range with authorized dealer pricing and margins',
+              title: 'Exclusive Product Access',
+              desc: 'Get our full premium product range with special dealer pricing and healthy margins.',
               color: 'from-blue-500 to-blue-600'
             },
             {
               icon: Phone,
-              title: 'Dedicated Support',
-              desc: 'Assigned relationship manager for business development and technical guidance',
+              title: 'Dedicated Support Team',
+              desc: 'A relationship manager will assist you with sales, product guidance, and business growth.',
               color: 'from-green-500 to-green-600'
             },
             {
               icon: Map,
-              title: 'Marketing Support',
-              desc: 'Display samples, marketing collateral, digital assets, and co-branding opportunities',
+              title: 'Marketing & Display Support',
+              desc: 'Receive display samples, branding materials, digital content, and co-branding opportunities to help you attract more customers.',
               color: 'from-purple-500 to-purple-600'
             },
           ].map((benefit, idx) => (
@@ -918,47 +921,47 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
 
         {/* Requirements */}
         <ModernCard variant="elevated" className="p-8">
-          <h3 className="text-trees-secondary mb-6">Dealer Requirements</h3>
+          <h3 className="text-trees-secondary mb-6">Dealer Eligibility</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-3">
               <h5 className="font-semibold text-gray-800 mb-3">Business Requirements:</h5>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-start gap-2">
                   <span className="text-trees-primary mt-1">✓</span>
-                  <span>Established business with GST registration</span>
+                  <span>GST-registered business</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-trees-primary mt-1">✓</span>
-                  <span>Minimum 500 sq ft showroom/warehouse space</span>
+                  <span>Minimum 500 sq. ft. showroom or storage space</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-trees-primary mt-1">✓</span>
-                  <span>Experience in plywood/timber industry preferred</span>
+                  <span>Experience in plywood/timber preferred</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-trees-primary mt-1">✓</span>
-                  <span>Financial capability for inventory investment</span>
+                  <span>Ability to maintain regular inventory.</span>
                 </li>
               </ul>
             </div>
             <div className="space-y-3">
-              <h5 className="font-semibold text-gray-800 mb-3">What You'll Get:</h5>
+              <h5 className="font-semibold text-gray-800 mb-3">Benefits You’ll Receive</h5>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-start gap-2">
                   <span className="text-trees-primary mt-1">✓</span>
-                  <span>Complete display sample kit (50+ samples)</span>
+                  <span>Complete sample display kit (50+ samples)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-trees-primary mt-1">✓</span>
-                  <span>Marketing materials and branding support</span>
+                  <span>Marketing and branding support</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-trees-primary mt-1">✓</span>
-                  <span>Technical training and product knowledge</span>
+                  <span>Product training and technical guidance</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-trees-primary mt-1">✓</span>
-                  <span>Competitive dealer pricing and incentives</span>
+                  <span>Competitive pricing, incentives, and growth opportunities.</span>
                 </li>
               </ul>
             </div>
@@ -970,15 +973,15 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
           <div className="max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-4">
               <Award className="w-4 h-4 text-trees-primary" />
-              <span className="text-trees-primary font-semibold text-sm">For Dealership Inquiries</span>
+              <span className="text-trees-primary font-semibold text-sm">For Dealership Enquiries</span>
             </div>
             <h2 className="text-trees-secondary mb-4">
-              Ready to Partner With Us?
+               Want to Join Our Dealer Network?
             </h2>
             <p className="text-gray-600 mb-8">
-              Contact our partnership team to discuss dealership opportunities, requirements, and next steps.
+              Get in touch with our partnership team to know the process, requirements, and next steps.
               <br />
-              <strong className="text-trees-primary">Note:</strong> For customer sample requests, please visit our{' '}
+              <strong className="text-trees-primary">Note:</strong> If you need product samples, please visit our{' '}
               <button 
                 onClick={() => onNavigate('sample-request')}
                 className="text-trees-primary font-semibold underline hover:text-trees-secondary"
@@ -998,17 +1001,10 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
                   Contact Partnership Team
                 </ModernButton>
               </MagneticButton>
-              <ModernButton 
-                variant="outline" 
-                size="lg"
-                icon={<Mail className="w-5 h-5" />}
-                iconPosition="left"
-              >
-                Email Partnership
-              </ModernButton>
+             
             </div>
             <p className="text-sm text-gray-500 mt-6">
-              Our team will contact you within 24-48 hours to discuss partnership details
+              We’ll get back to you within 24–48 hours.
             </p>
           </div>
         </ModernCard>
@@ -1031,18 +1027,18 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-white mb-4">Our Dealer Network Impact</h2>
+          <h2 className="text-white mb-4">Nationwide Dealer Reach</h2>
           <p className="text-white/90 text-lg max-w-2xl mx-auto">
-            Trusted by thousands across India for quality products and expert service
+            Trusted by customers across India for quality products and reliable service.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-4 gap-8">
           {[
-            { value: `${dealers.length}+`, label: 'Active Dealers', icon: Users },
-            { value: `${totalStates}`, label: 'States Covered', icon: Globe },
-            { value: `${avgRating}/5`, label: 'Avg Rating', icon: Star },
-            { value: `${totalDistricts}+`, label: 'Districts', icon: Building2 },
+            { value: `${dealers.length}+`, label: 'Authorised Dealers', icon: Users },
+            { value: '11', label: 'States We Serve', icon: Globe },
+            { value: `${avgRating}/5`, label: 'Customer Rating', icon: Star },
+            { value: '23+', label: ' Districts Covered.', icon: Building2 },
           ].map((stat, idx) => (
             <motion.div
               key={idx}
@@ -1069,8 +1065,8 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
         <ModernSectionHeader
           badge="Customer Experiences"
           badgeIcon={Users}
-          title="What Customers Say About Our Dealers"
-          subtitle="Real feedback from customers who visited our authorized dealers"
+          title="What People Say About Our Authorised Dealers"
+          subtitle="Here’s what customers and professionals share about their experience with our authorized Tree’s Plywood dealers."
         />
         
         <div className="mt-12">
@@ -1083,36 +1079,36 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
     <section className="section-padding bg-white">
       <div className="container mx-auto px-6">
         <ModernSectionHeader
-          badge="Pro Tips"
+          badge="Useful Tips"
           badgeIcon={Lightbulb}
-          title="Tips for Visiting Dealers"
-          subtitle="Make the most of your dealer visit with these helpful suggestions"
+          title="Make Your Dealer Visit Easier"
+          subtitle="A few quick tips to help you get the most out of your visit:"
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               icon: Phone,
-              title: 'Call Ahead',
-              desc: 'Contact the dealer before visiting to confirm product availability and timing',
+              title: 'Call Before You Go',
+              desc: 'Check stock availability and timings to avoid waiting.',
               color: 'from-blue-500 to-blue-600'
             },
             {
               icon: Download,
-              title: 'Bring Measurements',
-              desc: 'Have your project dimensions ready for accurate quantity calculations',
+              title: 'Carry Your Measurements',
+              desc: 'Share your room or project sizes for accurate suggestions.',
               color: 'from-green-500 to-green-600'
             },
             {
               icon: CheckCircle,
               title: 'Ask for Samples',
-              desc: 'Request product samples to check quality and match your requirements',
+              desc: 'Take sample pieces to compare quality, finish, and colour.',
               color: 'from-purple-500 to-purple-600'
             },
             {
               icon: Award,
-              title: 'Verify Certification',
-              desc: 'Check dealer authorization certificate and product certifications',
+              title: 'Check Certifications',
+              desc: 'Confirm that the dealer is authorized and the products are genuine.',
               color: 'from-orange-500 to-orange-600'
             },
           ].map((tip, idx) => (
