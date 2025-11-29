@@ -40,9 +40,9 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'Choosing the Right Marine Plywood for Your Boat Project',
-    excerpt: 'Marine plywood is specifically engineered to withstand moisture and humidity. Learn about BWP grade certification, core construction, and why The Trees Bhima Marine is the gold standard for marine applications.',
-    author: 'Rajesh Kumar',
+    title: 'Choose the Best Marine Plywood for Boats & Coastal Projects',
+    excerpt: 'Working near water needs materials that won’t fail. This article explains what makes marine plywood different, how to check BWP certification, and why our Bhima Marine Grade performs so well in high-moisture environments. ',
+    author: 'By Rajesh Kumar',
     date: 'November 4, 2024',
     readTime: '6 min read',
     category: 'Marine Applications',
@@ -52,9 +52,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    title: '5 Signs You Need to Replace Your Kitchen Cabinets',
+    title: '5 Signs Your Kitchen Cabinets Need an Upgrade',
     excerpt: 'Kitchen cabinets endure daily wear and tear. Discover the telltale signs of damage, warping, and moisture issues that indicate it\'s time for an upgrade with high-quality plywood.',
-    author: 'Priya Sharma',
+    author: 'By Priya Sharma',
     date: 'November 1, 2024',
     readTime: '5 min read',
     category: 'Interior Design',
@@ -63,9 +63,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '3',
-    title: 'Sustainable Forestry: How FSC Certification Protects Our Future',
-    excerpt: 'FSC certification ensures responsible forest management. Learn how The Trees Plywood sources timber sustainably and contributes to environmental conservation while delivering premium quality.',
-    author: 'Dr. Anand Patel',
+    title: 'Why Sustainable Wood Matters: A Beginner’s Guide to FSC Certification',
+    excerpt: 'A simple explanation of how responsible timber sourcing protects forests — and how we ensure every sheet comes from trusted origins.',
+    author: 'By Dr. Anand Patel',
     date: 'October 29, 2024',
     readTime: '7 min read',
     category: 'Sustainability',
@@ -74,9 +74,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '4',
-    title: 'Commercial vs Residential Plywood: Understanding the Difference',
-    excerpt: 'Not all plywood is created equal. Explore the key differences between commercial-grade and residential plywood in terms of durability, cost, and ideal applications for your project.',
-    author: 'Amit Singh',
+    title: 'Commercial vs. Residential Plywood — What’s the Difference?',
+    excerpt: 'Not all plywood is made for all spaces. This article breaks down performance, pricing, and best-use areas for each type.',
+    author: 'By Amit Singh',
     date: 'October 27, 2024',
     readTime: '6 min read',
     category: 'Product Guide',
@@ -84,9 +84,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '5',
-    title: 'Fire-Resistant Plywood: Safety Standards and Applications',
-    excerpt: 'Fire safety is paramount in construction. Learn about fire-retardant plywood, IS:5509 standards, flame spread ratings, and where fire-resistant materials are mandatory.',
-    author: 'Suresh Reddy',
+    title: 'Understanding Fire-Resistant Plywood & Where It’s Needed',
+    excerpt: 'A basic guide to fire-safe materials, IS standards, and the best areas to use our Agni fire-retardant plywood.',
+    author: 'By Suresh Reddy',
     date: 'October 25, 2024',
     readTime: '5 min read',
     category: 'Safety & Standards',
@@ -94,9 +94,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '6',
-    title: 'Top 10 Interior Design Trends Using Premium Plywood',
-    excerpt: 'From natural wood finishes to contemporary patterns, premium plywood like Samrat and Ujval is transforming modern interiors. Discover the latest trends in textured laminates and veneer designs.',
-    author: 'Neha Kapoor',
+    title: 'How to Create Stylish Accent Walls with Decorative Plywood',
+    excerpt: 'Want to add warmth to your home? Learn easy design ideas using Ujval decorative plywood for feature walls and statement corners.',
+    author: 'By Neha Kapoor',
     date: 'October 22, 2024',
     readTime: '8 min read',
     category: 'Design Trends',
@@ -104,9 +104,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '7',
-    title: 'How to Store Plywood Correctly to Prevent Warping',
-    excerpt: 'Proper storage is critical for maintaining plywood quality. Learn professional tips on stacking, humidity control, ventilation, and protection from direct sunlight.',
-    author: 'Vikram Malhotra',
+    title: 'How to Store Plywood to Prevent Bending or Warping',
+    excerpt: 'Easy storage tips for carpenters, workshops, and homeowners.',
+    author: 'By Vikram Malhotra',
     date: 'October 20, 2024',
     readTime: '4 min read',
     category: 'Maintenance Tips',
@@ -114,9 +114,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '8',
-    title: 'Understanding E0 and E1 Emission Standards in Plywood',
-    excerpt: 'Indoor air quality matters. Understand formaldehyde emission standards, health impacts, and why E0-grade plywood from The Trees ensures a safer living environment.',
-    author: 'Dr. Meera Gupta',
+    title: 'Understanding E0 & E1 Emission Standards',
+    excerpt: 'A clear explanation of indoor air safety, formaldehyde levels, and why E0 plywood is a healthier choice for homes.',
+    author: 'By Dr. Meera Gupta',
     date: 'October 18, 2024',
     readTime: '6 min read',
     category: 'Health & Safety',
@@ -124,9 +124,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '9',
-    title: 'Plywood vs MDF vs Particle Board: A Complete Comparison',
-    excerpt: 'Choosing the right material can make or break your project. We compare strength, moisture resistance, cost, and best-use scenarios for each engineered wood product.',
-    author: 'Arun Verma',
+    title: 'Plywood vs MDF vs Particle Board — Clear Comparison',
+    excerpt: 'Strength, lifespan, cost, finishing — understand which one fits your project.',
+    author: 'By Arun Verma',
     date: 'October 15, 2024',
     readTime: '7 min read',
     category: 'Product Comparison',
@@ -134,9 +134,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '10',
-    title: 'The Ultimate Guide to Plywood Thickness Selection',
-    excerpt: 'Choosing the right thickness is crucial for structural integrity. From 4mm panels to 25mm boards, learn which thickness suits your specific application needs.',
-    author: 'Rajesh Kumar',
+    title: 'Plywood Thickness Guide: Which Thickness Should You Use?',
+    excerpt: 'A simple breakdown of 4mm, 6mm, 12mm, 18mm, and more — and where each one works best.',
+    author: 'By Rajesh Kumar',
     date: 'October 12, 2024',
     readTime: '6 min read',
     category: 'Product Guide',
@@ -144,9 +144,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '11',
-    title: 'Creating Stunning Feature Walls with Decorative Plywood',
-    excerpt: 'Transform your space with decorative plywood panels. Explore texture options, installation techniques, and design ideas for creating eye-catching accent walls.',
-    author: 'Neha Kapoor',
+    title: 'Top Interior Trends Using Premium Plywood',
+    excerpt: 'From natural grains to minimal designs, see how Samrat and Ujval plywood add style to today’s homes.',
+    author: 'By Neha Kapoor',
     date: 'October 10, 2024',
     readTime: '5 min read',
     category: 'Interior Design',
@@ -154,9 +154,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '12',
-    title: 'Waterproofing Techniques for Bathroom Plywood Applications',
-    excerpt: 'Bathrooms present unique moisture challenges. Learn about marine-grade options, sealing methods, and installation best practices for wet areas.',
-    author: 'Amit Singh',
+    title: 'Protecting Plywood in Bathrooms & Moist Areas',
+    excerpt: 'Best practices for waterproofing, sealing, and choosing the right grade.',
+    author: 'By Amit Singh',
     date: 'October 8, 2024',
     readTime: '6 min read',
     category: 'Maintenance Tips',
@@ -222,9 +222,9 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Insights & Inspiration"
-        subtitle="Expert Tips and Industry Trends"
-        description="Discover expert advice, design trends, sustainability insights, and practical tips from The Trees plywood specialists to help you make informed decisions."
+        title="Latest Insights About Plywood"
+        subtitle="Ideas, Tips, Guides, Inspirations, Trends, & Real Advice for Better Building"
+        description="Explore helpful articles & Blogs on plywood care, design trends, maintenance tips, and smart building practices to help you make better building choices for Stronger & Better Spaces."
         image="https://images.unsplash.com/photo-1681392119244-6d06728b5ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwdGV4dHVyZSUyMGNsb3NlJTIwdXB8ZW58MXx8fHwxNzYyMjM0ODM1fDA&ixlib=rb-4.1.0&q=80&w=1080"
         badge="Latest Updates"
         badgeIcon={BookOpen}
@@ -232,8 +232,8 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
         overlayOpacity="medium"
         stats={[
           { value: '50+', label: 'Articles Published' },
-          { value: 'Weekly', label: 'New Updates' },
-          { value: '10K+', label: 'Monthly Readers' },
+          { value: 'Every Week', label: 'New Updates' },
+          { value: '10K+', label: 'Readers Each Month' },
         ]}
       />
 
@@ -241,36 +241,36 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Why Read Our Blog"
+            badge="Expert Guidance Made Simple"
             badgeIcon={Target}
-            title="Expert Knowledge at Your Fingertips"
-            subtitle="Stay informed with industry insights, practical tips, and expert guidance from plywood specialists"
+            title="Why You'll Love Reading Our Blog"
+            subtitle="We share simple, trustworthy information to help you make confident decisions. Whether you’re building, designing, or just exploring ideas."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
             {[
               {
                 icon: Lightbulb,
-                title: 'Expert Insights',
-                desc: 'Learn from industry professionals with decades of experience in plywood manufacturing',
+                title: 'From the Experts',
+                desc: 'Useful knowledge shared in a way that’s easy to understand.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: TrendingUp,
-                title: 'Industry Trends',
-                desc: 'Stay ahead with the latest design trends, innovations, and market developments',
+                title: 'Fresh Ideas',
+                desc: 'See what’s trending in interiors, materials, and craftsmanship.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: CheckCircle2,
-                title: 'Practical Tips',
-                desc: 'Get actionable advice on installation, maintenance, and product selection',
+                title: 'Easy Tips',
+                desc: 'Quick pointers that help you choose better and build smarter.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: Award,
-                title: 'Quality Content',
-                desc: 'Well-researched articles backed by technical expertise and real-world experience',
+                title: 'Content You Can Trust',
+                desc: 'Every article comes from real on-site experience and industry know-how.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((benefit, idx) => (
@@ -300,8 +300,8 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
           <ModernSectionHeader
             badge="Content Topics"
             badgeIcon={BookOpen}
-            title="What We Write About"
-            subtitle="Explore our comprehensive library of articles organized by topic to find exactly what you need"
+            title="What We Cover"
+            subtitle="Browse through our articles by topic and quickly find the information you’re looking for."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -309,63 +309,63 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
               {
                 icon: Anchor,
                 category: 'Marine Applications',
-                description: 'BWP grade plywood for boats, docks, and coastal structures',
+                description: 'Plywood solutions for boats, coastal homes, and high-moisture areas.',
                 color: 'from-blue-500 to-blue-600',
                 count: blogPosts.filter(p => p.category === 'Marine Applications').length
               },
               {
                 icon: Home,
                 category: 'Interior Design',
-                description: 'Design trends, decorative panels, and aesthetic solutions',
+                description: 'Ideas, trends, and smart ways to use plywood in stylish interiors.',
                 color: 'from-purple-500 to-purple-600',
                 count: blogPosts.filter(p => p.category === 'Interior Design').length
               },
               {
                 icon: Leaf,
                 category: 'Sustainability',
-                description: 'FSC certification, responsible forestry, and eco-friendly practices',
+                description: 'Responsible sourcing, FSC practices, and eco-friendly materials.',
                 color: 'from-green-500 to-green-600',
                 count: blogPosts.filter(p => p.category === 'Sustainability').length
               },
               {
                 icon: ShieldCheck,
                 category: 'Product Guide',
-                description: 'Choosing the right plywood type and grade for your needs',
+                description: 'Easy guides to choosing the right plywood grade for your project.',
                 color: 'from-indigo-500 to-indigo-600',
                 count: blogPosts.filter(p => p.category === 'Product Guide').length
               },
               {
                 icon: Palette,
                 category: 'Design Trends',
-                description: 'Latest interior trends and innovative plywood applications',
+                description: 'Latest styles and creative uses of plywood in modern spaces.',
                 color: 'from-pink-500 to-pink-600',
                 count: blogPosts.filter(p => p.category === 'Design Trends').length
               },
               {
                 icon: Flame,
                 category: 'Safety & Standards',
-                description: 'Fire safety, building codes, and industry certifications',
+                description: 'All about fire safety, certifications, and building requirements.',
                 color: 'from-red-500 to-red-600',
                 count: blogPosts.filter(p => p.category === 'Safety & Standards').length
               },
               {
                 icon: Wrench,
                 category: 'Maintenance Tips',
-                description: 'Storage, care, installation, and preservation techniques',
+                description: 'Guides on care, installation, and long-lasting performance.',
                 color: 'from-orange-500 to-orange-600',
                 count: blogPosts.filter(p => p.category === 'Maintenance Tips').length
               },
               {
                 icon: HeartPulse,
                 category: 'Health & Safety',
-                description: 'Indoor air quality, emission standards, and health impacts',
+                description: 'Information on emissions, indoor air quality, and safe materials.',
                 color: 'from-rose-500 to-rose-600',
                 count: blogPosts.filter(p => p.category === 'Health & Safety').length
               },
               {
                 icon: BarChart3,
                 category: 'Product Comparison',
-                description: 'Compare plywood, MDF, particle board, and other materials',
+                description: 'Simple comparisons between plywood, MDF, particle board, and more.',
                 color: 'from-cyan-500 to-cyan-600',
                 count: blogPosts.filter(p => p.category === 'Product Comparison').length
               },
@@ -408,10 +408,10 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
         {/* Category Filter */}
         <section>
           <ModernSectionHeader
-            badge="Quick Filter"
+            badge="Quick Finding Content Filter by topic"
             badgeIcon={Filter}
-            title="Filter by Category"
-            subtitle="Use these quick filter buttons to instantly view articles from a specific topic"
+            title="Browse by Topic"
+            subtitle="Choose a category below to quickly find articles that match what you’re looking for."
           />
 
           <div className="flex flex-wrap gap-3 justify-center">
@@ -459,7 +459,7 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
                   src={featuredPost.image}
                   alt={featuredPost.title}
                   className="absolute inset-0 w-full h-full object-cover"
-                />
+                />                                 
                 <div className="absolute top-4 left-4">
                   <span className="bg-trees-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
                     {featuredPost.category}
@@ -477,7 +477,7 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
                     <span>{featuredPost.readTime}</span>
                   </div>
                 </div>
-                <h2 className="text-trees-primary mb-4">
+                <h2 className="text-trees-primary mb-4">          
                   {featuredPost.title}
                 </h2>
                 <p className="text-gray-700 mb-6">
@@ -563,7 +563,7 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
                         <span className="text-xs text-gray-600">{post.author}</span>
                       </div>
                       <span className="text-trees-primary font-medium text-sm hover:gap-2 flex items-center gap-1 transition-all">
-                        Read
+                        Read More
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -673,18 +673,18 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-white mb-4">Our Blog Impact</h2>
+            <h2 className="text-white mb-4">Why Our Blog Matters &Trusted by Our Community</h2>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              Helping thousands of professionals and homeowners make informed decisions
+              Helping people make smarter choices for their homes and projects. Trust our articles for clear, useful guidance.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { value: '50+', label: 'Published Articles', icon: BookOpen },
-              { value: '10K+', label: 'Monthly Readers', icon: Users },
-              { value: 'Weekly', label: 'New Content', icon: Sparkles },
-              { value: '98%', label: 'Helpful Rating', icon: Star },
+              { value: '50+', label: 'articles to explore', icon: BookOpen },
+              { value: '10K+', label: 'readers every month', icon: Users },
+              { value: 'Weekly', label: 'Fresh content ', icon: Sparkles },
+              { value: '98%', label: 'satisfaction rating by reading our content.', icon: Star },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -709,10 +709,10 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Reader Feedback"
+            badge="Your Feedback matters"
             badgeIcon={Star}
-            title="What Our Readers Say"
-            subtitle="See how our blog helps professionals and enthusiasts make better decisions"
+            title="What Our Loved Readers Say"
+            subtitle="Real experiences from people who use our blogs to learn, build, and make better choices."
           />
           <Testimonials />
         </div>
@@ -722,7 +722,7 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
       <section className="section-padding bg-white">
         <PageContainer>
           <ModernSectionHeader
-            badge="Got Questions?"
+            badge="Have Questions?"
             badgeIcon={HelpCircle}
             title="Blog FAQ"
             subtitle="Common questions about our articles, content updates, and contributions"
@@ -732,74 +732,59 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="frequency" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  How often do you publish new articles?
+                  How often do you post new blogs?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  We publish new articles weekly, covering a range of topics from product guides and design trends 
-                  to sustainability insights and maintenance tips. Subscribe to our newsletter to get notified when 
-                  new content is published. We also regularly update existing articles to ensure information stays 
-                  current and accurate.
+                  We share fresh articles every week, from simple tips to product guides and design ideas. We also update older posts so the information stays useful and up-to-date.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="topics" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I request specific topics to be covered?
+                  Can I request a topic?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Absolutely! We value reader input and regularly take topic suggestions. If there's a specific 
-                  aspect of plywood, design, or construction you'd like us to cover, please contact us through 
-                  our Contact page or email us directly. We review all suggestions and prioritize topics based on 
-                  reader interest and expertise availability.
+                 Yes, of course! If there’s something you want us to write about, just drop your request on our Contact page. We love hearing what readers want to learn next.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="authors" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Who writes your blog articles?
+                  Who writes your blogs?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Our articles are written by a team of industry experts including experienced architects, 
-                  interior designers, product specialists, and sustainability consultants. Each author brings 
-                  years of hands-on experience and deep technical knowledge. All articles are reviewed by our 
-                  editorial team to ensure accuracy, clarity, and practical value.
+                  Our blogs are created by people who work closely with plywood every day — architects, designers, product experts, and experienced technicians. Every article is reviewed for accuracy and clarity before it goes live.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="newsletter" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  What do I get with the newsletter subscription?
+                  What do I get when I subscribe?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Newsletter subscribers receive weekly digests featuring new articles, exclusive tips, product 
-                  updates, and industry insights. You'll also get early access to in-depth guides, special offers, 
-                  and invitations to webinars. We respect your privacy and never spam - you can unsubscribe 
-                  anytime with one click.
+                  You’ll receive weekly updates with new blogs, tips, product info, and useful insights. Subscribers also get early access to guides and special updates. And don’t worry, no spam, nothing.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="sharing" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I share or reference blog articles?
+                  Can I share your articles?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes! We encourage sharing our content. All articles can be freely shared on social media, 
-                  referenced in presentations, or used for educational purposes. We only ask that you provide 
-                  proper attribution and link back to the original article. For commercial use or republishing, 
-                  please contact us for permission.
+                   Absolutely. You can share our blogs on social media or use them for learning and presentations. If you want to use them commercially, just reach out to us for permission.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
 
             <div className="text-center mt-12">
-              <p className="text-gray-600 mb-6">Have more questions?</p>
+              <p className="text-gray-600 mb-6">Still have questions?</p>
               <ModernButton
                 variant="outline"
                 size="lg"
                 icon={<MessageSquare className="w-5 h-5" />}
                 onClick={() => onNavigate?.('contact')}
               >
-                Contact Our Team
+                Get in touch with our team
               </ModernButton>
             </div>
           </div>
@@ -824,28 +809,28 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
               <Mail className="w-4 h-4 text-white" />
               <span className="text-white font-semibold text-sm">Stay Updated</span>
             </div>
-            <h2 className="text-white mb-6">Subscribe to Our Newsletter</h2>
+            <h2 className="text-white mb-6">Don’t Miss Out - Subscribe for Updates</h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Get the latest articles, industry insights, and exclusive content delivered directly to your inbox every week
+              Get helpful tips & ideas, new articles, and updates straight to your inbox.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
               <input
                 type="email"
-                placeholder="Enter your email address"
+                placeholder="Enter your email"
                 className="flex-1 px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60"
               />
               <MagneticButton strength={0.2}>
                 <ModernButton 
                   variant="light" 
-                  size="md"
+                  size="md" 
                 >
-                  Subscribe Now
+                  Join the community
                 </ModernButton>
               </MagneticButton>
             </div>
             <p className="text-sm text-white/70">
-              Join 10,000+ subscribers • No spam • Unsubscribe anytime
+               Trusted by 10,000+ readers.No unwanted emails, Easy Unsubscribe, No spam.
             </p>
           </motion.div>
         </div>
