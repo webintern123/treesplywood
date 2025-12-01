@@ -41,206 +41,317 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
   ];
 
   const faqs = [
-    // Products & Specifications
-    {
-      category: 'products',
-      question: 'What is the difference between BWP and BWR grade plywood?',
-      answer: 'BWP (Boiling Water Proof) grade uses phenolic resin adhesive and can withstand prolonged exposure to water and boiling water. BWR (Boiling Water Resistant) grade uses melamine-based adhesives and offers good moisture resistance but not complete waterproofing. BWP is recommended for marine, coastal, and high-moisture applications, while BWR is suitable for kitchens and bathrooms.',
-      popular: true,
-    },
-    {
-      category: 'products',
-      question: 'What thickness options are available?',
-      answer: 'We offer plywood in various thicknesses: 4mm, 6mm, 8mm, 12mm, 15mm, 18mm, 19mm, and 25mm. Availability may vary by product type. Contact our sales team for specific thickness requirements.',
-      popular: true,
-    },
-    {
-      category: 'products',
-      question: 'What is the standard size of plywood sheets?',
-      answer: 'Our standard sizes are 8\'×4\' (2440×1220mm), 7\'×4\' (2134×1220mm), 7\'×3\' (2134×915mm), 6\'×4\' (1830×1220mm), and 6\'×3\' (1830×915mm). We also offer custom sizes for large projects with minimum order quantities.',
-      popular: false,
-    },
-    {
-      category: 'products',
-      question: 'What certifications do your products have?',
-      answer: 'All our products are IS 303 certified. We also hold ISO 9001:2015 for quality management, FSC certification for sustainable forestry, BIS approval, and meet E0/E1 emission standards for formaldehyde. Certificates are available upon request.',
-      popular: true,
-    },
-    {
-      category: 'products',
-      question: 'Is your plywood termite and borer resistant?',
-      answer: 'Yes, all our plywood products undergo anti-termite and anti-borer treatment as part of our manufacturing process. This protection is covered under our warranty when products are used as intended.',
-      popular: false,
-    },
+  // PRODUCTS & SPECIFICATIONS
+  {
+    category: 'products',
+    question: 'What is the difference between BWP and BWR plywood?',
+    answer: (
+      <div className="space-y-1">
+        <p>● BWP is fully waterproof and can handle constant exposure to water.</p>
+        <p>● BWR handles moisture well but isn’t fully waterproof.</p>
+        <p>● Use BWP for bathrooms, kitchens, outdoor, or coastal areas.</p>
+        <p>● Use BWR for regular home interiors.</p>
+      </div>
+    ),
+    popular: true,
+  },
+  {
+    category: 'products',
+    question: 'What thickness options do you offer?',
+    answer: (
+      <p>
+        We provide plywood from 4mm to 25mm, depending on the grade. For special sizes, our team can guide you.
+      </p>
+    ),
+    popular: true,
+  },
+  {
+    category: 'products',
+    question: 'What are your standard plywood sizes?',
+    answer: (
+      <div className="space-y-1">
+        <p>Common sizes:</p>
+        <p>● 8x4 ft</p>
+        <p>● 7x4 ft</p>
+        <p>● 7x3 ft</p>
+        <p>● 6x4 ft</p>
+        <p>● 6x3 ft</p>
+        <p>Custom sizes are available for bulk or project orders.</p>
+      </div>
+    ),
+    popular: false,
+  },
+  {
+    category: 'products',
+    question: 'Are your products certified?',
+    answer: (
+      <div className="space-y-1">
+        <p>Yes, Our sheets follow:</p>
+        <p>● ISI Standards</p>
+        <p>● ISO 9001:2015</p>
+        <p>● FSC Certified timber</p>
+        <p>● E0/E1 low-emission standards</p>
+        <p>Certificates are available on request.</p>
+      </div>
+    ),
+    popular: true,
+  },
+  {
+    category: 'products',
+    question: 'Is your plywood termite and borer resistant?',
+    answer: (
+      <p>Yes. Every sheet is treated to protect against termites and borers, and this is covered under warranty.</p>
+    ),
+    popular: false,
+  },
 
-    // Ordering & Pricing
-    {
-      category: 'ordering',
-      question: 'How do I get a price quote?',
-      answer: 'You can request a quote through our contact form, by calling +91 9091744744, or by emailing sales@thetreesplywood.com. Please provide details about the product type, quantity, thickness, and delivery location for an accurate quote.',
-      popular: true,
-    },
-    {
-      category: 'ordering',
-      question: 'What is the minimum order quantity?',
-      answer: 'Minimum order quantity varies by product and location. For standard products, we typically require a minimum of 10-20 sheets. For custom sizes or special finishes, MOQ may be higher. Contact us for specific requirements.',
-      popular: false,
-    },
-    {
-      category: 'ordering',
-      question: 'Do you offer bulk discounts?',
-      answer: 'Yes, we offer competitive pricing for bulk orders and long-term projects. Volume discounts are available for orders above certain thresholds. Contact our sales team to discuss your project requirements.',
-      popular: false,
-    },
-    {
-      category: 'ordering',
-      question: 'What payment methods do you accept?',
-      answer: 'We accept bank transfers, cheques, and digital payment methods. For established customers, we offer credit terms after due diligence. Payment terms will be specified in your quotation.',
-      popular: false,
-    },
-    {
-      category: 'ordering',
-      question: 'Can I order samples before placing a bulk order?',
-      answer: 'Absolutely! We provide free product samples (up to 5 types) delivered to your location. This allows you to evaluate quality, finish, and suitability before committing to a full order. Request samples through our Sample Request page.',
-      popular: true,
-    },
+  // ORDERING & PRICING
+  {
+    category: 'ordering',
+    question: 'How can I get a price quote?',
+    answer: (
+      <p>
+        You can call us, email us, or fill out the enquiry form. Share your product type, thickness, quantity, and location for an accurate quote.
+      </p>
+    ),
+    popular: true,
+  },
+  {
+    category: 'ordering',
+    question: 'What is the minimum order quantity?',
+    answer: (
+      <p>For most grades, the minimum is 10–20 sheets. Custom orders may require a higher minimum.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'ordering',
+    question: 'Do you offer discounts for bulk orders?',
+    answer: (
+      <p>Yes, large orders and long-term projects get special pricing. Speak to our sales team for details.</p>
+    ),
+    popular: true,
+  },
+  {
+    category: 'ordering',
+    question: 'What payment methods do you accept?',
+    answer: (
+      <p>We accept bank transfers, cheques, and digital payments. Credit terms may be offered to registered partners.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'ordering',
+    question: 'Can I get samples before placing an order?',
+    answer: (
+      <p>Yes! We offer free samples so you can check the quality before buying.</p>
+    ),
+    popular: true,
+  },
 
-    // Shipping & Delivery
-    {
-      category: 'shipping',
-      question: 'What are the delivery timelines?',
-      answer: 'Delivery timelines depend on your location and order quantity. Typically, within city limits: 2-3 days, within state: 5-7 days, outside state: 7-14 days. Custom orders may take additional 7-10 days for production. We\'ll provide estimated delivery dates with your quote.',
-      popular: true,
-    },
-    {
-      category: 'shipping',
-      question: 'Do you ship pan-India?',
-      answer: 'Yes, we ship to all major cities and towns across India. We have a network of logistics partners to ensure safe and timely delivery nationwide.',
-      popular: false,
-    },
-    {
-      category: 'shipping',
-      question: 'What are the shipping charges?',
-      answer: 'Shipping charges are calculated based on delivery location, order volume, and distance. For large orders, we often provide free or subsidized shipping. Exact charges will be included in your quotation.',
-      popular: false,
-    },
-    {
-      category: 'shipping',
-      question: 'How is the plywood packaged for shipping?',
-      answer: 'All plywood is carefully wrapped in protective plastic sheets, strapped securely, and loaded on pallets for transportation. We ensure products are protected from moisture, dust, and damage during transit.',
-      popular: false,
-    },
-    {
-      category: 'shipping',
-      question: 'Can I track my order?',
-      answer: 'Yes, once your order is dispatched, we provide tracking details via SMS and email. You can also call our customer service team for real-time updates on your shipment.',
-      popular: true,
-    },
+  // SHIPPING & DELIVERY
+  {
+    category: 'shipping',
+    question: 'How long does delivery take?',
+    answer: (
+      <div className="space-y-1">
+        <p>● Within city: 2–3 days</p>
+        <p>● Within state: 5–7 days</p>
+        <p>● Other states: 7–14 days</p>
+        <p>● Custom products may take a bit longer.</p>
+      </div>
+    ),
+    popular: true,
+  },
+  {
+    category: 'shipping',
+    question: 'Do you deliver across India?',
+    answer: <p>Yes, we ship to all major cities and towns.</p>,
+    popular: true,
+  },
+  {
+    category: 'shipping',
+    question: 'How are shipping charges calculated?',
+    answer: (
+      <p>Charges depend on your location, quantity, and distance. Bulk orders may get free or discounted shipping.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'shipping',
+    question: 'How do you pack plywood for delivery?',
+    answer: (
+      <p>Sheets are wrapped, strapped, and packed to protect against dust, moisture, and handling damage.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'shipping',
+    question: 'Can I track my order?',
+    answer: <p>Yes. Once dispatched, you’ll receive tracking details via SMS or email.</p>,
+    popular: true,
+  },
 
-    // Installation & Usage
-    {
-      category: 'installation',
-      question: 'How should plywood be stored before installation?',
-      answer: 'Store plywood sheets flat in a dry, well-ventilated area away from direct sunlight and moisture. Keep them elevated (not directly on the ground) and covered with a breathable tarp. Avoid storing in humid environments or outdoors.',
-      popular: false,
-    },
-    {
-      category: 'installation',
-      question: 'Do I need to treat plywood before installation?',
-      answer: 'Our plywood comes pre-treated for termites and borers. However, for outdoor applications or high-moisture areas, we recommend applying a waterproof sealant or paint to exposed edges and surfaces for additional protection.',
-      popular: false,
-    },
-    {
-      category: 'installation',
-      question: 'What adhesive should I use for plywood?',
-      answer: 'Use quality wood adhesives like PVA (white glue) for interior applications or waterproof adhesives (like polyurethane or epoxy) for moisture-prone areas. Always follow manufacturer instructions and ensure proper clamping during bonding.',
-      popular: false,
-    },
-    {
-      category: 'installation',
-      question: 'Can I use plywood for exterior applications?',
-      answer: 'BWP (Marine) grade plywood is suitable for exterior applications when properly sealed and painted. MR grade is not recommended for direct outdoor exposure. Always use appropriate protective coatings for exterior use.',
-      popular: true,
-    },
-    {
-      category: 'installation',
-      question: 'What tools do I need to cut plywood?',
-      answer: 'A circular saw, table saw, or jigsaw with a fine-tooth blade works well for cutting plywood. Use a straightedge guide for clean cuts and cut with the good face up to minimize chipping. Always wear safety equipment.',
-      popular: false,
-    },
+  // INSTALLATION & USAGE
+  {
+    category: 'installation',
+    question: 'How should plywood be stored before installation?',
+    answer: (
+      <p>Keep sheets flat, away from sunlight and moisture. Store them in a dry, ventilated area.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'installation',
+    question: 'Do I need to add any treatment before using plywood?',
+    answer: (
+      <p>Our plywood is already treated. For outdoor use, seal the edges and surface for extra protection.</p>
+    ),
+    popular: true,
+  },
+  {
+    category: 'installation',
+    question: 'Which adhesive should I use?',
+    answer: (
+      <div className="space-y-1">
+        <p>● Interiors: PVA/wood glue</p>
+        <p>● Wet areas: Waterproof adhesive (PU / epoxy)</p>
+      </div>
+    ),
+    popular: true,
+  },
+  {
+    category: 'installation',
+    question: 'Can I use plywood outdoors?',
+    answer: (
+      <p>Yes, BWP and Marine Grade are suitable if sealed properly. MR grade is not recommended outdoors.</p>
+    ),
+    popular: true,
+  },
+  {
+    category: 'installation',
+    question: 'What tools are best for cutting plywood?',
+    answer: (
+      <p>A circular saw, table saw, or jigsaw with a fine blade gives a clean cut. Use a straight guide for accuracy.</p>
+    ),
+    popular: false,
+  },
 
-    // Warranty & Returns
-    {
-      category: 'warranty',
-      question: 'What is covered under warranty?',
-      answer: 'Our warranty covers manufacturing defects including delamination, core voids, bonding failure, and thickness variations beyond tolerance. Coverage duration varies by product (10 years to lifetime). See our Warranty page for complete details.',
-      popular: true,
-    },
-    {
-      category: 'warranty',
-      question: 'How do I file a warranty claim?',
-      answer: 'Contact our warranty helpline at +91 9091744744 or email warranty@thetreesplywood.com with your invoice, photos of the issue, and product details. Our team will guide you through the claim process.',
-      popular: false,
-    },
-    {
-      category: 'warranty',
-      question: 'What is not covered under warranty?',
-      answer: 'Warranty does not cover damage from improper installation, incorrect application, environmental damage (fire/flood), physical damage, improper storage, normal wear and tear, or cosmetic variations in natural wood grain.',
-      popular: false,
-    },
-    {
-      category: 'warranty',
-      question: 'Can I return or exchange products?',
-      answer: 'Returns are accepted within 7 days of delivery only if there are manufacturing defects or if wrong products were delivered. Custom-cut or special-order products cannot be returned. Contact us immediately if you receive damaged goods.',
-      popular: false,
-    },
-    {
-      category: 'warranty',
-      question: 'Is the warranty transferable?',
-      answer: 'Yes, the warranty is transferable to subsequent property owners with proof of original purchase and proper documentation. This adds value to your property and provides peace of mind to buyers.',
-      popular: false,
-    },
+  // WARRANTY & RETURNS
+  {
+    category: 'warranty',
+    question: 'What does the warranty cover?',
+    answer: (
+      <div className="space-y-1">
+        <p>Manufacturing issues like:</p>
+        <p>● Delamination</p>
+        <p>● Core gaps</p>
+        <p>● Bonding failure</p>
+        <p>● Thickness variations</p>
+        <p>● Duration varies by product (10 years to lifetime).</p>
+      </div>
+    ),
+    popular: true,
+  },
+  {
+    category: 'warranty',
+    question: 'How do I submit a warranty claim?',
+    answer: (
+      <p>Share your invoice, photos, and product details with our support team. We will guide you through the process.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'warranty',
+    question: 'What is not covered under warranty?',
+    answer: (
+      <div className="space-y-1">
+        <p>● Incorrect installation</p>
+        <p>● Water damage on MR-grade sheets</p>
+        <p>● Improper storage</p>
+        <p>● Physical damage</p>
+        <p>● Natural variations in veneer</p>
+        <p>● Fire or floods</p>
+      </div>
+    ),
+    popular: true,
+  },
+  {
+    category: 'warranty',
+    question: 'Can I return plywood?',
+    answer: (
+      <p>Returns are accepted only for wrong or defective products. Custom sizes cannot be returned.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'warranty',
+    question: 'Is the warranty transferable?',
+    answer: (
+      <p>Yes. It can be transferred to the next property owner with receipts.</p>
+    ),
+    popular: false,
+  },
 
-    // Sustainability
-    {
-      category: 'sustainability',
-      question: 'Is your plywood environmentally friendly?',
-      answer: 'Yes, we are committed to sustainability. We use FSC-certified timber from responsibly managed forests, low-emission adhesives meeting E0/E1 standards, and optimize our production to minimize waste. We also have water recycling and energy efficiency measures in place.',
-      popular: true,
-    },
-    {
-      category: 'sustainability',
-      question: 'What is FSC certification?',
-      answer: 'FSC (Forest Stewardship Council) certification ensures that timber is sourced from forests that are managed responsibly - protecting biodiversity, preventing deforestation, and supporting local communities. Look for the FSC logo on our products.',
-      popular: false,
-    },
-    {
-      category: 'sustainability',
-      question: 'What are E0 and E1 emission standards?',
-      answer: 'E0 and E1 are emission standards that limit formaldehyde content in wood products. E0 is the strictest (≤0.5 mg/L) and E1 (≤1.5 mg/L) is the European standard. Our products meet these standards, ensuring indoor air quality and safety.',
-      popular: false,
-    },
-    {
-      category: 'sustainability',
-      question: 'Can plywood be recycled?',
-      answer: 'Plywood can be reused for various applications if still in good condition. At end of life, it can be repurposed for furniture, panels, or shredded for particleboard. However, treated plywood should not be burned as it may release harmful fumes.',
-      popular: false,
-    },
-    {
-      category: 'sustainability',
-      question: 'Do you have any sustainability initiatives?',
-      answer: 'Yes, we have implemented rainwater harvesting, solar power for partial energy needs, waste wood recycling programs, and continuous process improvements to reduce our carbon footprint. We publish annual sustainability reports.',
-      popular: false,
-    },
-  ];
+  // SUSTAINABILITY
+  {
+    category: 'sustainability',
+    question: 'Are your products eco-friendly?',
+    answer: (
+      <p>Yes. We use FSC-certified wood and low-emission glue to ensure safe indoor air quality.</p>
+    ),
+    popular: true,
+  },
+  {
+    category: 'sustainability',
+    question: 'What does FSC certification mean?',
+    answer: (
+      <p>It guarantees that the timber comes from forests managed responsibly and ethically.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'sustainability',
+    question: 'What are E0 and E1 emission standards?',
+    answer: (
+      <p>These standards measure formaldehyde emissions. E0 is the safest level for indoor use.</p>
+    ),
+    popular: true,
+  },
+  {
+    category: 'sustainability',
+    question: 'Can plywood be recycled?',
+    answer: (
+      <p>Yes. It can be reused for furniture, DIY projects, or repurposed for other wood products.</p>
+    ),
+    popular: false,
+  },
+  {
+    category: 'sustainability',
+    question: 'Does Tree’s Plywood follow green practices?',
+    answer: (
+      <div className="space-y-1">
+        <p>Yes. Our initiatives include:</p>
+        <p>● Water recycling</p>
+        <p>● Solar energy usage</p>
+        <p>● Waste management</p>
+        <p>● Low-emission adhesives</p>
+        <p>● Energy-efficient machinery</p>
+      </div>
+    ),
+    popular: true,
+  },
+];
 
   const filteredFaqs = faqs.filter((faq) => {
-    const matchesCategory = selectedCategory === 'all' || faq.category === selectedCategory;
-    const matchesSearch = 
-      faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const matchesCategory = selectedCategory === 'all' || faq.category === selectedCategory;
+  // Convert answer to plain string if needed
+  const answerText = typeof faq.answer === 'string' ? faq.answer : '';
+  const matchesSearch = 
+    faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    answerText.toLowerCase().includes(searchQuery.toLowerCase());
+  return matchesCategory && matchesSearch;
+});
 
   const popularQuestions = faqs.filter(faq => faq.popular);
 
@@ -282,18 +393,18 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Frequently Asked Questions"
-        subtitle="We're Here to Help"
-        description="Find quick answers to common questions about our products, warranties, and services."
+        title={"Your Questions, \nAnswered Here – FAQs"}
+        subtitle="Want Support? Start Now"
+        description="Looking for clarity on grades, warranties, services, quality, or product use? Here are quick answers to everything you may want to know."
         image="https://images.unsplash.com/photo-1759392790299-a8874cabc000?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHN1cHBvcnQlMjBoZWxwJTIwZGVza3xlbnwxfHx8fDE3NjIyNTMwMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-        badge="24/7 Support"
+        badge="365 Days Year-Round Support"
         badgeIcon={HelpCircle}
         height="md"
         overlayOpacity="medium"
         stats={[
-          { value: '35+', label: 'FAQs' },
-          { value: '<2hr', label: 'Response Time' },
-          { value: '99%', label: 'Satisfaction' },
+          { value: '35+', label: 'Helpful FAQs Listed' },
+          { value: 'Within 2 Hours  ', label: 'Fast Support  ' },
+          { value: '99%', label: 'Happy Customers' },
         ]}
       />
 
@@ -301,10 +412,10 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Quick Guide"
+            badge="Quick Help Guide"
             badgeIcon={Lightbulb}
-            title="How to Use This FAQ"
-            subtitle="Simple 3-step process to find answers to your questions quickly"
+            title="How to Use This Page - Finding Answers Made Easy"
+            subtitle="Find answers in just a few steps"
           />
           
           <div className="grid md:grid-cols-3 gap-6 mb-16">
@@ -312,22 +423,22 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               {
                 step: '1',
                 icon: Search,
-                title: 'Search or Browse',
-                desc: 'Use the search bar to find specific topics or browse by category',
+                title: ' Search or Browse Your Topic',
+                desc: 'Type your question in the search bar or explore the categories.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 step: '2',
                 icon: HelpCircle,
-                title: 'Read Detailed Answers',
-                desc: 'Click on any question to expand and read comprehensive answers',
+                title: 'Open the Answer',
+                desc: ' Click any question to view the full explanation.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 step: '3',
                 icon: MessageCircle,
-                title: 'Still Need Help?',
-                desc: 'Contact our support team if you need additional assistance',
+                title: 'Still Confused?',
+                desc: ' Our support team is just a message away.',
                 color: 'from-purple-500 to-purple-600'
               },
             ].map((step, idx) => (
@@ -358,36 +469,36 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Why FAQ?"
+            badge="Why This FAQ Exists"
             badgeIcon={Target}
-            title="Get Answers Instantly"
-            subtitle="Quick solutions to common questions, available 24/7 without waiting for support"
+            title="Quick Answers Anytime"
+            subtitle="We created this FAQ to help you find quick answers without waiting."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
             {[
               {
                 icon: Zap,
-                title: 'Instant Answers',
-                desc: 'Get immediate solutions without waiting for support responses',
+                title: 'Fast Solutions',
+                desc: 'Find the most asked questions answered in seconds.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: Shield,
-                title: 'Expert Knowledge',
-                desc: 'Curated answers from our technical and customer service experts',
+                title: 'Expert-Checked',
+                desc: 'All answers are verified by our support and technical specialists.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: CheckCircle,
-                title: 'Always Updated',
-                desc: 'Regularly updated with latest product information and policies',
+                title: 'Fresh Content',
+                desc: 'We update this page as we introduce new products or features.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: Star,
-                title: '24/7 Available',
-                desc: 'Access support information anytime, from anywhere in the world',
+                title: 'Always Open',
+                desc: ' Help is available round the clock — just scroll and find what you need.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((benefit, idx) => (
@@ -415,40 +526,40 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Our Commitment"
+            badge="Our Support Promise"
             badgeIcon={Award}
-            title="Expert Support When You Need It"
-            subtitle="We're committed to providing exceptional support and quick answers to all your queries"
+            title="We're Here Whenever You Need Us"
+            subtitle="Whether it's a quick question or detailed guidance, our team is always ready to help."
           />
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: Clock,
-                value: '<2hr',
-                label: 'Response Time',
-                desc: 'Average response time for inquiries',
+                value: '<2hrs',
+                label: 'Quick Response Time',
+                desc: ' We usually reply within a couple of hours.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: Users,
-                value: '15K+',
+                value: '15,000+',
                 label: 'Questions Answered',
-                desc: 'Total customer queries resolved',
+                desc: 'Thousands of customer doubts solved with care.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: Star,
-                value: '4.9/5',
-                label: 'Support Rating',
-                desc: 'Customer satisfaction score',
+                value: '4.9 / 5',
+                label: 'Customer Rating',
+                desc: ' Loved for our helpful and friendly support.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: CheckCircle,
                 value: '99%',
-                label: 'Resolution Rate',
-                desc: 'First contact resolution rate',
+                label: ' Resolution Success',
+                desc: 'Most issues are fixed on the first interaction.',
                 color: 'from-orange-500 to-orange-600'
               }
             ].map((stat, idx) => (
@@ -477,10 +588,10 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Most Asked"
+            badge="More Trending"
             badgeIcon={Star}
-            title="Popular Questions"
-            subtitle="Quick answers to the questions we hear most often from our customers"
+            title="Frequently Asked Questions"
+            subtitle="Quick answers to the things people ask us the most."
           />
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -499,7 +610,10 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="text-trees-secondary mb-3">{faq.question}</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
+                      <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+  {faq.answer}
+</p>
+
                     </div>
                   </div>
                 </ModernCard>
@@ -513,10 +627,10 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Find Answers"
+            badge="Get the Answers You’re Looking For"
             badgeIcon={Search}
-            title="Search or Browse Questions"
-            subtitle="Use search or filter by category to find exactly what you're looking for"
+            title="Search or filter FAQs to find exactly what you need"
+            subtitle="Quick answers to the most common questions about our products, pricing, delivery, installation, warranty, and sustainability."
           />
 
           {/* Search */}
@@ -628,18 +742,18 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Get in Touch"
+            badge="Stay Updated With Us"
             badgeIcon={MessageCircle}
-            title="Multiple Ways to Reach Us"
-            subtitle="Choose the support channel that works best for you. We're here to help!"
+            title="We're Here to Help"
+            subtitle="Reach out in the way that’s easiest for you, our team is always happy to assist."
           />
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: Phone,
-                title: 'Phone Support',
-                desc: 'Speak directly with our support team',
+                title: 'Call Us',
+                desc: 'Have a quick question? Speak directly with our team.',
                 info: '+91 9091744744',
                 action: 'Call Now',
                 color: 'from-blue-500 to-blue-600',
@@ -647,8 +761,8 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               },
               {
                 icon: Mail,
-                title: 'Email Support',
-                desc: 'Detailed inquiries and documentation',
+                title: 'Email Us',
+                desc: 'For detailed queries, documents, or support requests.',
                 info: 'support@thetreesplywood.com',
                 action: 'Send Email',
                 color: 'from-green-500 to-green-600',
@@ -656,8 +770,8 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               },
               {
                 icon: MessageCircle,
-                title: 'Live Chat',
-                desc: 'Quick answers to simple questions',
+                title: 'Chat With Us',
+                desc: 'Need a fast reply? Our chat support is open anytime.',
                 info: 'Available 24/7',
                 action: 'Start Chat',
                 color: 'from-purple-500 to-purple-600',
@@ -701,10 +815,10 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Helpful Resources"
+            badge="Useful Resources Info"
             badgeIcon={BookOpen}
-            title="Learn More About Our Products"
-            subtitle="Explore guides, videos, and documentation to get the most out of your plywood"
+            title="Your Go-To Information Hub"
+            subtitle="All the important guides and tools you need to plan your project with confidence."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -712,28 +826,28 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               {
                 icon: BookOpen,
                 title: 'Installation Guides',
-                desc: 'Step-by-step installation instructions',
+                desc: 'Clear steps to install and finish your plywood',
                 color: 'from-orange-500 to-orange-600',
                 page: 'installation'
               },
               {
                 icon: Download,
                 title: 'Download Center',
-                desc: 'Catalogs, brochures, and spec sheets',
+                desc: 'Catalogs, brochures, and product details in one place',
                 color: 'from-blue-500 to-blue-600',
                 page: 'downloads'
               },
               {
                 icon: Video,
                 title: 'Video Gallery',
-                desc: 'Tutorials and product demonstrations',
+                desc: 'Short tutorials and practical demos',
                 color: 'from-purple-500 to-purple-600',
                 page: 'resources'
               },
               {
                 icon: Award,
-                title: 'Warranty Info',
-                desc: 'Coverage details and claim process',
+                title: 'Warranty Information',
+                desc: "Know what's covered and how to claim",
                 color: 'from-green-500 to-green-600',
                 page: 'warranty'
               },
@@ -769,10 +883,10 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Customer Experiences"
+            badge="On Their Words"
             badgeIcon={Users}
-            title="What Our Customers Say About Our Support"
-            subtitle="Real feedback from customers about our service and support quality"
+            title="Customer Feedback on Our Support"
+            subtitle="Honest reviews from customers about our service, guidance, and product quality."
           />
           
           <div className="mt-12">
@@ -785,36 +899,36 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Pro Tips"
+            badge="Helpful Tips"
             badgeIcon={Lightbulb}
-            title="Get the Most Out of Our FAQ"
-            subtitle="Expert tips to help you find answers faster and use our resources effectively"
+            title="Find Answers Quickly"
+            subtitle="A few simple ways to get what you need from our FAQ section:"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: Search,
-                title: 'Use Keywords',
-                desc: 'Search with specific terms like "BWP", "warranty", or "installation" for better results',
+                title: 'Search Smart',
+                desc: 'Use clear words like “BWP”, “warranty”, or “installation” to get the best results.',
                 color: 'from-blue-500 to-blue-600'
               },
               {
                 icon: Target,
-                title: 'Filter by Category',
-                desc: 'Narrow down by category (Products, Shipping, Warranty) to see relevant questions only',
+                title: 'Pick a Category',
+                desc: 'Choose a section such as Product, Delivery, or Warranty to see only related questions.',
                 color: 'from-green-500 to-green-600'
               },
               {
                 icon: Star,
-                title: 'Check Popular First',
-                desc: 'Start with popular questions - they cover 80% of common queries and concerns',
+                title: 'Start with Popular Questions',
+                desc: 'Most common doubts are answered right at the top, its saves time.',
                 color: 'from-purple-500 to-purple-600'
               },
               {
                 icon: Download,
-                title: 'Download Resources',
-                desc: 'For detailed specs, visit our Download Center for PDFs, catalogs, and technical sheets',
+                title: 'Check the Download Center',
+                desc: 'If you need detailed specs or brochures, you can download them directly from our resources page.',
                 color: 'from-orange-500 to-orange-600'
               },
             ].map((tip, idx) => (
@@ -854,15 +968,15 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
           >
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
               <HelpCircle className="w-5 h-5" />
-              <span>Need Help?</span>
+              <span>Need Assistance?</span>
             </div>
             
             <h2 className="text-white mb-6">
-              Still Have Questions?
+              Still Looking for Answers? Reach out anytime - We’re Here to Help.
             </h2>
             
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Can't find the answer you're looking for? Our expert support team is ready to help with personalized assistance for your specific needs.
+              No worries, our team is always ready to help. Whether it’s product guidance, sample requests, or warranty support, just reach out and we’ll assist you quickly.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
