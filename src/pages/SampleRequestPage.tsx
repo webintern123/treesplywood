@@ -848,15 +848,15 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
 
               <AccordionItem value="delivery" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  How long does delivery take?
+                  How long does delivery take?  
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  ●	Most samples reach within 3–5 working days.<br></br>
-●	We’ll share a tracking link once they’re shipped. <br></br>
-●	Remote locations may take a bit longer. <br></br>
+                  ●	Most samples reach within 3–5 working days.<br></br>        
+●	We’ll share a tracking link once they’re shipped. <br></br>   
+●	Remote locations may take a bit longer. <br></br>  
 
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem>        
 
               <AccordionItem value="cost" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
@@ -864,7 +864,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
                   Yes, it’s completely free, no charges and no hidden fees. You can request up to 5 samples once every 30 days.                </AccordionContent>
-              </AccordionItem>
+              </AccordionItem>         
 
               <AccordionItem value="testing" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">

@@ -24,6 +24,22 @@ import {
 import { motion } from 'motion/react';
 import { products, categories, plywoodSubcategories } from '../data/products';
 
+const categoryContent = {
+  All: {
+    heading: "All Products",
+    description: "Explore our complete range of plywood, blockboards, and doors — each crafted with care, tested for durability, and trusted across homes, offices, and large projects.",
+  },
+  Plywood: {
+    heading: "Premium Plywood Collection",
+    description: "Find the right plywood for kitchens, wardrobes, furniture, and heavy-duty projects that are built for long-term performance.",
+  },
+  Doors: {
+    heading: "Premium Doors Collection",
+    description: "Choose from a wide range of doors for interiors, exteriors, and commercial spaces that combine elegance with strength.",
+  },
+};
+
+
 const handleDownload = (filePath: string, fileName: string) => {
   const link = document.createElement('a');
   link.href = filePath; // Path to your file
@@ -85,18 +101,18 @@ const filteredProducts =
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title="Premium Plywood Collection"
-        subtitle="Quality Meets Innovation"
-        description="Explore our range of BWP-grade, marine plywood solutions designed for every application - from residential interiors to commercial projects."
+        title={"Premium Plywood \nCollection for Every Space"}
+        subtitle="Built for Strength, Style, and Everyday Use"
+        description="Find the right plywood for kitchens, wardrobes, furniture, and heavy-duty projects that are created for strong & long-term performance."
         image="https://images.unsplash.com/photo-1753771145110-b3ddcd1b0ae2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbHl3b29kJTIwc2hlZXRzJTIwc3RhY2t8ZW58MXx8fHwxNzYyMTU2NzgxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-        badge="ISO Certified"
+        badge="ISO Approved Quality"
         badgeIcon={Shield}
         height="lg"
         overlayOpacity="medium"
         stats={[
-          { value: '15+', label: 'Products' },
-          { value: '3', label: 'Categories' },
-          { value: '30-Year', label: 'Warranty' },
+          { value: '15+', label: 'Wide Range Products ' },
+          { value: '3 Categories', label: 'with Heavy Duty Strength' },
+          { value: 'Long-Term', label: 'Warranty' },
         ]}
         actions={
           <div className="flex flex-wrap gap-4">
@@ -173,7 +189,17 @@ const filteredProducts =
           </div>
         </div>
       </section>
+     <br></br>
+      <div className="container mx-auto px-6">
+  <ModernSectionHeader
+    badge={categoryContent[selectedCategory].heading}
+    badgeIcon={Star}
+    title={categoryContent[selectedCategory].heading}
+    subtitle={categoryContent[selectedCategory].description}
+  />
+</div>
 
+        
       {/* Products Grid */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
@@ -267,7 +293,7 @@ const filteredProducts =
                           onProductSelect ? onProductSelect(product.id) : onNavigate(`product-detail?id=${product.id}`);
                         }}
                       >
-                        View Details
+                        View Product
                       </ModernButton>
                     </div>
                   </ModernCard>
@@ -297,9 +323,9 @@ const filteredProducts =
             <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-trees-primary/10 flex items-center justify-center">
               <Layers className="w-10 h-10 text-trees-primary" />
             </div>
-            <h3 className="mb-4">Can't Decide Between Products?</h3>
+            <h3 className="mb-4">Not Sure Which Product to Pick?</h3>
             <p className="text-gray-600 mb-8 text-lg">
-              Use our product comparison tool to compare specifications, features, and warranties side-by-side
+               Compare Features, Specs, and Warranties Side-by-Side to Find the Right Fit.
             </p>
             <MagneticButton strength={0.2}>
               <ModernButton
@@ -319,32 +345,32 @@ const filteredProducts =
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Quality Standards"
+            badge="Certified & Trusted Standards"
             badgeIcon={Shield}
-            title="Certified Excellence"
-            subtitle="Our products meet the highest quality and safety standards recognized globally"
+            title="Tested, Approved, Reliable, Quality You Can Trust"
+            subtitle="Our plywood follows strict safety and performance standards, so you always get reliable, long-lasting quality to meet industry-approved standards."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { 
-                name: 'IS: 710 BWP', 
-                desc: 'Boiling Waterproof Marine Grade Standard',
+                name: 'IS:710 (BWP Grade)', 
+                desc: 'Strong, waterproof plywood made for heavy moisture areas.',
                 icon: Shield
               },
               { 
                 name: 'IS: 303', 
-                desc: 'Interior Grade Plywood Certification',
+                desc: ' Certified for safe and durable interior use.',
                 icon: CheckCircle2
               },
               { 
                 name: 'IS: 5509', 
-                desc: 'Fire Retardant Safety Standard',
+                desc: 'Tested for fire safety to meet essential building requirements.',
                 icon: Flame
               },
               { 
-                name: 'E0 Grade', 
-                desc: 'Zero Formaldehyde Emission Level',
+                name: 'E0 Emission Grade', 
+                desc: 'Safe & Low formaldehyde levels for healthier indoor air.',
                 icon: Sparkles
               },
             ].map((cert, idx) => (
@@ -372,10 +398,10 @@ const filteredProducts =
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Choose by Need"
+            badge="Select By Your Purpose & Need"
             badgeIcon={Lightbulb}
-            title="Select by Application"
-            subtitle="Not sure which product? We'll help you choose based on your project requirements"
+            title="Pick What Fits Your Project"
+            subtitle="If you're unsure which plywood suits your space, here’s a quick guide to help you choose the right one."
           />
           
           <div className="grid md:grid-cols-4 gap-6">
@@ -383,29 +409,29 @@ const filteredProducts =
               {
                 icon: Droplets,
                 title: 'Kitchen & Bathrooms',
-                products: 'Bhima, Samrat',
-                desc: 'Marine-grade waterproof plywood for wet areas',
+                products: ' Best Options : Bhima, Samrat',
+                desc: 'Made for moisture-heavy areas where durability matters.',
                 gradient: 'from-blue-500 to-blue-600'
               },
               {
                 icon: Sofa,
                 title: 'Furniture & Interiors',
-                products: 'Samrat, Ujval',
-                desc: 'Premium finish for visible surfaces and cabinetry',
+                products: ' Best options: Samrat, Ujval',
+                desc: 'Perfect for wardrobes, shelves, panels, and beautiful finishes.',
                 gradient: 'from-orange-500 to-orange-600'
               },
               {
                 icon: Building2,
                 title: 'Structural Projects',
-                products: 'Ananta, Vajra',
-                desc: 'High-strength load-bearing applications',
+                products: ' Best options: Ananta, Vajra',
+                desc: 'Ideal for heavy-duty, load-bearing, and long-lasting construction needs.',
                 gradient: 'from-green-500 to-green-600'
               },
               {
                 icon: Flame,
-                title: 'Fire Safety Zones',
-                products: 'Agni',
-                desc: 'Fire-retardant certified for safety-critical areas',
+                title: 'Fire Safety Areas',
+                products: ' Best option: Agni',
+                desc: 'Designed for safer spaces with added fire protection.',
                 gradient: 'from-red-500 to-red-600'
               },
             ].map((app, idx) => (
@@ -457,10 +483,9 @@ const filteredProducts =
                 <Download className="w-10 h-10 text-white" />
               </motion.div>
               
-              <h3 className="text-white mb-4">Download Product Catalog</h3>
+              <h3 className="text-white mb-4">Product Catalog & Guides, Ready to Download</h3>
               <p className="text-white/90 mb-8 text-lg max-w-2xl mx-auto leading-relaxed">
-                Get our complete product catalog with detailed specifications, technical datasheets, 
-                and installation guides in PDF format
+                Looking for detailed specs or installation info? Download our complete catalog and technical sheets anytime. Explore our full plywood range with clear specs, technical info, and easy installation notes.
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center">
@@ -501,19 +526,19 @@ const filteredProducts =
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-trees-primary/10 text-trees-primary mb-6">
                   <Package className="w-4 h-4" />
-                  <span className="font-semibold text-sm">Free Samples</span>
+                  <span className="font-semibold text-sm">Order Free Samples</span>
                 </div>
-                <h3 className="mb-4">Want to Feel the Quality?</h3>
+                <h3 className="mb-4">Want to check the quality yourself?</h3>
                 <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                  Request free physical samples of any product delivered to your location. 
-                  Experience our quality firsthand before making a decision.
+                   Get free product samples delivered to your doorstep. See the finish, feel the strength, and choose confidently.
                 </p>
                 <div className="space-y-3 mb-8">
                   {[
-                    'Free delivery to your location',
-                    'Multiple product samples available',
-                    'No obligation to purchase',
-                    'Expert consultation included'
+                    "Free doorstep delivery",
+                     "Choose multiple samples",
+                     "No purchase required",
+                     "Guidance from our team included"
+
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3">
                       <div className="w-6 h-6 rounded-full bg-trees-primary/10 flex items-center justify-center flex-shrink-0">
@@ -556,10 +581,10 @@ const filteredProducts =
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Peace of Mind"
+            badge="Backed by Trust"
             badgeIcon={Shield}
-            title="Comprehensive Warranties"
-            subtitle="We stand behind every sheet with industry-leading warranties on structural integrity and bonding"
+            title="Warranties You Can Rely On"
+            subtitle="We back every sheet with strong, long-term warranties so you can build with confidence."
           />
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -568,19 +593,19 @@ const filteredProducts =
                 years: '30', 
                 products: 'Samrat', 
                 gradient: 'from-amber-500 to-amber-600',
-                desc: 'Premium grade warranty'
+                desc: 'Reliable protection for premium interiors.'
               },
               { 
                 years: '20', 
                 products: 'Vajra', 
                 gradient: 'from-gray-400 to-gray-500',
-                desc: 'Extended protection'
+                desc: 'Extra strength backed with long-lasting coverage.'
               },
               { 
                 years: 'Lifetime', 
                 products: 'Ananta, Agni, Bhima', 
                 gradient: 'from-trees-primary to-trees-secondary',
-                desc: 'Ultimate peace of mind'
+                desc: 'Our strongest grades with assurance that lasts a lifetime.'
               },
             ].map((warranty, idx) => (
               <motion.div
@@ -615,7 +640,7 @@ const filteredProducts =
               icon={<FileText className="w-5 h-5" />}
               onClick={() => onNavigate('warranty')}
             >
-              Learn About Our Warranty Program
+              Know More About Our Warranty Program
             </ModernButton>
           </div>
         </div>
@@ -637,10 +662,9 @@ const filteredProducts =
               >
                 <MapPin className="w-10 h-10 text-trees-primary" />
               </motion.div>
-              <h3 className="mb-4">Find Products Near You</h3>
+              <h3 className="mb-4">Find Tree’s Plywood Store Dealer Near You</h3>
               <p className="text-gray-600 mb-8 text-lg max-w-2xl mx-auto leading-relaxed">
-                Visit our 500+ authorized dealers across India to see and feel our products in person. 
-                Get expert advice and immediate availability.
+                 Visit any of our 500+ authorized dealers across India to check our products in person. Get guidance, availability details, and help choosing the right plywood for your project.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <MagneticButton strength={0.2}>
@@ -673,10 +697,10 @@ const filteredProducts =
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Customer Stories"
+            badge="Hear from Our Customers"
             badgeIcon={Star}
-            title="What Our Customers Say"
-            subtitle="Real feedback from professionals and homeowners who trust The Trees"
+            title="Real Stories, Real Experiences"
+            subtitle="Reliable quality and beautiful finish — that’s why Tree’s Plywood is our go-to for premium homes"
           />
           <Testimonials />
         </div>
@@ -686,10 +710,10 @@ const filteredProducts =
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Got Questions?"
+            badge="Have Questions?"
             badgeIcon={HelpCircle}
             title="Frequently Asked Questions"
-            subtitle="Everything you need to know about our products"
+            subtitle="Here are quick answers to common doubts about our plywood."
           />
 
           <div className="max-w-4xl mx-auto">
@@ -699,101 +723,96 @@ const filteredProducts =
                   What's the difference between BWP and BWR grade plywood?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  BWP (Boiling Water Proof) is marine-grade plywood with 100% waterproof guarantee, 
-                  ideal for high-moisture areas like kitchens, bathrooms, and coastal regions. It uses 
-                  phenolic resin adhesive. BWR (Boiling Water Resistant) is moisture-resistant for indoor 
-                  use with normal humidity levels, perfect for furniture and interior applications.
+                  ●	BWP (Boiling Water Proof) is fully waterproof and ideal for places with heavy moisture like kitchens, bathrooms, and coastal homes.<br></br>
+●	BWR (Boiling Water Resistant) handles day-to-day moisture and is best suited for indoor furniture and general interiors.
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="warranty" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  What warranty do you offer on your plywood products?
+                  What kind of warranty do you provide?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  We offer industry-leading warranties: Samrat (30 years), Vajra (20 years), and 
-                  Ananta, Agni, Bhima (Lifetime guarantee on structural integrity and bonding). 
-                  All warranties cover manufacturing defects, delamination, and bonding failures under 
-                  normal usage conditions.
+                  Our warranties are designed to give long-term peace of mind:<br></br>
+●	Samrat – 30 years<br></br>
+●	Vajra – 20 years<br></br>
+●	Ananta, Agni, Bhima – Lifetime guarantee<br></br>
+All warranties cover issues like bonding failure, manufacturing defects, or delamination under normal use.
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="thickness" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  What thickness should I choose for different applications?
+                   Which thickness should I use for my work?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  <ul className="space-y-2 mt-2">
-                    <li><strong>6mm-9mm:</strong> Wall paneling, cabinet backs, decorative work</li>
-                    <li><strong>12mm:</strong> Kitchen cabinets, wardrobe shutters, furniture</li>
-                    <li><strong>16mm-19mm:</strong> Table tops, heavy furniture, structural applications</li>
-                    <li><strong>25mm:</strong> Heavy-duty doors, structural panels requiring maximum strength</li>
+                  <ul className="space-y-2 mt-2">Here’s a simple guide:
+                    <li><strong>6-9mm:</strong> Wall panels, backs of cabinets, decorative work</li>
+                    <li><strong>12mm:</strong>  Kitchen cabinets, wardrobe shutters, furniture</li>
+                    <li><strong>16-19mm:</strong> Tables, heavy furniture, strong structural work</li>
+                    <li><strong>25mm:</strong>Doors, frames, and areas needing maximum strength</li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="certification" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Are your products certified and safe for indoor use?
+                  Are your plywood products certified and safe for my home?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Yes, all our products are certified to relevant Indian Standards (IS:710, IS:303, IS:5509). 
-                  Our premium range meets E0 emission standards (zero formaldehyde emission), making them 
-                  completely safe for indoor residential use including children's rooms and bedrooms. We also 
-                  have FSC certification for sustainable forestry.
+                  ●	Yes, All our products meet Indian Standards like IS:710, IS:303, IS:5509.<br></br>
+●	Our premium sheets meet E0 emission levels, meaning almost zero formaldehyde - safe for bedrooms, kids’ rooms, and all indoor spaces.<br></br>
+●	We also follow FSC-certified sustainable sourcing.<br></br>
+
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="marine" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I use marine plywood for outdoor applications?
+                  Can marine plywood be used outdoors?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  While our BWP marine-grade plywood (Bhima, Samrat) is 100% waterproof and highly durable, 
-                  it's designed primarily for interior wet areas. For direct outdoor exposure, additional 
-                  weatherproofing treatment and protective coatings are recommended. Contact our technical 
-                  team for specific outdoor project guidance.
+                  Marine/BWP plywood (Bhima, Samrat) handles moisture very well, but for direct outdoor sunlight and rain, we recommend adding a protective coating or treatment. Our team can guide you based on your project.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="fire" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Which product is best for fire-safety requirements?
+                  Which plywood should I choose for fire-safe areas?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Our Agni range is specifically designed for fire-safety applications. It's certified to 
-                  IS:5509 fire retardant standards, making it ideal for commercial buildings, hotels, 
-                  hospitals, schools, and public spaces where fire safety codes are mandatory. It delays 
-                  flame spread and reduces smoke generation.
+                  Our Agni range is designed for fire safety. It follows IS:5509 fire-retardant standards, making it a safe choice for offices, hotels, schools, hospitals, and commercial projects.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="samples" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  Can I get product samples before ordering?
+                   Can I get samples before buying?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Absolutely! We offer free sample delivery to help you make an informed decision. You can 
-                  request samples of multiple products to compare quality, finish, and texture. Use our 
-                  Sample Request page or contact our sales team to get started.
+                 Yes! We provide free samples so you can check the quality, finish, and feel before placing an order. Visit the Sample Request page or contact our sales team.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="delivery" className="bg-white border border-gray-200 rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 hover:text-trees-primary">
-                  What are the delivery timelines and charges?
+                  How long does delivery take?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Delivery timelines vary by location: metro cities (2-3 days), tier-2 cities (4-5 days), 
-                  remote areas (7-10 days). Delivery charges depend on order value and distance. Bulk orders 
-                  may qualify for free delivery in most metro areas. Contact our sales team for 
-                  specific delivery quotes for your location.
+                  Delivery time depends on your location:<br></br>
+●	Metro cities: 2–3 days<br></br>
+●	Tier-2 cities: 4–5 days<br></br>
+●	Remote locations: 7–10 days<br></br>
+Delivery charges vary with distance and order size. Bulk orders may get free delivery in some areas.
+
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
 
             <div className="text-center mt-12">
-              <p className="text-gray-600 mb-6">Still have questions?</p>
+              <p className="text-gray-600 mb-6">Still need help?</p>
               <ModernButton
                 variant="outline"
                 size="lg"
@@ -811,9 +830,9 @@ const filteredProducts =
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
           <ModernSectionHeader
-            badge="Why Choose Us"
+            badge="Why Tree’s Plywood is Different"
             badgeIcon={Award}
-            title="Quality You Can Trust"
+            title="Trusted Quality, Every Time"
             subtitle="Every sheet backed by decades of expertise and rigorous testing"
           />
 
@@ -821,18 +840,18 @@ const filteredProducts =
             {[
               {
                 icon: Shield,
-                title: 'BWP Certified',
-                desc: '100% boiling waterproof as per IS:710 marine standards'
+                title: 'Waterproof Certified',
+                desc: 'IS:710 BWP grade for tough, moisture-prone spaces.'
               },
               {
                 icon: Award,
-                title: 'Long Warranties',
-                desc: 'Up to 30 years warranty on premium products'
+                title: 'Long Warranty Coverage',
+                desc: 'Premium products backed by up to 30 years of warranty.'
               },
               {
                 icon: Sparkles,
-                title: 'Zero Emission',
-                desc: 'E0 grade formaldehyde emission for safe interiors'
+                title: 'Health-Safe Plywood',
+                desc: ' E0 emission levels for better indoor air quality.'
               },
             ].map((feature, idx) => (
               <ModernCard key={idx} variant="elevated">
@@ -864,10 +883,10 @@ const filteredProducts =
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-white mb-6">
-              Need Help Choosing the Right Product?
+              Confused About Which Plywood Fits Your Project?
             </h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Our experts are here to help you select the perfect plywood for your project requirements.
+               Don’t worry, our experts will help you make the right choice with ease.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">

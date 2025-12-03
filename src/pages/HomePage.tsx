@@ -932,9 +932,10 @@ For large projects, we can connect you with trained carpenters and certified ins
                   className="overflow-hidden"
                 >
                   <div className="px-6 pb-6 pl-20">
-                    <p className="text-gray-600 leading-relaxed">
-                      {faq.a}
-                    </p>
+                    <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                         {faq.a}
+                     </p>
+
                   </div>
                 </motion.div>
               </motion.div>

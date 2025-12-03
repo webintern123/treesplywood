@@ -971,7 +971,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               <span>Need Assistance?</span>
             </div>
             
-            <h2 className="text-white mb-6">
+            <h2 className="text-white mb-6">  
               Still Looking for Answers? Reach out anytime - We’re Here to Help.
             </h2>
             

@@ -162,18 +162,13 @@ const blogPosts = {
     category: 'Interior Design',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=500&fit=crop',
     content: `
-      <p>Plywood is versatile, but its appearance can be greatly enhanced with the right finishes. From matte textures to glossy surfaces, finishing plywood improves both aesthetics and durability.</p>
-      <h2>1. Laminated Finish</h2>
-      <p>Laminates provide a protective layer and come in various colors and textures, making it ideal for modern kitchen cabinets and furniture.</p>
-      <h2>2. Veneer Finish</h2>
-      <p>Veneer adds a natural wood appearance while retaining the strength of plywood. It is widely used in premium furniture.</p>
-      <h2>3. Melamine Finish</h2>
-      <p>Melamine coatings are durable, water-resistant, and easy to clean, perfect for high-traffic areas.</p>
-      <h2>4. PU Lacquer Finish</h2>
-      <p>Polyurethane lacquer gives a glossy or semi-glossy finish and protects against scratches and stains.</p>
-      <h2>5. Paint Finish</h2>
-      <p>Painted plywood can be customized to any color scheme and provides additional protection against moisture.</p>
-      <p>Selecting the right finish enhances both aesthetics and longevity of plywood installations in your interiors.</p>
+     <p>Plywood comes in various grades, and choosing the right type can prevent damage and extend the life of your project. MR (Moisture Resistant) and BWR (Boiling Water Resistant) plywood are two common types used in construction and furniture making.</p>
+      <h2>MR Plywood</h2>
+      <p>MR plywood is designed for indoor use in areas with moderate moisture levels. It resists occasional water contact but is not suitable for areas with high humidity or direct water exposure.</p>
+      <h2>BWR Plywood</h2>
+      <p>BWR plywood is engineered to withstand high moisture conditions and is often used in kitchens, bathrooms, and exterior applications. It uses phenolic resin adhesives that prevent delamination even when exposed to boiling water.</p>
+      <h2>Choosing the Right Plywood</h2>
+      <p>For furniture that is exposed to occasional moisture, MR plywood is sufficient. For kitchens, bathrooms, and outdoor applications, BWR plywood is the preferred choice.</p>
     `,
     tags: ['Plywood Finishes', 'Interior Design', 'Furniture', 'Home Decor'],
   },

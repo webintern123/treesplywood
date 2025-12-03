@@ -98,8 +98,9 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
               <img 
   src={logoImage} 
   alt="The Trees Plywood" 
-  className="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-110"
+  className="h-14 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
 />
+
 
             </div>
 
