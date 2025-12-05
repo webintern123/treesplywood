@@ -26,29 +26,36 @@ interface ContactPageProps {
   onNavigate: (page: string) => void;
 }
 
+
 export function ContactPage({ onNavigate }: ContactPageProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    subject: 'general',
-    message: ''
-  });
+  name: '',
+  email: '',
+  phone: '',
+  company: '',
+  city: '',        // ✅ FIXED
+  subject: 'general',
+  message: ''
+});
+
 
   const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
+  name: '',
+  email: '',
+  phone: '',
+  city: '',        // ✅ FIXED
+  message: ''
+});
+
 
   const [touched, setTouched] = useState({
-    name: false,
-    email: false,
-    phone: false,
-    message: false
-  });
+  name: false,
+  email: false,
+  phone: false,
+  city: false,     // ✅ FIXED
+  message: false
+});
+
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -86,6 +93,14 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           error = getErrorMessage('message', 'minLength');
         }
         break;
+      case 'city':
+  if (!validateRequired(value)) {
+    error = getErrorMessage('city', 'required');
+  } else if (!validateMinLength(value, 2)) {
+    error = getErrorMessage('city', 'minLength');
+  }
+  break;
+
     }
 
     setErrors(prev => ({ ...prev, [field]: error }));
@@ -106,6 +121,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 }
 
   };
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -115,6 +131,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       name: true,
       email: true,
       phone: true,
+      city: true,
       message: true
     });
 
@@ -123,11 +140,14 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     const isEmailValid = validateField('email', formData.email);
     const isPhoneValid = formData.phone ? validateField('phone', formData.phone) : true;
     const isMessageValid = validateField('message', formData.message);
+    const isCityValid = validateField('city', formData.city);
 
-    if (!isNameValid || !isEmailValid || !isPhoneValid || !isMessageValid) {
-      toast.error('Please fix the errors in the form');
-      return;
-    }
+
+    if (!isNameValid || !isEmailValid || !isPhoneValid || !isCityValid || !isMessageValid) {
+  toast.error('Please fix the errors in the form');
+  return;
+}
+
 
     setIsSubmitting(true);
 
@@ -145,23 +165,27 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       setTimeout(() => {
         setSubmitted(false);
         setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          subject: 'general',
-          message: ''
-        });
+  name: '',
+  email: '',
+  phone: '',
+  company: '',
+  city: '',            // ✅ FIXED
+  subject: 'general',
+  message: ''
+});
+
         setErrors({
           name: '',
           email: '',
           phone: '',
+          city: '',        // ✅ FIXED
           message: ''
         });
         setTouched({
           name: false,
           email: false,
           phone: false,
+          city: false,        // ✅ FIXED
           message: false
         });
       }, 3000);
@@ -303,222 +327,261 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
   <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
     {/* Left Side Image */}
-    <div className="w-full">
-      <img
-        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902"
-        alt="Support"
-        className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-xl"
-      />
-    </div>
+   
 
-    {/* Right Side Text */}
-    <div className="space-y-6">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-        We’re Here Whenever You Need Us
-      </h2>
-
-      <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-        Our customers are other than Tree’s Plywood family; we are so happy to hear from you 
-        and get in touch with us anytime. If you are having a product issue, partnership idea, 
-        or want any technical assistance, feel free to reach out.
-      </p>
-
-      <ul className="space-y-3 text-gray-700 text-lg md:text-xl">
-        <li className="flex items-start gap-3">
-          <span className="text-green-600 text-2xl mt-1">✔</span>
-          Certified & Safe Products
-        </li>
-        <li className="flex items-start gap-3">
-          <span className="text-green-600 text-2xl mt-1">✔</span>
-          Affordable Pricing
-        </li>
-        <li className="flex items-start gap-3">
-          <span className="text-green-600 text-2xl mt-1">✔</span>
-          Pan-India Availability
-        </li>
-        <li className="flex items-start gap-3">
-          <span className="text-green-600 text-2xl mt-1">✔</span>
-          Customized Design Support
-        </li>
-      </ul>
-
-      <p className="mt-6 text-gray-900 text-2xl md:text-3xl font-bold">
-        “Buy Strength, Build Trust”
-      </p>
-    </div>
+   
   </div>
 </section>
 
       
 
           {/* Main Contact Section */}
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-start lg:items-stretch">
+
+
             {/* Contact Form */}
-            <motion.div
-              id="contact-form"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <ModernCard variant="elevated">
-                <div className="p-8">
-                  <div className="mb-8">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-trees-primary/10 rounded-full mb-4">
-                      <Send className="w-4 h-4 text-trees-primary" />
-                      <span className="text-sm font-semibold text-trees-primary">Send a Message</span>
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-2">Get in Touch - Request a Sample</h2>
-                    <p className="text-gray-600">Try our sample request option to get an At Home / Digital Consultation service for free by filling out this form. Our team will get in touch within 24 hours.</p>
-                  </div>
+          <motion.div
+  id="contact-form"
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  className="flex flex-col gap-6 h-full"
+>
+  <ModernCard variant="elevated">
+    <div className="p-8">
+      <div className="mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-trees-primary/10 rounded-full mb-4">
+          <Send className="w-4 h-4 text-trees-primary" />
+          <span className="text-sm font-semibold text-trees-primary">Get in Touch</span>
+        </div>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          Try our sample request option for a free At Home / Digital Consultation
+        </h1>
+        <p className="text-gray-600">
+          Fill out this form, and our team will get in touch within 24 hours.
+        </p>
+      </div>
 
-                  {submitted ? (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="text-center py-12"
-                    >
-                      <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
-                        <CheckCircle2 className="w-10 h-10 text-green-600" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent Successfully!</h3>
-                      <p className="text-gray-600">We'll get back to you within 24 hours</p>
-                    </motion.div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <FormField
-                        label="Full Name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={(value) => handleChange('name', value)}
-                        onBlur={() => handleBlur('name')}
-                        error={touched.name ? errors.name : ''}
-                        success={touched.name && !errors.name && formData.name.length > 0}
-                        required
-                        placeholder="John Doe"
-                        helperText="Please enter your full name"
-                      />
+      <form onSubmit={handleSubmit} className="space-y-6">
 
-                      <FormField
-                        label="Email Address"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={(value) => handleChange('email', value)}
-                        onBlur={() => handleBlur('email')}
-                        error={touched.email ? errors.email : ''}
-                        success={touched.email && !errors.email && formData.email.length > 0}
-                        required
-                        placeholder="john.doe@example.com"
-                        helperText="We'll never share your email"
-                      />
+        {/* Personal & Business Information */}
+        <h3 className="text-xl font-semibold text-gray-900 mb-4">Personal & Business Information</h3>
 
-                      <FormField
-                        label="Phone Number"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(value) => handleChange('phone', value)}
-                        onBlur={() => handleBlur('phone')}
-                        error={touched.phone ? errors.phone : ''}
-                        success={touched.phone && !errors.phone && formData.phone.length > 0}
-                        placeholder="+91 98765 43210"
-                        helperText="Optional - For quick callback"
-                      />
+        <FormField label="Full Name" name="name" type="text" value={formData.name} onChange={v => handleChange('name', v)} onBlur={() => handleBlur('name')} error={touched.name ? errors.name : ''} required placeholder="John Doe" />
+        <FormField label="Email Address" name="email" type="email" value={formData.email} onChange={v => handleChange('email', v)} onBlur={() => handleBlur('email')} error={touched.email ? errors.email : ''} required placeholder="john.doe@example.com" />
+        <FormField label="Phone Number (Optional)" name="phone" type="tel" value={formData.phone} onChange={v => handleChange('phone', v)} onBlur={() => handleBlur('phone')} error={touched.phone ? errors.phone : ''} placeholder="+91 98765 43210" />
+       <FormField
+  label="City / Location"
+  name="city"
+  type="text"
+  value={formData.city}        // FIXED
+  onChange={v => handleChange('city', v)}   // FIXED
+  placeholder="Hyderabad"
+  required
+/>
 
-                      <FormField
-                        label="Company / Project Name"
-                        name="company"
-                        type="text"
-                        value={formData.company}
-                        onChange={(value) => handleChange('company', value)}
-                        placeholder="ABC Constructions (Optional)"
-                      />
+<FormField
+  label="Company / Business Name (Optional)"
+  name="company"
+  type="text"
+  value={formData.company}
+  onChange={v => handleChange('company', v)}
+  placeholder="ABC Constructions"
+/>
 
-                      <div className="space-y-2">
-                        <label className="block text-sm font-semibold text-gray-700">
-                          Subject <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                          value={formData.subject}
-                          onChange={(e) => handleChange('subject', e.target.value)}
-                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white"
-                        >
-                          {subjects.map((subject) => (
-                            <option key={subject.value} value={subject.value}>
-                              {subject.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
 
-                      <FormField
-                        label="Message"
-                        name="message"
-                        type="textarea"
-                        value={formData.message}
-                        onChange={(value) => handleChange('message', value)}
-                        onBlur={() => handleBlur('message')}
-                        error={touched.message ? errors.message : ''}
-                        success={touched.message && !errors.message && formData.message.length > 0}
-                        required
-                        placeholder="Tell us about your project requirements, questions, or how we can help..."
-                        rows={5}
-                        helperText="Minimum 10 characters"
-                      />
+        {/* Enquiry Details */}
+        <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Enquiry Details</h3>
+        <div className="space-y-2">
+          <label className="block text-gray-700 font-medium">Inquiry Type (Select One)*</label>
+          <select
+            value={formData.subject}
+            onChange={(e) => handleChange('subject', e.target.value)}
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white"
+            required
+          >
+            <option value="general">General Inquiry</option>
+            <option value="product">Product Information</option>
+            <option value="bulk">Bulk Order / Wholesale</option>
+            <option value="dealer">Dealership Inquiry</option>
+            <option value="support">Technical Support</option>
+            <option value="sample">Sample Request</option>
+            <option value="consultation">Project Consultation</option>
+            <option value="quote">Price Quote Request</option>
+            <option value="status">Order Status</option>
+            <option value="collaboration">Collaboration / Partnership</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
 
-                      <LoadingButton
-                        type="submit"
-                        isLoading={isSubmitting}
-                        disabled={isSubmitting}
-                        className="w-full bg-trees-primary text-white hover:bg-trees-primary/90 transition-colors px-8 py-4 text-lg rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-200"
-                      >
-                        {!isSubmitting && <Send className="w-5 h-5" />}
-                        Send Message
-                      </LoadingButton>
-                    </form>
-                  )}
-                </div>
-              </ModernCard>
-              {/* Why Visit Us Card */}
-<ModernCard variant="elevated">
-  <div className="p-6">
-    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-trees-primary/10 rounded-full mb-4">
-      <Sparkles className="w-4 h-4 text-trees-primary" />
-      <span className="text-sm font-semibold text-trees-primary">Why Visit Us?</span>
+        {/* Product Interest */}
+        <div className="space-y-2">
+          <label className="block text-gray-700 font-medium">Product Interest (Choose one or more)</label>
+          <div className="grid grid-cols-2 gap-2">
+            {['Agni','Ananta','Bhima','Samrat','Vajra','Flush Doors','Blockboards','Other'].map((product, idx) => (
+              <label key={idx} className="inline-flex items-center gap-2">
+                <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" />
+                <span>{product}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Project Type */}
+        <div className="space-y-2">
+          <label className="block text-gray-700 font-medium">Project Type</label>
+          <div className="grid grid-cols-2 gap-2">
+            {['Residential','Commercial','Hospitality','Retail','Industrial','Institutional','Other'].map((project, idx) => (
+              <label key={idx} className="inline-flex items-center gap-2">
+                <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" />
+                <span>{project}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Quantity, Timeline, Urgency */}
+        <div className="space-y-4 md:flex md:gap-4">
+          <div className="flex-1">
+            <label className="block text-gray-700 font-medium">Approx. Quantity Required</label>
+            <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
+              <option>10–50 sheets</option>
+              <option>50–200 sheets</option>
+              <option>200+ sheets</option>
+              <option>Not Sure</option>
+            </select>
+          </div>
+          <div className="flex-1">
+            <label className="block text-gray-700 font-medium">Timeline to Purchase</label>
+            <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
+              <option>Immediate</option>
+              <option>1–2 Weeks</option>
+              <option>1 Month</option>
+              <option>Just Exploring</option>
+            </select>
+          </div>
+          <div className="flex-1">
+            <label className="block text-gray-700 font-medium">Urgency Level</label>
+            <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Message / File Upload */}
+        <FormField
+          label="Additional Details "
+          name="message"
+          type="textarea"
+          value={formData.message}
+          onChange={(v) => handleChange('message', v)}
+          onBlur={() => handleBlur('message')}
+          error={touched.message ? errors.message : ''}
+          required
+          placeholder="Message / Requirements (Minimum 10 characters):*"
+          rows={5}
+        />
+
+        <div className="space-y-2">
+          <label className="block text-gray-700 font-medium">File Upload (Optional)</label>
+          <label className="block text-gray-700 font-medium">Attach BOQs, drawings, reference images, tenders, or project documents.</label>
+          <input type="file" multiple className="w-full border-2 border-gray-200 rounded-xl p-3" />
+        </div>
+
+        {/* Preferred Contact */}
+        <div className="space-y-2">
+          <label className="block text-gray-700 font-medium">Preferred Contact Method</label>
+          <div className="flex flex-wrap gap-3">
+            {['Email','Phone Call','WhatsApp'].map((method, idx) => (
+              <label key={idx} className="inline-flex items-center gap-2">
+                <input type="radio" name="contactMethod" className="form-radio h-5 w-5 text-trees-primary" />
+                <span>{method}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        
+        {/* Source */}
+        <div className="space-y-2">
+          <label className="block text-gray-700 font-medium">How Did You Hear About Us?</label>
+          <div className="grid grid-cols-2 gap-2">
+            {['Google Search','Social Media','Dealer','Referral','Existing Customer','Exhibition / Trade Show','Other'].map((source, idx) => (
+              <label key={idx} className="inline-flex items-center gap-2">
+                <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" />
+                <span>{source}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Consent */}
+        <label className="inline-flex items-center gap-2 mt-4">
+          <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" required />
+          <span>I agree to be contacted by the Tree’s Plywood team.</span>
+        </label>
+
+        <LoadingButton
+          type="submit"
+          isLoading={isSubmitting}
+          disabled={isSubmitting}
+          className="w-full bg-trees-primary text-white hover:bg-trees-primary/90 transition-colors px-8 py-4 text-lg rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-200"
+        >
+          {!isSubmitting && <Send className="w-5 h-5" />}
+          Send Message
+        </LoadingButton>
+      </form>
     </div>
-    
-    <h3 className="text-xl font-bold text-gray-900 mb-4">Experience Tree’s Plywood in Person</h3>
-    
-    <ul className="grid grid-cols-2 gap-y-2 gap-x-4 text-gray-700 text-sm">
-      {[
-        'See Our Products Up Close',
-        'Get Advice From Our Experts',
-        'Explore Customization Options',
-        'Experience The Quality Yourself',
-        'Meet Our Friendly Team',
-        'Get Advice From Our Experts',
-      ].map((item, idx) => (
-        <li key={idx} className="flex items-start gap-2">
-          {item && <CheckCircle2 className="w-4 h-4 text-green-600 mt-1" />}
-          {item}
-        </li>
-      ))}
-    </ul>
-  </div>
-</ModernCard>
-
-            </motion.div>
+  </ModernCard>
+</motion.div>
 
             {/* Right Column - Map & Info */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="flex flex-col gap-8 h-full"
             >
+              {/* Support & Assurance Card */}
+<ModernCard variant="elevated">
+  <div className="p-8">
+    {/* Heading */}
+    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+      We’re Here Whenever You Need Us
+    </h3>
+
+    {/* Description */}
+    <p className="text-gray-700 mb-6">
+      Our customers are more than just Tree’s Plywood family; we are so happy to hear from you and get in touch anytime. 
+      If you are having a product issue, partnership idea, or want any technical assistance, feel free to reach out.
+    </p>
+
+    {/* Bullet / Tick List */}
+    <ul className="space-y-3 text-gray-700 text-[15px] leading-relaxed">
+      {[
+        'Certified & Safe Products',
+        'Affordable Pricing',
+        'Pan-India Availability',
+        'Customized Design Support'
+      ].map((item, idx) => (
+        <li key={idx} className="flex items-start gap-3">
+          <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+
+    {/* Footer / Quote */}
+    <p className="mt-6 text-gray-900 text-xl font-bold">
+      “Buy Strength, Build Trust”
+    </p>
+  </div>
+</ModernCard>
+
               {/* Location Map */}
-              <ModernCard variant="elevated">
+              <ModernCard variant="elevated" >
                 <div className="h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5 relative group cursor-pointer"
                   onClick={() => window.open('https://maps.google.com', '_blank')}
                 >
@@ -571,31 +634,73 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                 </div>
               </ModernCard>
 
-              {/* Social Media */}
-              <ModernCard variant="elevated">
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center">
-                      <Globe className="w-6 h-6 text-trees-primary" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Follow Us</h3>
-                  </div>
-                  <p className="text-gray-600 mb-6">Stay connected for updates, ideas, and the latest from Tree’s Plywood.</p>
-                  <div className="flex flex-wrap gap-3">
-                    {socialLinks.map((social, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => window.open(social.url, '_blank')}
-                        className="flex-1 min-w-[calc(50%-0.375rem)] flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-50 hover:bg-trees-primary/10 hover:text-trees-primary transition-all duration-200 font-medium group"
-                        aria-label={social.label}
-                      >
-                        <social.icon className="w-5 h-5" />
-                        <span className="text-sm">{social.label}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </ModernCard>
+             <ModernCard variant="elevated">
+  <div className="p-8 flex flex-col h-full">
+    <div className="flex items-center gap-3 mb-6">
+      <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center">
+        <Globe className="w-6 h-6 text-trees-primary" />
+      </div>
+      <h3 className="text-2xl font-bold text-gray-900">Follow Us</h3>
+    </div>
+    <p className="text-gray-600 mb-6">
+      Stay connected for updates, ideas, and the latest from Tree’s Plywood.
+    </p>
+
+    <div className="flex flex-wrap gap-3">
+      {socialLinks.map((social, idx) => (
+        <button
+          key={idx}
+          onClick={() => window.open(social.url, '_blank')}
+          className="flex-1 min-w-[calc(50%-0.375rem)] flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-50 hover:bg-trees-primary/10 hover:text-trees-primary transition-all duration-200 font-medium group"
+          aria-label={social.label}
+        >
+          <social.icon className="w-5 h-5" />
+          <span className="text-sm">{social.label}</span>
+        </button>
+      ))}
+    </div>
+
+    {/* New Text Line */}
+    <p className="mt-6 text-center text-gray-700 font-medium">
+      Stay connected to know more and get the latest updates!
+    </p>
+  </div>
+</ModernCard>
+
+{/* Why Visit Us Card */}
+<ModernCard variant="elevated">
+  <div className="p-8">
+    {/* Badge */}
+    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-trees-primary/10 rounded-full mb-6">
+      <Sparkles className="w-4 h-4 text-trees-primary" />
+      <span className="text-sm font-semibold text-trees-primary">Why Visit Us?</span>
+    </div>
+
+    {/* Heading */}
+    <h3 className="text-2xl font-bold text-gray-900 mb-6">
+      Experience Tree’s Plywood in Person
+    </h3>
+
+    {/* Tick List */}
+    <ul className="space-y-3 text-gray-700 text-[15px] leading-relaxed">
+      {[
+        'See Our Products Up Close',
+        'Get Advice From Our Experts',
+        'Explore Customization Options',
+        'Experience The Quality Yourself',
+        'Meet Our Friendly Team'
+      ].map((item, idx) => (
+        <li key={idx} className="flex items-start gap-3">
+          <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</ModernCard>
+
+
+
             </motion.div>
           </div>
         </div>

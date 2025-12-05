@@ -768,9 +768,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                     <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <stat.icon className="w-7 h-7 text-white" />
                     </div>
-                    <div className={`w-12 h-12 rounded-full ${stat.bgColor} flex items-center justify-center opacity-50`}>
-                      <Sparkles className="w-5 h-5 text-trees-primary" />
-                    </div>
+                    
                   </div>
 
                   {/* Stats Value */}
@@ -886,19 +884,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
           </div>
         </section>
 
-        {/* Customer Testimonials */}
-        <section className="section-padding bg-gray-50 -mx-6 px-6">
-          <div className="container mx-auto">
-            <ModernSectionHeader
-              badge="Success Stories"
-              badgeIcon={Star}
-              title="What People Say"
-              subtitle="Hear from customers, homeowners, and professionals who trust Tree’s Plywood."
-            />
-            <Testimonials />
-          </div>
-        </section>
-
+        
         {/* FAQ Section */}
         <section>
           <ModernSectionHeader

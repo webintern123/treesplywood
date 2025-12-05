@@ -438,18 +438,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
         </div>
       </section>
 
-      {/* Customer Testimonials */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Success Stories"
-            badgeIcon={Star}
-            title="What People Say"
-            subtitle="Hear from customers, homeowners, and professionals who trust Tree’s Plywood."
-          />
-          <Testimonials />
-        </div>
-      </section>
+      
 
       {/* Resources FAQ */}
       <section className="section-padding bg-white">

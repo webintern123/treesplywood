@@ -1059,22 +1059,7 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
       </div>
     </section>
 
-    {/* Customer Testimonials */}
-    <section className="section-padding bg-gray-50">
-      <div className="container mx-auto px-6">
-        <ModernSectionHeader
-          badge="Customer Experiences"
-          badgeIcon={Users}
-          title="What People Say About Our Authorised Dealers"
-          subtitle="Here’s what customers and professionals share about their experience with our authorized Tree’s Plywood dealers."
-        />
-        
-        <div className="mt-12">
-          <Testimonials />
-        </div>
-      </div>
-    </section>
-
+    
     {/* Dealer Tips */}
     <section className="section-padding bg-white">
       <div className="container mx-auto px-6">

@@ -177,7 +177,7 @@ export const products: Product[] = [
     tagline: 'Radiant',
     category: 'Plywood',
     subcategory: 'Decorative BWR Grade | 10-Year Warranty',
-    description: 'Beautiful, smooth, and easy to finish. Ujval gives interiors a premium look with dependable performance.',
+    description: 'Beautiful, smooth, and easy to finish. Ujval gives interiors a premium look with dependable performance making it a top choice for feature walls and cabinetry.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
     specifications: [
       '10 YEARS WARRANTY',
@@ -205,8 +205,8 @@ export const products: Product[] = [
     tagline: 'BWP Grade',
     category: 'Doors',
     subcategory: 'High-Stability Panels | Lifetime Warranty',
-    description: 'Lightweight, stable, and ideal for tall or large vertical structures.',
-    thicknesses: ['16MM', '19MM', '25MM'],
+    description: 'Lightweight, stable, and ideal for tall or large vertical structures and look great in homes and offices that require durability and strength.',
+    thicknesses: ['16MM', '19MM', '25MM', '30MM' ],
     specifications: [
       'IS: 1659 BWR GRADE',
       'SOLID WOOD CORE STRIPS',
@@ -235,7 +235,7 @@ export const products: Product[] = [
     tagline: 'BWP Grade',
     category: 'Doors',
     subcategory: 'Premium Door Shutters | Lifetime Warranty',
-    description: 'Made for long-lasting strength and stability, these doors stay firm, resist warping, and look great in homes or offices.',
+    description: 'Made for long-lasting strength and stability, these doors stay firm, resist warping, and look great in homes.',
     thicknesses: ['30mm', '32mm', '35mm', '38mm', '45mm'],
     specifications: [
       'IS: 2202 CERTIFIED',

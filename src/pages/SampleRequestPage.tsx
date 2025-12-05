@@ -242,7 +242,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
           <ModernSectionHeader
             badge="Why Take Samples?"
             badgeIcon={Target}
-            title="Because Seeing Is Believing  - See the Quality for Yourself"
+            title="See the Quality Yourself, Trust It"
             subtitle="Before you choose a product, get a sample test of its strength, finish, and overall build."
           />
           
@@ -806,18 +806,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
         </div>
       </section>
 
-      {/* Customer Testimonials */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Success Stories"
-            badgeIcon={Star}
-            title="What Professionals Say About Us"
-            subtitle="Real feedback from the people who use Tree’s Plywood every day."
-          />
-          <Testimonials />
-        </div>
-      </section>
+      
 
       {/* Sample FAQ */}
       <section className="section-padding bg-white">

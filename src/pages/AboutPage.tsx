@@ -168,10 +168,10 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
 
               <div className="flex flex-wrap gap-4 pt-4">
                 {[
-                  { icon: CheckCircle2, text: 'ISO 9001:2015 – Quality Management' },
-                  { icon: Leaf, text: 'FSC Certified – Responsible Forestry' },
-                  { icon: Shield, text: 'IS:710 -  Marine Grade Compliance.' },
-                   { icon: CheckCircle2, text: '	E0/E1 - Low Emission' },
+                  { icon: CheckCircle2, text: 'ISO 9001:2015' },
+                  { icon: Leaf, text: 'FSC Certified ' },
+                  { icon: Shield, text: 'IS:710' },
+                   { icon: CheckCircle2, text: '	E0/E1 ' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-trees-primary font-medium">
                     <item.icon className="w-5 h-5" />
@@ -345,7 +345,7 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
           <ModernSectionHeader
             badge="How We Make It"
             badgeIcon={Factory}
-            title="Designed for Performance, Built with Precision"
+            title="Performance First, Precision Always"
             subtitle="Every sheet we produce reflects the care we put into our process — from responsibly sourced timber to precision-calibrated finish. Quality is built into every layer."
           />
 
@@ -472,8 +472,9 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
                         className="flex items-start gap-3 group/item"
                       >
                         <div className="mt-0.5 flex-shrink-0">
-                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-trees-primary to-orange-600 flex items-center justify-center group-hover/item:scale-110 transition-transform">
-                            <CheckCircle2 className="w-4 h-4 text-white" />
+                          <div className="w-6 h-6 rounded-full bg-trees-primary flex items-center justify-center">
+    <CheckCircle2 className="w-3 h-3 text-white" />
+  
                           </div>
                         </div>
                         <span className="text-gray-700 leading-relaxed">{item}</span>
@@ -528,9 +529,9 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
                         className="flex items-start gap-3 group/item"
                       >
                         <div className="mt-0.5 flex-shrink-0">
-                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center group-hover/item:scale-110 transition-transform">
-                            <CheckCircle2 className="w-4 h-4 text-white" />
-                          </div>
+                          <div className="w-6 h-6 rounded-full bg-trees-primary flex items-center justify-center">
+    <CheckCircle2 className="w-3 h-3 text-white" />
+  </div>
                         </div>
                         <span className="text-gray-700 leading-relaxed">{item}</span>
                       </motion.li>
@@ -583,9 +584,9 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
                         className="flex items-start gap-3 group/item"
                       >
                         <div className="mt-0.5 flex-shrink-0">
-                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center group-hover/item:scale-110 transition-transform">
-                            <CheckCircle2 className="w-4 h-4 text-white" />
-                          </div>
+                          <div className="w-6 h-6 rounded-full bg-trees-primary flex items-center justify-center">
+    <CheckCircle2 className="w-3 h-3 text-white" />
+  </div>
                         </div>
                         <span className="text-gray-700 leading-relaxed">{item}</span>
                       </motion.li>
@@ -638,9 +639,9 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
                         className="flex items-start gap-3 group/item"
                       >
                         <div className="mt-0.5 flex-shrink-0">
-                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center group-hover/item:scale-110 transition-transform">
-                            <CheckCircle2 className="w-4 h-4 text-white" />
-                          </div>
+                          <div className="w-6 h-6 rounded-full bg-trees-primary flex items-center justify-center">
+    <CheckCircle2 className="w-3 h-3 text-white" />
+  </div>
                         </div>
                         <span className="text-gray-700 leading-relaxed">{item}</span>
                       </motion.li>
@@ -947,13 +948,7 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          
-          <Testimonials />
-        </div>
-      </section>
+     
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">

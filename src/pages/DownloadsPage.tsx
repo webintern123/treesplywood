@@ -829,18 +829,7 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
         </div>
       </section>
 
-      {/* Customer Testimonials */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Success Stories"
-            badgeIcon={Star}
-            title="What Our Partners & Experts Say"
-            subtitle="Real Designers, builders, and architects share their experience with Tree’s Plywood."
-          />
-          <Testimonials />
-        </div>
-      </section>
+     
 
       {/* Downloads FAQ */}
       <section className="section-padding bg-white">

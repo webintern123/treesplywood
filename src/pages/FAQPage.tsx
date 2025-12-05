@@ -393,7 +393,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title={"Your Questions, \nAnswered Here – FAQs"}
+        title={"Your Questions, \nAnswered Simply– FAQs"}
         subtitle="Want Support? Start Now"
         description="Looking for clarity on grades, warranties, services, quality, or product use? Here are quick answers to everything you may want to know."
         image="https://images.unsplash.com/photo-1759392790299-a8874cabc000?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHN1cHBvcnQlMjBoZWxwJTIwZGVza3xlbnwxfHx8fDE3NjIyNTMwMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -414,7 +414,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
           <ModernSectionHeader
             badge="Quick Help Guide"
             badgeIcon={Lightbulb}
-            title="How to Use This Page - Finding Answers Made Easy"
+            title=" Finding Answers Made Easy"
             subtitle="Find answers in just a few steps"
           />
           
@@ -879,22 +879,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
         </div>
       </section>
 
-      {/* Customer Testimonials */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="On Their Words"
-            badgeIcon={Users}
-            title="Customer Feedback on Our Support"
-            subtitle="Honest reviews from customers about our service, guidance, and product quality."
-          />
-          
-          <div className="mt-12">
-            <Testimonials />
-          </div>
-        </div>
-      </section>
-
+     
       {/* FAQ Tips & Best Practices */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6">
@@ -1008,7 +993,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               <div className="text-white/90">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Phone className="w-5 h-5" />
-                  <p className="font-semibold">Sales</p>
+                  <p className="font-semibold text-sm text-white/80">Sales</p>
                 </div>
                 <p className="text-sm text-white/80">+91 9091744744</p>
               </div>
@@ -1016,7 +1001,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               <div className="text-white/90">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Mail className="w-5 h-5" />
-                  <p className="font-semibold">Support</p>
+                  <p className="font-semibold text-sm text-white/80">Support</p>
                 </div>
                 <p className="text-sm text-white/80">support@thetreesplywood.com</p>
               </div>
@@ -1024,7 +1009,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               <div className="text-white/90">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Award className="w-5 h-5" />
-                  <p className="font-semibold">Warranty</p>
+                  <p className="font-semibold text-sm text-white/80">Warranty</p>
                 </div>
                 <p className="text-sm text-white/80">warranty@thetreesplywood.com</p>
               </div>

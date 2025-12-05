@@ -489,16 +489,7 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="space-y-8">
-          <ModernSectionHeader
-            badge="Client Reviews"
-            badgeIcon={Award}
-            title="What Our Clients Say"
-            subtitle="See why professionals trust The Trees Plywood"
-          />
-          <Testimonials />
-        </section>
+        
       </PageContainer>
     </div>
   );

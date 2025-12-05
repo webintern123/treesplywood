@@ -516,10 +516,10 @@ interface CalculatorPageProps {
                 Pro Tips
               </h4>
               <ul className="text-xs text-amber-800 space-y-2">
-                <li>• Add 10–15% extra if your design has curves, cutouts, or detailed work</li>
-                <li>• Keep grain direction in mind for a consistent finish</li>
-                <li>• Order a couple of extra sheets for future touch-ups or replacements</li>
-                <li>• Check stock availability before finalizing your order</li>
+                <li>●	Add 10–15% extra for curves or cutouts</li>
+<li>●	Align grain direction for a uniform finish</li>
+<li>●	Keep a few spare sheets for touch-ups</li>
+<li>●	Confirm stock before placing your order</li>
               </ul>
             </div>
           </div>
@@ -645,18 +645,7 @@ interface CalculatorPageProps {
       </section>
     </PageContainer>
 
-    {/* Customer Testimonials */}
-    <section className="section-padding bg-gray-50">
-      <div className="container mx-auto px-6">
-        <ModernSectionHeader
-          badge="Customer Stories"
-          badgeIcon={Star}
-          title="Trusted by Professionals"
-          subtitle="See how our calculator helps architects, contractors, and DIY enthusiasts save time and money"
-        />
-        <Testimonials />
-      </div>
-    </section>
+    
 
     {/* Calculator FAQ Section */}
     <section className="section-padding bg-white">

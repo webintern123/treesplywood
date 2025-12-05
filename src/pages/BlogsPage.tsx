@@ -705,18 +705,7 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
         </div>
       </section>
 
-      {/* Customer Testimonials */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Your Feedback matters"
-            badgeIcon={Star}
-            title="What Our Loved Readers Say"
-            subtitle="Real experiences from people who use our blogs to learn, build, and make better choices."
-          />
-          <Testimonials />
-        </div>
-      </section>
+      
 
       {/* Blog FAQ */}
       <section className="section-padding bg-white">

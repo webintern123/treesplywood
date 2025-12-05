@@ -110,8 +110,8 @@ const filteredProducts =
         height="lg"
         overlayOpacity="medium"
         stats={[
-          { value: '15+', label: 'Wide Range Products ' },
-          { value: '3 Categories', label: 'with Heavy Duty Strength' },
+          { value: '8+', label: 'Wide Range Products ' },
+          { value: '2 Categories', label: 'with Heavy Duty Strength' },
           { value: 'Long-Term', label: 'Warranty' },
         ]}
         actions={
@@ -129,6 +129,19 @@ const filteredProducts =
                 View Catalog
               </ModernButton>
             </MagneticButton>
+            {/* Download Button */}
+  <MagneticButton strength={0.2}>
+    <ModernButton
+      variant="outline-light"
+      size="lg"
+      icon={<Download className="w-5 h-5" />}
+      onClick={() =>
+        handleDownload('src/files/Catalogue-2024.pdf', 'Catalogue-2024.pdf')
+      }
+    >
+      Download Catalog
+    </ModernButton>
+  </MagneticButton>
             <MagneticButton strength={0.2}>
               <ModernButton
                 variant="outline-light"
@@ -693,18 +706,7 @@ const filteredProducts =
         </div>
       </section>
 
-      {/* Customer Reviews/Testimonials */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Hear from Our Customers"
-            badgeIcon={Star}
-            title="Real Stories, Real Experiences"
-            subtitle="Reliable quality and beautiful finish — that’s why Tree’s Plywood is our go-to for premium homes"
-          />
-          <Testimonials />
-        </div>
-      </section>
+      
 
       {/* Product FAQ Section */}
       <section className="section-padding bg-white">

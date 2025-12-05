@@ -20,6 +20,7 @@ export function Testimonials() {
       name: 'Ramesh K. ',
       role: 'Principal Architect',
       city: 'Bengaluru ',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop',
       
       quote: 'We didn’t expect the quality of Tree’s Plywood to be this good. Best Decision!',
       rating: 5,
@@ -28,6 +29,7 @@ export function Testimonials() {
       name: 'Priya S. ',
       role: 'Interior Designer',
       city: 'Hyderabad',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop',
       
       quote: ' I recommend you all to grab these for all your needs, very strong.',
       rating: 5,
@@ -36,7 +38,8 @@ export function Testimonials() {
       name: 'Anil M. ',
       role: 'Project Manager',
       city: 'Chennai',
-      
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop',
+
       quote: 'I bought fire-retardant plywood from this company. The customer care is nice and delivered product on time.',
       rating: 5,
     },
@@ -44,6 +47,7 @@ export function Testimonials() {
       name: 'Sangeeta R.',
       role: 'Senior Designer',
       city: 'Mumbai',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
       
       quote: 'I must say from start to end, your entire process is smooth and reasonable.',
       rating: 5,
@@ -52,6 +56,8 @@ export function Testimonials() {
       name: 'Arjun M.',
       role: 'Architect',
       city: 'Mumbai',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop',
+
       
       quote: 'The quality is consistently premium. Their Gurjan finish and technical support make every project smoother.',
       rating: 5,
@@ -60,6 +66,7 @@ export function Testimonials() {
       name: 'Rajesh K.',
       role: 'Project Manager',
       city: 'Bengaluru',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop',
       quote: 'Agni fire-resistant plywood helped us meet safety codes easily. Always delivered on time.',
       rating: 5,
     },
@@ -67,7 +74,8 @@ export function Testimonials() {
       name: 'Kavita D.',
       role: ' Senior Designer',
       city: ' Hyderabad',
-      
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop',
+
       quote: 'Samrat added a beautiful finish to our luxury apartments. Clients loved the natural grain.',
       rating: 5,
     },
@@ -75,7 +83,8 @@ export function Testimonials() {
       name: 'Vikram S.',
       role: 'Furniture Manufacturer ',
       city: ' Chennai',
-      
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop',
+
       quote: 'Zero-gap calibrated sheets mean perfect joinery every time. Our furniture quality improved drastically.',
       rating: 5,
     },
@@ -137,23 +146,23 @@ export function Testimonials() {
                 "{testimonial.quote}"
               </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-               <div className="w-12 h-12 rounded-full bg-trees-primary/10 flex items-center justify-center text-trees-primary font-semibold text-lg ring-2 ring-trees-primary/20">
-  {testimonial.name.charAt(0)}
-</div>
-
-<div>
-  <h4 className="font-semibold text-trees-secondary">{testimonial.name}</h4>
-  <p className="text-sm text-gray-600">{testimonial.role}</p>
-  <p className="text-xs text-trees-primary font-medium">{testimonial.city}</p>
-</div>
-
-              </div>
-            </div>
-          ))}
-        </div>
-
+               {/* Author */}
+                            <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                              <ImageWithFallback
+                                src={testimonial.image}
+                                alt={testimonial.name}
+                                className="w-12 h-12 rounded-full object-cover ring-2 ring-trees-primary/20"
+                              />
+                              <div>
+                                <h4 className="font-semibold text-trees-secondary">{testimonial.name}</h4>
+                                <p className="text-sm text-gray-600">{testimonial.role}</p>
+                                <p className="text-xs text-trees-primary font-medium">{testimonial.city}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+              
         {/* Right Scroll Button */}
         <button
           onClick={() => scroll('right')}
