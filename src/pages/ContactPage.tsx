@@ -60,6 +60,21 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+ const [otherInputs, setOtherInputs] = useState<{
+  productInterest: string;
+  projectType: string;
+  hearAbout: string;
+}>({
+  productInterest: '',
+  projectType: '',
+  hearAbout: ''
+});
+
+const [showOtherProductInput, setShowOtherProductInput] = useState(false);
+const [showOtherProjectInput, setShowOtherProjectInput] = useState(false);
+const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
+
+
   const validateField = (field: keyof typeof formData, value: string) => {
     let error = '';
 
@@ -415,30 +430,67 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         </div>
 
         {/* Product Interest */}
-        <div className="space-y-2">
-          <label className="block text-gray-700 font-medium">Product Interest (Choose one or more)</label>
-          <div className="grid grid-cols-2 gap-2">
-            {['Agni','Ananta','Bhima','Samrat','Vajra','Flush Doors','Blockboards','Other'].map((product, idx) => (
-              <label key={idx} className="inline-flex items-center gap-2">
-                <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" />
-                <span>{product}</span>
-              </label>
-            ))}
-          </div>
-        </div>
+        <div className="grid grid-cols-2 gap-2">
+  {['Agni','Ananta','Bhima','Samrat','Vajra','Flush Doors','Blockboards','Other'].map((product, idx) => (
+    <div key={idx}>
+      <label className="inline-flex items-center gap-2">
+        <input 
+          type="checkbox" 
+          className="form-checkbox h-5 w-5 text-trees-primary"
+          onChange={(e) => {
+            if (product === 'Other') {
+              setShowOtherProductInput(e.target.checked); // toggle input
+            }
+          }}
+        />
+        <span>{product}</span>
+      </label>
+
+      {/* Only show input if "Other" is checked */}
+      {product === 'Other' && showOtherProductInput && (
+        <input
+          type="text"
+          placeholder="Please specify"
+          value={otherInputs.productInterest}
+          onChange={(e) => setOtherInputs(prev => ({ ...prev, productInterest: e.target.value }))}
+          className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
+        />
+      )}
+    </div>
+  ))}
+</div>
+
 
         {/* Project Type */}
         <div className="space-y-2">
-          <label className="block text-gray-700 font-medium">Project Type</label>
-          <div className="grid grid-cols-2 gap-2">
-            {['Residential','Commercial','Hospitality','Retail','Industrial','Institutional','Other'].map((project, idx) => (
-              <label key={idx} className="inline-flex items-center gap-2">
-                <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" />
-                <span>{project}</span>
-              </label>
-            ))}
-          </div>
-        </div>
+  <label className="block text-gray-700 font-medium">Project Type</label>
+  <div className="grid grid-cols-2 gap-2">
+    {['Residential','Commercial','Hospitality','Retail','Industrial','Institutional','Other'].map((project, idx) => (
+      <div key={idx}>
+        <label className="inline-flex items-center gap-2">
+          <input 
+            type="checkbox" 
+            className="form-checkbox h-5 w-5 text-trees-primary"
+            onChange={(e) => {
+              if (project === 'Other') setShowOtherProjectInput(e.target.checked);
+            }}
+          />
+          <span>{project}</span>
+        </label>
+
+        {project === 'Other' && showOtherProjectInput && (
+          <input
+            type="text"
+            placeholder="Please specify"
+            value={otherInputs.projectType}
+            onChange={(e) => setOtherInputs(prev => ({ ...prev, projectType: e.target.value }))}
+            className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
+          />
+        )}
+      </div>
+    ))}
+  </div>
+</div>
 
         {/* Quantity, Timeline, Urgency */}
         <div className="space-y-4 md:flex md:gap-4">
@@ -506,16 +558,35 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         
         {/* Source */}
         <div className="space-y-2">
-          <label className="block text-gray-700 font-medium">How Did You Hear About Us?</label>
-          <div className="grid grid-cols-2 gap-2">
-            {['Google Search','Social Media','Dealer','Referral','Existing Customer','Exhibition / Trade Show','Other'].map((source, idx) => (
-              <label key={idx} className="inline-flex items-center gap-2">
-                <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" />
-                <span>{source}</span>
-              </label>
-            ))}
-          </div>
-        </div>
+  <label className="block text-gray-700 font-medium">How Did You Hear About Us?</label>
+  <div className="grid grid-cols-2 gap-2">
+    {['Google Search','Social Media','Dealer','Referral','Existing Customer','Exhibition / Trade Show','Other'].map((source, idx) => (
+      <div key={idx}>
+        <label className="inline-flex items-center gap-2">
+          <input 
+            type="checkbox" 
+            className="form-checkbox h-5 w-5 text-trees-primary"
+            onChange={(e) => {
+              if (source === 'Other') setShowOtherSourceInput(e.target.checked);
+            }}
+          />
+          <span>{source}</span>
+        </label>
+
+        {source === 'Other' && showOtherSourceInput && (
+          <input
+            type="text"
+            placeholder="Please specify"
+            value={otherInputs.hearAbout}
+            onChange={(e) => setOtherInputs(prev => ({ ...prev, hearAbout: e.target.value }))}
+            className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
+          />
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Consent */}
         <label className="inline-flex items-center gap-2 mt-4">
