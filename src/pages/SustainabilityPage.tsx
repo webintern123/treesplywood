@@ -161,67 +161,93 @@ export default function SustainabilityPage({ onNavigate }: SustainabilityPagePro
       </ParallaxSection>
 
       {/* Initiatives Grid */}
-      <GridContainer className="py-20">
-        <div className="col-span-12 mb-12">
-          <h2 className="text-3xl text-center text-trees-secondary mb-4">Our Green Initiatives</h2>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto">
-            Comprehensive sustainability programs across our entire value chain
-          </p>
-        </div>
+      {/* Our Green Initiatives Section */}
+<div className="py-20 bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5">
+  <GridContainer>
+    
+    {/* Heading */}
+    <div className="col-span-12 text-center mb-12">
+      <h2 className="text-3xl text-trees-secondary mb-3">Our Green Initiatives</h2>
+      <p className="text-gray-600 max-w-2xl mx-auto">
+        Comprehensive sustainability programs across our entire value chain
+      </p>
+    </div>
 
-        {initiatives.map((initiative, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="col-span-12 md:col-span-6 lg:col-span-4"
+    {/* 6 Cards → 3 on top, 3 on bottom with gap */}
+    <div className="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      {initiatives.map((initiative, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.08 }}
+        >
+          <AdvancedCard
+            variant="glass"
+            hoverEffect="3d"
+            className="h-full p-6 bg-white shadow-md rounded-2xl border border-gray-200"
           >
-            <AdvancedCard variant="glass" hoverEffect="3d" className="h-full p-6">
+            <div
+              className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${initiative.color} flex items-center justify-center mb-6`}
+            >
+              <initiative.icon className="w-7 h-7 text-white" />
+            </div>
 
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${initiative.color} flex items-center justify-center mb-6`}>
-                <initiative.icon className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl mb-3 text-trees-secondary">{initiative.title}</h3>
-              <p className="text-gray-600 mb-4">{initiative.description}</p>
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-sm font-semibold text-trees-primary">{initiative.stats}</p>
-              </div>
-            </AdvancedCard>
-          </motion.div>
-        ))}
-      </GridContainer>
+            <h3 className="text-xl mb-3 text-trees-secondary">{initiative.title}</h3>
+            <p className="text-gray-600 mb-4">{initiative.description}</p>
+
+            <div className="pt-4 border-t border-gray-200">
+              <p className="text-sm font-semibold text-trees-primary">{initiative.stats}</p>
+            </div>
+          </AdvancedCard>
+        </motion.div>
+      ))}
+    </div>
+
+  </GridContainer>
+</div>
+
 
       {/* Certifications */}
-      <div className="bg-gradient-to-br from-green-50 to-emerald-50 py-20">
-        <GridContainer>
-          <div className="col-span-12 mb-12 text-center">
-            <h2 className="text-3xl text-trees-secondary mb-4">Environmental Certifications</h2>
-            <p className="text-gray-600">Recognized globally for our sustainable practices</p>
-          </div>
+      {/* Certifications Section */}
+<div className="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+  <GridContainer>
+    {/* Heading */}
+    <div className="col-span-12 text-center mb-12">
+      <h2 className="text-3xl text-trees-secondary mb-3">Environmental Certifications</h2>
+      <p className="text-gray-600 max-w-2xl mx-auto">
+        Recognized globally for our sustainable practices
+      </p>
+    </div>
 
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="col-span-12 md:col-span-6 lg:col-span-3"
-            >
-              <AdvancedCard variant="glass" className="p-6 text-center h-full bg-white/80 backdrop-blur-sm">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="mb-2 text-trees-secondary">{cert.name}</h3>
-                <p className="text-sm text-gray-600 mb-3">{cert.description}</p>
-                <span className="text-xs text-green-600 font-semibold">Since {cert.year}</span>
-              </AdvancedCard>
-            </motion.div>
-          ))}
-        </GridContainer>
-      </div>
+    {/* 8 Certifications → 4 per row with gaps */}
+    <div className="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+      {certifications.map((cert, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.08 }}
+        >
+          <AdvancedCard
+            variant="glass"
+            className="h-full p-6 text-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-gray-200"
+          >
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mx-auto mb-4">
+              <Award className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="mb-2 text-trees-secondary">{cert.name}</h3>
+            <p className="text-sm text-gray-600 mb-3">{cert.description}</p>
+            <span className="text-xs text-green-600 font-semibold">Since {cert.year}</span>
+          </AdvancedCard>
+        </motion.div>
+      ))}
+    </div>
+  </GridContainer>
+</div>
+
 
       {/* Timeline */}
       <GridContainer className="py-20">

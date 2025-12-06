@@ -7,6 +7,7 @@ export interface Stat {
   label: string;
   icon?: React.ElementType;
   suffix?: string;
+  isStatic?: boolean;
 }
 
 interface AnimatedStatsProps {
@@ -38,7 +39,22 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
   return <span ref={ref}>0{suffix}</span>;
 }
 
-function StatCard({ icon: Icon, value, label, suffix = '', delay = 0 }: { icon?: React.ElementType; value: string; label: string; suffix?: string; delay?: number }) {
+function StatCard({
+  icon: Icon,
+  value,
+  label,
+  suffix = '',
+  delay = 0,
+  isStatic = false, // add this
+}: {
+  icon?: React.ElementType;
+  value: string;
+  label: string;
+  suffix?: string;
+  delay?: number;
+  isStatic?: boolean;
+}) {
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -63,11 +79,19 @@ function StatCard({ icon: Icon, value, label, suffix = '', delay = 0 }: { icon?:
       )}
 
       {/* Animated Value */}
-      <div className="text-5xl font-bold mb-2 flex items-baseline gap-1">
-        <AnimatedCounter value={numericValue} suffix="" />
-        {hasPlus && <span className="text-4xl font-bold">+</span>}
-        {hasPercent && <span className="text-4xl font-bold">%</span>}
-      </div>
+     {/* Animated or Static Value */}
+<div className="text-5xl font-bold mb-2 flex items-baseline gap-1">
+  {isStatic ? (
+    <span>{value}</span>
+  ) : (
+    <>
+      <AnimatedCounter value={numericValue} suffix="" />
+      {hasPlus && <span className="text-4xl font-bold">+</span>}
+      {hasPercent && <span className="text-4xl font-bold">%</span>}
+    </>
+  )}
+</div>
+
 
       {/* Label */}
       <p className="text-gray-600 font-medium">{label}</p>
@@ -79,14 +103,16 @@ export function AnimatedStats({ stats }: AnimatedStatsProps) {
   return (
     <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {stats.map((stat, index) => (
-        <StatCard
-          key={index}
-          icon={stat.icon || Award} // fallback icon
-          value={stat.value}
-          label={stat.label}
-          suffix={stat.suffix}
-          delay={index * 0.1}
-        />
+       <StatCard
+  key={index}
+  icon={stat.icon || Award}
+  value={stat.value}
+  label={stat.label}
+  suffix={stat.suffix}
+  delay={index * 0.1}
+  isStatic={stat.isStatic}
+/>
+
       ))}
     </section>
   );

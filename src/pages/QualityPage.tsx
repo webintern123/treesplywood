@@ -139,71 +139,99 @@ export default function QualityPage({ onNavigate }: QualityPageProps) {
       </div>
 
       {/* Testing Standards */}
-      <GridContainer className="py-20">
-        <div className="col-span-12 mb-12 text-center">
-          <h2 className="text-3xl text-trees-secondary mb-4">Comprehensive Testing Standards</h2>
-          <p className="text-gray-600">Over 20 quality tests performed on every batch</p>
-        </div>
+      {/* Testing Standards */}
+<GridContainer className="py-20">
+  <div className="col-span-12 mb-12 text-center">
+    <h2 className="text-3xl text-trees-secondary mb-4">Comprehensive Testing Standards</h2>
+    <p className="text-gray-600">Over 20 quality tests performed on every batch</p>
+  </div>
 
-        {testingStandards.map((test, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-          >
-            <AdvancedCard variant="glass" hoverEffect="3d" className="h-full p-6">
+  {/* Fixed 3×2 Grid */}
+  <div className="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center mb-4">
-                <test.icon className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl mb-3 text-trees-secondary">{test.title}</h3>
-              <ul className="space-y-2 mb-4">
-                {test.tests.map((testItem, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    {testItem}
-                  </li>
-                ))}
-              </ul>
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-xs text-trees-primary font-semibold">Standard: {test.standard}</p>
-              </div>
-            </AdvancedCard>
-          </motion.div>
-        ))}
-      </GridContainer>
+    {testingStandards.map((test, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className="w-full"
+      >
+       <AdvancedCard
+  variant="glass"
+  hoverEffect="3d"
+  className="h-full p-6 bg-white rounded-2xl shadow-md"
+>
+  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center mb-4">
+    <test.icon className="w-7 h-7 text-white" />
+  </div>
+
+  <h3 className="text-xl mb-3 text-trees-secondary">{test.title}</h3>
+
+  <ul className="space-y-2 mb-4">
+    {test.tests.map((testItem, i) => (
+      <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+        <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+        {testItem}
+      </li>
+    ))}
+  </ul>
+
+  <div className="pt-4 border-t border-gray-200">
+    <p className="text-xs text-trees-primary font-semibold">
+      Standard: {test.standard}
+    </p>
+  </div>
+</AdvancedCard>
+      </motion.div>
+    ))}
+
+  </div>
+</GridContainer>
 
       {/* Certifications Grid */}
-      <div className="bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5 py-20">
-        <GridContainer>
-          <div className="col-span-12 mb-12 text-center">
-            <h2 className="text-3xl text-trees-secondary mb-4">Certifications & Compliance</h2>
-            <p className="text-gray-600">Meeting and exceeding international quality standards</p>
-          </div>
+      {/* Certifications Grid */}
+<div className="bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5 py-20">
+  <GridContainer>
+    <div className="col-span-12 mb-12 text-center">
+      <h2 className="text-3xl text-trees-secondary mb-4">Certifications & Compliance</h2>
+      <p className="text-gray-600">Meeting and exceeding international quality standards</p>
+    </div>
 
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className="col-span-6 md:col-span-3 lg:col-span-3"
-            >
-              <AdvancedCard variant="glass" className="p-6 text-center h-full bg-white/80">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mx-auto mb-3">
-                  <Award className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="mb-1 text-trees-secondary">{cert.name}</h4>
-                <p className="text-xs text-gray-600">{cert.description}</p>
-              </AdvancedCard>
-            </motion.div>
-          ))}
-        </GridContainer>
-      </div>
+    {/* 4 cards on top, 4 cards bottom → fixed 4x2 layout */}
+    <div className="col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      {certifications.map((cert, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.05 }}
+          className="w-full"
+        >
+          <AdvancedCard
+            variant="glass"
+            className="p-6 text-center h-full bg-white shadow-md rounded-2xl"
+          >
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mx-auto mb-3">
+              <Award className="w-6 h-6 text-white" />
+            </div>
+
+            <h4 className="mb-1 text-trees-secondary text-lg font-semibold">
+              {cert.name}
+            </h4>
+
+            <p className="text-xs text-gray-600">{cert.description}</p>
+          </AdvancedCard>
+        </motion.div>
+      ))}
+
+    </div>
+  </GridContainer>
+</div>
+
 
       {/* Laboratory Equipment */}
       <GridContainer className="py-20">

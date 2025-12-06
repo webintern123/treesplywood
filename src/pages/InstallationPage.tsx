@@ -103,41 +103,51 @@ export default function InstallationPage({ onNavigate }: InstallationPageProps) 
       />
 
       {/* Services Grid */}
-      <GridContainer className="py-20">
-        <div className="col-span-12 mb-12 text-center">
-          <h2 className="text-3xl text-[#432011] mb-4">Our Installation Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Professional installation services for all types of plywood applications
-          </p>
-        </div>
+      {/* Services Grid */}
+<GridContainer className="py-20">
 
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="col-span-12 md:col-span-6 lg:col-span-3"
-          >
-            <AdvancedCard gradient={true} hoverEffect="3d" className="p-6">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A0522C] to-[#432011] flex items-center justify-center mb-4">
-                <service.icon className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl mb-3 text-[#432011]">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
-              <ul className="space-y-2">
-                {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </AdvancedCard>
-          </motion.div>
-        ))}
-      </GridContainer>
+  {/* Section Header - Full Width */}
+  <div className="col-span-12 mb-12 text-center">
+    <h2 className="text-3xl text-[#432011] mb-4">Our Installation Services</h2>
+    <p className="text-gray-600 max-w-2xl mx-auto">
+      Professional installation services for all types of plywood applications
+    </p>
+  </div>
+
+  {/* 2×2 Card Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 col-span-12">
+
+    {services.map((service, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className="w-full"
+      >
+        <AdvancedCard gradient={true} hoverEffect="3d" className="p-6">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A0522C] to-[#432011] flex items-center justify-center mb-4">
+            <service.icon className="w-7 h-7 text-white" />
+          </div>
+
+          <h3 className="text-xl mb-3 text-[#432011]">{service.title}</h3>
+          <p className="text-gray-600 mb-4">{service.description}</p>
+
+          <ul className="space-y-2">
+            {service.features.map((feature, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </AdvancedCard>
+      </motion.div>
+    ))}
+
+  </div>
+</GridContainer>
 
       {/* Benefits */}
       <div className="bg-gradient-to-br from-[#A0522C]/5 to-[#432011]/5 py-20">

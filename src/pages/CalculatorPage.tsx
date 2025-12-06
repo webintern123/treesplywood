@@ -585,9 +585,9 @@ interface CalculatorPageProps {
                 <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
                   <Scale className="w-10 h-10 text-trees-primary" />
                 </div>
-                <h3>Product Comparison</h3>
+                <h4>Product Comparison</h4>
                 <p className="text-gray-600">
-                  Compare features, specs, and warranties to find plywood.
+                  Compare features, specs, and warranties to find plywood of your choice.
                 </p>
                 <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
                   Compare Products
@@ -608,7 +608,7 @@ interface CalculatorPageProps {
                 <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
                   <Package className="w-10 h-10 text-trees-primary" />
                 </div>
-                <h3>Request Samples</h3>
+                <h4>Request Samples</h4>
                 <p className="text-gray-600">
                   Order free samples and feel the quality yourself before making a choice.
                 </p>
@@ -631,7 +631,7 @@ interface CalculatorPageProps {
                 <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
                   <FileText className="w-10 h-10 text-trees-primary" />
                 </div>
-                <h3>Downloads Center</h3>
+                <h4>Downloads Center</h4>
                 <p className="text-gray-600">
                   Browse catalogs, technical sheets, and installation guides—all in one place.
                 </p>

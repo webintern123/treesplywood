@@ -64,82 +64,83 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
     window.location.reload();
   };
 
-  const privacyStats = [
-    { value: '256-bit', label: 'SSL Encryption' },
-    { value: '24/7', label: 'Security Monitoring' },
-    { value: '100%', label: 'GDPR Compliant' },
-  ];
+ const privacyStats = [
+  { value: '256', suffix: '-bit', label: 'Secure Website (SSL Protected)' },
+  { value: '24/7', isStatic: true, label: 'Security Checks' },
+  { value: '100', suffix: '%', label: 'GDPR-Ready' },
+];
+
 
   const dataTypes = [
     {
       icon: UserCheck,
-      title: 'Personal Information',
-      description: 'Name, email, phone number, company name, and address provided when requesting quotes or samples.',
+      title: 'Details You Share With Us',
+      description: 'Information you provide when requesting a quote, samples, or contacting us—such as your name, email, phone number, business name, and address.',
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Globe,
-      title: 'Usage Information',
-      description: 'Browser type, IP address, pages visited, time spent, and diagnostic data for website improvement.',
+      title: 'How You Use Our Website',
+      description: 'We receive basic browsing details like IP address, browser type, pages viewed, and time spent to help us improve the site.',
       color: 'from-green-500 to-green-600'
     },
     {
       icon: FileText,
-      title: 'Communication Data',
-      description: 'Records of correspondence, support tickets, feedback, and interactions with our team.',
+      title: 'Communication Records',
+      description: 'We keep records of messages, calls, forms, and support requests so we can respond and assist you better.',
       color: 'from-purple-500 to-purple-600'
     },
     {
       icon: Database,
-      title: 'Technical Data',
-      description: 'Device information, cookies, log files, and analytics data for service optimization.',
+      title: 'Technical Information',
+      description: 'We may collect device details, cookies, log data, and analytics to keep the website running smoothly.',
       color: 'from-orange-500 to-orange-600'
     },
   ];
 
   const userRights = [
-    { icon: Download, title: 'Access', description: 'Request a copy of your personal data we hold' },
-    { icon: FileCheck, title: 'Correction', description: 'Update inaccurate or incomplete information' },
-    { icon: Trash2, title: 'Deletion', description: 'Request removal of your personal data' },
-    { icon: Eye, title: 'Transparency', description: 'Understand how your data is being used' },
-    { icon: Lock, title: 'Restriction', description: 'Limit how we process your information' },
-    { icon: RefreshCw, title: 'Portability', description: 'Transfer your data to another service' },
+    { icon: Download, title: 'See Your Information', description: 'You can request a copy of the details we have about you.' },
+    { icon: FileCheck, title: 'Fix Something', description: 'If any of your information is incorrect or outdated, you can ask us to update it.' },
+    { icon: Trash2, title: 'Remove Your Data', description: 'You can ask us to delete your information from our records.s' },
+    { icon: Eye, title: 'Know How We Use It', description: 'You can ask us to explain how your information is collected and used.' },
+    { icon: Lock, title: 'Limit Use', description: 'If you want us to pause or restrict how we use your data, you can request that too.' },
+    { icon: RefreshCw, title: 'Move Your Data', description: 'If needed, you can ask us to share your information with another service in a safe and secure way.' },
   ];
 
   const securityMeasures = [
-    { icon: Lock, text: 'Industry-standard SSL/TLS encryption' },
-    { icon: Shield, text: 'Regular security audits and penetration testing' },
-    { icon: Users, text: 'Strict access controls and authentication' },
-    { icon: Database, text: 'Encrypted data storage and backups' },
-    { icon: Eye, text: 'Continuous monitoring and threat detection' },
-    { icon: FileCheck, text: 'Compliance with international standards' },
+    { icon: Lock, text: 'Secure, encrypted connections on our website (SSL/TLS)' },
+    { icon: Shield, text: 'Regular checks to spot and fix security issues' },
+    { icon: Users, text: 'Limited access within our team on a need-to-know basis' },
+    { icon: Database, text: 'Safe storage systems and protected backups' },
+    { icon: Eye, text: 'Ongoing monitoring to identify any unusual activity' },
+    { icon: FileCheck, text: 'Processes aligned with recognised security standards' },
   ];
 
   const thirdPartyServices = [
-    { name: 'Google Analytics', purpose: 'Website analytics and user behavior tracking', category: 'Analytics' },
-    { name: 'Email Service Provider', purpose: 'Transactional emails and newsletters', category: 'Communication' },
-    { name: 'Cloud Hosting', purpose: 'Website hosting and data storage', category: 'Infrastructure' },
-    { name: 'Customer Support', purpose: 'Support ticket management and live chat', category: 'Support' },
+    { name: 'Google Analytics', purpose: 'Helps us understand how visitors use our website.', category: 'Analytics' },
+    { name: 'Email Provider', purpose: 'Sends important emails, updates, or replies to your enquiries.', category: 'Communication' },
+    { name: 'Cloud Hosting', purpose: 'Stores our website and keeps it running safely and reliably.', category: 'Infrastructure' },
+    { name: 'Customer Support Tools ', purpose: 'Helps us manage enquiries, support messages, and communication.', category: 'Support' },
   ];
 
   const californiaRights = [
-    { title: 'Right to Know', description: 'Know what personal information is collected, used, shared, or sold' },
-    { title: 'Right to Delete', description: 'Request deletion of your personal information' },
-    { title: 'Right to Opt-Out', description: 'Opt-out of the sale of your personal information' },
-    { title: 'Right to Non-Discrimination', description: 'Not be discriminated against for exercising your rights' },
-    { title: 'Right to Correct', description: 'Request correction of inaccurate personal information' },
-    { title: 'Right to Limit', description: 'Limit the use and disclosure of sensitive personal information' },
+    { title: 'Right to Know', description: 'You can ask what personal information we hold about you and how we use it.' },
+    { title: 'Right to Access', description: 'You can request a copy of the information you have shared with us.' },
+    { title: 'Right to Update or Correct', description: ' If any details we have are incorrect or outdated, you can ask us to correct them.' },
+    { title: 'Right to Delete', description: ' You can request deletion of your personal information, unless we are required to keep it for legal or business reasons.' },
+    { title: 'Right to Withdraw Consent', description: 'If you have given us permission to contact you or process certain information, you can withdraw that consent at any time.' },
+    { title: 'Right to Raise Concerns', description: ' If you feel your information is being misused, you can contact us directly to resolve the issue.' },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <PageHero
-        title="Privacy Policy"
-        subtitle="Your Data, Your Rights"
-        description="We're committed to protecting your privacy and being transparent about how we collect, use, and safeguard your information. Your trust is our top priority."
+        title="Privacy & Data Protection Policy"
+        subtitle="We Handle Your Data with Respect"
+        description="We respect your personal information and make sure it is handled with care. Our goal is to be clear about what we collect, why we collect it, and how we keep it safe."        
         image="https://images.unsplash.com/photo-1563986768609-322da13575f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-        badge="Last Updated: November 4, 2025"
+        badge="Updated On: December 2025"
         badgeIcon={Shield}
         height="md"
         overlayOpacity="medium"
@@ -152,7 +153,7 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                 icon={<Mail className="w-5 h-5" />}
                 onClick={() => onNavigate('contact')}
               >
-                Contact Privacy Team
+                Support Team
               </ModernButton>
             </MagneticButton>
             <MagneticButton strength={0.2}>
@@ -162,7 +163,7 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                 icon={<FileText className="w-5 h-5" />}
                 onClick={() => onNavigate('terms')}
               >
-                Terms of Service
+                Terms & Conditions
               </ModernButton>
             </MagneticButton>
           </div>
@@ -256,21 +257,22 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                     <Shield className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-trees-secondary text-2xl md:text-3xl mb-2">Our Commitment to Your Privacy</h2>
-                    <p className="text-trees-primary font-medium">Building trust through transparency</p>
+                    <h2 className="text-trees-secondary text-2xl md:text-3xl mb-2">Our Promise to Protect Your Information</h2>
+                    <p className="text-trees-primary font-medium">Transparency you can trust</p>
                   </div>
                 </div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    At The Trees Plywood, we are deeply committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains in detail how we collect, use, disclose, and safeguard your information when you visit our website or engage with our services.
+                   At Tree’s Plywood, your privacy matters to us. We respect the personal information you share with us and work hard to keep it safe. This Privacy Policy explains, in clear and simple terms, how we collect and use your information when you visit our website or interact with our services.
                   </p>
                   <p>
-                    We believe in complete transparency about our data practices. This policy has been designed to be easily understood and provides comprehensive information about your rights and our responsibilities under applicable data protection laws, including GDPR, CCPA, and Indian data protection regulations.
-                  </p>
+                    We want you to feel confident when you choose to connect with us. That’s why we keep our processes transparent and follow the privacy standards required under Indian data protection guidelines and other global best practices.                  </p>
                   <div className="bg-trees-primary/5 border-l-4 border-trees-primary rounded-r-lg p-4 mt-6">
-                    <p className="font-medium text-trees-secondary mb-2">Important Notice</p>
+                    <p className="font-medium text-trees-secondary mb-2">A Quick Note</p>
                     <p className="text-sm">
-                      By using our website and services, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services. We encourage you to read this policy carefully.
+                      By using our website, you give us permission to handle your information as described in this policy. If you’re not comfortable with any part of it, you may choose not to use our website or services.
+
+We encourage you to take a moment to read this policy so you understand how we protect your information.
                     </p>
                   </div>
                 </div>
@@ -287,9 +289,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={Database}
-                badge="Data Collection"
-                title="Information We Collect"
-                subtitle="Understanding what data we gather and why it matters"
+                badge="Gathered Data"
+                title="Types of Information We Receive"
+                subtitle="We only collect information that helps us serve you better. Here’s what that includes:"
                 align="left"
               />
 
@@ -327,9 +329,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                 <div className="flex items-start gap-3">
                   <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-medium text-blue-900 mb-1">Voluntary Information</p>
+                    <p className="font-medium text-blue-900 mb-1">Information You Choose to Give: </p>
                     <p className="text-sm text-blue-700">
-                      Most information we collect is provided voluntarily by you when you fill out forms, request samples, contact us, or subscribe to our newsletter. You can choose not to provide certain information, but this may limit your ability to use some features of our services.
+                      You share most information voluntarily when filling forms or requesting services.  Not providing certain details may limit some features.
                     </p>
                   </div>
                 </div>
@@ -346,34 +348,34 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Eye className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">How We Use Your Information</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">What We Do with Your Information</h2>
               </div>
               
               <div className="space-y-4">
                 {[
                   {
-                    title: 'To provide and maintain our services',
-                    desc: 'Process inquiries, deliver product information, send samples, provide quotes, and offer customer support tailored to your needs.'
+                    title: 'To respond to you',
+                    desc: 'We use your details to answer your questions, share product information, give quotations, or help you with any support you need.'
                   },
                   {
-                    title: 'To improve our website and services',
-                    desc: 'Analyze usage patterns, gather feedback, conduct research, and optimize user experience across all touchpoints.'
+                    title: 'To make our website better',
+                    desc: 'We review how visitors use our site so we can fix issues, improve pages, and create a smoother browsing experience.'
                   },
                   {
-                    title: 'To communicate with you',
-                    desc: 'Send newsletters, product updates, promotional materials, and important notifications (with your explicit consent).'
+                    title: 'To stay in touch',
+                    desc: 'If you choose to receive updates, we may send you product news, offers, or important announcements.'
                   },
                   {
-                    title: 'To ensure security and prevent fraud',
-                    desc: 'Monitor for suspicious activity, verify identities, protect against unauthorized access, and maintain system integrity.'
+                    title: '	To keep everything safe',
+                    desc: 'We use basic security checks to prevent misuse, protect our systems, and ensure your information is handled safely.'
                   },
                   {
-                    title: 'To comply with legal obligations',
-                    desc: 'Respond to legal requests, enforce our terms, protect our rights, and comply with applicable laws and regulations.'
+                    title: 'To follow the law',
+                    desc: 'Sometimes we may need to share information to meet legal requirements or to protect our company’s rights.'
                   },
                   {
-                    title: 'To personalize your experience',
-                    desc: 'Provide relevant content, product recommendations, and customized solutions based on your preferences and history.'
+                    title: 'To personalise your visit',
+                    desc: 'We may show you more relevant content or suggestions based on what you’re interested in.'
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -404,21 +406,21 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Globe className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Sharing Your Information</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">How We Share Your Information</h2>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  We respect your privacy and do not sell, trade, or rent your personal information to third parties for marketing purposes. We may share your information only in the following limited circumstances:
+                  We value your trust, and we do not sell or share your personal details for advertising or marketing. Your information is shared only when it is genuinely needed to run our services smoothly and safely.
                 </p>
                 
                 <div className="space-y-3 mt-6">
                   <div className="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
                     <Users className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Service Providers</p>
+                      <p className="font-medium text-gray-900 mb-1">	Working With Service Partners</p>
                       <p className="text-sm text-gray-600">
-                        Trusted third-party vendors who assist with website hosting, email delivery, analytics, payment processing, and customer support. These providers are contractually bound to protect your data.
+                        We work with trusted partners who help with website hosting, emails, and support. They only use your information to do their job and must keep it safe.
                       </p>
                     </div>
                   </div>
@@ -426,9 +428,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   <div className="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
                     <Scale className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Legal Requirements</p>
+                      <p className="font-medium text-gray-900 mb-1">When the Law Requires It</p>
                       <p className="text-sm text-gray-600">
-                        When required by law, court order, or government regulation, or when necessary to protect our rights, property, or safety, or that of others.
+                        We may share information if we are required to by law or to protect our rights and safety.
                       </p>
                     </div>
                   </div>
@@ -436,9 +438,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   <div className="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
                     <RefreshCw className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Business Transfers</p>
+                      <p className="font-medium text-gray-900 mb-1">Business Changes</p>
                       <p className="text-sm text-gray-600">
-                        In the event of a merger, acquisition, or sale of assets, your information may be transferred to the new entity, subject to the same privacy protections.
+                       If our business is merged or transferred, your information may move to the new company but will continue to stay protected.
                       </p>
                     </div>
                   </div>
@@ -448,9 +450,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   <div className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-green-900 mb-1">Your Data is Protected</p>
+                      <p className="font-medium text-green-900 mb-1">Your Information Stays Protected: </p>
                       <p className="text-sm text-green-700">
-                        All third parties we work with are required to maintain appropriate security measures and use your information only for the specific purposes we authorize. We do not sell your personal information.
+                        Anyone who receives your information must follow strict privacy rules. We only share what is necessary.
                       </p>
                     </div>
                   </div>
@@ -468,16 +470,16 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={List}
-                badge="Transparency"
-                title="Third-Party Services We Use"
-                subtitle="Complete list of external services that may process your data"
+                badge="We are Open"
+                title="Third-Party Services We Work With"
+                subtitle="To run our website smoothly and serve you better, we use a few trusted external service providers. These partners help us with technical tasks but do not use your information for their own purposes."
                 align="left"
               />
 
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  We work with select third-party service providers to deliver our services effectively. Here's a complete list of the types of services we use and their purposes:
-                </p>
+                <h1 className="text-gray-700 leading-relaxed mb-6">
+                  Services We Use & Why
+                </h1>
 
                 <div className="space-y-4">
                   {thirdPartyServices.map((service, index) => (
@@ -508,9 +510,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   <div className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-blue-900 mb-1">Data Processing Agreements</p>
+                      <p className="font-medium text-blue-900 mb-1">How We Keep Your Data Safe</p>
                       <p className="text-sm text-blue-700">
-                        All third-party service providers are bound by data processing agreements that ensure GDPR compliance and appropriate security measures for your data.
+                        All these service providers follow strict privacy and security standards. They are only allowed to use your information to provide services to us—nothing else.
                       </p>
                     </div>
                   </div>
@@ -520,7 +522,7 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
 
             {/* Data Security */}
             <motion.section 
-              id="security"
+              id=""
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -528,16 +530,14 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={Lock}
-                badge="Security"
-                title="Data Protection & Security"
-                subtitle="Multiple layers of protection to keep your information safe"
+                badge="Protection"
+                title="Data Safe & Secure"
+                subtitle="We take the safety of your personal information seriously. Our team uses several protective measures to make sure your data stays secure and isn’t misused. These include:"
                 align="left"
               />
 
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  We implement comprehensive technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Our security infrastructure includes:
-                </p>
+                
                 
                 <div className="grid md:grid-cols-2 gap-4">
                   {securityMeasures.map((measure, index) => (
@@ -559,9 +559,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-yellow-900 mb-1">Security Disclaimer</p>
+                      <p className="font-medium text-yellow-900 mb-1">Important Note</p>
                       <p className="text-sm text-yellow-700">
-                        While we implement industry-leading security measures, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security but are committed to protecting your data to the best of our abilities.
+                        We do our best to protect your information, but no online system can be completely risk-free. Even with strong security practices, we cannot promise absolute protection. However, we are fully committed to safeguarding your data with care and responsibility.
                       </p>
                     </div>
                   </div>
@@ -579,42 +579,42 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Bell className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Data Breach Notification</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">In Case of a Security Issue</h2>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  In the unlikely event of a data breach that affects your personal information, we are committed to transparency and prompt notification in accordance with applicable laws.
+                  We work hard to keep your information safe, but if something ever happens that puts your data at risk, we will inform you quickly and honestly.
                 </p>
 
                 <div className="bg-orange-50 border border-orange-200 rounded-lg p-5 mt-4">
-                  <h3 className="font-semibold text-orange-900 mb-3">Our Breach Response Protocol:</h3>
+                  <h3 className="font-semibold text-orange-900 mb-3">Here’s how we handle such situations:</h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm"><strong>Immediate Action:</strong> Contain the breach and assess the scope within 24 hours</p>
+                      <p className="text-sm"><strong>Quick Response: </strong> Our team will immediately investigate what happened and take steps to stop the issue.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm"><strong>User Notification:</strong> Notify affected users within 72 hours via email and website notice</p>
+                      <p className="text-sm"><strong>Timely Updates: </strong> If your information is involved, we will inform you as soon as possible through email and a notice on our website.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm"><strong>Authority Reporting:</strong> Report to relevant supervisory authorities as required by law</p>
+                      <p className="text-sm"><strong>Following the Law: </strong> We will inform any required authorities based on legal guidelines.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm"><strong>Remediation:</strong> Implement additional security measures and provide guidance to affected users</p>
+                      <p className="text-sm"><strong>Fixing the Issue: </strong> We will strengthen our security systems and guide you on what you may need to do next.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm"><strong>Transparency:</strong> Provide clear information about what data was affected and recommended actions</p>
+                      <p className="text-sm"><strong>Clear Communication: </strong> You will receive straightforward information about what happened and what it means for you.</p>
                     </div>
                   </div>
                 </div>
 
                 <p className="mt-4">
-                  Notifications will include details about the nature of the breach, types of information affected, steps we've taken to address the breach, and recommendations for protecting yourself from potential harm.
+                  Our goal is to keep you protected and fully informed at every step.
                 </p>
               </div>
             </motion.section>
@@ -629,35 +629,35 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Clock className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Data Retention</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">How Long We Keep Your Information</h2>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
+                  We only keep your personal information for as long as we genuinely need it for our work or as required by law. Different types of information are kept for different time periods:
                 </p>
                 
                 <div className="bg-gray-50 rounded-lg p-5 mt-4 space-y-3">
                   <div className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-trees-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p><strong>Active Customer Data:</strong> Retained while you maintain an active relationship with us and for 3 years thereafter for business records.</p>
+                    <p><strong>	Customer Information:</strong> We keep it while you continue to engage with us and for 3 more years to maintain proper business records.</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-trees-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p><strong>Inquiry Data:</strong> Stored for 2 years to track customer interactions and improve services.</p>
+                    <p><strong>	Enquiry Details:</strong> We store enquiry or contact form details for up to 2 years so we can track follow-ups and improve our service.</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-trees-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p><strong>Marketing Data:</strong> Retained until you unsubscribe or request deletion.</p>
+                    <p><strong>	Marketing Preferences: </strong> We keep this information only until you choose to unsubscribe or ask us to remove it.</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-trees-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p><strong>Legal & Financial Records:</strong> Maintained as required by applicable laws (typically 7-10 years).</p>
+                    <p><strong>Legal or Financial Records:</strong> Some data must be stored for 7–10 years as per legal and accounting requirements.</p>
                   </div>
                 </div>
 
                 <p className="mt-4">
-                  When your data is no longer needed, we securely delete or anonymize it in accordance with our data retention schedule and applicable legal requirements.
+                  When your information is no longer needed, we safely delete it or convert it into non-identifiable data so it cannot be linked back to you.
                 </p>
               </div>
             </motion.section>
@@ -672,9 +672,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={UserCheck}
-                badge="Your Rights"
-                title="Privacy Rights & Controls"
-                subtitle="You have full control over your personal information"
+                badge="User Controls & Rights"
+                title="Your Privacy Choices"
+                subtitle="You are always in control of the information you share with us. You can ask us for the following at any time:"
                 align="left"
               />
 
@@ -708,19 +708,19 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <FileCheck className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">How to Exercise Your Privacy Rights</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Your Privacy Choices & How to Request Them</h2>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  We make it easy for you to exercise your privacy rights. To submit a Data Subject Access Request (DSAR) or exercise any of your privacy rights, you can:
+                If you ever want to see, update, or delete the personal information we have about you, we’re here to help. You can reach out to us anytime through:
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
                   <div className="bg-white border border-blue-200 rounded-lg p-5">
                     <Mail className="w-6 h-6 text-trees-primary mb-3" />
-                    <h4 className="font-semibold text-trees-secondary mb-2">Email Us</h4>
-                    <p className="text-sm text-gray-600 mb-3">Send your request to our dedicated privacy team</p>
+                    <h4 className="font-semibold text-trees-secondary mb-2">Email</h4>
+                    <p className="text-sm text-gray-600 mb-3">Write to us at privacy@thetreesplywood.com with your request.</p>
                     <a href="mailto:privacy@thetreesplywood.com" className="text-trees-primary hover:underline text-sm font-medium">
                       privacy@thetreesplywood.com
                     </a>
@@ -729,7 +729,7 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   <div className="bg-white border border-blue-200 rounded-lg p-5">
                     <FileText className="w-6 h-6 text-trees-primary mb-3" />
                     <h4 className="font-semibold text-trees-secondary mb-2">Contact Form</h4>
-                    <p className="text-sm text-gray-600 mb-3">Use our contact form to submit your request</p>
+                    <p className="text-sm text-gray-600 mb-3">You can also submit your request through our website’s contact form.</p>
                     <MagneticButton strength={0.15}>
                       <ModernButton
                         variant="outline"
@@ -737,30 +737,30 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                         icon={<ArrowRight className="w-4 h-4" />}
                         onClick={() => onNavigate('contact')}
                       >
-                        Go to Contact
+                        Contact Us
                       </ModernButton>
                     </MagneticButton>
                   </div>
                 </div>
 
                 <div className="bg-white border border-blue-200 rounded-lg p-5 mt-4">
-                  <h4 className="font-semibold text-trees-secondary mb-3">Request Processing Timeline</h4>
+                  <h4 className="font-semibold text-trees-secondary mb-3">What Happens Next</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                      <p><strong>Acknowledgment:</strong> We'll confirm receipt within 48 hours</p>
+                      <p>We’ll get back to you within 48 hours to confirm we received your request.</p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                      <p><strong>Identity Verification:</strong> We may request additional information to verify your identity</p>
+                      <p>We may ask for basic details to confirm it’s really you, just to keep your data safe.</p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                      <p><strong>Response:</strong> We'll fulfill your request within 30 days (may be extended to 60 days for complex requests)</p>
+                      <p>Most requests are completed within 30 days. If it takes a little longer (for complex cases), we’ll let you know.</p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                      <p><strong>No Cost:</strong> Privacy requests are processed free of charge unless manifestly unfounded or excessive</p>
+                      <p>There is no fee for making a privacy request unless it is unreasonable or repeated many times.</p>
                     </div>
                   </div>
                 </div>
@@ -777,41 +777,43 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Cookie className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Cookies and Tracking Technologies</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Cookies and How We Use Them</h2>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  We use cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, understand user preferences, and deliver personalized content. Cookies are small text files stored on your device when you visit our website.
+                 Our website uses cookies and similar tools to make your browsing experience smoother and more useful. Cookies are small files saved on your device when you visit our site. They help us remember your preferences and understand how people use our website.
                 </p>
+                <h1 className="text-trees-secondary text-2xl md:text-3xl">Types of Cookies We Use</h1>
 
                 <div className="grid md:grid-cols-3 gap-4 mt-6">
                   <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
                     <p className="font-medium text-purple-900 mb-1 text-sm">Essential Cookies</p>
-                    <p className="text-xs text-purple-700">Required for website functionality and cannot be disabled</p>
+                    <p className="text-xs text-purple-700">These are necessary for the website to work properly. Without them, some features won’t function.</p>
                   </div>
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                     <p className="font-medium text-blue-900 mb-1 text-sm">Analytics Cookies</p>
-                    <p className="text-xs text-blue-700">Help us understand how visitors interact with our website</p>
+                    <p className="text-xs text-blue-700">These help us learn how visitors use our site so we can improve our pages and content.</p>
                   </div>
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                     <p className="font-medium text-green-900 mb-1 text-sm">Marketing Cookies</p>
-                    <p className="text-xs text-green-700">Track visitors across websites to display relevant ads</p>
+                    <p className="text-xs text-green-700">These help show you relevant ads or information based on your interests.</p>
                   </div>
                 </div>
 
-                <p className="mt-4">
-                  You can control cookie settings through your browser preferences. However, disabling cookies may limit certain features of our website. Most browsers allow you to refuse cookies, delete existing cookies, or be notified when new cookies are placed.
-                </p>
+                <p className="font-medium  mb-1 text-sm">Your Choice</p>
+                    <p className="text-xs ">
+You can manage or block cookies anytime through your browser settings. If you turn some of them off, certain parts of the website may not work as expected.
+</p>
 
                 <div className="bg-trees-primary/5 border border-trees-primary/20 rounded-lg p-5 mt-6">
                   <div className="flex items-center justify-between gap-4 mb-4">
                     <div className="flex items-start gap-3 flex-1">
                       <Settings className="w-6 h-6 text-trees-primary flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-semibold text-trees-secondary mb-1">Manage Your Cookie Preferences</p>
+                        <p className="font-semibold text-trees-secondary mb-1">Cookie Preferences</p>
                         <p className="text-sm text-gray-600">
-                          You can customize which cookies you accept or decline at any time. Click the button to open your cookie preferences.
+                          You can choose which cookies you want to allow. Click below to review or update your preferences.
                         </p>
                       </div>
                     </div>
@@ -840,18 +842,18 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Globe className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">International Data Transfers</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">How We Handle Your Data if You Are Outside India</h2>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Your information may be transferred to, and maintained on, servers located outside of your state, province, country, or other governmental jurisdiction where data protection laws may differ from those of your jurisdiction.
+                  If you are visiting our website from outside India, please know that your information will be stored and processed on our servers in India.
                 </p>
                 <p>
-                  If you are located outside India and choose to provide information to us, please note that we transfer the data, including personal information, to India and process it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+                  By submitting your details on our website, you agree that we can receive and handle your information in India.
                 </p>
                 <p>
-                  We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and applicable data protection laws, including GDPR where applicable. Standard Contractual Clauses (SCCs) are used for international data transfers where required.
+                  	We take reasonable steps to keep your data safe and make sure it is handled responsibly and in line with the privacy rules that apply to us.
                 </p>
               </div>
             </motion.section>
@@ -866,16 +868,14 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={Scale}
-                badge="California Privacy Rights"
-                title="CCPA Compliance"
-                subtitle="Your rights under the California Consumer Privacy Act"
+                badge=" Privacy Rights"
+                title="Your Privacy Rights (India)"
+                subtitle="As an Indian resident, you have certain rights over your personal information. We respect these rights and make it easy for you to use them."
                 align="left"
               />
 
-              <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  If you are a California resident, the California Consumer Privacy Act (CCPA) provides you with specific rights regarding your personal information. Here are your California privacy rights:
-                </p>
+             
+                
 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                   {californiaRights.map((right, index) => (
@@ -896,29 +896,25 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                       </div>
                     </motion.div>
                   ))}
-                </div>
+                
 
                 <div className="bg-red-50 border-l-4 border-red-500 rounded-r-lg p-5 mb-6">
                   <h4 className="font-semibold text-red-900 mb-2 flex items-center gap-2">
                     <AlertCircle className="w-5 h-5" />
-                    Do Not Sell My Personal Information
+                    We Do Not Sell Your Information
                   </h4>
                   <p className="text-sm text-red-800 mb-3">
-                    We do not sell your personal information to third parties. We do not and will not sell your personal information for monetary or other valuable consideration.
+                    We do not sell, trade, or rent your personal information to anyone. We may work with trusted service providers (for hosting, analytics, communication tools, etc.), and they only use the information to support our services. They are not allowed to use it for anything else.
                   </p>
-                  <p className="text-sm text-red-800">
-                    However, we may share certain information with third-party service providers as described in the "Sharing Your Information" section above. These disclosures do not constitute "sales" under CCPA.
-                  </p>
+                  
                 </div>
 
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-blue-900 mb-3">Exercising Your CCPA Rights</h4>
+                  <h4 className="font-semibold text-blue-900 mb-3">How to Use Your Rights</h4>
                   <p className="text-sm text-blue-700 mb-3">
-                    To exercise any of your CCPA rights, please contact us using the methods outlined in the "Privacy Requests" section. We will not discriminate against you for exercising your CCPA rights.
+                    To request access, updates, corrections, or deletion of your information, you can contact us through the details provided in the “Contact Us” or “Privacy Requests” section. We may ask you for basic details to confirm your identity before processing your request. We aim to respond within a reasonable time frame, usually within 30 days.
                   </p>
-                  <p className="text-sm text-blue-700">
-                    We may need to verify your identity before processing your request. We will respond to verified requests within 45 days, with a possible 45-day extension if necessary.
-                  </p>
+                  
                 </div>
               </div>
             </motion.section>
@@ -938,10 +934,10 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children under 18. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately.
+                  Our website and services are meant for adults. We do not knowingly collect any personal details from anyone under 18 years of age. If you are a parent or guardian and feel that a child has shared their information with us by mistake, please reach out to us right away.
                 </p>
                 <p>
-                  If we become aware that we have collected personal information from children under 18 without verification of parental consent, we will take steps to remove that information from our servers promptly.
+                 If we find that we have received information from someone under 18, we will delete it as soon as possible.
                 </p>
               </div>
             </motion.section>
@@ -956,12 +952,12 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Landmark className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Right to Lodge a Complaint</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Right to Raise a Concerns</h2>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  If you believe that your data protection rights have been violated, you have the right to lodge a complaint with the relevant supervisory authority. While we encourage you to contact us first to resolve any concerns, you have the right to contact the appropriate data protection authority.
+                  If you feel that your privacy or data protection rights have been affected, you can raise a concern with the appropriate authority. We always encourage you to contact us first so we can try to resolve the issue quickly and fairly.
                 </p>
 
                 <div className="bg-gray-50 rounded-lg p-5 mt-4">
@@ -970,7 +966,7 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                     <div className="flex items-start gap-3">
                       <Landmark className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-medium text-gray-900 mb-1">For Indian Residents:</p>
+                        <p className="font-medium text-gray-900 mb-1">For Individuals in India</p>
                         <p className="text-gray-600">
                           Ministry of Electronics & Information Technology (MeitY)<br />
                           Indian Computer Emergency Response Team (CERT-In)<br />
@@ -982,9 +978,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                     <div className="flex items-start gap-3">
                       <Landmark className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-medium text-gray-900 mb-1">For EU Residents (GDPR):</p>
+                        <p className="font-medium text-gray-900 mb-1">For Individuals in the European Union</p>
                         <p className="text-gray-600">
-                          You may contact your local Data Protection Authority<br />
+                          You may reach out to your local Data Protection Authority (DPA) based on your country of residence.<br />
                           Find your DPA: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener noreferrer" className="text-trees-primary hover:underline">EDPB Members</a>
                         </p>
                       </div>
@@ -1007,9 +1003,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   <div className="flex items-start gap-3">
                     <Mail className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-blue-900 mb-1">Contact Us First</p>
+                      <p className="font-medium text-blue-900 mb-1">Please Contact Us First</p>
                       <p className="text-sm text-blue-700">
-                        We're committed to resolving any privacy concerns quickly and fairly. Please reach out to us at privacy@thetreesplywood.com before filing a formal complaint, and we'll do our best to address your issue.
+                        We’re here to help. If you have any worries about your data or how it is being used, please get in touch with us at privacy@thetreesplywood.com. We will make every effort to understand your concern and resolve it as quickly as possible.
                       </p>
                     </div>
                   </div>
@@ -1027,36 +1023,36 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <RefreshCw className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Policy Updates</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Policy Changes</h2>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other operational needs. We will notify you of any material changes by:
+                 We may update this Privacy Policy whenever needed—such as when our services, legal requirements, or internal processes change. If we make any important updates, we will let you know by:
                 </p>
                 
                 <div className="space-y-2 ml-4">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
-                    <p>Posting the new policy on this page with an updated "Last Updated" date</p>
+                    <p>Posting the revised policy on this page with a new “Last Updated” date</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
-                    <p>Sending an email notification to registered users (for significant changes)</p>
+                    <p>Showing a clear notice on our website</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
-                    <p>Displaying a prominent notice on our website</p>
+                    <p>Emailing you, if you are a registered user and the changes are significant</p>
                   </div>
                 </div>
 
                 <p className="mt-4">
-                  We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information. Your continued use of our services after any changes to this policy will constitute your acceptance of such changes.
+                  We recommend checking this page from time to time so you know how we continue to protect your information. By using our website after the policy is updated, you agree to the revised terms.
                 </p>
 
                 <div className="bg-gray-50 rounded-lg p-4 mt-4">
                   <p className="text-sm text-gray-600">
-                    <strong>Version:</strong> 2.0 | <strong>Last Updated:</strong> November 4, 2025 | <strong>Effective Date:</strong> November 1, 2025
+                    <strong>Version:</strong> 2.0 | <strong>Last Updated:</strong> December 2025 | <strong>Effective Date:</strong> December 2025
                   </p>
                 </div>
               </div>
@@ -1074,9 +1070,9 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-trees-secondary text-2xl md:text-3xl mb-3">Questions About Privacy?</h2>
+                  <h2 className="text-trees-secondary text-2xl md:text-3xl mb-3">Have Questions About Your Privacy?</h2>
                   <p className="text-gray-700 max-w-2xl mx-auto">
-                    If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, our privacy team is here to help.
+                    If you need any help or have questions about how we handle your information, feel free to reach out. Our team is always here to support you.
                   </p>
                 </div>
 
@@ -1144,15 +1140,17 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
           >
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
               <Sparkles className="w-5 h-5" />
-              <span>Your Privacy Matters</span>
+              <span>Our Services</span>
             </div>
 
             <h2 className="text-white text-3xl md:text-5xl mb-6">
-              Ready to Experience Our Services?
+              We Respect Your Privacy
             </h2>
             
             <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Trust, transparency, and quality craftsmanship—discover why thousands choose The Trees Plywood
+              Want to know more about our products or need assistance?
+ Reach out anytime - we’re happy to support you.
+
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -1163,7 +1161,7 @@ export function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps) {
                   icon={<ArrowRight className="w-6 h-6" />}
                   onClick={() => onNavigate('products')}
                 >
-                  Explore Products
+                  View Products
                 </ModernButton>
               </MagneticButton>
               <MagneticButton strength={0.2}>
