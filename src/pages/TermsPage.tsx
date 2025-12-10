@@ -68,36 +68,36 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
   };
 
   const legalStats = [
-    { value: '25+', label: 'Years in Business' },
-    { value: '10,000+', label: 'Happy Customers' },
-    { value: '100%', label: 'Transparent Terms' },
+    { value: '25+', label: 'Years of Trust ' },
+    { value: '10,000+', label: 'Customers Served ' },
+    { value: '100%', label: 'Transparent Practices' },
   ];
 
   const prohibitedUses = [
-    'Violating applicable laws or regulations',
-    'Transmitting harmful code, viruses, or malicious software',
-    'Engaging in unauthorized access or disruption of services',
-    'Reproducing or copying content without permission',
-    'Impersonating others or providing false information',
-    'Harvesting or collecting user information',
-    'Interfering with security features',
-    'Using automated systems without authorization',
+    'Break any laws while using the site',
+    'Upload or send anything harmful (like viruses or malicious files)',
+    'Try to damage, disable, or interrupt the website',
+    'Copy or reuse our content without permission',
+    'Pretend to be someone else or submit false details',
+    'Collect information about other users',
+    'Tamper with any security features',
+    'Use bots, scripts, or automated tools without approval.'
   ];
 
   const returnConditions = [
-    { title: 'Return Window', description: 'Products may be returned within 7 days of delivery' },
-    { title: 'Condition', description: 'Items must be unused, in original packaging, with all tags attached' },
-    { title: 'Custom Orders', description: 'Customized or cut-to-size products are non-returnable' },
-    { title: 'Documentation', description: 'Original invoice and delivery receipt required' },
+    { title: 'Return Window', description: 'Products can be returned within 7 days of delivery.' },
+    { title: 'Condition of the Product', description: 'Items must be unused, packed in their original materials, and include all labels or documents.' },
+    { title: 'Custom Orders', description: 'Any customised item or cut-to-size material cannot be returned.' },
+    { title: 'Required Documents', description: 'Please provide the original invoice and delivery receipt when requesting a return.' },
   ];
 
   const liabilityExclusions = [
-    'Indirect, incidental, or consequential damages',
-    'Loss of profits, revenue, or business opportunities',
-    'Data loss or corruption',
-    'Service interruptions or delays',
-    'Third-party content or actions',
-    'Product performance issues due to improper installation',
+    'Indirect or unexpected damages',
+'Loss of income, business, or opportunities',
+'Loss of data or system-related issues',
+'Delays or interruptions in services or deliveries',
+'Actions or content from third-party websites or services',
+'Product concerns caused by incorrect handling, storage, or installation',
   ];
 
   return (
@@ -105,8 +105,8 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
       {/* Hero Section */}
       <PageHero
         title="Terms & Conditions"
-        subtitle="Clear Terms, Fair Business"
-        description="These terms outline the rules and regulations for using our website and services. We believe in transparent, fair, and straightforward business practices."
+        subtitle="Clear Rules, Trustworthy Service"
+        description="Straightforward terms designed to keep our services clear and fair for everyone."
         image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
         badge="Last Updated: November 4, 2025"
         badgeIcon={Scale}
@@ -121,7 +121,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 icon={<Mail className="w-5 h-5" />}
                 onClick={() => onNavigate('contact')}
               >
-                Contact Legal Team
+                Reach Our Team 
               </ModernButton>
             </MagneticButton>
             <MagneticButton strength={0.2}>
@@ -131,7 +131,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 icon={<Shield className="w-5 h-5" />}
                 onClick={() => onNavigate('privacy')}
               >
-                Privacy Policy
+                View Privacy Policy 
               </ModernButton>
             </MagneticButton>
           </div>
@@ -226,20 +226,20 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   </div>
                   <div>
                     <h2 className="text-trees-secondary text-2xl md:text-3xl mb-2">Welcome to The Trees Plywood</h2>
-                    <p className="text-trees-primary font-medium">Agreement for Use of Our Services</p>
+                    <p className="text-trees-primary font-medium">Understanding How You Can Use Our Website and Services</p>
                   </div>
                 </div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    Welcome to The Trees Plywood website. These Terms and Conditions ("Terms") govern your access to and use of our website, products, and services. By accessing or using our website, you acknowledge that you have read, understood, and agree to be bound by these Terms.
+                    Thank you for visiting the Tree’s Plywood website. These Terms explain how you use our website, products, and services. By continuing to browse or interact with us online, you are agreeing to follow these Terms.
                   </p>
                   <p>
-                    These Terms apply to all visitors, users, customers, and others who access or use our services, whether you are browsing our website, requesting quotes, placing orders, or engaging with us in any capacity.
+                    These Terms apply to everyone who visits our site, whether you are checking product details, asking for a quote, applying for a dealership, or making a purchase.
                   </p>
                   <div className="bg-trees-primary/5 border-l-4 border-trees-primary rounded-r-lg p-4 mt-6">
-                    <p className="font-medium text-trees-secondary mb-2">Important Notice</p>
+                    <p className="font-medium text-trees-secondary mb-2">Please Read Carefully</p>
                     <p className="text-sm">
-                      Please read these Terms carefully before using our services. If you do not agree with any part of these Terms, you must not use our website or services. Your continued use of our services constitutes acceptance of these Terms and any future modifications.
+                     If you do not agree with any part of these Terms, please do not use our website or services. By using our website, you accept these Terms and any updates we may make in the future.
                     </p>
                   </div>
                 </div>
@@ -256,8 +256,8 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={ShieldCheck}
-                badge="Agreement"
-                title="Acceptance of Terms"
+                badge="Acceptance "
+                title="Agreement to Our Terms"
                 subtitle="Your agreement to these terms"
                 align="left"
               />
@@ -265,7 +265,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    By accessing and using The Trees Plywood website and services, you accept and agree to be bound by these Terms and Conditions, our Privacy Policy, and any additional terms applicable to specific services you use.
+                    By using the Tree’s Plywood website or any of our services, you are agreeing to follow these Terms and our Privacy Policy. If you are accessing our services for a business or organisation, you confirm that you have the authority to agree on their behalf.
                   </p>
                   <p>
                     These Terms create a legally binding agreement between you and The Trees Plywood. If you are using our services on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.
@@ -275,9 +275,9 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                     <div className="flex items-start gap-3">
                       <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-medium text-yellow-900 mb-1">Modification Rights</p>
+                        <p className="font-medium text-yellow-900 mb-1">Updates to These Terms</p>
                         <p className="text-sm text-yellow-700">
-                          We reserve the right to modify, update, or change these Terms at any time. Material changes will be notified through our website or via email. Your continued use of our services after changes are posted constitutes acceptance of the modified Terms.
+                          We may revise or update these Terms whenever necessary. If important changes are made, we will share the update on our website or notify you by email. Continuing to use our website after any changes means you accept the updated Terms.
                         </p>
                       </div>
                     </div>
@@ -296,23 +296,23 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <UserX className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Age Requirements</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Age & Eligibility</h2>
               </div>
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  Our website and services are intended for use by individuals who are at least 18 years of age or the age of majority in their jurisdiction, whichever is greater. By using our website, you represent and warrant that you meet these age requirements.
+                  Our website and services are for people who are 18 years or older, or the legal age of adulthood in their area. By using this website, you confirm that you meet this requirement.
                 </p>
                 <p className="leading-relaxed">
-                  If you are under the required age, you may only use our website under the supervision of a parent or legal guardian who agrees to be bound by these Terms. Parents and guardians are responsible for monitoring and supervising their children's use of our services.
+                 If you are younger than the required age, you may use the website only with a parent or legal guardian, and they must agree to these Terms. Parents and guardians are responsible for guiding and supervising how their children use our website.
                 </p>
                 <div className="bg-orange-50 border border-orange-200 rounded-lg p-5 mt-4">
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-orange-900 mb-1">Legal Capacity Required</p>
+                      <p className="font-medium text-orange-900 mb-1">Legal Ability to Use Our Services</p>
                       <p className="text-sm text-orange-700">
-                        You must have the legal capacity to enter into binding contracts. If you do not meet these requirements, you must not use our services. We reserve the right to request proof of age at any time.
+                        You should use our services only if you are legally able to enter into agreements. If you do not meet this requirement, please do not use our website. We may ask for age or identity proof if needed.
                       </p>
                     </div>
                   </div>
@@ -330,20 +330,26 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <BookOpen className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Use of Website</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Use of Our Website</h2>
+                <h3 className="text-trees-secondary font-semibold mb-3">How You Can Use the Site</h3>
               </div>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Permitted Use</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">You’re welcome to use our website to:</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    You may use our website for lawful purposes only, including browsing products, requesting information, placing orders, and accessing resources. You are granted a limited, non-exclusive, non-transferable license to access and use our website.
+                    ●	View our products<br></br>
+●	Ask for details or quotations<br></br>
+●	Submit enquiries or orders<br></br>
+●	Read the information and resources we provide<br></br>
+Your access is meant for personal or business use related to Tree’s Plywood.
+
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Prohibited Uses</h3>
-                  <p className="text-gray-700 mb-4">You agree not to use our website or services for any of the following purposes:</p>
+                  <h3 className="text-trees-secondary font-semibold mb-3">What You Should Not Do</h3>
+                  <p className="text-gray-700 mb-4">To keep the website safe for everyone, you agree not to:</p>
                   <div className="grid md:grid-cols-2 gap-3">
                     {prohibitedUses.map((use, index) => (
                       <motion.div
@@ -382,22 +388,23 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
                 <div className="space-y-6 text-gray-700">
                   <div>
-                    <h3 className="text-trees-secondary font-semibold mb-3">Product Information</h3>
+                    <h3 className="text-trees-secondary font-semibold mb-3">About Our Products</h3>
                     <p className="leading-relaxed">
-                      We strive to provide accurate product descriptions, specifications, images, and pricing information. However, we do not warrant that product information is complete, reliable, current, or error-free. Product colors, textures, and dimensions may vary slightly from images due to photography and screen display limitations.
+                      We aim to share correct and helpful details about our products, including descriptions, specifications, images, and pricing. Some variations may occur, as colours, textures, and sizes can look different on screens or in photos.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-trees-secondary font-semibold mb-3">Pricing and Availability</h3>
+                    <h3 className="text-trees-secondary font-semibold mb-3">Pricing & Availability</h3>
                     <div className="space-y-3">
                       {[
-                        'All prices are subject to change without prior notice',
-                        'Product availability may vary based on location, stock levels, and demand',
-                        'We reserve the right to limit quantities, discontinue products, or refuse orders',
-                        'Custom quotes are valid for 30 days unless otherwise specified',
-                        'Bulk order pricing may differ from standard rates - contact us for quotes',
-                        'Prices displayed are exclusive of taxes, which will be added at checkout'
+                        'Prices may change from time to time without notice',
+'	Availability depends on stock, location, and demand.',
+'	We may limit quantities or discontinue products when required.',
+'Custom quotations are normally valid for 30 days unless mentioned otherwise.',
+'Bulk orders may have different pricing—please contact us for a detailed quote.',
+'Taxes and additional charges will be applied as per the final invoice.'
+
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -415,9 +422,9 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   </div>
 
                   <div>
-                    <h3 className="text-trees-secondary font-semibold mb-3">Technical Specifications</h3>
+                    <h3 className="text-trees-secondary font-semibold mb-3">Technical Details</h3>
                     <p className="leading-relaxed">
-                      Technical specifications are provided for reference purposes. Actual product performance may vary based on installation methods, environmental conditions, and usage patterns. We recommend consulting our technical team for specific application requirements.
+                      Technical information is shared to guide you, but actual performance can vary based on installation, environment, and usage. For specific project needs, we recommend speaking with our technical team so you get the right solution.
                     </p>
                   </div>
                 </div>
@@ -439,12 +446,17 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
               
               <div className="space-y-6 text-gray-700">
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Order Process</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">How Orders Work</h3>
                   <p className="leading-relaxed mb-3">
-                    Orders can be placed through our website, via email, phone, or through our authorized dealers. The ordering process typically involves:
+                    You can place an order through our website, by email, by phone, or through any of our authorised dealers. The process is straightforward:
                   </p>
                   <div className="space-y-2">
-                    {['Product selection and specification', 'Quote request and approval', 'Order confirmation and advance payment', 'Production and quality check', 'Delivery scheduling and dispatch'].map((step, index) => (
+                    {['You choose the product and share your requirements.',
+                      'We give you a quotation for approval.',
+                       'Once you confirm, the order is booked with the required advance payment.',
+                       'We begin production and carry out the quality checks.',
+                        'We plan the delivery and arrange the dispatch.'
+].map((step, index) => (
                       <div key={index} className="flex items-center gap-3 bg-trees-primary/5 rounded-lg p-3">
                         <div className="w-6 h-6 rounded-full bg-trees-primary text-white flex items-center justify-center text-xs font-semibold flex-shrink-0">
                           {index + 1}
@@ -456,29 +468,29 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 </div>
                 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Order Acceptance</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">Order Confirmation</h3>
                   <p className="leading-relaxed">
-                    All orders are subject to acceptance and availability. We reserve the right to refuse or cancel any order for any reason, including but not limited to product unavailability, pricing errors, suspected fraudulent activity, or failure to meet credit requirements. If an order is cancelled after payment, we will issue a full refund.
+                    All orders are confirmed only after we review availability and details. We may cancel an order if a product is out of stock, if there is a pricing mistake, if the order looks suspicious, or if credit requirements are not met. If we need to cancel an order after you have paid, we will refund the full amount.
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="text-trees-secondary font-semibold mb-3">Payment Terms</h3>
                   <p className="leading-relaxed mb-3">
-                    Payment terms will be specified in your quotation or invoice. We accept various payment methods including bank transfers, checks, and online payments. Standard payment terms are:
+                    Your quotation or invoice will clearly mention the payment terms. We accept bank transfers, cheques, and online payments. Typical payment terms are:
                   </p>
                   <div className="bg-gray-50 rounded-lg p-4 space-y-2 text-sm">
-                    <p>• <strong>New Customers:</strong> 100% advance payment before production</p>
-                    <p>• <strong>Established Customers:</strong> 50% advance, 50% before delivery (subject to credit approval)</p>
-                    <p>• <strong>Bulk Orders:</strong> Customized payment terms available upon request</p>
-                    <p>• <strong>Credit Terms:</strong> Available for qualified businesses after credit assessment</p>
+                    <p>• <strong>New Customers:</strong> 100% advance before production</p>
+                    <p>• <strong>Regular Customers: </strong>50% advance and the remaining 50% before dispatch (subject to credit approval)</p>
+                    <p>• <strong>Bulk Orders:</strong> Payment terms can be discussed and agreed based on order size</p>
+                    <p>• <strong>Credit Facility: </strong> Offered to eligible businesses after proper review</p>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Minimum Order Quantity</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">Minimum Order Quantity (MOQ)</h3>
                   <p className="leading-relaxed">
-                    Certain products may have minimum order quantity (MOQ) requirements based on production efficiencies and logistics. MOQs will be clearly communicated during the quotation process. Smaller quantities may be available at premium pricing.
+                    Some products may require a minimum order quantity due to production and transport factors. We will inform you of the MOQ during the quotation stage. Smaller quantities may be supplied at a different price.
                   </p>
                 </div>
               </div>
@@ -494,11 +506,14 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={Truck}
-                badge="Logistics"
-                title="Delivery & Shipping"
-                subtitle="How we get products to you"
+                badge="Shipping"
+                title="Logistics & Delivery"
                 align="left"
               />
+              <h3 className="text-trees-secondary font-semibold mb-3">How We Deliver</h3>
+              <p className="leading-relaxed mb-4">
+                      We make sure your products reach you safely and on time. Delivery timelines depend on stock, order size, custom requirements, and your location.
+                    </p>
 
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
                 <div className="space-y-6 text-gray-700">
@@ -509,42 +524,46 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                        <p className="font-medium text-green-900 mb-1">Stock Items</p>
-                        <p className="text-sm text-green-700">3-7 business days</p>
+                        <p className="font-medium text-green-900 mb-1">Ready Stock: </p>
+                        <p className="text-sm text-green-700">3–7 working days</p>
                       </div>
                       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                        <p className="font-medium text-blue-900 mb-1">Custom Orders</p>
-                        <p className="text-sm text-blue-700">10-15 business days</p>
+                        <p className="font-medium text-blue-900 mb-1">	Custom Orders: </p>
+                        <p className="text-sm text-blue-700">10–15 working days</p>
                       </div>
                       <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
                         <p className="font-medium text-purple-900 mb-1">Bulk Orders</p>
-                        <p className="text-sm text-purple-700">15-30 business days</p>
+                        <p className="text-sm text-purple-700">15–30 working days</p>
                       </div>
                       <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-                        <p className="font-medium text-orange-900 mb-1">Special Products</p>
-                        <p className="text-sm text-orange-700">As per agreement</p>
+                        <p className="font-medium text-orange-900 mb-1">Special Items: </p>
+                        <p className="text-sm text-orange-700">As discussed and agreed</p>
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-trees-secondary font-semibold mb-3">Shipping Costs</h3>
+                    <h3 className="text-trees-secondary font-semibold mb-3">Delivery Charges</h3>
                     <p className="leading-relaxed">
-                      Shipping costs are calculated based on order value, weight, volume, delivery location, and chosen shipping method. Delivery charges will be clearly stated in your quotation. For large orders, we may offer free or discounted shipping. Insurance and special handling requirements may incur additional charges.
+                      ●	Shipping charges are calculated based on order value, weight, volume, and delivery location.<br></br>
+●	All charges will be mentioned clearly in your quotation.<br></br>
+●	For large or repeated orders, discounted or free delivery may be provided.<br></br>
+●	Additional costs may apply if insurance or special handling is required.
+
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="text-trees-secondary font-semibold mb-3">Delivery Inspection</h3>
+                    <h3 className="text-trees-secondary font-semibold mb-3">Check Your Delivery</h3>
                     <p className="leading-relaxed mb-3">
-                      Upon delivery, customers must:
+                      When your order arrives, please:
                     </p>
                     <div className="space-y-2">
                       {[
-                        'Inspect the shipment for damage or discrepancies immediately',
-                        'Note any visible damage on the delivery receipt',
-                        'Report any issues within 24 hours of delivery',
-                        'Retain all packaging materials until inspection is complete'
+                        'Check the goods immediately',
+'Note any visible damage on the delivery slip',
+'Report any issues within 24 hours',
+'Keep the packaging until the issue is resolved'
                       ].map((item, index) => (
                         <div key={index} className="flex items-start gap-3">
                           <Truck className="w-4 h-4 text-trees-primary flex-shrink-0 mt-1" />
@@ -558,9 +577,9 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                     <div className="flex items-start gap-3">
                       <AlertTriangle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-medium text-yellow-900 mb-1">Delays and Force Majeure</p>
+                        <p className="font-medium text-yellow-900 mb-1">Delays</p>
                         <p className="text-sm text-yellow-700">
-                          While we strive to meet delivery timelines, we are not liable for delays caused by circumstances beyond our control, including natural disasters, strikes, transportation issues, or government actions.
+                          We do our best to deliver on time, but delays can happen due to reasons outside our control—such as weather issues, transport delays, strikes, or government restrictions.
                         </p>
                       </div>
                     </div>
@@ -586,7 +605,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 <div>
                   <h3 className="text-trees-secondary font-semibold mb-3">Return Policy</h3>
                   <p className="leading-relaxed mb-4">
-                    We accept returns under specific conditions to ensure fairness to all parties. Returns are subject to the following terms:
+                    We accept returns in certain situations to keep the process fair for everyone. Please read the conditions below:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
                     {returnConditions.map((condition, index) => (
@@ -607,13 +626,13 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
 
                 <div>
                   <h3 className="text-trees-secondary font-semibold mb-3">Non-Returnable Items</h3>
-                  <p className="leading-relaxed mb-3">The following items cannot be returned:</p>
+                  <p className="leading-relaxed mb-3">We cannot accept returns for:</p>
                   <div className="space-y-2">
                     {[
-                      'Customized or cut-to-size products',
-                      'Products with visible signs of use or installation',
-                      'Items damaged due to improper handling or storage',
-                      'Products ordered as per special customer specifications'
+                      'Custom or cut-to-size items',
+                      'Products that show signs of use or installation',
+                      'Items damaged due to poor handling or storage',
+                      'Products made specifically based on customer instructions'
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3 bg-red-50 rounded-lg p-3">
                         <XCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
@@ -626,15 +645,22 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 <div>
                   <h3 className="text-trees-secondary font-semibold mb-3">Order Cancellations</h3>
                   <p className="leading-relaxed">
-                    Orders may be cancelled before production begins. Once production has commenced, cancellation may not be possible or may incur charges. Cancellation requests must be submitted in writing. Refunds for cancelled orders will be processed within 7-10 business days after deducting any applicable cancellation charges.
+                    Orders can be cancelled only before production begins. Once production has started, cancellation may not be possible or may involve additional charges. All cancellation requests must be sent in writing. Refunds for approved cancellations will be processed within 7–10 business days, after deducting applicable charges.
+
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Refund Process</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">Refunds</h3>
                   <p className="leading-relaxed">
-                    Approved refunds will be processed to the original payment method within 10-15 business days. Shipping charges are non-refundable unless the return is due to our error. Return shipping costs are the customer's responsibility unless the product is defective or incorrect.
+                    Refunds for approved returns will be issued to the original payment method within 10–15 business days.
                   </p>
+                  <div className="bg-trees-primary/5 border-l-4 border-trees-primary rounded-r-lg p-4 mt-6">
+                    <p className="font-medium text-trees-secondary mb-2">Please note:</p>
+                    <p className="text-sm">
+                     Shipping charges are not refundable unless the mistake is ours. Return shipping costs must be covered by the customer, except in cases of wrong or damaged products sent by us
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.section>
@@ -649,8 +675,8 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={Shield}
-                badge="Protection"
-                title="Warranty Terms"
+                badge="Warranty Terms"
+                title="Our Promise of Quality"
                 subtitle="Product quality guarantee"
                 align="left"
               />
@@ -658,35 +684,35 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
                 <div className="space-y-6 text-gray-700">
                   <p className="leading-relaxed">
-                    Our products come with manufacturer warranties that cover defects in materials and workmanship under normal use and proper installation. Warranty terms vary by product type and are specified in product documentation.
+                    All our products are backed by manufacturer warranties that cover material or production defects when used and installed the right way. Each product has its own warranty period, which is mentioned in its respective documents.
                   </p>
 
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-5">
                     <h4 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
                       <Shield className="w-5 h-5" />
-                      Warranty Coverage
+                      What the Warranty Covers
                     </h4>
                     <div className="space-y-2 text-sm text-blue-800">
-                      <p>• <strong>Standard Products:</strong> 1-5 years depending on product category</p>
-                      <p>• <strong>Premium Products:</strong> Extended warranty up to 10 years</p>
-                      <p>• <strong>Structural Defects:</strong> Coverage for manufacturing defects</p>
-                      <p>• <strong>Performance Issues:</strong> Subject to proper installation and usage</p>
+                      <p>• <strong>Regular Product Range: </strong> Warranty periods vary from 1 to 5 years.</p>
+                      <p>• <strong>Premium Range:</strong> Extended warranty available, up to 10 years.</p>
+                      <p>• <strong>Manufacturing Issues: </strong> Covers structural or production defects.</p>
+                      <p>• <strong>Performance Concerns: </strong> Valid only when the product is installed and used as recommended.</p>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-trees-secondary font-semibold mb-3">Warranty Exclusions</h3>
+                    <h3 className="text-trees-secondary font-semibold mb-3">What the Warranty Does Not Cover</h3>
                     <p className="leading-relaxed mb-3">
-                      Warranties do not cover damage resulting from:
+                     The warranty does not apply to:
                     </p>
                     <div className="grid md:grid-cols-2 gap-2">
                       {[
-                        'Improper installation or handling',
-                        'Exposure to extreme conditions',
-                        'Normal wear and tear',
-                        'Unauthorized modifications',
-                        'Acts of nature or accidents',
-                        'Chemical or water damage'
+                        'Wrong or improper installation',
+                        'Rough handling or misuse',
+                        'Exposure to extreme weather or moisture beyond recommended limits',
+                        'Natural wear and tear',
+                        'Changes or alterations made without approval',
+                        'Damage caused by accidents, chemicals, or natural events'
                       ].map((item, index) => (
                         <div key={index} className="flex items-start gap-2 text-sm">
                           <XCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
@@ -698,7 +724,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
 
                   <div className="bg-trees-primary/5 border border-trees-primary/20 rounded-lg p-4">
                     <p className="text-sm">
-                      <strong>Detailed Warranty Information:</strong> For complete warranty terms, conditions, and claim procedures, please visit our{' '}
+                      <strong>More Details:</strong> For complete instructions, claim steps, and full warranty conditions, please refer to our.{' '}
                       <button 
                         onClick={() => onNavigate('warranty')}
                         className="text-trees-primary hover:underline font-medium"
@@ -721,18 +747,25 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Scale className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Intellectual Property Rights</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Intellectual Property</h2>
               </div>
               
               <div className="space-y-6 text-gray-700">
                 <p className="leading-relaxed">
-                  All content on this website, including but not limited to text, graphics, logos, images, videos, audio clips, digital downloads, data compilations, and software, is the property of The Trees Plywood or its content suppliers and is protected by Indian and international copyright, trademark, and other intellectual property laws.
+                  All the material on this website, such as text, photos, logos, designs, product details, and other content belongs to Tree’s Plywood. These materials are protected under Indian copyright and trademark laws. Please do not copy, reuse, or share our content without getting written permission from us.
                 </p>
 
                 <div>
                   <h3 className="text-trees-secondary font-semibold mb-3">Copyright</h3>
                   <p className="leading-relaxed">
-                    The compilation of all content on this website is the exclusive property of The Trees Plywood and is protected by copyright law. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our website without our express written permission.
+                    Everything you see on this site has been created or arranged by Tree’s Plywood. You cannot:
+●	Reproduce it<br></br>
+●	Upload it elsewhere<br></br>
+●	Edit or modify it<br></br>
+●	Use it for commercial purposes<br></br>
+●	Download and store it for distribution<br></br>
+unless we clearly allow it in writing.
+
                   </p>
                 </div>
 
@@ -743,15 +776,21 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                       <strong>Trademark Notice:</strong>
                     </p>
                     <p className="text-sm">
-                      "The Trees Plywood," "The Trees," our logo, and all related names, logos, product and service names, designs, and slogans are trademarks of The Trees Plywood or its affiliates. You must not use such marks without our prior written permission. All other names, logos, product and service names, designs, and slogans on this website are the trademarks of their respective owners.
+                      The name Tree’s Plywood, our logo, and any product or brand names shown on the website are trademarks of our company. They cannot be used by anyone else without our approval. Other brand names appearing on the site belong to their respective owners.
                     </p>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Limited License</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">Limited Use Permission</h3>
                   <p className="leading-relaxed">
-                    You are granted a limited, revocable, non-exclusive, non-transferable license to access and use our website for personal, non-commercial purposes. This license does not include the right to download (other than page caching) or modify any portion of the website without our express written consent.
+                    You may browse our website for personal use.
+ This permission does not allow you to:<br></br>
+●	Download our content (except normal page viewing)<br></br>
+●	Change any part of the website<br></br>
+●	Use the material for business or promotional purposes<br></br>
+Any other use requires written consent from Tree’s Plywood.
+
                   </p>
                 </div>
               </div>
@@ -767,12 +806,12 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Link2 className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Third-Party Links & Websites</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Links to Other Websites – Third-Party</h2>
               </div>
               
               <div className="space-y-6 text-gray-700">
                 <p className="leading-relaxed">
-                  Our website may contain links to third-party websites, applications, or services that are not owned or controlled by The Trees Plywood. We provide these links for your convenience and reference only.
+                  Our website may sometimes include links to other websites for additional information or convenience. These websites are not managed or operated by Tree’s Plywood.
                 </p>
                 
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-5">
@@ -781,24 +820,28 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                     <div>
                       <p className="font-medium text-yellow-900 mb-2">No Endorsement or Control</p>
                       <p className="text-sm text-yellow-700 mb-3">
-                        We do not endorse, monitor, or have any control over third-party websites or their content. The inclusion of any link does not imply our approval or endorsement of the linked site, its operator, or its content.
+                       We do not control what appears on these external websites and are not responsible for their content, services, or updates. Adding a link does not mean we recommend or approve that website or what it offers.
                       </p>
                       <p className="text-sm text-yellow-700">
                         We are not responsible for examining or evaluating the content, accuracy, completeness, availability, or quality of third-party websites, nor do we warrant the offerings of any third-party businesses or individuals.
                       </p>
+                      
                     </div>
+                    
                   </div>
+                  
                 </div>
+                
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Your Responsibility</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">When you visit another website through our links:</h3>
                   <div className="space-y-2">
                     {[
-                      'Review the terms and privacy policies of any third-party websites before use',
-                      'We assume no liability for your interactions with third-party websites',
-                      'Any transactions with third parties are solely between you and that party',
-                      'Report any inappropriate or harmful third-party content to us',
-                      'Use caution when providing personal information to external sites'
+                      'You do so at your own choice',
+                      '	Any interaction or purchase is directly between you and that website',
+,                      
+                      'We are not responsible for any issues, losses, or concerns that may arise',
+                      'Before using any third-party site, we suggest you read their terms and privacy policies and be careful when sharing your personal information.'
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
                         <Link2 className="w-4 h-4 text-trees-primary flex-shrink-0 mt-0.5" />
@@ -809,7 +852,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 </div>
 
                 <p className="text-sm italic">
-                  We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit or use.
+                 If you come across any harmful or inappropriate link through our website, please inform us so we can review it.
                 </p>
               </div>
             </motion.section>
@@ -824,22 +867,28 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Users className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">User Conduct & Responsibilities</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Using Our Website Responsibly</h2>
               </div>
               
               <div className="space-y-6 text-gray-700">
                 <p className="leading-relaxed">
-                  As a user of our website and services, you agree to conduct yourself responsibly and in compliance with all applicable laws and regulations. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+                  We ask all visitors to use our website in a fair and honest way. By using our website or services, you agree to follow the law and respect our business, our team, and other users.<br></br>
+                  If you create or use any login details with us, you are responsible for keeping them safe and for everything done through your account.
                 </p>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Account Security</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">Keeping Your Account Safe</h3>
+                  <p className="leading-relaxed">
+                  Please help keep your account secure by:
+                </p>
+                <br></br>
                   <div className="space-y-2">
                     {[
-                      'Choose a strong, unique password for your account',
-                      'Do not share your login credentials with others',
-                      'Notify us immediately of any unauthorized account access',
-                      'Log out after using shared or public computers'
+                     'Using a strong password that others cannot guess',
+'Not sharing your login details with anyone',
+'Informing us right away if you notice any unusual or unauthorized activity',
+'Signing out when using shared or public computers.'
+
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3 bg-green-50 rounded-lg p-3">
                         <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
@@ -850,18 +899,19 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 </div>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Prohibited Activities</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">What Is Not Allowed</h3>
                   <p className="leading-relaxed mb-3">
-                    You agree not to engage in any activities that could harm our business, users, or website, including:
+                    To keep our website safe and reliable, you agree not to:
                   </p>
                   <div className="space-y-2">
                     {[
-                      'Attempting to gain unauthorized access to our systems',
-                      'Interfering with the proper working of our website',
-                      'Using automated tools to access or scrape content',
-                      'Posting false, misleading, or defamatory information',
-                      'Violating any applicable laws or regulations',
-                      'Infringing on intellectual property rights'
+                      'Try to access areas of the website you are not allowed to use',
+'Disrupt or damage how the website works',
+'Use software, scripts, or automated tools to collect data from the site',
+'Share false, harmful, or misleading information',
+'Break any local, state, or national laws',
+'Copy or misuse our content, brand name, or materials.'
+
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3 bg-red-50 rounded-lg p-3">
                         <Ban className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
@@ -888,38 +938,42 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  By using our website and services, you consent to receive electronic communications from us. These communications may include notices about your account, transactional information, marketing materials, and other information concerning or related to our services.
+                  When you visit our website or contact us, you allow us to communicate with you through email, phone calls, WhatsApp, or other digital channels you have shared.
+                  <br></br>
+                  <br></br>
+                  We may reach out to you for the following reasons:
                 </p>
                 
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-blue-900 mb-3">Types of Communications</h4>
+                  <h4 className="font-semibold text-blue-900 mb-3">What We May Contact You About</h4>
                   <div className="space-y-2 text-sm text-blue-800">
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                      <p><strong>Transactional:</strong> Order confirmations, shipping updates, invoices, and account notifications</p>
+                      <p><strong>Order & Account Updates</strong> Order details, invoices, delivery information, and important account messages</p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                      <p><strong>Service-Related:</strong> Technical updates, security alerts, policy changes, and support responses</p>
+                      <p><strong>Service Information</strong>  Replies to your queries, support messages, policy updates, or important service notices</p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                      <p><strong>Marketing:</strong> Newsletters, promotional offers, product announcements (opt-out available)</p>
+                      <p><strong>Product & Offers</strong>Updates about new products, offers, or company announcements (You can choose to stop any time)
+</p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                      <p><strong>Informational:</strong> Industry insights, guides, resources, and educational content</p>
+                      <p><strong>General Information</strong>Useful updates related to plywood products, usage guidance, or industry-related information</p>
                     </div>
                   </div>
                 </div>
 
                 <p className="leading-relaxed">
-                  You agree that all agreements, notices, disclosures, and other communications that we provide to you electronically satisfy any legal requirement that such communications be in writing. You may opt out of promotional communications at any time by following the unsubscribe instructions in our emails or by contacting us directly.
+                 All online messages and emails we send are considered valid communication.
                 </p>
 
                 <div className="bg-gray-50 rounded-lg p-4">
                   <p className="text-sm">
-                    <strong>Email Delivery:</strong> You are responsible for maintaining valid and current email address(es) and phone numbers for receiving communications. We are not responsible for communications that are undeliverable due to outdated or incorrect contact information.
+                    <strong>Your Responsibility:</strong> Please make sure the phone number and email address you share with us are correct and active. We are not responsible if messages do not reach you due to incorrect or outdated contact details.
                   </p>
                 </div>
               </div>
@@ -935,40 +989,41 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <GraduationCap className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Professional Advice Disclaimer</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Important Guidance</h2>
               </div>
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  The information, recommendations, and guidance provided on our website and through our services are for general informational purposes only and should not be considered as professional architectural, engineering, construction, or legal advice.
+                  The information shared on our website is meant to give you a general understanding of our products. It is not a replacement for expert advice related to construction, design, engineering, or legal matters.
                 </p>
                 
                 <div className="bg-purple-50 border border-purple-200 rounded-lg p-5">
                   <div className="flex items-start gap-3">
                     <AlertCircle className="w-6 h-6 text-purple-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-purple-900 mb-2">Consult Qualified Professionals</p>
+                      <p className="font-medium text-purple-900 mb-2">Get the Right Help</p>
                       <p className="text-sm text-purple-700 mb-3">
-                        Our products require proper installation by qualified professionals. Always consult with licensed architects, engineers, contractors, or other qualified professionals before:
+                        Our plywood and boards must be installed correctly to perform as intended. Before choosing materials or starting any work, we strongly suggest speaking with experienced professionals such as architects, engineers, or contractors.
                       </p>
                       <div className="space-y-1 text-sm text-purple-700 ml-4">
-                        <p>• Starting any construction or renovation project</p>
-                        <p>• Making structural modifications to buildings</p>
-                        <p>• Selecting materials for specific applications</p>
-                        <p>• Determining load-bearing or structural requirements</p>
-                        <p>• Ensuring compliance with local building codes</p>
+                        <p>This is especially important when:</p>
+                        <p>• Planning construction or renovation work</p>
+                        <p>• Making changes to walls, roofs, or structures</p>
+                        <p>• Selecting products for specific conditions</p>
+                        <p>• Working on load-bearing areas</p>
+                        <p>•	Following local building rules and safety standards</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <p className="leading-relaxed">
-                  Product specifications, installation guidelines, and technical data sheets are provided as general references. Actual performance may vary based on installation methods, environmental conditions, usage patterns, and other factors. We strongly recommend professional assessment for your specific application.
+                  Product details, usage notes, and technical information are shared for reference only. Actual results depend on how and where the material is used, site conditions, and installation quality. For best results, professional assessment is always advised.
                 </p>
 
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                   <p className="text-sm text-yellow-800">
-                    <strong>No Liability:</strong> We accept no liability for damages resulting from failure to obtain appropriate professional advice or from improper installation, use, or application of our products. Always follow manufacturer guidelines and local building regulations.
+                    <strong>Responsibility:</strong>Tree’s Plywood is not responsible for issues caused by incorrect selection, poor installation, or use outside recommended guidelines. Please follow official instructions and local building regulations at all times.
                   </p>
                 </div>
               </div>
@@ -984,71 +1039,52 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <ModernSectionHeader
                 badgeIcon={Handshake}
-                badge="Legal Protection"
-                title="Indemnification"
-                subtitle="Your agreement to protect our company"
+                badge="Legal Responsibility"
+                title="Your Role in Keeping Things Fair"
+                subtitle="By using our website, products, or services, you agree to take responsibility for how you use them."
                 align="left"
               />
 
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
                 <div className="space-y-6 text-gray-700">
                   <p className="leading-relaxed">
-                    You agree to defend, indemnify, and hold harmless The Trees Plywood, its affiliates, subsidiaries, directors, officers, employees, agents, suppliers, and partners from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from:
+                    This means Tree’s Plywood will not be held responsible if issues arise due to:
                   </p>
                   
                   <div className="space-y-3">
-                    {[
-                      {
-                        title: 'Your Use of Services',
-                        desc: 'Any use or misuse of our website, products, or services by you or anyone using your account'
-                      },
-                      {
-                        title: 'Violation of Terms',
-                        desc: 'Your violation of these Terms and Conditions or any applicable laws or regulations'
-                      },
-                      {
-                        title: 'Infringement',
-                        desc: 'Your infringement of any intellectual property or other rights of any third party'
-                      },
-                      {
-                        title: 'User Content',
-                        desc: 'Any content, information, or material you submit, post, or transmit through our services'
-                      },
-                      {
-                        title: 'Third-Party Claims',
-                        desc: 'Any claims by third parties arising from your actions or omissions related to our services'
-                      },
-                      {
-                        title: 'Product Installation',
-                        desc: 'Improper installation, use, or application of our products contrary to guidelines'
-                      }
-                    ].map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.05 }}
-                        className="bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-lg p-4"
-                      >
-                        <div className="flex items-start gap-3">
-                          <Shield className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
-                          <div>
-                            <h4 className="font-semibold text-trees-secondary mb-1 text-sm">{item.title}</h4>
-                            <p className="text-xs text-gray-600">{item.desc}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
+  {[
+    'Incorrect or careless use of our website or products',
+    'Use of our services in a way that breaks the law',
+    'Not following the terms shared on this website',
+    'Sharing or posting content that belongs to someone else',
+    'Problems caused by information or material submitted by you',
+    'Claims made by others because of your actions',
+    'Improper handling, installation, or use of our plywood products against recommended guidelines',
+  ].map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05 }}
+      className="bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-lg p-4"
+    >
+      <div className="flex items-start gap-3">
+        <Shield className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
+        <p className="text-gray-700 leading-relaxed">{item}</p>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
 
                   <div className="bg-red-50 border border-red-200 rounded-lg p-5 mt-6">
                     <div className="flex items-start gap-3">
                       <Scale className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-medium text-red-900 mb-1">Defense and Settlement</p>
+                        <p className="font-medium text-red-900 mb-1">Handling Claims</p>
                         <p className="text-sm text-red-700">
-                          This indemnification obligation will survive termination of these Terms. We reserve the right to assume the exclusive defense and control of any matter subject to indemnification by you, in which case you agree to cooperate with our defense of such claim.
+                          If such a situation arises, Tree’s Plywood may choose to manage the matter directly. In such cases, we may ask for your cooperation to help resolve it smoothly.
                         </p>
                       </div>
                     </div>
@@ -1068,15 +1104,15 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
               <ModernSectionHeader
                 badgeIcon={AlertCircle}
                 badge="Liability"
-                title="Limitation of Liability"
-                subtitle="Understanding our legal limitations"
+                title="Responsibility & Liability"
+                subtitle="We always aim to provide accurate information and reliable products. However, there are practical limits to what we can be responsible for."
                 align="left"
               />
 
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
                 <div className="space-y-6 text-gray-700">
                   <p className="leading-relaxed">
-                    To the fullest extent permitted by applicable law, The Trees Plywood, its directors, employees, partners, agents, suppliers, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:
+                    Tree’s Plywood will not be held responsible for losses or issues that happen due to:
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-4">
@@ -1098,14 +1134,18 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   </div>
 
                   <div className="bg-orange-50 border border-orange-200 rounded-lg p-5 mt-6">
-                    <h4 className="font-semibold text-orange-900 mb-2">Maximum Liability</h4>
+                    <h4 className="font-semibold text-orange-900 mb-2">Limits to Our Responsibility</h4>
                     <p className="text-sm text-orange-700">
-                      In no event shall our total liability to you for all damages, losses, and causes of action exceed the amount paid by you, if any, for accessing or using our website or services, or the value of your order, whichever is greater, during the twelve (12) months preceding the claim.
+                      If any issue arises, our responsibility will not go beyond:<br></br>
+●	The amount paid for the product or service, or<br></br>
+●	The value of the order related to the concern<br></br>
+(whichever is higher, within the last 12 months).
+
                     </p>
                   </div>
 
                   <p className="text-sm italic">
-                    Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages, so the above limitations may not apply to you. In such cases, our liability will be limited to the maximum extent permitted by law.
+                    Legal Exceptions: Some laws do not allow certain limits on responsibility. If those laws apply to you, our responsibility will be restricted to the maximum level allowed under the law.
                   </p>
                 </div>
               </div>
@@ -1121,23 +1161,24 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <AlertTriangle className="w-8 h-8 text-yellow-600" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Disclaimer of Warranties</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Service & Product Disclaimer</h2>
               </div>
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  Our website, products, and services are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement.
+                  We provide our website, information, and products as they are, based on current availability. While we make every effort to keep details accurate and updated, we cannot promise that everything will always be perfect or uninterrupted.
                 </p>
                 <p className="leading-relaxed">
-                  We do not warrant that:
+                  Please note:
                 </p>
                 <div className="space-y-2 ml-4">
                   {[
-                    'Our website will be uninterrupted, timely, secure, or error-free',
-                    'The results obtained from using our website will be accurate or reliable',
-                    'The quality of any products, services, information, or other material obtained through our website will meet your expectations',
-                    'Any errors in the website will be corrected',
-                    'Our servers or communications are free of viruses or other harmful components'
+                    'The website may sometimes be unavailable due to maintenance or technical issues',
+'Information on the website may change or be updated over time',
+'Product details shown online are for general guidance and may vary in real use',
+'We cannot guarantee that the website will always work without errors',
+'Technical issues such as bugs or security problems may occasionally occur'
+
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2 flex-shrink-0"></div>
@@ -1146,7 +1187,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   ))}
                 </div>
                 <p className="leading-relaxed mt-4">
-                  Product performance depends on proper installation, usage, and environmental conditions. We strongly recommend consulting with our technical team for specific application requirements and following all installation guidelines.
+                 Product results depend on how and where they are used. Factors like installation method, site conditions, handling, and usage play an important role in performance.
                 </p>
               </div>
             </motion.section>
@@ -1161,15 +1202,18 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <FileCheck className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Privacy & Data Protection</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">For the best results, we recommend:</h2>
               </div>
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  Your privacy is important to us. Our collection, use, and protection of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference.
+                 ●	Following proper installation and usage instructions<br></br>
+●	Using products only for their intended purpose<br></br>
+●	Speaking with our team or authorised dealers for application advice
+
                 </p>
                 <p className="leading-relaxed">
-                  By using our website and services, you acknowledge that you have read and understood our Privacy Policy and consent to the collection, use, and disclosure of your information as described therein.
+                  Tree’s Plywood is not responsible for issues caused by incorrect use, installation, or conditions beyond our control.
                 </p>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-5 mt-4">
                   <div className="flex items-center justify-between gap-4 mb-3">
@@ -1178,7 +1222,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                       <div>
                         <p className="font-semibold text-blue-900 mb-1">Read Our Privacy Policy</p>
                         <p className="text-sm text-blue-700">
-                          Learn more about how we collect, use, and protect your personal information, including your rights under GDPR and CCPA.
+                          If you’d like to understand this in detail—what we collect, why we collect it, and how your data is kept safe, you can read our Privacy Policy below.
                         </p>
                       </div>
                     </div>
@@ -1207,23 +1251,23 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Gavel className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Dispute Resolution</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Resolving Issues</h2>
               </div>
               
               <div className="space-y-6 text-gray-700">
                 <p className="leading-relaxed">
-                  We are committed to resolving any disputes amicably and efficiently. If you have a concern or complaint, we encourage you to contact us first so we can attempt to resolve the issue informally.
+                 If you have any problem or concern, we believe the best way forward is open conversation. Please reach out to us first—we’ll always try to sort things out in a fair and practical way.
                 </p>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Resolution Process</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">How We Handle Concerns</h3>
                   <div className="space-y-3">
                     {[
-                      { step: 'Contact Us', desc: 'Reach out to our customer service team with your concern' },
-                      { step: 'Investigation', desc: 'We will investigate the matter and respond within 7 business days' },
-                      { step: 'Negotiation', desc: 'Work with us to find a mutually acceptable solution' },
-                      { step: 'Escalation', desc: 'If unresolved, escalate to senior management' },
-                      { step: 'Mediation', desc: 'Consider mediation before pursuing legal action' }
+                      { step: ' Get in touch', desc: 'Contact our team and explain the issue clearly.' },
+                      { step: 'Review', desc: 'We will look into the matter and share an update within 7 working days.' },
+                      { step: 'Discussion', desc: 'We’ll talk through possible solutions and try to reach an understanding that works for both sides.' },
+                      { step: 'Senior Review', desc: 'If needed, the matter will be reviewed by senior management.' },
+                      { step: 'Final', desc: 'If required, both parties may agree to seek help through mediation before taking any further action.' }
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-4 bg-white border border-gray-200 rounded-lg p-4">
                         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
@@ -1239,15 +1283,17 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 </div>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Arbitration</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">Legal Resolution</h3>
                   <p className="leading-relaxed">
-                    If informal resolution fails, disputes shall be resolved through binding arbitration in accordance with the Arbitration and Conciliation Act, 1996, as amended. The arbitration shall be conducted in Hyderabad, Telangana, India, and the language of arbitration shall be English.
+                    If the issue cannot be resolved through discussion or mediation, it will be handled through arbitration under Indian law.
+The arbitration will take place in Hyderabad, Telangana, and proceedings will be in English. 
+
                   </p>
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-4">
                   <p className="text-sm">
-                    <strong>Class Action Waiver:</strong> You agree to bring claims against us only in your individual capacity and not as a plaintiff or class member in any purported class or representative proceeding.
+                    <strong>Individual Claims Only:</strong> Any claim must be raised on an individual basis. Claims cannot be combined or filed as part of a group or collective action.
                   </p>
                 </div>
               </div>
@@ -1268,18 +1314,24 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  We reserve the right to terminate or suspend your access to our website and services, without prior notice or liability, for any reason, including but not limited to breach of these Terms.
+                  We may limit, pause, or stop your access to our website or services if needed. This can happen if the site is misused, the terms are not followed, or if continuing access could cause harm to our business or users.
                 </p>
                 <p className="leading-relaxed">
-                  Upon termination, your right to use our website will immediately cease. All provisions of these Terms that by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
+                  If access is stopped, you will no longer be allowed to use the website or its services. This does not affect any rights or responsibilities that already exist, such as ownership of content or legal protections.
                 </p>
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-red-900 mb-1">Grounds for Termination</p>
+                      <p className="font-medium text-red-900 mb-1">When Access May Be Stopped</p>
                       <p className="text-sm text-red-700">
-                        Your account or access may be terminated if you violate these Terms, engage in fraudulent activity, abuse our services, or for any other reason we deem necessary to protect our business or other users.
+                       Your access may be restricted or ended if:<br></br>
+●	You do not follow these terms<br></br>
+●	False or misleading information is used<br></br>
+●	Our services are misused or abused<br></br>
+●	Any activity causes risk to our business, reputation, or other users<br></br>
+This decision is taken only when necessary and in the interest of fair and safe use.
+
                       </p>
                     </div>
                   </div>
@@ -1297,26 +1349,27 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <CloudOff className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Force Majeure</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Uncontrollable Situations</h2>
               </div>
               
               <div className="space-y-6 text-gray-700">
                 <p className="leading-relaxed">
-                  Neither party shall be liable for any failure or delay in performing its obligations under these Terms where such failure or delay results from circumstances beyond its reasonable control (a "Force Majeure Event").
+                  Sometimes, situations occur that are outside anyone’s control. When this happens, neither Tree’s Plywood nor the customer will be held responsible for delays or non-performance caused by such events.
                 </p>
                 
                 <div className="bg-gray-50 rounded-lg p-5">
-                  <h4 className="font-semibold text-trees-secondary mb-3">Force Majeure Events Include:</h4>
+                  <h4 className="font-semibold text-trees-secondary mb-3">Examples of Such Situations</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     {[
-                      'Acts of God (earthquakes, floods, storms, fires)',
-                      'War, terrorism, riots, or civil disturbances',
-                      'Government actions, embargoes, or sanctions',
-                      'Epidemics, pandemics, or public health emergencies',
-                      'Labor strikes or industrial disputes',
-                      'Transportation or logistics disruptions',
-                      'Utility failures or telecommunications outages',
-                      'Supplier failures or material shortages'
+                      'These may include, but are not limited to:',
+                      'Natural events like floods, heavy rains, fires, or earthquakes',
+'	Political unrest, war, or unexpected public disturbances',
+'Government orders, lockdowns, or restrictions',
+'	Health emergencies affecting workers or transport',
+'	Transport delays, fuel shortages, or breakdowns in logistics',
+'	Power cuts, network failures, or communication issues',
+'	Shortage of raw materials or supplier-side delays.',
+
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-2 text-sm">
                         <CloudOff className="w-4 h-4 text-gray-500 flex-shrink-0 mt-0.5" />
@@ -1327,29 +1380,29 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 </div>
 
                 <div>
-                  <h3 className="text-trees-secondary font-semibold mb-3">Effect of Force Majeure</h3>
+                  <h3 className="text-trees-secondary font-semibold mb-3">What This Means</h3>
                   <div className="space-y-2">
                     <div className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
                       <CheckCircle2 className="w-4 h-4 text-trees-primary flex-shrink-0 mt-0.5" />
-                      <p className="text-sm">Performance obligations are suspended during the Force Majeure Event</p>
+                      <p className="text-sm">Work or delivery may be paused until the situation improves</p>
                     </div>
                     <div className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
                       <CheckCircle2 className="w-4 h-4 text-trees-primary flex-shrink-0 mt-0.5" />
-                      <p className="text-sm">Affected party must notify the other party promptly</p>
+                      <p className="text-sm">The affected party will inform the other as soon as possible</p>
                     </div>
                     <div className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
                       <CheckCircle2 className="w-4 h-4 text-trees-primary flex-shrink-0 mt-0.5" />
-                      <p className="text-sm">Reasonable efforts must be made to mitigate the effects</p>
+                      <p className="text-sm">Both sides will try to reduce delays wherever practical</p>
                     </div>
                     <div className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
                       <CheckCircle2 className="w-4 h-4 text-trees-primary flex-shrink-0 mt-0.5" />
-                      <p className="text-sm">Either party may terminate if event continues for more than 60 days</p>
+                      <p className="text-sm">If the disruption continues for over two months, either side may choose to cancel the agreement</p>
                     </div>
                   </div>
                 </div>
 
                 <p className="text-sm italic">
-                  Force Majeure Events do not excuse payment obligations for products or services already delivered.
+                 Please note: Payments for goods or services already supplied must still be honoured.
                 </p>
               </div>
             </motion.section>
@@ -1369,13 +1422,20 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  You may not assign, transfer, or delegate any of your rights or obligations under these Terms without our prior written consent. Any attempted assignment in violation of this provision shall be null and void.
+                  These terms apply only to you and cannot be passed on to someone else.
                 </p>
                 <p className="leading-relaxed">
-                  We reserve the right to freely assign, transfer, or delegate our rights and obligations under these Terms, in whole or in part, without restriction. This includes, without limitation, assignment in connection with a merger, acquisition, corporate reorganization, or sale of substantially all of our assets.
+                  You may not share, transfer, or hand over your rights or responsibilities to another person or business unless we clearly agree to it in writing.
+                </p>
+                <p className="leading-relaxed">
+                 Tree’s Plywood may transfer its rights or responsibilities under these terms if required for business reasons. This may happen during events such as company restructuring, partnerships, mergers, or sale of business assets.
+                </p>
+                <p className="leading-relaxed">
+                  These terms will continue to apply to anyone who legally takes over or continues the business, and to any parties officially approved by us.
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
+
                   <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                     <div className="flex items-start gap-3">
                       <XCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -1417,12 +1477,12 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Send className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Legal Notices & Communications</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Official Communication</h2>
               </div>
               
               <div className="space-y-6 text-gray-700">
                 <p className="leading-relaxed">
-                  All legal notices, demands, and other formal communications related to these Terms must be in writing and shall be deemed to have been duly given when delivered in person, by courier, by certified or registered mail (return receipt requested), or by email with confirmation of receipt.
+                  If you need to send any official or legal message related to these Terms, please share it in writing. We will treat it as received once it reaches us through a proper channel such as hand delivery, courier, post, or email.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -1431,7 +1491,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                       <Mail className="w-5 h-5" />
                       Notices to Us
                     </h4>
-                    <p className="text-sm text-blue-800 mb-3">Legal notices to The Trees Plywood should be sent to:</p>
+                    <p className="text-sm text-blue-800 mb-3">Contact Details for Tree’s Plywood</p>
                     <div className="space-y-2 text-sm text-blue-700">
                       <p className="font-medium">The Trees Plywood</p>
                       <p>Legal Department</p>
@@ -1445,25 +1505,25 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   <div className="bg-green-50 border border-green-200 rounded-lg p-5">
                     <h4 className="font-semibold text-green-900 mb-3 flex items-center gap-2">
                       <Send className="w-5 h-5" />
-                      Notices to You
+                      How We May Contact You
                     </h4>
-                    <p className="text-sm text-green-800 mb-3">We may provide notices to you by:</p>
+                    <p className="text-sm text-green-800 mb-3">We may reach out to you regarding updates, notices, or important information through:</p>
                     <div className="space-y-2 text-sm text-green-700">
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <p>Email to your registered address</p>
+                        <p>	The email address you have shared with us</p>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <p>Posting on our website</p>
+                        <p>Announcements on our website</p>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <p>Mail to your billing address</p>
+                        <p>Post sent to your provided address</p>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <p>Any other reasonable means</p>
+                        <p>Any other practical and reliable method</p>
                       </div>
                     </div>
                   </div>
@@ -1471,7 +1531,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
 
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                   <p className="text-sm text-yellow-800">
-                    <strong>Responsibility:</strong> You are responsible for keeping your contact information current. Notices sent to your last known address will be deemed effective even if you no longer use that address.
+                    <strong>Keeping Your Details Updated</strong> Please make sure your contact details are correct and up to date. If we send a notification to the last contact information you provided, it will be considered valid even if you no longer use that email or address.
                   </p>
                 </div>
               </div>
@@ -1489,24 +1549,27 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 badgeIcon={FileSignature}
                 badge="Complete Agreement"
                 title="Entire Agreement"
-                subtitle="The complete terms between us"
+                subtitle="Final Understanding Between Us"
                 align="left"
               />
 
               <div className="glass-card rounded-2xl p-8 md:p-10 border border-trees-primary/20">
                 <div className="space-y-6 text-gray-700">
                   <p className="leading-relaxed">
-                    These Terms and Conditions, together with our Privacy Policy, Warranty Policy, and any additional terms you agree to when using specific features of our services, constitute the entire agreement between you and The Trees Plywood regarding your use of our website and services.
+                    This page explains the main rules for using our website and services. Along with the policies listed below, it sets the full understanding between you and Tree’s Plywood.
+
+When you use our website, place enquiries, or work with us, you agree to follow these terms as well as the related policies connected to them.
+
                   </p>
 
                   <div className="bg-trees-primary/5 border border-trees-primary/20 rounded-lg p-5">
-                    <h4 className="font-semibold text-trees-secondary mb-3">Documents Included</h4>
+                    <h4 className="font-semibold text-trees-secondary mb-3">Related Policies & Documents</h4>
                     <div className="space-y-2">
                       {[
-                        { name: 'Terms & Conditions', desc: 'This document', page: 'terms' },
-                        { name: 'Privacy Policy', desc: 'Data protection and privacy rights', page: 'privacy' },
-                        { name: 'Warranty Policy', desc: 'Product warranty terms', page: 'warranty' },
-                        { name: 'Additional Terms', desc: 'Service-specific agreements' }
+                        { name: 'Terms & Conditions', desc: 'The rules that apply to using our website and services', page: 'terms' },
+                        { name: 'Privacy Policy', desc: 'How we collect and protect your personal information', page: 'privacy' },
+                        { name: 'Warranty Policy', desc: 'Details about product warranty and support', page: 'warranty' },
+                        { name: 'Other Service Terms', desc: 'Any additional conditions shared during specific services or transactions' }
                       ].map((doc, index) => (
                         <div key={index} className="flex items-center justify-between bg-white rounded-lg p-3 border border-gray-100">
                           <div className="flex items-center gap-3">
@@ -1530,22 +1593,23 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   </div>
 
                   <div>
-                    <h3 className="text-trees-secondary font-semibold mb-3">Supersedes Prior Agreements</h3>
+                    <h3 className="text-trees-secondary font-semibold mb-3">Understanding These Terms</h3>
+                    <h4 className="text-trees-secondary font-semibold mb-3">This version counts</h4>
                     <p className="leading-relaxed mb-3">
-                      These Terms supersede all prior or contemporaneous understandings, agreements, representations, and warranties, both written and oral, regarding the subject matter herein.
+                      These Terms replace any earlier discussions, emails, or understandings about using our website or services. Only what is written here applies.
                     </p>
                     <div className="space-y-2">
                       <div className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
                         <CheckCircle2 className="w-4 h-4 text-trees-primary flex-shrink-0 mt-0.5" />
-                        <p className="text-sm">No oral agreements or representations are binding</p>
+                        <p className="text-sm">Verbal promises or conversations are not considered binding</p>
                       </div>
                       <div className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
                         <CheckCircle2 className="w-4 h-4 text-trees-primary flex-shrink-0 mt-0.5" />
-                        <p className="text-sm">Previous versions of these Terms are replaced by this version</p>
+                        <p className="text-sm">Older versions of these Terms no longer apply</p>
                       </div>
                       <div className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
                         <CheckCircle2 className="w-4 h-4 text-trees-primary flex-shrink-0 mt-0.5" />
-                        <p className="text-sm">Amendments must be in writing and signed by both parties</p>
+                        <p className="text-sm">Any changes must be shared in writing and agreed to by both sides.</p>
                       </div>
                     </div>
                   </div>
@@ -1554,15 +1618,15 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                     <h3 className="text-trees-secondary font-semibold mb-3">Severability & Waiver</h3>
                     <div className="space-y-3">
                       <div className="bg-gray-50 rounded-lg p-4">
-                        <p className="font-medium text-sm mb-2">Severability</p>
+                        <p className="font-medium text-sm mb-2">If Part of These Terms Doesn’t Apply</p>
                         <p className="text-sm text-gray-600">
-                          If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.
+                          If any part of these Terms cannot be used or enforced for any legal reason, the rest of the Terms will still continue to apply as normal.
                         </p>
                       </div>
                       <div className="bg-gray-50 rounded-lg p-4">
-                        <p className="font-medium text-sm mb-2">Waiver</p>
+                        <p className="font-medium text-sm mb-2">Not Enforcing Doesn’t Mean Giving Up</p>
                         <p className="text-sm text-gray-600">
-                          Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision. A waiver of any breach of these Terms will not constitute a waiver of any subsequent breach.
+                          If we choose not to act on a rule at any point, it doesn’t mean we have given up that right. If a rule is overlooked once, it can still be applied later.
                         </p>
                       </div>
                     </div>
@@ -1581,15 +1645,18 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Scale className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Governing Law & Jurisdiction</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Legal Jurisdiction & Applicable Law</h2>
               </div>
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  These Terms and Conditions shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of our services shall be subject to the exclusive jurisdiction of the courts in Hyderabad, Telangana, India.
+                  These terms are governed by the laws of India. Any disagreement or issue related to our products, services, or website will be handled only by the courts located in Hyderabad, Telangana.
                 </p>
                 <p className="leading-relaxed">
-                  Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions will remain in effect.
+                 If we choose not to act on a particular part of these terms at any point, it does not mean we have given up our rights.
+                </p>
+                <p className="leading-relaxed">
+                 If a court finds that any part of these terms cannot be applied, the rest of the terms will still remain valid and continue to apply.
                 </p>
                 <div className="bg-trees-primary/5 border border-trees-primary/20 rounded-lg p-4">
                   <p className="text-sm">
@@ -1609,20 +1676,23 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
             >
               <div className="flex items-center gap-3 mb-6">
                 <RefreshCw className="w-8 h-8 text-trees-primary" />
-                <h2 className="text-trees-secondary text-2xl md:text-3xl">Changes to Terms</h2>
+                <h2 className="text-trees-secondary text-2xl md:text-3xl">Updates to These Terms</h2>
               </div>
               
               <div className="space-y-4 text-gray-700">
                 <p className="leading-relaxed">
-                  We reserve the right to update, modify, or replace these Terms and Conditions at any time at our sole discretion. Material changes will be communicated by:
+                  We may change these terms from time to time to reflect updates to our business, services, or legal requirements.
+                  <br></br>
+                   <br></br>
+                  Whenever we make changes, we will:
                 </p>
                 
                 <div className="space-y-2 ml-4">
                   {[
-                    'Posting the new Terms on this page with an updated "Last Updated" date',
-                    'Sending email notifications to registered users for significant changes',
-                    'Displaying a prominent notice on our website homepage',
-                    'Requiring acceptance of new Terms before continued use (for major changes)'
+                    'Update this page with the revised terms',
+'Change the “Last Updated” date so you know what’s new',
+'Inform users when the change is important, wherever required'
+
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
@@ -1632,12 +1702,14 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                 </div>
 
                 <p className="leading-relaxed mt-4">
-                  Changes become effective immediately upon posting. Your continued use of our website and services after any changes constitutes acceptance of the modified Terms. We recommend reviewing these Terms periodically to stay informed of any updates.
+                 Once the updated terms are published here, they apply immediately. By continuing to use our website or services after an update, you are agreeing to the new version.<br></br>
+                 <br></br>
+                 We suggest checking this page occasionally so you’re aware of any updates.
                 </p>
 
                 <div className="bg-gray-50 rounded-lg p-4 mt-4">
                   <p className="text-sm text-gray-600">
-                    <strong>Version:</strong> 2.0 | <strong>Last Updated:</strong> November 4, 2025 | <strong>Effective Date:</strong> November 1, 2025
+                    <strong>Version:</strong> 2.0 | <strong>Last Updated:</strong> December 4, 2025 | <strong>Effective Date:</strong> December 1, 2025
                   </p>
                 </div>
               </div>
@@ -1655,9 +1727,9 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   <FileText className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-trees-secondary text-2xl md:text-3xl mb-3">Questions About These Terms?</h2>
+                  <h2 className="text-trees-secondary text-2xl md:text-3xl mb-3">Need Help or Clarity?</h2>
                   <p className="text-gray-700 max-w-2xl mx-auto">
-                    If you have any questions, concerns, or require clarification about these Terms and Conditions, our legal team is here to help.
+                    If anything in these terms isn’t clear, feel free to reach out. We’re happy to guide you.
                   </p>
                 </div>
 
@@ -1687,7 +1759,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                       icon={<Mail className="w-5 h-5" />}
                       onClick={() => onNavigate('contact')}
                     >
-                      Contact Legal Team
+                      Contact Us 
                     </ModernButton>
                   </MagneticButton>
                   <MagneticButton strength={0.2}>
@@ -1697,7 +1769,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                       icon={<Shield className="w-5 h-5" />}
                       onClick={() => onNavigate('privacy')}
                     >
-                      View Privacy Policy
+                      Read Our Privacy Policy
                     </ModernButton>
                   </MagneticButton>
                 </div>
@@ -1725,15 +1797,15 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
           >
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
               <Sparkles className="w-5 h-5" />
-              <span>Transparent Business, Quality Products</span>
+              <span>Clear Terms, Quality Material, & Reliable Products</span>
             </div>
 
-            <h2 className="text-white text-3xl md:text-5xl mb-6">
-              Ready to Start Your Project?
-            </h2>
+            <h4 className="text-white text-3xl md:text-5xl mb-6">
+              Planning a project or need material details?
+            </h4>
             
             <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Experience fair terms, quality products, and exceptional service with The Trees Plywood
+              Take a look at our products or reach out to us directly.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -1744,7 +1816,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   icon={<Package className="w-6 h-6" />}
                   onClick={() => onNavigate('products')}
                 >
-                  Browse Products
+                  View Products       
                 </ModernButton>
               </MagneticButton>
               <MagneticButton strength={0.2}>
@@ -1755,7 +1827,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
                   onClick={() => onNavigate('contact')}
                   className="border-white text-white hover:bg-white/10"
                 >
-                  Get Quote
+                  Request a Quote
                 </ModernButton>
               </MagneticButton>
             </div>

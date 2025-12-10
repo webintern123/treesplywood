@@ -26,54 +26,68 @@ interface ContactPageProps {
   onNavigate: (page: string) => void;
 }
 
-
 export function ContactPage({ onNavigate }: ContactPageProps) {
   const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    city: '',
+    subject: 'general',
+    message: ''
+  });
+
+ const [errors, setErrors] = useState({
   name: '',
   email: '',
   phone: '',
   company: '',
-  city: '',        // ✅ FIXED
-  subject: 'general',
-  message: ''
-});
-
-
-  const [errors, setErrors] = useState({
-  name: '',
-  email: '',
-  phone: '',
-  city: '',        // ✅ FIXED
-  message: ''
+  city: '',
+  message: '',        // ✅ ADD THIS
+  productSelections: '',
+  projectSelections: '',
+  sourceSelections: '',
+  contactMethod: '',
+  quantity: '',
+  timeline: '',
+  urgency: ''
 });
 
 
   const [touched, setTouched] = useState({
-  name: false,
-  email: false,
-  phone: false,
-  city: false,     // ✅ FIXED
-  message: false
-});
-
+    name: false,
+    email: false,
+    phone: false,
+    company: false,
+    city: false,
+    message: false
+  });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
- const [otherInputs, setOtherInputs] = useState<{
-  productInterest: string;
-  projectType: string;
-  hearAbout: string;
-}>({
-  productInterest: '',
-  projectType: '',
-  hearAbout: ''
-});
+  const [otherInputs, setOtherInputs] = useState<{
+    productInterest: string;
+    projectType: string;
+    hearAbout: string;
+  }>({
+    productInterest: '',
+    projectType: '',
+    hearAbout: ''
+  });
 
-const [showOtherProductInput, setShowOtherProductInput] = useState(false);
-const [showOtherProjectInput, setShowOtherProjectInput] = useState(false);
-const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
+  const [productSelections, setProductSelections] = useState<string[]>([]);
+  const [projectSelections, setProjectSelections] = useState<string[]>([]);
+  const [sourceSelections, setSourceSelections] = useState<string[]>([]);
 
+  const [showOtherProductInput, setShowOtherProductInput] = useState(false);
+  const [showOtherProjectInput, setShowOtherProjectInput] = useState(false);
+  const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
+
+  const [contactMethod, setContactMethod] = useState<string>('');
+  const [quantity, setQuantity] = useState<string>('');
+  const [timeline, setTimeline] = useState<string>('');
+  const [urgency, setUrgency] = useState<string>('');
 
   const validateField = (field: keyof typeof formData, value: string) => {
     let error = '';
@@ -102,20 +116,17 @@ const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
         break;
 
       case 'message':
+        // OPTIONAL → no validation
+        error = '';
+        break;
+
+      case 'city':
         if (!validateRequired(value)) {
-          error = getErrorMessage('message', 'required');
-        } else if (!validateMinLength(value, 10)) {
-          error = getErrorMessage('message', 'minLength');
+          error = getErrorMessage('city', 'required');
+        } else if (!validateMinLength(value, 2)) {
+          error = getErrorMessage('city', 'minLength');
         }
         break;
-      case 'city':
-  if (!validateRequired(value)) {
-    error = getErrorMessage('city', 'required');
-  } else if (!validateMinLength(value, 2)) {
-    error = getErrorMessage('city', 'minLength');
-  }
-  break;
-
     }
 
     setErrors(prev => ({ ...prev, [field]: error }));
@@ -129,80 +140,215 @@ const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
 
   const handleChange = (field: keyof typeof formData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    
+
     // Validate on change if field was touched
     if (field in touched && touched[field as keyof typeof touched]) {
-  validateField(field, value);
-}
-
+      validateField(field, value);
+    }
   };
-  
+
+  // checkbox helpers
+  const toggleSelection = (value: string, list: string[], setList: (v: string[]) => void) => {
+    if (list.includes(value)) {
+      setList(list.filter(i => i !== value));
+    } else {
+      setList([...list, value]);
+    }
+  };
+
+  const validateExtras = () => {
+    let ok = true;
+    const nextErrors = { ...errors };
+
+    if (productSelections.length === 0 && !otherInputs.productInterest.trim()) {
+      nextErrors.productSelections = 'Please select at least one product or specify Other.';
+      ok = false;
+    } else {
+      nextErrors.productSelections = '';
+    }
+
+    if (projectSelections.length === 0 && !otherInputs.projectType.trim()) {
+      nextErrors.projectSelections = 'Please select at least one project type or specify Other.';
+      ok = false;
+    } else {
+      nextErrors.projectSelections = '';
+    }
+
+    if (sourceSelections.length === 0 && !otherInputs.hearAbout.trim()) {
+      nextErrors.sourceSelections = 'Please select at least one source or specify Other.';
+      ok = false;
+    } else {
+      nextErrors.sourceSelections = '';
+    }
+
+    if (!contactMethod) {
+      nextErrors.contactMethod = 'Please select a preferred contact method.';
+      ok = false;
+    } else {
+      nextErrors.contactMethod = '';
+    }
+
+    if (!quantity) {
+      nextErrors.quantity = 'Please select quantity.';
+      ok = false;
+    } else {
+      nextErrors.quantity = '';
+    }
+
+    if (!timeline) {
+      nextErrors.timeline = 'Please select timeline.';
+      ok = false;
+    } else {
+      nextErrors.timeline = '';
+    }
+
+    if (!urgency) {
+      nextErrors.urgency = 'Please select urgency level.';
+      ok = false;
+    } else {
+      nextErrors.urgency = '';
+    }
+
+    setErrors(nextErrors);
+    return ok;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Mark all fields as touched
     setTouched({
       name: true,
       email: true,
       phone: true,
+      company: true,
       city: true,
       message: true
     });
+    const validateEnquiryDetails = () => {
+  const productValid = productSelections.length > 0 || otherInputs.productInterest.trim() !== '';
+  const projectValid = projectSelections.length > 0 || otherInputs.projectType.trim() !== '';
+  const sourceValid = sourceSelections.length > 0 || otherInputs.hearAbout.trim() !== '';
 
-    // Validate all fields
-    const isNameValid = validateField('name', formData.name);
-    const isEmailValid = validateField('email', formData.email);
-    const isPhoneValid = formData.phone ? validateField('phone', formData.phone) : true;
-    const isMessageValid = validateField('message', formData.message);
-    const isCityValid = validateField('city', formData.city);
+  const contactValid = contactMethod.trim() !== '';
+  const quantityValid = quantity.trim() !== '';
+  const timelineValid = timeline.trim() !== '';
+  const urgencyValid = urgency.trim() !== '';
+
+  const allValid =
+    productValid &&
+    projectValid &&
+    sourceValid &&
+    contactValid &&
+    quantityValid &&
+    timelineValid &&
+    urgencyValid;
+
+  if (!allValid) {
+    toast.error("Please fill all mandatory enquiry details.");
+  }
+
+  return allValid;
+};
 
 
-    if (!isNameValid || !isEmailValid || !isPhoneValid || !isCityValid || !isMessageValid) {
-  toast.error('Please fix the errors in the form');
-  return;
+    // Validate basic fields
+    const isNameValid = validateField("name", formData.name);
+const isEmailValid = validateField("email", formData.email);
+const isCityValid = validateField("city", formData.city);
+const isPhoneValid = formData.phone ? validateField("phone", formData.phone) : true;
+
+const personalValid = isNameValid && isEmailValid && isCityValid && isPhoneValid;
+
+const enquiryValid = validateEnquiryDetails();
+const extrasValid = validateExtras();
+
+if (!personalValid || !enquiryValid || !extrasValid) {
+  return; // stop submit
 }
 
+
+    
+    // message is optional so skip
+
+   
+
+    if (!isNameValid || !isEmailValid || !isPhoneValid || !isCityValid || !extrasValid) {
+      toast.error('Please fix the errors in the form');
+      return;
+    }
 
     setIsSubmitting(true);
 
     try {
+      // Prepare payload (including extras)
+      const payload = {
+        ...formData,
+        products: productSelections.concat(otherInputs.productInterest ? [otherInputs.productInterest] : []),
+        projects: projectSelections.concat(otherInputs.projectType ? [otherInputs.projectType] : []),
+        sources: sourceSelections.concat(otherInputs.hearAbout ? [otherInputs.hearAbout] : []),
+        contactMethod,
+        quantity,
+        timeline,
+        urgency
+      };
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      console.log('Form submitted:', formData);
-      
+
+      console.log('Form submitted:', payload);
+
       toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
-      
+
       setSubmitted(true);
-      
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setSubmitted(false);
         setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          city: '',
+          subject: 'general',
+          message: ''
+        });
+
+       setErrors({
   name: '',
   email: '',
   phone: '',
   company: '',
-  city: '',            // ✅ FIXED
-  subject: 'general',
-  message: ''
+  city: '',
+  message: '',
+  productSelections: '',
+  projectSelections: '',
+  sourceSelections: '',
+  contactMethod: '',
+  quantity: '',
+  timeline: '',
+  urgency: ''
 });
 
-        setErrors({
-          name: '',
-          email: '',
-          phone: '',
-          city: '',        // ✅ FIXED
-          message: ''
-        });
+
         setTouched({
           name: false,
           email: false,
           phone: false,
-          city: false,        // ✅ FIXED
+          company: false,
+          city: false,
           message: false
         });
+
+        setProductSelections([]);
+        setProjectSelections([]);
+        setSourceSelections([]);
+        setOtherInputs({ productInterest: '', projectType: '', hearAbout: '' });
+        setContactMethod('');
+        setQuantity('');
+        setTimeline('');
+        setUrgency('');
       }, 3000);
     } catch (error) {
       toast.error('Failed to send message. Please try again.');
@@ -252,15 +398,6 @@ const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
     { icon: Youtube, url: 'https://youtube.com/@treesplywood', label: 'YouTube' },
   ];
 
-  const subjects = [
-    { value: 'general', label: 'General Inquiry' },
-    { value: 'product', label: 'Product Information' },
-    { value: 'quote', label: 'Request Quote' },
-    { value: 'support', label: 'Technical Support' },
-    { value: 'dealer', label: 'Dealer Inquiry' },
-    { value: 'other', label: 'Other' },
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       {/* Enhanced Hero Section */}
@@ -303,7 +440,6 @@ const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
           </div>
         }
       />
-      
 
       {/* Contact Info Cards */}
       <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
@@ -338,275 +474,319 @@ const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
               </motion.div>
             ))}
           </div>
-          <section className="w-full py-20 bg-white">
-  <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-    {/* Left Side Image */}
-   
-
-   
-  </div>
-</section>
-
-      
 
           {/* Main Contact Section */}
           <div className="grid lg:grid-cols-2 gap-12 items-start lg:items-stretch">
-
-
             {/* Contact Form */}
-          <motion.div
-  id="contact-form"
-  initial={{ opacity: 0, x: -30 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
-  className="flex flex-col gap-6 h-full"
->
-  <ModernCard variant="elevated">
-    <div className="p-8">
-      <div className="mb-8">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-trees-primary/10 rounded-full mb-4">
-          <Send className="w-4 h-4 text-trees-primary" />
-          <span className="text-sm font-semibold text-trees-primary">Get in Touch</span>
-        </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Try our sample request option for a free At Home / Digital Consultation
-        </h1>
-        <p className="text-gray-600">
-          Fill out this form, and our team will get in touch within 24 hours.
-        </p>
-      </div>
-
-      <form onSubmit={handleSubmit} className="space-y-6">
-
-        {/* Personal & Business Information */}
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">Personal & Business Information</h3>
-
-        <FormField label="Full Name" name="name" type="text" value={formData.name} onChange={v => handleChange('name', v)} onBlur={() => handleBlur('name')} error={touched.name ? errors.name : ''} required placeholder="John Doe" />
-        <FormField label="Email Address" name="email" type="email" value={formData.email} onChange={v => handleChange('email', v)} onBlur={() => handleBlur('email')} error={touched.email ? errors.email : ''} required placeholder="john.doe@example.com" />
-        <FormField label="Phone Number (Optional)" name="phone" type="tel" value={formData.phone} onChange={v => handleChange('phone', v)} onBlur={() => handleBlur('phone')} error={touched.phone ? errors.phone : ''} placeholder="+91 98765 43210" />
-       <FormField
-  label="City / Location"
-  name="city"
-  type="text"
-  value={formData.city}        // FIXED
-  onChange={v => handleChange('city', v)}   // FIXED
-  placeholder="Hyderabad"
-  required
-/>
-
-<FormField
-  label="Company / Business Name (Optional)"
-  name="company"
-  type="text"
-  value={formData.company}
-  onChange={v => handleChange('company', v)}
-  placeholder="ABC Constructions"
-/>
+            <motion.div
+              id="contact-form"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-6 h-full"
+            >
+              <ModernCard variant="elevated">
+                <div className="p-8">
+                  <div className="mb-8">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-trees-primary/10 rounded-full mb-4">
+                      <Send className="w-4 h-4 text-trees-primary" />
+                      <span className="text-sm font-semibold text-trees-primary">Get in Touch</span>
+                    </div>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                      Try our sample request option for a free At Home / Digital Consultation
+                    </h1>
+                    <p className="text-gray-600">
+                      Fill out this form, and our team will get in touch within 24 hours.
+                    </p>
+                  </div>
+                  
+  
 
 
-        {/* Enquiry Details */}
-        <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Enquiry Details</h3>
-        <div className="space-y-2">
-          <label className="block text-gray-700 font-medium">Inquiry Type (Select One)*</label>
-          <select
-            value={formData.subject}
-            onChange={(e) => handleChange('subject', e.target.value)}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white"
-            required
-          >
-            <option value="general">General Inquiry</option>
-            <option value="product">Product Information</option>
-            <option value="bulk">Bulk Order / Wholesale</option>
-            <option value="dealer">Dealership Inquiry</option>
-            <option value="support">Technical Support</option>
-            <option value="sample">Sample Request</option>
-            <option value="consultation">Project Consultation</option>
-            <option value="quote">Price Quote Request</option>
-            <option value="status">Order Status</option>
-            <option value="collaboration">Collaboration / Partnership</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Personal & Business Information */}
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Personal & Business Information</h3>
 
-        {/* Product Interest */}
-        <div className="grid grid-cols-2 gap-2">
-  {['Agni','Ananta','Bhima','Samrat','Vajra','Flush Doors','Blockboards','Other'].map((product, idx) => (
-    <div key={idx}>
-      <label className="inline-flex items-center gap-2">
-        <input 
-          type="checkbox" 
-          className="form-checkbox h-5 w-5 text-trees-primary"
-          onChange={(e) => {
-            if (product === 'Other') {
-              setShowOtherProductInput(e.target.checked); // toggle input
-            }
-          }}
-        />
-        <span>{product}</span>
-      </label>
+                    <FormField
+                      label="Full Name *"
+                      name="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={v => handleChange('name', v)}
+                      onBlur={() => handleBlur('name')}
+                      error={touched.name ? errors.name : ''}
+                      required
+                      placeholder="John Doe"
+                    />
 
-      {/* Only show input if "Other" is checked */}
-      {product === 'Other' && showOtherProductInput && (
-        <input
-          type="text"
-          placeholder="Please specify"
-          value={otherInputs.productInterest}
-          onChange={(e) => setOtherInputs(prev => ({ ...prev, productInterest: e.target.value }))}
-          className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
-        />
-      )}
-    </div>
-  ))}
-</div>
+                    <FormField
+                      label="Email Address *"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={v => handleChange('email', v)}
+                      onBlur={() => handleBlur('email')}
+                      error={touched.email ? errors.email : ''}
+                      required
+                      placeholder="john.doe@example.com"
+                    />
 
+                    <FormField
+                      label="Phone Number (Optional)"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={v => handleChange('phone', v)}
+                      onBlur={() => handleBlur('phone')}
+                      error={touched.phone ? errors.phone : ''}
+                      placeholder="+91 98765 43210"
+                    />
 
-        {/* Project Type */}
-        <div className="space-y-2">
-  <label className="block text-gray-700 font-medium">Project Type</label>
-  <div className="grid grid-cols-2 gap-2">
-    {['Residential','Commercial','Hospitality','Retail','Industrial','Institutional','Other'].map((project, idx) => (
-      <div key={idx}>
-        <label className="inline-flex items-center gap-2">
-          <input 
-            type="checkbox" 
-            className="form-checkbox h-5 w-5 text-trees-primary"
-            onChange={(e) => {
-              if (project === 'Other') setShowOtherProjectInput(e.target.checked);
-            }}
-          />
-          <span>{project}</span>
-        </label>
+                    <FormField
+                      label="City / Location *"
+                      name="city"
+                      type="text"
+                      value={formData.city}
+                      onChange={v => handleChange('city', v)}
+                      onBlur={() => handleBlur('city')}
+                      error={touched.city ? errors.city : ''}
+                      required
+                      placeholder="Hyderabad"
+                    />
 
-        {project === 'Other' && showOtherProjectInput && (
-          <input
-            type="text"
-            placeholder="Please specify"
-            value={otherInputs.projectType}
-            onChange={(e) => setOtherInputs(prev => ({ ...prev, projectType: e.target.value }))}
-            className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
-          />
-        )}
-      </div>
-    ))}
-  </div>
-</div>
+                    <FormField
+                      label="Company / Business Name (Optional)"
+                      name="company"
+                      type="text"
+                      value={formData.company}
+                      onChange={v => handleChange('company', v)}
+                      placeholder="ABC Constructions"
+                    />
 
-        {/* Quantity, Timeline, Urgency */}
-        <div className="space-y-4 md:flex md:gap-4">
-          <div className="flex-1">
-            <label className="block text-gray-700 font-medium">Approx. Quantity Required</label>
-            <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
-              <option>10–50 sheets</option>
-              <option>50–200 sheets</option>
-              <option>200+ sheets</option>
-              <option>Not Sure</option>
-            </select>
-          </div>
-          <div className="flex-1">
-            <label className="block text-gray-700 font-medium">Timeline to Purchase</label>
-            <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
-              <option>Immediate</option>
-              <option>1–2 Weeks</option>
-              <option>1 Month</option>
-              <option>Just Exploring</option>
-            </select>
-          </div>
-          <div className="flex-1">
-            <label className="block text-gray-700 font-medium">Urgency Level</label>
-            <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
-              <option>Low</option>
-              <option>Medium</option>
-              <option>High</option>
-            </select>
-          </div>
-        </div>
+                    {/* Enquiry Details */}
+                    <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Enquiry Details</h3>
+                    <div className="space-y-2">
+                      <label className="block text-gray-700 font-medium">Inquiry Type (Select One) *</label>
+                      <select
+                        value={formData.subject}
+                        onChange={(e) => handleChange('subject', e.target.value)}
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white"
+                        required
+                      >
+                        <option value="general">General Inquiry</option>
+                        <option value="product">Product Information</option>
+                        <option value="bulk">Bulk Order / Wholesale</option>
+                        <option value="dealer">Dealership Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="sample">Sample Request</option>
+                        <option value="consultation">Project Consultation</option>
+                        <option value="quote">Price Quote Request</option>
+                        <option value="status">Order Status</option>
+                        <option value="collaboration">Collaboration / Partnership</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
 
-        {/* Message / File Upload */}
-        <FormField
-          label="Additional Details "
-          name="message"
-          type="textarea"
-          value={formData.message}
-          onChange={(v) => handleChange('message', v)}
-          onBlur={() => handleBlur('message')}
-          error={touched.message ? errors.message : ''}
-          required
-          placeholder="Message / Requirements (Minimum 10 characters):*"
-          rows={5}
-        />
+                    {/* Product Interest */}
+                    <div>
+                      <label className="block text-gray-700 font-medium mb-2">Product Interest *</label>
+                      <div className="grid grid-cols-2 gap-2">
+                        {['Agni','Ananta','Bhima','Samrat','Vajra','Flush Doors','Blockboards','Other'].map((product, idx) => (
+                          <div key={idx}>
+                            <label className="inline-flex items-center gap-2">
+                              <input 
+                                type="checkbox" 
+                                className="form-checkbox h-5 w-5 text-trees-primary"
+                                checked={productSelections.includes(product)}
+                                onChange={(e) => {
+                                  toggleSelection(product, productSelections, setProductSelections);
+                                  if (product === 'Other') {
+                                    setShowOtherProductInput(e.target.checked);
+                                    if (!e.target.checked) setOtherInputs(prev => ({ ...prev, productInterest: '' }));
+                                  }
+                                }}
+                              />
+                              <span>{product}{product !== 'Other' ? '' : ''}</span>
+                            </label>
 
-        <div className="space-y-2">
-          <label className="block text-gray-700 font-medium">File Upload (Optional)</label>
-          <label className="block text-gray-700 font-medium">Attach BOQs, drawings, reference images, tenders, or project documents.</label>
-          <input type="file" multiple className="w-full border-2 border-gray-200 rounded-xl p-3" />
-        </div>
+                            {product === 'Other' && showOtherProductInput && (
+                              <input
+                                type="text"
+                                placeholder="Please specify"
+                                value={otherInputs.productInterest}
+                                onChange={(e) => setOtherInputs(prev => ({ ...prev, productInterest: e.target.value }))}
+                                className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
+                              />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      {errors.productSelections && <p className="text-sm text-red-600 mt-2">{errors.productSelections}</p>}
+                    </div>
 
-        {/* Preferred Contact */}
-        <div className="space-y-2">
-          <label className="block text-gray-700 font-medium">Preferred Contact Method</label>
-          <div className="flex flex-wrap gap-3">
-            {['Email','Phone Call','WhatsApp'].map((method, idx) => (
-              <label key={idx} className="inline-flex items-center gap-2">
-                <input type="radio" name="contactMethod" className="form-radio h-5 w-5 text-trees-primary" />
-                <span>{method}</span>
-              </label>
-            ))}
-          </div>
-        </div>
+                    {/* Project Type */}
+                    <div className="space-y-2 mt-4">
+                      <label className="block text-gray-700 font-medium">Project Type *</label>
+                      <div className="grid grid-cols-2 gap-2">
+                        {['Residential','Commercial','Hospitality','Retail','Industrial','Institutional','Other'].map((project, idx) => (
+                          <div key={idx}>
+                            <label className="inline-flex items-center gap-2">
+                              <input 
+                                type="checkbox" 
+                                className="form-checkbox h-5 w-5 text-trees-primary"
+                                checked={projectSelections.includes(project)}
+                                onChange={(e) => {
+                                  toggleSelection(project, projectSelections, setProjectSelections);
+                                  if (project === 'Other') {
+                                    setShowOtherProjectInput(e.target.checked);
+                                    if (!e.target.checked) setOtherInputs(prev => ({ ...prev, projectType: '' }));
+                                  }
+                                }}
+                              />
+                              <span>{project}</span>
+                            </label>
 
-        
-        {/* Source */}
-        <div className="space-y-2">
-  <label className="block text-gray-700 font-medium">How Did You Hear About Us?</label>
-  <div className="grid grid-cols-2 gap-2">
-    {['Google Search','Social Media','Dealer','Referral','Existing Customer','Exhibition / Trade Show','Other'].map((source, idx) => (
-      <div key={idx}>
-        <label className="inline-flex items-center gap-2">
-          <input 
-            type="checkbox" 
-            className="form-checkbox h-5 w-5 text-trees-primary"
-            onChange={(e) => {
-              if (source === 'Other') setShowOtherSourceInput(e.target.checked);
-            }}
-          />
-          <span>{source}</span>
-        </label>
+                            {project === 'Other' && showOtherProjectInput && (
+                              <input
+                                type="text"
+                                placeholder="Please specify"
+                                value={otherInputs.projectType}
+                                onChange={(e) => setOtherInputs(prev => ({ ...prev, projectType: e.target.value }))}
+                                className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
+                              />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      {errors.projectSelections && <p className="text-sm text-red-600 mt-2">{errors.projectSelections}</p>}
+                    </div>
 
-        {source === 'Other' && showOtherSourceInput && (
-          <input
-            type="text"
-            placeholder="Please specify"
-            value={otherInputs.hearAbout}
-            onChange={(e) => setOtherInputs(prev => ({ ...prev, hearAbout: e.target.value }))}
-            className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
-          />
-        )}
-      </div>
-    ))}
-  </div>
-</div>
+                    {/* Quantity, Timeline, Urgency */}
+                    <div className="space-y-4 md:flex md:gap-4 mt-4">
+                      <div className="flex-1">
+                        <label className="block text-gray-700 font-medium">Approx. Quantity Required *</label>
+                        <select value={quantity} onChange={(e) => setQuantity(e.target.value)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
+                          <option value="">Select quantity</option>
+                          <option value="10-50">10–50 sheets</option>
+                          <option value="50-200">50–200 sheets</option>
+                          <option value="200+">200+ sheets</option>
+                          <option value="not-sure">Not Sure</option>
+                        </select>
+                        {errors.quantity && <p className="text-sm text-red-600 mt-2">{errors.quantity}</p>}
+                      </div>
+                      <div className="flex-1">
+                        <label className="block text-gray-700 font-medium">Timeline to Purchase *</label>
+                        <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
+                          <option value="">Select timeline</option>
+                          <option value="immediate">Immediate</option>
+                          <option value="1-2-weeks">1–2 Weeks</option>
+                          <option value="1-month">1 Month</option>
+                          <option value="exploring">Just Exploring</option>
+                        </select>
+                        {errors.timeline && <p className="text-sm text-red-600 mt-2">{errors.timeline}</p>}
+                      </div>
+                      <div className="flex-1">
+                        <label className="block text-gray-700 font-medium">Urgency Level *</label>
+                        <select value={urgency} onChange={(e) => setUrgency(e.target.value)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-trees-primary focus:ring-2 focus:ring-trees-primary/20 outline-none transition-all duration-200 bg-white">
+                          <option value="">Select urgency</option>
+                          <option value="low">Low</option>
+                          <option value="medium">Medium</option>
+                          <option value="high">High</option>
+                        </select>
+                        {errors.urgency && <p className="text-sm text-red-600 mt-2">{errors.urgency}</p>}
+                      </div>
+                    </div>
 
+                    {/* Message / File Upload (message optional) */}
+                    <FormField
+                      label="Additional Details (Optional)"
+                      name="message"
+                      type="textarea"
+                      value={formData.message}
+                      onChange={(v) => handleChange('message', v)}
+                      onBlur={() => handleBlur('message')}
+                      error={touched.message ? errors.message : ''}
+                      required={false}
+                      placeholder="Message / Requirements (Optional)"
+                      rows={5}
+                    />
 
-        {/* Consent */}
-        <label className="inline-flex items-center gap-2 mt-4">
-          <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" required />
-          <span>I agree to be contacted by the Tree’s Plywood team.</span>
-        </label>
+                    <div className="space-y-2">
+                      <label className="block text-gray-700 font-medium">File Upload (Optional)</label>
+                      <label className="block text-gray-700 font-medium">Attach BOQs, drawings, reference images, tenders, or project documents.</label>
+                      <input type="file" multiple className="w-full border-2 border-gray-200 rounded-xl p-3" />
+                    </div>
 
-        <LoadingButton
-          type="submit"
-          isLoading={isSubmitting}
-          disabled={isSubmitting}
-          className="w-full bg-trees-primary text-white hover:bg-trees-primary/90 transition-colors px-8 py-4 text-lg rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-200"
-        >
-          {!isSubmitting && <Send className="w-5 h-5" />}
-          Send Message
-        </LoadingButton>
-      </form>
-    </div>
-  </ModernCard>
-</motion.div>
+                    {/* Preferred Contact */}
+                    <div className="space-y-2">
+                      <label className="block text-gray-700 font-medium">Preferred Contact Method *</label>
+                      <div className="flex flex-wrap gap-3">
+                        {['Email','Phone Call','WhatsApp'].map((method, idx) => (
+                          <label key={idx} className="inline-flex items-center gap-2">
+                            <input type="radio" name="contactMethod" className="form-radio h-5 w-5 text-trees-primary" checked={contactMethod === method} onChange={() => { setContactMethod(method); setErrors(prev => ({ ...prev, contactMethod: '' })); }} />
+                            <span>{method}</span>
+                          </label>
+                        ))}
+                      </div>
+                      {errors.contactMethod && <p className="text-sm text-red-600 mt-2">{errors.contactMethod}</p>}
+                    </div>
+
+                    {/* Source */}
+                    <div className="space-y-2">
+                      <label className="block text-gray-700 font-medium">How Did You Hear About Us? *</label>
+                      <div className="grid grid-cols-2 gap-2">
+                        {['Google Search','Social Media','Dealer','Referral','Existing Customer','Exhibition / Trade Show','Other'].map((source, idx) => (
+                          <div key={idx}>
+                            <label className="inline-flex items-center gap-2">
+                              <input 
+                                type="checkbox" 
+                                className="form-checkbox h-5 w-5 text-trees-primary"
+                                checked={sourceSelections.includes(source)}
+                                onChange={(e) => {
+                                  toggleSelection(source, sourceSelections, setSourceSelections);
+                                  if (source === 'Other') {
+                                    setShowOtherSourceInput(e.target.checked);
+                                    if (!e.target.checked) setOtherInputs(prev => ({ ...prev, hearAbout: '' }));
+                                  }
+                                }}
+                              />
+                              <span>{source}</span>
+                            </label>
+
+                            {source === 'Other' && showOtherSourceInput && (
+                              <input
+                                type="text"
+                                placeholder="Please specify"
+                                value={otherInputs.hearAbout}
+                                onChange={(e) => setOtherInputs(prev => ({ ...prev, hearAbout: e.target.value }))}
+                                className="mt-2 w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-trees-primary outline-none"
+                              />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      {errors.sourceSelections && <p className="text-sm text-red-600 mt-2">{errors.sourceSelections}</p>}
+                    </div>
+
+                    {/* Consent */}
+                    <label className="inline-flex items-center gap-2 mt-4">
+                      <input type="checkbox" className="form-checkbox h-5 w-5 text-trees-primary" required />
+                      <span>I agree to be contacted by the Tree’s Plywood team.</span>
+                    </label>
+
+                    <LoadingButton
+                      type="submit"
+                      isLoading={isSubmitting}
+                      disabled={isSubmitting}
+                      className="w-full bg-trees-primary text-white hover:bg-trees-primary/90 transition-colors px-8 py-4 text-lg rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-200"
+                    >
+                      {!isSubmitting && <Send className="w-5 h-5" />}
+                      Send Message
+                    </LoadingButton>
+                  </form>
+                </div>
+              </ModernCard>
+            </motion.div>
 
             {/* Right Column - Map & Info */}
             <motion.div
@@ -616,40 +796,36 @@ const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
               className="flex flex-col gap-8 h-full"
             >
               {/* Support & Assurance Card */}
-<ModernCard variant="elevated">
-  <div className="p-8">
-    {/* Heading */}
-    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-      We’re Here Whenever You Need Us
-    </h3>
+              <ModernCard variant="elevated">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    We’re Here Whenever You Need Us
+                  </h3>
 
-    {/* Description */}
-    <p className="text-gray-700 mb-6">
-      Our customers are more than just Tree’s Plywood family; we are so happy to hear from you and get in touch anytime. 
-      If you are having a product issue, partnership idea, or want any technical assistance, feel free to reach out.
-    </p>
+                  <p className="text-gray-700 mb-6">
+                    Our customers are more than just Tree’s Plywood family; we are so happy to hear from you and get in touch anytime. 
+                    If you are having a product issue, partnership idea, or want any technical assistance, feel free to reach out.
+                  </p>
 
-    {/* Bullet / Tick List */}
-    <ul className="space-y-3 text-gray-700 text-[15px] leading-relaxed">
-      {[
-        'Certified & Safe Products',
-        'Affordable Pricing',
-        'Pan-India Availability',
-        'Customized Design Support'
-      ].map((item, idx) => (
-        <li key={idx} className="flex items-start gap-3">
-          <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
+                  <ul className="space-y-3 text-gray-700 text-[15px] leading-relaxed">
+                    {[
+                      'Certified & Safe Products',
+                      'Affordable Pricing',
+                      'Pan-India Availability',
+                      'Customized Design Support'
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-    {/* Footer / Quote */}
-    <p className="mt-6 text-gray-900 text-xl font-bold">
-      “Buy Strength, Build Trust”
-    </p>
-  </div>
-</ModernCard>
+                  <p className="mt-6 text-gray-900 text-xl font-bold">
+                    “Buy Strength, Build Trust”
+                  </p>
+                </div>
+              </ModernCard>
 
               {/* Location Map */}
               <ModernCard variant="elevated" >
@@ -705,77 +881,73 @@ const [showOtherSourceInput, setShowOtherSourceInput] = useState(false);
                 </div>
               </ModernCard>
 
-             <ModernCard variant="elevated">
-  <div className="p-8 flex flex-col h-full">
-    <div className="flex items-center gap-3 mb-6">
-      <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center">
-        <Globe className="w-6 h-6 text-trees-primary" />
-      </div>
-      <h3 className="text-2xl font-bold text-gray-900">Follow Us</h3>
-    </div>
-    <p className="text-gray-600 mb-6">
-      Stay connected for updates, ideas, and the latest from Tree’s Plywood.
-    </p>
+              <ModernCard variant="elevated">
+                <div className="p-8 flex flex-col h-full">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center">
+                      <Globe className="w-6 h-6 text-trees-primary" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Follow Us</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6">
+                    Stay connected for updates, ideas, and the latest from Tree’s Plywood.
+                  </p>
 
-    <div className="flex flex-wrap gap-3">
-      {socialLinks.map((social, idx) => (
-        <button
-          key={idx}
-          onClick={() => window.open(social.url, '_blank')}
-          className="flex-1 min-w-[calc(50%-0.375rem)] flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-50 hover:bg-trees-primary/10 hover:text-trees-primary transition-all duration-200 font-medium group"
-          aria-label={social.label}
-        >
-          <social.icon className="w-5 h-5" />
-          <span className="text-sm">{social.label}</span>
-        </button>
-      ))}
-    </div>
+                  <div className="flex flex-wrap gap-3">
+                    {socialLinks.map((social, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => window.open(social.url, '_blank')}
+                        className="flex-1 min-w-[calc(50%-0.375rem)] flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-50 hover:bg-trees-primary/10 hover:text-trees-primary transition-all duration-200 font-medium group"
+                        aria-label={social.label}
+                      >
+                        <social.icon className="w-5 h-5" />
+                        <span className="text-sm">{social.label}</span>
+                      </button>
+                    ))}
+                  </div>
 
-    {/* New Text Line */}
-    <p className="mt-6 text-center text-gray-700 font-medium">
-      Stay connected to know more and get the latest updates!
-    </p>
-  </div>
-</ModernCard>
+                  <p className="mt-6 text-center text-gray-700 font-medium">
+                    Stay connected to know more and get the latest updates!
+                  </p>
+                </div>
+              </ModernCard>
 
-{/* Why Visit Us Card */}
-<ModernCard variant="elevated">
-  <div className="p-8">
-    {/* Badge */}
-    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-trees-primary/10 rounded-full mb-6">
-      <Sparkles className="w-4 h-4 text-trees-primary" />
-      <span className="text-sm font-semibold text-trees-primary">Why Visit Us?</span>
-    </div>
+              {/* Why Visit Us Card */}
+              <ModernCard variant="elevated">
+                <div className="p-8">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-trees-primary/10 rounded-full mb-6">
+                    <Sparkles className="w-4 h-4 text-trees-primary" />
+                    <span className="text-sm font-semibold text-trees-primary">Why Visit Us?</span>
+                  </div>
 
-    {/* Heading */}
-    <h3 className="text-2xl font-bold text-gray-900 mb-6">
-      Experience Tree’s Plywood in Person
-    </h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                    Experience Tree’s Plywood in Person
+                  </h3>
 
-    {/* Tick List */}
-    <ul className="space-y-3 text-gray-700 text-[15px] leading-relaxed">
-      {[
-        'See Our Products Up Close',
-        'Get Advice From Our Experts',
-        'Explore Customization Options',
-        'Experience The Quality Yourself',
-        'Meet Our Friendly Team'
-      ].map((item, idx) => (
-        <li key={idx} className="flex items-start gap-3">
-          <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</ModernCard>
-
-
-
+                  <ul className="space-y-3 text-gray-700 text-[15px] leading-relaxed">
+                    {[
+                      'See Our Products Up Close',
+                      'Get Advice From Our Experts',
+                      'Explore Customization Options',
+                      'Experience The Quality Yourself',
+                      'Meet Our Friendly Team'
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ModernCard>
             </motion.div>
           </div>
         </div>
       </section>
+
+     
+
       {/* Unique Find a Dealer Section */}
 <section className="section-padding bg-gray-50">
   <div className="container mx-auto px-6">

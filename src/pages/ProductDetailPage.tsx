@@ -16,6 +16,7 @@ import {
   ChevronRight,
   Share2,
   Heart,
+  CheckCircle2,
 } from 'lucide-react';
 import { products } from '../data/products';
 import { PageContainer } from '../components/layout/PageContainer';
@@ -202,7 +203,7 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             className="space-y-6"
           >
             <div>
-              <h1 className="text-trees-secondary mb-2">{product.name}</h1>
+              <h4 className="text-trees-secondary mb-2">{product.name}</h4>
               <p className="text-trees-primary italic">{product.tagline}</p>
               {product.subcategory && (
                 <p className="text-sm text-gray-600 mt-2 uppercase tracking-wide">
@@ -216,18 +217,18 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             <div className="grid grid-cols-3 gap-4">
               <div className="glass-card rounded-xl p-4 text-center">
                 <Shield className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-trees-secondary">Certified</div>
-                <div className="text-xs text-gray-600">Quality</div>
+                <div className="text-sm font-semibold text-trees-secondary">Grade:</div>
+                <div className="text-xs text-gray-600">BWP Marine</div>
               </div>
               <div className="glass-card rounded-xl p-4 text-center">
                 <Award className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-trees-secondary">Premium</div>
-                <div className="text-xs text-gray-600">Grade</div>
+                <div className="text-sm font-semibold text-trees-secondary">	Warranty: </div>
+                <div className="text-xs text-gray-600">Lifetime Guarantee</div>
               </div>
               <div className="glass-card rounded-xl p-4 text-center">
                 <Layers className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-trees-secondary">{product.thicknesses.length}</div>
-                <div className="text-xs text-gray-600">Sizes</div>
+                <div className="text-sm font-semibold text-trees-secondary">	IS Standards:</div>
+                <div className="text-xs text-gray-600">IS:710 | IS:10701</div>
               </div>
             </div>
 
@@ -311,7 +312,7 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             <TabsContent value="specifications" className="space-y-6">
               <div className="glass-card rounded-2xl p-8">
                 <h3 className="text-trees-secondary mb-6 flex items-center gap-2">
-                  <Ruler className="w-6 h-6 text-trees-primary" /> Technical Specifications
+                  <Ruler className="w-6 h-6 text-trees-primary" /> Technical Highlights 
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {product.specifications.map((spec, index) => (
@@ -331,7 +332,7 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
                       <tr className="border-b-2 border-trees-primary">
                         <th className="text-left py-4 px-4 font-semibold text-trees-secondary">Thickness</th>
                         <th className="text-left py-4 px-4 font-semibold text-trees-secondary">Common Size</th>
-                        <th className="text-left py-4 px-4 font-semibold text-trees-secondary">Application</th>
+                        <th className="text-left py-4 px-4 font-semibold text-trees-secondary">Best Application</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -340,10 +341,10 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
                           <td className="py-4 px-4 font-semibold text-trees-primary">{thickness}</td>
                           <td className="py-4 px-4 text-gray-700">8' × 4' (2440 × 1220 mm)</td>
                           <td className="py-4 px-4 text-sm text-gray-600">
-                            {index === 0 ? 'Heavy furniture, structural applications' :
-                             index === 1 ? 'Cabinet backs, drawer bottoms' :
-                             index === 2 ? 'Door panels, partition walls' :
-                             index === 3 ? 'Light paneling, decorative work' :
+                            {index === 0 ? 'Heavy furniture, structural work' :
+                             index === 1 ? 'Cabinets, shelves' :
+                             index === 2 ? 'Decorative panels, light furniture' :
+                             index === 3 ? 'Veneering, curved & light work' :
                              'Veneering, curved surfaces'}
                           </td>
                         </tr>
@@ -371,10 +372,11 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
                         <Check className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-trees-secondary mb-2">{feature}</h4>
-                        <p className="text-sm text-gray-600">
-                          Premium quality feature ensuring long-lasting performance and reliability.
-                        </p>
+                        <h4 className="text-trees-secondary font-normal mb-2">
+  {feature}
+</h4>
+
+                        
                       </div>
                     </div>
                   </motion.div>
@@ -383,26 +385,79 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             </TabsContent>
 
             {/* Applications */}
-            <TabsContent value="applications" className="space-y-6">
-              <div className="glass-card rounded-2xl p-8">
-                <h3 className="text-trees-secondary mb-6 flex items-center gap-2">
-                  <Package className="w-6 h-6 text-trees-primary" /> Primary Applications
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed mb-8">{product.primaryUses}</p>
+            {/* Applications */}
+<TabsContent value="applications" className="space-y-6">
+  <div className="glass-card rounded-2xl p-8">
 
-                <div className="grid md:grid-cols-3 gap-6">
-                  {product.primaryUses.split(',').map((use, index) => (
-                    <div key={index} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                      <div className="w-12 h-12 bg-trees-primary/10 rounded-lg flex items-center justify-center mb-4">
-                        <Package className="w-6 h-6 text-trees-primary" />
-                      </div>
-                      <h4 className="text-trees-secondary mb-2">{use.trim()}</h4>
-                      <p className="text-sm text-gray-600">Ideal for professional and residential applications</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </TabsContent>
+    {/* Section Title */}
+    <div className="flex items-center gap-2 mb-6">
+      <Package className="w-7 h-7 text-trees-primary" />
+      <h3 className="text-2xl font-bold text-trees-secondary">Best Applications</h3>
+    </div>
+
+    {/* Intro */}
+    <p className="text-gray-700 mb-6 text-lg">
+      <span className="font-semibold">Ananta works best for:</span>
+    </p>
+
+    {/* Applications Grid */}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {[
+    "Modular Kitchens",
+    "Bathroom Cabinets & Vanities",
+    "Heavyduty Furniture & Wardrobes",
+    "Commercial Interiors",
+    "Hotels, Restaurants & Cafés",
+    "High-humidity & Wet Zones",
+  ].map((item, index) => (
+    <div
+      key={index}
+      className="border border-gray-200 rounded-2xl p-6 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+    >
+      <div className="flex items-center gap-3">
+        <CheckCircle2 className="w-6 h-6 text-trees-primary" />
+        <h4 className="font-semibold text-trees-secondary text-lg">{item}</h4>
+      </div>
+    </div>
+  ))}
+</div>
+
+    
+    {/* Statement */}
+    <p className="mt-6 text-gray-800 font-medium text-lg">
+      If water exposure is daily, <span className="font-bold">Ananta is the safe choice.</span>
+    </p>
+     <br></br>
+    {/* Real-Life Use Examples */}
+    <h3 className="text-2xl font-bold text-trees-secondary mt-10 mb-4">
+      Real-Life Use Examples
+    </h3>
+
+    <div className="grid sm:grid-cols-2 gap-6">
+      {[
+        "Used in homes where kitchens face daily steam & spills",
+        "Chosen for commercial restaurants with heavy daily usage",
+        "Preferred for commercial interiors needing long-term stability"
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="border border-gray-200 bg-gray-50 rounded-xl p-5 hover:bg-white transition-all duration-300"
+        >
+          <div className="flex items-start gap-3">
+            <Sparkles className="w-5 h-5 text-trees-primary mt-1" />
+            <p className="text-gray-700">{item}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Final Note */}
+    <p className="mt-6 text-gray-800 font-semibold">
+      These are places where regular plywood usually fails — <span className="text-trees-primary">Ananta holds strong.</span>
+    </p>
+  </div>
+</TabsContent>
+
 
             {/* Downloads */}
             <TabsContent value="downloads" className="space-y-6">
@@ -410,10 +465,10 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
                 <h3 className="text-trees-secondary mb-6">Technical Documents</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {[
-                    { name: 'Product Datasheet', file: 'src/files/Aug -12.docx', size: '2.4 MB' },
-                    { name: 'Installation Guide', file: 'src/files/Divya_resume.pdf', size: '1.8 MB' },
+                    { name: 'Download Technical Datasheet', file: 'src/files/Aug -12.docx', size: '2.4 MB' },
+                    { name: 'Warranty Guidelines', file: 'src/files/Divya_resume.pdf', size: '1.8 MB' },
                     { name: 'Certification Docs', file: 'src/files/certification.pdf', size: '3.2 MB' },
-                    { name: 'Warranty Information', file: 'src/files/warranty.pdf', size: '1.2 MB' },
+                    { name: 'Installation & Storage Guide.', file: 'src/files/warranty.pdf', size: '1.2 MB' },
                   ].map((doc, idx) => (
                     <div
                       key={idx}
@@ -441,6 +496,30 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             </TabsContent>
           </Tabs>
         </section>
+        {/* FAQ Section */}
+{product.faq && product.faq.length > 0 && (
+  <section className="glass-strong rounded-2xl p-10 mt-12">
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-2xl font-bold text-trees-secondary mb-6">
+        Frequently Asked Questions
+      </h2>
+      <div className="space-y-4">
+        {product.faq.map((item, index) => (
+          <details
+            key={index}
+            className="border border-gray-200 rounded-xl p-4 bg-gray-50 hover:bg-white transition-all duration-300"
+          >
+            <summary className="cursor-pointer font-semibold text-trees-primary">
+              {item.question}
+            </summary>
+            <p className="mt-2 text-gray-700">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
 
         {/* Inquiry Form */}
         <section className="glass-strong rounded-2xl p-10">

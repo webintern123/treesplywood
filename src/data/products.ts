@@ -11,45 +11,89 @@ export interface Product {
   primaryUses: string;
   image: string;
   badge?: string;
+  faq?: { question: string; answer: string }[]; 
 }
 
 export const products: Product[] = [
   // PLYWOOD CATEGORY
   {
     id: 'ananta',
-    name: 'Ananta',
-    tagline: 'Endless Strength',
+    name: 'ANANTA – Premium Marine BWP Plywood',
+    tagline: 'Endless Strength-  Structural | High Load | Moisture-Prone Areas',
     category: 'Plywood',
-    subcategory: 'Premium Marine BWP Grade|Lifetime Warranty',
-    description: 'Built for tough, high-moisture, and long-life spaces. Ananta offers unmatched strength, full waterproofing, and superior Gurjan construction.',
-    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    subcategory: 'Built for extreme moisture, Designed to last a lifetime.',
+    description: 'Ananta is a premium marine-grade plywood made for strength, stability, and long life where regular plywood fails. It is designed to handle dialy moisture, heavy loads, steam, and long-term use without swelling, bending, or weakening. If the requirement is high performance with zero compromises, Ananta is the solution.',
+    thicknesses: ['19 mm', '16 mm', '12 mm', '9 mm', '6 mm'],
     specifications: [
-      'IS: 1000 SERIES',
-      'FRIE RETARDANT',
-      'LIFE TIME GUARANTEE',
-      'E 0 GRAD CERTIFIED',
-      'BOILING WATERPROOF 100%',
-      '5 PRESS TECHNOLOGY',
-      'BWP IS: 710 MARINE GRADE',
-      'TERMITE PROOF & BORER PROOF',
-      'GURJAN FACE 100%',
-      '100 % CALIBRATED',
-      'ANTI- VIRAL & ANTI- BACTERIAL COVERING',
-      '15 LAYERS',
-      'ZERO CORE GAPS',
-      'ZERO PIN GAPS',
+      'Surface: 100% Calibrated | Smooth Finish',
+      'Grade: BWP Marine (Boiling Waterproof)',
+      'Bonding: Phenol Formaldehyde (PF) marine bonding',
+      'Core Material: High-density Hardwood Core (Gurjan Face)',
+      'Pressing: Advanced 5-Press Technology Calibrated for even thickness',
+      'Structure: 15 Layers with Zero Core & Pin Gaps',
+      'Water Resistance: 100% waterproof',
+      'Treatment: Anti-termite & anti-borer treated',
+      'Standards: IS:710 & IS:10701 compliant | Structural Performance',
+      'Emission Level: E0 Grade (Low Emission)',
+      
+      'Special: Anti-viral & Anti-bacterial surface protection',
+      
+      'Warranty: Lifetime Guarantee against manufacturing defects.',
     ],
     keyFeatures: [
-      'IS: 1000 Series certified',
-      '100% boiling waterproof',
-      '15-layer multi-ply construction',
-      'Anti-viral & anti-bacterial surface treatment',
-      'Termite & borer resistant',
-      'Zero core and pin gaps',
+      'Grade: 100% BWP Marine Plywood (IS:710)',
+      'Warranty: Lifetime Guarantee on Core & Delamination',
+      'Core: 100% hardwood (Gurjan-based structure)',
+      'Water Resistance: 100% Fully Boiling Waterproof',
+      'Calibration: Multi-press calibrated for uniform thickness',
+      'Protection: Termite & Borer Proof Treated',
+      'Environment: Low-emission, interior-safe bonding',
+      'Technology: 5-Press Manufacturing Technology',
+      'Emission: E0 Grade Certified (Safe for Indoors)',
+      'Structure: 15 Layers | Zero Core Gaps | Zero Pin Gaps.',
     ],
     primaryUses: 'Structural joinery, heavy furniture, load-bearing panels',
     image: 'https://images.unsplash.com/photo-1554230253-017daba2b631?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwcGx5d29vZCUyMHdvb2QlMjB0ZXh0dXJlfGVufDF8fHx8MTc2MTk5MjIxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     badge: 'Premium',
+    faq: [
+  {
+    question: "Is Ananta suitable for kitchens and bathrooms?",
+    answer: "Yes, it is fully boiling waterproof and ideal for wet areas."
+  },
+  {
+    question: "Does Ananta swell or bend over time?",
+    answer: " No, Zero core gaps and hardwood core prevent swelling."
+  },
+  {
+    question: "Is this plywood safe for indoor use?",
+    answer: " Yes, It is E0 grade certified with low emission adhesives."
+  },
+   {
+    question: "Can it be used for heavy furniture?",
+    answer: "Yes, 15-layer construction supports high load applications."
+  },
+   {
+    question: "What makes Ananta different from other marine plywood?",
+    answer: "  5-press technology, lifetime warranty, and zero core gaps."
+  },
+   {
+    question: "Is Ananta termite-proof?",
+    answer: " Yes, it is chemically treated against termites & borers."
+  },
+   {
+    question: "Is calibration important?",
+    answer: " Yes, Calibrated sheets ensure even thickness and smooth finishing."
+  },
+   {
+    question: "Is this suitable for commercial projects?",
+    answer: " Yes, It is E0 grade certified with low emission adhesives."
+  },
+   {
+    question: "Is this plywood safe for indoor use?",
+    answer: "Absolutely, It is widely used in hotels, offices & retail interiors."
+  },
+]
+
   },
   {
     id: 'agni',
@@ -58,7 +102,7 @@ export const products: Product[] = [
     category: 'Plywood',
     subcategory: 'Fire-Retardant Marine Grade | Lifetime Warranty',
     description: 'Designed for safety-first projects. Agni combines fire resistance with marine-grade protection, perfect for public and commercial spaces.',
-    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    thicknesses: ['19 mm', '16 mm', '12 mm', '9 mm', '6 mm'],
     specifications: [
       'FRIE RETARDANT',
       'CALIBRATED SURFACE',
