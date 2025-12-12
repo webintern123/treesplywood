@@ -294,7 +294,7 @@ export const products: Product[] = [
 '	Termite & borer treated',
 '	Calibrated thickness for stable finishing',
 '	Low-emission adhesive – safe for interiors',
-'	Multi-layer construction with zero core gaps.',
+
 
     ],
     applications: [
@@ -776,7 +776,7 @@ export const products: Product[] = [
     category: 'Doors',
     subcategory: 'A door that stays firm, stays straight, and stays strong—.',
     description: 'Tree’s Flush Doors are engineered with a high-density solid core, strong bonding, and a smooth finish that makes them ideal for both homes and commercial spaces. They are built to handle daily use, moisture exposure, and long-term performance without bending or weakening. With BWP-grade bonding, each door is designed to deliver strength that lasts.',
-    thicknesses: ['30mm', '32mm', '35mm', '38mm', '45mm'],
+    thicknesses: ['40mm', '38mm', '35mm', '32mm',],
     grade: 'BWP Door Grade',               // <-- NEW
   warranty: 'As per manufacturing quality standards',    // <-- NEW
   standards: 'IS:2202', 
