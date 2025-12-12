@@ -215,22 +215,22 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             <p className="text-gray-700">{product.description}</p>
 
             <div className="grid grid-cols-3 gap-4">
-              <div className="glass-card rounded-xl p-4 text-center">
-                <Shield className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-trees-secondary">Grade:</div>
-                <div className="text-xs text-gray-600">BWP Marine</div>
-              </div>
-              <div className="glass-card rounded-xl p-4 text-center">
-                <Award className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-trees-secondary">	Warranty: </div>
-                <div className="text-xs text-gray-600">Lifetime Guarantee</div>
-              </div>
-              <div className="glass-card rounded-xl p-4 text-center">
-                <Layers className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-trees-secondary">	IS Standards:</div>
-                <div className="text-xs text-gray-600">IS:710 | IS:10701</div>
-              </div>
-            </div>
+  <div className="glass-card rounded-xl p-4 text-center">
+    <Shield className="w-6 h-6 text-trees-primary mx-auto mb-2" />
+    <div className="text-sm font-semibold text-trees-secondary">Grade:</div>
+    <div className="text-xs text-gray-600">{product.grade}</div>
+  </div>
+  <div className="glass-card rounded-xl p-4 text-center">
+    <Award className="w-6 h-6 text-trees-primary mx-auto mb-2" />
+    <div className="text-sm font-semibold text-trees-secondary">Warranty:</div>
+    <div className="text-xs text-gray-600">{product.warranty}</div>
+  </div>
+  <div className="glass-card rounded-xl p-4 text-center">
+    <Layers className="w-6 h-6 text-trees-primary mx-auto mb-2" />
+    <div className="text-sm font-semibold text-trees-secondary">IS Standards:</div>
+    <div className="text-xs text-gray-600">{product.standards}</div>
+  </div>
+</div>
 
             <Separator />
 
@@ -336,20 +336,15 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
                       </tr>
                     </thead>
                     <tbody>
-                      {product.thicknesses.map((thickness, index) => (
-                        <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                          <td className="py-4 px-4 font-semibold text-trees-primary">{thickness}</td>
-                          <td className="py-4 px-4 text-gray-700">8' × 4' (2440 × 1220 mm)</td>
-                          <td className="py-4 px-4 text-sm text-gray-600">
-                            {index === 0 ? 'Heavy furniture, structural work' :
-                             index === 1 ? 'Cabinets, shelves' :
-                             index === 2 ? 'Decorative panels, light furniture' :
-                             index === 3 ? 'Veneering, curved & light work' :
-                             'Veneering, curved surfaces'}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
+  {product.thicknessDetails?.map((row, index) => (
+    <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+      <td className="py-4 px-4 font-semibold text-trees-primary">{row.thickness}</td>
+      <td className="py-4 px-4 text-gray-700">{row.commonSize}</td>
+      <td className="py-4 px-4 text-sm text-gray-600">{row.bestApplication}</td>
+    </tr>
+  ))}
+</tbody>
+
                   </table>
                 </div>
               </div>
@@ -385,115 +380,83 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             </TabsContent>
 
             {/* Applications */}
-            {/* Applications */}
+            {/* Applications Tab */}
 <TabsContent value="applications" className="space-y-6">
   <div className="glass-card rounded-2xl p-8">
-
-    {/* Section Title */}
+    {/* Best Applications Section */}
     <div className="flex items-center gap-2 mb-6">
       <Package className="w-7 h-7 text-trees-primary" />
       <h3 className="text-2xl font-bold text-trees-secondary">Best Applications</h3>
     </div>
 
-    {/* Intro */}
-    <p className="text-gray-700 mb-6 text-lg">
-      <span className="font-semibold">Ananta works best for:</span>
-    </p>
-
-    {/* Applications Grid */}
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  {[
-    "Modular Kitchens",
-    "Bathroom Cabinets & Vanities",
-    "Heavyduty Furniture & Wardrobes",
-    "Commercial Interiors",
-    "Hotels, Restaurants & Cafés",
-    "High-humidity & Wet Zones",
-  ].map((item, index) => (
-    <div
-      key={index}
-      className="border border-gray-200 rounded-2xl p-6 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-    >
-      <div className="flex items-center gap-3">
-        <CheckCircle2 className="w-6 h-6 text-trees-primary" />
-        <h4 className="font-semibold text-trees-secondary text-lg">{item}</h4>
-      </div>
-    </div>
-  ))}
-</div>
-
-    
-    {/* Statement */}
-    <p className="mt-6 text-gray-800 font-medium text-lg">
-      If water exposure is daily, <span className="font-bold">Ananta is the safe choice.</span>
-    </p>
-     <br></br>
-    {/* Real-Life Use Examples */}
-    <h3 className="text-2xl font-bold text-trees-secondary mt-10 mb-4">
-      Real-Life Use Examples
-    </h3>
-
-    <div className="grid sm:grid-cols-2 gap-6">
-      {[
-        "Used in homes where kitchens face daily steam & spills",
-        "Chosen for commercial restaurants with heavy daily usage",
-        "Preferred for commercial interiors needing long-term stability"
-      ].map((item, index) => (
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      {product.applications?.map((item, index) => (
         <div
           key={index}
-          className="border border-gray-200 bg-gray-50 rounded-xl p-5 hover:bg-white transition-all duration-300"
+          className="border border-gray-200 rounded-2xl p-6 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
         >
-          <div className="flex items-start gap-3">
-            <Sparkles className="w-5 h-5 text-trees-primary mt-1" />
-            <p className="text-gray-700">{item}</p>
+          <div className="flex items-center gap-3">
+            <CheckCircle2 className="w-6 h-6 text-trees-primary" />
+            <h4 className="font-semibold text-trees-secondary text-lg">{item}</h4>
           </div>
         </div>
       ))}
     </div>
 
-    {/* Final Note */}
-    <p className="mt-6 text-gray-800 font-semibold">
-      These are places where regular plywood usually fails — <span className="text-trees-primary">Ananta holds strong.</span>
-    </p>
+    {/* Real-Life Use Examples Section */}
+    {product.realLifeExamples && product.realLifeExamples.length > 0 && (
+      <>
+        <div className="flex items-center gap-2 mb-6">
+          <Sparkles className="w-7 h-7 text-trees-primary" />
+          <h3 className="text-2xl font-bold text-trees-secondary">Real-Life Use Examples</h3>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {product.realLifeExamples.map((example, index) => (
+            <div
+              key={index}
+              className="border border-gray-200 bg-gray-50 rounded-xl p-5 hover:bg-white transition-all duration-300"
+            >
+              <div className="flex items-start gap-3">
+                <Sparkles className="w-5 h-5 text-trees-primary mt-1" />
+                <p className="text-gray-700">{example}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    )}
   </div>
 </TabsContent>
 
-
             {/* Downloads */}
-            <TabsContent value="downloads" className="space-y-6">
-              <div className="glass-card rounded-2xl p-8">
-                <h3 className="text-trees-secondary mb-6">Technical Documents</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {[
-                    { name: 'Download Technical Datasheet', file: 'src/files/Aug -12.docx', size: '2.4 MB' },
-                    { name: 'Warranty Guidelines', file: 'src/files/Divya_resume.pdf', size: '1.8 MB' },
-                    { name: 'Certification Docs', file: 'src/files/certification.pdf', size: '3.2 MB' },
-                    { name: 'Installation & Storage Guide.', file: 'src/files/warranty.pdf', size: '1.2 MB' },
-                  ].map((doc, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-between p-6 rounded-xl bg-gray-50 border border-gray-200 hover:border-trees-primary transition-colors group"
-                    >
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-trees-primary/10 rounded-lg flex items-center justify-center">
-                          <FileText className="w-6 h-6 text-trees-primary" />
-                        </div>
-                        <div>
-                          <h4 className="text-trees-secondary">{doc.name}</h4>
-                          <p className="text-sm text-gray-600">PDF • {doc.size}</p>
-                        </div>
-                      </div>
-                      <ModernButton
-                        variant="outline"
-                        size="sm"
-                        icon={<Download />}
-                        onClick={() => handleDownloadFile(doc.file, doc.name)}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </TabsContent>
+           <TabsContent value="downloads" className="space-y-6">
+  <div className="glass-card rounded-2xl p-8">
+    <h3 className="text-trees-secondary mb-6">Technical Documents</h3>
+    <div className="grid md:grid-cols-2 gap-4">
+      {product.downloads?.map((doc, idx) => (
+        <div key={idx} className="flex items-center justify-between p-6 rounded-xl bg-gray-50 border border-gray-200 hover:border-trees-primary transition-colors group">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-trees-primary/10 rounded-lg flex items-center justify-center">
+              <FileText className="w-6 h-6 text-trees-primary" />
+            </div>
+            <div>
+              <h4 className="text-trees-secondary">{doc.name}</h4>
+              <p className="text-sm text-gray-600">PDF • {doc.size}</p>
+            </div>
+          </div>
+          <ModernButton
+            variant="outline"
+            size="sm"
+            icon={<Download />}
+            onClick={() => handleDownloadFile(doc.url, doc.name)}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</TabsContent>
+
           </Tabs>
         </section>
         {/* FAQ Section */}

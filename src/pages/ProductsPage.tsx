@@ -268,7 +268,11 @@ const filteredProducts =
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-700">{product.description}</p>
+                      {/* Short Description */}
+<p className="text-gray-700 line-clamp-3">
+  {product.shortDescription || product.description}
+</p>
+
 
                       {/* Key Features */}
                       <div className="space-y-2">
