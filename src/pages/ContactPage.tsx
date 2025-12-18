@@ -358,27 +358,50 @@ if (!personalValid || !enquiryValid || !extrasValid) {
   };
 
   // Contact information data
-  const contactInfo = [
+ const contactInfo = [
     { 
       icon: Phone, 
       title: 'Call Us', 
-      info: '+91 9091 744744', 
+      info: '+91 8712415760', 
       sub: 'We’re available Monday–Saturday, 9 AM to 6 PM.',
-      action: () => window.location.href = 'tel:+919091744744'
+      action: () => window.location.href = 'tel:+918712415760'
     },
     { 
       icon: MessageCircle, 
       title: 'WhatsApp', 
-      info: '+91 9091 744744', 
+      info: '+91 871415760', 
       sub: 'Quick chat support anytime.',
-      action: () => window.open('https://wa.me/919091744744', '_blank')
+      action: () => window.open('https://wa.me/918712415760', '_blank')
     },
     { 
       icon: Mail, 
       title: 'Email Us', 
       info: 'info@treesplywood.com', 
       sub: 'Reach out anytime — we offer 24/7 support.',
-      action: () => window.location.href = 'mailto:info@treesplywood.com'
+      action: () => {
+  const to = "info@treesplywood.com";
+  const subject = encodeURIComponent("Enquiry from Trees Plywood Website");
+  const body = encodeURIComponent(
+`Hello Team,
+
+I would like to know more about your products.
+
+Name:
+Email:
+Phone:
+City:
+Requirement:
+
+Thanks,
+Trees Plywood Website`
+  );
+
+  window.open(
+    `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
+    "_blank"
+  );
+}
+
     },
     { 
       icon: MapPin, 
@@ -422,7 +445,7 @@ if (!personalValid || !enquiryValid || !extrasValid) {
                 variant="light"
                 size="lg"
                 icon={<Phone className="w-5 h-5" />}
-                onClick={() => window.location.href = 'tel:+919091744744'}
+                onClick={() => window.location.href = 'tel:+918712415760'}
               >
                 Call Now
               </ModernButton>
@@ -432,7 +455,7 @@ if (!personalValid || !enquiryValid || !extrasValid) {
                 variant="outline-light"
                 size="lg"
                 icon={<MessageCircle className="w-5 h-5" />}
-                onClick={() => window.open('https://wa.me/919091744744', '_blank')}
+                onClick={() => window.open('https://wa.me/918712415760', '_blank')}
               >
                 WhatsApp
               </ModernButton>
