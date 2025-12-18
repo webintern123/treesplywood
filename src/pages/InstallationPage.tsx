@@ -178,17 +178,19 @@ export default function InstallationPage({ onNavigate }: InstallationPageProps) 
       </div>
 
       {/* Booking Form */}
-      <GridContainer className="py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="col-span-12 lg:col-span-8"
-        >
-          <AdvancedCard variant="glass" className="p-8">
-            <h2 className="text-2xl mb-6 text-[#432011]">Book Installation Service</h2>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
+     {/* Booking Form */}
+<GridContainer className="py-20">
+  <div className="col-span-12 lg:col-span-8">
+    <AdvancedCard
+  variant="glass"
+  className="p-8 no-hover-transform"
+>
+
+      <h2 className="text-2xl mb-6 text-[#432011]">
+        Book Installation Service
+      </h2>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <Label htmlFor="name">Full Name *</Label>
@@ -362,7 +364,7 @@ export default function InstallationPage({ onNavigate }: InstallationPageProps) 
               </button>
             </form>
           </AdvancedCard>
-        </motion.div>
+        </div>
 
         {/* Sidebar Info */}
         <motion.div

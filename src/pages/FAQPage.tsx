@@ -754,29 +754,43 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                 icon: Phone,
                 title: 'Call Us',
                 desc: 'Have a quick question? Speak directly with our team.',
-                info: '+91 9091744744',
+                info: '+91 8712415760',
                 action: 'Call Now',
                 color: 'from-blue-500 to-blue-600',
-                onClick: () => window.location.href = 'tel:+919091744744'
+                onClick: () => window.location.href = 'tel:+91 8712415760'
               },
-              {
-                icon: Mail,
-                title: 'Email Us',
-                desc: 'For detailed queries, documents, or support requests.',
-                info: 'support@thetreesplywood.com',
-                action: 'Send Email',
-                color: 'from-green-500 to-green-600',
-                onClick: () => window.location.href = 'mailto:support@thetreesplywood.com'
-              },
-              {
-                icon: MessageCircle,
-                title: 'Chat With Us',
-                desc: 'Need a fast reply? Our chat support is open anytime.',
-                info: 'Available 24/7',
-                action: 'Start Chat',
-                color: 'from-purple-500 to-purple-600',
-                onClick: () => toast.info('Live chat feature coming soon!')
-              },
+             {
+  icon: Mail,
+  title: 'Email Us',
+  desc: 'For detailed queries, documents, or support requests.',
+  info: 'support@thetreesplywood.com',
+  action: 'Send Email',
+  color: 'from-green-500 to-green-600'
+},
+
+  
+
+             {
+  icon: MessageCircle,
+  title: 'Chat With Us',
+  desc: 'Need a fast reply? Our chat support is open anytime.',
+  info: 'Available 24/7',
+  action: 'Start Chat',
+  color: 'from-purple-500 to-purple-600',
+  onClick: () => {
+    const phone = '918712415760'; // ✅ ONLY numbers with country code
+   const message = encodeURIComponent(`
+Hello 👋
+I need help regarding plywood products.
+
+Name:
+Email:
+Mobile Number:
+Requirement:
+  `);
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  }
+}
             ].map((channel, idx) => (
               <motion.div
                 key={idx}
@@ -794,16 +808,43 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                     {channel.desc}
                   </p>
                   <p className="text-trees-primary mb-6 text-sm font-semibold">{channel.info}</p>
-                  <ModernButton 
-                    variant="outline" 
-                    size="md"
-                    fullWidth
-                    icon={<channel.icon className="w-4 h-4" />}
-                    iconPosition="left"
-                    onClick={channel.onClick}
-                  >
-                    {channel.action}
-                  </ModernButton>
+                {channel.title === 'Email Us' ? (
+  <button
+  type="button"
+  onClick={() => {
+    const to = 'support@thetreesplywood.com';
+    const subject = encodeURIComponent('Support Request - The Trees Plywood');
+    const body = encodeURIComponent(`Hello Team,
+
+I need help regarding:`);
+
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
+      '_blank'
+    );
+  }}
+  className="w-full border border-trees-primary text-trees-primary hover:bg-trees-primary hover:text-white transition-all rounded-lg px-6 py-3 flex items-center justify-center gap-2"
+>
+  <Mail className="w-4 h-4" />
+  Send Email
+</button>
+
+) : (
+
+
+  <ModernButton 
+    variant="outline" 
+    size="md"
+    fullWidth
+    icon={<channel.icon className="w-4 h-4" />}
+    iconPosition="left"
+    onClick={channel.onClick}
+    type="button"
+  >
+    {channel.action}
+  </ModernButton>
+)}
+
                 </ModernCard>
               </motion.div>
             ))}
