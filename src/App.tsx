@@ -31,6 +31,8 @@ import QualityPage from './pages/QualityPage';
 import InstallationPage from './pages/InstallationPage';
 import ProfessionalsPage from './pages/ProfessionalsPage';
 
+//web
+
 type Page = 'home' | 'products' | 'about' | 'blogs' | 'blog-detail' | 'dealers' | 'calculator' | 'projects' | 'contact' | 'product-detail' | 'faq' | 'resources' | 'privacy' | 'terms' | 'warranty' | 'downloads' | 'samples' | 'sample-request' | 'comparison' | 'sustainability' | 'quality' | 'installation' | 'professionals' | '404';
 
 export default function App() {
