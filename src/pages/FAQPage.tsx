@@ -808,42 +808,33 @@ Requirement:
                     {channel.desc}
                   </p>
                   <p className="text-trees-primary mb-6 text-sm font-semibold">{channel.info}</p>
-                {channel.title === 'Email Us' ? (
-  <button
+                <ModernButton
+  variant="outline"
+  size="md"
+  fullWidth
+  icon={<channel.icon className="w-4 h-4" />}
+  iconPosition="left"
   type="button"
   onClick={() => {
-    const to = 'support@thetreesplywood.com';
-    const subject = encodeURIComponent('Support Request - The Trees Plywood');
-    const body = encodeURIComponent(`Hello Team,
+    if (channel.title === 'Email Us') {
+      const to = 'support@thetreesplywood.com';
+      const subject = encodeURIComponent('Support Request - The Trees Plywood');
+      const body = encodeURIComponent(`Hello Team,
 
 I need help regarding:`);
 
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
-      '_blank'
-    );
+      window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
+        '_blank'
+      );
+    } else {
+      channel.onClick?.();
+    }
   }}
-  className="w-full border border-trees-primary text-trees-primary hover:bg-trees-primary hover:text-white transition-all rounded-lg px-6 py-3 flex items-center justify-center gap-2"
 >
-  <Mail className="w-4 h-4" />
-  Send Email
-</button>
+  {channel.action}
+</ModernButton>
 
-) : (
-
-
-  <ModernButton 
-    variant="outline" 
-    size="md"
-    fullWidth
-    icon={<channel.icon className="w-4 h-4" />}
-    iconPosition="left"
-    onClick={channel.onClick}
-    type="button"
-  >
-    {channel.action}
-  </ModernButton>
-)}
 
                 </ModernCard>
               </motion.div>
@@ -908,8 +899,12 @@ I need help regarding:`);
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${resource.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                     <resource.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">{resource.title}</h4>
-                  <p className="text-sm text-gray-600 mb-4">{resource.desc}</p>
+                  <h4 className="text-base font-semibold text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">
+  {resource.title}
+</h4>
+
+                <p className="text-base text-gray-600 mb-4">{resource.desc}</p>
+
                   <div className="flex items-center text-trees-primary text-sm group-hover:translate-x-1 transition-transform">
                     Learn More <ArrowRight className="w-4 h-4 ml-1" />
                   </div>
@@ -980,10 +975,7 @@ I need help regarding:`);
 
       {/* Still Need Help CTA */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+       
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div

@@ -225,96 +225,113 @@ const filteredProducts =
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProducts.map((product, idx) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                >
-                  <ModernCard variant="elevated" hoverable onClick={() => onProductSelect ? onProductSelect(product.id) : onNavigate(`product-detail?id=${product.id}`)}>
-                    {/* Product Image */}
-                    <div className="relative h-72 rounded-t-2xl overflow-hidden group">
-                      <ImageWithFallback
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                      
-                      {/* Badge */}
-                      {product.badge && (
-                        <div className="absolute top-4 right-4">
-                          <span className="px-4 py-1.5 rounded-full bg-trees-primary text-white text-sm font-bold shadow-lg flex items-center gap-1.5">
-                            <Star className="w-4 h-4" />
-                            {product.badge}
-                          </span>
-                        </div>
-                      )}
+               <motion.div
+  key={product.id}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: idx * 0.1 }}
+  className=" flex items-center justify-center snap-start"
+>
+  <ModernCard
+    variant="elevated"
+    hoverable
+    className="w-full max-w-xs mx-auto"
 
-                      {/* Product Name Overlay */}
-                      <div className="absolute bottom-4 left-4 right-4 text-white">
-                        <h3 className="text-lg font-semibold text-white">{product.name}</h3>
+    onClick={() =>
+      onProductSelect
+        ? onProductSelect(product.id)
+        : onNavigate(`product-detail?id=${product.id}`)
+    }
+  >
+    {/* Product Image */}
+    <div className="relative h-48 rounded-t-2xl overflow-hidden group">
 
-                        <p className="text-white/90 text-lg">{product.tagline}</p>
-                      </div>
-                    </div>
+      <ImageWithFallback
+        src={product.image}
+        alt={product.name}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-                    {/* Product Info */}
-                    <div className="p-6 space-y-4">
-                      {/* Subcategory */}
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-trees-primary/10 text-trees-primary text-sm font-semibold">
-                        {product.subcategory || product.category}
-                      </div>
+      {/* Badge */}
+      {product.badge && (
+        <div className="absolute top-4 right-4">
+          <span className="px-4 py-1.5 rounded-full bg-trees-primary text-white text-sm font-bold shadow-lg flex items-center gap-1.5">
+            <Star className="w-4 h-4" />
+            {product.badge}
+          </span>
+        </div>
+      )}
 
-                      {/* Description */}
-                      {/* Short Description */}
-<p className="text-gray-700 line-clamp-3">
-  {product.shortDescription || product.description}
-</p>
+      {/* Product Name Overlay */}
+      <div className="absolute bottom-4 left-4 right-4 text-white">
+       <h3 className="text-base font-semibold text-white">
+{product.name}</h3>
+       <p className="text-sm text-white/90">
+{product.tagline}</p>
+      </div>
+    </div>
+
+    {/* Product Info */}
+    <div className="p-3 space-y-2">
+
+      {/* Subcategory */}
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-trees-primary/10 text-trees-primary text-xs font-semibold">
+  {product.subcategory || product.category}
+</div>
 
 
-                      {/* Key Features */}
-                      <div className="space-y-2">
-                        {product.keyFeatures.slice(0, 3).map((feature, i) => (
-                          <div key={i} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-trees-primary mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-gray-600">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
+      {/* Description */}
+     <p className="text-sm text-gray-700 line-clamp-2">
 
-                      {/* Thickness Options */}
-                      <div>
-                        <p className="text-xs font-semibold text-gray-500 mb-2">Available Thickness:</p>
-                        <div className="flex flex-wrap gap-2">
-                          {product.thicknesses.slice(0, 5).map((thickness) => (
-                            <span
-                              key={thickness}
-                              className="px-3 py-1 rounded-lg bg-gray-100 text-gray-800 text-xs font-medium"
-                            >
-                              {thickness}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+        {product.shortDescription || product.description}
+      </p>
 
-                      {/* View Details Button */}
-                      <ModernButton
-                        variant="outline"
-                        size="md"
-                        fullWidth
-                        icon={<ChevronRight className="w-5 h-5" />}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onProductSelect ? onProductSelect(product.id) : onNavigate(`product-detail?id=${product.id}`);
-                        }}
-                      >
-                        View Product
-                      </ModernButton>
-                    </div>
-                  </ModernCard>
-                </motion.div>
+      {/* Key Features */}
+      <div className="space-y-2">
+        {product.keyFeatures.slice(0, 3).map((feature, i) => (
+          <div key={i} className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-trees-primary mt-0.5 flex-shrink-0" />
+            <span className="text-sm text-gray-600">{feature}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Thickness Options */}
+      <div>
+        <p className="text-xs font-semibold text-gray-500 mb-2">Available Thickness:</p>
+        <div className="flex flex-wrap gap-2">
+          {product.thicknesses.slice(0, 5).map((thickness) => (
+            <span
+              key={thickness}
+              className="px-3 py-1 rounded-lg bg-gray-100 text-gray-800 text-xs font-medium"
+            >
+              {thickness}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* View Details Button */}
+      <ModernButton
+        variant="outline"
+        size="md"
+        fullWidth
+        icon={<ChevronRight className="w-5 h-5" />}
+        onClick={(e) => {
+          e.stopPropagation();
+          onProductSelect
+            ? onProductSelect(product.id)
+            : onNavigate(`product-detail?id=${product.id}`);
+        }}
+      >
+        View Product
+      </ModernButton>
+    </div>
+  </ModernCard>
+</motion.div>
+
               ))}
             </div>
           )}
@@ -465,7 +482,8 @@ const filteredProducts =
                       <app.icon className="w-8 h-8 text-white" />
                     </div>
                     <h4 className="font-bold text-gray-900">{app.title}</h4>
-                    <p className="text-sm text-gray-600">{app.desc}</p>
+                    <p className="text-xs text-gray-600">{app.desc}</p>
+
                     <div className="pt-2">
                       <p className="text-sm font-semibold text-trees-primary">{app.products}</p>
                     </div>
@@ -481,10 +499,7 @@ const filteredProducts =
       <section className="section-padding">
         <div className="container mx-auto px-6">
           <div className="bg-gradient-to-br from-trees-primary to-trees-secondary rounded-3xl p-12 text-white text-center overflow-hidden relative">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 border-4 border-white rounded-full" />
-              <div className="absolute bottom-0 left-0 w-80 h-80 border-4 border-white rounded-full" />
-            </div>
+           
             
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -638,9 +653,10 @@ const filteredProducts =
                   <div className="relative z-10">
                     <Shield className="w-14 h-14 mx-auto mb-4 drop-shadow-lg" />
                     <div className="text-6xl font-bold mb-2">{warranty.years}</div>
-                    <p className="text-2xl font-semibold mb-3">
-                      {warranty.years === 'Lifetime' ? 'Guarantee' : 'Year Warranty'}
-                    </p>
+                    <p className="text-2xl font-semibold mb-3 text-white">
+  {warranty.years === 'Lifetime' ? 'Guarantee' : 'Year Warranty'}
+</p>
+
                     <Separator className="my-4 bg-white/30" />
                     <p className="text-white/90 mb-2">{warranty.products}</p>
                     <p className="text-sm text-white/80">{warranty.desc}</p>
@@ -876,10 +892,7 @@ Delivery charges vary with distance and order size. Bulk orders may get free del
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+        
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div

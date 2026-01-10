@@ -685,28 +685,37 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className={`grid gap-4 ${selectedProducts.length <= 2 ? 'md:grid-cols-2 max-w-2xl mx-auto' : 'md:grid-cols-' + selectedProducts.length}`}>
-                {selectedProducts.map((productId) => {
-                  const product = products.find(p => p.id === productId);
-                  return (
-                    <MagneticButton key={productId} strength={0.2}>
-                      <ModernButton
-                        variant="primary"
-                        size="lg"
-                        className="w-full"
-                        onClick={() => {
-                          if (onProductSelect) {
-                            onProductSelect(productId);
-                          }
-                        }}
-                      >
-                        View {product?.name} Details
-                      </ModernButton>
-                    </MagneticButton>
-                  );
-                })}
-              </div>
+           {/* Action Buttons */}
+<div
+  className={`grid gap-6 ${
+    selectedProducts.length <= 2
+      ? 'md:grid-cols-2 max-w-5xl mx-auto' // wider grid
+      : 'md:grid-cols-' + selectedProducts.length
+  }`}
+>
+  {selectedProducts.map((productId) => {
+    const product = products.find((p) => p.id === productId);
+    return (
+      <MagneticButton key={productId} strength={0.2}>
+        <ModernButton
+          variant="primary"
+          size="lg"
+          className="w-full h-56 text-lg flex items-center justify-center text-center"
+          onClick={() => {
+            if (onProductSelect) {
+              onProductSelect(productId);
+            }
+          }}
+        >
+          View {product?.name} Details
+        </ModernButton>
+      </MagneticButton>
+    );
+  })}
+</div>
+
+
+
             </div>
           )}
         </section>
@@ -776,12 +785,14 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                     <div className="text-4xl font-bold text-trees-secondary mb-1 group-hover:text-trees-primary transition-colors">
                       {stat.value}
                     </div>
-                    <div className="font-semibold text-gray-700 mb-2">
-                      {stat.label}
-                    </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {stat.desc}
-                    </p>
+                  <div className="font-semibold text-sm text-gray-700 mb-2">
+  {stat.label}
+</div>
+
+                    <p className="text-base text-gray-600 leading-relaxed">
+  {stat.desc}
+</p>
+
                   </div>
 
                   {/* Progress Bar */}

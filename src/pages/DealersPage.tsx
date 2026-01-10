@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, Award, Search, Map, Star, Users, TrendingUp, CheckCircle, Globe, Target, Lightbulb, HelpCircle, Sparkles, MessageCircle, Download, Filter, Building2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Award, Search, Map, CheckCircle2,Star, Users, TrendingUp, CheckCircle, Globe, Target, Lightbulb, HelpCircle, Sparkles, MessageCircle, Download, Filter, Building2 } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { PageContainer } from '../components/layout/PageContainer';
 import { ModernSectionHeader } from '../components/design-system/ModernSectionHeader';
@@ -912,61 +912,64 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
                   <benefit.icon className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">{benefit.title}</h4>
+               <h4 className="text-base font-semibold text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">
+  {benefit.title}
+</h4>
+
                 <p className="text-sm text-gray-600">{benefit.desc}</p>
               </ModernCard>
             </motion.div>
           ))}
         </div>
 
-        {/* Requirements */}
-        <ModernCard variant="elevated" className="p-8">
-          <h3 className="text-trees-secondary mb-6">Dealer Eligibility</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-3">
-              <h5 className="font-semibold text-gray-800 mb-3">Business Requirements:</h5>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-trees-primary mt-1">✓</span>
-                  <span>GST-registered business</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-trees-primary mt-1">✓</span>
-                  <span>Minimum 500 sq. ft. showroom or storage space</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-trees-primary mt-1">✓</span>
-                  <span>Experience in plywood/timber preferred</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-trees-primary mt-1">✓</span>
-                  <span>Ability to maintain regular inventory.</span>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h5 className="font-semibold text-gray-800 mb-3">Benefits You’ll Receive</h5>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-trees-primary mt-1">✓</span>
-                  <span>Complete sample display kit (50+ samples)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-trees-primary mt-1">✓</span>
-                  <span>Marketing and branding support</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-trees-primary mt-1">✓</span>
-                  <span>Product training and technical guidance</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-trees-primary mt-1">✓</span>
-                  <span>Competitive pricing, incentives, and growth opportunities.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </ModernCard>
+       {/* Requirements */}
+<ModernCard variant="elevated" className="p-8">
+  <h3 className="text-trees-secondary mb-6">Dealer Eligibility</h3>
+
+  <div className="grid md:grid-cols-2 gap-6">
+    {/* Business Requirements */}
+    <div className="space-y-3">
+      <h5 className="font-semibold text-gray-800 mb-3">
+        Business Requirements:
+      </h5>
+
+      <ul className="space-y-2 text-sm text-gray-600">
+        {[
+          "GST-registered business",
+          "Minimum 500 sq. ft. showroom or storage space",
+          "Experience in plywood/timber preferred",
+          "Ability to maintain regular inventory",
+        ].map((item, idx) => (
+          <li key={idx} className="flex items-start gap-3">
+            <CheckCircle2 className="w-5 h-5 text-trees-primary mt-1 flex-shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Benefits */}
+    <div className="space-y-3">
+      <h5 className="font-semibold text-gray-800 mb-3">
+        Benefits You’ll Receive
+      </h5>
+
+      <ul className="space-y-2 text-sm text-gray-600">
+        {[
+          "Complete sample display kit (50+ samples)",
+          "Marketing and branding support",
+          "Product training and technical guidance",
+          "Competitive pricing, incentives, and growth opportunities",
+        ].map((item, idx) => (
+          <li key={idx} className="flex items-start gap-3">
+            <CheckCircle2 className="w-5 h-5 text-trees-primary mt-1 flex-shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</ModernCard>
 
         {/* CTA Buttons */}
         <ModernCard variant="elevated" className="p-12 text-center bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5">
@@ -1015,10 +1018,7 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
 
     {/* Dealer Network Statistics */}
     <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-        <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-      </div>
+      
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div

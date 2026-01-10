@@ -153,16 +153,27 @@ The Values That Guide Us
               
               <div className="space-y-4 text-gray-700">
                 <p>
-                  Today, our advanced facilities produce thousands of sheets every month — but our core values of trust, quality, and customer satisfaction remain unchanged. But our values remain the same:<br></br>
-✔  Uncompromised Quality<br></br>
-✔  Sustainable Sourcing<br></br>
-✔  Honest Guidance<br></br>
-✔  Customer-First Service<br></br>
+  Today, our advanced facilities produce thousands of sheets every month — but our core values of trust, quality, and customer satisfaction remain unchanged. But our values remain the same:
+</p>
 
-From kitchens and furniture to large-scale constructions, every sheet we deliver carries a promise of excellence.
- 
+<ul className="space-y-3 pt-2 text-gray-700 text-[15px] leading-relaxed">
+  {[
+    'Uncompromised Quality',
+    'Sustainable Sourcing',
+    'Honest Guidance',
+    'Customer-First Service',
+  ].map((item, idx) => (
+    <li key={idx} className="flex items-start gap-3">
+      <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
+      <span>{item}</span>
+    </li>
+  ))}
+</ul>
 
-                </p>
+<p className="pt-2">
+  From kitchens and furniture to large-scale constructions, every sheet we deliver carries a promise of excellence.
+</p>
+
                 
               </div>
 
@@ -881,28 +892,31 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
 
       {/* Sustainability */}
       <section className="section-padding bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1629517797107-598100ff06f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGZvcmVzdCUyMHRyZWVzfGVufDF8fHx8MTc2MjE3MDY4OHww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Sustainable Forestry"
-                  className="w-full h-[500px] object-cover"
-                />
-              </div>
-            </motion.div>
+  <div className="container mx-auto px-6">
+    <div className="grid lg:grid-cols-2 gap-16 items-start"> {/* align top */}
+      
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+      >
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[600px] lg:h-auto"> 
+          {/* Fixed height on mobile, auto on desktop */}
+          <ImageWithFallback
+            src="https://images.unsplash.com/photo-1629517797107-598100ff06f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGZvcmVzdCUyMHRyZWVzfGVufDF8fHx8MTc2MjE3MDY4OHww&ixlib=rb-4.1.0&q=80&w=1080"
+            alt="Sustainable Forestry"
+            className="w-full h-full object-cover rounded-3xl"
+          />
+        </div>
+      </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="space-y-6"
+      >
+
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-trees-primary/10 text-trees-primary font-semibold text-sm">
                 <Leaf className="w-4 h-4" />
                 <span>Sustainability</span>
@@ -951,55 +965,51 @@ From kitchens and furniture to large-scale constructions, every sheet we deliver
      
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+     <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
-              <Sparkles className="w-5 h-5" />
-              <span>Partner With Excellence</span>
-            </div>
-            
-            <h2 className="text-white mb-6">
-              Want to feel the Tree’s Plywood difference for yourself?
-            </h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Join thousands of happy customers who trust our plywood for their homes and projects.
- Quality you can feel, backed by 25+ years of experience.
+  <div className="container mx-auto px-6 relative z-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="max-w-4xl mx-auto"
+    >
+      <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
+        <Sparkles className="w-5 h-5" />
+        <span>Partner With Excellence</span>
+      </div>
+      
+      <h2 className="text-white mb-6">
+        Want to feel the Tree’s Plywood difference for yourself?
+      </h2>
+      <p className="text-xl text-white/90 mb-10 leading-relaxed">
+        Join thousands of happy customers who trust our plywood for their homes and projects.
+        Quality you can feel, backed by 25+ years of experience.
+      </p>
 
-            </p>
+      <div className="flex flex-wrap gap-4 justify-center">
+        <ModernButton
+          variant="light"
+          size="xl"
+          icon={<ArrowRight className="w-6 h-6" />}
+          onClick={() => onNavigate('products')}
+        >
+          Explore Products
+        </ModernButton>
+        <ModernButton
+          variant="outline"
+          size="xl"
+          icon={<Users className="w-6 h-6" />}
+          onClick={() => onNavigate('contact')}
+          className="border-white text-white hover:bg-white/20"
+        >
+          Contact Us
+        </ModernButton>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <ModernButton
-                variant="light"
-                size="xl"
-                icon={<ArrowRight className="w-6 h-6" />}
-                onClick={() => onNavigate('products')}
-              >
-                Explore Products
-              </ModernButton>
-              <ModernButton
-                variant="outline"
-                size="xl"
-                icon={<Users className="w-6 h-6" />}
-                onClick={() => onNavigate('contact')}
-                className="border-white text-white hover:bg-white/20"
-              >
-                Contact Us
-              </ModernButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

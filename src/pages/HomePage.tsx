@@ -289,7 +289,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             badge="Our Advantages"
             badgeIcon={Sparkles}
             title="Why Choose The Trees Plywood"
-            subtitle="At Tree’s Plywood, we deliver durable, sustainable, and high-quality plywood and doors that meet the various needs of our customers. With a focus on strength, innovation, and eco-friendly practices, we create products that last for generations while staying affordable and reliable.  From modern homes to large commercial projects, Tree’s Plywood combines certified quality with modern design needs."
+            subtitle="Tree’s Plywood delivers durable, sustainable plywood and doors built for strength, quality, and long-lasting performance. Designed for homes and commercial projects, our products combine certified quality with modern design needs at reliable prices."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -657,7 +657,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
           key={idx}
           className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300"
         >
-          <span className="text-5xl font-extrabold text-trees-primary mb-4 block">{item.count}</span>
+         <span className="text-6xl font-black tracking-tight text-trees-primary mb-4 block">
+  {item.count}
+</span>
+
           <p className="text-gray-700 font-medium">{item.label}</p>
         </div>
       ))}
@@ -757,52 +760,50 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+  {/* Circles background removed */}
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
-              <Sparkles className="w-5 h-5" />
-              <span>Ready to Build Something Strong?</span>
-            </div>
-            
-            <h2 className="text-white mb-6">
-              Let’s Create Spaces That Last Longer
-            </h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Talk to our team for Expert Guidance, Custom Solutions, and Plywood you can trust for any project — Big or Small.
-            </p>
+  <div className="container mx-auto px-6 relative z-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="max-w-4xl mx-auto"
+    >
+      <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
+        <Sparkles className="w-5 h-5" />
+        <span>Ready to Build Something Strong?</span>
+      </div>
+      
+      <h2 className="text-white mb-6">
+        Let’s Create Spaces That Last Longer
+      </h2>
+      <p className="text-xl text-white/90 mb-10 leading-relaxed">
+        Talk to our team for Expert Guidance, Custom Solutions, and Plywood you can trust for any project — Big or Small.
+      </p>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <ModernButton
-                variant="light"
-                size="xl"
-                icon={<ArrowRight className="w-6 h-6" />}
-                onClick={() => onNavigate('contact')}
-              >
-                Contact Us Today
-              </ModernButton>
-              <ModernButton
-                variant="outline"
-                size="xl"
-                icon={<MapPin className="w-6 h-6" />}
-                onClick={() => onNavigate('dealers')}
-                className="border-white text-white hover:bg-white/20"
-              >
-                Find Dealers
-              </ModernButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <div className="flex flex-wrap gap-4 justify-center">
+        <ModernButton
+          variant="light"
+          size="xl"
+          icon={<ArrowRight className="w-6 h-6" />}
+          onClick={() => onNavigate('contact')}
+        >
+          Contact Us Today
+        </ModernButton>
+        <ModernButton
+          variant="outline"
+          size="xl"
+          icon={<MapPin className="w-6 h-6" />}
+          onClick={() => onNavigate('dealers')}
+          className="border-white text-white hover:bg-white/20"
+        >
+          Find Dealers
+        </ModernButton>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* FAQ Section */}
       <section className="section-padding">

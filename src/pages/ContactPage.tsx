@@ -526,7 +526,7 @@ Trees Plywood Website`
   
 
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Personal & Business Information */}
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">Personal & Business Information</h3>
 
@@ -938,7 +938,7 @@ Trees Plywood Website`
 
               {/* Why Visit Us Card */}
               <ModernCard variant="elevated">
-                <div className="p-8">
+                <div className="p-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-trees-primary/10 rounded-full mb-6">
                     <Sparkles className="w-4 h-4 text-trees-primary" />
                     <span className="text-sm font-semibold text-trees-primary">Why Visit Us?</span>
@@ -1092,10 +1092,7 @@ Trees Plywood Website`
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+       
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -1104,7 +1101,7 @@ Trees Plywood Website`
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-6">
               <Sparkles className="w-5 h-5" />
               <span>Ready to Begin?</span>
             </div>

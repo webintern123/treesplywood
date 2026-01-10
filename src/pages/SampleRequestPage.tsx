@@ -47,14 +47,7 @@ const availableSamples: SampleProduct[] = [
     size: '6" × 6"',
     description: 'Premium 15-layer structural plywood with 25-year warranty'
   },
-  { 
-    id: '2', 
-    name: 'Ananta', 
-    type: 'Structural BWP', 
-    thickness: '19mm', 
-    size: '6" × 6"',
-    description: 'Built for heavy load-bearing and long-term strength.'
-  },
+ 
   { 
     id: '3', 
     name: 'Agni', 
@@ -79,14 +72,7 @@ const availableSamples: SampleProduct[] = [
     size: '6" × 6"',
     description: 'Smooth finish, premium quality, and a 30-year warranty.'
   },
-  { 
-    id: '6', 
-    name: 'Samrat', 
-    type: 'Premium BWP', 
-    thickness: '19mm', 
-    size: '6" × 6"',
-    description: 'Ideal for luxury furniture and long-lasting interiors.'
-  },
+ 
   { 
     id: '7', 
     name: 'Vajra', 
@@ -762,10 +748,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
 
       {/* Sample Statistics */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+       
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -891,11 +874,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
 
       {/* Newsletter Subscription for Sample Updates */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
-
+        
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
