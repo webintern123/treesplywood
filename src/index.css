@@ -6984,3 +6984,12 @@ input:focus, textarea:focus, select:focus {
   background-color: #16a34a; /* green */
   color: white;
 }
+
+/* 🔒 Disable all hover / transform effects for form card */
+.no-hover-transform,
+.no-hover-transform:hover,
+.no-hover-transform:focus-within,
+.no-hover-transform * {
+  transform: none !important;
+  scale: 1 !important;
+}

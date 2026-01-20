@@ -376,27 +376,50 @@ if (!personalValid || !enquiryValid || !extrasValid) {
   };
 
   // Contact information data
-  const contactInfo = [
+ const contactInfo = [
     { 
       icon: Phone, 
       title: 'Call Us', 
-      info: '+91 9091 744744', 
+      info: '+91 8712415760', 
       sub: 'We’re available Monday–Saturday, 9 AM to 6 PM.',
-      action: () => window.location.href = 'tel:+919091744744'
+      action: () => window.location.href = 'tel:+918712415760'
     },
     { 
       icon: MessageCircle, 
       title: 'WhatsApp', 
-      info: '+91 9091 744744', 
+      info: '+91 871415760', 
       sub: 'Quick chat support anytime.',
-      action: () => window.open('https://wa.me/919091744744', '_blank')
+      action: () => window.open('https://wa.me/918712415760', '_blank')
     },
     { 
       icon: Mail, 
       title: 'Email Us', 
       info: 'info@treesplywood.com', 
       sub: 'Reach out anytime — we offer 24/7 support.',
-      action: () => window.location.href = 'mailto:info@treesplywood.com'
+      action: () => {
+  const to = "info@treesplywood.com";
+  const subject = encodeURIComponent("Enquiry from Trees Plywood Website");
+  const body = encodeURIComponent(
+`Hello Team,
+
+I would like to know more about your products.
+
+Name:
+Email:
+Phone:
+City:
+Requirement:
+
+Thanks,
+Trees Plywood Website`
+  );
+
+  window.open(
+    `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
+    "_blank"
+  );
+}
+
     },
     { 
       icon: MapPin, 
@@ -440,7 +463,7 @@ if (!personalValid || !enquiryValid || !extrasValid) {
                 variant="light"
                 size="lg"
                 icon={<Phone className="w-5 h-5" />}
-                onClick={() => window.location.href = 'tel:+919091744744'}
+                onClick={() => window.location.href = 'tel:+918712415760'}
               >
                 Call Now
               </ModernButton>
@@ -450,7 +473,7 @@ if (!personalValid || !enquiryValid || !extrasValid) {
                 variant="outline-light"
                 size="lg"
                 icon={<MessageCircle className="w-5 h-5" />}
-                onClick={() => window.open('https://wa.me/919091744744', '_blank')}
+                onClick={() => window.open('https://wa.me/918712415760', '_blank')}
               >
                 WhatsApp
               </ModernButton>
@@ -521,7 +544,7 @@ if (!personalValid || !enquiryValid || !extrasValid) {
   
 
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Personal & Business Information */}
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">Personal & Business Information</h3>
 
@@ -933,7 +956,7 @@ if (!personalValid || !enquiryValid || !extrasValid) {
 
               {/* Why Visit Us Card */}
               <ModernCard variant="elevated">
-                <div className="p-8">
+                <div className="p-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-trees-primary/10 rounded-full mb-6">
                     <Sparkles className="w-4 h-4 text-trees-primary" />
                     <span className="text-sm font-semibold text-trees-primary">Why Visit Us?</span>
@@ -1087,10 +1110,7 @@ if (!personalValid || !enquiryValid || !extrasValid) {
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+       
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -1099,7 +1119,7 @@ if (!personalValid || !enquiryValid || !extrasValid) {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-6">
               <Sparkles className="w-5 h-5" />
               <span>Ready to Begin?</span>
             </div>

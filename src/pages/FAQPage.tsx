@@ -22,6 +22,15 @@ import {
 } from '../components/ui/breadcrumb';
 import { toast } from 'sonner';
 
+function FAQAnswer({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+      {children}
+    </div>
+  );
+}
+
+
 interface FAQPageProps {
   onNavigate: (page: string) => void;
 }
@@ -40,18 +49,18 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
     { id: 'sustainability', name: 'Sustainability', icon: Leaf },
   ];
 
-  const faqs = [
+ const faqs = [
   // PRODUCTS & SPECIFICATIONS
   {
     category: 'products',
     question: 'What is the difference between BWP and BWR plywood?',
     answer: (
-      <div className="space-y-1">
-        <p>● BWP is fully waterproof and can handle constant exposure to water.</p>
-        <p>● BWR handles moisture well but isn’t fully waterproof.</p>
-        <p>● Use BWP for bathrooms, kitchens, outdoor, or coastal areas.</p>
-        <p>● Use BWR for regular home interiors.</p>
-      </div>
+      <FAQAnswer>
+        ● BWP is fully waterproof and can handle constant exposure to water.<br/>
+        ● BWR handles moisture well but isn’t fully waterproof.<br/>
+        ● Use BWP for bathrooms, kitchens, outdoor, or coastal areas.<br/>
+        ● Use BWR for regular home interiors.
+      </FAQAnswer>
     ),
     popular: true,
   },
@@ -59,9 +68,9 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
     category: 'products',
     question: 'What thickness options do you offer?',
     answer: (
-      <p>
+      <FAQAnswer>
         We provide plywood from 4mm to 25mm, depending on the grade. For special sizes, our team can guide you.
-      </p>
+      </FAQAnswer>
     ),
     popular: true,
   },
@@ -69,15 +78,15 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
     category: 'products',
     question: 'What are your standard plywood sizes?',
     answer: (
-      <div className="space-y-1">
-        <p>Common sizes:</p>
-        <p>● 8x4 ft</p>
-        <p>● 7x4 ft</p>
-        <p>● 7x3 ft</p>
-        <p>● 6x4 ft</p>
-        <p>● 6x3 ft</p>
-        <p>Custom sizes are available for bulk or project orders.</p>
-      </div>
+      <FAQAnswer>
+        Common sizes:<br/>
+        ● 8x4 ft<br/>
+        ● 7x4 ft<br/>
+        ● 7x3 ft<br/>
+        ● 6x4 ft<br/>
+        ● 6x3 ft<br/>
+        Custom sizes are available for bulk or project orders.
+      </FAQAnswer>
     ),
     popular: false,
   },
@@ -85,23 +94,21 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
     category: 'products',
     question: 'Are your products certified?',
     answer: (
-      <div className="space-y-1">
-        <p>Yes, Our sheets follow:</p>
-        <p>● ISI Standards</p>
-        <p>● ISO 9001:2015</p>
-        <p>● FSC Certified timber</p>
-        <p>● E0/E1 low-emission standards</p>
-        <p>Certificates are available on request.</p>
-      </div>
+      <FAQAnswer>
+        Yes, Our sheets follow:<br/>
+        ● ISI Standards<br/>
+        ● ISO 9001:2015<br/>
+        ● FSC Certified timber<br/>
+        ● E0/E1 low-emission standards<br/>
+        Certificates are available on request.
+      </FAQAnswer>
     ),
     popular: true,
   },
   {
     category: 'products',
     question: 'Is your plywood termite and borer resistant?',
-    answer: (
-      <p>Yes. Every sheet is treated to protect against termites and borers, and this is covered under warranty.</p>
-    ),
+    answer: <FAQAnswer>Yes. Every sheet is treated to protect against termites and borers, and this is covered under warranty.</FAQAnswer>,
     popular: false,
   },
 
@@ -109,43 +116,31 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
   {
     category: 'ordering',
     question: 'How can I get a price quote?',
-    answer: (
-      <p>
-        You can call us, email us, or fill out the enquiry form. Share your product type, thickness, quantity, and location for an accurate quote.
-      </p>
-    ),
+    answer: <FAQAnswer>You can call us, email us, or fill out the enquiry form. Share your product type, thickness, quantity, and location for an accurate quote.</FAQAnswer>,
     popular: true,
   },
   {
     category: 'ordering',
     question: 'What is the minimum order quantity?',
-    answer: (
-      <p>For most grades, the minimum is 10–20 sheets. Custom orders may require a higher minimum.</p>
-    ),
+    answer: <FAQAnswer>For most grades, the minimum is 10–20 sheets. Custom orders may require a higher minimum.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'ordering',
     question: 'Do you offer discounts for bulk orders?',
-    answer: (
-      <p>Yes, large orders and long-term projects get special pricing. Speak to our sales team for details.</p>
-    ),
+    answer: <FAQAnswer>Yes, large orders and long-term projects get special pricing. Speak to our sales team for details.</FAQAnswer>,
     popular: true,
   },
   {
     category: 'ordering',
     question: 'What payment methods do you accept?',
-    answer: (
-      <p>We accept bank transfers, cheques, and digital payments. Credit terms may be offered to registered partners.</p>
-    ),
+    answer: <FAQAnswer>We accept bank transfers, cheques, and digital payments. Credit terms may be offered to registered partners.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'ordering',
     question: 'Can I get samples before placing an order?',
-    answer: (
-      <p>Yes! We offer free samples so you can check the quality before buying.</p>
-    ),
+    answer: <FAQAnswer>Yes! We offer free samples so you can check the quality before buying.</FAQAnswer>,
     popular: true,
   },
 
@@ -153,42 +148,36 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
   {
     category: 'shipping',
     question: 'How long does delivery take?',
-    answer: (
-      <div className="space-y-1">
-        <p>● Within city: 2–3 days</p>
-        <p>● Within state: 5–7 days</p>
-        <p>● Other states: 7–14 days</p>
-        <p>● Custom products may take a bit longer.</p>
-      </div>
-    ),
+    answer: <FAQAnswer>
+      ● Within city: 2–3 days<br/>
+      ● Within state: 5–7 days<br/>
+      ● Other states: 7–14 days<br/>
+      ● Custom products may take a bit longer.
+    </FAQAnswer>,
     popular: true,
   },
   {
     category: 'shipping',
     question: 'Do you deliver across India?',
-    answer: <p>Yes, we ship to all major cities and towns.</p>,
+    answer: <FAQAnswer>Yes, we ship to all major cities and towns.</FAQAnswer>,
     popular: true,
   },
   {
     category: 'shipping',
     question: 'How are shipping charges calculated?',
-    answer: (
-      <p>Charges depend on your location, quantity, and distance. Bulk orders may get free or discounted shipping.</p>
-    ),
+    answer: <FAQAnswer>Charges depend on your location, quantity, and distance. Bulk orders may get free or discounted shipping.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'shipping',
     question: 'How do you pack plywood for delivery?',
-    answer: (
-      <p>Sheets are wrapped, strapped, and packed to protect against dust, moisture, and handling damage.</p>
-    ),
+    answer: <FAQAnswer>Sheets are wrapped, strapped, and packed to protect against dust, moisture, and handling damage.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'shipping',
     question: 'Can I track my order?',
-    answer: <p>Yes. Once dispatched, you’ll receive tracking details via SMS or email.</p>,
+    answer: <FAQAnswer>Yes. Once dispatched, you’ll receive tracking details via SMS or email.</FAQAnswer>,
     popular: true,
   },
 
@@ -196,44 +185,34 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
   {
     category: 'installation',
     question: 'How should plywood be stored before installation?',
-    answer: (
-      <p>Keep sheets flat, away from sunlight and moisture. Store them in a dry, ventilated area.</p>
-    ),
+    answer: <FAQAnswer>Keep sheets flat, away from sunlight and moisture. Store them in a dry, ventilated area.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'installation',
     question: 'Do I need to add any treatment before using plywood?',
-    answer: (
-      <p>Our plywood is already treated. For outdoor use, seal the edges and surface for extra protection.</p>
-    ),
+    answer: <FAQAnswer>Our plywood is already treated. For outdoor use, seal the edges and surface for extra protection.</FAQAnswer>,
     popular: true,
   },
   {
     category: 'installation',
     question: 'Which adhesive should I use?',
-    answer: (
-      <div className="space-y-1">
-        <p>● Interiors: PVA/wood glue</p>
-        <p>● Wet areas: Waterproof adhesive (PU / epoxy)</p>
-      </div>
-    ),
+    answer: <FAQAnswer>
+      ● Interiors: PVA/wood glue<br/>
+      ● Wet areas: Waterproof adhesive (PU / epoxy)
+    </FAQAnswer>,
     popular: true,
   },
   {
     category: 'installation',
     question: 'Can I use plywood outdoors?',
-    answer: (
-      <p>Yes, BWP and Marine Grade are suitable if sealed properly. MR grade is not recommended outdoors.</p>
-    ),
+    answer: <FAQAnswer>Yes, BWP and Marine Grade are suitable if sealed properly. MR grade is not recommended outdoors.</FAQAnswer>,
     popular: true,
   },
   {
     category: 'installation',
     question: 'What tools are best for cutting plywood?',
-    answer: (
-      <p>A circular saw, table saw, or jigsaw with a fine blade gives a clean cut. Use a straight guide for accuracy.</p>
-    ),
+    answer: <FAQAnswer>A circular saw, table saw, or jigsaw with a fine blade gives a clean cut. Use a straight guide for accuracy.</FAQAnswer>,
     popular: false,
   },
 
@@ -241,55 +220,45 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
   {
     category: 'warranty',
     question: 'What does the warranty cover?',
-    answer: (
-      <div className="space-y-1">
-        <p>Manufacturing issues like:</p>
-        <p>● Delamination</p>
-        <p>● Core gaps</p>
-        <p>● Bonding failure</p>
-        <p>● Thickness variations</p>
-        <p>● Duration varies by product (10 years to lifetime).</p>
-      </div>
-    ),
+    answer: <FAQAnswer>
+      Manufacturing issues like:<br/>
+      ● Delamination<br/>
+      ● Core gaps<br/>
+      ● Bonding failure<br/>
+      ● Thickness variations<br/>
+      ● Duration varies by product (10 years to lifetime).
+    </FAQAnswer>,
     popular: true,
   },
   {
     category: 'warranty',
     question: 'How do I submit a warranty claim?',
-    answer: (
-      <p>Share your invoice, photos, and product details with our support team. We will guide you through the process.</p>
-    ),
+    answer: <FAQAnswer>Share your invoice, photos, and product details with our support team. We will guide you through the process.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'warranty',
     question: 'What is not covered under warranty?',
-    answer: (
-      <div className="space-y-1">
-        <p>● Incorrect installation</p>
-        <p>● Water damage on MR-grade sheets</p>
-        <p>● Improper storage</p>
-        <p>● Physical damage</p>
-        <p>● Natural variations in veneer</p>
-        <p>● Fire or floods</p>
-      </div>
-    ),
+    answer: <FAQAnswer>
+      ● Incorrect installation<br/>
+      ● Water damage on MR-grade sheets<br/>
+      ● Improper storage<br/>
+      ● Physical damage<br/>
+      ● Natural variations in veneer<br/>
+      ● Fire or floods
+    </FAQAnswer>,
     popular: true,
   },
   {
     category: 'warranty',
     question: 'Can I return plywood?',
-    answer: (
-      <p>Returns are accepted only for wrong or defective products. Custom sizes cannot be returned.</p>
-    ),
+    answer: <FAQAnswer>Returns are accepted only for wrong or defective products. Custom sizes cannot be returned.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'warranty',
     question: 'Is the warranty transferable?',
-    answer: (
-      <p>Yes. It can be transferred to the next property owner with receipts.</p>
-    ),
+    answer: <FAQAnswer>Yes. It can be transferred to the next property owner with receipts.</FAQAnswer>,
     popular: false,
   },
 
@@ -297,48 +266,38 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
   {
     category: 'sustainability',
     question: 'Are your products eco-friendly?',
-    answer: (
-      <p>Yes. We use FSC-certified wood and low-emission glue to ensure safe indoor air quality.</p>
-    ),
+    answer: <FAQAnswer>Yes. We use FSC-certified wood and low-emission glue to ensure safe indoor air quality.</FAQAnswer>,
     popular: true,
   },
   {
     category: 'sustainability',
     question: 'What does FSC certification mean?',
-    answer: (
-      <p>It guarantees that the timber comes from forests managed responsibly and ethically.</p>
-    ),
+    answer: <FAQAnswer>It guarantees that the timber comes from forests managed responsibly and ethically.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'sustainability',
     question: 'What are E0 and E1 emission standards?',
-    answer: (
-      <p>These standards measure formaldehyde emissions. E0 is the safest level for indoor use.</p>
-    ),
+    answer: <FAQAnswer>These standards measure formaldehyde emissions. E0 is the safest level for indoor use.</FAQAnswer>,
     popular: true,
   },
   {
     category: 'sustainability',
     question: 'Can plywood be recycled?',
-    answer: (
-      <p>Yes. It can be reused for furniture, DIY projects, or repurposed for other wood products.</p>
-    ),
+    answer: <FAQAnswer>Yes. It can be reused for furniture, DIY projects, or repurposed for other wood products.</FAQAnswer>,
     popular: false,
   },
   {
     category: 'sustainability',
     question: 'Does Tree’s Plywood follow green practices?',
-    answer: (
-      <div className="space-y-1">
-        <p>Yes. Our initiatives include:</p>
-        <p>● Water recycling</p>
-        <p>● Solar energy usage</p>
-        <p>● Waste management</p>
-        <p>● Low-emission adhesives</p>
-        <p>● Energy-efficient machinery</p>
-      </div>
-    ),
+    answer: <FAQAnswer>
+      Yes. Our initiatives include:<br/>
+      ● Water recycling<br/>
+      ● Solar energy usage<br/>
+      ● Waste management<br/>
+      ● Low-emission adhesives<br/>
+      ● Energy-efficient machinery
+    </FAQAnswer>,
     popular: true,
   },
 ];
@@ -610,9 +569,10 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="text-trees-secondary mb-3">{faq.question}</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+                     <div className="text-xs text-gray-600 leading-relaxed">
   {faq.answer}
-</p>
+</div>
+
 
                     </div>
                   </div>
@@ -726,9 +686,15 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                           </span>
                         </div>
                       </AccordionTrigger>
-                      <AccordionContent className="text-gray-700 leading-relaxed pb-5 pt-2">
-                        {faq.answer}
-                      </AccordionContent>
+                  <AccordionContent className="pb-5 pt-2">
+  <div className="text-xs text-gray-600 leading-relaxed [&_*]:text-xs [&_*]:text-gray-600 [&_*]:leading-relaxed">
+  {faq.answer}
+</div>
+
+</AccordionContent>
+
+
+
                     </AccordionItem>
                   ))}
                 </Accordion>
@@ -754,29 +720,43 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                 icon: Phone,
                 title: 'Call Us',
                 desc: 'Have a quick question? Speak directly with our team.',
-                info: '+91 9091744744',
+                info: '+91 8712415760',
                 action: 'Call Now',
                 color: 'from-blue-500 to-blue-600',
-                onClick: () => window.location.href = 'tel:+919091744744'
+                onClick: () => window.location.href = 'tel:+91 8712415760'
               },
-              {
-                icon: Mail,
-                title: 'Email Us',
-                desc: 'For detailed queries, documents, or support requests.',
-                info: 'support@thetreesplywood.com',
-                action: 'Send Email',
-                color: 'from-green-500 to-green-600',
-                onClick: () => window.location.href = 'mailto:support@thetreesplywood.com'
-              },
-              {
-                icon: MessageCircle,
-                title: 'Chat With Us',
-                desc: 'Need a fast reply? Our chat support is open anytime.',
-                info: 'Available 24/7',
-                action: 'Start Chat',
-                color: 'from-purple-500 to-purple-600',
-                onClick: () => toast.info('Live chat feature coming soon!')
-              },
+             {
+  icon: Mail,
+  title: 'Email Us',
+  desc: 'For detailed queries, documents, or support requests.',
+  info: 'support@thetreesplywood.com',
+  action: 'Send Email',
+  color: 'from-green-500 to-green-600'
+},
+
+  
+
+             {
+  icon: MessageCircle,
+  title: 'Chat With Us',
+  desc: 'Need a fast reply? Our chat support is open anytime.',
+  info: 'Available 24/7',
+  action: 'Start Chat',
+  color: 'from-purple-500 to-purple-600',
+  onClick: () => {
+    const phone = '918712415760'; // ✅ ONLY numbers with country code
+   const message = encodeURIComponent(`
+Hello 👋
+I need help regarding plywood products.
+
+Name:
+Email:
+Mobile Number:
+Requirement:
+  `);
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  }
+}
             ].map((channel, idx) => (
               <motion.div
                 key={idx}
@@ -794,16 +774,34 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                     {channel.desc}
                   </p>
                   <p className="text-trees-primary mb-6 text-sm font-semibold">{channel.info}</p>
-                  <ModernButton 
-                    variant="outline" 
-                    size="md"
-                    fullWidth
-                    icon={<channel.icon className="w-4 h-4" />}
-                    iconPosition="left"
-                    onClick={channel.onClick}
-                  >
-                    {channel.action}
-                  </ModernButton>
+                <ModernButton
+  variant="outline"
+  size="md"
+  fullWidth
+  icon={<channel.icon className="w-4 h-4" />}
+  iconPosition="left"
+  type="button"
+  onClick={() => {
+    if (channel.title === 'Email Us') {
+      const to = 'support@thetreesplywood.com';
+      const subject = encodeURIComponent('Support Request - The Trees Plywood');
+      const body = encodeURIComponent(`Hello Team,
+
+I need help regarding:`);
+
+      window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
+        '_blank'
+      );
+    } else {
+      channel.onClick?.();
+    }
+  }}
+>
+  {channel.action}
+</ModernButton>
+
+
                 </ModernCard>
               </motion.div>
             ))}
@@ -867,8 +865,12 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${resource.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                     <resource.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">{resource.title}</h4>
-                  <p className="text-sm text-gray-600 mb-4">{resource.desc}</p>
+                  <h4 className="text-base font-semibold text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">
+  {resource.title}
+</h4>
+
+                <p className="text-base text-gray-600 mb-4">{resource.desc}</p>
+
                   <div className="flex items-center text-trees-primary text-sm group-hover:translate-x-1 transition-transform">
                     Learn More <ArrowRight className="w-4 h-4 ml-1" />
                   </div>
@@ -939,10 +941,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
 
       {/* Still Need Help CTA */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+       
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div

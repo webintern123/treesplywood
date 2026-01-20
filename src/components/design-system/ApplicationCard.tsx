@@ -60,11 +60,12 @@ export function ApplicationCard({
           </motion.div>
         )}
 
-        {/* Title Overlay on Image */}
+       {/* Title Overlay on Image */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <h3 className="text-white font-semibold">{title}</h3>
         </div>
       </div>
+
 
       {/* Content Section */}
       <div className="p-6 flex-1 flex flex-col bg-neutral-50">
@@ -74,16 +75,21 @@ export function ApplicationCard({
         </p>
 
         {/* Badges */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {badges.map((badge, index) => (
-            <span
-              key={index}
-              className="inline-block px-3 py-1 rounded-md bg-amber-50 text-trees-primary text-xs border border-amber-100"
-            >
-              {badge}
-            </span>
-          ))}
-        </div>
+<div className="flex flex-col gap-2 mb-6">
+  {badges.map((badge, index) => (
+    <span
+      key={index}
+      className="inline-block px-3 py-1 rounded-md 
+bg-gray-50 text-gray-600 text-xs 
+border border-gray-200 w-fit"
+
+    >
+      {badge}
+    </span>
+  ))}
+</div>
+
+
 
         {/* Learn More Button */}
         <motion.button
@@ -92,7 +98,7 @@ export function ApplicationCard({
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <span>Learn More</span>
+          <span>Know More</span>
           <motion.div
             animate={{
               x: isHovered ? 5 : 0,

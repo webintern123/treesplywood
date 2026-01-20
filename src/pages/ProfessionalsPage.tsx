@@ -130,7 +130,17 @@ export default function ProfessionalsPage({ onNavigate }: ProfessionalsPageProps
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
     >
-      <AdvancedCard variant="glass" hoverEffect="3d" className="h-full p-6">
+     <AdvancedCard
+  variant="glass"
+  hoverEffect="3d"
+  className="h-full p-6
+    bg-white/80
+    backdrop-blur-xl
+    border border-gray-200
+    shadow-md hover:shadow-xl
+    transition-shadow"
+>
+
         <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A0522C] to-[#432011] flex items-center justify-center mb-4">
           <benefit.icon className="w-7 h-7 text-white" />
         </div>
@@ -347,10 +357,7 @@ export default function ProfessionalsPage({ onNavigate }: ProfessionalsPageProps
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+        
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div

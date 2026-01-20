@@ -153,13 +153,14 @@ export function PageHero({
             {/* Subtitle */}
             {subtitle && (
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-white/95 text-xl md:text-2xl mb-4"
-              >
-                {subtitle}
-              </motion.p>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.6 }}
+  className="text-white/95 text-xl md:text-2xl mb-4 font-bold italic"
+>
+  {subtitle}
+</motion.p>
+
             )}
 
             {/* Description */}

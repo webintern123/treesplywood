@@ -1,7 +1,7 @@
 import { 
-  ArrowRight, Leaf, Sparkles, Award, Hammer, Ship, Building2, Home, Sofa, 
-  Image as ImageIcon, Shield, CheckCircle2, Layers, TestTube, PackageCheck, 
-  Truck, Trophy, Star, TrendingUp, Mail, Play, BookOpen, ArrowUpRight, 
+  ArrowRight, Leaf, Sparkles, Award, Hammer, Ship, Building2, Home, Sofa, ShieldCheck,BadgeCheck,
+  Image as ImageIcon, Shield, CheckCircle2, Layers, TestTube, PackageCheck,  SlidersHorizontal,
+  Truck, Trophy, Star, TrendingUp, Mail, Play, BookOpen, ArrowUpRight, Gem,
   MapPin, Calculator, Download, HelpCircle, FileText, Package, ChevronRight,
   Factory, Zap, Users, Globe, Plus, Minus,Lightbulb,Palette,LifeBuoy, Headphones
 } from 'lucide-react';
@@ -162,7 +162,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           icon={<ArrowRight className="w-6 h-6" />}
           onClick={() => onNavigate('products')}
         >
-          Explore Products
+         Explore Our Collections
         </ModernButton>
       </MagneticButton>
       <MagneticButton strength={0.2}>
@@ -172,7 +172,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           icon={<Calculator className="w-6 h-6" />}
           onClick={() => onNavigate('calculator')}
         >
-          Calculate Needs
+          Calculate Our Requirements
         </ModernButton>
       </MagneticButton>
     </div>
@@ -212,19 +212,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
-  <div className="container mx-auto px-6">
-    <AnimatedStats
-      stats={[
-        { value: '25+', label: 'Years Expertise', icon: Award },
-        { value: '500+', label: 'Dealer Partners Across India', icon: Users },
-        { value: '10,000+', label: 'Homes & Projects Delivered with Trust.', icon: Trophy },
-      ]}
-    />
-  </div>
-</section>
+      
 {/* Nature-Strength / Layered Features Section */}
-<section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+ <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+
+
+
   <div className="container mx-auto px-6">
     <ModernSectionHeader
       badge="Nature-Strength, Industry-Tested"
@@ -280,7 +273,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     </div>
   </div>
 </section>
-
+<br></br>
 
       {/* Why Choose Us Section */}
       <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
@@ -289,48 +282,49 @@ export function HomePage({ onNavigate }: HomePageProps) {
             badge="Our Advantages"
             badgeIcon={Sparkles}
             title="Why Choose The Trees Plywood"
-            subtitle="At Tree’s Plywood, we deliver durable, sustainable, and high-quality plywood and doors that meet the various needs of our customers. With a focus on strength, innovation, and eco-friendly practices, we create products that last for generations while staying affordable and reliable.  From modern homes to large commercial projects, Tree’s Plywood combines certified quality with modern design needs."
+            subtitle="Tree’s Plywood delivers durable, sustainable plywood and doors built for strength, quality, and long-lasting performance. Designed for homes and commercial projects, our products combine certified quality with modern design needs at reliable prices."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                icon: Shield,
-                title: 'Guaranteed Quality & Support',
-                description: 'We stand by our products with repair and replacement assurance.',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                icon: Award,
-                title: 'IS:10701 Structural Grade Certified',
-                description: 'Trusted by 700+ architects and builders for superior load-bearing strength.',
-                color: 'from-amber-500 to-orange-600'
-              },
-              {
-                icon: Leaf,
-                title: 'Made for Your Needs',
-                description: 'Customized solutions for homeowners, designers, and contractors.',
-                color: 'from-green-500 to-emerald-600'
-              },
-              {
-                icon: Trophy,
-                title: 'Affordable. Reliable. Long-Lasting.',
-                description: 'High performance without the high price',
-                color: 'from-purple-500 to-purple-600'
-              },
-              {
-                icon: Layers,
-                title: 'Tested & Certified Strength',
-                description: ' Each sheet goes through rigorous quality checks for durability',
-                color: 'from-red-500 to-pink-600'
-              },
-              {
-                icon: Factory,
-                title: 'Precision Cutting & On-Time Delivery',
-                description: 'Ready-to-use panels that save you time on every project',
-                color: 'from-indigo-500 to-blue-600'
-              },
-            ].map((feature, idx) => (
+  {
+    icon: ShieldCheck, // better than Shield
+    title: 'Guaranteed Quality & Support',
+    description: 'We stand by our products with repair and replacement assurance.',
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
+    icon: BadgeCheck, // stronger certification signal than Award
+    title: 'IS:10701 Structural Grade Certified',
+    description: 'Trusted by 700+ architects and builders for superior load-bearing strength.',
+    color: 'from-amber-500 to-orange-600'
+  },
+  {
+    icon: SlidersHorizontal, // customization / tailored solutions
+    title: 'Made for Your Needs',
+    description: 'Customized solutions for homeowners, designers, and contractors.',
+    color: 'from-green-500 to-emerald-600'
+  },
+  {
+    icon: Gem, // premium + value perception
+    title: 'Affordable. Reliable. Long-Lasting.',
+    description: 'High performance without the high price',
+    color: 'from-purple-500 to-purple-600'
+  },
+  {
+    icon: CheckCircle2, // testing + verification clarity
+    title: 'Tested & Certified Strength',
+    description: 'Each sheet goes through rigorous quality checks for durability',
+    color: 'from-red-500 to-pink-600'
+  },
+  {
+    icon: Truck, // delivery + manufacturing relevance
+    title: 'Precision Cutting & On-Time Delivery',
+    description: 'Ready-to-use panels that save you time on every project',
+    color: 'from-indigo-500 to-blue-600'
+  },
+]
+.map((feature, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
@@ -400,7 +394,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       title: 'Ananta',
       subtitle: 'Endless Strength',
-      desc: 'Built for high-load applications with zero core gaps',
+      desc: 'Built for extreme conditions & long-term durability.',
       features: ['100% BWP / Marine Grade', 'IS:10701 Structural Certified', 'Anti-Termite & Anti-Fungal Protection'],
       badge: 'Premium',
       img: 'https://images.unsplash.com/photo-1554230253-017daba2b631?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwcGx5d29vZCUyMHdvb2QlMjB0ZXh0dXJlfGVufDF8fHx8MTc2MTk5MjIxNXww&ixlib=rb-4.1.0&q=80&w=1080',
@@ -446,7 +440,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           icon={<ChevronRight className="w-5 h-5" />}
           onClick={() => onNavigate('products')}
         >
-          View Details
+            Explore Plywood 
         </ModernButton>
       </div>
     </ModernCard>
@@ -538,9 +532,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
 <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
   <div className="container mx-auto px-6">
     <ModernSectionHeader
-      badge="Our Approach"
+    
       badgeIcon={Lightbulb}
-      title="From Concept to Completion"
+      title="Our Approach"
       subtitle="From the very first to the final delivery, we ensure every step is handled with care and attention."
     />
 
@@ -657,7 +651,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
           key={idx}
           className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300"
         >
-          <span className="text-5xl font-extrabold text-trees-primary mb-4 block">{item.count}</span>
+        <span className="text-4xl font-bold font-black tracking-tight text-trees-primary mb-4 block">
+  {item.count}
+</span>
+
+
           <p className="text-gray-700 font-medium">{item.label}</p>
         </div>
       ))}
@@ -687,6 +685,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
+      {/* Applications - Using ApplicationCard Component */}
       {/* Applications - Using ApplicationCard Component */}
       <section className="section-padding">
         <div className="container mx-auto px-6">
@@ -757,52 +756,57 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+  {/* Circles background removed */}
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
-              <Sparkles className="w-5 h-5" />
-              <span>Ready to Build Something Strong?</span>
-            </div>
-            
-            <h2 className="text-white mb-6">
-              Let’s Create Spaces That Last Longer
-            </h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Talk to our team for Expert Guidance, Custom Solutions, and Plywood you can trust for any project — Big or Small.
-            </p>
+  <div className="container mx-auto px-6 relative z-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="max-w-4xl mx-auto"
+    >
+      <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
+        <Sparkles className="w-5 h-5" />
+        <span>Ready to Build Something Strong?</span>
+      </div>
+      
+      <h2 className="text-white mb-6">
+        Let’s Create Spaces That Last Longer
+      </h2>
+      <p className="text-xl text-white/90 mb-10 leading-relaxed">
+        Talk to our team for Expert Guidance, Custom Solutions, and Plywood you can trust for any project — Big or Small.
+      </p>
+     <p
+  className="text-base text-white/80 mb-10 cursor-pointer hover:text-white transition"
+  onClick={() => onNavigate('sample-request')}
+>
+  Need help choosing? <span className="underline font-medium">Request a sample.</span>
+</p>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <ModernButton
-                variant="light"
-                size="xl"
-                icon={<ArrowRight className="w-6 h-6" />}
-                onClick={() => onNavigate('contact')}
-              >
-                Contact Us Today
-              </ModernButton>
-              <ModernButton
-                variant="outline"
-                size="xl"
-                icon={<MapPin className="w-6 h-6" />}
-                onClick={() => onNavigate('dealers')}
-                className="border-white text-white hover:bg-white/20"
-              >
-                Find Dealers
-              </ModernButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
+      <div className="flex flex-wrap gap-4 justify-center">
+        <ModernButton
+          variant="light"
+          size="xl"
+          icon={<ArrowRight className="w-6 h-6" />}
+          onClick={() => onNavigate('contact')}
+        >
+          Contact Us
+        </ModernButton>
+        <ModernButton
+          variant="outline"
+          size="xl"
+          icon={<MapPin className="w-6 h-6" />}
+          onClick={() => onNavigate('dealers')}
+          className="border-white text-white hover:bg-white/20"
+        >
+          Find a Dealer Near You
+        </ModernButton>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* FAQ Section */}
       <section className="section-padding">
@@ -819,13 +823,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {
   q: "Are Your Products Suitable For Commercial & Industrial Spaces?",
   a: `Yes! Our structural-grade products like Bhima, Agni, and Vajra are designed for:
-
 • Offices
 • Retail showrooms
 • Hotels
 • Industrial furniture
 • High-traffic public spaces
-
 They offer greater load-bearing capacity, safety, and durability.`
 },
 
@@ -932,9 +934,10 @@ For large projects, we can connect you with trained carpenters and certified ins
                   className="overflow-hidden"
                 >
                   <div className="px-6 pb-6 pl-20">
-                    <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-                         {faq.a}
-                     </p>
+                    <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+  {faq.a}
+</p>
+
 
                   </div>
                 </motion.div>
@@ -997,7 +1000,7 @@ For large projects, we can connect you with trained carpenters and certified ins
             </form>
 
             <p className="text-gray-400 text-sm mt-6">
-             We respect your privacy. Unsubscribe any time. By subscribing, you agree to our{' '}
+             We respect your privacy. Unsubscribe any time. By subscribing, you agree to our {' '}
               <button
                 onClick={() => onNavigate('privacy')}
                 className="text-white hover:underline"

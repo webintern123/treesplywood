@@ -214,137 +214,138 @@ const filteredProducts =
 
         
       {/* Products Grid */}
-            <section className="py-12 bg-gray-50">
-              <div className="container mx-auto px-6">
-                {filteredProducts.length === 0 ? (
-                  <div className="text-center py-20">
-                    <Package className="w-16 h-16 mx-auto text-gray-300 mb-4" />
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      No Products Found
-                    </h3>
-                    <p className="text-gray-600">Try adjusting your filters</p>
-                  </div>
-                ) : (
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-                    {filteredProducts.map((product, idx) => (
-                      <motion.div
-                        key={product.id}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.08 }}
-                      >
-                        <ModernCard
-                          variant="elevated"
-                          hoverable
-                          onClick={() =>
-                            onProductSelect
-                              ? onProductSelect(product.id)
-                              : onNavigate(`product-detail?id=${product.id}`)
-                          }
-                          className="flex flex-col h-full"
-                        >
-                          {/* ================= IMAGE ================= */}
-                          <div className="relative aspect-[4/3] rounded-t-2xl overflow-hidden group">
-                            <ImageWithFallback
-                              src={product.image}
-                              alt={product.name}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
+      <section className="section-padding bg-gray-50">
+        <div className="container mx-auto px-6">
+          {filteredProducts.length === 0 ? (
+            <div className="text-center py-20">
+              <Package className="w-16 h-16 mx-auto text-gray-300 mb-4" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Products Found</h3>
+              <p className="text-gray-600">Try adjusting your filters</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProducts.map((product, idx) => (
+               <motion.div
+  key={product.id}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: idx * 0.1 }}
+  className=" flex items-center justify-center snap-start"
+>
+  <ModernCard
+    variant="elevated"
+    hoverable
+   className="w-full max-w-sm mx-auto"
 
-                            {/* DARK GRADIENT */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-                            {/* BADGE */}
-                            {product.badge && (
-                              <div className="absolute top-4 right-4 z-10">
-                                <span className="px-4 py-1.5 rounded-full bg-trees-primary text-white text-sm font-bold shadow-lg flex items-center gap-1.5">
-                                  <Star className="w-4 h-4" />
-                                  {product.badge}
-                                </span>
-                              </div>
-                            )}
+    onClick={() =>
+      onProductSelect
+        ? onProductSelect(product.id)
+        : onNavigate(`product-detail?id=${product.id}`)
+    }
+  >
+    {/* Product Image */}
+    <div className="relative h-56 rounded-t-2xl overflow-hidden group">
 
-                            {/* WHITE TEXT ON IMAGE */}
-                            <div className="absolute bottom-4 left-4 right-4 z-10">
-                              <h3 className="text-lg font-semibold text-white leading-snug line-clamp-2">
-                                {product.name}
-                              </h3>
-                              <p className="text-white/90 text-sm mt-1 line-clamp-2">
-                                {product.tagline}
-                              </p>
-                            </div>
-                          </div>
 
-                          {/* ================= CONTENT ================= */}
-                          <div className="flex flex-col flex-1 p-6">
-                      <div className="space-y-3">
-                        <p className="text-gray-700 text-sm line-clamp-3">
-                          {product.shortDescription || product.description}
-                        </p>
+      <ImageWithFallback
+        src={product.image}
+        alt={product.name}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-                        <div className="space-y-1.5 min-h-[96px]">
-                          {product.keyFeatures.slice(0, 3).map((feature, i) => (
-                            <div key={i} className="flex items-start gap-2">
-                              <CheckCircle2 className="w-4 h-4 text-trees-primary mt-0.5 shrink-0" />
-                              <span className="text-sm text-gray-600">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
+      {/* Badge */}
+      {product.badge && (
+        <div className="absolute top-4 right-4">
+          <span className="px-4 py-1.5 rounded-full bg-trees-primary text-white text-sm font-bold shadow-lg flex items-center gap-1.5">
+            <Star className="w-4 h-4" />
+            {product.badge}
+          </span>
+        </div>
+      )}
 
-                        <div className="min-h-[88px]">
-  <p className="text-xs font-semibold text-gray-500 mb-1">
-    Available Thickness:
-  </p>
+      {/* Product Name Overlay */}
+      <div className="absolute bottom-4 left-4 right-4 text-white">
+       <h3 className="text-base font-semibold text-white">
+{product.name}</h3>
+      
+      </div>
+    </div>
 
-  <div className="grid grid-cols-5 gap-2">
-    {product.thicknesses.slice(0, 5).map((thickness) => (
-      <span
-        key={thickness}
-        className="text-center py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-medium"
-      >
-        {thickness}
-      </span>
-    ))}
-  </div>
+    {/* Product Info */}
+    <div className="p-5 space-y-3">
+
+
+      {/* Subcategory */}
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-trees-primary/10 text-trees-primary text-xs font-semibold">
+  {product.subcategory || product.category}
 </div>
 
-                      </div>
 
-                      {/* 🔒 FIXED GAP — SAME FOR ALL CARDS */}
-                      <div className="h-[28px]" />
+      {/* Description */}
+     <p className="text-sm text-gray-700 truncate">
+  { product.description}
+</p>
 
-                      {/* 🔒 BUTTON */}
-                      <div className="pt-3">
-                        <ModernButton
-                          variant="outline"
-                          size="md"
-                          fullWidth
-                          icon={<ChevronRight className="w-5 h-5" />}
-                        >
-                          View Product
-                        </ModernButton>
-                      </div>
-                    </div>
-                    
-                    </ModernCard>
-                  </motion.div>
-                ))}
-              </div>
-            )}
 
-            <div className="text-center mt-10">
-              <p className="text-gray-600">
-                Showing{" "}
-                <span className="font-bold text-trees-primary">
-                  {filteredProducts.length}
-                </span>{" "}
-                products
-              </p>
-            </div>
+      {/* Key Features */}
+      <div className="space-y-2">
+        {product.keyFeatures.slice(0, 3).map((feature, i) => (
+          <div key={i} className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-trees-primary mt-0.5 flex-shrink-0" />
+            <span className="text-sm text-gray-600">{feature}</span>
           </div>
-        </section>
+        ))}
+      </div>
 
+      {/* Thickness Options */}
+      <div>
+        <p className="text-xs font-semibold text-gray-500 mb-2">Available Thickness:</p>
+        <div className="flex flex-wrap gap-2">
+          {product.thicknesses.slice(0, 5).map((thickness) => (
+            <span
+              key={thickness}
+              className="px-3 py-1 rounded-lg bg-gray-100 text-gray-800 text-xs font-medium"
+            >
+              {thickness}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* View Details Button */}
+      <ModernButton
+        variant="outline"
+        size="md"
+        fullWidth
+        icon={<ChevronRight className="w-5 h-5" />}
+        onClick={(e) => {
+          e.stopPropagation();
+          onProductSelect
+            ? onProductSelect(product.id)
+            : onNavigate(`product-detail?id=${product.id}`);
+        }}
+      >
+        View Product
+      </ModernButton>
+    </div>
+  </ModernCard>
+</motion.div>
+
+              ))}
+            </div>
+          )}
+
+          {/* Results Count */}
+          <div className="text-center mt-12">
+            <p className="text-gray-600">
+              Showing <span className="font-bold text-trees-primary">{filteredProducts.length}</span> products
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Product Comparison CTA */}
       <section className="section-padding bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5">
@@ -477,23 +478,17 @@ const filteredProducts =
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <ModernCard variant="elevated" className="h-full">
-                  <div className="p-6 text-center h-full flex flex-col gap-4">
-                    <div
-                      className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg`}
-                    >
+                <ModernCard variant="elevated">
+                  <div className="p-6 text-center space-y-4">
+                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg`}>
                       <app.icon className="w-8 h-8 text-white" />
                     </div>
-
                     <h4 className="font-bold text-gray-900">{app.title}</h4>
+                    <p className="text-xs text-gray-600">{app.desc}</p>
 
-                    <p className="text-sm text-gray-600 line-clamp-3">
-                      {app.desc}
-                    </p>
-
-                    <p className="text-sm font-semibold text-trees-primary mt-auto">
-                      {app.products}
-                    </p>
+                    <div className="pt-2">
+                      <p className="text-sm font-semibold text-trees-primary">{app.products}</p>
+                    </div>
                   </div>
                 </ModernCard>
               </motion.div>
@@ -506,10 +501,7 @@ const filteredProducts =
       <section className="section-padding">
         <div className="container mx-auto px-6">
           <div className="bg-gradient-to-br from-trees-primary to-trees-secondary rounded-3xl p-12 text-white text-center overflow-hidden relative">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 border-4 border-white rounded-full" />
-              <div className="absolute bottom-0 left-0 w-80 h-80 border-4 border-white rounded-full" />
-            </div>
+           
             
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -663,9 +655,10 @@ const filteredProducts =
                   <div className="relative z-10">
                     <Shield className="w-14 h-14 mx-auto mb-4 drop-shadow-lg" />
                     <div className="text-6xl font-bold mb-2">{warranty.years}</div>
-                    <p className="text-2xl font-semibold mb-3">
-                      {warranty.years === 'Lifetime' ? 'Guarantee' : 'Year Warranty'}
-                    </p>
+                    <p className="text-2xl font-semibold mb-3 text-white">
+  {warranty.years === 'Lifetime' ? 'Guarantee' : 'Year Warranty'}
+</p>
+
                     <Separator className="my-4 bg-white/30" />
                     <p className="text-white/90 mb-2">{warranty.products}</p>
                     <p className="text-sm text-white/80">{warranty.desc}</p>
@@ -755,7 +748,7 @@ const filteredProducts =
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
                   ●	BWP (Boiling Water Proof) is fully waterproof and ideal for places with heavy moisture like kitchens, bathrooms, and coastal homes.<br></br>
-                  ●	BWR (Boiling Water Resistant) handles day-to-day moisture and is best suited for indoor furniture and general interiors.
+●	BWR (Boiling Water Resistant) handles day-to-day moisture and is best suited for indoor furniture and general interiors.
 
                 </AccordionContent>
               </AccordionItem>
@@ -766,10 +759,10 @@ const filteredProducts =
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
                   Our warranties are designed to give long-term peace of mind:<br></br>
-                  ●	Samrat – 30 years<br></br>
-                  ●	Vajra – 20 years<br></br>
-                  ●	Ananta, Agni, Bhima – Lifetime guarantee<br></br>
-                  All warranties cover issues like bonding failure, manufacturing defects, or delamination under normal use.
+●	Samrat – 30 years<br></br>
+●	Vajra – 20 years<br></br>
+●	Ananta, Agni, Bhima – Lifetime guarantee<br></br>
+All warranties cover issues like bonding failure, manufacturing defects, or delamination under normal use.
 
                 </AccordionContent>
               </AccordionItem>
@@ -794,8 +787,8 @@ const filteredProducts =
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
                   ●	Yes, All our products meet Indian Standards like IS:710, IS:303, IS:5509.<br></br>
-                  ●	Our premium sheets meet E0 emission levels, meaning almost zero formaldehyde - safe for bedrooms, kids’ rooms, and all indoor spaces.<br></br>
-                  ●	We also follow FSC-certified sustainable sourcing.<br></br>
+●	Our premium sheets meet E0 emission levels, meaning almost zero formaldehyde - safe for bedrooms, kids’ rooms, and all indoor spaces.<br></br>
+●	We also follow FSC-certified sustainable sourcing.<br></br>
 
                 </AccordionContent>
               </AccordionItem>
@@ -833,10 +826,10 @@ const filteredProducts =
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
                   Delivery time depends on your location:<br></br>
-                  ●	Metro cities: 2–3 days<br></br>
-                  ●	Tier-2 cities: 4–5 days<br></br>
-                  ●	Remote locations: 7–10 days<br></br>
-                  Delivery charges vary with distance and order size. Bulk orders may get free delivery in some areas.
+●	Metro cities: 2–3 days<br></br>
+●	Tier-2 cities: 4–5 days<br></br>
+●	Remote locations: 7–10 days<br></br>
+Delivery charges vary with distance and order size. Bulk orders may get free delivery in some areas.
 
                 </AccordionContent>
               </AccordionItem>
@@ -901,10 +894,7 @@ const filteredProducts =
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+        
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
