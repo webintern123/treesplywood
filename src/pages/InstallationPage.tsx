@@ -365,6 +365,9 @@ export default function InstallationPage({ onNavigate }: InstallationPageProps) 
             </form>
           </AdvancedCard>
         </div>
+        <br></br>
+          <br></br>
+            <br></br>
 
         {/* Sidebar Info */}
         <motion.div
