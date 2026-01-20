@@ -311,15 +311,23 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             {/* Specifications */}
             <TabsContent value="specifications" className="space-y-6">
               <div className="glass-card rounded-2xl p-8">
-                <h3 className="text-trees-secondary mb-6 flex items-center gap-2">
-                  <Ruler className="w-6 h-6 text-trees-primary" /> Technical Highlights 
+                <h3 className="text-2xl font-bold text-trees-secondary mb-6 flex items-center gap-2">
+                  <Ruler className="w-6 h-6 text-trees-primary" />
+                  Technical Highlights
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {product.specifications.map((spec, index) => (
-                    <div key={index} className="flex items-start gap-3 p-4 rounded-lg bg-gray-50 border border-gray-200">
-                      <Check className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm font-medium text-gray-800">{spec}</span>
+                    <div
+                    key={index}
+                    className="border border-gray-200 rounded-2xl p-6 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-6 h-6 text-trees-primary flex-shrink-0" />
+                      <h4 className="text-lg font-semibold text-trees-secondary">
+                        {spec}
+                      </h4>
                     </div>
+                  </div>
                   ))}
                 </div>
               </div>
@@ -340,7 +348,7 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
     <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
       <td className="py-4 px-4 font-semibold text-trees-primary">{row.thickness}</td>
       <td className="py-4 px-4 text-gray-700">{row.commonSize}</td>
-      <td className="py-4 px-4 text-sm text-gray-600">{row.bestApplication}</td>
+      <td className="py-4 px-4 text-sm text-gray-700">{row.bestApplication}</td>
     </tr>
   ))}
 </tbody>
@@ -367,9 +375,9 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
                         <Check className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-trees-secondary font-normal mb-2">
-  {feature}
-</h4>
+                        <h4 className="text-lg font-semibold text-trees-secondary mb-2">
+                          {feature}
+                        </h4>
 
                         
                       </div>
@@ -432,8 +440,10 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             {/* Downloads */}
            <TabsContent value="downloads" className="space-y-6">
   <div className="glass-card rounded-2xl p-8">
-    <h3 className="text-trees-secondary mb-6">Technical Documents</h3>
-    <div className="grid md:grid-cols-2 gap-4">
+        <h3 className="text-2xl font-bold text-trees-secondary mb-6">
+        Technical Documents
+      </h3>
+    <div className="grid sm:grid-cols-2 gap-6">
       {product.downloads?.map((doc, idx) => (
         <div key={idx} className="flex items-center justify-between p-6 rounded-xl bg-gray-50 border border-gray-200 hover:border-trees-primary transition-colors group">
           <div className="flex items-center gap-4">
@@ -441,8 +451,8 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
               <FileText className="w-6 h-6 text-trees-primary" />
             </div>
             <div>
-              <h4 className="text-trees-secondary">{doc.name}</h4>
-              <p className="text-sm text-gray-600">PDF • {doc.size}</p>
+              <h4 className="text-lg font-semibold text-trees-secondary">{doc.name}</h4>
+              <p className="text-sm text-gray-700">PDF • {doc.size}</p>
             </div>
           </div>
           <ModernButton
