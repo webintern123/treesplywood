@@ -88,21 +88,22 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
     <nav className="w-full sticky top-0 z-50">
       <div className="w-full glass-strong border-b border-white/30 shadow-lg">
         <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between py-5 sm:py-6">
+          <div className="flex items-center justify-between py-5 sm:py-6 relative">
+
             
-            {/* Logo */}
-            <div 
-              className="flex items-center cursor-pointer group"
-              onClick={() => onNavigate('home')}
-            >
-              <img 
-  src={logoImage} 
-  alt="The Trees Plywood" 
-  className="h-10 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
-/>
+        <div
+  className="flex items-center cursor-pointer group"
+  onClick={() => onNavigate('home')}
+>
+  <img
+    src={logoImage}
+    alt="The Trees Plywood"
+    className="h-10 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
+  />
+</div>
 
 
-            </div>
+
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-2">

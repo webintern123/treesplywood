@@ -1,7 +1,7 @@
 import { 
-  Award, Target, Leaf, Factory, Shield, Sparkles, Users, Globe, 
-  TrendingUp, Zap, Calendar, ArrowRight, CheckCircle2, Lightbulb,
-  Heart, Trophy, Eye, Compass, Building, Gauge, Microscope, Layers
+  Award, Target, Leaf, Factory, Shield, Sparkles, Users, Globe, Ruler,TreePine,Link2,
+  TrendingUp, Zap, Calendar, ArrowRight, CheckCircle2, Lightbulb,ShieldCheck,Flame,
+  Heart, Trophy, Eye, Compass, Building, Gauge, Microscope, Layers, Scissors,Truck,Palette,
 } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ModernButton } from '../components/design-system/ModernButton';
@@ -47,7 +47,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 icon={<ArrowRight className="w-5 h-5" />}
                 onClick={() => onNavigate('products')}
               >
-                Explore Our Products
+                Explore Our Products Inventory
               </ModernButton>
             </MagneticButton>
             <MagneticButton strength={0.2}>
@@ -74,7 +74,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             badge="Our Purpose"
             badgeIcon={Compass}
             title="Experience That’s Built Into Every Sheet"
-            subtitle="The principles that guide our journey and define our future"
+           
           />
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -149,7 +149,7 @@ The Values That Guide Us
                 <span>Our Story</span>
               </div>
 
-              <h2>Built on Trust, Growing with Purpose</h2>
+              <h3>Built on Trust, Growing with Purpose</h3>
               
               <div className="space-y-4 text-gray-700">
                 <p>
@@ -346,6 +346,18 @@ The Values That Guide Us
                 </motion.div>
               ))}
             </div>
+             {/* Purpose Statement */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-trees-primary to-trees-secondary text-white shadow-2xl">
+              <Heart className="w-6 h-6" />
+              <span className="text-xl font-bold">Crafted Over Time, Perfected Over Generations.</span>
+            </div>
+          </motion.div>
           </div>
         </div>
       </section>
@@ -356,17 +368,54 @@ The Values That Guide Us
           <ModernSectionHeader
             badge="How We Make It"
             badgeIcon={Factory}
-            title="Performance First, Precision Always"
+            title="Designed for Performance, Built with Precision"
             subtitle="Every sheet we produce reflects the care we put into our process — from responsibly sourced timber to precision-calibrated finish. Quality is built into every layer."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Leaf, title: 'Responsible Sourcing', desc: 'FSC-certified Gurjan and hardwood sourced responsibly.' },
-              {  icon: Factory, title: 'Strong Bonding', desc: 'BWP-grade, low-VOC adhesives for lasting strength.' },
-              {  icon: Shield, title: 'Quality Checked', desc: '50+ tests for bonding, moisture, and durability.' },
-              {  icon: Sparkles, title: 'Precision Calibrated', desc: 'Perfect thickness, smooth finish, zero core gaps.' },
-            ].map((step, idx) => (
+  {
+    icon: TreePine, // sustainability / FSC sourcing
+    title: 'Responsible Sourcing',
+    desc: 'FSC-certified Gurjan and hardwood sourced responsibly.'
+  },
+  {
+    icon: Link2, // strong bonding / adhesion
+    title: 'Strong Bonding',
+    desc: 'BWP-grade, low-VOC adhesives for lasting strength.'
+  },
+  {
+    icon: ShieldCheck, // quality assurance
+    title: 'Quality Checked',
+    desc: '50+ tests for bonding, moisture, and durability.'
+  },
+  {
+    icon: Ruler, // calibration / precision thickness
+    title: 'Precision Calibrated',
+    desc: 'Perfect thickness, smooth finish, zero core gaps.'
+  },
+  {
+    icon: Flame, // fire safety + resistance
+    title: 'Fire-Safe & Waterproof',
+    desc: 'Advanced treatments for safety and durability.'
+  },
+  {
+    icon: Palette, // decorative finish / veneer
+    title: 'Decorative & Pre-Polished',
+    desc: 'Ready-to-use veneer and premium finish options.'
+  },
+  {
+    icon: Scissors, // precision cutting
+    title: 'Precision Cut',
+    desc: 'Custom sizing for faster, accurate installation.'
+  },
+  {
+    icon: Truck, // delivery & logistics
+    title: 'Safe & On-Time',
+    desc: 'Secure packaging with timely delivery, every time.'
+  },
+]
+.map((step, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
@@ -384,7 +433,22 @@ The Values That Guide Us
               </motion.div>
             ))}
           </div>
+          
+
         </div>
+        {/* Purpose Statement */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-trees-primary to-trees-secondary text-white shadow-2xl">
+              <Heart className="w-6 h-6" />
+              <span className="text-xl font-bold">Your Sheet arrives Strong, Stable, and Ready to Install</span>
+            </div>
+          </motion.div>
+       
       </section>
 
       {/* Infrastructure & Facilities - Redesigned */}
@@ -403,40 +467,85 @@ The Values That Guide Us
           />
 
           {/* Key Stats with Visual Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {[
-              { icon: Building, value: '150,000', label: 'Sq Ft Facility', suffix: '+', gradient: 'from-blue-500 to-blue-600' },
-              { icon: Factory, value: '100,000', label: 'Sheets/Month', suffix: '+', gradient: 'from-trees-primary to-orange-600' },
-              { icon: Users, value: '500', label: 'Experts', suffix: '+', gradient: 'from-green-500 to-green-600' },
-              { icon: Gauge, value: '24/7', label: 'Operations', suffix: '', gradient: 'from-purple-500 to-purple-600' },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative"
-              >
-                <div className="relative bg-white rounded-3xl p-6 shadow-xl border border-gray-100 overflow-hidden h-full">
-                  {/* Gradient Background on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-                  
-                  <div className="relative">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <stat.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="text-5xl font-bold text-gray-900 mb-2">
-                      {stat.value}
-                      {stat.suffix && <span className="text-trees-primary">{stat.suffix}</span>}
-                    </div>
-                    <div className="text-gray-600">{stat.label}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+  {[
+    {
+      icon: Building,
+      value: '150,000',
+      suffix: '+',
+      title: 'sq. ft.',
+      desc: 'Modern manufacturing facility',
+      gradient: 'from-blue-500 to-blue-600'
+    },
+    {
+      icon: Factory,
+      value: '100,000',
+      suffix: '+',
+      title: 'sheets/month',
+      desc: 'High-volume production capacity',
+      gradient: 'from-trees-primary to-orange-600'
+    },
+    {
+      icon: Users,
+      value: '500',
+      suffix: '+',
+      title: 'experts',
+      desc: 'Skilled team shaping every sheet',
+      gradient: 'from-green-500 to-green-600'
+    },
+    {
+      icon: Gauge,
+      value: '24/7',
+      suffix: '',
+      title: 'operations',
+      desc: 'Consistent, reliable manufacturing',
+      gradient: 'from-purple-500 to-purple-600'
+    },
+  ].map((stat, idx) => (
+    <motion.div
+      key={idx}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: idx * 0.1 }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="group relative"
+    >
+      <div className="relative bg-white rounded-3xl p-6 shadow-xl border border-gray-100 overflow-hidden h-full">
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+        />
+
+        <div className="relative">
+          <div
+            className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+          >
+            <stat.icon className="w-8 h-8 text-white" />
           </div>
+
+          {/* Value */}
+          <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+            {stat.value}
+            {stat.suffix && (
+              <span className="text-trees-primary">{stat.suffix}</span>
+            )}
+          </div>
+
+          {/* Short title */}
+          <div className="text-sm font-semibold text-gray-700 mb-1">
+            {stat.title}
+          </div>
+
+          {/* Description */}
+          <div className="text-gray-600 text-sm leading-relaxed">
+            {stat.desc}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
 
           {/* Infrastructure Feature Cards with Images */}
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
@@ -719,7 +828,7 @@ The Values That Guide Us
             badge="Our Values"
             badgeIcon={Heart}
             title="What Guides Us Every Day"
-            subtitle="The principles that guide everything we do"
+           
           />
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -939,7 +1048,7 @@ The Values That Guide Us
 '	Wood sourced from responsibly managed forests',
 'Low-emission, eco-friendly manufacturing',
 'Energy & water-efficient processes',
-'Long-lasting products that reduce waste',
+
                   
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3">
@@ -976,7 +1085,7 @@ The Values That Guide Us
     >
       <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
         <Sparkles className="w-5 h-5" />
-        <span>Partner With Excellence</span>
+        <span>Build With the Best - Choose Quality You Can Trust</span>
       </div>
       
       <h2 className="text-white mb-6">
@@ -994,7 +1103,7 @@ The Values That Guide Us
           icon={<ArrowRight className="w-6 h-6" />}
           onClick={() => onNavigate('products')}
         >
-          Explore Products
+          View Products
         </ModernButton>
         <ModernButton
           variant="outline"
@@ -1003,7 +1112,7 @@ The Values That Guide Us
           onClick={() => onNavigate('contact')}
           className="border-white text-white hover:bg-white/20"
         >
-          Contact Us
+          Get in Touch
         </ModernButton>
       </div>
     </motion.div>

@@ -444,7 +444,8 @@ interface CalculatorPageProps {
         <div className="lg:col-span-1">
           <div className="sticky top-24 space-y-6">
             <div className="glass-card rounded-xl p-6">
-              <h3 className="text-trees-primary mb-4">Calculation Results</h3>
+             <h3 className="text-xl text-trees-primary mb-4">Calculation Results</h3>
+
               
               {result ? (
                 <div className="space-y-4">
@@ -587,7 +588,7 @@ interface CalculatorPageProps {
                 </div>
                 <h4>Product Comparison</h4>
                 <p className="text-gray-600">
-                  Compare features, specs, and warranties to find plywood of your choice.
+                  Compare features, warranties side-by-side to find the plywood that fits your needs.
                 </p>
                 <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
                   Compare Products

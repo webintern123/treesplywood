@@ -236,7 +236,8 @@ const filteredProducts =
   <ModernCard
     variant="elevated"
     hoverable
-    className="w-full max-w-xs mx-auto"
+   className="w-full max-w-sm mx-auto"
+
 
     onClick={() =>
       onProductSelect
@@ -245,7 +246,8 @@ const filteredProducts =
     }
   >
     {/* Product Image */}
-    <div className="relative h-48 rounded-t-2xl overflow-hidden group">
+    <div className="relative h-56 rounded-t-2xl overflow-hidden group">
+
 
       <ImageWithFallback
         src={product.image}
@@ -268,13 +270,13 @@ const filteredProducts =
       <div className="absolute bottom-4 left-4 right-4 text-white">
        <h3 className="text-base font-semibold text-white">
 {product.name}</h3>
-       <p className="text-sm text-white/90">
-{product.tagline}</p>
+      
       </div>
     </div>
 
     {/* Product Info */}
-    <div className="p-3 space-y-2">
+    <div className="p-5 space-y-3">
+
 
       {/* Subcategory */}
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-trees-primary/10 text-trees-primary text-xs font-semibold">
@@ -283,10 +285,10 @@ const filteredProducts =
 
 
       {/* Description */}
-     <p className="text-sm text-gray-700 line-clamp-2">
+     <p className="text-sm text-gray-700 truncate">
+  { product.description}
+</p>
 
-        {product.shortDescription || product.description}
-      </p>
 
       {/* Key Features */}
       <div className="space-y-2">

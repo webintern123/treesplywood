@@ -93,203 +93,220 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
 
   return (
     <div className="min-h-screen">
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <PageContainer className="py-4">
-          <div className="flex items-center justify-between">
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink
-                    onClick={() => onNavigate('home')}
-                    className="cursor-pointer hover:text-trees-primary transition-colors"
-                  >
-                    Home
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator>
-                  <ChevronRight className="w-4 h-4" />
-                </BreadcrumbSeparator>
-                <BreadcrumbItem>
-                  <BreadcrumbLink
-                    onClick={onBack}
-                    className="cursor-pointer hover:text-trees-primary transition-colors"
-                  >
-                    Products
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator>
-                  <ChevronRight className="w-4 h-4" />
-                </BreadcrumbSeparator>
-                <BreadcrumbItem>
-                  <BreadcrumbPage className="text-trees-primary font-medium">
-                    {product.name}
-                  </BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-            <button
-              onClick={onBack}
-              className="flex items-center gap-2 text-gray-600 hover:text-trees-primary transition-colors group text-sm"
-            >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              <span className="font-medium">Back to Products</span>
-            </button>
+          {/* Breadcrumb Navigation */}
+          <div className="bg-gray-50 border-b border-gray-200">
+            <PageContainer className="py-4">
+              <div className="flex items-center justify-between">
+                <Breadcrumb>
+                  <BreadcrumbList>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink
+                        onClick={() => onNavigate('home')}
+                        className="cursor-pointer hover:text-trees-primary transition-colors"
+                      >
+                        Home
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator>
+                      <ChevronRight className="w-4 h-4" />
+                    </BreadcrumbSeparator>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink
+                        onClick={onBack}
+                        className="cursor-pointer hover:text-trees-primary transition-colors"
+                      >
+                        Products
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator>
+                      <ChevronRight className="w-4 h-4" />
+                    </BreadcrumbSeparator>
+                    <BreadcrumbItem>
+                      <BreadcrumbPage className="text-trees-primary font-medium">
+                        {product.name}
+                      </BreadcrumbPage>
+                    </BreadcrumbItem>
+                  </BreadcrumbList>
+                </Breadcrumb>
+                
+                <button
+                  onClick={onBack}
+                  className="flex items-center gap-2 text-gray-600 hover:text-trees-primary transition-colors group text-sm"
+                >
+                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                  <span className="font-medium">Back to Products</span>
+                </button>
+              </div>
+            </PageContainer>
           </div>
-        </PageContainer>
-      </div>
-
-      <PageContainer className="py-12 space-y-16">
-        {/* Product Header */}
-        <section className="grid lg:grid-cols-2 gap-12 items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-4"
-          >
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] glass-card">
-              <ImageWithFallback
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-trees-secondary/40 to-transparent" />
-              {product.badge && (
-                <div className="absolute top-6 left-6">
-                  <Badge className="bg-white/95 backdrop-blur-sm text-trees-primary border-trees-primary/20 shadow-lg text-base px-4 py-2">
-                    {product.badge}
-                  </Badge>
+    
+          <PageContainer className="py-12 space-y-16">
+            {/* Product Header Section */}
+            <section className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Product Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-4"
+              >
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] glass-card">
+                  <ImageWithFallback
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-trees-secondary/40 to-transparent" />
+                  
+                  {/* Image Badges */}
+                  {product.badge && (
+                    <div className="absolute top-6 left-6">
+                      <Badge className="bg-white/95 backdrop-blur-sm text-trees-primary border-trees-primary/20 shadow-lg text-base px-4 py-2">
+                        {product.badge}
+                      </Badge>
+                    </div>
+                  )}
+                  
+                  <div className="absolute top-6 right-6">
+                    <Badge className="bg-trees-primary text-white shadow-lg text-base px-4 py-2">
+                      {product.category}
+                    </Badge>
+                  </div>
                 </div>
-              )}
-              <div className="absolute top-6 right-6">
-                <Badge className="bg-trees-primary text-white shadow-lg text-base px-4 py-2">
-                  {product.category}
-                </Badge>
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex gap-3">
-              <ModernButton
-                variant={isSaved ? 'primary' : 'outline'}
-                size="sm"
-                icon={<Heart />}
-                className="flex-1"
-                onClick={handleSave}
+    
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <ModernButton variant="outline" size="sm" icon={<Heart />} className="flex-1">
+                    Save
+                  </ModernButton>
+                  <ModernButton variant="outline" size="sm" icon={<Share2 />} className="flex-1">
+                    Share
+                  </ModernButton>
+                  <ModernButton variant="outline" size="sm" icon={<Download />} />
+                </div>
+              </motion.div>
+    
+              {/* Product Info */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-6"
               >
-                {isSaved ? 'Saved' : 'Save'}
-              </ModernButton>
-
-              <ModernButton
-                variant="outline"
-                size="sm"
-                icon={<Share2 />}
-                className="flex-1"
-                onClick={handleShare}
-              >
-                Share
-              </ModernButton>
-
-             
-            </div>
-          </motion.div>
-
-          {/* Product Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
-            <div>
-              <h4 className="text-trees-secondary mb-2">{product.name}</h4>
-              <p className="text-trees-primary italic">{product.tagline}</p>
-              {product.subcategory && (
-                <p className="text-sm text-gray-600 mt-2 uppercase tracking-wide">
-                  {product.subcategory}
+                {/* Title & Tagline */}
+                <div>
+                  <h1 className="text-trees-secondary mb-2">
+                    {product.name}
+                  </h1>
+                  <p className="text-trees-primary italic">{product.tagline}</p>
+                  {product.subcategory && (
+                    <p className="text-sm text-gray-600 mt-2 uppercase tracking-wide">
+                      {product.subcategory}
+                    </p>
+                  )}
+                </div>
+    
+                {/* Description */}
+                <p className="text-gray-700">
+                  {product.description}
                 </p>
-              )}
-            </div>
+    
+                {/* Quick Stats */}
+              {/* Quick Stats */}
+{product.quickStats && product.quickStats.length > 0 && (
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {product.quickStats.map((stat, index) => {
+      // Dynamically pick icon component from lucide-react
+      const IconComponent = (() => {
+        switch (stat.icon) {
+          case 'Shield': return Shield;
+          case 'Award': return Award;
+          case 'Layers': return Layers;
+          case 'Check': return Check;
+          case 'Sparkles': return Sparkles;
+          case 'Package': return Package;
+          default: return Check; // fallback icon
+        }
+      })();
 
-            <p className="text-gray-700">{product.description}</p>
-
-            <div className="grid grid-cols-3 gap-4">
-  <div className="glass-card rounded-xl p-4 text-center">
-    <Shield className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-    <div className="text-sm font-semibold text-trees-secondary">Grade:</div>
-    <div className="text-xs text-gray-600">{product.grade}</div>
+      return (
+        <div key={index} className="glass-card rounded-xl p-4 text-center">
+          <IconComponent className="w-6 h-6 text-trees-primary mx-auto mb-2" />
+          <div className="text-sm font-semibold text-trees-secondary">{stat.title}</div>
+          <div className="text-xs text-gray-600">{stat.subtitle}</div>
+        </div>
+      );
+    })}
   </div>
-  <div className="glass-card rounded-xl p-4 text-center">
-    <Award className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-    <div className="text-sm font-semibold text-trees-secondary">Warranty:</div>
-    <div className="text-xs text-gray-600">{product.warranty}</div>
+)}
+
+
+                <Separator />
+    
+                {/* Thickness Selection */}
+                <div className="space-y-3">
+                  <Label className="text-base font-semibold text-trees-secondary">
+                    Select Thickness
+                  </Label>
+                  <div className="grid grid-cols-5 gap-2">
+                    {product.thicknesses.map((thickness) => (
+                      <button
+                        key={thickness}
+                        onClick={() => setSelectedThickness(thickness)}
+                        className={`px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
+                          selectedThickness === thickness
+                            ? 'border-trees-primary bg-trees-primary text-white shadow-md scale-105'
+                            : 'border-gray-200 bg-white text-gray-700 hover:border-trees-primary/50'
+                        }`}
+                      >
+                        {thickness}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+    
+                {/* Quantity */}
+                <div className="space-y-3">
+                  <Label className="text-base font-semibold text-trees-secondary">
+                    Quantity (Sheets)
+                  </Label>
+                  <div className="flex gap-3">
+                    <Input
+                      type="number"
+                      min="1"
+                      value={quantity}
+                      onChange={(e) => setQuantity(e.target.value)}
+                      className="max-w-[120px]"
+                    />
+                    <span className="flex items-center text-gray-600">sheets</span>
+                  </div>
+                </div>
+    
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <ModernButton variant="primary" size="lg" icon={<Mail />} className="flex-1">
+                    Request Quote
+                  </ModernButton>
+                  <ModernButton variant="outline" size="lg" icon={<Phone />}>
+                    Call Now
+                  </ModernButton>
+                </div>
+    
+                {/* Trust Badges */}
+               {product.highlights && product.highlights.length === 3 && (
+  <div className="glass-primary rounded-xl p-4 space-y-2">
+    {product.highlights.map((point, index) => (
+      <div key={index} className="flex items-center gap-2 text-sm">
+        <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
+        <span className="text-gray-700">{point}</span>
+      </div>
+    ))}
   </div>
-  <div className="glass-card rounded-xl p-4 text-center">
-    <Layers className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-    <div className="text-sm font-semibold text-trees-secondary">IS Standards:</div>
-    <div className="text-xs text-gray-600">{product.standards}</div>
-  </div>
-</div>
+)}
 
-            <Separator />
-
-            <div className="space-y-3">
-              <Label className="text-base font-semibold text-trees-secondary">Select Thickness</Label>
-              <div className="grid grid-cols-5 gap-2">
-                {product.thicknesses.map((thickness) => (
-                  <button
-                    key={thickness}
-                    onClick={() => setSelectedThickness(thickness)}
-                    className={`px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
-                      selectedThickness === thickness
-                        ? 'border-trees-primary bg-trees-primary text-white shadow-md scale-105'
-                        : 'border-gray-200 bg-white text-gray-700 hover:border-trees-primary/50'
-                    }`}
-                  >
-                    {thickness}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <Label className="text-base font-semibold text-trees-secondary">Quantity (Sheets)</Label>
-              <div className="flex gap-3">
-                <Input
-                  type="number"
-                  min="1"
-                  value={quantity}
-                  onChange={(e) => setQuantity(e.target.value)}
-                  className="max-w-[120px]"
-                />
-                <span className="flex items-center text-gray-600">sheets</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <ModernButton
-                variant="primary"
-                size="lg"
-                icon={<Mail />}
-                className="flex-1"
-                onClick={() => onNavigate('contact')}
-              >
-                Request Quote
-              </ModernButton>
-
-              <ModernButton
-                variant="outline"
-                size="lg"
-                icon={<Phone />}
-                onClick={() => onNavigate('contact')}
-              >
-                Call Now
-              </ModernButton>
-            </div>
-          </motion.div>
-        </section>
-
+              </motion.div>
+            </section>
+    
         {/* Tabs Section */}
         <section>
           <Tabs defaultValue="specifications" className="space-y-8">
@@ -475,7 +492,8 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             <summary className="cursor-pointer font-semibold text-trees-primary">
               {item.question}
             </summary>
-            <p className="mt-2 text-gray-700">{item.answer}</p>
+           <p className="mt-2 text-sm text-gray-700">{item.answer}</p>
+
           </details>
         ))}
       </div>

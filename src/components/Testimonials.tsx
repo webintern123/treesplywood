@@ -96,13 +96,13 @@ export function Testimonials() {
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-4 border border-trees-primary/20">
           <Star className="w-4 h-4 text-trees-primary fill-trees-primary" />
-          <span className="text-trees-primary font-semibold text-sm">Tree’s Plywood Customer Testimonials </span>
+          <span className="text-trees-primary font-semibold text-sm">Tree’s Plywood Professional Testimonials  </span>
         </div>
         <h2 className="text-trees-primary text-4xl font-semibold mb-3">
-          Trusted by Professionals
+          What Professionals Say About Tree’s Plywood?
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          What Tree’s Plywood Customers are Saying About Tree’s Plywood?
+          Trusted by architects, designers, builders, and furniture makers across India.
         </p>
       </div>
 
@@ -142,7 +142,7 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-gray-700 leading-relaxed mb-6 italic min-h-[120px]">
+              <p className="text-gray-700 leading-relaxed mb-6 min-h-[120px]">
                 "{testimonial.quote}"
               </p>
 

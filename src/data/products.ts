@@ -10,6 +10,10 @@ export interface Product {
   specifications: string[];
   keyFeatures: string[];
   primaryUses: string;
+  highlights: string[];
+   quickStats?: { icon: string; title: string; subtitle: string }[];
+   // exactly 3 points per product
+
   image: string;
   badge?: string;
   faq?: { question: string; answer: string }[];
@@ -25,6 +29,7 @@ export interface Product {
    grade?: string;      // <-- NEW
   warranty?: string;   // <-- NEW
   standards?: string;  // <-- NEW
+  
 }
 
 
@@ -32,14 +37,24 @@ export const products: Product[] = [
   // PLYWOOD CATEGORY
   {
     id: 'ananta',
-    name: 'ANANTA – Premium Marine BWP Plywood',
-    tagline: 'Endless Strength-  Structural | High Load | Moisture-Prone Areas',
+    name: 'Ananta ',
+    tagline: 'Endless Strength',
     category: 'Plywood',
-    subcategory: 'Built for extreme moisture, Designed to last a lifetime.',
-    description: 'Ananta is a premium marine-grade plywood made for strength, stability, and long life where regular plywood fails. It is designed to handle dialy moisture, heavy loads, steam, and long-term use without swelling, bending, or weakening. If the requirement is high performance with zero compromises, Ananta is the solution.',
-    
+    subcategory: 'Structural',
+    description: 'Premium marine-grade plywood offering superior strength, moisture resistance, long-lasting performance for demanding applications.',
+    highlights: [
+  "Premium BWP Marine Plywood",
+  "Certified by IS Standards",
+  "Lifetime Warranty Guarantee"
+],
+ quickStats: [
+      { icon: 'Shield', title: 'Certified', subtitle: 'Quality' },
+      { icon: 'Award', title: 'Premium', subtitle: 'Grade' },
+      { icon: 'Layers', title: '5', subtitle: 'Sizes' },
+    ],
+
     thicknesses: ['19 mm', '16 mm', '12 mm', '9 mm', '6 mm'],
-    grade: 'BWP Marine',               // <-- NEW
+    grade: 'Certified',               // <-- NEW
   warranty: 'Lifetime Guarantee',    // <-- NEW
   standards: 'IS:710 | IS:10701',    // <-- NEW
     specifications: [
@@ -144,12 +159,23 @@ export const products: Product[] = [
   },
   {
     id: 'agni',
-    name: 'AGNI – Fire-Retardant Marine Grade Plywood',
-    tagline: 'The Power Built  -  Fire-Safe | Structural | High-Risk & Commercial Areas',
+    name: 'Agni',
+    tagline: 'The Power Built',
     category: 'Plywood',
-    subcategory: 'Designed To Resist Fire, Built To Protect Lives And Spaces.',
-    description: 'AGNI is a fire-retardant marine-grade plywood developed for spaces where fire safety is critical. It is engineered to slow flame spread, reduce smoke, and maintain structural stability during fire exposure.Along with fire safety, AGNI also offers marine-grade durability, strength, and moisture resistance, making it ideal for commercial, public, and high-risk interiors.When safety cannot be compromised, AGNI is the reliable choice.',
+    subcategory: 'Fire-safe',
+    description: 'Fire-retardant marine plywood designed for safety-critical spaces, with moisture resistance and durable strength for commercial use.',
     thicknesses: ['19 mm', '16 mm', '12 mm', '9 mm', '6 mm'],
+    highlights: [
+  "Assured Quality & Performance",
+  "Tested to Indian Safety Standards",
+  "Suitable for High Risk & Commercial Areas."
+],
+quickStats: [
+      { icon: 'Shield', title: '  IS-Certified       ', subtitle: 'Fire-Safe Plywood ' },
+      { icon: 'Award', title: 'Marine-Grade', subtitle: '  Strength    ' },
+      { icon: 'Layers', title: '5', subtitle: '   Thickness Options' },
+    ],
+
     grade: 'Fire-Retardant Marine Plywood',               // <-- NEW
   warranty: 'Lifetime Guarantee',    // <-- NEW
   standards: 'IS:5509 | IS:710', 
@@ -264,12 +290,23 @@ export const products: Product[] = [
   },
   {
     id: 'bhima',
-    name: 'BHIMA – Heavy Duty Marine BWP Plywood',
-    tagline: 'The Legend -  Structural Strength | Wet & Load-Intensive Use',
+    name: 'Bhima',
+    tagline: 'The Legend ',
     category: 'Plywood',
-    subcategory: 'Made for weight, water, and years of use.',
-    description: 'Bhima is a heavy-duty marine plywood built for projects where strength matters as much as moisture resistance. It is designed for areas that carry load, face water exposure, and cannot afford bending, cracking, or early failure.Bhima is chosen when performance is non-negotiable and long life is expected.',
+    subcategory: 'Wet & Load Intensive Use',
+    description: 'Heavy-duty marine plywood built for maximum load-bearing strength and high moisture-exposure areas.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    highlights: [
+  "Assured Quality & Long Life",
+  "Lifetime Warranty",
+  "Quick & Reliable Supply."
+],
+quickStats: [
+      { icon: 'Shield', title: 'IS Certified ', subtitle: 'Production ' },
+      { icon: 'Award', title: 'Heavy-Duty  ', subtitle: 'Marine Grade ' },
+      { icon: 'Layers', title: '5', subtitle: 'Multiple Thicknesses' },
+    ],
+
     grade: 'BWP Marine',               // <-- NEW
   warranty: 'Lifetime Guarantee',    // <-- NEW
   standards: 'IS:710 | Structural Grade', 
@@ -360,12 +397,22 @@ export const products: Product[] = [
   },
   {
     id: 'samrat',
-    name: 'SAMRAT – Premium BWP Interior Plywood',
-    tagline: 'Supreme Quality  - Premium Interiors | Long-Term Performance',
+    name: 'Samrat',
+    tagline: 'Supreme Quality ',
     category: 'Plywood',
-    subcategory: 'Made for visible interiors, Built to stay strong for decades.',
-    description: 'Samrat is a premium BWP-grade plywood developed specifically for high-end interior applications where strength, surface finish, and long life matter equally. It is widely used in wardrobes, modular kitchens, furniture, and designer interiors where exposed surfaces need to look perfect and stay stable over time. Samrat balances marine-grade strength with interior-focused performance.',
+    subcategory: 'Long Term Performance',
+    description: ' Premium BWP-grade plywood ideal for high-end interiors, delivering strength, smooth finish, and lasting performance.',
     thicknesses : ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    highlights: [
+  "Consistent Manufacturing Quality",
+"BWP Interior Marine Grade",
+"Fast & Timely Supply"
+],
+quickStats: [
+      { icon: 'Shield', title: 'ISI-Certified  ', subtitle: 'Quality' },
+      { icon: 'Award', title: ' Premium Interior ', subtitle: 'Performance  ' },
+      { icon: 'Layers', title: 'Warranty', subtitle: ' 30 year' },
+    ],
     specifications: [
       '	Surface: Calibrated | Smooth & even finish',
 'Grade: BWP (Boiling Waterproof)',
@@ -466,12 +513,18 @@ export const products: Product[] = [
   },
   {
     id: 'vajra',
-    name: 'VAJRA – High-Density BWR Plywood',
-    tagline: 'The Unbreakable - Moisture-Resistant | Long-Life Interior',
+    name: 'Vajra',
+    tagline: 'The Unbreakable',
     category: 'Plywood',
-    subcategory: 'Built to handle moisture, load, and daily wear — without breaking ',
-    description: 'Vajra is a high-density BWR grade plywood developed for interior applications that face moisture, pressure, and long-term use. It is designed for customers who want stronger performance than regular interior ply, without stepping into full marine grade. Vajra offers stability, durability, and confidence — especially where value and reliability both matter.',
+    subcategory: 'Moisture Resistant ',
+    description: 'High-density BWR plywood for moisture-prone interiors, offering stronger durability than regular interior ply.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    highlights: [
+  "Multiple Thicknesses",
+"Stable Performance",
+"Ready Stock Availability."
+],
+
      grade: 'BWR',               // <-- NEW
   warranty: '20 Years.',    // <-- NEW
   standards: 'IS:303 / IS:1659', 
@@ -484,6 +537,11 @@ export const products: Product[] = [
 'Residential interiors with moderate moisture'
 
   ],
+  quickStats: [
+      { icon: 'Shield', title: '   Quality', subtitle: 'Checked' },
+      { icon: 'Award', title: 'High Density     ', subtitle: '  BWR Grade  ' },
+      { icon: 'Layers', title: ' Warranty   ', subtitle: ' 20 years  ' },
+    ],
    realLifeExamples: [
     "	Used in wardrobes exposed to seasonal humidity",
 "Chosen for interior kitchens away from direct water contact",
@@ -565,12 +623,23 @@ export const products: Product[] = [
   },
   {
     id: 'ujval',
-    name: 'UJVAL – Decorative Interior BWR Plywood',
-    tagline: 'Radiant - Smooth Finish | Interior Grade | Everyday Reliable',
+    name: 'Ujval ',
+    tagline: 'Radiant ',
     category: 'Plywood',
-    subcategory: 'Made for clean interiors, Built for daily use.',
-    description: 'Ujval is an interior-focused BWR-grade plywood created for customers who want smooth finishing, stable performance, and long life for everyday interior applications. It is widely used for wardrobes, cabinets, partitions, and furniture where looks and reliability matter. Ujval balances value, strength, and a refined finish, making it a dependable choice for homes and commercial spaces.',
+    subcategory: 'Smooth Finish',
+    description: 'BWR-grade plywood with a smooth finish and reliable strength, perfect for furniture and interior applications.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    highlights: [
+ "Multiple Thickness Options",
+"Quality Assured",
+"Ready Stock & Fast Delivery."
+],
+quickStats: [
+      { icon: 'Shield', title: ' ISI ', subtitle: '  Certified  ' },
+      { icon: 'Award', title: ' Interior ', subtitle: '  BWR Grade ' },
+      { icon: 'Layers', title: '    10 Years', subtitle: '  Warranty' },
+    ],
+
     grade: 'BWR (Interior)',               // <-- NEW
   warranty: '10 Years.',    // <-- NEW
   standards: 'IS:303', 
@@ -671,12 +740,23 @@ export const products: Product[] = [
   // DOORS CATEGORY
   {
     id: 'block-board',
-    name: 'BLOCKBOARD – Stable Core Panels (BWR Grade)',
-    tagline: 'Strong Core | Warp-Resistant | Built for Doors, Partitions & Furniture',
+    name: 'Block Boards',
+    tagline: 'Stable Core Panels ',
     category: 'Doors',
-    subcategory: 'Made for stability. Built to stay straight and strong.',
-    description: 'Tree’s Blockboard is designed for applications where stability, straightness, and strength matter more than anything else. It is built with a solid wood core that prevents bending, makes doors sturdier, and keeps long panels straight over time. Ideal for partitions, door frames, wardrobes, and furniture that must remain firm and wobble-free.',
+    subcategory: 'Warp-Resistant',
+    description: 'Strong, stable blockboards with a solid wood core that resist bending and warping for long-term use.',
     thicknesses: [ '25MM', '19MM','16mm' ],
+    highlights: [
+  "Uniform Quality Construction",
+"Factory-Tested Panels",
+"Prompt Delivery Support"
+],
+quickStats: [
+      { icon: 'Shield', title: 'IS ', subtitle: 'Standards  ' },
+      { icon: 'Award', title: 'High-Stability ', subtitle: '  Premium Grade    ' },
+      { icon: 'Layers', title: '   3', subtitle: 'Sizes' },
+    ],
+
     grade: 'BWR (Boiling Water Resistant)',               // <-- NEW
   warranty: 'As per manufacturing standards.',    // <-- NEW
   standards: 'IS:1659', 
@@ -771,12 +851,23 @@ export const products: Product[] = [
   },
   {
     id: 'flush-doors',
-    name: 'FLUSH DOORS – Engineered for Strength & Stability (BWP Grade)',
-    tagline: 'Solid Core | Waterproof Strength | Long-Lasting Performance',
+    name: 'Flush-doors',
+    tagline: 'Strength & Stability',
     category: 'Doors',
-    subcategory: 'A door that stays firm, stays straight, and stays strong—.',
-    description: 'Tree’s Flush Doors are engineered with a high-density solid core, strong bonding, and a smooth finish that makes them ideal for both homes and commercial spaces. They are built to handle daily use, moisture exposure, and long-term performance without bending or weakening. With BWP-grade bonding, each door is designed to deliver strength that lasts.',
+    subcategory: 'Waterproof Core',
+    description: 'Durable flush doors with solid core and BWP bonding, designed to resist moisture and daily wear.',
     thicknesses: ['40mm', '38mm', '35mm', '32mm',],
+    highlights: [
+  "Premium Door Construction",
+"Consistent Quality Assurance",
+"Ready Stock & Quick Dispatch"
+],
+quickStats: [
+      { icon: 'Shield', title: 'Garde ', subtitle: 'BWP Door  ' },
+      { icon: 'Award', title: '    ISI           ', subtitle: 'Tested & Approved     ' },
+      { icon: 'Layers', title: '    4', subtitle: 'Sizes' },
+    ],
+
     grade: 'BWP Door Grade',               // <-- NEW
   warranty: 'As per manufacturing quality standards',    // <-- NEW
   standards: 'IS:2202', 

@@ -394,10 +394,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
 
       {/* Resource Impact Stats */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+        
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div

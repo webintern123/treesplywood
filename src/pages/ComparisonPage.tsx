@@ -725,7 +725,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
           <ModernSectionHeader
             badge="Our Impact"
             badgeIcon={TrendingUp}
-            title="How This Tool Helps You Choose Better"
+            title="How This Tool  Helps You Choose Better"
             subtitle="Real numbers from thousands of builders, designers, and homeowners who used this tool to make smarter decisions."
           />
 
