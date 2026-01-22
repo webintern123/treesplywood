@@ -1067,7 +1067,7 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
           badge="Useful Tips"
           badgeIcon={Lightbulb}
           title="Make Your Dealer Visit Easier"
-          subtitle="A few quick tips to help you get the most out of your visit:"
+          subtitle="A few quick tips to help you to get the most out of your visit:"
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
