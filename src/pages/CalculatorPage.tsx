@@ -192,134 +192,164 @@ interface CalculatorPageProps {
       />
 
       {/* Why Use Calculator Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Easy & Smarter Planning "
-            badgeIcon={Target}
-            title="Why Use Our Calculator?"
-            subtitle="Plan better, save money, and cut down waste with quick and accurate plywood calculations."
-          />
-          
-          <div className="grid md:grid-cols-4 gap-6 items-stretch">
-  {[
-    {
-      icon: Target,
-      title: 'Accurate Estimates',
-      desc: 'Get perfect calculations based on actual sheet sizes and your project dimensions.',
-      color: 'from-blue-500 to-blue-600'
-    },
-    {
-      icon: DollarSign,
-      title: 'Save Money',
-      desc: 'Avoid buying extra material with smart wastage and budgeting suggestions.',
-      color: 'from-green-500 to-green-600'
-    },
-    {
-      icon: Clock,
-      title: 'Save Time',
-      desc: 'Instant results — no need for manual math or complicated spreadsheets.',
-      color: 'from-purple-500 to-purple-600'
-    },
-    {
-      icon: TrendingDown,
-      title: 'Reduce Waste',
-      desc: 'Use materials efficiently with helpful buffer recommendations tailored to your project.',
-      color: 'from-orange-500 to-orange-600'
-    },
-  ].map((benefit, idx) => (
-    <motion.div
-      key={idx}
-      className="h-full"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: idx * 0.1 }}
-    >
-      <ModernCard variant="elevated" className="h-full">
-        <div className="p-6 text-center flex flex-col items-center justify-between h-full">
-          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg`}>
-            <benefit.icon className="w-8 h-8 text-white" />
-          </div>
+<section className="section-padding bg-gray-50">
+  <div className="container mx-auto px-6">
+    <ModernSectionHeader
+      badge="Easy & Smarter Planning"
+      badgeIcon={Target}
+      title="Why Use Our Calculator?"
+      subtitle="Plan better, save money, and cut down waste with quick and accurate plywood calculations."
+    />
 
-          <h4 className="font-bold text-gray-900">
-            {benefit.title}
-          </h4>
+    <div className="grid md:grid-cols-4 gap-6 items-stretch mt-10">
+      {[
+        {
+          icon: Target,
+          title: 'Accurate Estimates',
+          desc: 'Get perfect calculations based on actual sheet sizes and your project dimensions.',
+          color: 'from-blue-500 to-blue-600',
+        },
+        {
+          icon: DollarSign,
+          title: 'Save Money',
+          desc: 'Avoid buying extra material with smart wastage and budgeting suggestions.',
+          color: 'from-green-500 to-green-600',
+        },
+        {
+          icon: Clock,
+          title: 'Save Time',
+          desc: 'Instant results — no need for manual math or complicated spreadsheets.',
+          color: 'from-purple-500 to-purple-600',
+        },
+        {
+          icon: TrendingDown,
+          title: 'Reduce Waste',
+          desc: 'Use materials efficiently with helpful buffer recommendations tailored to your project.',
+          color: 'from-orange-500 to-orange-600',
+        },
+      ].map((benefit, idx) => (
+        <motion.div
+          key={idx}
+          className="h-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard variant="elevated" className="h-full">
+            <div className="p-6 text-center flex flex-col gap-4 items-center h-full">
+              
+              {/* Icon */}
+              <div
+                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color}
+                flex items-center justify-center shadow-lg`}
+              >
+                <benefit.icon className="w-8 h-8 text-white" />
+              </div>
 
-          <p className="text-sm text-gray-600">
-            {benefit.desc}
-          </p>
-        </div>
-      </ModernCard>
-    </motion.div>
-  ))}
-</div>
+              
+              <h3 className="text-[20px] font-semibold text-gray-900">
+                {benefit.title}
+              </h3>
 
-        </div>
-      </section>
+              
+              <p className="text-[14px] font-normal text-gray-600 leading-relaxed">
+                {benefit.desc}
+              </p>
+
+            </div>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       <PageContainer className="space-y-20">
 
       {/* Calculator Section */}
       <section className="grid lg:grid-cols-3 gap-8">
-        {/* Input Form */}
-        <div className="lg:col-span-2 space-y-6">
-          <div className="glass-card rounded-xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-trees-primary rounded-lg p-2">
-                <Calculator className="w-6 h-6 text-white" />
-              </div>
-              <h2 className="text-trees-primary">Project Details</h2>
-            </div>
+  {/* Input Form */}
+  <div className="lg:col-span-2 space-y-6">
+    <div className="glass-card rounded-xl p-8">
 
-            <div className="space-y-6">
-              {/* Unit Selection */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Measurement Unit
-                </label>
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => setUnit('feet')}
-                    className={`flex-1 py-3 px-4 rounded-lg border-2 transition-all ${
-                      unit === 'feet'
-                        ? 'border-trees-primary bg-trees-primary/10 text-trees-primary font-semibold'
-                        : 'border-gray-200 text-gray-600 hover:border-trees-primary/50'
-                    }`}
-                  >
-                    Square Feet
-                  </button>
-                  <button
-                    onClick={() => setUnit('mm')}
-                    className={`flex-1 py-3 px-4 rounded-lg border-2 transition-all ${
-                      unit === 'mm'
-                        ? 'border-trees-primary bg-trees-primary/10 text-trees-primary font-semibold'
-                        : 'border-gray-200 text-gray-600 hover:border-trees-primary/50'
-                    }`}
-                  >
-                    Square Meters
-                  </button>
-                </div>
-              </div>
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-6">
+        <div className="bg-trees-primary rounded-lg p-2">
+          <Calculator className="w-6 h-6 text-white" />
+        </div>
+        
+        <h2 className="text-[24px] font-semibold text-trees-primary">
+          Project Details
+        </h2>
+      </div>
+
+      <div className="space-y-6">
+
+       
+        <div>
+        
+          <label className="block text-[14px] font-medium text-gray-700 mb-2">
+            Measurement Unit
+          </label>
+
+          <div className="flex gap-3">
+            
+            <button
+              onClick={() => setUnit('feet')}
+              className={`flex-1 py-3 px-4 rounded-lg border-2 transition-all text-[14px] font-medium ${
+                unit === 'feet'
+                  ? 'border-trees-primary bg-trees-primary/10 text-trees-primary'
+                  : 'border-gray-200 text-gray-600 hover:border-trees-primary/50'
+              }`}
+            >
+              Square Feet
+            </button>
+
+           
+            <button
+              onClick={() => setUnit('mm')}
+              className={`flex-1 py-3 px-4 rounded-lg border-2 transition-all text-[14px] font-medium ${
+                unit === 'mm'
+                  ? 'border-trees-primary bg-trees-primary/10 text-trees-primary'
+                  : 'border-gray-200 text-gray-600 hover:border-trees-primary/50'
+              }`}
+            >
+              Square Meters
+            </button>
+          </div>
+        </div>
+
+     
+
+  
+
 
               {/* Sheet Size */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
-                  <Ruler className="w-4 h-4 text-trees-primary" />
-                  Standard Sheet Size
-                </label>
-                <select
-                  value={standardSizes.findIndex(s => s === sheetSize)}
-                  onChange={(e) => setSheetSize(standardSizes[parseInt(e.target.value)])}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-trees-primary focus:border-transparent"
-                >
-                  {standardSizes.map((size, index) => (
-                    <option key={index} value={index}>
-                      {size.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
+ 
+  <label className="block text-[14px] font-medium text-gray-700 mb-2 flex items-center gap-2">
+    <Ruler className="w-4 h-4 text-trees-primary" />
+    Standard Sheet Size
+  </label>
+
+  
+  <select
+    value={standardSizes.findIndex(s => s === sheetSize)}
+    onChange={(e) =>
+      setSheetSize(standardSizes[parseInt(e.target.value)])
+    }
+    className="w-full px-4 py-3 border border-gray-200 rounded-lg
+               text-[16px] font-normal text-gray-800
+               focus:outline-none focus:ring-2 focus:ring-trees-primary focus:border-transparent"
+  >
+    {standardSizes.map((size, index) => (
+      <option key={index} value={index} className="text-[16px]">
+        {size.label}
+      </option>
+    ))}
+  </select>
+</div>
 
               {/* Plywood Type */}
               <div>
@@ -430,23 +460,31 @@ interface CalculatorPageProps {
           </div>
 
           {/* Info Card */}
-          <div className="glass-card rounded-xl p-6 bg-blue-50/50">
-            <div className="flex items-start gap-3">
-              <Info className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-              <div>
-                <h3 className="text-blue-900 mb-2">How to Use This Calculator</h3>
-                <ul className="text-sm text-blue-800 space-y-1">
-                  <li>• Choose your measurement unit (sq. ft or sq. m)</li>
-                  <li>• Select the sheet size or enter custom dimensions</li>
-                  <li>• Pick the plywood type and thickness</li>
-                  <li>• Enter the total area of your project</li>
-                  <li>• Adjust the wastage buffer based on how complex your work is</li>
-                  <li>• Click “Calculate” to get your sheet estimate.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+         <div className="glass-card rounded-xl p-6 bg-blue-50/50">
+  <div className="flex items-start gap-3">
+    {/* Icon */}
+    <Info className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+
+    <div>
+     
+      <h3 className="text-[20px] font-semibold text-blue-900 mb-2">
+        How to Use This Calculator
+      </h3>
+
+     
+      <ul className="text-[14px] font-normal text-blue-800 space-y-1 leading-relaxed">
+        <li>• Choose your measurement unit (sq. ft or sq. m)</li>
+        <li>• Select the sheet size or enter custom dimensions</li>
+        <li>• Pick the plywood type and thickness</li>
+        <li>• Enter the total area of your project</li>
+        <li>• Adjust the wastage buffer based on how complex your work is</li>
+        <li>• Click “Calculate” to get your sheet estimate</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
 
         {/* Results Panel */}
         <div className="lg:col-span-1">
@@ -517,6 +555,7 @@ interface CalculatorPageProps {
               )}
             </div>
 
+            
             {/* Quick Tips */}
             <div className="glass-card rounded-xl p-6 bg-amber-50/50">
               <h4 className="text-amber-900 mb-3 flex items-center gap-2">
@@ -535,122 +574,130 @@ interface CalculatorPageProps {
       </section>
 
       {/* Example Projects */}
-      <section>
-        <ModernSectionHeader
-          badge="Examples"
-          title="Common Project Requirements"
-          subtitle="Use this quick guide to understand typical plywood needs for different spaces."
-        />
+     <section>
+  <ModernSectionHeader
+    badge="Examples"
+    title="Common Project Requirements"
+    subtitle="Use this quick guide to understand typical plywood needs for different spaces."
+  />
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { name: 'Kitchen Cabinets', area: '120-150 sq. ft', sheets: '4-5 sheets', type: 'Bhima/Samrat BWP' },
-            { name: 'Bedroom Wardrobe', area: '80-100 sq. ft', sheets: '3-4 sheets', type: 'Ujval Interior' },
-            { name: 'False Ceiling', area: '200-250 sq. ft', sheets: '7-8 sheets', type: 'Ujval IS:303' },
-            { name: 'TV Unit', area: '40-50 sq. ft', sheets: '2 sheets', type: 'Samrat Premium' },
-            { name: 'Study Table', area: '25-30 sq. ft', sheets: '1 sheet', type: 'Ujval Interior' },
-            { name: 'Full Room Interior', area: '400-500 sq. ft', sheets: '15-18 sheets', type: 'Ananta/Samrat' },
-          ].map((project, index) => (
-            <div key={index} className="glass-card rounded-xl p-6 hover:shadow-xl transition-all">
-              <h4 className="text-trees-primary mb-3">{project.name}</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Typical Area:</span>
-                  <span className="font-medium text-gray-800">{project.area}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Sheets Needed:</span>
-                  <span className="font-medium text-gray-800">{project.sheets}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Recommended:</span>
-                  <span className="font-medium text-gray-800">{project.type}</span>
-                </div>
-              </div>
-            </div>
-          ))}
+  <div className="grid md:grid-cols-3 gap-6">
+    {[
+      { name: 'Kitchen Cabinets', area: '120–150 sq. ft', sheets: '4–5 sheets', type: 'Bhima / Samrat BWP' },
+      { name: 'Bedroom Wardrobe', area: '80–100 sq. ft', sheets: '3–4 sheets', type: 'Ujval Interior' },
+      { name: 'False Ceiling', area: '200–250 sq. ft', sheets: '7–8 sheets', type: 'Ujval IS:303' },
+      { name: 'TV Unit', area: '40–50 sq. ft', sheets: '2 sheets', type: 'Samrat Premium' },
+      { name: 'Study Table', area: '25–30 sq. ft', sheets: '1 sheet', type: 'Ujval Interior' },
+      { name: 'Full Room Interior', area: '400–500 sq. ft', sheets: '15–18 sheets', type: 'Ananta / Samrat' },
+    ].map((project, index) => (
+      <div
+        key={index}
+        className="glass-card rounded-xl p-6 hover:shadow-xl transition-all"
+      >
+        
+        <h4 className="text-[20px] font-semibold text-trees-primary mb-3">
+          {project.name}
+        </h4>
+
+       
+        <div className="space-y-2 text-[14px]">
+          <div className="flex justify-between">
+            <span className="text-gray-600 font-normal">Typical Area:</span>
+            <span className="font-medium text-gray-800">{project.area}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600 font-normal">Sheets Needed:</span>
+            <span className="font-medium text-gray-800">{project.sheets}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600 font-normal">Recommended:</span>
+            <span className="font-medium text-gray-800">{project.type}</span>
+          </div>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Related Tools Section */}
       <section>
-        <ModernSectionHeader
-          badge="More Tools"
-          badgeIcon={Calculator}
-          title="Explore Related Tools"
-          subtitle="Use these helpful tools to plan your project with confidence."
-        />
+  <ModernSectionHeader
+    badge="More Tools"
+    badgeIcon={Calculator}
+    title="Explore Related Tools"
+    subtitle="Use these helpful tools to plan your project with confidence."
+  />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -8 }}
-          >
-            <ModernCard variant="elevated" className="cursor-pointer" onClick={() => onNavigate('comparison')}>
-              <div className="p-8 text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
-                  <Scale className="w-10 h-10 text-trees-primary" />
-                </div>
-                <h4>Product Comparison</h4>
-                <p className="text-gray-600">
-                  Compare features, specs, and warranties to find plywood of your choice.
-                </p>
-                <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
-                  Compare Products
-                </ModernButton>
-              </div>
-            </ModernCard>
-          </motion.div>
+  <div className="grid md:grid-cols-3 gap-8">
+    {[
+      {
+        icon: Scale,
+        title: 'Product Comparison',
+        description:
+          'Compare features, specs, and warranties to find plywood of your choice.',
+        buttonText: 'Compare Products',
+        buttonIcon: ArrowRight,
+        onClick: () => onNavigate('comparison'),
+      },
+      {
+        icon: Package,
+        title: 'Request Samples',
+        description:
+          'Order free samples and feel the quality yourself before making a choice.',
+        buttonText: 'Request Samples',
+        buttonIcon: ArrowRight,
+        onClick: () => onNavigate('sample-request'),
+      },
+      {
+        icon: FileText,
+        title: 'Downloads Center',
+        description:
+          'Browse catalogs, technical sheets, and installation guides—all in one place.',
+        buttonText: 'Browse Downloads',
+        buttonIcon: Download,
+        onClick: () => onNavigate('downloads'),
+      },
+    ].map((tool, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        whileHover={{ y: -8 }}
+      >
+        <ModernCard
+          variant="elevated"
+          className="cursor-pointer"
+          onClick={tool.onClick}
+        >
+          <div className="p-8 text-center space-y-4">
+            <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
+              <tool.icon className="w-10 h-10 text-trees-primary" />
+            </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            whileHover={{ y: -8 }}
-          >
-            <ModernCard variant="elevated" className="cursor-pointer" onClick={() => onNavigate('sample-request')}>
-              <div className="p-8 text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
-                  <Package className="w-10 h-10 text-trees-primary" />
-                </div>
-                <h4>Request Samples</h4>
-                <p className="text-gray-600">
-                  Order free samples and feel the quality yourself before making a choice.
-                </p>
-                <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
-                  Request Samples
-                </ModernButton>
-              </div>
-            </ModernCard>
-          </motion.div>
+          
+            <h4 className="text-[20px] font-semibold text-gray-900">{tool.title}</h4>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            whileHover={{ y: -8 }}
-          >
-            <ModernCard variant="elevated" className="cursor-pointer" onClick={() => onNavigate('downloads')}>
-              <div className="p-8 text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
-                  <FileText className="w-10 h-10 text-trees-primary" />
-                </div>
-                <h4>Downloads Center</h4>
-                <p className="text-gray-600">
-                  Browse catalogs, technical sheets, and installation guides—all in one place.
-                </p>
-                <ModernButton variant="outline" icon={<Download className="w-4 h-4" />} fullWidth>
-                  Browse Downloads
-                </ModernButton>
-              </div>
-            </ModernCard>
-          </motion.div>
-        </div>
-      </section>
+            
+            <p className="text-[14px] text-gray-600">{tool.description}</p>
+
+            <ModernButton
+              variant="outline"
+              icon={<tool.buttonIcon className="w-4 h-4" />}
+              fullWidth
+              className="text-[14px] font-medium"
+            >
+              {tool.buttonText}
+            </ModernButton>
+          </div>
+        </ModernCard>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
     </PageContainer>
 
     
@@ -743,107 +790,124 @@ interface CalculatorPageProps {
 
     {/* Related Tools */}
     <section className="section-padding">
-      <PageContainer>
-        <ModernSectionHeader
-          badge="More Tools"
-          badgeIcon={Zap}
-          title="Explore Other Tools"
-          subtitle="Use our complete suite of tools to plan and execute your plywood projects"
-        />
+  <PageContainer>
+    <ModernSectionHeader
+      badge="More Tools"
+      badgeIcon={Zap}
+      title="Explore Other Tools"
+      subtitle="Use our complete suite of tools to plan and execute your plywood projects"
+    />
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+    <div className="grid md:grid-cols-2 gap-6">
+      {[
+        {
+          title: 'Product Comparison',
+          description:
+            'Compare features, specs, and warranties side-by-side to find the plywood that fits your needs.',
+          icon: Scale,
+          gradient: 'from-purple-500 to-purple-600',
+          onClick: () => onNavigate('comparison'),
+          actionText: 'Compare Products',
+        },
+        {
+          title: 'Request Samples',
+          description:
+            'Order free samples and feel the quality yourself before making a choice.',
+          icon: Package,
+          gradient: 'from-green-500 to-green-600',
+          onClick: () => onNavigate('sample-request'),
+          actionText: 'Request Samples',
+        },
+      ].map((tool, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <ModernCard
+            variant="elevated"
+            className="p-8 h-full group cursor-pointer hover:shadow-2xl transition-all duration-300"
+            onClick={tool.onClick}
           >
-            <ModernCard variant="elevated" className="p-8 h-full group cursor-pointer hover:shadow-2xl transition-all duration-300" onClick={() => onNavigate('comparison')}>
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Scale className="w-8 h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">Product Comparison</h3>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Compare features, specs, and warranties side-by-side to find the plywood that fits your needs.
-                  </p>
-                  <div className="flex items-center gap-2 text-trees-primary font-semibold text-sm group-hover:gap-3 transition-all">
-                    <span>Compare Products</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+            <div className="flex items-start gap-4">
+              <div
+                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${tool.gradient} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <tool.icon className="w-8 h-8 text-white" />
+              </div>
+
+              <div className="flex-1">
+               
+                <h3 className="text-[20px] font-semibold text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">
+                  {tool.title}
+                </h3>
+
+               
+                <p className="text-[14px] text-gray-600 mb-4">{tool.description}</p>
+
+               
+                <div className="flex items-center gap-2 text-trees-primary font-medium text-[14px] group-hover:gap-3 transition-all">
+                  <span>{tool.actionText}</span>
+                  <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
-            </ModernCard>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <ModernCard variant="elevated" className="p-8 h-full group cursor-pointer hover:shadow-2xl transition-all duration-300" onClick={() => onNavigate('sample-request')}>
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Package className="w-8 h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">Request Samples</h3>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Order free samples and feel the quality yourself before making a choice.
-                  </p>
-                  <div className="flex items-center gap-2 text-trees-primary font-semibold text-sm group-hover:gap-3 transition-all">
-                    <span>Request Samples</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </div>
-            </ModernCard>
-          </motion.div>
-        </div>
-      </PageContainer>
-    </section>
+            </div>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </PageContainer>
+</section>
 
     {/* CTA Section */}
-    <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
+<section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
+  <div className="container mx-auto px-6 relative z-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="max-w-4xl mx-auto"
+    >
       
-      <div className="container mx-auto px-6 relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
-          <h2 className="text-white mb-6">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl text-white/90 mb-10 leading-relaxed">
-            Get expert advice, quality products, and professional support for all your plywood needs
-          </p>
+      <h2 className="text-white text-[30px] font-semibold mb-6">
+        Ready to Start Your Project?
+      </h2>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            <MagneticButton strength={0.2}>
-              <ModernButton
-                variant="light"
-                size="xl"
-                icon={<ArrowRight className="w-6 h-6" />}
-                onClick={() => onNavigate('contact')}
-              >
-                Contact Our Experts
-              </ModernButton>
-            </MagneticButton>
-            <ModernButton
-              variant="outline"
-              size="xl"
-              icon={<Package className="w-6 h-6" />}
-              onClick={() => onNavigate('products')}
-              className="border-white text-white hover:bg-white/20"
-            >
-              Browse Products
-            </ModernButton>
-          </div>
-        </motion.div>
+     
+      <p className="text-[16px] text-white/90 mb-10 leading-relaxed">
+        Get expert advice, quality products, and professional support for all your plywood needs.
+      </p>
+
+      <div className="flex flex-wrap gap-4 justify-center">
+       
+        <MagneticButton strength={0.2}>
+          <ModernButton
+            variant="light"
+            size="xl"
+            icon={<ArrowRight className="w-6 h-6" />}
+            onClick={() => onNavigate('contact')}
+            className="font-medium text-[16px]"
+          >
+            Contact Our Experts
+          </ModernButton>
+        </MagneticButton>
+
+        
+        <ModernButton
+          variant="outline"
+          size="xl"
+          icon={<Package className="w-6 h-6" />}
+          onClick={() => onNavigate('products')}
+          className="border-white text-white hover:bg-white/20 font-medium text-[16px]"
+        >
+          Browse Products
+        </ModernButton>
       </div>
-    </section>
+    </motion.div>
+  </div>
+</section>
+
     </div>
   );
 }

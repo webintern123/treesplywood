@@ -154,29 +154,32 @@ export function HomePage({ onNavigate }: HomePageProps) {
     { value: '10,000+', label: 'Homes & Projects Delivered with Trust.' },
   ]}
   actions={
-    <div className="flex flex-wrap gap-4">
-      <MagneticButton strength={0.2}>
-        <ModernButton
-          variant="light"
-          size="xl"
-          icon={<ArrowRight className="w-6 h-6" />}
-          onClick={() => onNavigate('products')}
-        >
-         Explore Our Collections
-        </ModernButton>
-      </MagneticButton>
-      <MagneticButton strength={0.2}>
-        <ModernButton
-          variant="outline-light"
-          size="xl"
-          icon={<Calculator className="w-6 h-6" />}
-          onClick={() => onNavigate('calculator')}
-        >
-          Calculate Our Requirements
-        </ModernButton>
-      </MagneticButton>
-    </div>
-  }
+  <div className="flex flex-wrap gap-4">
+    <MagneticButton strength={0.2}>
+      <ModernButton
+        variant="light"
+        size="lg" // 16px text for buttons
+        icon={<ArrowRight className="w-5 h-5" />}
+        className="text-[16px] font-medium"
+        onClick={() => onNavigate('products')}
+      >
+        Explore Our Collections
+      </ModernButton>
+    </MagneticButton>
+    <MagneticButton strength={0.2}>
+      <ModernButton
+        variant="outline-light"
+        size="lg"
+        icon={<Calculator className="w-5 h-5" />}
+        className="text-[16px] font-medium"
+        onClick={() => onNavigate('calculator')}
+      >
+        Calculate Our Requirements
+      </ModernButton>
+    </MagneticButton>
+  </div>
+}
+
 />
 
 
@@ -214,11 +217,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       
 {/* Nature-Strength / Layered Features Section */}
- <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
-
-
-
+<section className="section-padding bg-gradient-to-br from-gray-50 to-white">
   <div className="container mx-auto px-6">
+
     <ModernSectionHeader
       badge="Nature-Strength, Industry-Tested"
       badgeIcon={Sparkles}
@@ -227,24 +228,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
     />
 
     {/* Optional Rotating Taglines */}
-    <div className="text-center mb-10">
-     <TypewriterTaglines
-  taglines={[
-    'Strength of Earth, Soul of Nature.',
-    'Built to Protect. Designed to Last.',
-    'Earth. Nature. Strength.',
-    'More Than Sheets - We Build Legacies.'
-  ]}
-/>
-
-    </div>
+   <div className="text-[20px] font-semibold text-gray-800">
+  <TypewriterTaglines
+    taglines={[
+      'Strength of Earth, Soul of Nature.',
+      'Built to Protect. Designed to Last.',
+      'Earth. Nature. Strength.',
+      'More Than Sheets - We Build Legacies.'
+    ]}
+  />
+</div>
 
     {/* Layered Strength Features */}
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {[
         { icon: Leaf, title: 'E0/E1 Zero-Emission Plywood' },
         { icon: Shield, title: '100% BWP Waterproof Protection' },
-        { icon: TrendingUp, title: 'Fire-Retardant Technology' }, // replace with actual icon
+        { icon: TrendingUp, title: 'Fire-Retardant Technology' },
         { icon: Trophy, title: 'Anti-Termite & Borer Shield' },
         { icon: Layers, title: 'Hexadic Calibrated Finish' },
         { icon: Award, title: 'IS:10701 Certified Structural Grade' },
@@ -263,16 +263,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0">
             <feature.icon className="w-6 h-6 text-trees-primary" />
           </div>
-          <p className="text-gray-800 font-semibold">{feature.title}</p>
+
+          {/* Feature Label – Secondary Text */}
+          <p className="text-[14px] font-semibold text-gray-800 leading-snug">
+            {feature.title}
+          </p>
         </motion.div>
       ))}
     </div>
 
-    <div className="text-center mt-12 text-gray-700 font-medium">
+    {/* Trust Line – Body Text */}
+    <div className="text-center mt-12 text-[16px] font-medium text-gray-700">
       Trusted Plywood for Homes, Designers & Builders Across India.
     </div>
+
   </div>
 </section>
+
 <br></br>
 
       {/* Why Choose Us Section */}
@@ -344,12 +351,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+  {feature.title}
+</h3>
+
+                 <p className="text-[16px] font-normal text-gray-600 leading-relaxed">
+  {feature.description}
+</p>
+
 
                   {/* Hover indicator */}
                  
@@ -415,13 +424,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </span>
         </div>
         <div className="absolute bottom-4 left-4">
-          <h3 className="text-3xl font-bold mb-1 text-white">{product.title}</h3>
-          <p className="text-white/90">{product.subtitle}</p>
+         <h3 className="text-xl font-semibold mb-1 text-white">{product.title}</h3>
+
+        <p className="text-[14px] font-semibold text-white/90">{product.subtitle}</p>
+
         </div>
       </div>
       
       <div className="p-6 space-y-4">
-        <p className="text-gray-700">{product.desc}</p>
+       <p className="text-[16px] font-normal text-gray-700">{product.desc}</p>
+
         
         <div className="flex flex-wrap gap-2">
           {product.features.map((feature, i) => (
@@ -459,7 +471,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
-     {/* How is Tree’s Plywood Different & Legacy in Numbers Section */}
+    {/* How is Tree’s Plywood Different & Legacy in Numbers Section */}
 <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
   <div className="container mx-auto px-6">
     {/* Modern Section Header */}
@@ -491,21 +503,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0">
             <feature.icon className="w-6 h-6 text-trees-primary" />
           </div>
-          <p className="text-gray-800 font-semibold">{feature.title}</p>
+         
+          <p className="text-[14px] font-semibold text-gray-800">{feature.title}</p>
         </motion.div>
       ))}
     </div>
 
-    {/* Spacer between sections */}
+    
     <div className="my-16"></div>
 
     {/* Our Legacy in Numbers */}
     <div className="container mx-auto px-6 text-center mt-16">
-
-      <h2 className="text-3xl font-bold text-gray-900 mb-2">
+     
+      <h2 className="text-[24px] font-bold text-gray-900 mb-2">
         Our Legacy in Numbers
       </h2>
-      <p className="text-gray-700 font-medium mb-8">
+      
+      <p className="text-[16px] font-normal text-gray-700 mb-8">
         Decades of Excellence, Innovation, and Customer Satisfaction
       </p>
 
@@ -520,19 +534,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
             key={idx}
             className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow"
           >
-            <h3 className="text-3xl font-bold text-trees-primary">{stat.value}</h3>
-            <p className="text-gray-700 font-medium mt-2">{stat.label}</p>
+            
+            <h3 className="text-[20px] font-bold text-trees-primary">{stat.value}</h3>
+          
+            <p className="text-[16px] font-normal text-gray-700 mt-2">{stat.label}</p>
           </div>
         ))}
       </div>
     </div>
   </div>
 </section>
+
 {/* Our Approach Section */}
 <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
   <div className="container mx-auto px-6">
     <ModernSectionHeader
-    
       badgeIcon={Lightbulb}
       title="Our Approach"
       subtitle="From the very first to the final delivery, we ensure every step is handled with care and attention."
@@ -592,9 +608,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <div className="w-14 h-14 rounded-xl bg-trees-primary/10 flex items-center justify-center">
                       <step.icon className="w-7 h-7 text-trees-primary" />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-900">{step.title}</h4>
+                   
+                    <h3 className="text-[20px] font-semibold text-gray-900">{step.title}</h3>
                   </div>
-                  <p className="text-gray-600">{step.description}</p>
+                 
+                  <p className="text-[16px] font-normal text-gray-600">{step.description}</p>
                 </div>
               </div>
             )}
@@ -617,9 +635,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <div className="w-14 h-14 rounded-xl bg-trees-primary/10 flex items-center justify-center">
                       <step.icon className="w-7 h-7 text-trees-primary" />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-900">{step.title}</h4>
+                   
+                    <h3 className="text-[20px] font-semibold text-gray-900">{step.title}</h3>
                   </div>
-                  <p className="text-gray-600">{step.description}</p>
+                  
+                  <p className="text-[16px] font-normal text-gray-600">{step.description}</p>
                 </div>
               </div>
             )}
@@ -629,16 +649,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
     </div>
   </div>
 </section>
+
 {/* Trusted By Industry Leaders */}
 <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
   <div className="container mx-auto px-6 text-center">
-    <h3 className="text-3xl font-bold text-gray-900 mb-2">Trusted By Industry Leaders</h3>
-    <p className="text-gray-600 mb-12">
+    {/* H2 - 24px, semibold/bold */}
+    <h2 className="text-[24px] font-semibold text-gray-900 mb-2">
+      Trusted By Industry Leaders
+    </h2>
+
+    {/* Body Text - 16px, normal */}
+    <p className="text-[16px] font-normal text-gray-600 mb-12">
       Partnering with the best in architecture, construction, and design
     </p>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {/* Card Component */}
       {[
         { count: '150+', label: 'Leading Architects' },
         { count: '200+', label: 'Builders & Premium Construction Companies' },
@@ -651,12 +676,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
           key={idx}
           className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300"
         >
+          {/* Count - 30px (H1 style), bold */}
         <span className="text-4xl font-bold font-black tracking-tight text-trees-primary mb-4 block">
   {item.count}
 </span>
 
-
-          <p className="text-gray-700 font-medium">{item.label}</p>
+          {/* Label - 16px, normal */}
+          <p className="text-[16px] font-normal text-gray-700">{item.label}</p>
         </div>
       ))}
     </div>
@@ -664,80 +690,102 @@ export function HomePage({ onNavigate }: HomePageProps) {
 </section>
 
 
-      {/* Manufacturing Process - Using AnimatedProcess Component */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="How Tree’s Plywood Creates Strength?"
-            badgeIcon={Factory}
-            title="Our Manufacturing Process"
-            subtitle="Every sheet of Tree’s Plywood is crafted with care, from selecting the right wood to the final quality seal."
-          />
+      {/* Manufacturing Process Section */}
+<section className="section-padding bg-gray-50">
+  <div className="container mx-auto px-6">
+    {/* Section Header */}
+    <ModernSectionHeader
+      badge="How Tree’s Plywood Creates Strength?"
+      badgeIcon={Factory}
+      title="Our Manufacturing Process"
+      subtitle="Every sheet of Tree’s Plywood is crafted with care, from selecting the right wood to the final quality seal."
+    />
 
-          <AnimatedProcess 
-            steps={[
-              { number: '01', icon: Layers, title: 'Responsible Wood Selection', description: 'Handpicked Gurjan & hardwood veneers sourced from sustainable, certified forests.' },
-              { number: '02', icon: TestTube, title: 'Advanced Bonding Technology', description: 'Engineered with BWP-grade PF adhesives for long-lasting strength and moisture resistance.' },
-              { number: '03', icon: PackageCheck, title: '50+ Quality Checks', description: 'Every sheet undergoes strict testing for durability, density, moisture, bonding, and performance.' },
-              { number: '04', icon: Truck, title: 'Calibrated & Ready to Deliver', description: 'Perfectly smooth, dimensionally stable, and backed by a warranty before it reaches your project.' },
-            ]}
-          />
-        </div>
-      </section>
+    {/* Animated Process */}
+    <AnimatedProcess 
+      steps={[
+        {
+          number: '01',
+          icon: Layers,
+          title: 'Responsible Wood Selection',
+          description: 'Handpicked Gurjan & hardwood veneers sourced from sustainable, certified forests.'
+        },
+        {
+          number: '02',
+          icon: TestTube,
+          title: 'Advanced Bonding Technology',
+          description: 'Engineered with BWP-grade PF adhesives for long-lasting strength and moisture resistance.'
+        },
+        {
+          number: '03',
+          icon: PackageCheck,
+          title: '50+ Quality Checks',
+          description: 'Every sheet undergoes strict testing for durability, density, moisture, bonding, and performance.'
+        },
+        {
+          number: '04',
+          icon: Truck,
+          title: 'Calibrated & Ready to Deliver',
+          description: 'Perfectly smooth, dimensionally stable, and backed by a warranty before it reaches your project.'
+        },
+      ]}
+    />
+  </div>
+</section>
+      {/* Applications Section */}
+<section className="section-padding">
+  <div className="container mx-auto px-6">
+    {/* Section Header */}
+    <ModernSectionHeader
+      badge="Where We're Used"
+      badgeIcon={Hammer}
+      title="Where Tree’s Plywood Performs Best?"
+      subtitle="From cozy homes to high-performance commercial environments, Tree’s plywood adapts to your vision with strength you can trust."
+    />
 
-      {/* Applications - Using ApplicationCard Component */}
-      {/* Applications - Using ApplicationCard Component */}
-      <section className="section-padding">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Where We're Used"
-            badgeIcon={Hammer}
-            title="Where Tree’s Plywood Performs Best?"
-            subtitle="-	Strong, Reliable, Built for Every Space"
-          />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { 
-                title: 'Kitchen Cabinets', 
-                description: 'Built to handle daily moisture, heat, and heavy use.', 
-                img: 'https://images.unsplash.com/photo-1649083048428-3d8ed23a3ce0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwaW50ZXJpb3IlMjBkZXNpZ258ZW58MXx8fHwxNzYyMTQ0MTAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-                badges: ['	BWP/MR Grade Options', 'Superior Water Resistance', 'Anti-Termite & Anti-Borer Protection'],
-                badge: 'Popular'
-              },
-              { 
-                title: 'Furniture', 
-                description: 'Ideal for wardrobes, beds, shelves, and custom designs requiring a flawless finish.', 
-                img: 'https://images.unsplash.com/photo-1695687349399-452a14c409be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBmdXJuaXR1cmUlMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwxfHx8fDE3NjE5OTAwODh8MA&ixlib=rb-4.1.0&q=80&w=1080',
-                badges: ['Calibrated Smooth Surface', '	Zero Core Gaps', 'Premium Strength Layers']
-              },
-              { 
-                title: 'Commercial spaces', 
-                description: 'Made for high-traffic areas that demand long-lasting reliability and strength.', 
-                img: 'https://images.unsplash.com/photo-1693661391267-ad955aeeb564?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwYnVpbGRpbmclMjBjb25zdHJ1Y3Rpb258ZW58MXx8fHwxNzYxODg3MDA2fDA&ixlib=rb-4.1.0&q=80&w=1080',
-                badges: ['High Load-Bearing Strength', 'Durable & Stable', 'Certified']
-              },
-              { 
-                title: 'Marine Applications', 
-                description: 'Boat decks, coastal homes, and outdoor installations with marine-grade quality', 
-                img: 'https://images.unsplash.com/photo-1630414818380-ce90b58af597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2F0JTIwZGVjayUyMG1hcmluZSUyMHdvb2R8ZW58MXx8fHwxNzYxOTkwMDg5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-                badges: ['100% BWP Marine Grade', 'Salt & Humidity Resistant', 'Lifetime Warranty'],
-                badge: 'Premium'
-              },
-            ].map((app, idx) => (
-              <ApplicationCard
-                key={idx}
-                title={app.title}
-                description={app.description}
-                image={app.img}
-                badges={app.badges}
-                badge={app.badge}
-                onLearnMore={() => onNavigate('products')}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* Application Cards Grid */}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        { 
+          title: 'Kitchen Cabinets', 
+          description: 'Built to handle daily moisture, heat, and heavy use.', 
+          img: 'https://images.unsplash.com/photo-1649083048428-3d8ed23a3ce0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwaW50ZXJpb3IlMjBkZXNpZ258ZW58MXx8fHwxNzYyMTQ0MTAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+          badges: ['BWP/MR Grade Options', 'Superior Water Resistance', 'Anti-Termite & Anti-Borer Protection'],
+          badge: 'Popular'
+        },
+        { 
+          title: 'Furniture', 
+          description: 'Ideal for wardrobes, beds, shelves, and custom designs requiring a flawless finish.', 
+          img: 'https://images.unsplash.com/photo-1695687349399-452a14c409be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBmdXJuaXR1cmUlMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwxfHx8fDE3NjE5OTAwODh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+          badges: ['Calibrated Smooth Surface', 'Zero Core Gaps', 'Premium Strength Layers']
+        },
+        { 
+          title: 'Commercial Spaces', 
+          description: 'Made for high-traffic areas that demand long-lasting reliability and strength.', 
+          img: 'https://images.unsplash.com/photo-1693661391267-ad955aeeb564?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwYnVpbGRpbmclMjBjb25zdHJ1Y3Rpb258ZW58MXx8fHwxNzYxODg3MDA2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+          badges: ['High Load-Bearing Strength', 'Durable & Stable', 'Certified']
+        },
+        { 
+          title: 'Marine Applications', 
+          description: 'Boat decks, coastal homes, and outdoor installations with marine-grade quality.', 
+          img: 'https://images.unsplash.com/photo-1630414818380-ce90b58af597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2F0JTIwZGVjayUyMG1hcmluZSUyMHdvb2R8ZW58MXx8fHwxNzYxOTkwMDg5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+          badges: ['100% BWP Marine Grade', 'Salt & Humidity Resistant', 'Lifetime Warranty'],
+          badge: 'Premium'
+        },
+      ].map((app, idx) => (
+        <ApplicationCard
+          key={idx}
+          title={app.title}
+          description={app.description}
+          image={app.img}
+          badges={app.badges}
+          badge={app.badge}
+          onLearnMore={() => onNavigate('products')}
+        />
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Testimonials Section */}
       <section className="section-padding bg-gray-50">
@@ -756,8 +804,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-  {/* Circles background removed */}
-
   <div className="container mx-auto px-6 relative z-10 text-center">
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -765,25 +811,30 @@ export function HomePage({ onNavigate }: HomePageProps) {
       viewport={{ once: true }}
       className="max-w-4xl mx-auto"
     >
+      {/* Badge */}
       <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-8">
         <Sparkles className="w-5 h-5" />
         <span>Ready to Build Something Strong?</span>
       </div>
-      
-      <h2 className="text-white mb-6">
+
+          <h2 className="text-white text-[24px] font-semibold mb-6">
         Let’s Create Spaces That Last Longer
       </h2>
-      <p className="text-xl text-white/90 mb-10 leading-relaxed">
+
+      
+      <p className="text-[16px] text-white/90 mb-6 leading-relaxed">
         Talk to our team for Expert Guidance, Custom Solutions, and Plywood you can trust for any project — Big or Small.
       </p>
-     <p
-  className="text-base text-white/80 mb-10 cursor-pointer hover:text-white transition"
-  onClick={() => onNavigate('sample-request')}
->
-  Need help choosing? <span className="underline font-medium">Request a sample.</span>
-</p>
 
+     
+      <p
+        className="text-[12px] text-white/80 mb-10 cursor-pointer hover:text-white transition"
+        onClick={() => onNavigate('sample-request')}
+      >
+        Need help choosing? <span className="underline font-medium">Request a sample.</span>
+      </p>
 
+      {/* Action Buttons */}
       <div className="flex flex-wrap gap-4 justify-center">
         <ModernButton
           variant="light"
@@ -793,6 +844,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         >
           Contact Us
         </ModernButton>
+
         <ModernButton
           variant="outline"
           size="xl"
@@ -806,7 +858,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
     </motion.div>
   </div>
 </section>
-
 
       {/* FAQ Section */}
       <section className="section-padding">
@@ -958,59 +1009,76 @@ For large projects, we can connect you with trained carpenters and certified ins
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-          backgroundSize: '30px 30px'
-        }} />
+      {/* Newsletter Section */}
+<section className="section-padding bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
+  {/* Background dots */}
+  <div
+    className="absolute inset-0 opacity-10"
+    style={{
+      backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+      backgroundSize: '30px 30px',
+    }}
+  />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm text-white font-semibold mb-8">
-              <Mail className="w-5 h-5" />
-              <span>Stay Connected with Tree’s Plywood</span>
-            </div>
+  <div className="container mx-auto px-6 relative z-10">
+    <div className="max-w-3xl mx-auto text-center">
+      {/* Badge */}
+      <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm text-white font-semibold mb-8 text-[14px]">
+        <Mail className="w-5 h-5" />
+        <span>Stay Connected with Tree’s Plywood</span>
+      </div>
 
-            <h2 className="text-white mb-6">
-              Get Expert tips, Design ideas, and offers straight to your inbox.
-            </h2>
-            <p className="text-xl text-gray-300 mb-10">
-              Join thousands of homeowners, architects, and builders who trust our updates.
-            </p>
+      
+      <h2 className="text-white text-[24px] font-semibold mb-6">
+        Get Expert tips, Design ideas, and offers straight to your inbox.
+      </h2>
 
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 rounded-xl bg-white border-2 border-transparent focus:border-trees-primary focus:outline-none text-gray-800 transition-all"
-                disabled={isSubscribing}
-              />
-              <ModernButton
-                type="submit"
-                variant="primary"
-                size="lg"
-                icon={isSubscribing ? null : <ArrowRight className="w-5 h-5" />}
-                disabled={isSubscribing}
-              >
-                {isSubscribing ? 'Subscribing...' : 'Subscribe'}
-              </ModernButton>
-            </form>
+      
+      <p className="text-[16px] text-gray-300 mb-10 leading-relaxed">
+        Join thousands of homeowners, architects, and builders who trust our updates.
+      </p>
 
-            <p className="text-gray-400 text-sm mt-6">
-             We respect your privacy. Unsubscribe any time. By subscribing, you agree to our {' '}
-              <button
-                onClick={() => onNavigate('privacy')}
-                className="text-white hover:underline"
-              >
-                Privacy Policy
-              </button>.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Newsletter form */}
+      <form
+        onSubmit={handleNewsletterSubmit}
+        className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
+      >
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email address"
+          className="flex-1 px-6 py-4 rounded-xl bg-white border-2 border-transparent focus:border-trees-primary focus:outline-none text-gray-800 text-[16px] transition-all"
+          disabled={isSubscribing}
+        />
+        <ModernButton
+          type="submit"
+          variant="primary"
+          size="lg"
+          icon={isSubscribing ? null : <ArrowRight className="w-5 h-5" />}
+          disabled={isSubscribing}
+          className="text-[16px] font-medium px-6 py-4"
+        >
+          {isSubscribing ? 'Subscribing...' : 'Subscribe'}
+        </ModernButton>
+      </form>
+
+      {/* Privacy note */}
+      <p className="text-gray-400 text-[12px] mt-6">
+        We respect your privacy. Unsubscribe any time. By subscribing, you agree to our{' '}
+        <button
+          onClick={() => onNavigate('privacy')}
+          className="text-white hover:underline"
+        >
+          Privacy Policy
+        </button>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
     </div>
   );
 }
