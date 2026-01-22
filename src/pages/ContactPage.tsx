@@ -214,6 +214,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log("👉 SUBMIT CLICKED");
     e.preventDefault();
 
     // Mark all fields as touched
@@ -292,11 +293,28 @@ if (!personalValid || !enquiryValid || !extrasValid) {
         timeline,
         urgency
       };
+      console.log("👉 PAYLOAD:", payload);
+
 
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch("http://localhost:5000/api/leads", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+      },
+          body: JSON.stringify(payload),
+        });
 
-      console.log('Form submitted:', payload);
+        console.log("👉 API RESPONSE RECEIVED");
+
+
+        if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      const data = await response.json();
+        console.log("👉 BACKEND DATA:", data);
+
 
       toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
 
@@ -737,7 +755,7 @@ Trees Plywood Website`
                     <div className="space-y-2">
                       <label className="block text-gray-700 font-medium">File Upload (Optional)</label>
                       <label className="block text-gray-700 font-medium">Attach BOQs, drawings, reference images, tenders, or project documents.</label>
-                      <input type="file" multiple className="w-full border-2 border-gray-200 rounded-xl p-3" />
+                      {/* <input type="file" multiple className="w-full border-2 border-gray-200 rounded-xl p-3" /> */}
                     </div>
 
                     {/* Preferred Contact */}

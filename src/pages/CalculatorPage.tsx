@@ -201,52 +201,60 @@ interface CalculatorPageProps {
             subtitle="Plan better, save money, and cut down waste with quick and accurate plywood calculations."
           />
           
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Target,
-                title: 'Accurate Estimates',
-                desc: 'Get perfect calculations based on actual sheet sizes and your project dimensions.',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                icon: DollarSign,
-                title: 'Save Money',
-                desc: 'Avoid buying extra material with smart wastage and budgeting suggestions.',
-                color: 'from-green-500 to-green-600'
-              },
-              {
-                icon: Clock,
-                title: 'Save Time',
-                desc: 'Instant results — no need for manual math or complicated spread sheets.',
-                color: 'from-purple-500 to-purple-600'
-              },
-              {
-                icon: TrendingDown,
-                title: 'Reduce Waste',
-                desc: 'Use materials efficiently with helpful buffer recommendations tailored to your project.',
-                color: 'from-orange-500 to-orange-600'
-              },
-            ].map((benefit, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <ModernCard variant="elevated">
-                  <div className="p-6 text-center space-y-4">
-                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg`}>
-                      <benefit.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="font-bold text-gray-900">{benefit.title}</h4>
-                    <p className="text-sm text-gray-600">{benefit.desc}</p>
-                  </div>
-                </ModernCard>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-4 gap-6 items-stretch">
+  {[
+    {
+      icon: Target,
+      title: 'Accurate Estimates',
+      desc: 'Get perfect calculations based on actual sheet sizes and your project dimensions.',
+      color: 'from-blue-500 to-blue-600'
+    },
+    {
+      icon: DollarSign,
+      title: 'Save Money',
+      desc: 'Avoid buying extra material with smart wastage and budgeting suggestions.',
+      color: 'from-green-500 to-green-600'
+    },
+    {
+      icon: Clock,
+      title: 'Save Time',
+      desc: 'Instant results — no need for manual math or complicated spreadsheets.',
+      color: 'from-purple-500 to-purple-600'
+    },
+    {
+      icon: TrendingDown,
+      title: 'Reduce Waste',
+      desc: 'Use materials efficiently with helpful buffer recommendations tailored to your project.',
+      color: 'from-orange-500 to-orange-600'
+    },
+  ].map((benefit, idx) => (
+    <motion.div
+      key={idx}
+      className="h-full"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: idx * 0.1 }}
+    >
+      <ModernCard variant="elevated" className="h-full">
+        <div className="p-6 text-center flex flex-col items-center justify-between h-full">
+          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg`}>
+            <benefit.icon className="w-8 h-8 text-white" />
           </div>
+
+          <h4 className="font-bold text-gray-900">
+            {benefit.title}
+          </h4>
+
+          <p className="text-sm text-gray-600">
+            {benefit.desc}
+          </p>
+        </div>
+      </ModernCard>
+    </motion.div>
+  ))}
+</div>
+
         </div>
       </section>
 
@@ -444,8 +452,7 @@ interface CalculatorPageProps {
         <div className="lg:col-span-1">
           <div className="sticky top-24 space-y-6">
             <div className="glass-card rounded-xl p-6">
-             <h3 className="text-xl text-trees-primary mb-4">Calculation Results</h3>
-
+              <h3 className="text-trees-primary mb-4">Calculation Results</h3>
               
               {result ? (
                 <div className="space-y-4">
@@ -588,7 +595,7 @@ interface CalculatorPageProps {
                 </div>
                 <h4>Product Comparison</h4>
                 <p className="text-gray-600">
-                  Compare features, warranties side-by-side to find the plywood that fits your needs.
+                  Compare features, specs, and warranties to find plywood of your choice.
                 </p>
                 <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
                   Compare Products
@@ -798,7 +805,10 @@ interface CalculatorPageProps {
 
     {/* CTA Section */}
     <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-      
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
+        <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
         <motion.div

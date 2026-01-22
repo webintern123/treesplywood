@@ -1,3 +1,4 @@
+import html2pdf from 'html2pdf.js';
 import React, { useState } from 'react';
 import { 
   Check, X, Plus, Trash2, Download, ArrowLeft, Scale, Target, 
@@ -195,6 +196,7 @@ const productComparisonData: Record<string, any> = {
 
 export default function ComparisonPage({ onNavigate, onProductSelect }: ComparisonPageProps) {
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [openSelect, setOpenSelect] = useState(false);
 
   const handleAddProduct = (productId: string) => {
     if (selectedProducts.length >= 4) {
@@ -262,10 +264,26 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
   };
 
   const exportComparison = () => {
-    toast.success('Comparison chart exported successfully!', {
-      description: 'Your comparison has been downloaded as PDF'
-    });
-  };
+  const element = document.getElementById('comparison-pdf');
+
+  if (!element) {
+    toast.error('Nothing to export');
+    return;
+  }
+
+  html2pdf()
+    .from(element)
+    .set({
+      margin: 10,
+      filename: 'product-comparison.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
+    })
+    .save();
+
+  toast.success('PDF downloaded successfully');
+};
 
   // Group attributes by category
   const specsAttributes = comparisonAttributes.filter(a => a.category === 'specs');
@@ -401,7 +419,14 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                   Back to Products
                 </ModernButton>
 
-                <Select onValueChange={handleAddProduct}>
+                <Select
+                open={openSelect}
+                onOpenChange={setOpenSelect}
+                onValueChange={(value) => {
+                  handleAddProduct(value);
+                  setOpenSelect(false);
+                }}
+>
                   <SelectTrigger className="w-full md:w-[320px]">
                     <SelectValue placeholder="Add product to compare" />
                   </SelectTrigger>
@@ -430,6 +455,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
                     size="md"
                     icon={<Download className="w-4 h-4" />}
                     onClick={exportComparison}
+                    disabled={selectedProducts.length < 2}
                   >
                     Export PDF
                   </ModernButton>
@@ -446,10 +472,12 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
               className="text-center py-20"
             >
               <ModernCard variant="outlined" className="p-12 max-w-2xl mx-auto">
-
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center mx-auto mb-6">
-                  <Plus className="w-10 h-10 text-white" />
-                </div>
+                  <button
+  onClick={() => setOpenSelect(true)}
+  className="w-20 h-20 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center mx-auto mb-6 hover:scale-105 transition"
+>
+  <Plus className="w-10 h-10 text-white" />
+</button>
                 <h3 className="text-trees-secondary mb-2">Start Comparing</h3>
                 <p className="text-gray-600 mb-6">
                   Choose your products from the list above to view a clear, side-by-side comparison of their strengths, grades, and applications.
@@ -465,7 +493,7 @@ export default function ComparisonPage({ onNavigate, onProductSelect }: Comparis
               </ModernCard>
             </motion.div>
           ) : (
-            <div className="space-y-8">
+            <div id="comparison-pdf" className="space-y-8">
               {/* Product Cards with Banners */}
               <div className={`grid gap-6 ${selectedProducts.length === 1 ? 'grid-cols-1 max-w-2xl mx-auto' : selectedProducts.length === 2 ? 'md:grid-cols-2' : selectedProducts.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
                 {selectedProducts.map((productId, index) => {

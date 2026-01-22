@@ -348,7 +348,7 @@ export function Footer({ onNavigate }: FooterProps = {}) {
           <div className="py-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="text-white/50 text-sm text-center md:text-left">
-                © 2025 The Trees Plywood. All rights reserved.
+                © {new Date().getFullYear()} The Trees Plywood. All rights reserved.
               </div>
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <button 

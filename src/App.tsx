@@ -1,3 +1,7 @@
+import AdminSampleRequests from "./pages/AdminSampleRequests";
+import { Routes, Route, Navigate } from "react-router-dom";
+import AdminLogin from "./pages/AdminLogin";
+import AdminLeads from "./pages/AdminLeads";
 import { useState } from 'react';
 import { Toaster } from './components/ui/sonner';
 import { Navbar } from './components/layout/Navbar';
@@ -36,10 +40,13 @@ import ProfessionalsPage from './pages/ProfessionalsPage';
 type Page = 'home' | 'products' | 'about' | 'blogs' | 'blog-detail' | 'dealers' | 'calculator' | 'projects' | 'contact' | 'product-detail' | 'faq' | 'resources' | 'privacy' | 'terms' | 'warranty' | 'downloads' | 'samples' | 'sample-request' | 'comparison' | 'sustainability' | 'quality' | 'installation' | 'professionals' | '404';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [currentPage, setCurrentPage] = useState ('home');
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [selectedBlogId, setSelectedBlogId] = useState<string | null>(null);
   const [productCategory, setProductCategory] = useState<'All' | 'Plywood' | 'Doors'>('All');
+  const [isAdmin, setIsAdmin] = useState(
+  Boolean(localStorage.getItem("adminToken"))
+  );
 
   const handleNavigate = (page: string, category?: 'All' | 'Plywood' | 'Doors') => {
     setCurrentPage(page as Page);
@@ -119,8 +126,38 @@ export default function App() {
 
         {/* Page Content */}
         <main id="main-content">
+                              <Routes>
+              {/* ADMIN LOGIN */}
+              <Route
+  path="/admin"
+  element={
+    <AdminLogin
+      onSuccess={() => {
+        // ✅ LOGIN SUCCESS PAR HI NAVIGATION
+        window.location.href = "/admin/leads";
+      }}
+    />
+  }
+/>
+              {/* ADMIN LEADS */}
+              <Route
+                path="/admin/leads"
+                element={
+                  isAdmin ? <AdminLeads /> : <Navigate to="/admin" />
+                }
+              />
+
+              {/* ADMIN SAMPLE REQUESTS */}
+              <Route
+                path="/admin/sample-requests"
+                element={
+                  isAdmin ? <AdminSampleRequests /> : <Navigate to="/admin" />
+                }
+              />
+            </Routes>
           {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
           {currentPage === 'products' && <ProductsPage onNavigate={handleNavigate} onProductSelect={handleProductSelect} initialCategory={productCategory} />}
+          {currentPage === 'admin-leads' && <AdminLeads />}
           {currentPage === 'product-detail' && selectedProductId && (
             <ProductDetailPage 
               productId={selectedProductId} 
@@ -154,7 +191,14 @@ export default function App() {
           {currentPage === 'terms' && <TermsPage onNavigate={handleNavigate} />}
           {currentPage === 'warranty' && <WarrantyPage onNavigate={handleNavigate} />}
           {currentPage === '404' && <NotFoundPage onNavigate={handleNavigate} />}
-        </main>
+
+          {/* 🔐 ADMIN SECTION */}
+          {currentPage === "admin" && !isAdmin && (
+            <AdminLogin onSuccess={() => setIsAdmin(true)} />
+          )}
+
+          {currentPage === "admin" && isAdmin && <AdminLeads />}
+          </main>
 
         {/* Footer - Full Width */}
         <Footer onNavigate={handleNavigate} />

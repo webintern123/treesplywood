@@ -143,24 +143,42 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (selectedSamples.length === 0) {
-      toast.error('You need to choose at least 1 sample.');
-      return;
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (selectedSamples.length === 0) {
+    toast.error('You need to choose at least 1 sample.');
+    return;
+  }
+
+  if (!formData.fullName || !formData.email || !formData.phone || !formData.address) {
+    toast.error('Please fill in all required fields');
+    return;
+  }
+
+  try {
+    const payload = {
+      ...formData,
+      selectedSamples,
+    };
+
+    console.log("👉 PAYLOAD:", payload);
+
+    const res = await fetch("http://localhost:5000/api/sample-requests", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      throw new Error("API failed");
     }
 
-    if (!formData.fullName || !formData.email || !formData.phone || !formData.address) {
-      toast.error('Please fill in all required fields');
-      return;
-    }
+    toast.success("Sample request submitted successfully!");
 
-    console.log('Sample Request:', { formData, selectedSamples });
-    
-    toast.success('Sample request submitted successfully! We will contact you within 24 hours.');
-    
-    // Reset form
+    // reset
     setSelectedSamples([]);
     setFormData({
       fullName: '',
@@ -175,7 +193,13 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
       projectDetails: '',
       purpose: 'project-evaluation'
     });
-  };
+
+  } catch (err) {
+    console.error(err);
+    toast.error("Failed to submit sample request");
+  }
+};
+
 
   return (
     <div>
