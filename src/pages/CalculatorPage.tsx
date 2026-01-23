@@ -192,73 +192,6 @@ interface CalculatorPageProps {
       />
 
       {/* Why Use Calculator Section */}
-<<<<<<< HEAD
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Easy & Smarter Planning "
-            badgeIcon={Target}
-            title="Why Use Our Calculator?"
-            subtitle="Plan better, save money, and cut down waste with quick and accurate plywood calculations."
-          />
-          
-          <div className="grid md:grid-cols-4 gap-6 items-stretch">
-  {[
-    {
-      icon: Target,
-      title: 'Accurate Estimates',
-      desc: 'Get perfect calculations based on actual sheet sizes and your project dimensions.',
-      color: 'from-blue-500 to-blue-600'
-    },
-    {
-      icon: DollarSign,
-      title: 'Save Money',
-      desc: 'Avoid buying extra material with smart wastage and budgeting suggestions.',
-      color: 'from-green-500 to-green-600'
-    },
-    {
-      icon: Clock,
-      title: 'Save Time',
-      desc: 'Instant results — no need for manual math or complicated spreadsheets.',
-      color: 'from-purple-500 to-purple-600'
-    },
-    {
-      icon: TrendingDown,
-      title: 'Reduce Waste',
-      desc: 'Use materials efficiently with helpful buffer recommendations tailored to your project.',
-      color: 'from-orange-500 to-orange-600'
-    },
-  ].map((benefit, idx) => (
-    <motion.div
-      key={idx}
-      className="h-full"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: idx * 0.1 }}
-    >
-      <ModernCard variant="elevated" className="h-full">
-        <div className="p-6 text-center flex flex-col items-center justify-between h-full">
-          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg`}>
-            <benefit.icon className="w-8 h-8 text-white" />
-          </div>
-
-          <h4 className="font-bold text-gray-900">
-            {benefit.title}
-          </h4>
-
-          <p className="text-sm text-gray-600">
-            {benefit.desc}
-          </p>
-        </div>
-      </ModernCard>
-    </motion.div>
-  ))}
-</div>
-
-        </div>
-      </section>
-=======
 <section className="section-padding bg-gray-50">
   <div className="container mx-auto px-6">
     <ModernSectionHeader
@@ -331,7 +264,6 @@ interface CalculatorPageProps {
     </div>
   </div>
 </section>
->>>>>>> origin/main
 
       <PageContainer className="space-y-20">
 
@@ -697,30 +629,6 @@ interface CalculatorPageProps {
     subtitle="Use these helpful tools to plan your project with confidence."
   />
 
-<<<<<<< HEAD
-        <div className="grid md:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -8 }}
-          >
-            <ModernCard variant="elevated" className="cursor-pointer" onClick={() => onNavigate('comparison')}>
-              <div className="p-8 text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
-                  <Scale className="w-10 h-10 text-trees-primary" />
-                </div>
-                <h4>Product Comparison</h4>
-                <p className="text-gray-600">
-                  Compare features, specs, and warranties to find plywood of your choice.
-                </p>
-                <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
-                  Compare Products
-                </ModernButton>
-              </div>
-            </ModernCard>
-          </motion.div>
-=======
   <div className="grid md:grid-cols-3 gap-8">
     {[
       {
@@ -768,7 +676,6 @@ interface CalculatorPageProps {
             <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
               <tool.icon className="w-10 h-10 text-trees-primary" />
             </div>
->>>>>>> origin/main
 
           
             <h4 className="text-[20px] font-semibold text-gray-900">{tool.title}</h4>
@@ -954,13 +861,6 @@ interface CalculatorPageProps {
 </section>
 
     {/* CTA Section */}
-<<<<<<< HEAD
-    <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-        <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-      </div>
-=======
 <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
   <div className="container mx-auto px-6 relative z-10 text-center">
     <motion.div
@@ -973,7 +873,6 @@ interface CalculatorPageProps {
       <h2 className="text-white text-[30px] font-semibold mb-6">
         Ready to Start Your Project?
       </h2>
->>>>>>> origin/main
 
      
       <p className="text-[16px] text-white/90 mb-10 leading-relaxed">
