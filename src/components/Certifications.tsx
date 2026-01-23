@@ -4,7 +4,7 @@ export function Certifications() {
   const certifications = [
     {
       icon: Award,
-      name: ' IS:10701',
+      name: 'IS:10701',
       description: 'Structural Grade',
       color: 'from-blue-500 to-blue-600',
     },
@@ -17,7 +17,7 @@ export function Certifications() {
     {
       icon: Leaf,
       name: 'E0/E1',
-      description: 'Zero Emission  ',
+      description: 'Zero Emission',
       color: 'from-trees-primary to-trees-secondary',
     },
     {
@@ -30,27 +30,37 @@ export function Certifications() {
 
   return (
     <section className="glass-strong rounded-xl p-10">
+      {/* Header */}
       <div className="text-center mb-8">
-        <h3 className="text-trees-primary text-2xl font-semibold mb-2">
+        <h3 className="text-trees-primary text-[20px] font-semibold mb-2">
           Certified Excellence
         </h3>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-[16px]">
           Recognized certifications ensuring quality and sustainability
         </p>
       </div>
 
+      {/* Certification Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {certifications.map((cert, index) => (
-          <div 
+          <div
             key={index}
             className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
-
           >
-            <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${cert.color} rounded-full mb-4 group-hover:scale-110 transition-transform`}>
+            {/* Icon */}
+            <div
+              className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${cert.color} rounded-full mb-4 group-hover:scale-110 transition-transform`}
+            >
               <cert.icon className="w-8 h-8 text-white" />
             </div>
-            <h4 className="font-semibold text-trees-secondary mb-1">{cert.name}</h4>
-            <p className="text-xs text-gray-600">{cert.description}</p>
+
+            {/* Name */}
+            <h4 className="font-semibold text-trees-secondary text-[16px] mb-1">
+              {cert.name}
+            </h4>
+
+            {/* Description */}
+            <p className="text-gray-600 text-[12px]">{cert.description}</p>
           </div>
         ))}
       </div>

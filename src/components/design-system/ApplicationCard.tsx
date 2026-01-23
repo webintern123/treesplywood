@@ -37,7 +37,7 @@ export function ApplicationCard({
             scale: isHovered ? 1.1 : 1,
           }}
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="w-full h-full"
+          className="w-full h-full transition-transform duration-600 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
         >
           <ImageWithFallback
             src={image}
@@ -56,40 +56,34 @@ export function ApplicationCard({
             animate={{ opacity: 1, y: 0 }}
             className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg"
           >
-            <span className="text-trees-primary font-semibold text-sm">{badge}</span>
+            <span className="text-trees-primary font-semibold text-[14px]">{badge}</span>
           </motion.div>
         )}
 
-       {/* Title Overlay on Image */}
+        {/* Title Overlay on Image */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="text-white font-semibold">{title}</h3>
+          <h3 className="text-[20px] font-semibold text-white leading-snug">{title}</h3>
         </div>
       </div>
-
 
       {/* Content Section */}
       <div className="p-6 flex-1 flex flex-col bg-neutral-50">
         {/* Description */}
-        <p className="text-trees-secondary text-sm leading-relaxed mb-4 flex-1">
+        <p className="text-trees-secondary text-[16px] leading-relaxed mb-4 flex-1">
           {description}
         </p>
 
         {/* Badges */}
-<div className="flex flex-col gap-2 mb-6">
-  {badges.map((badge, index) => (
-    <span
-      key={index}
-      className="inline-block px-3 py-1 rounded-md 
-bg-gray-50 text-gray-600 text-xs 
-border border-gray-200 w-fit"
-
-    >
-      {badge}
-    </span>
-  ))}
-</div>
-
-
+        <div className="flex flex-col gap-2 mb-6">
+          {badges.map((b, index) => (
+            <span
+              key={index}
+              className="inline-block px-3 py-1 rounded-md bg-gray-50 text-gray-600 text-[14px] font-medium border border-gray-200 w-fit"
+            >
+              {b}
+            </span>
+          ))}
+        </div>
 
         {/* Learn More Button */}
         <motion.button
@@ -100,9 +94,7 @@ border border-gray-200 w-fit"
         >
           <span>Know More</span>
           <motion.div
-            animate={{
-              x: isHovered ? 5 : 0,
-            }}
+            animate={{ x: isHovered ? 5 : 0 }}
             transition={{ duration: 0.3 }}
           >
             <ArrowRight className="w-4 h-4" />

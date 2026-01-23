@@ -23,8 +23,8 @@ export function ModernButton({
   className = '',
   ...props
 }: MotionButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed';
-  
+  const baseStyles = 'inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed';
+
   const variants = {
     primary: 'bg-trees-primary text-white hover:bg-trees-primary-hover shadow-lg hover:shadow-xl active:scale-[0.98]',
     secondary: 'bg-trees-secondary text-white hover:bg-trees-secondary-hover shadow-lg hover:shadow-xl active:scale-[0.98]',
@@ -33,16 +33,17 @@ export function ModernButton({
     light: 'bg-white text-trees-primary hover:bg-white/95 shadow-lg hover:shadow-xl active:scale-[0.98]',
     'outline-light': 'border-2 border-white text-white bg-white/10 hover:bg-white hover:text-trees-primary active:scale-[0.98]',
   };
-  
+
+  // Sizes updated to follow your design system (14–16px)
   const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
-    xl: 'px-10 py-5 text-xl',
+    sm: 'px-4 py-2 text-[14px]',
+    md: 'px-6 py-3 text-[16px]',
+    lg: 'px-6 py-3 text-[16px]',
+    xl: 'px-8 py-4 text-[16px]',
   };
-  
+
   const widthClass = fullWidth ? 'w-full' : '';
-  
+
   return (
     <motion.button
       whileHover={{ scale: 1.02 }}
