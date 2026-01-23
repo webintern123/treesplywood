@@ -206,294 +206,330 @@ Every project reflects our commitment to quality, strength, and thoughtful desig
 
       {/* Why Projects Matter Section */}
       <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Why We Share Our Projects"
-            badgeIcon={Target}
-            title="Real Creations, Real Stories."
-            subtitle="See how architects, designers, and contractors use Tree’s Plywood to bring their ideas to life."
-          />
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Lightbulb,
-                title: 'Design Ideas',
-                desc: 'Explore how our plywood is used in actual homes, offices, and commercial spaces.',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                icon: CheckCircle2,
-                title: 'Proven Quality',
-                desc: 'View projects that show how well our products hold up in different conditions & environments.',
-                color: 'from-green-500 to-green-600'
-              },
-              {
-                
-                icon: Users,
-                title: 'Trusted by Professionals',
-                desc: 'Join thousands of architects and designers who choose Tree’s for quality, reliability, and performance.',
-                color: 'from-purple-500 to-purple-600'
-              },
-              {
-                icon: Trophy,
-                title: 'Award-Winning Work',
-                desc: 'Many of the projects featured here have received recognition in design and architecture.',
-                color: 'from-orange-500 to-orange-600'
-              },
-            ].map((benefit, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <ModernCard variant="elevated" className="p-6 h-full text-center">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}>
-                    <benefit.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-trees-primary mb-2">{benefit.title}</h4>
-                  <p className="text-sm text-gray-600">{benefit.desc}</p>
-                </ModernCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-6">
+    <ModernSectionHeader
+      badge="Why We Share Our Projects"
+      badgeIcon={Target}
+      title="Real Creations, Real Stories."
+      subtitle="See how architects, designers, and contractors use Tree’s Plywood to bring their ideas to life."
+    />
+
+    <div className="grid md:grid-cols-4 gap-6">
+      {[
+        {
+          icon: Lightbulb,
+          title: 'Design Ideas',
+          desc: 'Explore how our plywood is used in actual homes, offices, and commercial spaces.',
+          color: 'from-blue-500 to-blue-600',
+        },
+        {
+          icon: CheckCircle2,
+          title: 'Proven Quality',
+          desc: 'View projects that show how well our products hold up in different conditions & environments.',
+          color: 'from-green-500 to-green-600',
+        },
+        {
+          icon: Users,
+          title: 'Trusted by Professionals',
+          desc: 'Join thousands of architects and designers who choose Tree’s for quality, reliability, and performance.',
+          color: 'from-purple-500 to-purple-600',
+        },
+        {
+          icon: Trophy,
+          title: 'Award-Winning Work',
+          desc: 'Many of the projects featured here have received recognition in design and architecture.',
+          color: 'from-orange-500 to-orange-600',
+        },
+      ].map((benefit, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard
+            variant="elevated"
+            className="p-6 h-full text-center hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}
+            >
+              <benefit.icon className="w-8 h-8 text-white" />
+            </div>
+
+            {/* H3 / Card Title */}
+            <h4 className="text-[20px] font-semibold text-trees-primary mb-2">
+              {benefit.title}
+            </h4>
+
+            {/* Body / Secondary Text */}
+            <p className="text-[14px] text-gray-600 leading-relaxed">
+              {benefit.desc}
+            </p>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       <PageContainer className="space-y-20">
         {/* Category Filter Section */}
         <section>
-          <ModernSectionHeader
-            badge="See Our Worked Projects"
-            badgeIcon={Filter}
-            title="Find What Inspires You"
-            subtitle="Find projects based on the type of space you’re working on."
+  <ModernSectionHeader
+    badge="See Our Worked Projects"
+    badgeIcon={Filter}
+    title="Find What Inspires You"
+    subtitle="Find projects based on the type of space you’re working on."
+  />
+
+  {/* Filter Buttons */}
+  <div className="flex flex-wrap gap-3 justify-center mb-12">
+    {categories.map((category) => (
+      <motion.button
+        key={category}
+        onClick={() => setActiveCategory(category)}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className={`px-6 py-3 rounded-full text-[14px] font-medium transition-all ${
+          activeCategory === category
+            ? 'bg-trees-primary text-white shadow-lg'
+            : 'bg-white text-gray-700 border border-gray-300 hover:border-trees-primary hover:text-trees-primary'
+        }`}
+      >
+        {category}
+        {category === 'All' && ` (${projects.length})`}
+        {category !== 'All' &&
+          ` (${projects.filter(p => p.category === category).length})`}
+      </motion.button>
+    ))}
+  </div>
+
+  {/* Projects Grid */}
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {filteredProjects.map((project, idx) => (
+      <motion.div
+        key={project.id}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ delay: idx * 0.05 }}
+        className="glass-card rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+      >
+        {/* Project Image */}
+        <div className="relative h-64 overflow-hidden">
+          <ImageWithFallback
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-trees-secondary/90 via-trees-secondary/40 to-transparent" />
 
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-3 justify-center mb-12">
-            {categories.map((category) => (
-              <motion.button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-semibold transition-all ${
-                  activeCategory === category
-                    ? 'bg-trees-primary text-white shadow-lg'
-                    : 'bg-white text-gray-700 border border-gray-300 hover:border-trees-primary hover:text-trees-primary'
-                }`}
-              >
-                {category}
-                {category === 'All' && ` (${projects.length})`}
-                {category !== 'All' && ` (${projects.filter(p => p.category === category).length})`}
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project, idx) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: idx * 0.05 }}
-                className="glass-card rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group"
-              >
-                {/* Project Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-trees-secondary/90 via-trees-secondary/40 to-transparent"></div>
-                  
-                  {/* Featured Badge */}
-                  {project.featured && (
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-trees-primary text-white font-semibold flex items-center gap-1">
-                        <Star className="w-3 h-3" />
-                        Featured
-                      </Badge>
-                    </div>
-                  )}
-                  
-                  {/* Overlay Info */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="p-1.5 bg-white/95 rounded-lg">
-                        <project.icon className="w-4 h-4 text-trees-primary" />
-                      </div>
-                      <Badge className="bg-white/95 text-trees-primary font-semibold">
-                        {project.category}
-                      </Badge>
-                    </div>
-                    <h3 className="text-white mb-1">
-                      {project.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Project Details */}
-                <div className="p-6">
-                  {/* Location & Year */}
-                  <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4 text-trees-primary" />
-                      <span>{project.location}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Calendar className="w-4 h-4 text-trees-primary" />
-                      <span>{project.year}</span>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-600 text-sm mb-4">
-                    {project.description}
-                  </p>
-
-                  {/* Area */}
-                  <div className="mb-4">
-                    <p className="text-xs text-gray-500">
-                      <span className="font-semibold">Project Area:</span> {project.area}
-                    </p>
-                  </div>
-
-                  {/* Products Used */}
-                  <div className="pt-4 border-t border-gray-200">
-                    <p className="text-xs font-semibold text-gray-500 mb-2">Products Used:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.products.map((product, index) => (
-                        <span 
-                          key={index}
-                          className="text-xs bg-trees-primary/10 text-trees-primary px-3 py-1 rounded-full font-medium"
-                        >
-                          {product}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* No Results State */}
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-16">
-              <ImageIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-gray-600 mb-2">No projects found</h3>
-              <p className="text-gray-500 text-sm">Try selecting a different category</p>
+          {/* Featured Badge */}
+          {project.featured && (
+            <div className="absolute top-4 right-4">
+              <Badge className="bg-trees-primary text-white text-[12px] font-semibold flex items-center gap-1">
+                <Star className="w-3 h-3" />
+                Featured
+              </Badge>
             </div>
           )}
-        </section>
 
-        {/* Project Impact Stats */}
-        <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden rounded-3xl">
-          
+          {/* Overlay Info */}
+          <div className="absolute bottom-0 left-0 right-0 p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="p-1.5 bg-white/95 rounded-lg">
+                <project.icon className="w-4 h-4 text-trees-primary" />
+              </div>
+              <Badge className="bg-white/95 text-trees-primary text-[12px] font-semibold">
+                {project.category}
+              </Badge>
+            </div>
 
-          <div className="container mx-auto px-6 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-white mb-4">Our Project Impact</h2>
-              <p className="text-white/90 text-lg max-w-2xl mx-auto">
-                Creating better spaces across India with quality materials and dependable service.
-              </p>
-            </motion.div>
+            {/* H3 */}
+            <h3 className="text-white text-[20px] font-semibold">
+              {project.title}
+            </h3>
+          </div>
+        </div>
 
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { value: '10,000+', label: 'Projects Completed', icon: Building2 },
-                { value: '50M+', label: 'Spaces Built with Our Products', icon: Grid3x3 },
-                { value: '98%', label: 'On-Time Delivery', icon: TrendingUp },
-                { value: '15+', label: 'Years Experience', icon: Shield },
-              ].map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="text-center"
+        {/* Project Details */}
+        <div className="p-6">
+          {/* Location & Year */}
+          <div className="flex items-center gap-4 mb-4 text-[14px] text-gray-600">
+            <div className="flex items-center gap-1.5">
+              <MapPin className="w-4 h-4 text-trees-primary" />
+              <span>{project.location}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Calendar className="w-4 h-4 text-trees-primary" />
+              <span>{project.year}</span>
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-[16px] text-gray-600 leading-relaxed mb-4">
+            {project.description}
+          </p>
+
+          {/* Area */}
+          <p className="text-[12px] text-gray-500 mb-4">
+            <span className="font-semibold">Project Area:</span> {project.area}
+          </p>
+
+          {/* Products Used */}
+          <div className="pt-4 border-t border-gray-200">
+            <p className="text-[12px] font-semibold text-gray-500 mb-2">
+              Products Used:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {project.products.map((product, index) => (
+                <span
+                  key={index}
+                  className="text-[12px] bg-trees-primary/10 text-trees-primary px-3 py-1 rounded-full font-medium"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-white/80">{stat.label}</div>
-                </motion.div>
+                  {product}
+                </span>
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* No Results */}
+  {filteredProjects.length === 0 && (
+    <div className="text-center py-16">
+      <ImageIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+      <h3 className="text-[20px] font-semibold text-gray-600 mb-2">
+        No projects found
+      </h3>
+      <p className="text-[14px] text-gray-500">
+        Try selecting a different category
+      </p>
+    </div>
+  )}
+</section>
+        {/* Project Impact Stats */}
+       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden rounded-3xl">
+  <div className="container mx-auto px-6 relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      {/* H2 */}
+      <h2 className="text-white text-[24px] font-semibold mb-4">
+        Our Project Impact
+      </h2>
+
+      {/* Body */}
+      <p className="text-white/90 text-[16px] leading-relaxed max-w-2xl mx-auto">
+        Creating better spaces across India with quality materials and dependable service.
+      </p>
+    </motion.div>
+
+    <div className="grid md:grid-cols-4 gap-8">
+      {[
+        { value: '10,000+', label: 'Projects Completed', icon: Building2 },
+        { value: '50M+', label: 'Spaces Built with Our Products', icon: Grid3x3 },
+        { value: '98%', label: 'On-Time Delivery', icon: TrendingUp },
+        { value: '15+', label: 'Years Experience', icon: Shield },
+      ].map((stat, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+          className="text-center"
+        >
+          {/* Icon */}
+          <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
+            <stat.icon className="w-8 h-8 text-white" />
+          </div>
+
+          {/* Stat value – display */}
+          <div className="text-[32px] font-bold text-white mb-1">
+            {stat.value}
+          </div>
+
+          {/* Label */}
+          <div className="text-[14px] font-medium text-white/80">
+            {stat.label}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* How We Work Process */}
-        <section>
-          <ModernSectionHeader
-            badge="How We Help You"
-            badgeIcon={Zap}
-            title="A Smooth Process from Planning to Completion"
-            subtitle="From concept to completion, we provide end-to-end support for architects, designers, and contractors"
-          />
+       <section>
+  <ModernSectionHeader
+    badge="How We Help You"
+    badgeIcon={Zap}
+    title="A Smooth Process from Planning to Completion"
+    subtitle="From concept to completion, we provide end-to-end support for architects, designers, and contractors"
+  />
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-              
-                title: 'Consultation',
-                description: 'Share your project details with our team so we understand exactly what you need.',
-                icon: MessageSquare,
-              },
-              {
-                
-                title: 'Product Selection',
-                description: 'We help you choose the right plywood based on usage, durability, and design style.',
-                icon: CheckCircle2,
-              },
-              {
-                
-                title: 'Samples & Approval',
-                description: 'Get product samples to check finish, strength, and quality before moving ahead.',
-                icon: Award,
-              },
-              {
-                
-                title: 'Delivery & After-Support',
-                description: 'Enjoy timely delivery and ongoing technical help even after installation.',
-                icon: Sparkles,
-              },
-            ].map((step, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <ModernCard variant="elevated" className="p-6 h-full">
-                  <div className="flex items-start gap-4 mb-4">
-                    
-                    <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0">
-                      <step.icon className="w-6 h-6 text-trees-primary" />
-                    </div>
-                  </div>
-                  <h4 className="text-trees-primary mb-2">{step.title}</h4>
-                  <p className="text-sm text-gray-600">{step.description}</p>
-                </ModernCard>
-              </motion.div>
-            ))}
+  <div className="grid md:grid-cols-4 gap-6">
+    {[
+      {
+        title: 'Consultation',
+        description: 'Share your project details with our team so we understand exactly what you need.',
+        icon: MessageSquare,
+      },
+      {
+        title: 'Product Selection',
+        description: 'We help you choose the right plywood based on usage, durability, and design style.',
+        icon: CheckCircle2,
+      },
+      {
+        title: 'Samples & Approval',
+        description: 'Get product samples to check finish, strength, and quality before moving ahead.',
+        icon: Award,
+      },
+      {
+        title: 'Delivery & After-Support',
+        description: 'Enjoy timely delivery and ongoing technical help even after installation.',
+        icon: Sparkles,
+      },
+    ].map((step, idx) => (
+      <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: idx * 0.1 }}
+      >
+        <ModernCard variant="elevated" className="p-6 h-full">
+          <div className="flex items-start gap-4 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0">
+              <step.icon className="w-6 h-6 text-trees-primary" />
+            </div>
           </div>
-        </section>
+
+          {/* H3 */}
+          <h4 className="text-[20px] font-semibold text-trees-primary mb-2">
+            {step.title}
+          </h4>
+
+          {/* Body */}
+          <p className="text-[16px] text-gray-600 leading-relaxed">
+            {step.description}
+          </p>
+        </ModernCard>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
       </PageContainer>
 
       
@@ -573,60 +609,64 @@ Every project reflects our commitment to quality, strength, and thoughtful desig
 
       {/* Bottom CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        
+  <div className="container mx-auto px-6 relative z-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="max-w-4xl mx-auto"
+    >
+      {/* H2 */}
+      <h2 className="text-[24px] font-semibold text-white mb-6">
+        Ready to Bring Your Project to Life?
+      </h2>
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+      {/* Body */}
+      <p className="text-[16px] text-white/90 mb-10 leading-relaxed">
+        Our Architecture & Design team is here to help with product selection,
+        samples, and technical guidance—every step of the way.
+      </p>
+
+      <div className="flex flex-wrap gap-4 justify-center">
+        <MagneticButton strength={0.2}>
+          <ModernButton
+            variant="light"
+            size="xl"
+            icon={<Mail className="w-6 h-6" />}
+            onClick={() => onNavigate('professionals')}
           >
-            <h2 className="text-white mb-6">Ready to Bring Your Project to Life?</h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              
-              Our Architecture & Design team is here to help with product selection, samples, and technical 
-guidance—every step of the way.
+            Contact A&amp;D Team
+          </ModernButton>
+        </MagneticButton>
 
-            </p>
+        <MagneticButton strength={0.2}>
+          <ModernButton
+            variant="outline"
+            size="xl"
+            icon={<Download className="w-6 h-6" />}
+            onClick={() => onNavigate('downloads')}
+            className="border-white text-white hover:bg-white/20"
+          >
+            Download Guidelines
+          </ModernButton>
+        </MagneticButton>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <MagneticButton strength={0.2}>
-                <ModernButton
-                  variant="light"
-                  size="xl"
-                  icon={<Mail className="w-6 h-6" />}
-                  onClick={() => onNavigate('professionals')}
-                >
-                  Contact A&D Team
-                </ModernButton>
-              </MagneticButton>
-              <MagneticButton strength={0.2}>
-                <ModernButton
-                  variant="outline"
-                  size="xl"
-                  icon={<Download className="w-6 h-6" />}
-                  onClick={() => onNavigate('downloads')}
-                  className="border-white text-white hover:bg-white/20"
-                >
-                  Download Guidelines
-                </ModernButton>
-              </MagneticButton>
-              <MagneticButton strength={0.2}>
-                <ModernButton
-                  variant="outline"
-                  size="xl"
-                  icon={<Award className="w-6 h-6" />}
-                  onClick={() => onNavigate('sample-request')}
-                  className="border-white text-white hover:bg-white/20"
-                >
-                  Request Samples
-                </ModernButton>
-              </MagneticButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+        <MagneticButton strength={0.2}>
+          <ModernButton
+            variant="outline"
+            size="xl"
+            icon={<Award className="w-6 h-6" />}
+            onClick={() => onNavigate('sample-request')}
+            className="border-white text-white hover:bg-white/20"
+          >
+            Request Samples
+          </ModernButton>
+        </MagneticButton>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
     </div>
   );
 }

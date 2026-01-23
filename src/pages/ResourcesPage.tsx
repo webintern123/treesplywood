@@ -189,253 +189,271 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps = {}) {
       />
 
       {/* Why Use Our Resources Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Why Use Our Resources?"
-            badgeIcon={Target}
-            title="Everything You Need, All in One Place"
-            subtitle="Our tools, guides, and support are created to help you plan better, choose confidently, and complete your projects smoothly."
-          />
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Target,
-                title: 'Save Time',
-                desc: 'Find calculators, comparisons, guides, and documents—all in one spot.',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                icon: Rocket,
-                title: 'Make Smarter Choices',
-                desc: 'Use expert tips and clear data to select the right plywood for your needs.',
-                color: 'from-green-500 to-green-600'
-              },
-              {
-                icon: Clock,
-                title: 'Access Anytime',
-                desc: 'Tools and downloads are available 24/7, whenever you need them.',
-                color: 'from-purple-500 to-purple-600'
-              },
-              {
-                icon: Users,
-                title: 'Get Expert Help',
-                desc: 'From technical details to installation guidance, our team is here to support you.',
-                color: 'from-orange-500 to-orange-600'
-              },
-            ].map((benefit, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <ModernCard variant="elevated" className="p-6 h-full text-center">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}>
-                    <benefit.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-trees-primary mb-2">{benefit.title}</h4>
-                  <p className="text-sm text-gray-600">{benefit.desc}</p>
-                </ModernCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section className="section-padding bg-gray-50">
+  <div className="container mx-auto px-6">
+    {/* Section Header */}
+    <ModernSectionHeader
+      badge="Why Use Our Resources?"
+      badgeIcon={Target}
+      title="Everything You Need, All in One Place" // H2 – 24px, semibold
+      subtitle="Our tools, guides, and support are created to help you plan better, choose confidently, and complete your projects smoothly." // Body text – 16px, normal
+    />
+
+    {/* Benefits Grid */}
+    <div className="grid md:grid-cols-4 gap-6 mt-6">
+      {[
+        {
+          icon: Target,
+          title: 'Save Time',
+          desc: 'Find calculators, comparisons, guides, and documents—all in one spot.',
+          color: 'from-blue-500 to-blue-600'
+        },
+        {
+          icon: Rocket,
+          title: 'Make Smarter Choices',
+          desc: 'Use expert tips and clear data to select the right plywood for your needs.',
+          color: 'from-green-500 to-green-600'
+        },
+        {
+          icon: Clock,
+          title: 'Access Anytime',
+          desc: 'Tools and downloads are available 24/7, whenever you need them.',
+          color: 'from-purple-500 to-purple-600'
+        },
+        {
+          icon: Users,
+          title: 'Get Expert Help',
+          desc: 'From technical details to installation guidance, our team is here to support you.',
+          color: 'from-orange-500 to-orange-600'
+        },
+      ].map((benefit, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard variant="elevated" className="p-6 h-full text-center">
+            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}>
+              <benefit.icon className="w-8 h-8 text-white" />
+            </div>
+            <h4 className="text-trees-primary mb-2 text-[20px] font-semibold">{benefit.title}</h4> {/* H3 – 20px */}
+            <p className="text-[16px] text-gray-600 font-normal">{benefit.desc}</p> {/* Body text – 16px */}
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Main Resources Grid */}
       <section className="section-padding">
-        <PageContainer>
-          <div className="space-y-20">
-            <div>
-              <ModernSectionHeader
-                badge="All Resources in One Place"
-                badgeIcon={Sparkles}
-                title="Choose a Category"
-                subtitle="See our comprehensive library of tools, guides, and resources organized to help you at every stage of your project journey"
-              />
+  <PageContainer>
+    <div className="space-y-20">
+      <div>
+        {/* Section Header */}
+        <ModernSectionHeader
+          badge="All Resources in One Place"
+          badgeIcon={Sparkles}
+          title="Choose a Category" // H2 – 24px, semibold
+          subtitle="See our comprehensive library of tools, guides, and resources organized to help you at every stage of your project journey" // Body text – 16px
+        />
 
-              <div className="space-y-12">
-                {resourceCategories.map((category, categoryIndex) => (
+        <div className="space-y-12 mt-6">
+          {resourceCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={categoryIndex}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: categoryIndex * 0.1 }}
+            >
+              {/* Category Header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
+                  <category.icon className="w-7 h-7 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-[20px] font-semibold mb-1 text-gray-800">{category.title}</h3> {/* H3 – 20px */}
+                  <p className="text-[16px] text-gray-600">{category.description}</p> {/* Body text – 16px */}
+                </div>
+              </div>
+
+              {/* Resources Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {category.resources.map((resource, resourceIndex) => (
                   <motion.div
-                    key={categoryIndex}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    key={resourceIndex}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: categoryIndex * 0.1 }}
+                    transition={{ delay: categoryIndex * 0.1 + resourceIndex * 0.05 }}
                   >
-                    {/* Category Header */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
-                        <category.icon className="w-7 h-7 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="mb-1">{category.title}</h3>
-                        <p className="text-gray-600">{category.description}</p>
-                      </div>
-                    </div>
-
-                    {/* Resources Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {category.resources.map((resource, resourceIndex) => (
-                        <motion.div
-                          key={resourceIndex}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: categoryIndex * 0.1 + resourceIndex * 0.05 }}
-                        >
-                          <AdvancedCard
-  variant="default"           // Allowed values: "glass" | "default"
-  hoverEffect="3d"            // Allowed values: "3d" | "glow" | "magnetic" | "tilt"
-  className="p-6 cursor-pointer group h-full"
-  onClick={() => onNavigate?.(resource.page)}
->
-
-                            <div className="flex items-start gap-4">
-                              <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-trees-primary group-hover:scale-110 transition-all duration-300">
-                                <resource.icon className="w-6 h-6 text-trees-primary group-hover:text-white transition-colors" />
-                              </div>
-                              <div className="flex-1">
-                                <div className="flex items-start justify-between mb-2">
-                                  <h4 className="group-hover:text-trees-primary transition-colors">
-                                    {resource.name}
-                                  </h4>
-                                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-trees-primary group-hover:translate-x-1 transition-all flex-shrink-0 ml-2" />
-                                </div>
-                                <p className="text-gray-600 text-sm mb-3">
-                                  {resource.description}
-                                </p>
-                                <div className="inline-flex items-center px-3 py-1 bg-trees-primary/10 text-trees-primary rounded-full text-xs font-semibold">
-                                  {resource.badge}
-                                </div>
-                              </div>
+                    <AdvancedCard
+                      variant="default"
+                      hoverEffect="3d"
+                      className="p-6 cursor-pointer group h-full"
+                      onClick={() => onNavigate?.(resource.page)}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-trees-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-trees-primary group-hover:scale-110 transition-all duration-300">
+                          <resource.icon className="w-6 h-6 text-trees-primary group-hover:text-white transition-colors" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between mb-2">
+                            <h4 className="text-[16px] font-semibold text-gray-800 group-hover:text-trees-primary transition-colors">
+                              {resource.name}
+                            </h4> {/* H4/Body – 16px */}
+                            <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-trees-primary group-hover:translate-x-1 transition-all flex-shrink-0 ml-2" />
+                          </div>
+                          <p className="text-[14px] text-gray-600 mb-3">{resource.description}</p> {/* Secondary text – 14px */}
+                          {resource.badge && (
+                            <div className="inline-flex items-center px-3 py-1 bg-trees-primary/10 text-trees-primary rounded-full text-[14px] font-medium">
+                              {resource.badge} {/* Buttons/labels – 14–16px */}
                             </div>
-                          </AdvancedCard>
-                        </motion.div>
-                      ))}
-                    </div>
+                          )}
+                        </div>
+                      </div>
+                    </AdvancedCard>
                   </motion.div>
                 ))}
               </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </PageContainer>
+</section>
+      {/* Featured Resources - Top Picks */}
+   <section className="section-padding bg-gray-50">
+  <div className="container mx-auto px-6">
+    {/* Section Header */}
+    <ModernSectionHeader
+      badge="Most Used Customer Favourites"
+      badgeIcon={Star}
+      title="Our Top Resources" // H2 – 24px, semibold
+      subtitle="Top-used tools and guides to help you get started quickly." // Body – 16px
+    />
+
+    {/* Resources Grid */}
+    <div className="grid md:grid-cols-3 gap-8 mt-8">
+      {[
+        {
+          icon: Calculator,
+          title: 'Plywood Calculator',
+          description: 'Accurate material estimation made easy.',
+          stats: '10,000+ uses every month',
+          color: 'from-blue-500 to-blue-600',
+          page: 'calculator'
+        },
+        {
+          icon: Download,
+          title: 'Product Catalogs',
+          description: 'All specifications, technical details, and product data in one place.',
+          stats: '50+ downloadable files',
+          color: 'from-trees-primary to-trees-secondary',
+          page: 'downloads'
+        },
+        {
+          icon: Lightbulb,
+          title: 'Project Gallery',
+          description: 'Browse real projects and get inspired for your next design.',
+          stats: '200+ completed spaces',
+          color: 'from-orange-500 to-red-500',
+          page: 'projects'
+        },
+      ].map((resource, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+          whileHover={{ y: -8 }}
+        >
+          <div 
+            className="glass-card rounded-2xl p-8 h-full cursor-pointer group"
+            onClick={() => onNavigate?.(resource.page)}
+          >
+            {/* Icon */}
+            <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${resource.color} flex items-center justify-center mb-6`}>
+              <resource.icon className="w-10 h-10 text-white" />
+            </div>
+
+            {/* Title & Description */}
+            <h3 className="text-[20px] font-semibold mb-3 group-hover:text-trees-primary transition-colors">
+              {resource.title} {/* H3 – 20px */}
+            </h3>
+            <p className="text-[16px] text-gray-600 mb-4">{resource.description}</p> {/* Body – 16px */}
+
+            {/* Stats & Arrow */}
+            <div className="flex items-center justify-between">
+              <span className="text-[14px] font-medium text-trees-primary">{resource.stats}</span> {/* Label – 14px */}
+              <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-trees-primary group-hover:translate-x-1 transition-all" />
             </div>
           </div>
-        </PageContainer>
-      </section>
-
-      {/* Featured Resources - Top Picks */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Most Used Customer Favourites"
-            badgeIcon={Star}
-            title="Our Top Resources"
-            subtitle="Top-used tools and guides to help you get started quickly."
-          />
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Calculator,
-                title: 'Plywood Calculator',
-                description: 'Accurate material estimation made easy.',
-                stats: '10,000+ uses every month',
-                color: 'from-blue-500 to-blue-600',
-                page: 'calculator'
-              },
-              {
-                icon: Download,
-                title: 'Product Catalogs',
-                description: 'All specifications, technical details, and product data in one place.',
-                stats: '50+ downloadable files',
-                color: 'from-trees-primary to-trees-secondary',
-                page: 'downloads'
-              },
-              {
-                icon: Lightbulb,
-                title: 'Project Gallery',
-                description: 'Browse real projects and get inspired for your next design.',
-                stats: '200+ completed spaces',
-                color: 'from-orange-500 to-red-500',
-                page: 'projects'
-              },
-            ].map((resource, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                whileHover={{ y: -8 }}
-              >
-                <div 
-                  className="glass-card rounded-2xl p-8 h-full cursor-pointer group"
-                  onClick={() => onNavigate?.(resource.page)}
-                >
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${resource.color} flex items-center justify-center mb-6`}>
-                    <resource.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="mb-3 group-hover:text-trees-primary transition-colors">
-                    {resource.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{resource.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-trees-primary">{resource.stats}</span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-trees-primary group-hover:translate-x-1 transition-all" />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Resource Impact Stats */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        
+  <div className="container mx-auto px-6 relative z-10">
+    {/* Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      <h2 className="text-white text-[24px] font-semibold mb-4">
+        Helping Professionals and Homeowners Every Day
+      </h2>
+      <p className="text-white/90 text-[16px] max-w-2xl mx-auto leading-relaxed">
+        Our tools and resources guide thousands of architects, builders, and families in making confident material choices.
+      </p>
+    </motion.div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-white mb-4">Helping Professionals and Homeowners Every Day</h2>
-            <p className="text-white/90 text-lg max-w-2xl mx-auto">
-             Our tools and resources guide thousands of architects, builders, and families in making confident material choices.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { value: '50K+', label: 'Monthly Users', icon: Users },
-              { value: '98%', label: 'User Satisfaction', icon: Star },
-              { value: '10K+', label: 'Downloads Every Month', icon: TrendingUp },
-              { value: '24/7', label: ' Access Anytime', icon: Shield },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-white/80">{stat.label}</div>
-              </motion.div>
-            ))}
+    {/* Stats Grid */}
+    <div className="grid md:grid-cols-4 gap-8">
+      {[
+        { value: '50K+', label: 'Monthly Users', icon: Users },
+        { value: '98%', label: 'User Satisfaction', icon: Star },
+        { value: '10K+', label: 'Downloads Every Month', icon: TrendingUp },
+        { value: '24/7', label: 'Access Anytime', icon: Shield },
+      ].map((stat, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+          className="text-center"
+        >
+          {/* Icon */}
+          <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
+            <stat.icon className="w-8 h-8 text-white" />
           </div>
-        </div>
-      </section>
 
-      
+          {/* Value */}
+          <div className="text-[30px] font-bold text-white mb-2">
+            {stat.value}
+          </div>
+
+          {/* Label */}
+          <div className="text-white/80 text-[14px] font-medium">
+            {stat.label}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Resources FAQ */}
       <section className="section-padding bg-white">
@@ -519,10 +537,7 @@ You can pick what suits your need, or ask our team for help.<br></br>
 
       {/* Bottom CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white rounded-full" />
-        </div>
+        
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div

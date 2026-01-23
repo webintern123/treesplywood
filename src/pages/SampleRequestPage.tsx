@@ -11,7 +11,7 @@ import { ModernSectionHeader } from '../components/design-system/ModernSectionHe
 import { ModernButton } from '../components/design-system/ModernButton';
 import { ModernCard } from '../components/design-system/ModernCard';
 import { MagneticButton } from '../components/design-system/MagneticButton';
-import { Testimonials } from '../components/Testimonials';
+
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Checkbox } from '../components/ui/checkbox';
@@ -247,571 +247,596 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
       />
 
       {/* Why Request Samples Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Why Take Samples?"
-            badgeIcon={Target}
-            title="See the Quality Yourself, Trust It"
-            subtitle="Before you choose a product, get a sample test of its strength, finish, and overall build."
-          />
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Shield,
-                title: 'Check the Quality',
-                desc: 'Look at the layers, feel the finish, and judge the strength before placing a bigger order.',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                icon: Award,
-                title: 'Compare Easily',
-                desc: 'Keep samples side-by-side to understand the difference between grades and textures.',
-                color: 'from-green-500 to-green-600'
-              },
-              {
-                icon: Users,
-                title: 'Get Client Approval',
-                desc: 'Share physical samples with clients so they can approve the exact material.',
-                color: 'from-purple-500 to-purple-600'
-              },
-              {
-                icon: CheckCircle,
-                title: 'Match Your Design',
-                desc: 'Confirm the colour, grain, and finish to fit your project perfectly.',
-                color: 'from-orange-500 to-orange-600'
-              },
-            ].map((benefit, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <ModernCard variant="elevated" className="p-6 h-full text-center">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}>
-                    <benefit.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-trees-primary mb-2">{benefit.title}</h4>
-                  <p className="text-sm text-gray-600">{benefit.desc}</p>
-                </ModernCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <section className="section-padding bg-gray-50">
+  <div className="container mx-auto px-6">
+
+    <ModernSectionHeader
+      badge="Why Take Samples?"
+      badgeIcon={Target}
+      title="See the Quality Yourself, Trust It"
+      subtitle="Before you choose a product, get a sample test of its strength, finish, and overall build."
+    />
+    
+    <div className="grid md:grid-cols-4 gap-6">
+      {[
+        {
+          icon: Shield,
+          title: 'Check the Quality',
+          desc: 'Look at the layers, feel the finish, and judge the strength before placing a bigger order.',
+          color: 'from-blue-500 to-blue-600'
+        },
+        {
+          icon: Award,
+          title: 'Compare Easily',
+          desc: 'Keep samples side-by-side to understand the difference between grades and textures.',
+          color: 'from-green-500 to-green-600'
+        },
+        {
+          icon: Users,
+          title: 'Get Client Approval',
+          desc: 'Share physical samples with clients so they can approve the exact material.',
+          color: 'from-purple-500 to-purple-600'
+        },
+        {
+          icon: CheckCircle,
+          title: 'Match Your Design',
+          desc: 'Confirm the colour, grain, and finish to fit your project perfectly.',
+          color: 'from-orange-500 to-orange-600'
+        },
+      ].map((benefit, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard variant="elevated" className="p-6 h-full text-center">
+           
+            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}>
+              <benefit.icon className="w-8 h-8 text-white" />
+            </div>
+
+           
+            <h4 className="text-trees-primary text-[20px] font-semibold mb-2">
+              {benefit.title}
+            </h4>
+
+            
+            <p className="text-gray-600 text-[14px] font-normal">
+              {benefit.desc}
+            </p>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* How It Works Section */}
       <section className="section-padding bg-white">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Step by Step Process"
-            badgeIcon={Box}
-            title="How It Works"
-            subtitle="Getting your plywood samples is quick and simple. Here’s the process:"
-          />
+  <div className="container mx-auto px-6">
+    
+    <ModernSectionHeader
+      badge="Step by Step Process"
+      badgeIcon={Box}
+      title="How It Works"
+      subtitle="Getting your plywood samples is quick and simple. Here’s the process:"
+    />
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { 
-                icon: Package, 
-                title: 'Choose Your Samples', 
-                desc: 'Select up to 5 options from our range.',
-                step: '1'
-              },
-              { 
-                icon: FileCheck, 
-                title: 'Share Your Details', 
-                desc: 'Tell us where to deliver and what you’re planning.',
-                step: '2'
-              },
-              { 
-                icon: Truck, 
-                title: 'Free Delivery', 
-                desc: 'We’ll send your samples within 3–5 working days, anywhere in India.',
-                step: '3'
-              },
-              { 
-                icon: Clock, 
-                title: '	Check & Compare', 
-                desc: ' See the quality, explore the finish, and pick what suits your project best.',
-                step: '4'
-              }
-            ].map((step, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <ModernCard variant="glass" className="p-6 h-full text-center relative">
-                  <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center">
-                    <span className="text-white font-bold">{step.step}</span>
-                  </div>
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center mx-auto mb-4">
-                    <step.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h4 className="text-trees-secondary mb-2">{step.title}</h4>
-                  <p className="text-sm text-gray-600">{step.desc}</p>
-                </ModernCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid md:grid-cols-4 gap-6">
+      {[
+        { 
+          icon: Package, 
+          title: 'Choose Your Samples', 
+          desc: 'Select up to 5 options from our range.',
+          step: '1'
+        },
+        { 
+          icon: FileCheck, 
+          title: 'Share Your Details', 
+          desc: 'Tell us where to deliver and what you’re planning.',
+          step: '2'
+        },
+        { 
+          icon: Truck, 
+          title: 'Free Delivery', 
+          desc: 'We’ll send your samples within 3–5 working days, anywhere in India.',
+          step: '3'
+        },
+        { 
+          icon: Clock, 
+          title: 'Check & Compare', 
+          desc: 'See the quality, explore the finish, and pick what suits your project best.',
+          step: '4'
+        }
+      ].map((step, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard variant="glass" className="p-6 h-full text-center relative">
+            
+           
+            <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center">
+              <span className="text-white text-[14px] font-semibold">{step.step}</span>
+            </div>
+
+         
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center mx-auto mb-4">
+              <step.icon className="w-7 h-7 text-white" />
+            </div>
+
+          
+            <h4 className="text-trees-secondary text-[20px] font-semibold mb-2">
+              {step.title}
+            </h4>
+
+            
+            <p className="text-gray-600 text-[14px] font-normal">
+              {step.desc}
+            </p>
+
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Sample Selection & Form Section */}
-      <section className="section-padding bg-gray-50">
-        <PageContainer>
-          <ModernSectionHeader
-            badge="Get Free Samples Here"
-            badgeIcon={Package}
-            title="Choose Your Samples & Submit Your Request"
-            subtitle="Pick the products you would like to test and share your delivery details"
-          />
+     <section className="section-padding bg-gray-50">
+  <PageContainer>
+    <ModernSectionHeader
+      badge="Get Free Samples Here"
+      badgeIcon={Package}
+      title="Choose Your Samples & Submit Your Request"
+      subtitle="Pick the products you would like to test and share your delivery details"
+    />
 
-          {/* Notice for Dealers */}
-          <div className="mb-8 p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg">
-            <div className="flex items-start gap-3">
-              <Award className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="text-sm text-amber-900">
-                  <strong>Note for Dealers & Partners:</strong> This form is for customer sample requests only (maximum 5 pieces). If you need dealership details, display kits, or bulk business support,{' '}
-                  <button 
-                    onClick={() => onNavigate?.('dealers')}
-                    className="text-amber-700 font-semibold underline hover:text-amber-800"
+    {/* Notice for Dealers */}
+    <div className="mb-8 p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg">
+      <div className="flex items-start gap-3">
+        <Award className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+        <div>
+          <p className="text-sm text-amber-900">
+            <strong>Note for Dealers & Partners:</strong> This form is for customer sample requests only (max 5 pieces). For dealership details, display kits, or bulk support,{' '}
+            <button 
+              onClick={() => onNavigate?.('dealers')}
+              className="text-amber-700 font-semibold underline hover:text-amber-800"
+            >
+              visit our Dealers & Partnership Page
+            </button>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="grid lg:grid-cols-3 gap-8">
+      {/* Main Form */}
+      <div className="lg:col-span-2">
+        <ModernCard variant="elevated" className="p-8">
+
+          {/* Sample Selection */}
+          <div className="mb-12">
+            <h3 className="text-trees-secondary text-[20px] font-semibold mb-6 flex items-center gap-2">
+              <Package className="w-6 h-6 text-trees-primary" />
+              Select Samples (Up to 5)
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
+              {availableSamples.map((sample) => (
+                <motion.div
+                  key={sample.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className={`p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                    selectedSamples.includes(sample.id)
+                      ? 'border-trees-primary bg-trees-primary/5 shadow-md'
+                      : 'border-gray-200 hover:border-trees-primary/30 hover:shadow-sm'
+                  }`}
+                  onClick={() => {
+                    if (selectedSamples.length < 5 || selectedSamples.includes(sample.id)) {
+                      handleSampleToggle(sample.id);
+                    } else {
+                      toast.error('Maximum 5 samples can be selected');
+                    }
+                  }}
+                >
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      checked={selectedSamples.includes(sample.id)}
+                      className="mt-1"
+                      disabled={selectedSamples.length >= 5 && !selectedSamples.includes(sample.id)}
+                    />
+                    <div className="flex-1">
+                      <h4 className="text-trees-secondary text-[16px] font-semibold mb-1">{sample.name}</h4>
+                      <div className="flex items-center gap-2 text-xs text-gray-600 mb-2">
+                        <span className="px-2 py-0.5 bg-gray-100 rounded">{sample.type}</span>
+                        <span>{sample.thickness}</span>
+                        <span>•</span>
+                        <span>{sample.size}</span>
+                      </div>
+                      <p className="text-xs text-gray-500">{sample.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Selection Status */}
+            <div className={`p-4 rounded-xl border-2 ${
+              selectedSamples.length === 0 
+                ? 'bg-red-50 border-red-200'
+                : selectedSamples.length === 5
+                ? 'bg-green-50 border-green-200'
+                : 'bg-blue-50 border-blue-200'
+            }`}>
+              <p className={`text-sm font-semibold ${
+                selectedSamples.length === 0 
+                  ? 'text-red-800'
+                  : selectedSamples.length === 5
+                  ? 'text-green-800'
+                  : 'text-blue-800'
+              }`}>
+                {selectedSamples.length === 0 && '⚠️ Please select at least 1 sample'}
+                {selectedSamples.length > 0 && selectedSamples.length < 5 && `✓ Selected: ${selectedSamples.length} of 5 samples`}
+                {selectedSamples.length === 5 && '✓ Maximum samples selected (5/5)'}
+              </p>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div>
+            <h3 className="text-trees-secondary text-[20px] font-semibold mb-6 flex items-center gap-2">
+              <User className="w-6 h-6 text-trees-primary" />
+              Your Contact Details
+            </h3>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Full Name */}
+                <div>
+                  <Label htmlFor="fullName">Full Name *</Label>
+                  <div className="relative mt-2">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <Input
+                      id="fullName"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
+                      placeholder="John Doe"
+                      className="pl-10 text-sm"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div>
+                  <Label htmlFor="email">Email Address *</Label>
+                  <div className="relative mt-2">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="john@example.com"
+                      className="pl-10 text-sm"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <Label htmlFor="phone">Phone Number *</Label>
+                  <div className="relative mt-2">
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="+91 98765 43210"
+                      className="pl-10 text-sm"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Company */}
+                <div>
+                  <Label htmlFor="company">Company / Firm (Optional)</Label>
+                  <div className="relative mt-2">
+                    <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <Input
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      placeholder="Your Company"
+                      className="pl-10 text-sm"
+                    />
+                  </div>
+                </div>
+
+                {/* Profession */}
+                <div>
+                  <Label htmlFor="profession">Profession *</Label>
+                  <Select
+                    value={formData.profession}
+                    onValueChange={(value) => setFormData({ ...formData, profession: value })}
                   >
-                    Dealers & Partnership Page
-                  </button>{' '}
-                  instead.
+                    <SelectTrigger className="mt-2 text-sm">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="architect">Architect</SelectItem>
+                      <SelectItem value="interior-designer">Interior Designer</SelectItem>
+                      <SelectItem value="contractor">Contractor</SelectItem>
+                      <SelectItem value="builder">Builder/Developer</SelectItem>
+                      <SelectItem value="carpenter">Carpenter</SelectItem>
+                      <SelectItem value="homeowner">Homeowner</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <p className="text-xs text-gray-500 mt-2">
+                    <strong>For Dealers:</strong> Please visit the{' '}
+                    <button 
+                      type="button"
+                      onClick={() => onNavigate?.('dealers')}
+                      className="text-trees-primary font-semibold underline hover:text-trees-secondary"
+                    >
+                      Dealers Page
+                    </button>
+                  </p>
+                </div>
+
+                {/* Purpose */}
+                <div>
+                  <Label htmlFor="purpose">Purpose *</Label>
+                  <Select
+                    value={formData.purpose}
+                    onValueChange={(value) => setFormData({ ...formData, purpose: value })}
+                  >
+                    <SelectTrigger className="mt-2 text-sm">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="project-evaluation">Project Evaluation</SelectItem>
+                      <SelectItem value="quality-testing">Quality Testing</SelectItem>
+                      <SelectItem value="client-presentation">Client Presentation</SelectItem>
+                      <SelectItem value="product-comparison">Product Comparison</SelectItem>
+                      <SelectItem value="educational">Educational Purpose</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div>
+                <Label htmlFor="address">Address Details *</Label>
+                <div className="relative mt-2">
+                  <MapPin className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                  <Textarea
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    placeholder="Street name, building/flat details"
+                    className="pl-10 min-h-[80px] text-sm"
+                    required
+                  />
+                </div>
+              </div>
+
+             <div className="grid md:grid-cols-3 gap-6">
+  {/* City */}
+  <div>
+    <Label htmlFor="city">City *</Label>
+    <Input
+      id="city"
+      name="city"
+      value={formData.city}
+      onChange={handleInputChange}
+      placeholder="City"
+      className="mt-2"
+      required
+    />
+  </div>
+
+  {/* State */}
+  <div>
+    <Label htmlFor="state">State *</Label>
+    <Input
+      id="state"
+      name="state"
+      value={formData.state}
+      onChange={handleInputChange}
+      placeholder="State"
+      className="mt-2"
+      required
+    />
+  </div>
+
+  {/* Pincode */}
+  <div>
+    <Label htmlFor="pincode">Pincode *</Label>
+    <Input
+      id="pincode"
+      name="pincode"
+      value={formData.pincode}
+      onChange={handleInputChange}
+      placeholder="Pincode"
+      className="mt-2"
+      required
+    />
+  </div>
+</div>
+
+
+              {/* Project Details */}
+              <div>
+                <Label htmlFor="projectDetails">Project Details (Optional)</Label>
+                <div className="relative mt-2">
+                  <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                  <Textarea
+                    id="projectDetails"
+                    name="projectDetails"
+                    value={formData.projectDetails}
+                    onChange={handleInputChange}
+                    placeholder="Tell us more… timelines, requirements, etc."
+                    className="pl-10 min-h-[120px] text-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Delivery Info */}
+              <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+                <Clock className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-amber-800">
+                  <strong>Delivery:</strong> Samples arrive in 3–5 working days. Tracking info via email/SMS.
                 </p>
               </div>
-            </div>
+
+              {/* Submit Button */}
+              <ModernButton
+                variant="primary"
+                size="xl"
+                icon={<Package className="w-5 h-5" />}
+                type="submit"
+                className="w-full"
+              >
+                Free Sample Request
+              </ModernButton>
+
+            </form>
           </div>
+        </ModernCard>
+      </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Main Form */}
-            <div className="lg:col-span-2">
-              <ModernCard variant="elevated" className="p-8">
-                {/* Sample Selection */}
-                <div className="mb-12">
-                  <h3 className="text-trees-secondary mb-6 flex items-center gap-2">
-                    <Package className="w-6 h-6 text-trees-primary" />
-                    Select Samples (Up to 5)
-                  </h3>
+      {/* Sidebar */}
+      <div className="lg:col-span-1 space-y-6">
 
-                  <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    {availableSamples.map((sample) => (
-                      <motion.div
-                        key={sample.id}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className={`p-4 rounded-xl border-2 transition-all cursor-pointer ${
-                          selectedSamples.includes(sample.id)
-                            ? 'border-trees-primary bg-trees-primary/5 shadow-md'
-                            : 'border-gray-200 hover:border-trees-primary/30 hover:shadow-sm'
-                        }`}
-                        onClick={() => {
-                          if (selectedSamples.length < 5 || selectedSamples.includes(sample.id)) {
-                            handleSampleToggle(sample.id);
-                          } else {
-                            toast.error('Maximum 5 samples can be selected');
-                          }
-                        }}
-                      >
-                        <div className="flex items-start gap-3">
-                          <Checkbox
-                            checked={selectedSamples.includes(sample.id)}
-                            className="mt-1"
-                            disabled={selectedSamples.length >= 5 && !selectedSamples.includes(sample.id)}
-                          />
-                          <div className="flex-1">
-                            <h4 className="text-trees-secondary mb-1">{sample.name}</h4>
-                            <div className="flex items-center gap-2 text-xs text-gray-600 mb-2">
-                              <span className="px-2 py-0.5 bg-gray-100 rounded">{sample.type}</span>
-                              <span>{sample.thickness}</span>
-                              <span>•</span>
-                              <span>{sample.size}</span>
-                            </div>
-                            <p className="text-xs text-gray-500">{sample.description}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
+        {/* Benefits */}
+        <ModernCard variant="elevated" className="p-6 bg-white shadow-md">
+          <h4 className="text-trees-secondary text-[16px] font-semibold mb-4">
+            How Helpful are Request Samples?
+          </h4>
+          <ul className="space-y-3 text-gray-700 text-sm">
+            {[
+              'Check the quality and strength',
+              'Compare different grades and finishes',
+              'Show options to your clients',
+              'Confirm colours, textures, and look',
+              'Make a confident purchase decision.'
+            ].map((text, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </ModernCard>
 
-                  <div className={`p-4 rounded-xl border-2 ${
-                    selectedSamples.length === 0 
-                      ? 'bg-red-50 border-red-200'
-                      : selectedSamples.length === 5
-                      ? 'bg-green-50 border-green-200'
-                      : 'bg-blue-50 border-blue-200'
-                  }`}>
-                    <p className={`text-sm font-semibold ${
-                      selectedSamples.length === 0 
-                        ? 'text-red-800'
-                        : selectedSamples.length === 5
-                        ? 'text-green-800'
-                        : 'text-blue-800'
-                    }`}>
-                      {selectedSamples.length === 0 && '⚠️ Please select at least 1 sample'}
-                      {selectedSamples.length > 0 && selectedSamples.length < 5 && `✓ Selected: ${selectedSamples.length} of 5 samples`}
-                      {selectedSamples.length === 5 && '✓ Maximum samples selected (5/5)'}
-                    </p>
-                  </div>
-                </div>
+        {/* Guidelines */}
+        <ModernCard variant="elevated" className="p-6">
+          <h4 className="text-trees-secondary text-[16px] font-semibold mb-4 flex items-center gap-2">
+            <Shield className="w-5 h-5 text-trees-primary" />
+            Sample Guidelines
+          </h4>
+          <ul className="space-y-2 text-sm text-gray-700">
+            {[
+              'Up to 5 samples per request',
+              'Free delivery anywhere in India',
+              'One request every 30 days',
+              'Delivered in 3–5 working days',
+              'Samples are non-returnable',
+              'For bulk needs, contact our sales team'
+            ].map((text, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <span className="text-trees-primary">•</span>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </ModernCard>
 
-                {/* Contact Form */}
-                <div>
-                  <h3 className="text-trees-secondary mb-6 flex items-center gap-2">
-                    <User className="w-6 h-6 text-trees-primary" />
-                    Your Contact Details
-                  </h3>
+        {/* Support */}
+        <ModernCard variant="elevated" className="p-6">
+          <h4 className="text-trees-secondary text-[16px] font-semibold mb-4">Need Help in Choosing?</h4>
+          <p className="text-sm text-gray-600 mb-4">
+            Our team is ready to guide you with sample selection and product suggestions.
+          </p>
+          <ModernButton
+            variant="outline"
+            size="md"
+            icon={<MessageSquare className="w-4 h-4" />}
+            onClick={() => onNavigate?.('contact')}
+            className="w-full"
+          >
+            Contact Our Support Team
+          </ModernButton>
+        </ModernCard>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <Label htmlFor="fullName">Full Name *</Label>
-                        <div className="relative mt-2">
-                          <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                          <Input
-                            id="fullName"
-                            name="fullName"
-                            value={formData.fullName}
-                            onChange={handleInputChange}
-                            placeholder="John Doe"
-                            className="pl-10"
-                            required
-                          />
-                        </div>
-                      </div>
+      </div>
+    </div>
+  </PageContainer>
+</section>
 
-                      <div>
-                        <Label htmlFor="email">Email Address *</Label>
-                        <div className="relative mt-2">
-                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                          <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            placeholder="john@example.com"
-                            className="pl-10"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <Label htmlFor="phone">Phone Number *</Label>
-                        <div className="relative mt-2">
-                          <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                          <Input
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            placeholder="+91 98765 43210"
-                            className="pl-10"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <Label htmlFor="company">Company / Firm (Optional)</Label>
-                        <div className="relative mt-2">
-                          <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                          <Input
-                            id="company"
-                            name="company"
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            placeholder="Your Company"
-                            className="pl-10"
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <Label htmlFor="profession">Profession *</Label>
-                        <Select
-                          value={formData.profession}
-                          onValueChange={(value) => setFormData({ ...formData, profession: value })}
-                        >
-                          <SelectTrigger className="mt-2">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="architect">Architect</SelectItem>
-                            <SelectItem value="interior-designer">Interior Designer</SelectItem>
-                            <SelectItem value="contractor">Contractor</SelectItem>
-                            <SelectItem value="builder">Builder/Developer</SelectItem>
-                            <SelectItem value="carpenter">Carpenter</SelectItem>
-                            <SelectItem value="homeowner">Homeowner</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <p className="text-xs text-gray-500 mt-2">
-                          <strong>For Dealers:</strong> If you’re looking for dealership or display kits, please visit our{' '}
-                          <button 
-                            type="button"
-                            onClick={() => onNavigate?.('dealers')}
-                            className="text-trees-primary font-semibold underline hover:text-trees-secondary"
-                          >
-                            Dealers Page
-                          </button>{' '}
-                             for the right options.
-                        </p>
-                      </div>
-
-                      <div>
-                        <Label htmlFor="purpose">Purpose *</Label>
-                        <Select
-                          value={formData.purpose}
-                          onValueChange={(value) => setFormData({ ...formData, purpose: value })}
-                        >
-                          <SelectTrigger className="mt-2">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="project-evaluation">Project Evaluation</SelectItem>
-                            <SelectItem value="quality-testing">Quality Testing</SelectItem>
-                            <SelectItem value="client-presentation">Client Presentation</SelectItem>
-                            <SelectItem value="product-comparison">Product Comparison</SelectItem>
-                            <SelectItem value="educational">Educational Purpose</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="address">Address Details *</Label>
-                      <div className="relative mt-2">
-                        <MapPin className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                        <Textarea
-                          id="address"
-                          name="address"
-                          value={formData.address}
-                          onChange={handleInputChange}
-                          placeholder="Project AddressStreet name, building/flat details"
-                          className="pl-10 min-h-[80px]"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-6">
-                      <div>
-                        <Label htmlFor="city">City *</Label>
-                        <Input
-                          id="city"
-                          name="city"
-                          value={formData.city}
-                          onChange={handleInputChange}
-                          placeholder="City"
-                          className="mt-2"
-                          required
-                        />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="state">State *</Label>
-                        <Input
-                          id="state"
-                          name="state"
-                          value={formData.state}
-                          onChange={handleInputChange}
-                          placeholder="State"
-                          className="mt-2"
-                          required
-                        />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="pincode">Pincode *</Label>
-                        <Input
-                          id="pincode"
-                          name="pincode"
-                          value={formData.pincode}
-                          onChange={handleInputChange}
-                          placeholder="pincode"
-                          className="mt-2"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="projectDetails">Project Details (Optional)</Label>
-                      <div className="relative mt-2">
-                        <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                        <Textarea
-                          id="projectDetails"
-                          name="projectDetails"
-                          value={formData.projectDetails}
-                          onChange={handleInputChange}
-                          placeholder="Tell Us More Share your project needs, timelines, and any specific requirements…"
-                          className="pl-10 min-h-[120px]"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl">
-                      <Clock className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-                      <p className="text-sm text-amber-800">
-                        <strong>Delivery Information:</strong> Samples are delivered in 3–5 working days. Tracking details will be shared via email and SMS once dispatched.
-                      </p>
-                    </div>
-
-                    <ModernButton
-                      variant="primary"
-                      size="xl"
-                      icon={<Package className="w-5 h-5" />}
-                      type="submit"
-                      className="w-full"
-                    >
-                        Free Sample Request 
-                    </ModernButton>
-                  </form>
-                </div>
-              </ModernCard>
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1 space-y-6">
-               <ModernCard variant="elevated" className="p-6 bg-white shadow-md">
-    <h4 className="text-trees-secondary mb-4 flex items-center gap-2">
-      
-         How Helpful are Request Samples?
-    </h4>
-    <ul className="space-y-3 text-gray-700 text-sm">
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Check the quality and strength</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Compare different grades and finishes</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Show options to your clients</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Confirm colours, textures, and look</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-trees-primary" />
-        <span>Make a confident purchase decision.</span>
-      </li>
-    </ul>
-  </ModernCard>
-
-
-              <ModernCard variant="elevated" className="p-6">
-                <h4 className="text-trees-secondary mb-4 flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-trees-primary" />
-                  Sample Guidelines
-                </h4>
-                <div className="space-y-3 text-sm text-gray-700">
-                  <p className="flex items-start gap-2">
-                    <span className="text-trees-primary">•</span>
-                       Up to 5 samples per request
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <span className="text-trees-primary">•</span>
-                       Free delivery anywhere in India
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <span className="text-trees-primary">•</span>
-                       One request every 30 days
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <span className="text-trees-primary">•</span>
-                      Delivered in 3–5 working days
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <span className="text-trees-primary">•</span>
-                       Samples are non-returnable
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <span className="text-trees-primary">•</span>
-                       For bulk needs, please contact our sales team
-                  </p>
-                </div>
-              </ModernCard>
-
-              <ModernCard variant="elevated" className="p-6">
-                <h4 className="text-trees-secondary mb-4">Need Help in Choosing?</h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  Our team is always ready to guide you with sample selection and product suggestions.
-                </p>
-                <ModernButton
-                  variant="outline"
-                  size="md"
-                  icon={<MessageSquare className="w-4 h-4" />}
-                  onClick={() => onNavigate?.('contact')}
-                  className="w-full"
-                >
-                    Contact Our Support Team
-                </ModernButton>
-              </ModernCard>
-            </div>
-          </div>
-        </PageContainer>
-      </section>
 
       {/* Sample Statistics */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-       
+  <div className="container mx-auto px-6 relative z-10">
+    {/* Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      <h2 className="text-white text-[24px] font-semibold mb-4">Our Sample Program - Trusted by Professionals</h2>
+      <p className="text-white/90 text-[16px] max-w-2xl mx-auto">
+        See the quality first with our fast and reliable sample service.
+      </p>
+    </motion.div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-white mb-4">Our Sample Program - Trusted by Professionals</h2>
-            <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              See the quality first with our fast and reliable sample service.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { value: '15,000+', label: 'Samples Delivered', icon: Package },
-              { value: '3-5', label: 'Quick Delivery', icon: Truck },
-              { value: '98%', label: 'Happy Customers', icon: Star },
-              { value: '10+', label: 'Product Options', icon: Box },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-white/80">{stat.label}</div>
-              </motion.div>
-            ))}
+    {/* Stats Grid */}
+    <div className="grid md:grid-cols-4 gap-8">
+      {[
+        { value: '15,000+', label: 'Samples Delivered', icon: Package },
+        { value: '3-5', label: 'Quick Delivery', icon: Truck },
+        { value: '98%', label: 'Happy Customers', icon: Star },
+        { value: '10+', label: 'Product Options', icon: Box },
+      ].map((stat, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+          className="text-center"
+        >
+          <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
+            <stat.icon className="w-8 h-8 text-white" />
           </div>
-        </div>
-      </section>
+          <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+          <div className="text-white/80 text-[14px]">{stat.label}</div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       
 
@@ -898,91 +923,116 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
 
       {/* Newsletter Subscription for Sample Updates */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-        
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
-          >
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
-              <Mail className="w-4 h-4 text-white" />
-              <span className="text-white font-semibold text-sm">New Sample Alerts </span>
-            </div>
-            <h2 className="text-white mb-6">Don’t Miss New Sample Launches</h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              We’ll send you updates whenever new samples are available, along with helpful tips on checking quality and choosing the right materials.
-            </p>
+  <div className="container mx-auto px-6 relative z-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="max-w-3xl mx-auto"
+    >
+     
+      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
+        <Mail className="w-4 h-4 text-white" />
+        <span className="text-white font-semibold text-[14px]">New Sample Alerts</span>
+      </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                className="flex-1 px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60"
-              />
-              <MagneticButton strength={0.2}>
-                <ModernButton 
-                  variant="light" 
-                  size="md"
-                >
-                  Subscribe
-                </ModernButton>
-              </MagneticButton>
-            </div>
-            <p className="text-sm text-white/70">
-              Join 3000+ professionals who stay updated | Unsubscribe anytime.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+     
+      <h2 className="text-white text-[24px] font-semibold mb-6">
+        Don’t Miss New Sample Launches
+      </h2>
+
+      
+      <p className="text-white/90 text-[16px] mb-10 leading-relaxed">
+        We’ll send you updates whenever new samples are available, along with helpful tips on checking quality and choosing the right materials.
+      </p>
+
+   
+      <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
+        <input
+          type="email"
+          placeholder="Your Email Address"
+          className="flex-1 px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60 text-[14px]"
+        />
+        <MagneticButton strength={0.2}>
+          <ModernButton 
+            variant="light" 
+            size="md"
+            className="text-[14px] font-medium"
+          >
+            Subscribe
+          </ModernButton>
+        </MagneticButton>
+      </div>
+
+    
+      <p className="text-white/70 text-[12px]">
+        Join 3,000+ professionals who stay updated | Unsubscribe anytime.
+      </p>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Bottom CTA Section */}
-      <section className="section-padding bg-white">
-        <PageContainer>
-          <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-6">
-                <Sparkles className="w-4 h-4 text-trees-primary" />
-                <span className="text-trees-primary font-semibold text-sm">Ready to See the Difference?</span>
-              </div>
-              <h2 className="text-trees-secondary mb-6">Test the Quality First by Trying Yourself</h2>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Request your sample kit and experience why our plywood is trusted nationwide.
-              </p>
+     <section className="section-padding bg-white">
+  <PageContainer>
+    <div className="text-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto"
+      >
+       
+        <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-6">
+          <Sparkles className="w-4 h-4 text-trees-primary" />
+          <span className="text-trees-primary font-semibold text-[14px]">
+            Ready to See the Difference?
+          </span>
+        </div>
 
-              <div className="flex flex-wrap gap-4 justify-center">
-                <MagneticButton strength={0.2}>
-                  <ModernButton
-                    variant="primary"
-                    size="xl"
-                    icon={<Package className="w-6 h-6" />}
-                    onClick={() => {
-                      const formSection = document.querySelector('form');
-                      formSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
-                  >
-                    Request Samples
-                  </ModernButton>
-                </MagneticButton>
-                <ModernButton
-                  variant="outline"
-                  size="xl"
-                  icon={<MessageSquare className="w-6 h-6" />}
-                  onClick={() => onNavigate?.('products')}
-                >
-                  View All Products
-                </ModernButton>
-              </div>
-            </motion.div>
-          </div>
-        </PageContainer>
-      </section>
+        
+        <h2 className="text-trees-secondary text-[24px] font-semibold mb-6">
+          Test the Quality First by Trying Yourself
+        </h2>
+
+      
+        <p className="text-gray-600 text-[16px] mb-10 leading-relaxed">
+          Request your sample kit and experience why our plywood is trusted nationwide.
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          <MagneticButton strength={0.2}>
+            <ModernButton
+              variant="primary"
+              size="xl"
+              icon={<Package className="w-6 h-6" />}
+              className="text-[14px] font-medium"
+              onClick={() => {
+                const formSection = document.querySelector('form');
+                formSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              Request Samples
+            </ModernButton>
+          </MagneticButton>
+
+          <ModernButton
+            variant="outline"
+            size="xl"
+            icon={<MessageSquare className="w-6 h-6" />}
+            className="text-[14px] font-medium"
+            onClick={() => onNavigate?.('products')}
+          >
+            View All Products
+          </ModernButton>
+        </div>
+      </motion.div>
+    </div>
+  </PageContainer>
+</section>
+
     </div>
   );
 }

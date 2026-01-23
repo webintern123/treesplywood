@@ -102,21 +102,22 @@ export default function InstallationPage({ onNavigate }: InstallationPageProps) 
         badge="Installation Services"
       />
 
-      {/* Services Grid */}
+    
       {/* Services Grid */}
 <GridContainer className="py-20">
 
   {/* Section Header - Full Width */}
   <div className="col-span-12 mb-12 text-center">
-    <h2 className="text-3xl text-[#432011] mb-4">Our Installation Services</h2>
-    <p className="text-gray-600 max-w-2xl mx-auto">
+    <h2 className="text-[24px] font-semibold text-[#432011] mb-4">
+      Our Installation Services
+    </h2>
+    <p className="text-[16px] font-normal text-gray-600 max-w-2xl mx-auto">
       Professional installation services for all types of plywood applications
     </p>
   </div>
 
   {/* 2×2 Card Grid */}
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 col-span-12">
-
     {services.map((service, index) => (
       <motion.div
         key={index}
@@ -126,305 +127,366 @@ export default function InstallationPage({ onNavigate }: InstallationPageProps) 
         transition={{ delay: index * 0.1 }}
         className="w-full"
       >
-        <AdvancedCard gradient={true} hoverEffect="3d" className="p-6">
+        <AdvancedCard gradient hoverEffect="3d" className="p-6">
+          
+          {/* Icon */}
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A0522C] to-[#432011] flex items-center justify-center mb-4">
             <service.icon className="w-7 h-7 text-white" />
           </div>
 
-          <h3 className="text-xl mb-3 text-[#432011]">{service.title}</h3>
-          <p className="text-gray-600 mb-4">{service.description}</p>
+          {/* Card Title */}
+          <h3 className="text-[20px] font-semibold mb-3 text-[#432011]">
+            {service.title}
+          </h3>
 
+          {/* Card Description */}
+          <p className="text-[16px] font-normal text-gray-600 mb-4">
+            {service.description}
+          </p>
+
+          {/* Features */}
           <ul className="space-y-2">
             {service.features.map((feature, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+              <li
+                key={i}
+                className="flex items-start gap-2 text-[14px] text-gray-600"
+              >
                 <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                {feature}
+                <span>{feature}</span>
               </li>
             ))}
           </ul>
+
         </AdvancedCard>
       </motion.div>
     ))}
-
   </div>
+
 </GridContainer>
 
       {/* Benefits */}
       <div className="bg-gradient-to-br from-[#A0522C]/5 to-[#432011]/5 py-20">
-        <GridContainer>
-          <div className="col-span-12 mb-12 text-center">
-            <h2 className="text-3xl text-[#432011] mb-4">Why Choose Our Installers?</h2>
+  <GridContainer>
+    
+    {/* Section Header */}
+    <div className="col-span-12 mb-12 text-center">
+      <h2 className="text-[24px] font-semibold text-[#432011] mb-4">
+        Why Choose Our Installers?
+      </h2>
+    </div>
+
+    {/* Benefits */}
+    {benefits.map((benefit, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className="col-span-12 md:col-span-6 lg:col-span-3"
+      >
+        <div className="text-center">
+          
+          {/* Icon */}
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#A0522C] to-[#432011] flex items-center justify-center mx-auto mb-4">
+            <benefit.icon className="w-8 h-8 text-white" />
           </div>
 
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="col-span-12 md:col-span-6 lg:col-span-3"
-            >
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#A0522C] to-[#432011] flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="mb-2 text-[#432011]">{benefit.title}</h3>
-                <p className="text-sm text-gray-600">{benefit.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </GridContainer>
-      </div>
+          {/* Title */}
+          <h3 className="mb-2 text-[20px] font-semibold text-[#432011]">
+            {benefit.title}
+          </h3>
 
-      {/* Booking Form */}
+          {/* Description */}
+          <p className="text-[16px] font-normal text-gray-600">
+            {benefit.description}
+          </p>
+
+        </div>
+      </motion.div>
+    ))}
+
+  </GridContainer>
+</div>
+
+      
      {/* Booking Form */}
 <GridContainer className="py-20">
+  {/* ================= FORM SECTION ================= */}
   <div className="col-span-12 lg:col-span-8">
-    <AdvancedCard
-  variant="glass"
-  className="p-8 no-hover-transform"
->
-
-      <h2 className="text-2xl mb-6 text-[#432011]">
+    <AdvancedCard variant="glass" className="p-8 no-hover-transform">
+      <h2 className="text-[24px] font-semibold mb-6 text-[#432011]">
         Book Installation Service
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="name">Full Name *</Label>
-                  <div className="relative mt-2">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Your name"
-                      className="pl-10"
-                      required
-                    />
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Full Name */}
+          <div>
+            <Label htmlFor="name" className="text-[14px] font-medium">
+              Full Name *
+            </Label>
+            <div className="relative mt-2">
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Input
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Your name"
+                className="pl-10 text-[14px]"
+                required
+              />
+            </div>
+          </div>
 
-                <div>
-                  <Label htmlFor="phone">Phone Number *</Label>
-                  <div className="relative mt-2">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+91 98765 43210"
-                      className="pl-10"
-                      required
-                    />
-                  </div>
-                </div>
+          {/* Phone */}
+          <div>
+            <Label htmlFor="phone" className="text-[14px] font-medium">
+              Phone Number *
+            </Label>
+            <div className="relative mt-2">
+              <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleInputChange}
+                placeholder="+91 98765 43210"
+                className="pl-10 text-[14px]"
+                required
+              />
+            </div>
+          </div>
 
-                <div>
-                  <Label htmlFor="email">Email Address</Label>
-                  <div className="relative mt-2">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="your@email.com"
-                      className="pl-10"
-                    />
-                  </div>
-                </div>
+          {/* Email */}
+          <div>
+            <Label htmlFor="email" className="text-[14px] font-medium">
+              Email Address
+            </Label>
+            <div className="relative mt-2">
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="your@email.com"
+                className="pl-10 text-[14px]"
+              />
+            </div>
+          </div>
 
-                <div>
-                  <Label htmlFor="city">City *</Label>
-                  <div className="relative mt-2">
-                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="city"
-                      name="city"
-                      value={formData.city}
-                      onChange={handleInputChange}
-                      placeholder="Your city"
-                      className="pl-10"
-                      required
-                    />
-                  </div>
-                </div>
+          {/* City */}
+          <div>
+            <Label htmlFor="city" className="text-[14px] font-medium">
+              City *
+            </Label>
+            <div className="relative mt-2">
+              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Input
+                id="city"
+                name="city"
+                value={formData.city}
+                onChange={handleInputChange}
+                placeholder="Your city"
+                className="pl-10 text-[14px]"
+                required
+              />
+            </div>
+          </div>
 
-                <div>
-                  <Label htmlFor="projectType">Project Type *</Label>
-                  <Select
-                    value={formData.projectType}
-                    onValueChange={(value) => setFormData({ ...formData, projectType: value })}
-                  >
-                    <SelectTrigger className="mt-2">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="residential">Residential</SelectItem>
-                      <SelectItem value="commercial">Commercial</SelectItem>
-                      <SelectItem value="exterior">Exterior</SelectItem>
-                      <SelectItem value="custom">Custom Carpentry</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="serviceType">Service Type *</Label>
-                  <Select
-                    value={formData.serviceType}
-                    onValueChange={(value) => setFormData({ ...formData, serviceType: value })}
-                  >
-                    <SelectTrigger className="mt-2">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="furniture">Furniture Installation</SelectItem>
-                      <SelectItem value="paneling">Wall Paneling</SelectItem>
-                      <SelectItem value="ceiling">False Ceiling</SelectItem>
-                      <SelectItem value="wardrobe">Wardrobe/Storage</SelectItem>
-                      <SelectItem value="cladding">Exterior Cladding</SelectItem>
-                      <SelectItem value="custom">Custom Work</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="areaSize">Approximate Area (sq.ft)</Label>
-                  <Input
-                    id="areaSize"
-                    name="areaSize"
-                    type="number"
-                    value={formData.areaSize}
-                    onChange={handleInputChange}
-                    placeholder="e.g., 500"
-                    className="mt-2"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="preferredDate">Preferred Start Date</Label>
-                  <div className="relative mt-2">
-                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="preferredDate"
-                      name="preferredDate"
-                      type="date"
-                      value={formData.preferredDate}
-                      onChange={handleInputChange}
-                      className="pl-10"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <Label htmlFor="address">Installation Address *</Label>
-                <div className="relative mt-2">
-                  <MapPin className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                  <Textarea
-                    id="address"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    placeholder="Complete address with landmarks"
-                    className="pl-10 min-h-[80px]"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <Label htmlFor="details">Project Details</Label>
-                <div className="relative mt-2">
-                  <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                  <Textarea
-                    id="details"
-                    name="details"
-                    value={formData.details}
-                    onChange={handleInputChange}
-                    placeholder="Describe your project requirements, design preferences, and any specific instructions..."
-                    className="pl-10 min-h-[120px]"
-                  />
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-4 bg-gradient-to-r from-[#A0522C] to-[#432011] text-white rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2"
-              >
-                <Wrench className="w-5 h-5" />
-                Request Installation Service
-              </button>
-            </form>
-          </AdvancedCard>
-        </div>
-        <br></br>
-          <br></br>
-            <br></br>
-
-        {/* Sidebar Info */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="col-span-12 lg:col-span-4 space-y-6"
-        >
-          <AdvancedCard gradient={true} hoverEffect="3d" className="p-6">
-  <h3 className="text-xl mb-4 text-[#432011]">Installation Process</h3>
-  <div className="space-y-4">
-    {[
-      { step: '1', title: 'Site Assessment', desc: 'Free site visit and measurement' },
-      { step: '2', title: 'Quote', desc: 'Detailed cost estimate' },
-      { step: '3', title: 'Scheduling', desc: 'Convenient timing' },
-      { step: '4', title: 'Installation', desc: 'Professional execution' },
-      { step: '5', title: 'Quality Check', desc: 'Final inspection' }
-    ].map((item, i) => (
-      <div key={i} className="flex items-start gap-3">
-        <div className="w-8 h-8 rounded-full bg-[#A0522C]/20 flex items-center justify-center flex-shrink-0 text-[#432011] font-semibold">
-          {item.step}
-        </div>
-        <div>
-          <h4 className="text-[#432011] mb-0.5 font-medium">{item.title}</h4>
-          <p className="text-sm text-gray-700">{item.desc}</p>
-        </div>
-      </div>
-    ))}
-  </div>
-</AdvancedCard>
-
-
-          <AdvancedCard variant="glass" className="p-6">
-            <h3 className="text-lg mb-4 text-[#432011]">Pricing Information</h3>
-            <ul className="space-y-3 text-sm text-gray-700">
-              <li>• Free site visit & consultation</li>
-              <li>• Transparent pricing with no hidden costs</li>
-              <li>• Material cost + labor charges</li>
-              <li>• Flexible payment options</li>
-              <li>• Special rates for bulk projects</li>
-            </ul>
-          </AdvancedCard>
-
-          <AdvancedCard variant="glass" className="p-6">
-            <h3 className="text-lg mb-4 text-[#432011]">Service Areas</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              We provide installation services across major cities. Contact us to check availability in your area.
-            </p>
-            <button
-              onClick={() => window.location.href = '/dealers'}
-              className="w-full py-3 bg-[#A0522C] text-white rounded-lg hover:bg-[#432011] transition-all"
+          {/* Project Type */}
+          <div>
+            <Label className="text-[14px] font-medium">Project Type *</Label>
+            <Select
+              value={formData.projectType}
+              onValueChange={(value) =>
+                setFormData({ ...formData, projectType: value })
+              }
             >
-              Find Nearest Installer
-            </button>
-          </AdvancedCard>
-        </motion.div>
-      </GridContainer>
+              <SelectTrigger className="mt-2 text-[14px]">
+                <SelectValue placeholder="Select project type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="residential">Residential</SelectItem>
+                <SelectItem value="commercial">Commercial</SelectItem>
+                <SelectItem value="exterior">Exterior</SelectItem>
+                <SelectItem value="custom">Custom Carpentry</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Service Type */}
+          <div>
+            <Label className="text-[14px] font-medium">Service Type *</Label>
+            <Select
+              value={formData.serviceType}
+              onValueChange={(value) =>
+                setFormData({ ...formData, serviceType: value })
+              }
+            >
+              <SelectTrigger className="mt-2 text-[14px]">
+                <SelectValue placeholder="Select service type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="furniture">Furniture Installation</SelectItem>
+                <SelectItem value="paneling">Wall Paneling</SelectItem>
+                <SelectItem value="ceiling">False Ceiling</SelectItem>
+                <SelectItem value="wardrobe">Wardrobe / Storage</SelectItem>
+                <SelectItem value="cladding">Exterior Cladding</SelectItem>
+                <SelectItem value="custom">Custom Work</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Area */}
+          <div>
+            <Label htmlFor="areaSize" className="text-[14px] font-medium">
+              Approximate Area (sq.ft)
+            </Label>
+            <Input
+              id="areaSize"
+              name="areaSize"
+              type="number"
+              value={formData.areaSize}
+              onChange={handleInputChange}
+              placeholder="e.g., 500"
+              className="mt-2 text-[14px]"
+            />
+          </div>
+
+          {/* Date */}
+          <div>
+            <Label htmlFor="preferredDate" className="text-[14px] font-medium">
+              Preferred Start Date
+            </Label>
+            <div className="relative mt-2">
+              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Input
+                id="preferredDate"
+                name="preferredDate"
+                type="date"
+                value={formData.preferredDate}
+                onChange={handleInputChange}
+                className="pl-10 text-[14px]"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Address */}
+        <div>
+          <Label htmlFor="address" className="text-[14px] font-medium">
+            Installation Address *
+          </Label>
+          <Textarea
+            id="address"
+            name="address"
+            value={formData.address}
+            onChange={handleInputChange}
+            placeholder="Complete address with landmarks"
+            className="mt-2 min-h-[80px] text-[14px]"
+            required
+          />
+        </div>
+
+        {/* Details */}
+        <div>
+          <Label htmlFor="details" className="text-[14px] font-medium">
+            Project Details
+          </Label>
+          <Textarea
+            id="details"
+            name="details"
+            value={formData.details}
+            onChange={handleInputChange}
+            placeholder="Describe your project requirements..."
+            className="mt-2 min-h-[120px] text-[14px]"
+          />
+        </div>
+
+        {/* Submit */}
+        <button
+          type="submit"
+          className="w-full py-4 text-[15px] font-medium bg-gradient-to-r from-[#A0522C] to-[#432011] text-white rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2"
+        >
+          <Wrench className="w-5 h-5" />
+          Request Installation Service
+        </button>
+      </form>
+    </AdvancedCard>
+  </div>
+<br></br>
+<br></br>
+
+
+  {/* ================= SIDEBAR ================= */}
+  <motion.div
+    initial={{ opacity: 0, x: 20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    className="col-span-12 lg:col-span-4 space-y-6"
+  >
+    <AdvancedCard gradient hoverEffect="3d" className="p-6">
+      <h3 className="text-[20px] font-semibold mb-4 text-[#432011]">
+        Installation Process
+      </h3>
+
+      <div className="space-y-4">
+        {[
+          { step: '1', title: 'Site Assessment', desc: 'Free site visit and measurement' },
+          { step: '2', title: 'Quote', desc: 'Detailed cost estimate' },
+          { step: '3', title: 'Scheduling', desc: 'Convenient timing' },
+          { step: '4', title: 'Installation', desc: 'Professional execution' },
+          { step: '5', title: 'Quality Check', desc: 'Final inspection' }
+        ].map((item, i) => (
+          <div key={i} className="flex gap-3">
+            <div className="w-8 h-8 rounded-full bg-[#A0522C]/20 flex items-center justify-center text-[#432011] font-semibold text-[14px]">
+              {item.step}
+            </div>
+            <div>
+              <h4 className="text-[16px] font-medium text-[#432011]">
+                {item.title}
+              </h4>
+              <p className="text-[14px] text-gray-600">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </AdvancedCard>
+
+    <AdvancedCard variant="glass" className="p-6">
+      <h3 className="text-[20px] font-semibold mb-4 text-[#432011]">
+        Pricing Information
+      </h3>
+      <ul className="space-y-2 text-[14px] text-gray-700">
+        <li>• Free site visit & consultation</li>
+        <li>• Transparent pricing</li>
+        <li>• Material + labor charges</li>
+        <li>• Flexible payment options</li>
+        <li>• Bulk project discounts</li>
+      </ul>
+    </AdvancedCard>
+
+    <AdvancedCard variant="glass" className="p-6">
+      <h3 className="text-[20px] font-semibold mb-4 text-[#432011]">
+        Service Areas
+      </h3>
+      <p className="text-[14px] text-gray-600 mb-4">
+        Installation services available across major cities.
+      </p>
+      <button className="w-full py-3 text-[15px] font-medium bg-[#A0522C] text-white rounded-lg hover:bg-[#432011] transition">
+        Find Nearest Installer
+      </button>
+    </AdvancedCard>
+  </motion.div>
+</GridContainer>
+
     </div>
   );
 }

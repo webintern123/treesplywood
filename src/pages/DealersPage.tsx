@@ -539,583 +539,593 @@ export function DealersPage({ onNavigate }: DealersPageProps) {
 
       {/* How to Find a Dealer Guide */}
       <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Easy Steps"
-            badgeIcon={Lightbulb}
-            title="Find a Dealer Near You"
-            subtitle="Follow these easy steps to locate an authorized Tree’s Plywood dealer near you:"
-          />
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                step: '1',
-                icon: Map,
-                title: 'Choose Your State',
-                desc: 'Pick your state from our list of locations across India.',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                step: '2',
-                icon: Building2,
-                title: 'Select Your District',
-                desc: ' Narrow it down by choosing your district for closer results.',
-                color: 'from-green-500 to-green-600'
-              },
-              {
-                step: '3',
-                icon: Filter,
-                title: 'Pick Dealer Type',
-                desc: 'Choose whether you want a Partner, Dealer, or Distributor.',
-                color: 'from-purple-500 to-purple-600'
-              },
-              {
-                step: '4',
-                icon: Phone,
-                title: 'Connect & Visit',
-                desc: ' View contact details and get in touch for product availability or guidance.',
-                color: 'from-orange-500 to-orange-600'
-              },
-            ].map((step, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <ModernCard variant="elevated" className="p-6 h-full relative">
-                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-lg">{step.step}</span>
-                  </div>
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-4`}>
-                    <step.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h4 className="text-trees-secondary mb-2">{step.title}</h4>
-                  <p className="text-sm text-gray-600">{step.desc}</p>
-                </ModernCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-6">
+    <ModernSectionHeader
+      badge="Easy Steps"
+      badgeIcon={Lightbulb}
+      title="Find a Dealer Near You"
+      subtitle="Follow these easy steps to locate an authorized Tree’s Plywood dealer near you:"
+    />
+
+    <div className="grid md:grid-cols-4 gap-6 mt-8">
+      {[
+        {
+          step: '1',
+          icon: Map,
+          title: 'Choose Your State',
+          desc: 'Pick your state from our list of locations across India.',
+          color: 'from-blue-500 to-blue-600'
+        },
+        {
+          step: '2',
+          icon: Building2,
+          title: 'Select Your District',
+          desc: 'Narrow it down by choosing your district for closer results.',
+          color: 'from-green-500 to-green-600'
+        },
+        {
+          step: '3',
+          icon: Filter,
+          title: 'Pick Dealer Type',
+          desc: 'Choose whether you want a Partner, Dealer, or Distributor.',
+          color: 'from-purple-500 to-purple-600'
+        },
+        {
+          step: '4',
+          icon: Phone,
+          title: 'Connect & Visit',
+          desc: 'View contact details and get in touch for product availability or guidance.',
+          color: 'from-orange-500 to-orange-600'
+        },
+      ].map((step, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard variant="elevated" className="p-6 h-full relative">
+            <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-gradient-to-br from-trees-primary to-trees-secondary flex items-center justify-center shadow-lg">
+              <span className="text-white font-semibold text-[16px]">{step.step}</span>
+            </div>
+
+            <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-4`}>
+              <step.icon className="w-7 h-7 text-white" />
+            </div>
+
+            <h4 className="text-trees-secondary text-[16px] font-semibold mb-2">{step.title}</h4>
+            <p className="text-[14px] text-gray-600 leading-relaxed">{step.desc}</p>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       <PageContainer className="space-y-20">
 
       {/* Why Choose Our Dealers */}
-      <section>
-        <ModernSectionHeader
-          badge="Our Dealer Network"
-          badgeIcon={Award}
-          title="Why Buy from Our Authorized Dealers"
-          subtitle="Get genuine products and reliable service from trusted partners across India."
-        />
+      <section >
+  <div className="container mx-auto px-6">
+    <ModernSectionHeader
+      badge="Our Dealer Network"
+      badgeIcon={Award}
+      title="Why Buy from Our Authorized Dealers"
+      subtitle="Get genuine products and reliable service from trusted partners across India."
+    />
 
-        <div className="grid md:grid-cols-4 gap-6 mb-12">
-          {[
-            {
-              icon: Award,
-              title: 'Trusted & Trained Partners',
-              desc: 'Every dealer follows our quality and service standards.',
-              color: 'from-blue-500 to-blue-600'
-            },
-            {
-              icon: CheckCircle,
-              title: 'Original Products Only',
-              desc: 'Guaranteed genuine plywood with proper documents.',
-              color: 'from-green-500 to-green-600'
-            },
-            {
-              icon: Users,
-              title: 'Expert Help Anytime',
-              desc: 'Get advice on grades, thickness, and applications.',
-              color: 'from-purple-500 to-purple-600'
-            },
-            {
-              icon: Globe,
-              title: 'Across India',
-              desc: ' Expanding network covering major cities.',
-              color: 'from-orange-500 to-orange-600'
-            },
-          ].map((benefit, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
+    <div className="grid md:grid-cols-4 gap-6 mt-8">
+      {[
+        {
+          icon: Award,
+          title: 'Trusted & Trained Partners',
+          desc: 'Every dealer follows our quality and service standards.',
+          color: 'from-blue-500 to-blue-600'
+        },
+        {
+          icon: CheckCircle,
+          title: 'Original Products Only',
+          desc: 'Guaranteed genuine plywood with proper documents.',
+          color: 'from-green-500 to-green-600'
+        },
+        {
+          icon: Users,
+          title: 'Expert Help Anytime',
+          desc: 'Get advice on grades, thickness, and applications.',
+          color: 'from-purple-500 to-purple-600'
+        },
+        {
+          icon: Globe,
+          title: 'Across India',
+          desc: 'Expanding network covering major cities.',
+          color: 'from-orange-500 to-orange-600'
+        },
+      ].map((benefit, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.05 }}
+        >
+          <ModernCard
+            variant="elevated"
+            className="p-6 h-full text-center group hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
             >
-              <ModernCard variant="elevated" className="p-6 h-full text-center group hover:shadow-xl transition-all duration-300">
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                  <benefit.icon className="w-7 h-7 text-white" />
-                </div>
-                <h4 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">{benefit.title}</h4>
-                <p className="text-sm text-gray-600">{benefit.desc}</p>
-              </ModernCard>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Advanced Search & Filter */}
-      <section className="space-y-6">
-        <ModernSectionHeader
-          badge="Advanced Search"
-          badgeIcon={Search}
-          title="Find the Right Dealer Near You Easily"
-          subtitle="Use filters to locate the right Tree’s Plywood dealer near you. Search by state, district, dealer type, or name for quick and accurate results."
-        />
-
-        <ModernCard variant="elevated" className="p-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Search Bar */}
-            <div className="relative lg:col-span-2">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <Input
-                type="text"
-                placeholder="Search by name, city, or district..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 h-12 glass-card border-trees-primary/20 focus:border-trees-primary"
-              />
+              <benefit.icon className="w-7 h-7 text-white" />
             </div>
-
-            {/* State Filter */}
-            <Select value={selectedState} onValueChange={handleStateChange}>
-              <SelectTrigger className="h-12 glass-card border-trees-primary/20">
-                <SelectValue placeholder="Select State" />
-              </SelectTrigger>
-              <SelectContent>
-                {states.map((state) => (
-                  <SelectItem key={state} value={state}>
-                    {state}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            {/* District Filter */}
-            <Select 
-              value={selectedDistrict} 
-              onValueChange={setSelectedDistrict}
-              disabled={selectedState === 'All States'}
-            >
-              <SelectTrigger className="h-12 glass-card border-trees-primary/20">
-                <SelectValue placeholder="Select District" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="All Districts">All Districts</SelectItem>
-                {availableDistricts.map((district) => (
-                  <SelectItem key={district} value={district}>
-                    {district}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Type Filter - Second Row */}
-          <div className="grid md:grid-cols-2 gap-4 mt-4">
-            <Select value={selectedType} onValueChange={setSelectedType}>
-              <SelectTrigger className="h-12 glass-card border-trees-primary/20">
-                <SelectValue placeholder="Select Dealer Type" />
-              </SelectTrigger>
-              <SelectContent>
-                {dealerTypes.map((type) => (
-                  <SelectItem key={type} value={type}>
-                    {type}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            {/* Clear Filters Button */}
-            <ModernButton
-              variant="outline"
-              size="md"
-              icon={<Filter className="w-4 h-4" />}
-              iconPosition="left"
-              onClick={clearFilters}
-              disabled={selectedState === 'All States' && selectedDistrict === 'All Districts' && selectedType === 'All Types' && searchQuery === ''}
-            >
-              Clear All Filters
-            </ModernButton>
-          </div>
-        </ModernCard>
-
-        {/* Results Count and Active Filters */}
-        <div className="flex flex-wrap items-center gap-2">
-          <p className="text-gray-600">
-            Showing <Badge variant="secondary" className="mx-1">{filteredDealers.length}</Badge> Dealer{filteredDealers.length !== 1 ? 's' : ''}
-          </p>
-          {selectedState !== 'All States' && (
-            <Badge variant="outline" className="gap-1">
-              <Map className="w-3 h-3" />
-              {selectedState}
-            </Badge>
-          )}
-          {selectedDistrict !== 'All Districts' && (
-            <Badge variant="outline" className="gap-1">
-              <Building2 className="w-3 h-3" />
-              {selectedDistrict}
-            </Badge>
-          )}
-          {selectedType !== 'All Types' && (
-            <Badge variant="outline" className="gap-1">
-              <Award className="w-3 h-3" />
-              {selectedType}
-            </Badge>
-          )}
-        </div>
-      </section>
-
-      {/* Dealers Grid */}
-      <section>
-        {filteredDealers.length === 0 ? (
-          <ModernCard variant="elevated" className="p-12 text-center">
-            <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <h4 className="text-gray-700 mb-2">No Dealers Found</h4>
-            <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria</p>
-            <ModernButton
-              variant="outline"
-              size="md"
-              icon={<Filter className="w-4 h-4" />}
-              iconPosition="left"
-              onClick={clearFilters}
-            >
-              Clear Filters
-            </ModernButton>
+            <h4 className="text-trees-secondary text-[16px] font-semibold mb-2 group-hover:text-trees-primary transition-colors">
+              {benefit.title}
+            </h4>
+            <p className="text-[14px] text-gray-600 leading-relaxed">{benefit.desc}</p>
           </ModernCard>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredDealers.map((dealer, idx) => (
-              <motion.div
-                key={dealer.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05 }}
-              >
-                <ModernCard variant="elevated" className="overflow-hidden h-full group">
-                  <div className="relative h-48 overflow-hidden">
-                    <ImageWithFallback
-                      src={dealer.image}
-                      alt={dealer.name}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div className="absolute top-4 left-4 flex flex-col gap-2">
-                      <Badge className="bg-white/95 backdrop-blur-sm text-trees-primary border-0 hover:bg-white">
-                        {dealer.type}
-                      </Badge>
-                    </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h4 className="text-white mb-1 line-clamp-2">
-                        {dealer.name}
-                      </h4>
-                      <div className="flex items-center gap-1 text-white/90 text-sm">
-                        <MapPin className="w-4 h-4" />
-                        <span>{dealer.city}, {dealer.district}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-5 space-y-4">
-                  {/* Address */}
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-4 h-4 text-trees-primary mt-1 flex-shrink-0" />
-                    <p className="text-sm text-gray-600 leading-relaxed">{dealer.address}</p>
-                  </div>
-
-                  {/* Contact Info */}
-                  <div className="space-y-2">
-                    <a
-                      href={`tel:${dealer.phone}`}
-                      className="flex items-center gap-2 text-sm text-gray-700 hover:text-trees-primary transition-colors"
-                    >
-                      <Phone className="w-4 h-4 text-trees-primary" />
-                      <span>{dealer.phone}</span>
-                    </a>
-                    <a
-                      href={`mailto:${dealer.email}`}
-                      className="flex items-center gap-2 text-sm text-gray-700 hover:text-trees-primary transition-colors"
-                    >
-                      <Mail className="w-4 h-4 text-trees-primary" />
-                      <span className="truncate">{dealer.email}</span>
-                    </a>
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                      <Clock className="w-4 h-4 text-trees-primary" />
-                      <span>{dealer.hours}</span>
-                    </div>
-                  </div>
-
-                  {/* Rating and Type Badge */}
-                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                      <span className="text-sm font-semibold text-gray-700">{dealer.rating}</span>
-                      <span className="text-xs text-gray-500">rating</span>
-                    </div>
-                    <Badge variant="outline" className="gap-1">
-                      <Award className="w-3 h-3" />
-                      {dealer.type}
-                    </Badge>
-                  </div>
-                </div>
-              </ModernCard>
-            </motion.div>
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* Become a Dealer - Comprehensive Section */}
-      <section className="space-y-12">
-        <ModernSectionHeader
-          badge="Grow With Us"
-          badgeIcon={Award}
-          title="Become Our Authorized Dealer"
-          subtitle="Grow with one of India’s fastest-growing plywood brands. Join us as an authorized dealer and build a strong, profitable business with full support from our team."
-        />
-
-        {/* Dealer Benefits */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              icon: Award,
-              title: 'Exclusive Product Access',
-              desc: 'Get our full premium product range with special dealer pricing and healthy margins.',
-              color: 'from-blue-500 to-blue-600'
-            },
-            {
-              icon: Phone,
-              title: 'Dedicated Support Team',
-              desc: 'A relationship manager will assist you with sales, product guidance, and business growth.',
-              color: 'from-green-500 to-green-600'
-            },
-            {
-              icon: Map,
-              title: 'Marketing & Display Support',
-              desc: 'Receive display samples, branding materials, digital content, and co-branding opportunities to help you attract more customers.',
-              color: 'from-purple-500 to-purple-600'
-            },
-          ].map((benefit, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-            >
-              <ModernCard variant="elevated" className="p-6 text-center h-full group hover:shadow-xl transition-all">
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                  <benefit.icon className="w-7 h-7 text-white" />
-                </div>
-               <h4 className="text-base font-semibold text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">
-  {benefit.title}
-</h4>
-
-                <p className="text-sm text-gray-600">{benefit.desc}</p>
-              </ModernCard>
-            </motion.div>
-          ))}
-        </div>
-
-       {/* Requirements */}
-<ModernCard variant="elevated" className="p-8">
-  <h3 className="text-trees-secondary mb-6">Dealer Eligibility</h3>
-
-  <div className="grid md:grid-cols-2 gap-6">
-    {/* Business Requirements */}
-    <div className="space-y-3">
-      <h5 className="font-semibold text-gray-800 mb-3">
-        Business Requirements:
-      </h5>
-
-      <ul className="space-y-2 text-sm text-gray-600">
-        {[
-          "GST-registered business",
-          "Minimum 500 sq. ft. showroom or storage space",
-          "Experience in plywood/timber preferred",
-          "Ability to maintain regular inventory",
-        ].map((item, idx) => (
-          <li key={idx} className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-trees-primary mt-1 flex-shrink-0" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    {/* Benefits */}
-    <div className="space-y-3">
-      <h5 className="font-semibold text-gray-800 mb-3">
-        Benefits You’ll Receive
-      </h5>
-
-      <ul className="space-y-2 text-sm text-gray-600">
-        {[
-          "Complete sample display kit (50+ samples)",
-          "Marketing and branding support",
-          "Product training and technical guidance",
-          "Competitive pricing, incentives, and growth opportunities",
-        ].map((item, idx) => (
-          <li key={idx} className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-trees-primary mt-1 flex-shrink-0" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+        </motion.div>
+      ))}
     </div>
   </div>
-</ModernCard>
+</section>
 
-        {/* CTA Buttons */}
-        <ModernCard variant="elevated" className="p-12 text-center bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5">
-          <div className="max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-4">
-              <Award className="w-4 h-4 text-trees-primary" />
-              <span className="text-trees-primary font-semibold text-sm">For Dealership Enquiries</span>
+      {/* Advanced Search & Filter */}
+     <section className="space-y-6">
+  {/* Section Header */}
+  <ModernSectionHeader
+    badge="Advanced Search"
+    badgeIcon={Search}
+    title="Find the Right Dealer Near You Easily" // H2 – 24px semibold
+    subtitle="Use filters to locate the right Tree’s Plywood dealer near you. Search by state, district, dealer type, or name for quick and accurate results." // Body text – 16px
+  />
+
+  {/* Search & Filters Card */}
+  <ModernCard variant="elevated" className="p-6">
+    {/* Row 1: Search + State + District */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* Search Bar */}
+      <div className="relative lg:col-span-2">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+        <Input
+          type="text"
+          placeholder="Search by name, city, or district..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="pl-12 h-12 glass-card border-trees-primary/20 text-[16px] font-normal"
+        />
+      </div>
+
+      {/* State Filter */}
+      <Select value={selectedState} onValueChange={handleStateChange}>
+        <SelectTrigger className="h-12 glass-card border-trees-primary/20 text-[16px] font-normal">
+          <SelectValue placeholder="Select State" />
+        </SelectTrigger>
+        <SelectContent>
+          {states.map((state) => (
+            <SelectItem key={state} value={state} className="text-[16px] font-normal">
+              {state}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
+      {/* District Filter */}
+      <Select
+        value={selectedDistrict}
+        onValueChange={setSelectedDistrict}
+        disabled={selectedState === 'All States'}
+      >
+        <SelectTrigger className="h-12 glass-card border-trees-primary/20 text-[16px] font-normal">
+          <SelectValue placeholder="Select District" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="All Districts" className="text-[16px] font-normal">
+            All Districts
+          </SelectItem>
+          {availableDistricts.map((district) => (
+            <SelectItem key={district} value={district} className="text-[16px] font-normal">
+              {district}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
+
+    {/* Row 2: Dealer Type + Clear Filters */}
+    <div className="grid md:grid-cols-2 gap-4 mt-4">
+      <Select value={selectedType} onValueChange={setSelectedType}>
+        <SelectTrigger className="h-12 glass-card border-trees-primary/20 text-[16px] font-normal">
+          <SelectValue placeholder="Select Dealer Type" />
+        </SelectTrigger>
+        <SelectContent>
+          {dealerTypes.map((type) => (
+            <SelectItem key={type} value={type} className="text-[16px] font-normal">
+              {type}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
+      <ModernButton
+        variant="outline"
+        size="md"
+        icon={<Filter className="w-4 h-4" />}
+        iconPosition="left"
+        onClick={clearFilters}
+        disabled={
+          selectedState === 'All States' &&
+          selectedDistrict === 'All Districts' &&
+          selectedType === 'All Types' &&
+          searchQuery === ''
+        }
+        className="text-[16px] font-medium"
+      >
+        Clear All Filters
+      </ModernButton>
+    </div>
+  </ModernCard>
+
+  {/* Active Filters & Result Count */}
+  <div className="flex flex-wrap items-center gap-2 text-[16px] text-gray-600">
+    <p>
+      Showing <Badge variant="secondary" className="mx-1 text-[14px]">{filteredDealers.length}</Badge> Dealer{filteredDealers.length !== 1 ? 's' : ''}
+    </p>
+
+    {selectedState !== 'All States' && (
+      <Badge variant="outline" className="gap-1 text-[14px]">
+        <Map className="w-3 h-3" />
+        {selectedState}
+      </Badge>
+    )}
+    {selectedDistrict !== 'All Districts' && (
+      <Badge variant="outline" className="gap-1 text-[14px]">
+        <Building2 className="w-3 h-3" />
+        {selectedDistrict}
+      </Badge>
+    )}
+    {selectedType !== 'All Types' && (
+      <Badge variant="outline" className="gap-1 text-[14px]">
+        <Award className="w-3 h-3" />
+        {selectedType}
+      </Badge>
+    )}
+  </div>
+
+  {/* Dealers Grid */}
+  {filteredDealers.length === 0 ? (
+    <ModernCard variant="elevated" className="p-12 text-center">
+      <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+      <h4 className="text-gray-700 mb-2 text-[20px] font-semibold">No Dealers Found</h4>
+      <p className="text-gray-600 mb-6 text-[14px]">Try adjusting your search or filter criteria</p>
+      <ModernButton
+        variant="outline"
+        size="md"
+        icon={<Filter className="w-4 h-4" />}
+        iconPosition="left"
+        onClick={clearFilters}
+        className="text-[16px] font-medium"
+      >
+        Clear Filters
+      </ModernButton>
+    </ModernCard>
+  ) : (
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {filteredDealers.map((dealer, idx) => (
+        <motion.div
+          key={dealer.id}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.05 }}
+        >
+          <ModernCard variant="elevated" className="overflow-hidden h-full group">
+            {/* Dealer Image */}
+            <div className="relative h-48 overflow-hidden">
+              <ImageWithFallback
+                src={dealer.image}
+                alt={dealer.name}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="absolute top-4 left-4">
+                <Badge className="bg-white/95 text-trees-primary border-0 text-[14px]">{dealer.type}</Badge>
+              </div>
             </div>
-            <h2 className="text-trees-secondary mb-4">
-               Want to Join Our Dealer Network?
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Get in touch with our partnership team to know the process, requirements, and next steps.
-              <br />
-              <strong className="text-trees-primary">Note:</strong> If you need product samples, please visit our{' '}
-              <button 
-                onClick={() => onNavigate('sample-request')}
-                className="text-trees-primary font-semibold underline hover:text-trees-secondary"
-              >
-                Sample Request Page
-              </button>.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <MagneticButton strength={0.2}>
-                <ModernButton 
-                  variant="primary" 
-                  size="lg"
-                  icon={<Phone className="w-5 h-5" />}
-                  iconPosition="left"
-                  onClick={() => onNavigate('contact')}
-                >
-                  Contact Partnership Team
-                </ModernButton>
-              </MagneticButton>
-             
+
+            {/* Dealer Details */}
+            <div className="p-5 space-y-4">
+              <h4 className="text-[20px] font-semibold text-gray-700">{dealer.name}</h4>
+              <p className="text-[14px] text-gray-600">{dealer.address}</p>
+
+              {/* Contact Info */}
+              <div className="space-y-2">
+                <a href={`tel:${dealer.phone}`} className="flex items-center gap-2 text-[14px] text-gray-700 hover:text-trees-primary">
+                  <Phone className="w-4 h-4 text-trees-primary" /> {dealer.phone}
+                </a>
+                <a href={`mailto:${dealer.email}`} className="flex items-center gap-2 text-[14px] text-gray-700 hover:text-trees-primary truncate">
+                  <Mail className="w-4 h-4 text-trees-primary" /> {dealer.email}
+                </a>
+                <div className="flex items-center gap-2 text-[14px] text-gray-600">
+                  <Clock className="w-4 h-4 text-trees-primary" /> {dealer.hours}
+                </div>
+              </div>
+
+              {/* Rating and Type */}
+              <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div className="flex items-center gap-1">
+                  <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                  <span className="text-[14px] font-semibold text-gray-700">{dealer.rating}</span>
+                  <span className="text-[12px] text-gray-500">rating</span>
+                </div>
+                <Badge variant="outline" className="gap-1 text-[14px]">
+                  <Award className="w-3 h-3" /> {dealer.type}
+                </Badge>
+              </div>
             </div>
-            <p className="text-sm text-gray-500 mt-6">
-              We’ll get back to you within 24–48 hours.
-            </p>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  )}
+</section>
+
+
+      {/* Become a Dealer - Comprehensive Section */}
+     <section className="space-y-12">
+  <ModernSectionHeader
+    badge="Grow With Us"
+    badgeIcon={Award}
+    title="Become Our Authorized Dealer"
+    subtitle="Grow with one of India’s fastest-growing plywood brands. Join us as an authorized dealer and build a strong, profitable business with full support from our team."
+  
+  />
+
+  {/* Dealer Benefits */}
+  <div className="grid md:grid-cols-3 gap-6">
+    {[
+      {
+        icon: Award,
+        title: 'Exclusive Product Access',
+        desc: 'Get our full premium product range with special dealer pricing and healthy margins.',
+        color: 'from-blue-500 to-blue-600'
+      },
+      {
+        icon: Phone,
+        title: 'Dedicated Support Team',
+        desc: 'A relationship manager will assist you with sales, product guidance, and business growth.',
+        color: 'from-green-500 to-green-600'
+      },
+      {
+        icon: Map,
+        title: 'Marketing & Display Support',
+        desc: 'Receive display samples, branding materials, digital content, and co-branding opportunities to help you attract more customers.',
+        color: 'from-purple-500 to-purple-600'
+      },
+    ].map((benefit, idx) => (
+      <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: idx * 0.1 }}
+      >
+        <ModernCard variant="elevated" className="p-6 text-center h-full group hover:shadow-xl transition-all">
+          <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+            <benefit.icon className="w-7 h-7 text-white" />
           </div>
+          <h4 className="text-[16px] font-semibold text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">
+            {benefit.title}
+          </h4>
+          <p className="text-[14px] text-gray-600">{benefit.desc}</p>
         </ModernCard>
-      </section>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Requirements */}
+  <ModernCard variant="elevated" className="p-8">
+    <h3 className="text-[20px] font-semibold text-trees-secondary mb-6">Dealer Eligibility</h3>
+
+    <div className="grid md:grid-cols-2 gap-6">
+      {/* Business Requirements */}
+      <div className="space-y-3">
+        <h5 className="font-semibold text-gray-800 mb-3 text-[16px]">
+          Business Requirements:
+        </h5>
+
+        <ul className="space-y-2 text-[14px] text-gray-600">
+          {[
+            "GST-registered business",
+            "Minimum 500 sq. ft. showroom or storage space",
+            "Experience in plywood/timber preferred",
+            "Ability to maintain regular inventory",
+          ].map((item, idx) => (
+            <li key={idx} className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-trees-primary mt-1 flex-shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Benefits */}
+      <div className="space-y-3">
+        <h5 className="font-semibold text-gray-800 mb-3 text-[16px]">
+          Benefits You’ll Receive
+        </h5>
+
+        <ul className="space-y-2 text-[14px] text-gray-600">
+          {[
+            "Complete sample display kit (50+ samples)",
+            "Marketing and branding support",
+            "Product training and technical guidance",
+            "Competitive pricing, incentives, and growth opportunities",
+          ].map((item, idx) => (
+            <li key={idx} className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-trees-primary mt-1 flex-shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </ModernCard>
+
+  {/* CTA Buttons */}
+  <ModernCard variant="elevated" className="p-12 text-center bg-gradient-to-br from-trees-primary/5 to-trees-secondary/5">
+    <div className="max-w-2xl mx-auto">
+      <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-4">
+        <Award className="w-4 h-4 text-trees-primary" />
+        <span className="text-trees-primary font-medium text-[14px]">For Dealership Enquiries</span>
+      </div>
+      <h2 className="text-[24px] font-semibold text-trees-secondary mb-4">
+        Want to Join Our Dealer Network?
+      </h2>
+      <p className="text-[16px] text-gray-600 mb-8">
+        Get in touch with our partnership team to know the process, requirements, and next steps.
+        <br />
+        <strong className="text-trees-primary">Note:</strong> If you need product samples, please visit our{' '}
+        <button 
+          onClick={() => onNavigate('sample-request')}
+          className="text-trees-primary font-semibold underline hover:text-trees-secondary text-[14px]"
+        >
+          Sample Request Page
+        </button>.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <MagneticButton strength={0.2}>
+          <ModernButton 
+            variant="primary" 
+            size="lg"
+            icon={<Phone className="w-5 h-5" />}
+            iconPosition="left"
+            className="text-[14px] font-medium"
+            onClick={() => onNavigate('contact')}
+          >
+            Contact Partnership Team
+          </ModernButton>
+        </MagneticButton>
+      </div>
+      <p className="text-[12px] text-gray-500 mt-6">
+        We’ll get back to you within 24–48 hours.
+      </p>
+    </div>
+  </ModernCard>
+</section>
+
 
 
     </PageContainer>
 
     {/* Dealer Network Statistics */}
-    <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-      
+   <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
+  <div className="container mx-auto px-6 relative z-10">
+    {/* Section Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      <h2 className="text-white text-[24px] font-semibold mb-4">Nationwide Dealer Reach</h2>
+      <p className="text-white/90 text-[16px] max-w-2xl mx-auto leading-relaxed">
+        Trusted by customers across India for quality products and reliable service.
+      </p>
+    </motion.div>
 
-      <div className="container mx-auto px-6 relative z-10">
+    {/* Stats Grid */}
+    <div className="grid md:grid-cols-4 gap-8">
+      {[
+        { value: `${dealers.length}+`, label: 'Authorized Dealers', icon: Users },
+        { value: '11', label: 'States We Serve', icon: Globe },
+        { value: `${avgRating}/5`, label: 'Customer Rating', icon: Star },
+        { value: '23+', label: 'Districts Covered', icon: Building2 },
+      ].map((stat, idx) => (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          key={idx}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          transition={{ delay: idx * 0.1 }}
+          className="text-center"
         >
-          <h2 className="text-white mb-4">Nationwide Dealer Reach</h2>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto">
-            Trusted by customers across India for quality products and reliable service.
-          </p>
+          <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
+            <stat.icon className="w-8 h-8 text-white" />
+          </div>
+          <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+          <div className="text-white/80 text-[16px]">{stat.label}</div>
         </motion.div>
-
-        <div className="grid md:grid-cols-4 gap-8">
-          {[
-            { value: `${dealers.length}+`, label: 'Authorised Dealers', icon: Users },
-            { value: '11', label: 'States We Serve', icon: Globe },
-            { value: `${avgRating}/5`, label: 'Customer Rating', icon: Star },
-            { value: '23+', label: ' Districts Covered.', icon: Building2 },
-          ].map((stat, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-white/80">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
 
     
     {/* Dealer Tips */}
     <section className="section-padding bg-white">
-      <div className="container mx-auto px-6">
-        <ModernSectionHeader
-          badge="Useful Tips"
-          badgeIcon={Lightbulb}
-          title="Make Your Dealer Visit Easier"
-          subtitle="A few quick tips to help you to get the most out of your visit:"
-        />
+  <div className="container mx-auto px-6">
+    {/* Section Header */}
+    <ModernSectionHeader
+      badge="Useful Tips"
+      badgeIcon={Lightbulb}
+      title="Make Your Dealer Visit Easier"
+      subtitle="A few quick tips to help you get the most out of your visit:"
+    />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              icon: Phone,
-              title: 'Call Before You Go',
-              desc: 'Check stock availability and timings to avoid waiting.',
-              color: 'from-blue-500 to-blue-600'
-            },
-            {
-              icon: Download,
-              title: 'Carry Your Measurements',
-              desc: 'Share your room or project sizes for accurate suggestions.',
-              color: 'from-green-500 to-green-600'
-            },
-            {
-              icon: CheckCircle,
-              title: 'Ask for Samples',
-              desc: 'Take sample pieces to compare quality, finish, and colour.',
-              color: 'from-purple-500 to-purple-600'
-            },
-            {
-              icon: Award,
-              title: 'Check Certifications',
-              desc: 'Confirm that the dealer is authorized and the products are genuine.',
-              color: 'from-orange-500 to-orange-600'
-            },
-          ].map((tip, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-            >
-              <ModernCard variant="elevated" className="p-6 h-full group hover:shadow-xl transition-all duration-300">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tip.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <tip.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-trees-secondary mb-2 group-hover:text-trees-primary transition-colors">{tip.title}</h4>
-                <p className="text-xs text-gray-600 leading-relaxed">{tip.desc}</p>
-              </ModernCard>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+    {/* Tips Grid */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        {
+          icon: Phone,
+          title: 'Call Before You Go',
+          desc: 'Check stock availability and timings to avoid waiting.',
+          color: 'from-blue-500 to-blue-600'
+        },
+        {
+          icon: Download,
+          title: 'Carry Your Measurements',
+          desc: 'Share your room or project sizes for accurate suggestions.',
+          color: 'from-green-500 to-green-600'
+        },
+        {
+          icon: CheckCircle,
+          title: 'Ask for Samples',
+          desc: 'Take sample pieces to compare quality, finish, and colour.',
+          color: 'from-purple-500 to-purple-600'
+        },
+        {
+          icon: Award,
+          title: 'Check Certifications',
+          desc: 'Confirm that the dealer is authorized and the products are genuine.',
+          color: 'from-orange-500 to-orange-600'
+        },
+      ].map((tip, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.05 }}
+        >
+          <ModernCard
+            variant="elevated"
+            className="p-6 h-full group hover:shadow-xl transition-all duration-300"
+          >
+            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tip.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+              <tip.icon className="w-6 h-6 text-white" />
+            </div>
+            <h4 className="text-trees-secondary text-[20px] font-semibold mb-2 group-hover:text-trees-primary transition-colors">
+              {tip.title}
+            </h4>
+            <p className="text-[16px] text-gray-600 leading-relaxed">{tip.desc}</p>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }
