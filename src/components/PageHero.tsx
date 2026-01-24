@@ -127,38 +127,40 @@ export function PageHero({
                   className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2.5 rounded-full mb-6 border border-white/40 shadow-lg"
                 >
                   {BadgeIcon && <BadgeIcon className="w-4 h-4 text-white" />}
-                  <span className="text-white font-medium text-[14px]">{badge}</span>
+                  <span className="text-white font-semibold text-sm">{badge}</span>
                 </motion.div>
               </FloatingElement>
             )}
 
-            {/* Title */}
+            {/* Title with TextReveal */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-[30px] font-semibold text-white mb-6"
+              className="text-white mb-6"
             >
-              <TextReveal delay={0.5}>
-                {title.split('\n').map((line, idx) => (
-                  <span key={idx}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </TextReveal>
+             <TextReveal delay={0.5}>
+  {title.split('\n').map((line, idx) => (
+    <span key={idx}>
+      {line}
+      <br />
+    </span>
+  ))}
+</TextReveal>
+
             </motion.h1>
 
             {/* Subtitle */}
             {subtitle && (
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-[24px] font-semibold text-white/95 mb-4 italic"
-              >
-                {subtitle}
-              </motion.p>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.6 }}
+  className="text-white/95 text-xl md:text-2xl mb-4 font-bold italic"
+>
+  {subtitle}
+</motion.p>
+
             )}
 
             {/* Description */}
@@ -167,7 +169,7 @@ export function PageHero({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="text-[16px] font-normal text-white/90 mb-8 max-w-2xl"
+                className="text-white/90 text-base md:text-lg mb-8 max-w-2xl"
               >
                 {description}
               </motion.p>
@@ -185,8 +187,8 @@ export function PageHero({
                   <div key={index}>
                     <div className="flex items-center gap-6">
                       <div>
-                        <div className="text-white text-[30px] font-semibold mb-1">{stat.value}</div>
-                        <div className="text-white/70 text-[14px] font-normal">{stat.label}</div>
+                        <div className="text-white text-3xl font-bold mb-1">{stat.value}</div>
+                        <div className="text-white/70 text-sm">{stat.label}</div>
                       </div>
                       {index < stats.length - 1 && (
                         <div className="h-12 w-px bg-white/30" />
@@ -203,7 +205,6 @@ export function PageHero({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
-                className="text-[16px] font-medium"
               >
                 {actions}
               </motion.div>

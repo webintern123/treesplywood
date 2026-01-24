@@ -214,7 +214,6 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    console.log("👉 SUBMIT CLICKED");
     e.preventDefault();
 
     // Mark all fields as touched
@@ -293,28 +292,11 @@ if (!personalValid || !enquiryValid || !extrasValid) {
         timeline,
         urgency
       };
-      console.log("👉 PAYLOAD:", payload);
-
 
       // Simulate API call
-      const response = await fetch("http://localhost:5000/api/leads", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-      },
-          body: JSON.stringify(payload),
-        });
+      await new Promise(resolve => setTimeout(resolve, 1500));
 
-        console.log("👉 API RESPONSE RECEIVED");
-
-
-        if (!response.ok) {
-        throw new Error("Failed to submit form");
-      }
-
-      const data = await response.json();
-        console.log("👉 BACKEND DATA:", data);
-
+      console.log('Form submitted:', payload);
 
       toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
 
@@ -483,56 +465,41 @@ Trees Plywood Website`
       />
 
       {/* Contact Info Cards */}
-     <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
-  <div className="container mx-auto px-6">
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-      {contactInfo.map((contact, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1 }}
-        >
-          <ModernCard variant="elevated" className="h-full">
-            <button
-              onClick={contact.action}
-              className="w-full p-6 text-center space-y-4 group hover:bg-trees-primary/5 transition-colors duration-300 rounded-2xl"
-            >
-              {/* Icon */}
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center group-hover:bg-trees-primary/20 transition-colors duration-300">
-                <contact.icon className="w-8 h-8 text-trees-primary" />
-              </div>
-
-              {/* Content */}
-              <div>
-                {/* H3 */}
-                <h4 className="text-[20px] font-semibold text-gray-900 mb-1">
-                  {contact.title}
-                </h4>
-
-                {/* Body text */}
-                <p className="text-[16px] font-normal text-gray-800 mb-1">
-                  {contact.info}
-                </p>
-
-                {/* Secondary / helper text */}
-                <p className="text-[14px] text-gray-600 flex items-center justify-center gap-1">
-                  {contact.sub}
-                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </p>
-              </div>
-            </button>
-          </ModernCard>
-        </motion.div>
-      ))}
-    </div>
- 
-
+      <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {contactInfo.map((contact, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <ModernCard variant="elevated" className="h-full">
+                  <button
+                    onClick={contact.action}
+                    className="w-full p-6 text-center space-y-4 group hover:bg-trees-primary/5 transition-colors duration-300 rounded-2xl"
+                  >
+                    <div className="w-16 h-16 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center group-hover:bg-trees-primary/20 transition-colors duration-300">
+                      <contact.icon className="w-8 h-8 text-trees-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-gray-900 mb-1">{contact.title}</h4>
+                      <p className="text-gray-800 font-semibold mb-1">{contact.info}</p>
+                      <p className="text-sm text-gray-600 flex items-center justify-center gap-1">
+                        {contact.sub}
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </p>
+                    </div>
+                  </button>
+                </ModernCard>
+              </motion.div>
+            ))}
+          </div>
 
           {/* Main Contact Section */}
-         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-
+          <div className="grid lg:grid-cols-2 gap-12 items-start lg:items-stretch">
             {/* Contact Form */}
             <motion.div
               id="contact-form"
@@ -541,8 +508,7 @@ Trees Plywood Website`
               viewport={{ once: true }}
               className="flex flex-col gap-6 h-full"
             >
-              <ModernCard variant="elevated" className="h-full">
-
+              <ModernCard variant="elevated">
                 <div className="p-8">
                   <div className="mb-8">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-trees-primary/10 rounded-full mb-4">
@@ -771,7 +737,7 @@ Trees Plywood Website`
                     <div className="space-y-2">
                       <label className="block text-gray-700 font-medium">File Upload (Optional)</label>
                       <label className="block text-gray-700 font-medium">Attach BOQs, drawings, reference images, tenders, or project documents.</label>
-                      {/* <input type="file" multiple className="w-full border-2 border-gray-200 rounded-xl p-3" /> */}
+                      <input type="file" multiple className="w-full border-2 border-gray-200 rounded-xl p-3" />
                     </div>
 
                     {/* Preferred Contact */}
@@ -832,12 +798,11 @@ Trees Plywood Website`
                     </label>
 
                     <LoadingButton
-  type="submit"
-  isLoading={isSubmitting}
-  disabled={isSubmitting}
-  className="mt-6 w-full bg-trees-primary text-white hover:bg-trees-primary/90 px-8 py-4 text-lg rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-200"
->
-
+                      type="submit"
+                      isLoading={isSubmitting}
+                      disabled={isSubmitting}
+                      className="w-full bg-trees-primary text-white hover:bg-trees-primary/90 transition-colors px-8 py-4 text-lg rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-200"
+                    >
                       {!isSubmitting && <Send className="w-5 h-5" />}
                       Send Message
                     </LoadingButton>
@@ -972,10 +937,8 @@ Trees Plywood Website`
               </ModernCard>
 
               {/* Why Visit Us Card */}
-             <ModernCard variant="elevated" className="flex-1">
-
-                <div className="p-6 h-full flex flex-col">
-
+              <ModernCard variant="elevated">
+                <div className="p-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-trees-primary/10 rounded-full mb-6">
                     <Sparkles className="w-4 h-4 text-trees-primary" />
                     <span className="text-sm font-semibold text-trees-primary">Why Visit Us?</span>
@@ -1011,21 +974,15 @@ Trees Plywood Website`
       {/* Unique Find a Dealer Section */}
 <section className="section-padding bg-gray-50">
   <div className="container mx-auto px-6">
-
-    {/* Heading */}
     <div className="text-center mb-12">
-      {/* H2 – 24px */}
-      <h2 className="text-[24px] font-semibold text-gray-900 mb-2">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
         Find a Dealer Near You
       </h2>
-
-      {/* Body text – 16px */}
-      <p className="text-[16px] text-gray-700 max-w-2xl mx-auto">
+      <p className="text-gray-700 text-lg md:text-xl">
         Looking for a Tree’s Plywood dealer in your city? Check out our main warehouse locations.
       </p>
     </div>
 
-    {/* Locations Grid */}
     <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
       {[
         { state: 'Andhra Pradesh', city: 'Vijayawada' },
@@ -1040,31 +997,19 @@ Trees Plywood Website`
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1 }}
         >
-          <ModernCard
-            variant="elevated"
-            className="p-6 text-center hover:shadow-xl transition-shadow duration-300"
-          >
-            {/* H3 – 20px */}
-            <div className="text-[20px] font-semibold text-trees-primary mb-1">
-              {location.state}
-            </div>
-
-            {/* Secondary text – 14px */}
-            <div className="text-[14px] text-gray-700">
-              {location.city}
-            </div>
+          <ModernCard variant="elevated" className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
+            <div className="text-trees-primary text-2xl font-bold mb-2">{location.state}</div>
+            <div className="text-gray-800 font-semibold">{location.city}</div>
           </ModernCard>
         </motion.div>
       ))}
     </div>
 
-    {/* Helper text – 12px */}
     <div className="text-center mt-8">
-      <p className="text-[12px] text-gray-600 font-medium">
-        More cities coming soon!
+      <p className="text-gray-700 font-semibold text-lg md:text-xl">
+        More Cities Coming Soon!
       </p>
     </div>
-
   </div>
 </section>
 
@@ -1072,159 +1017,128 @@ Trees Plywood Website`
 
       {/* Quick Actions Section */}
       <section className="section-padding bg-gray-50">
-  <div className="container mx-auto px-6">
-
-    {/* Section Heading */}
-    <div className="text-center mb-12">
-      {/* H2 – 24px */}
-      <h2 className="text-[24px] font-semibold text-gray-900 mb-2">
-        Looking for Something Specific?
-      </h2>
-
-      {/* Body text – 16px */}
-      <p className="text-[16px] text-gray-600 max-w-2xl mx-auto">
-        Here are quick links to help you find what you need:
-      </p>
-    </div>
-
-    {/* Quick Links Grid */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {[
-        { 
-          icon: Building2, 
-          title: 'Find a Dealer', 
-          desc: 'Locate an authorized Tree’s Plywood dealer near you.',
-          page: 'dealers',
-          color: 'text-blue-600',
-          bg: 'bg-blue-50'
-        },
-        { 
-          icon: Calendar, 
-          title: 'Request a Sample', 
-          desc: 'Get free product samples delivered to you.',
-          page: 'samples',
-          color: 'text-green-600',
-          bg: 'bg-green-50'
-        },
-        { 
-          icon: Sparkles, 
-          title: 'Download Catalog', 
-          desc: 'Browse and download our product brochures.',
-          page: 'downloads',
-          color: 'text-purple-600',
-          bg: 'bg-purple-50'
-        },
-        { 
-          icon: MessageSquare, 
-          title: 'View FAQs', 
-          desc: 'Find quick answers to commonly asked questions.',
-          page: 'faq',
-          color: 'text-orange-600',
-          bg: 'bg-orange-50'
-        },
-      ].map((link, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1 }}
-        >
-          <ModernCard variant="elevated" className="h-full">
-            <button
-              onClick={() => onNavigate(link.page)}
-              className="w-full p-6 text-center space-y-4 group rounded-2xl hover:bg-gray-50 transition-colors duration-300"
-            >
-              {/* Icon */}
-              <div
-                className={`w-14 h-14 mx-auto rounded-2xl ${link.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Looking for Something Specific?</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Here are quick links to help you find what you need:
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { 
+                icon: Building2, 
+                title: 'Find a Dealer', 
+                desc: 'Locate an authorized Tree’s Plywood dealer near you.',
+                page: 'dealers',
+                color: 'text-blue-600',
+                bg: 'bg-blue-50'
+              },
+              { 
+                icon: Calendar, 
+                title: 'Request a Sample', 
+                desc: 'Get free product samples delivered to you.',
+                page: 'samples',
+                color: 'text-green-600',
+                bg: 'bg-green-50'
+              },
+              { 
+                icon: Sparkles, 
+                title: 'Download Catalog', 
+                desc: 'Browse and download our product brochures.',
+                page: 'downloads',
+                color: 'text-purple-600',
+                bg: 'bg-purple-50'
+              },
+              { 
+                icon: MessageSquare, 
+                title: 'View FAQs', 
+                desc: 'Find quick answers to commonly asked questions.',
+                page: 'faq',
+                color: 'text-orange-600',
+                bg: 'bg-orange-50'
+              },
+            ].map((link, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
               >
-                <link.icon className={`w-7 h-7 ${link.color}`} />
-              </div>
-
-              {/* Content */}
-              <div>
-                {/* H3 – 20px */}
-                <h4 className="text-[20px] font-semibold text-gray-900 mb-1">
-                  {link.title}
-                </h4>
-
-                {/* Secondary text – 14px */}
-                <p className="text-[14px] text-gray-600 mb-3">
-                  {link.desc}
-                </p>
-
-                {/* Button / Label – 14px */}
-                <span className="text-[14px] text-trees-primary font-medium inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </span>
-              </div>
-            </button>
-          </ModernCard>
-        </motion.div>
-      ))}
-    </div>
-
-  </div>
-</section>
-
+                <ModernCard variant="elevated" className="h-full">
+                  <button
+                    onClick={() => onNavigate(link.page)}
+                    className="w-full p-6 text-center space-y-4 group hover:bg-gray-50 transition-colors duration-300 rounded-2xl"
+                  >
+                    <div className={`w-16 h-16 mx-auto rounded-2xl ${link.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <link.icon className={`w-8 h-8 ${link.color}`} />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">{link.title}</h4>
+                      <p className="text-sm text-gray-600 mb-3">{link.desc}</p>
+                      <span className="text-trees-primary font-semibold text-sm inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        Learn More <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </button>
+                </ModernCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-  <div className="container mx-auto px-6 relative z-10 text-center">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      className="max-w-4xl mx-auto"
-    >
-      {/* Badge / Helper text */}
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-        <Sparkles className="w-4 h-4" />
-        <span>Ready to Begin?</span>
-      </div>
+       
 
-      {/* H2 */}
-      <h2 className="text-white text-2xl md:text-[24px] font-bold mb-4">
-        Let’s Build Something Great Together
-      </h2>
-
-      {/* Body text */}
-      <p className="text-white/90 text-base md:text-[16px] mb-8 leading-relaxed max-w-3xl mx-auto">
-        Our team is here to help you with product guidance, expert suggestions,
-        and technical support whenever you need it.
-      </p>
-
-      {/* CTA Buttons */}
-      <div className="flex flex-wrap gap-4 justify-center">
-        <MagneticButton strength={0.2}>
-          <ModernButton
-            variant="light"
-            size="lg"
-            icon={<Phone className="w-5 h-5" />}
-            onClick={() => (window.location.href = 'tel:+919091744744')}
-            className="text-sm md:text-base font-medium"
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
           >
-            Call Us Now
-          </ModernButton>
-        </MagneticButton>
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-semibold mb-6">
+              <Sparkles className="w-5 h-5" />
+              <span>Ready to Begin?</span>
+            </div>
+            
+            <h2 className="text-white mb-6">
+              Let’s Build Something Great Together
+            </h2>
+            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+              Our team is here to help you with product guidance, expert suggestions, and technical support whenever you need it.
+            </p>
 
-        <MagneticButton strength={0.2}>
-          <ModernButton
-            variant="outline"
-            size="lg"
-            icon={<MessageCircle className="w-5 h-5" />}
-            onClick={() => window.open('https://wa.me/919091744744', '_blank')}
-            className="border-white text-white hover:bg-white/20 text-sm md:text-base font-medium"
-          >
-            Chat on WhatsApp
-          </ModernButton>
-        </MagneticButton>
-      </div>
-    </motion.div>
-  </div>
-</section>
-
+            <div className="flex flex-wrap gap-4 justify-center">
+              <MagneticButton strength={0.2}>
+                <ModernButton
+                  variant="light"
+                  size="xl"
+                  icon={<Phone className="w-6 h-6" />}
+                  onClick={() => window.location.href = 'tel:+919091744744'}
+                >
+                  Call Us Now
+                </ModernButton>
+              </MagneticButton>
+              <MagneticButton strength={0.2}>
+                <ModernButton
+                  variant="outline"
+                  size="xl"
+                  icon={<MessageCircle className="w-6 h-6" />}
+                  onClick={() => window.open('https://wa.me/919091744744', '_blank')}
+                  className="border-white text-white hover:bg-white/20"
+                >
+                  Chat on WhatsApp
+                </ModernButton>
+              </MagneticButton>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }

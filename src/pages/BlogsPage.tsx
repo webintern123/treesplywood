@@ -238,521 +238,470 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
       />
 
       {/* Why Read Our Blog Section */}
-    <section className="section-padding bg-gray-50">
-  <div className="container mx-auto px-6">
-    <ModernSectionHeader
-      badge="Expert Guidance Made Simple"
-      badgeIcon={Target}
-      title="Why You'll Love Reading Our Blog"
-      subtitle="We share simple, trustworthy information to help you make confident decisions. Whether you’re building, designing, or just exploring ideas."
-    />
+      <section className="section-padding bg-gray-50">
+        <div className="container mx-auto px-6">
+          <ModernSectionHeader
+            badge="Expert Guidance Made Simple"
+            badgeIcon={Target}
+            title="Why You'll Love Reading Our Blog"
+            subtitle="We share simple, trustworthy information to help you make confident decisions. Whether you’re building, designing, or just exploring ideas."
+          />
+          
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Lightbulb,
+                title: 'From the Experts',
+                desc: 'Useful knowledge shared in a way that’s easy to understand.',
+                color: 'from-blue-500 to-blue-600'
+              },
+              {
+                icon: TrendingUp,
+                title: 'Fresh Ideas',
+                desc: 'See what’s trending in interiors, materials, and craftsmanship.',
+                color: 'from-green-500 to-green-600'
+              },
+              {
+                icon: CheckCircle2,
+                title: 'Easy Tips',
+                desc: 'Quick pointers that help you choose better and build smarter.',
+                color: 'from-purple-500 to-purple-600'
+              },
+              {
+                icon: Award,
+                title: 'Content You Can Trust',
+                desc: 'Every article comes from real on-site experience and industry know-how.',
+                color: 'from-orange-500 to-orange-600'
+              },
+            ].map((benefit, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <ModernCard variant="elevated" className="p-6 h-full text-center">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}>
+                    <benefit.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-trees-primary mb-2">{benefit.title}</h4>
+                 <p className="text-base text-gray-600">{benefit.desc}</p>
 
-    <div className="grid md:grid-cols-4 gap-6">
-      {[
-        {
-          icon: Lightbulb,
-          title: 'From the Experts',
-          desc: 'Useful knowledge shared in a way that’s easy to understand.',
-          color: 'from-blue-500 to-blue-600',
-        },
-        {
-          icon: TrendingUp,
-          title: 'Fresh Ideas',
-          desc: 'See what’s trending in interiors, materials, and craftsmanship.',
-          color: 'from-green-500 to-green-600',
-        },
-        {
-          icon: CheckCircle2,
-          title: 'Easy Tips',
-          desc: 'Quick pointers that help you choose better and build smarter.',
-          color: 'from-purple-500 to-purple-600',
-        },
-        {
-          icon: Award,
-          title: 'Content You Can Trust',
-          desc: 'Every article comes from real on-site experience and industry know-how.',
-          color: 'from-orange-500 to-orange-600',
-        },
-      ].map((benefit, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1 }}
-        >
-          <ModernCard variant="elevated" className="p-6 h-full text-center">
-            <div
-              className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}
-            >
-              <benefit.icon className="w-8 h-8 text-white" />
-            </div>
-
-            
-            <h4 className="text-[20px] font-semibold text-trees-primary mb-2">
-              {benefit.title}
-            </h4>
-
-           
-            <p className="text-[16px] text-gray-600">
-              {benefit.desc}
-            </p>
-          </ModernCard>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+                </ModernCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Topic Guide Section */}
-     <section className="section-padding bg-white">
-  <div className="container mx-auto px-6">
-    <ModernSectionHeader
-      badge="Content Topics"
-      badgeIcon={BookOpen}
-      title="What We Cover"
-      subtitle="Browse through our articles by topic and quickly find the information you’re looking for."
-    />
+      <section className="section-padding bg-white">
+        <div className="container mx-auto px-6">
+          <ModernSectionHeader
+            badge="Content Topics"
+            badgeIcon={BookOpen}
+            title="What We Cover"
+            subtitle="Browse through our articles by topic and quickly find the information you’re looking for."
+          />
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-      {[
-        {
-          icon: Anchor,
-          category: 'Marine Applications',
-          description: 'Plywood solutions for boats, coastal homes, and high-moisture areas.',
-          color: 'from-blue-500 to-blue-600',
-          count: blogPosts.filter(p => p.category === 'Marine Applications').length,
-        },
-        {
-          icon: Home,
-          category: 'Interior Design',
-          description: 'Ideas, trends, and smart ways to use plywood in stylish interiors.',
-          color: 'from-purple-500 to-purple-600',
-          count: blogPosts.filter(p => p.category === 'Interior Design').length,
-        },
-        {
-          icon: Leaf,
-          category: 'Sustainability',
-          description: 'Responsible sourcing, FSC practices, and eco-friendly materials.',
-          color: 'from-green-500 to-green-600',
-          count: blogPosts.filter(p => p.category === 'Sustainability').length,
-        },
-        {
-          icon: ShieldCheck,
-          category: 'Product Guide',
-          description: 'Easy guides to choosing the right plywood grade for your project.',
-          color: 'from-indigo-500 to-indigo-600',
-          count: blogPosts.filter(p => p.category === 'Product Guide').length,
-        },
-        {
-          icon: Palette,
-          category: 'Design Trends',
-          description: 'Latest styles and creative uses of plywood in modern spaces.',
-          color: 'from-pink-500 to-pink-600',
-          count: blogPosts.filter(p => p.category === 'Design Trends').length,
-        },
-        {
-          icon: Flame,
-          category: 'Safety & Standards',
-          description: 'All about fire safety, certifications, and building requirements.',
-          color: 'from-red-500 to-red-600',
-          count: blogPosts.filter(p => p.category === 'Safety & Standards').length,
-        },
-        {
-          icon: Wrench,
-          category: 'Maintenance Tips',
-          description: 'Guides on care, installation, and long-lasting performance.',
-          color: 'from-orange-500 to-orange-600',
-          count: blogPosts.filter(p => p.category === 'Maintenance Tips').length,
-        },
-        {
-          icon: HeartPulse,
-          category: 'Health & Safety',
-          description: 'Information on emissions, indoor air quality, and safe materials.',
-          color: 'from-rose-500 to-rose-600',
-          count: blogPosts.filter(p => p.category === 'Health & Safety').length,
-        },
-        {
-          icon: BarChart3,
-          category: 'Product Comparison',
-          description: 'Simple comparisons between plywood, MDF, particle board, and more.',
-          color: 'from-cyan-500 to-cyan-600',
-          count: blogPosts.filter(p => p.category === 'Product Comparison').length,
-        },
-      ].map((topic, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.05 }}
-        >
-          <ModernCard
-            variant="elevated"
-            className="p-6 h-full cursor-pointer group hover:shadow-xl transition-all duration-300"
-            onClick={() => setActiveCategory(topic.category)}
-          >
-            <div
-              className={`w-14 h-14 rounded-xl bg-gradient-to-br ${topic.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
-            >
-              <topic.icon className="w-7 h-7 text-white" />
-            </div>
-
-           
-            <h4 className="text-[20px] font-semibold text-trees-primary mb-2 group-hover:text-trees-secondary transition-colors">
-              {topic.category}
-            </h4>
-
-         
-            <p className="text-[16px] text-gray-600 mb-4 leading-relaxed">
-              {topic.description}
-            </p>
-
-         
-            <div className="flex items-center justify-between pt-3 border-t border-gray-200">
-              <span className="text-[12px] font-medium text-gray-500">
-                {topic.count} {topic.count === 1 ? 'Article' : 'Articles'}
-              </span>
-              <ArrowRight className="w-4 h-4 text-trees-primary group-hover:translate-x-1 transition-transform" />
-            </div>
-          </ModernCard>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              {
+                icon: Anchor,
+                category: 'Marine Applications',
+                description: 'Plywood solutions for boats, coastal homes, and high-moisture areas.',
+                color: 'from-blue-500 to-blue-600',
+                count: blogPosts.filter(p => p.category === 'Marine Applications').length
+              },
+              {
+                icon: Home,
+                category: 'Interior Design',
+                description: 'Ideas, trends, and smart ways to use plywood in stylish interiors.',
+                color: 'from-purple-500 to-purple-600',
+                count: blogPosts.filter(p => p.category === 'Interior Design').length
+              },
+              {
+                icon: Leaf,
+                category: 'Sustainability',
+                description: 'Responsible sourcing, FSC practices, and eco-friendly materials.',
+                color: 'from-green-500 to-green-600',
+                count: blogPosts.filter(p => p.category === 'Sustainability').length
+              },
+              {
+                icon: ShieldCheck,
+                category: 'Product Guide',
+                description: 'Easy guides to choosing the right plywood grade for your project.',
+                color: 'from-indigo-500 to-indigo-600',
+                count: blogPosts.filter(p => p.category === 'Product Guide').length
+              },
+              {
+                icon: Palette,
+                category: 'Design Trends',
+                description: 'Latest styles and creative uses of plywood in modern spaces.',
+                color: 'from-pink-500 to-pink-600',
+                count: blogPosts.filter(p => p.category === 'Design Trends').length
+              },
+              {
+                icon: Flame,
+                category: 'Safety & Standards',
+                description: 'All about fire safety, certifications, and building requirements.',
+                color: 'from-red-500 to-red-600',
+                count: blogPosts.filter(p => p.category === 'Safety & Standards').length
+              },
+              {
+                icon: Wrench,
+                category: 'Maintenance Tips',
+                description: 'Guides on care, installation, and long-lasting performance.',
+                color: 'from-orange-500 to-orange-600',
+                count: blogPosts.filter(p => p.category === 'Maintenance Tips').length
+              },
+              {
+                icon: HeartPulse,
+                category: 'Health & Safety',
+                description: 'Information on emissions, indoor air quality, and safe materials.',
+                color: 'from-rose-500 to-rose-600',
+                count: blogPosts.filter(p => p.category === 'Health & Safety').length
+              },
+              {
+                icon: BarChart3,
+                category: 'Product Comparison',
+                description: 'Simple comparisons between plywood, MDF, particle board, and more.',
+                color: 'from-cyan-500 to-cyan-600',
+                count: blogPosts.filter(p => p.category === 'Product Comparison').length
+              },
+            ].map((topic, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+              >
+                <ModernCard 
+                  variant="elevated" 
+                  className="p-6 h-full cursor-pointer group hover:shadow-xl transition-all duration-300"
+                  onClick={() => setActiveCategory(topic.category)}
+                >
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${topic.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <topic.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-trees-primary mb-2 group-hover:text-trees-secondary transition-colors">
+                    {topic.category}
+                  </h4>
+                  <p className="text-xs text-gray-600 mb-3 leading-relaxed">
+                    {topic.description}
+                  </p>
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-200">
+                    <span className="text-xs font-semibold text-gray-500">
+                      {topic.count} {topic.count === 1 ? 'Article' : 'Articles'}
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-trees-primary group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </ModernCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <PageContainer className="space-y-20">
         {/* Category Filter */}
-      <section>
-  <ModernSectionHeader
-    badge="Quick Finding Content Filter by Topic"
-    badgeIcon={Filter}
-    title="Browse by Topic"
-    subtitle="Choose a category below to quickly find articles that match what you’re looking for."
-  />
+        <section>
+          <ModernSectionHeader
+            badge="Quick Finding Content Filter by topic"
+            badgeIcon={Filter}
+            title="Browse by Topic"
+            subtitle="Choose a category below to quickly find articles that match what you’re looking for."
+          />
 
-  <div className="flex flex-wrap gap-3 justify-center">
-    {categories.map((category) => {
-      const count =
-        category === 'All'
-          ? blogPosts.length
-          : blogPosts.filter(p => p.category === category).length
-
-      return (
-        <motion.button
-          key={category}
-          onClick={() => setActiveCategory(category)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className={`px-5 py-2 rounded-full transition-all duration-200 
-            text-[14px] md:text-[15px] font-medium ${
-              category === activeCategory
-                ? 'bg-trees-primary text-white shadow-lg'
-                : 'bg-white text-gray-700 border border-gray-200 hover:border-trees-primary hover:text-trees-primary hover:bg-trees-primary/5'
-            }`}
-        >
-          {category}
-          <span className="ml-1 opacity-80">
-            ({count})
-          </span>
-        </motion.button>
-      )
-    })}
-  </div>
-</section>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {categories.map((category) => {
+              const count = category === 'All' 
+                ? blogPosts.length 
+                : blogPosts.filter(p => p.category === category).length;
+              
+              return (
+                <motion.button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-5 py-2 rounded-full transition-all duration-200 font-medium ${
+                    category === activeCategory
+                      ? 'bg-trees-primary text-white shadow-lg'
+                      : 'bg-white text-gray-700 border border-gray-200 hover:border-trees-primary hover:text-trees-primary hover:bg-trees-primary/5'
+                  }`}
+                >
+                  {category} ({count})
+                </motion.button>
+              );
+            })}
+          </div>
+        </section>
 
         {/* Featured Post */}
-      {featuredPost && activeCategory === 'All' && (
-  <section>
-    <div className="inline-block bg-trees-primary/10 px-4 py-2 rounded-full mb-6">
-      <span className="text-trees-primary font-semibold text-[12px] flex items-center gap-2">
-        <Star className="w-4 h-4" />
-        Featured Article
-      </span>
-    </div>
-
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      onClick={() => onBlogSelect?.(featuredPost.id)}
-      className="glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 gap-0 hover:shadow-2xl transition-all duration-300 cursor-pointer"
-    >
-      {/* Image */}
-      <div className="relative h-[400px] md:h-auto">
-        <ImageWithFallback
-          src={featuredPost.image}
-          alt={featuredPost.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute top-4 left-4">
-          <span className="bg-trees-primary text-white px-3 py-1 rounded-full text-[12px] font-semibold">
-            {featuredPost.category}
-          </span>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-8 flex flex-col justify-center">
-        <div className="flex items-center gap-4 text-[14px] text-gray-600 mb-4">
-          <div className="flex items-center gap-1.5">
-            <Calendar className="w-4 h-4 text-trees-primary" />
-            <span>{featuredPost.date}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Clock className="w-4 h-4 text-trees-primary" />
-            <span>{featuredPost.readTime}</span>
-          </div>
-        </div>
-
-        <h2 className="text-trees-primary text-[24px] font-semibold mb-4">
-          {featuredPost.title}
-        </h2>
-
-        <p className="text-gray-700 text-[16px] mb-6">
-          {featuredPost.excerpt}
-        </p>
-
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <User className="w-4 h-4 text-gray-500" />
-            <span className="text-[14px] text-gray-600">{featuredPost.author}</span>
-          </div>
-
-          <ModernButton
-            variant="primary"
-            size="sm"
-            icon={<ArrowRight />}
-            className="text-[14px] font-medium"
-            onClick={(e) => {
-              e.stopPropagation()
-              onBlogSelect?.(featuredPost.id)
-            }}
-          >
-            Read Article
-          </ModernButton>
-        </div>
-      </div>
-    </motion.div>
-  </section>
-)}
-
+        {featuredPost && activeCategory === 'All' && (
+          <section>
+            <div className="inline-block bg-trees-primary/10 px-4 py-2 rounded-full mb-6">
+              <span className="text-trees-primary font-semibold text-sm flex items-center gap-2">
+                <Star className="w-4 h-4" />
+                Featured Article
+              </span>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              onClick={() => onBlogSelect?.(featuredPost.id)}
+              className="glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 gap-0 hover:shadow-2xl transition-all duration-300 text-left w-full cursor-pointer"
+            >
+              <div className="relative h-[400px] md:h-auto">
+                <ImageWithFallback
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />                                 
+                <div className="absolute top-4 left-4">
+                  <span className="bg-trees-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    {featuredPost.category}
+                  </span>
+                </div>
+              </div>
+              <div className="p-8 flex flex-col justify-center">
+                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-trees-primary" />
+                    <span>{featuredPost.date}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <Clock className="w-4 h-4 text-trees-primary" />
+                    <span>{featuredPost.readTime}</span>
+                  </div>
+                </div>
+                <h2 className="text-trees-primary mb-4">          
+                  {featuredPost.title}
+                </h2>
+                <p className="text-gray-700 mb-6">
+                  {featuredPost.excerpt}
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <User className="w-4 h-4 text-gray-500" />
+                    <span className="text-sm text-gray-600">{featuredPost.author}</span>
+                  </div>
+                  <ModernButton 
+                    variant="primary" 
+                    size="sm" 
+                    icon={<ArrowRight />}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onBlogSelect?.(featuredPost.id);
+                    }}
+                  >
+                    Read Article
+                  </ModernButton>
+                </div>
+              </div>
+            </motion.div>
+          </section>
+        )}
 
         {/* Trending Posts */}
-       {activeCategory === 'All' && trendingPosts.length > 0 && (
-  <section>
-    <ModernSectionHeader
-      badge="Trending Now"
-      badgeIcon={TrendingUp}
-      title="Most Popular Articles"
-      subtitle="Our most-read articles this month"
-    />
-
-    <div className="grid md:grid-cols-3 gap-6">
-      {trendingPosts.map((post, idx) => (
-        <motion.article
-          key={post.id}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1 }}
-          onClick={() => onBlogSelect?.(post.id)}
-          className="glass-card rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer"
-        >
-          {/* Image */}
-          <div className="relative h-48 overflow-hidden">
-            <ImageWithFallback
-              src={post.image}
-              alt={post.title}
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        {activeCategory === 'All' && trendingPosts.length > 0 && (
+          <section>
+            <ModernSectionHeader
+              badge="Trending Now"
+              badgeIcon={TrendingUp}
+              title="Most Popular Articles"
+              subtitle="Our most-read articles this month"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            <div className="absolute top-4 left-4 flex gap-2">
-              <span className="bg-white/95 backdrop-blur-sm text-trees-primary px-3 py-1 rounded-full text-[12px] font-semibold">
-                {post.category}
-              </span>
-              <span className="bg-trees-primary/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[12px] font-semibold flex items-center gap-1">
-                <TrendingUp className="w-3 h-3" />
-                Trending
-              </span>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {trendingPosts.map((post, idx) => (
+                <motion.article
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  onClick={() => onBlogSelect?.(post.id)}
+                  className="glass-card rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <ImageWithFallback
+                      src={post.image}
+                      alt={post.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute top-4 left-4 flex gap-2">
+                      <span className="bg-white/95 backdrop-blur-sm text-trees-primary px-3 py-1 rounded-full text-xs font-semibold">
+                        {post.category}
+                      </span>
+                      <span className="bg-trees-primary/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                        <TrendingUp className="w-3 h-3" />
+                        Trending
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-4 text-xs text-gray-600 mb-3">
+                      <div className="flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5 text-trees-primary" />
+                        <span>{post.date}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-trees-primary" />
+                        <span>{post.readTime}</span>
+                      </div>
+                    </div>
+                    <h4 className="text-trees-secondary mb-3 line-clamp-2 group-hover:text-trees-primary transition-colors">
+                      {post.title}
+                    </h4>
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center gap-2">
+                        <User className="w-4 h-4 text-gray-400" />
+                        <span className="text-xs text-gray-600">{post.author}</span>
+                      </div>
+                      <span className="text-trees-primary font-medium text-sm hover:gap-2 flex items-center gap-1 transition-all">
+                        Read More
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
             </div>
-          </div>
-
-          {/* Content */}
-          <div className="p-6">
-            <div className="flex items-center gap-4 text-[14px] text-gray-600 mb-3">
-              <div className="flex items-center gap-1.5">
-                <Calendar className="w-4 h-4 text-trees-primary" />
-                <span>{post.date}</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-trees-primary" />
-                <span>{post.readTime}</span>
-              </div>
-            </div>
-
-            <h4 className="text-trees-secondary text-[20px] font-semibold mb-3 line-clamp-2 group-hover:text-trees-primary transition-colors">
-              {post.title}
-            </h4>
-
-            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4 text-gray-400" />
-                <span className="text-[14px] text-gray-600">{post.author}</span>
-              </div>
-              <span className="text-trees-primary text-[14px] font-medium hover:gap-2 flex items-center gap-1 transition-all">
-                Read More
-                <ArrowRight className="w-4 h-4" />
-              </span>
-            </div>
-          </div>
-        </motion.article>
-      ))}
-    </div>
-  </section>
-)}
-
+          </section>
+        )}
 
         {/* Blog Grid */}
-       <section>
-  <ModernSectionHeader
-    badge="Latest Articles"
-    badgeIcon={BookOpen}
-    title={activeCategory === 'All' ? 'All Articles' : `${activeCategory} Articles`}
-    subtitle={
-      activeCategory === 'All'
-        ? 'Explore our complete library of expert articles and guides'
-        : `Browse articles in the ${activeCategory} category`
-    }
-  />
-
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {filteredPosts.map((post, idx) => (
-      <motion.article
-        key={post.id}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ delay: idx * 0.05 }}
-        onClick={() => onBlogSelect?.(post.id)}
-        className="glass-card rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer"
-      >
-        {/* Post Image */}
-        <div className="relative h-56 overflow-hidden">
-          <ImageWithFallback
-            src={post.image}
-            alt={post.title}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        <section>
+          <ModernSectionHeader
+            badge="Latest Articles"
+            badgeIcon={BookOpen}
+            title={activeCategory === 'All' ? 'All Articles' : `${activeCategory} Articles`}
+            subtitle={activeCategory === 'All' 
+              ? 'Explore our complete library of expert articles and guides'
+              : `Browse articles in the ${activeCategory} category`
+            }
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div className="absolute top-4 left-4">
-            <span className="bg-white/95 backdrop-blur-sm text-trees-primary px-3 py-1 rounded-full text-[12px] font-semibold">
-              {post.category}
-            </span>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredPosts.map((post, idx) => (
+              <motion.article
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: idx * 0.05 }}
+                onClick={() => onBlogSelect?.(post.id)}
+                className="glass-card rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <ImageWithFallback
+                    src={post.image}
+                    alt={post.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white/95 backdrop-blur-sm text-trees-primary px-3 py-1 rounded-full text-xs font-semibold">
+                      {post.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-4 text-xs text-gray-600 mb-3">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5 text-trees-primary" />
+                      <span>{post.date}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-trees-primary" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                  <h3 className="text-trees-secondary mb-3 line-clamp-2 group-hover:text-trees-primary transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4 text-gray-400" />
+                      <span className="text-xs text-gray-600">{post.author}</span>
+                    </div>
+                    <span className="text-trees-primary font-medium text-sm hover:gap-2 flex items-center gap-1 transition-all">
+                      Read More
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
           </div>
-        </div>
 
-        {/* Post Content */}
-        <div className="p-6">
-          <div className="flex items-center gap-4 text-[14px] text-gray-600 mb-3">
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-trees-primary" />
-              <span>{post.date}</span>
+          {/* Empty State */}
+          {filteredPosts.length === 0 && (
+            <div className="text-center py-16">
+              <BookOpen className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+              <h3 className="text-gray-600 mb-2">No articles found</h3>
+              <p className="text-gray-500 text-sm mb-6">Try selecting a different category</p>
+              <ModernButton
+                variant="outline"
+                onClick={() => setActiveCategory('All')}
+              >
+                View All Articles
+              </ModernButton>
             </div>
-            <div className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-trees-primary" />
-              <span>{post.readTime}</span>
-            </div>
-          </div>
-
-          <h3 className="text-trees-secondary text-[20px] font-semibold mb-3 line-clamp-2 group-hover:text-trees-primary transition-colors">
-            {post.title}
-          </h3>
-
-          <p className="text-gray-600 text-[16px] mb-4 line-clamp-3">
-            {post.excerpt}
-          </p>
-
-          <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-            <div className="flex items-center gap-2">
-              <User className="w-4 h-4 text-gray-400" />
-              <span className="text-[14px] text-gray-600">{post.author}</span>
-            </div>
-            <span className="text-trees-primary text-[14px] font-medium hover:gap-2 flex items-center gap-1 transition-all">
-              Read More
-              <ArrowRight className="w-4 h-4" />
-            </span>
-          </div>
-        </div>
-      </motion.article>
-    ))}
-  </div>
-
-  {/* Empty State */}
-  {filteredPosts.length === 0 && (
-    <div className="text-center py-16">
-      <BookOpen className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-      <h3 className="text-gray-600 text-[20px] mb-2">No articles found</h3>
-      <p className="text-gray-500 text-[14px] mb-6">Try selecting a different category</p>
-      <ModernButton
-        variant="outline"
-        size="md"
-        onClick={() => setActiveCategory('All')}
-      >
-        View All Articles
-      </ModernButton>
-    </div>
-  )}
-</section>
-
+          )}
+        </section>
       </PageContainer>
 
       {/* Blog Statistics */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-  <div className="container mx-auto px-6 relative z-10">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-12"
-    >
-      
-      <h2 className="text-white text-[24px] font-semibold mb-4">
-        Why Our Blog Matters & Trusted by Our Community
-      </h2>
-    
-      <p className="text-white/90 text-[16px] max-w-2xl mx-auto">
-        Helping people make smarter choices for their homes and projects. Trust our articles for clear, useful guidance.
-      </p>
-    </motion.div>
+        
 
-    <div className="grid md:grid-cols-4 gap-8">
-      {[
-        { value: '50+', label: 'articles to explore', icon: BookOpen },
-        { value: '10K+', label: 'readers every month', icon: Users },
-        { value: 'Weekly', label: 'Fresh content', icon: Sparkles },
-        { value: '98%', label: 'satisfaction rating by reading our content.', icon: Star },
-      ].map((stat, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1 }}
-          className="text-center"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-            <stat.icon className="w-8 h-8 text-white" />
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-white mb-4">Why Our Blog Matters &Trusted by Our Community</h2>
+            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+              Helping people make smarter choices for their homes and projects. Trust our articles for clear, useful guidance.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { value: '50+', label: 'articles to explore', icon: BookOpen },
+              { value: '10K+', label: 'readers every month', icon: Users },
+              { value: 'Weekly', label: 'Fresh content ', icon: Sparkles },
+              { value: '98%', label: 'satisfaction rating by reading our content.', icon: Star },
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-white/80">{stat.label}</div>
+              </motion.div>
+            ))}
           </div>
-         
-          <div className="text-white text-[20px] font-semibold mb-2">{stat.value}</div>
-         
-          <div className="text-white/80 text-[14px]">{stat.label}</div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       
 
@@ -831,55 +780,46 @@ export function BlogsPage({ onBlogSelect, onNavigate }: BlogsPageProps) {
 
       {/* Newsletter Subscription CTA */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-  <div className="container mx-auto px-6 relative z-10 text-center">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      className="max-w-3xl mx-auto"
-    >
-    
-      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
-        <Mail className="w-4 h-4 text-white" />
-        <span className="text-white font-medium text-[14px]">Stay Updated</span>
-      </div>
+       
+          
 
-     
-      <h2 className="text-white text-[24px] font-semibold mb-6">
-        Don’t Miss Out - Subscribe for Updates
-      </h2>
-
-    
-      <p className="text-white/90 text-[16px] mb-10 leading-relaxed">
-        Get helpful tips & ideas, new articles, and updates straight to your inbox.
-      </p>
-
-     
-      <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className="flex-1 px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60 text-[16px] font-normal"
-        />
-        <MagneticButton strength={0.2}>
-          <ModernButton 
-            variant="light" 
-            size="md"
-            className="text-[16px] font-medium"
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
           >
-            Join the community
-          </ModernButton>
-        </MagneticButton>
-      </div>
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
+              <Mail className="w-4 h-4 text-white" />
+              <span className="text-white font-semibold text-sm">Stay Updated</span>
+            </div>
+            <h2 className="text-white mb-6">Don’t Miss Out - Subscribe for Updates</h2>
+            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+              Get helpful tips & ideas, new articles, and updates straight to your inbox.
+            </p>
 
-    
-      <p className="text-white/70 text-[12px]">
-        Trusted by 10,000+ readers. No unwanted emails, Easy Unsubscribe, No spam.
-      </p>
-    </motion.div>
-  </div>
-</section>
-
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60"
+              />
+              <MagneticButton strength={0.2}>
+                <ModernButton 
+                  variant="light" 
+                  size="md" 
+                >
+                  Join the community
+                </ModernButton>
+              </MagneticButton>
+            </div>
+            <p className="text-sm text-white/70">
+               Trusted by 10,000+ readers.No unwanted emails, Easy Unsubscribe, No spam.
+            </p>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }

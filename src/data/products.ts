@@ -293,8 +293,8 @@ quickStats: [
     name: 'Bhima',
     tagline: 'The Legend ',
     category: 'Plywood',
-    subcategory: 'Made for weight, water, and years of use.',
-    description: 'Bhima is a heavy-duty marine plywood built for projects where strength matters as much as moisture resistance. It is designed for areas that carry load, face water exposure, and cannot afford bending, cracking, or early failure.Bhima is chosen when performance is non-negotiable and long life is expected.\n\n',
+    subcategory: 'Wet & Load Intensive Use',
+    description: 'Heavy-duty marine plywood built for maximum load-bearing strength and high moisture-exposure areas.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
     highlights: [
   "Assured Quality & Long Life",

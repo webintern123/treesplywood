@@ -92,256 +92,251 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
   };
 
   return (
-   <div className="min-h-screen">
-  {/* Breadcrumb Navigation */}
-  <div className="bg-gray-50 border-b border-gray-200">
-    <PageContainer className="py-4">
-      <div className="flex items-center justify-between">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink
-                onClick={() => onNavigate('home')}
-                className="cursor-pointer hover:text-trees-primary transition-colors text-sm font-medium"
-              >
-                Home
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator>
-              <ChevronRight className="w-4 h-4" />
-            </BreadcrumbSeparator>
-            <BreadcrumbItem>
-              <BreadcrumbLink
-                onClick={onBack}
-                className="cursor-pointer hover:text-trees-primary transition-colors text-sm font-medium"
-              >
-                Products
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator>
-              <ChevronRight className="w-4 h-4" />
-            </BreadcrumbSeparator>
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-trees-primary font-medium text-sm">
-                {product.name}
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-
-        <button
-          onClick={onBack}
-          className="flex items-center gap-2 text-gray-600 hover:text-trees-primary transition-colors group text-sm font-medium"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Products</span>
-        </button>
-      </div>
-    </PageContainer>
-  </div>
-
-  <PageContainer className="py-12 space-y-16">
-    {/* Product Header Section */}
-    <section className="grid lg:grid-cols-2 gap-12 items-start">
-      {/* Product Image */}
-      <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        className="space-y-4"
-      >
-        <div className="relative rounded-2xl overflow-hidden aspect-[4/3] glass-card">
-          <ImageWithFallback
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-trees-secondary/40 to-transparent" />
-
-          {/* Image Badges */}
-          {product.badge && (
-            <div className="absolute top-6 left-6">
-              <Badge className="bg-white/95 backdrop-blur-sm text-trees-primary border-trees-primary/20 shadow-lg text-sm px-4 py-2 font-medium">
-                {product.badge}
-              </Badge>
-            </div>
-          )}
-
-          <div className="absolute top-6 right-6">
-            <Badge className="bg-trees-primary text-white shadow-lg text-sm px-4 py-2 font-medium">
-              {product.category}
-            </Badge>
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex gap-3">
-          <ModernButton variant="outline" size="sm" icon={<Heart />} className="flex-1 text-sm font-medium">
-            Save
-          </ModernButton>
-          <ModernButton variant="outline" size="sm" icon={<Share2 />} className="flex-1 text-sm font-medium">
-            Share
-          </ModernButton>
-          <ModernButton variant="outline" size="sm" icon={<Download />} className="text-sm font-medium" />
-        </div>
-      </motion.div>
-
-      {/* Product Info */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="space-y-6"
-      >
-        {/* Title & Tagline */}
-        <div>
-          <h1 className="text-[30px] font-semibold text-trees-secondary mb-2">
-            {product.name}
-          </h1>
-          <p className="text-[16px] font-normal text-trees-primary italic">{product.tagline}</p>
-          {product.subcategory && (
-            <p className="text-[14px] font-normal text-gray-600 mt-2 uppercase tracking-wide">
-              {product.subcategory}
-            </p>
-          )}
-        </div>
-
-        {/* Description */}
-        <p className="text-[16px] font-normal text-gray-700">
-          {product.description}
-        </p>
-
-        {/* Quick Stats */}
-        {product.quickStats && product.quickStats.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {product.quickStats.map((stat, index) => {
-              const IconComponent = (() => {
-                switch (stat.icon) {
-                  case 'Shield': return Shield;
-                  case 'Award': return Award;
-                  case 'Layers': return Layers;
-                  case 'Check': return Check;
-                  case 'Sparkles': return Sparkles;
-                  case 'Package': return Package;
-                  default: return Check;
-                }
-              })();
-
-              return (
-                <div key={index} className="glass-card rounded-xl p-4 text-center">
-                  <IconComponent className="w-6 h-6 text-trees-primary mx-auto mb-2" />
-                  <div className="text-[14px] font-medium text-trees-secondary">{stat.title}</div>
-                  <div className="text-[12px] font-normal text-gray-600">{stat.subtitle}</div>
-                </div>
-              );
-            })}
-          </div>
-        )}
-
-        <Separator />
-
-        {/* Thickness Selection */}
-        <div className="space-y-3">
-          <Label className="text-[16px] font-semibold text-trees-secondary">
-            Select Thickness
-          </Label>
-          <div className="grid grid-cols-5 gap-2">
-            {product.thicknesses.map((thickness) => (
-              <button
-                key={thickness}
-                onClick={() => setSelectedThickness(thickness)}
-                className={`px-4 py-3 rounded-lg border-2 transition-all font-semibold text-[14px] ${
-                  selectedThickness === thickness
-                    ? 'border-trees-primary bg-trees-primary text-white shadow-md scale-105'
-                    : 'border-gray-200 bg-white text-gray-700 hover:border-trees-primary/50'
-                }`}
-              >
-                {thickness}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Quantity */}
-        <div className="space-y-3">
-          <Label className="text-[16px] font-semibold text-trees-secondary">
-            Quantity (Sheets)
-          </Label>
-          <div className="flex gap-3">
-            <Input
-              type="number"
-              min="1"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-              className="max-w-[120px] text-[16px] font-normal"
-            />
-            <span className="flex items-center text-[14px] font-normal text-gray-600">sheets</span>
-          </div>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <ModernButton variant="primary" size="lg" icon={<Mail />} className="flex-1 text-[16px] font-medium">
-            Request Quote
-          </ModernButton>
-          <ModernButton variant="outline" size="lg" icon={<Phone />} className="text-[16px] font-medium">
-            Call Now
-          </ModernButton>
-        </div>
-
-        {/* Trust Badges */}
-        {product.highlights && product.highlights.length === 3 && (
-          <div className="glass-primary rounded-xl p-4 space-y-2">
-            {product.highlights.map((point, index) => (
-              <div key={index} className="flex items-center gap-2 text-[14px] font-normal">
-                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                <span className="text-gray-700">{point}</span>
+    <div className="min-h-screen">
+          {/* Breadcrumb Navigation */}
+          <div className="bg-gray-50 border-b border-gray-200">
+            <PageContainer className="py-4">
+              <div className="flex items-center justify-between">
+                <Breadcrumb>
+                  <BreadcrumbList>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink
+                        onClick={() => onNavigate('home')}
+                        className="cursor-pointer hover:text-trees-primary transition-colors"
+                      >
+                        Home
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator>
+                      <ChevronRight className="w-4 h-4" />
+                    </BreadcrumbSeparator>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink
+                        onClick={onBack}
+                        className="cursor-pointer hover:text-trees-primary transition-colors"
+                      >
+                        Products
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator>
+                      <ChevronRight className="w-4 h-4" />
+                    </BreadcrumbSeparator>
+                    <BreadcrumbItem>
+                      <BreadcrumbPage className="text-trees-primary font-medium">
+                        {product.name}
+                      </BreadcrumbPage>
+                    </BreadcrumbItem>
+                  </BreadcrumbList>
+                </Breadcrumb>
+                
+                <button
+                  onClick={onBack}
+                  className="flex items-center gap-2 text-gray-600 hover:text-trees-primary transition-colors group text-sm"
+                >
+                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                  <span className="font-medium">Back to Products</span>
+                </button>
               </div>
-            ))}
+            </PageContainer>
           </div>
-        )}
-      </motion.div>
-    </section>
+    
+          <PageContainer className="py-12 space-y-16">
+            {/* Product Header Section */}
+            <section className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Product Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-4"
+              >
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] glass-card">
+                  <ImageWithFallback
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-trees-secondary/40 to-transparent" />
+                  
+                  {/* Image Badges */}
+                  {product.badge && (
+                    <div className="absolute top-6 left-6">
+                      <Badge className="bg-white/95 backdrop-blur-sm text-trees-primary border-trees-primary/20 shadow-lg text-base px-4 py-2">
+                        {product.badge}
+                      </Badge>
+                    </div>
+                  )}
+                  
+                  <div className="absolute top-6 right-6">
+                    <Badge className="bg-trees-primary text-white shadow-lg text-base px-4 py-2">
+                      {product.category}
+                    </Badge>
+                  </div>
+                </div>
+    
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <ModernButton variant="outline" size="sm" icon={<Heart />} className="flex-1">
+                    Save
+                  </ModernButton>
+                  <ModernButton variant="outline" size="sm" icon={<Share2 />} className="flex-1">
+                    Share
+                  </ModernButton>
+                  <ModernButton variant="outline" size="sm" icon={<Download />} />
+                </div>
+              </motion.div>
+    
+              {/* Product Info */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-6"
+              >
+                {/* Title & Tagline */}
+                <div>
+                  <h1 className="text-trees-secondary mb-2">
+                    {product.name}
+                  </h1>
+                  <p className="text-trees-primary italic">{product.tagline}</p>
+                  {product.subcategory && (
+                    <p className="text-sm text-gray-600 mt-2 uppercase tracking-wide">
+                      {product.subcategory}
+                    </p>
+                  )}
+                </div>
+    
+                {/* Description */}
+                <p className="text-gray-700">
+                  {product.description}
+                </p>
+    
+                {/* Quick Stats */}
+              {/* Quick Stats */}
+{product.quickStats && product.quickStats.length > 0 && (
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {product.quickStats.map((stat, index) => {
+      // Dynamically pick icon component from lucide-react
+      const IconComponent = (() => {
+        switch (stat.icon) {
+          case 'Shield': return Shield;
+          case 'Award': return Award;
+          case 'Layers': return Layers;
+          case 'Check': return Check;
+          case 'Sparkles': return Sparkles;
+          case 'Package': return Package;
+          default: return Check; // fallback icon
+        }
+      })();
 
-    {/* Tabs Section */}
-    <section>
-      <Tabs defaultValue="specifications" className="space-y-8">
-        <TabsList className="grid w-full grid-cols-4 h-auto p-1 bg-gray-100">
-          <TabsTrigger value="specifications" className="py-3 gap-2 text-[14px] font-medium">
-            <FileText className="w-4 h-4" /> Specifications
-          </TabsTrigger>
-          <TabsTrigger value="features" className="py-3 gap-2 text-[14px] font-medium">
-            <Sparkles className="w-4 h-4" /> Features
-          </TabsTrigger>
-          <TabsTrigger value="applications" className="py-3 gap-2 text-[14px] font-medium">
-            <Package className="w-4 h-4" /> Applications
-          </TabsTrigger>
-          <TabsTrigger value="downloads" className="py-3 gap-2 text-[14px] font-medium">
-            <Download className="w-4 h-4" /> Downloads
-          </TabsTrigger>
-        </TabsList>
+      return (
+        <div key={index} className="glass-card rounded-xl p-4 text-center">
+          <IconComponent className="w-6 h-6 text-trees-primary mx-auto mb-2" />
+          <div className="text-sm font-semibold text-trees-secondary">{stat.title}</div>
+          <div className="text-xs text-gray-600">{stat.subtitle}</div>
+        </div>
+      );
+    })}
+  </div>
+)}
 
+
+                <Separator />
+    
+                {/* Thickness Selection */}
+                <div className="space-y-3">
+                  <Label className="text-base font-semibold text-trees-secondary">
+                    Select Thickness
+                  </Label>
+                  <div className="grid grid-cols-5 gap-2">
+                    {product.thicknesses.map((thickness) => (
+                      <button
+                        key={thickness}
+                        onClick={() => setSelectedThickness(thickness)}
+                        className={`px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
+                          selectedThickness === thickness
+                            ? 'border-trees-primary bg-trees-primary text-white shadow-md scale-105'
+                            : 'border-gray-200 bg-white text-gray-700 hover:border-trees-primary/50'
+                        }`}
+                      >
+                        {thickness}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+    
+                {/* Quantity */}
+                <div className="space-y-3">
+                  <Label className="text-base font-semibold text-trees-secondary">
+                    Quantity (Sheets)
+                  </Label>
+                  <div className="flex gap-3">
+                    <Input
+                      type="number"
+                      min="1"
+                      value={quantity}
+                      onChange={(e) => setQuantity(e.target.value)}
+                      className="max-w-[120px]"
+                    />
+                    <span className="flex items-center text-gray-600">sheets</span>
+                  </div>
+                </div>
+    
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <ModernButton variant="primary" size="lg" icon={<Mail />} className="flex-1">
+                    Request Quote
+                  </ModernButton>
+                  <ModernButton variant="outline" size="lg" icon={<Phone />}>
+                    Call Now
+                  </ModernButton>
+                </div>
+    
+                {/* Trust Badges */}
+               {product.highlights && product.highlights.length === 3 && (
+  <div className="glass-primary rounded-xl p-4 space-y-2">
+    {product.highlights.map((point, index) => (
+      <div key={index} className="flex items-center gap-2 text-sm">
+        <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
+        <span className="text-gray-700">{point}</span>
+      </div>
+    ))}
+  </div>
+)}
+
+              </motion.div>
+            </section>
+    
+        {/* Tabs Section */}
+        <section>
+          <Tabs defaultValue="specifications" className="space-y-8">
+            <TabsList className="grid w-full grid-cols-4 h-auto p-1 bg-gray-100">
+              <TabsTrigger value="specifications" className="py-3 gap-2">
+                <FileText className="w-4 h-4" /> Specifications
+              </TabsTrigger>
+              <TabsTrigger value="features" className="py-3 gap-2">
+                <Sparkles className="w-4 h-4" /> Features
+              </TabsTrigger>
+              <TabsTrigger value="applications" className="py-3 gap-2">
+                <Package className="w-4 h-4" /> Applications
+              </TabsTrigger>
+              <TabsTrigger value="downloads" className="py-3 gap-2">
+                <Download className="w-4 h-4" /> Downloads
+              </TabsTrigger>
+            </TabsList>
 
             {/* Specifications */}
             <TabsContent value="specifications" className="space-y-6">
               <div className="glass-card rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-trees-secondary mb-6 flex items-center gap-2">
-                  <Ruler className="w-6 h-6 text-trees-primary" />
-                  Technical Highlights
+                <h3 className="text-trees-secondary mb-6 flex items-center gap-2">
+                  <Ruler className="w-6 h-6 text-trees-primary" /> Technical Highlights 
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {product.specifications.map((spec, index) => (
-                    <div
-                    key={index}
-                    className="border border-gray-200 rounded-2xl p-6 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <div className="flex items-center gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-trees-primary flex-shrink-0" />
-                      <h4 className="text-lg font-semibold text-trees-secondary">
-                        {spec}
-                      </h4>
+                    <div key={index} className="flex items-start gap-3 p-4 rounded-lg bg-gray-50 border border-gray-200">
+                      <Check className="w-5 h-5 text-trees-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm font-medium text-gray-800">{spec}</span>
                     </div>
-                  </div>
                   ))}
                 </div>
               </div>
@@ -362,7 +357,7 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
     <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
       <td className="py-4 px-4 font-semibold text-trees-primary">{row.thickness}</td>
       <td className="py-4 px-4 text-gray-700">{row.commonSize}</td>
-      <td className="py-4 px-4 text-sm text-gray-700">{row.bestApplication}</td>
+      <td className="py-4 px-4 text-sm text-gray-600">{row.bestApplication}</td>
     </tr>
   ))}
 </tbody>
@@ -389,9 +384,9 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
                         <Check className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-trees-secondary mb-2">
-                          {feature}
-                        </h4>
+                        <h4 className="text-trees-secondary font-normal mb-2">
+  {feature}
+</h4>
 
                         
                       </div>
@@ -454,10 +449,8 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
             {/* Downloads */}
            <TabsContent value="downloads" className="space-y-6">
   <div className="glass-card rounded-2xl p-8">
-        <h3 className="text-2xl font-bold text-trees-secondary mb-6">
-        Technical Documents
-      </h3>
-    <div className="grid sm:grid-cols-2 gap-6">
+    <h3 className="text-trees-secondary mb-6">Technical Documents</h3>
+    <div className="grid md:grid-cols-2 gap-4">
       {product.downloads?.map((doc, idx) => (
         <div key={idx} className="flex items-center justify-between p-6 rounded-xl bg-gray-50 border border-gray-200 hover:border-trees-primary transition-colors group">
           <div className="flex items-center gap-4">
@@ -465,8 +458,8 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
               <FileText className="w-6 h-6 text-trees-primary" />
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-trees-secondary">{doc.name}</h4>
-              <p className="text-sm text-gray-700">PDF • {doc.size}</p>
+              <h4 className="text-trees-secondary">{doc.name}</h4>
+              <p className="text-sm text-gray-600">PDF • {doc.size}</p>
             </div>
           </div>
           <ModernButton
@@ -510,75 +503,51 @@ export function ProductDetailPage({ productId, onNavigate, onBack }: ProductDeta
 
 
         {/* Inquiry Form */}
-       <section className="glass-strong rounded-2xl p-10">
-  <div className="max-w-3xl mx-auto">
-    <ModernSectionHeader
-      badge="Get in Touch"
-      badgeIcon={Mail}
-      title="Request a Quote"
-      subtitle="Fill out the form below and our team will get back to you within 24 hours"
-    />
-
-    <form className="space-y-6 mt-8">
-      {/* Name & Email */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="name" className="text-[16px] font-semibold text-trees-secondary">
-            Full Name *
-          </Label>
-          <Input id="name" placeholder="John Doe" className="text-[16px] font-normal" />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="email" className="text-[16px] font-semibold text-trees-secondary">
-            Email Address *
-          </Label>
-          <Input id="email" type="email" placeholder="john@example.com" className="text-[16px] font-normal" />
-        </div>
-      </div>
-
-      {/* Phone & Quantity */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="phone" className="text-[16px] font-semibold text-trees-secondary">
-            Phone Number
-          </Label>
-          <Input id="phone" type="tel" placeholder="+91 98765 43210" className="text-[16px] font-normal" />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="quantity-form" className="text-[16px] font-semibold text-trees-secondary">
-            Quantity (Sheets)
-          </Label>
-          <Input id="quantity-form" type="number" placeholder="100" className="text-[16px] font-normal" />
-        </div>
-      </div>
-
-      {/* Message */}
-      <div className="space-y-2">
-        <Label htmlFor="message" className="text-[16px] font-semibold text-trees-secondary">
-          Message
-        </Label>
-        <Textarea
-          id="message"
-          placeholder="Tell us about your project requirements..."
-          rows={5}
-          className="text-[16px] font-normal"
-        />
-      </div>
-
-      {/* Submit Button */}
-      <ModernButton
-        variant="primary"
-        size="lg"
-        icon={<Mail />}
-        className="w-full text-[16px] font-medium"
-        onClick={() => onNavigate('contact')}
-      >
-        Submit Inquiry
-      </ModernButton>
-    </form>
-  </div>
-</section>
-
+        <section className="glass-strong rounded-2xl p-10">
+          <div className="max-w-3xl mx-auto">
+            <ModernSectionHeader
+              badge="Get in Touch"
+              badgeIcon={Mail}
+              title="Request a Quote"
+              subtitle="Fill out the form below and our team will get back to you within 24 hours"
+            />
+            <form className="space-y-6 mt-8">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Full Name *</Label>
+                  <Input id="name" placeholder="John Doe" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input id="email" type="email" placeholder="john@example.com" />
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input id="phone" type="tel" placeholder="+91 98765 43210" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="quantity-form">Quantity (Sheets)</Label>
+                  <Input id="quantity-form" type="number" placeholder="100" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea id="message" placeholder="Tell us about your project requirements..." rows={5} />
+              </div>
+              <ModernButton
+                variant="primary"
+                size="lg"
+                icon={<Mail />}
+                className="w-full"
+                onClick={() => onNavigate('contact')}
+              >
+                Submit Inquiry
+              </ModernButton>
+            </form>
+          </div>
+        </section>
 
         
       </PageContainer>

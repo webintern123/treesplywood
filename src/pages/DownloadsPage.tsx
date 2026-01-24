@@ -348,552 +348,485 @@ export default function DownloadsPage({ onNavigate }: DownloadsPageProps) {
 
       {/* Why Use Download Center Section */}
       <section className="section-padding bg-gray-50">
-  <div className="container mx-auto px-6">
-    <ModernSectionHeader
-      badge="Why Download & How Useful?"
-      badgeIcon={Target}
-      title="Everything You’re Looking For, Instantly Accessible"
-      subtitle="Get quick access to brochures, product details, and useful guides in one place."
-    />
-
-    <div className="grid md:grid-cols-4 gap-6">
-      {[
-        {
-          icon: Lightbulb,
-          title: 'Quick Access',
-          desc: 'Download brochures & guides anytime without waiting in seconds.',
-          color: 'from-blue-500 to-blue-600'
-        },
-        {
-          icon: Shield,
-          title: 'Trusted Information',
-          desc: 'Verified documents like catalogs, specification sheets, & certifications.',
-          color: 'from-green-500 to-green-600'
-        },
-        {
-          icon: CheckCircle2,
-          title: 'Latest Versions',
-          desc: 'Updated specs with new versions and compliance details – the latest information.',
-          color: 'from-purple-500 to-purple-600'
-        },
-        {
-          icon: Award,
-          title: 'Presentation Ready',
-          desc: 'Clean, high-resolution PDFs for professional use, client work or project planning.',
-          color: 'from-orange-500 to-orange-600'
-        },
-      ].map((benefit, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1 }}
-        >
-          <ModernCard variant="elevated" className="p-6 h-full text-center">
-            
-            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}>
-              <benefit.icon className="w-8 h-8 text-white" />
-            </div>
-
-            
-            <h4 className="text-trees-primary text-[20px] font-semibold mb-2">{benefit.title}</h4>
-
-           
-            <p className="text-gray-600 text-[14px] font-normal">{benefit.desc}</p>
-          </ModernCard>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
-
+        <div className="container mx-auto px-6">
+          <ModernSectionHeader
+            badge="Why Download & How Useful?"
+            badgeIcon={Target}
+            title="Everything You’re Looking For, Instantly Accessible"
+            subtitle="Get quick access to brochures, product details, and useful guides in one place."
+          />
+          
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Lightbulb,
+                title: 'Quick Access ',
+                desc: 'Download brochures & guides anytime without waiting in seconds.',
+                color: 'from-blue-500 to-blue-600'
+              },
+              {
+                icon: Shield,
+                title: 'Trusted Information ',
+                desc: 'Verified documents like catalogs, specification sheets, & certifications.',
+                color: 'from-green-500 to-green-600'
+              },
+              {
+                icon: CheckCircle2,
+                title: 'Latest Versions',
+                desc: 'updated specs with new versions and compliance details the latest information.',
+                color: 'from-purple-500 to-purple-600'
+              },
+              {
+                icon: Award,
+                title: 'Presentation Ready ',
+                desc: 'Clean, high-resolution PDFs for professional use, client work or project planning.',
+                color: 'from-orange-500 to-orange-600'
+              },
+            ].map((benefit, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <ModernCard variant="elevated" className="p-6 h-full text-center">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mx-auto mb-4`}>
+                    <benefit.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-trees-primary mb-2">{benefit.title}</h4>
+                  <p className="text-sm text-gray-600">{benefit.desc}</p>
+                </ModernCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Resource Categories Overview */}
       <section className="section-padding bg-white">
-  <div className="container mx-auto px-6">
-    <ModernSectionHeader
-      badge="Resource Library"
-      badgeIcon={FolderOpen}
-      title="Choose a Category"
-      subtitle="We have gathered all documents in one place for quick access, so you can quickly browse and download."
-    />
+        <div className="container mx-auto px-6">
+          <ModernSectionHeader
+            badge="Resource Library"
+            badgeIcon={FolderOpen}
+            title="Choose a Category"
+            subtitle="We have gathered all documents in one place for quick access, so you can quickly browse and download."
+          />
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {[
-        {
-          icon: Book,
-          category: 'catalog',
-          name: 'Product Catalogs',
-          description: 'Complete list of all plywood and door products with features, specs, and applications.',
-          color: 'from-blue-500 to-blue-600',
-          count: downloadItems.filter(i => i.category === 'catalog').length
-        },
-        {
-          icon: FileText,
-          category: 'technical',
-          name: 'Technical Datasheets',
-          description: 'Detailed technical info, test results, and performance data.',
-          color: 'from-purple-500 to-purple-600',
-          count: downloadItems.filter(i => i.category === 'technical').length
-        },
-        {
-          icon: Award,
-          category: 'certification',
-          name: 'Certifications',
-          description: 'Verified Quality approvals and standard Safety & compliance documents.',
-          color: 'from-green-500 to-green-600',
-          count: downloadItems.filter(i => i.category === 'certification').length
-        },
-        {
-          icon: ImageIcon,
-          category: 'brochure',
-          name: 'Product Brochures',
-          description: 'Quick highlights, benefits, and product overviews.',
-          color: 'from-orange-500 to-orange-600',
-          count: downloadItems.filter(i => i.category === 'brochure').length
-        },
-        {
-          icon: Download,
-          category: 'installation',
-          name: 'Installation Guides',
-          description: 'Clear & simple steps for smooth installation.',
-          color: 'from-amber-500 to-amber-600',
-          count: downloadItems.filter(i => i.category === 'installation').length
-        },
-        {
-          icon: Video,
-          category: 'video',
-          name: 'Video Resources',
-          description: 'Helpful tutorials, videos, practical demos, and walkthroughs to help you understand better',
-          color: 'from-red-500 to-red-600',
-          count: downloadItems.filter(i => i.category === 'video').length
-        },
-      ].map((cat, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.05 }}
-        >
-          <ModernCard 
-            variant="elevated" 
-            className="p-6 h-full cursor-pointer group hover:shadow-xl transition-all duration-300"
-            onClick={() => setSelectedCategory(cat.category)}
-          >
-           
-            <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-              <cat.icon className="w-7 h-7 text-white" />
-            </div>
-
-           
-            <h4 className="text-trees-primary text-[20px] font-semibold mb-2 group-hover:text-trees-secondary transition-colors">
-              {cat.name}
-            </h4>
-
-           
-            <p className="text-gray-600 text-[14px] font-normal mb-3 leading-relaxed">
-              {cat.description}
-            </p>
-
-           
-            <div className="flex items-center justify-between pt-3 border-t border-gray-200">
-              <span className="text-gray-500 text-[12px] font-medium">
-                {cat.count} {cat.count === 1 ? 'Resource' : 'Files-Download'}
-              </span>
-              <ChevronRight className="w-4 h-4 text-trees-primary group-hover:translate-x-1 transition-transform" />
-            </div>
-          </ModernCard>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Book,
+                category: 'catalog',
+                name: 'Product Catalogs',
+                description: 'Complete list of all plywood and door products with features, specs, and applications.',
+                color: 'from-blue-500 to-blue-600',
+                count: downloadItems.filter(i => i.category === 'catalog').length
+              },
+              {
+                icon: FileText,
+                category: 'technical',
+                name: 'Technical Datasheets',
+                description: 'Detailed technical info, test results, and performance data.',
+                color: 'from-purple-500 to-purple-600',
+                count: downloadItems.filter(i => i.category === 'technical').length
+              },
+              {
+                icon: Award,
+                category: 'certification',
+                name: 'Certifications',
+                description: 'Verified Quality approvals and standard Safety & compliance documents.',
+                color: 'from-green-500 to-green-600',
+                count: downloadItems.filter(i => i.category === 'certification').length
+              },
+              {
+                icon: ImageIcon,
+                category: 'brochure',
+                name: 'Product Brochures',
+                description: 'Quick highlights, benefits, and product overviews.',
+                color: 'from-orange-500 to-orange-600',
+                count: downloadItems.filter(i => i.category === 'brochure').length
+              },
+              {
+                icon: Download,
+                category: 'installation',
+                name: 'Installation Guides',
+                description: 'Clear & simple steps for smooth installation.',
+                color: 'from-amber-500 to-amber-600',
+                count: downloadItems.filter(i => i.category === 'installation').length
+              },
+              {
+                icon: Video,
+                category: 'video',
+                name: 'Video Resources',
+                description: 'Helpful tutorials, videos, practical demos, and walkthroughs to help you understand better',
+                color: 'from-red-500 to-red-600',
+                count: downloadItems.filter(i => i.category === 'video').length
+              },
+            ].map((cat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+              >
+                <ModernCard 
+                  variant="elevated" 
+                  className="p-6 h-full cursor-pointer group hover:shadow-xl transition-all duration-300"
+                  onClick={() => setSelectedCategory(cat.category)}
+                >
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <cat.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-trees-primary mb-2 group-hover:text-trees-secondary transition-colors">
+                    {cat.name}
+                  </h4>
+                  <p className="text-xs text-gray-600 mb-3 leading-relaxed">
+                    {cat.description}
+                  </p>
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-200">
+                    <span className="text-xs font-semibold text-gray-500">
+                      {cat.count} {cat.count === 1 ? 'Resource' : 'Files-Download'}
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-trees-primary group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </ModernCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <PageContainer className="space-y-20">
         {/* Search and Filter Section */}
         <section>
-  <ModernSectionHeader
-    badge="Browse Resources Library"
-    badgeIcon={Search}
-    title="Search & Filter Easily"
-    subtitle="Use the search bar or filters to quickly find the documents you need."
-  />
+          <ModernSectionHeader
+            badge="Browse Resources Library"
+            badgeIcon={Search}
+            title="Search & Filter Easily"
+            subtitle="Use the search bar or filters to quickly find the documents you need."
+          />
 
-  <ModernCard variant="elevated" className="p-8">
-    {/* Search + Filter */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-      <div className="relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-        <Input
-          type="text"
-          placeholder="Search by title or keyword…"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-12 h-12 bg-white border-gray-200 text-[16px] font-normal placeholder:text-gray-400"
-        />
-      </div>
+          <ModernCard variant="elevated" className="p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Input
+                  type="text"
+                  placeholder="Search by title or keyword…"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-12 h-12 bg-white border-gray-200"
+                />
+              </div>
+              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                <SelectTrigger className="h-12 bg-white border-gray-200">
+                  <SelectValue placeholder="Filter by category" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Categories</SelectItem>
+                  <SelectItem value="catalog">Product Catalogs</SelectItem>
+                  <SelectItem value="technical">Technical Datasheets</SelectItem>
+                  <SelectItem value="certification">Certifications</SelectItem>
+                  <SelectItem value="brochure">Brochures</SelectItem>
+                  <SelectItem value="installation">Installation Guides</SelectItem>
+                  <SelectItem value="video">Video Resources</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
 
-      <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-        <SelectTrigger className="h-12 bg-white border-gray-200 text-[16px] font-medium">
-          <SelectValue placeholder="Filter by category" />
-        </SelectTrigger>
-        <SelectContent className="text-[16px] font-normal">
-          <SelectItem value="all">All Categories</SelectItem>
-          <SelectItem value="catalog">Product Catalogs</SelectItem>
-          <SelectItem value="technical">Technical Datasheets</SelectItem>
-          <SelectItem value="certification">Certifications</SelectItem>
-          <SelectItem value="brochure">Brochures</SelectItem>
-          <SelectItem value="installation">Installation Guides</SelectItem>
-          <SelectItem value="video">Video Resources</SelectItem>
-        </SelectContent>
-      </Select>
-    </div>
-
-    {/* Result count + category badges */}
-    <div className="flex items-center justify-between flex-wrap gap-4">
-      <p className="text-gray-600 text-[14px] font-normal">
-        Showing <span className="font-semibold text-trees-primary text-[14px]">{filteredItems.length}</span> of {downloadItems.length} files
-      </p>
-
-      <div className="flex gap-2 flex-wrap">
-        {Object.entries(categoryIcons).map(([category, Icon]) => {
-          const count = downloadItems.filter(i => i.category === category).length;
-          return (
-            <Badge
-              key={category}
-              variant="outline"
-              className={`cursor-pointer transition-all text-[14px] font-medium ${
-                selectedCategory === category
-                  ? categoryColors[category as keyof typeof categoryColors]
-                  : 'hover:bg-gray-100'
-              }`}
-              onClick={() => setSelectedCategory(category === selectedCategory ? 'all' : category)}
-            >
-              <Icon className="w-3 h-3 mr-1" />
-              {category.charAt(0).toUpperCase() + category.slice(1)} ({count})
-            </Badge>
-          );
-        })}
-      </div>
-    </div>
-  </ModernCard>
-</section>
-
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <p className="text-gray-600">
+                Showing <span className="font-semibold text-trees-primary">{filteredItems.length}</span> of {downloadItems.length} files
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                {Object.entries(categoryIcons).map(([category, Icon]) => {
+                  const count = downloadItems.filter(i => i.category === category).length;
+                  return (
+                    <Badge
+                      key={category}
+                      variant="outline"
+                      className={`cursor-pointer transition-all ${
+                        selectedCategory === category ? categoryColors[category as keyof typeof categoryColors] : 'hover:bg-gray-100'
+                      }`}
+                      onClick={() => setSelectedCategory(category === selectedCategory ? 'all' : category)}
+                    >
+                      <Icon className="w-3 h-3 mr-1" />
+                      {category.charAt(0).toUpperCase() + category.slice(1)} ({count})
+                    </Badge>
+                  );
+                })}
+              </div>
+            </div>
+          </ModernCard>
+        </section>
 
         {/* Popular Downloads */}
-       {selectedCategory === 'all' && popularDownloads.length > 0 && (
-  <section>
-    <ModernSectionHeader
-      badge="Most Downloaded"
-      badgeIcon={TrendingUp}
-      title="Top Picks"
-      subtitle="Here are the documents people download the most - quick, helpful, and trusted by professionals."
-    />
-
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-      {popularDownloads.map((item, idx) => {
-        const Icon = categoryIcons[item.category];
-        return (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-          >
-            <ModernCard variant="elevated" className="p-8 h-full min-w-[300px] group hover:shadow-2xl transition-all">
-              
-              {/* Icon + Trending Badge */}
-              <div className="flex items-start justify-between mb-4">
-                <div className={`p-3 rounded-lg ${categoryColors[item.category]}`}>
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <Badge 
-                  variant="outline" 
-                  className="bg-trees-primary/10 text-trees-primary border-trees-primary/20 text-[12px] font-medium flex items-center"
-                >
-                  <TrendingUp className="w-3 h-3 mr-1" />
-                  Trending
-                </Badge>
-              </div>
-
-              
-              <h4 className="text-[20px] font-semibold text-trees-primary mb-3 line-clamp-2 group-hover:text-trees-secondary transition-colors">
-                {item.title}
-              </h4>
-
-             
-              <div className="flex items-center gap-3 mb-4 text-[14px] font-normal text-gray-500">
-                <span className="px-2 py-1 bg-gray-100 rounded">{item.fileType}</span>
-                <span>{item.size}</span>
-              </div>
-
-            
-              <div className="flex gap-3">
-                <ModernButton
-                  variant="primary"
-                  size="sm"
-                  icon={<Download className="w-4 h-4" />}
-                  onClick={() => handleDownload(item)}
-                  className="flex-1 text-[16px] font-medium"
-                >
-                  Download
-                </ModernButton>
-                <ModernButton
-                  variant="outline"
-                  size="sm"
-                  icon={<FileText className="w-4 h-4" />}
-                  onClick={() => window.open(item.fileUrl, '_blank')}
-                  className="flex-1 text-[16px] font-medium"
-                >
-                  View
-                </ModernButton>
-              </div>
-
-            </ModernCard>
-          </motion.div>
-        );
-      })}
-    </div>
-  </section>
-)}
-
-
-        {/* Recent Additions */}
-       {selectedCategory === 'all' && recentDownloads.length > 0 && (
-  <section>
-    <ModernSectionHeader
-      badge="Recently Added"
-      badgeIcon={Clock}
-      title="Latest Resources & Updates"
-      subtitle="New documents with updated info, guides, and policies."
-    />
-
-    <div className="grid md:grid-cols-3 gap-6">
-      {recentDownloads.map((item, idx) => {
-        const Icon = categoryIcons[item.category];
-        return (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-          >
-            <ModernCard variant="elevated" className="p-6 h-full">
-              
-            
-              <div className="flex items-start gap-4 mb-4">
-                <div className={`p-2.5 rounded-lg ${categoryColors[item.category]}`}>
-                  <Icon className="w-5 h-5 text-white" />
-                </div>
-                <div className="flex-1">
-                  
-                  <h4 className="text-trees-primary text-[20px] font-semibold mb-1 line-clamp-2">
-                    {item.title}
-                  </h4>
-                
-                  <Badge
-                    variant="outline"
-                    className="text-[12px] font-medium bg-green-500/10 text-green-600 border-green-500/20 flex items-center"
-                  >
-                    <Sparkles className="w-3 h-3 mr-1" />
-                    New
-                  </Badge>
-                </div>
-              </div>
-
-            
-              <p className="text-gray-600 text-[14px] font-normal mb-4 line-clamp-2">
-                {item.description}
-              </p>
-
-             
-              <div className="flex items-center gap-3 mb-4 text-[14px] font-normal text-gray-500">
-                <span className="px-2 py-1 bg-gray-100 rounded">{item.fileType}</span>
-                <span>{item.size}</span>
-                <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-3 h-3" />
-                  {new Date(item.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                </span>
-              </div>
-
-             
-              <ModernButton
-                variant="outline"
-                size="sm"
-                icon={<Download className="w-4 h-4" />}
-                onClick={() => handleDownload(item)}
-                className="w-full text-[16px] font-medium"
-              >
-                Download
-              </ModernButton>
-
-            </ModernCard>
-          </motion.div>
-        );
-      })}
-    </div>
-  </section>
-)}
-
-
-        {/* All Downloads Grid */}
-        <section>
+        {selectedCategory === 'all' && popularDownloads.length > 0 && (
+          <section>
   <ModernSectionHeader
-    badge={selectedCategory === 'all' ? 'Complete Resources at Your Fingertips' : selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
-    badgeIcon={FolderOpen}
-    title={selectedCategory === 'all' ? 'Download What You Need — Anytime' : `${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Resources`}
-    subtitle={selectedCategory === 'all' 
-      ? 'See our full collection of brochures, technical sheets, certifications, and guides. All documents are easy to download and ready to use.'
-      : `All available ${selectedCategory} resources`
-    }
+    badge="Most Downloaded"
+    badgeIcon={TrendingUp}
+    title="Top Picks"
+    subtitle="Here are the documents people download the most - quick, helpful, and trusted by professionals."
   />
 
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {filteredItems.map((item, idx) => {
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+ {/* changed to 2 columns on large */}
+    {popularDownloads.map((item, idx) => {
       const Icon = categoryIcons[item.category];
       return (
         <motion.div
           key={item.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ delay: idx * 0.03 }}
+          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
         >
-          <ModernCard variant="outlined" className="p-6 h-full group hover:shadow-xl transition-all">
-            
-           
-            <div className="flex items-start gap-4 mb-4">
-              <div className={`p-2.5 rounded-lg ${categoryColors[item.category]}`}>
-                <Icon className="w-5 h-5 text-white" />
+          <ModernCard variant="elevated" className="p-8 h-full min-w-[300px] group hover:shadow-2xl transition-all">
+            <div className="flex items-start justify-between mb-4">
+              <div className={`p-3 rounded-lg ${categoryColors[item.category]}`}>
+                <Icon className="w-6 h-6" />
               </div>
-              <div className="flex-1">
-                
-                <h4 className="text-trees-secondary text-[20px] font-semibold mb-1 group-hover:text-trees-primary transition-colors line-clamp-2">
-                  {item.title}
-                </h4>
-               
-                <Badge variant="outline" className={`text-[12px] font-medium ${categoryColors[item.category]}`}>
-                  {item.category.charAt(0).toUpperCase() + item.category.slice(1)}
-                </Badge>
-              </div>
+              <Badge variant="outline" className="bg-trees-primary/10 text-trees-primary border-trees-primary/20 text-xs">
+                <TrendingUp className="w-3 h-3 mr-1" />
+                Trending
+              </Badge>
             </div>
-
-          
-            <p className="text-gray-600 text-[14px] font-normal mb-4 line-clamp-2">
-              {item.description}
-            </p>
-
-          
-            <div className="flex items-center gap-3 mb-4 text-[14px] font-normal text-gray-500">
+            <h4 className="text-xl text-trees-primary mb-3 line-clamp-2 group-hover:text-trees-secondary transition-colors">
+              {item.title}
+            </h4>
+            <div className="flex items-center gap-3 mb-4 text-sm text-gray-500">
               <span className="px-2 py-1 bg-gray-100 rounded">{item.fileType}</span>
               <span>{item.size}</span>
-              <span>•</span>
-              <span>{item.downloads} DL</span>
             </div>
-
-            
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <ModernButton
                 variant="primary"
                 size="sm"
                 icon={<Download className="w-4 h-4" />}
                 onClick={() => handleDownload(item)}
-                className="flex-1 text-[16px] font-medium"
+                className="flex-1"
               >
                 Download
               </ModernButton>
-
               <ModernButton
                 variant="outline"
                 size="sm"
                 icon={<FileText className="w-4 h-4" />}
                 onClick={() => window.open(item.fileUrl, '_blank')}
-                className="flex-1 text-[16px] font-medium"
+                className="flex-1"
               >
                 View
               </ModernButton>
             </div>
-
           </ModernCard>
         </motion.div>
       );
     })}
   </div>
-
-  {/* Empty State */}
-  {filteredItems.length === 0 && (
-    <div className="text-center py-16">
-      <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-      <h3 className="text-gray-600 text-[20px] font-semibold mb-2">No resources found</h3>
-      <p className="text-gray-500 text-[14px] font-normal mb-6">Try adjusting your search or filter criteria</p>
-      <ModernButton
-        variant="outline"
-        className="text-[16px] font-medium"
-        onClick={() => {
-          setSearchQuery('');
-          setSelectedCategory('all');
-        }}
-      >
-        Clear Filters
-      </ModernButton>
-    </div>
-  )}
 </section>
 
+        )}
+
+        {/* Recent Additions */}
+        {selectedCategory === 'all' && recentDownloads.length > 0 && (
+          <section>
+            <ModernSectionHeader
+              badge="Recently Added"
+              badgeIcon={Clock}
+              title="Latest Resources & Updates"
+              subtitle="New documents with updated info, guides, and policies."
+            />
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {recentDownloads.map((item, idx) => {
+                const Icon = categoryIcons[item.category];
+                return (
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    <ModernCard variant="elevated" className="p-6 h-full">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className={`p-2.5 rounded-lg ${categoryColors[item.category]}`}>
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-trees-primary mb-1 line-clamp-2">{item.title}</h4>
+                          <Badge variant="outline" className="text-xs bg-green-500/10 text-green-600 border-green-500/20">
+                            <Sparkles className="w-3 h-3 mr-1" />
+                            New
+                          </Badge>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 mb-4 text-sm line-clamp-2">{item.description}</p>
+                      <div className="flex items-center gap-3 mb-4 text-xs text-gray-500">
+                        <span className="px-2 py-1 bg-gray-100 rounded">{item.fileType}</span>
+                        <span>{item.size}</span>
+                        <span>•</span>
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {new Date(item.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                        </span>
+                      </div>
+                      <ModernButton
+                        variant="outline"
+                        size="sm"
+                        icon={<Download className="w-4 h-4" />}
+                        onClick={() => handleDownload(item)}
+                        className="w-full"
+                      >
+                        Download
+                      </ModernButton>
+                    </ModernCard>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* All Downloads Grid */}
+        <section>
+          <ModernSectionHeader
+            badge={selectedCategory === 'all' ? 'Complete Resources at Your Fingertips' : selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
+            badgeIcon={FolderOpen}
+            title={selectedCategory === 'all' ? 'Download What You Need — Anytime' : `${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Resources`}
+            subtitle={selectedCategory === 'all' 
+              ? 'See our full collection of brochures, technical sheets, certifications, and guides. All documents are easy to download and ready to use.'
+              : `All available ${selectedCategory} resources`
+            }
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredItems.map((item, idx) => {
+              const Icon = categoryIcons[item.category];
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: idx * 0.03 }}
+                >
+                  <ModernCard variant="outlined" className="p-6 h-full group hover:shadow-xl transition-all">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className={`p-2.5 rounded-lg ${categoryColors[item.category]}`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-trees-secondary mb-1 group-hover:text-trees-primary transition-colors line-clamp-2">
+                          {item.title}
+                        </h4>
+                        <Badge variant="outline" className={`text-xs ${categoryColors[item.category]}`}>
+                          {item.category}
+                        </Badge>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 mb-4 text-sm line-clamp-2">{item.description}</p>
+                    <div className="flex items-center gap-3 mb-4 text-xs text-gray-500">
+                      <span className="px-2 py-1 bg-gray-100 rounded">{item.fileType}</span>
+                      <span>{item.size}</span>
+                      <span>•</span>
+                      <span>{item.downloads} DL</span>
+                    </div>
+                    <div className="flex gap-2">
+  <ModernButton
+    variant="primary"
+    size="sm"
+    icon={<Download className="w-4 h-4" />}
+    onClick={() => handleDownload(item)}
+    className="flex-1"
+  >
+    Download
+  </ModernButton>
+
+  <ModernButton
+    variant="outline"
+    size="sm"
+    icon={<FileText className="w-4 h-4" />}
+    onClick={() => window.open(item.fileUrl, '_blank')}
+    className="flex-1"
+  >
+    View
+  </ModernButton>
+</div>
+
+                  </ModernCard>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Empty State */}
+          {filteredItems.length === 0 && (
+            <div className="text-center py-16">
+              <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+              <h3 className="text-gray-600 mb-2">No resources found</h3>
+              <p className="text-gray-500 text-sm mb-6">Try adjusting your search or filter criteria</p>
+              <ModernButton
+                variant="outline"
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedCategory('all');
+                }}
+              >
+                Clear Filters
+              </ModernButton>
+            </div>
+          )}
+        </section>
       </PageContainer>
 
       {/* Download Statistics */}
-    <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-  <div className="container mx-auto px-6 relative z-10">
-    
-    {/* Section Header */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-12"
-    >
-      <h2 className="text-white text-[24px] font-semibold mb-4">Our Highlights</h2>
-      <p className="text-white/90 text-[16px] font-normal max-w-2xl mx-auto">
-        Our documents help builders, architects, and homeowners find the right information—fast and hassle-free.
-      </p>
-    </motion.div>
+      <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
+       
 
-    {/* Stats Grid */}
-    <div className="grid md:grid-cols-4 gap-8">
-      {[
-        { value: '18+', label: 'helpful documents', icon: FolderOpen },
-        { value: '20,000+', label: 'downloads by industry experts', icon: Download },
-        { value: '6', label: 'easy-to-browse categories', icon: Book },
-        { value: '100%', label: 'free for everyone', icon: Star },
-      ].map((stat, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1 }}
-          className="text-center"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-            <stat.icon className="w-8 h-8 text-white" />
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-white mb-4">Our Highlights</h2>
+            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+              Our documents help builders, architects, and homeowners find the right information—fast and hassle-free.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { value: '18+', label: 'helpful documents', icon: FolderOpen },
+              { value: '20,000+', label: 'downloads by industry experts', icon: Download },
+              { value: '6', label: 'easy-to-browse categories', icon: Book },
+              { value: '100%', label: 'free for everyone', icon: Star },
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-white/80">{stat.label}</div>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
 
-         
-          <div className="text-[24px] font-semibold text-white mb-2">{stat.value}</div>
-
-          
-          <div className="text-white/80 text-[14px] font-normal">{stat.label}</div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+     
 
       {/* Downloads FAQ */}
       <section className="section-padding bg-white">
@@ -980,115 +913,91 @@ Product catalogs are refreshed every few months, technical sheets are updated wh
 
       {/* Newsletter Subscription for Resource Updates */}
       <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
-  <div className="container mx-auto px-6 relative z-10 text-center">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      className="max-w-3xl mx-auto"
-    >
+        
 
-     
-      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
-        <Mail className="w-4 h-4 text-white" />
-        <span className="text-white text-[14px] font-medium">Get Resources</span>
-      </div>
-
-     
-      <h2 className="text-white text-[24px] font-semibold mb-6">Never Miss an Update</h2>
-
-     
-      <p className="text-[16px] text-white/90 mb-10 leading-relaxed">
-        We’ll let you know whenever new catalogs, datasheets, or resources are added.
-      </p>
-
-    
-      <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-        <input
-          type="email"
-          placeholder="Enter your email address"
-          className="flex-1 px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 backdrop-blur-sm text-white text-[16px] placeholder:text-white/60 font-normal"
-        />
-        <MagneticButton strength={0.2}>
-          <ModernButton 
-            variant="light" 
-            size="md"
-            className="text-[16px] font-medium"
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
           >
-            Notify Me
-          </ModernButton>
-        </MagneticButton>
-      </div>
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
+              <Mail className="w-4 h-4 text-white" />
+              <span className="text-white font-semibold text-sm">Get Resources</span>
+            </div>
+            <h2 className="text-white mb-6">Never Miss an Update</h2>
+            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+              We’ll let you know whenever new catalogs, datasheets, or resources are added.
+            </p>
 
-      
-      <p className="text-[12px] text-white/70">
-        Join 5,000+ professionals | Easy updates | Unsubscribe anytime
-      </p>
-
-    </motion.div>
-  </div>
-</section>
-
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60"
+              />
+              <MagneticButton strength={0.2}>
+                <ModernButton 
+                  variant="light" 
+                  size="md"
+                >
+                  Notify Me
+                </ModernButton>
+              </MagneticButton>
+            </div>
+            <p className="text-sm text-white/70">
+              Join 5,000+ professionals | Easy updates | Unsubscribe anytime
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Bottom CTA Section */}
-    <section className="section-padding bg-white">
-  <PageContainer>
-    <div className="text-center">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        className="max-w-4xl mx-auto"
-      >
-
-       
-        <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-6">
-          <Sparkles className="w-4 h-4 text-trees-primary" />
-          <span className="text-trees-primary text-[14px] font-medium">
-            Custom Project Documents
-          </span>
-        </div>
-
-       
-        <h2 className="text-trees-secondary text-[24px] font-semibold mb-6">
-          Not there What You are Looking For?
-        </h2>
-
-       
-        <p className="text-[16px] text-gray-600 mb-10 leading-relaxed">
-          Tell us what you’re working on, and we’ll create the right document for you. From product details to technical notes.
-        </p>
-
-        {/* Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center">
-          <MagneticButton strength={0.2}>
-            <ModernButton
-              variant="primary"
-              size="xl"
-              icon={<Mail className="w-6 h-6" />}
-              onClick={() => onNavigate?.('contact')}
-              className="text-[16px] font-medium"
+      <section className="section-padding bg-white">
+        <PageContainer>
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
             >
-              Request Custom Document 
-            </ModernButton>
-          </MagneticButton>
+              <div className="inline-flex items-center gap-2 bg-trees-primary/10 px-5 py-2 rounded-full mb-6">
+                <Sparkles className="w-4 h-4 text-trees-primary" />
+                <span className="text-trees-primary font-semibold text-sm">Custom Project Documents</span>
+              </div>
+              <h2 className="text-trees-secondary mb-6">Not there What You are Looking For?</h2>
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+                Tell us what you’re working on, and we’ll create the right document for you. From product details to technical notes.
+              </p>
 
-          <ModernButton
-            variant="outline"
-            size="xl"
-            icon={<MessageSquare className="w-6 h-6" />}
-            onClick={() => onNavigate?.('professionals')}
-            className="text-[16px] font-medium"
-          >
-            Speak With A&D Team
-          </ModernButton>
-        </div>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <MagneticButton strength={0.2}>
+                  <ModernButton
+                    variant="primary"
+                    size="xl"
+                    icon={<Mail className="w-6 h-6" />}
+                    onClick={() => onNavigate?.('contact')}
+                  >
+                    Request Custom Document 
+                  </ModernButton>
+                </MagneticButton>
+                <ModernButton
+                  variant="outline"
+                  size="xl"
+                  icon={<MessageSquare className="w-6 h-6" />}
+                  onClick={() => onNavigate?.('professionals')}
+                >
+                  Speak With A&D Team
 
-      </motion.div>
-    </div>
-  </PageContainer>
-</section>
 
+                </ModernButton>
+              </div>
+            </motion.div>
+          </div>
+        </PageContainer>
+      </section>
     </div>
   );
 }

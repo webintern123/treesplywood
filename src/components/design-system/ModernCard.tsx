@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 interface ModernCardProps {
   children: ReactNode;
   variant?: 'default' | 'elevated' | 'outlined' | 'gradient' | 'glass';
+
   hoverable?: boolean;
   className?: string;
   onClick?: () => void;
@@ -16,17 +17,18 @@ export function ModernCard({
   className = '',
   onClick,
 }: ModernCardProps) {
-  const variants = {
-    default: 'modern-card',
-    elevated: 'elevated-card',
-    outlined: 'bg-white border-2 border-gray-200 rounded-2xl',
-    gradient: 'bg-gradient-to-br from-white to-gray-50 border border-gray-100 rounded-2xl shadow-lg',
-    glass: 'bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg',
-  };
+ const variants = {
+  default: 'modern-card',
+  elevated: 'elevated-card',
+  outlined: 'bg-white border-2 border-gray-200 rounded-2xl',
+  gradient: 'bg-gradient-to-br from-white to-gray-50 border border-gray-100 rounded-2xl shadow-lg',
+  glass: 'bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg', // new glass variant
+};
 
+  
   const hoverClass = hoverable ? 'cursor-pointer' : '';
   const clickable = onClick ? 'cursor-pointer' : '';
-
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,16 +38,12 @@ export function ModernCard({
       whileHover={hoverable ? { y: -4 } : {}}
       onClick={onClick}
       className={`${variants[variant]} ${hoverClass} ${clickable} ${className}`}
-      role={onClick ? 'button' : undefined}
-      tabIndex={onClick ? 0 : undefined}
-      onKeyDown={(e) => onClick && e.key === 'Enter' && onClick()}
     >
       {children}
     </motion.div>
   );
 }
 
-// ----------------- Header -----------------
 interface CardHeaderProps {
   icon?: ReactNode;
   badge?: string;
@@ -65,41 +63,29 @@ export function CardHeader({ icon, badge, title, subtitle, className = '' }: Car
             </div>
           )}
           {badge && (
-            <span className="px-3 py-1 rounded-full bg-trees-primary/10 text-trees-primary text-[14px] font-medium">
+            <span className="modern-badge bg-trees-primary/10 text-trees-primary">
               {badge}
             </span>
           )}
         </div>
       )}
-
       <div>
-        {/* H3 - 20px, semibold */}
-        <h3 className="text-xl font-semibold text-gray-900 mb-1">{title}</h3>
-
-        {/* Secondary text - 14px, semibold */}
-        {subtitle && (
-          <p className="text-[14px] font-semibold text-gray-600 leading-snug">{subtitle}</p>
-        )}
+        <h3 className="text-2xl font-bold text-gray-900 mb-1">{title}</h3>
+        {subtitle && <p className="text-gray-600">{subtitle}</p>}
       </div>
     </div>
   );
 }
 
-// ----------------- Body -----------------
 interface CardBodyProps {
   children: ReactNode;
   className?: string;
 }
 
 export function CardBody({ children, className = '' }: CardBodyProps) {
-  return (
-    <div className={`mt-4 text-[16px] font-normal text-gray-700 ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`mt-4 ${className}`}>{children}</div>;
 }
 
-// ----------------- Footer -----------------
 interface CardFooterProps {
   children: ReactNode;
   className?: string;

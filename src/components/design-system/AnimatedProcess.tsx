@@ -261,7 +261,11 @@ function TimelineItem({ step, index }: { step: ProcessStep; index: number }) {
         transition={{ duration: 0.3 }}
         className="glass-card rounded-2xl p-6 hover-lift"
       >
-       
+        <div className="flex items-center gap-3 mb-3">
+          <span className="text-trees-primary font-bold text-xl">{step.number}</span>
+          <h3 className="text-trees-secondary font-semibold text-xl">{step.title}</h3>
+        </div>
+        <p className="text-gray-600 leading-relaxed">{step.description}</p>
       </motion.div>
     </motion.div>
   );
