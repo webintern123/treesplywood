@@ -207,7 +207,7 @@ export default function SampleRequestPage({ onNavigate }: SampleRequestPageProps
 
       {/* Enhanced Hero Section */}
       <PageHero
-        title={"See the Quality Yourself\n – Try Before You Buy"}
+        title={"See the Quality Yourself\n Try Before You Buy"}
         subtitle="Touch, See, Feel, and Test our plywood in real life."
         description="Choose up to 5 samples and get them delivered to your doorstep at no extra cost."
         image="https://images.unsplash.com/photo-1581619529755-12154d726205?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwc2FtcGxlcyUyMHRlc3Rpbmd8ZW58MXx8fHwxNzYyMjM2MDAzfDA&ixlib=rb-4.1.0&q=80&w=1080"

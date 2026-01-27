@@ -362,16 +362,16 @@ if (!personalValid || !enquiryValid || !extrasValid) {
     { 
       icon: Phone, 
       title: 'Call Us', 
-      info: '+91 8712415760', 
+      info: '+91 9091688688', 
       sub: 'We’re available Monday–Saturday, 9 AM to 6 PM.',
-      action: () => window.location.href = 'tel:+918712415760'
+      action: () => window.location.href = 'tel:+919091688688'
     },
     { 
       icon: MessageCircle, 
       title: 'WhatsApp', 
-      info: '+91 871415760', 
+      info: '+91 9091688688', 
       sub: 'Quick chat support anytime.',
-      action: () => window.open('https://wa.me/918712415760', '_blank')
+      action: () => window.open('https://wa.me/919091688688', '_blank')
     },
     { 
       icon: Mail, 
@@ -425,7 +425,7 @@ Trees Plywood Website`
     <div className="min-h-screen bg-white">
       {/* Enhanced Hero Section */}
       <PageHero
-        title={"We’re Just a Call Away \n – Let’s Connect"}
+        title={"We’re Just a Call Away \n Let’s Connect"}
         subtitle="Need help choosing plywood? Your project matters to us."
         description="Whether you need product details, guidance, or expert suggestions, our team is always ready to support you and help you choose the right plywood."
         image="https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
@@ -434,7 +434,7 @@ Trees Plywood Website`
         height="md"
         overlayOpacity="medium"
         stats={[
-          { value: '<1hr', label: 'Quick Response' },
+          { value: 'Less than 1hr', label: 'Quick Response' },
           { value: '24/7', label: 'Always Available' },
           { value: '15+', label: 'Experience You Can Trust' },
         ]}
@@ -445,7 +445,7 @@ Trees Plywood Website`
                 variant="light"
                 size="lg"
                 icon={<Phone className="w-5 h-5" />}
-                onClick={() => window.location.href = 'tel:+918712415760'}
+                onClick={() => window.location.href = 'tel:+919091688688'}
               >
                 Call Now
               </ModernButton>
@@ -455,7 +455,7 @@ Trees Plywood Website`
                 variant="outline-light"
                 size="lg"
                 icon={<MessageCircle className="w-5 h-5" />}
-                onClick={() => window.open('https://wa.me/918712415760', '_blank')}
+                onClick={() => window.open('https://wa.me/919091688688', '_blank')}
               >
                 WhatsApp
               </ModernButton>
@@ -1119,7 +1119,7 @@ Trees Plywood Website`
                   variant="light"
                   size="xl"
                   icon={<Phone className="w-6 h-6" />}
-                  onClick={() => window.location.href = 'tel:+919091744744'}
+                  onClick={() => window.location.href = 'tel:+919091688688'}
                 >
                   Call Us Now
                 </ModernButton>
@@ -1129,7 +1129,7 @@ Trees Plywood Website`
                   variant="outline"
                   size="xl"
                   icon={<MessageCircle className="w-6 h-6" />}
-                  onClick={() => window.open('https://wa.me/919091744744', '_blank')}
+                  onClick={() => window.open('https://wa.me/919091688688', '_blank')}
                   className="border-white text-white hover:bg-white/20"
                 >
                   Chat on WhatsApp

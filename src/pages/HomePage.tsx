@@ -693,7 +693,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             badge="Where We're Used"
             badgeIcon={Hammer}
             title="Where Tree’s Plywood Performs Best?"
-            subtitle="-	Strong, Reliable, Built for Every Space"
+            subtitle="From cozy homes to high-performance commercial environments, Tree’s plywood adapts to your vision with strength you can trust."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
