@@ -192,63 +192,78 @@ interface CalculatorPageProps {
       />
 
       {/* Why Use Calculator Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-6">
-          <ModernSectionHeader
-            badge="Easy & Smarter Planning "
-            badgeIcon={Target}
-            title="Why Use Our Calculator?"
-            subtitle="Plan better, save money, and cut down waste with quick and accurate plywood calculations."
-          />
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Target,
-                title: 'Accurate Estimates',
-                desc: 'Get perfect calculations based on actual sheet sizes and your project dimensions.',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                icon: DollarSign,
-                title: 'Save Money',
-                desc: 'Avoid buying extra material with smart wastage and budgeting suggestions.',
-                color: 'from-green-500 to-green-600'
-              },
-              {
-                icon: Clock,
-                title: 'Save Time',
-                desc: 'Instant results — no need for manual math or complicated spread sheets.',
-                color: 'from-purple-500 to-purple-600'
-              },
-              {
-                icon: TrendingDown,
-                title: 'Reduce Waste',
-                desc: 'Use materials efficiently with helpful buffer recommendations tailored to your project.',
-                color: 'from-orange-500 to-orange-600'
-              },
-            ].map((benefit, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+<section className="section-padding bg-gray-50">
+  <div className="container mx-auto px-6">
+    <ModernSectionHeader
+      badge="Easy & Smarter Planning"
+      badgeIcon={Target}
+      title="Why Use Our Calculator?"
+      subtitle="Plan better, save money, and cut down waste with quick and accurate plywood calculations."
+    />
+
+    <div className="grid md:grid-cols-4 gap-6 items-stretch mt-10">
+      {[
+        {
+          icon: Target,
+          title: 'Accurate Estimates',
+          desc: 'Get perfect calculations based on actual sheet sizes and your project dimensions.',
+          color: 'from-blue-500 to-blue-600',
+        },
+        {
+          icon: DollarSign,
+          title: 'Save Money',
+          desc: 'Avoid buying extra material with smart wastage and budgeting suggestions.',
+          color: 'from-green-500 to-green-600',
+        },
+        {
+          icon: Clock,
+          title: 'Save Time',
+          desc: 'Instant results — no need for manual math or complicated spreadsheets.',
+          color: 'from-purple-500 to-purple-600',
+        },
+        {
+          icon: TrendingDown,
+          title: 'Reduce Waste',
+          desc: 'Use materials efficiently with helpful buffer recommendations tailored to your project.',
+          color: 'from-orange-500 to-orange-600',
+        },
+      ].map((benefit, idx) => (
+        <motion.div
+          key={idx}
+          className="h-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <ModernCard variant="elevated" className="h-full">
+            <div className="p-6 text-center flex flex-col gap-4 items-center h-full">
+              
+              {/* Icon */}
+              <div
+                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color}
+                flex items-center justify-center shadow-lg`}
               >
-                <ModernCard variant="elevated">
-                  <div className="p-6 text-center space-y-4">
-                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg`}>
-                      <benefit.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="font-bold text-gray-900">{benefit.title}</h4>
-                    <p className="text-sm text-gray-600">{benefit.desc}</p>
-                  </div>
-                </ModernCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+                <benefit.icon className="w-8 h-8 text-white" />
+              </div>
+
+              
+              <h3 className="text-[20px] font-semibold text-gray-900">
+                {benefit.title}
+              </h3>
+
+              
+              <p className="text-[14px] font-normal text-gray-600 leading-relaxed">
+                {benefit.desc}
+              </p>
+
+            </div>
+          </ModernCard>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       <PageContainer className="space-y-20">
 
@@ -574,76 +589,75 @@ interface CalculatorPageProps {
           subtitle="Use these helpful tools to plan your project with confidence."
         />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -8 }}
-          >
-            <ModernCard variant="elevated" className="cursor-pointer" onClick={() => onNavigate('comparison')}>
-              <div className="p-8 text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
-                  <Scale className="w-10 h-10 text-trees-primary" />
-                </div>
-                <h4>Product Comparison</h4>
-                <p className="text-gray-600">
-                  Compare features, warranties side-by-side to find the plywood that fits your needs.
-                </p>
-                <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
-                  Compare Products
-                </ModernButton>
-              </div>
-            </ModernCard>
-          </motion.div>
+  <div className="grid md:grid-cols-3 gap-8">
+    {[
+      {
+        icon: Scale,
+        title: 'Product Comparison',
+        description:
+          'Compare features, specs, and warranties to find plywood of your choice.',
+        buttonText: 'Compare Products',
+        buttonIcon: ArrowRight,
+        onClick: () => onNavigate('comparison'),
+      },
+      {
+        icon: Package,
+        title: 'Request Samples',
+        description:
+          'Order free samples and feel the quality yourself before making a choice.',
+        buttonText: 'Request Samples',
+        buttonIcon: ArrowRight,
+        onClick: () => onNavigate('sample-request'),
+      },
+      {
+        icon: FileText,
+        title: 'Downloads Center',
+        description:
+          'Browse catalogs, technical sheets, and installation guides—all in one place.',
+        buttonText: 'Browse Downloads',
+        buttonIcon: Download,
+        onClick: () => onNavigate('downloads'),
+      },
+    ].map((tool, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        whileHover={{ y: -8 }}
+      >
+        <ModernCard
+          variant="elevated"
+          className="cursor-pointer"
+          onClick={tool.onClick}
+        >
+          <div className="p-8 text-center space-y-4">
+            <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
+              <tool.icon className="w-10 h-10 text-trees-primary" />
+            </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            whileHover={{ y: -8 }}
-          >
-            <ModernCard variant="elevated" className="cursor-pointer" onClick={() => onNavigate('sample-request')}>
-              <div className="p-8 text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
-                  <Package className="w-10 h-10 text-trees-primary" />
-                </div>
-                <h4>Request Samples</h4>
-                <p className="text-gray-600">
-                  Order free samples and feel the quality yourself before making a choice.
-                </p>
-                <ModernButton variant="outline" icon={<ArrowRight className="w-4 h-4" />} fullWidth>
-                  Request Samples
-                </ModernButton>
-              </div>
-            </ModernCard>
-          </motion.div>
+          
+            <h4 className="text-[20px] font-semibold text-gray-900">{tool.title}</h4>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            whileHover={{ y: -8 }}
-          >
-            <ModernCard variant="elevated" className="cursor-pointer" onClick={() => onNavigate('downloads')}>
-              <div className="p-8 text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-trees-primary/10 flex items-center justify-center">
-                  <FileText className="w-10 h-10 text-trees-primary" />
-                </div>
-                <h4>Downloads Center</h4>
-                <p className="text-gray-600">
-                  Browse catalogs, technical sheets, and installation guides—all in one place.
-                </p>
-                <ModernButton variant="outline" icon={<Download className="w-4 h-4" />} fullWidth>
-                  Browse Downloads
-                </ModernButton>
-              </div>
-            </ModernCard>
-          </motion.div>
-        </div>
-      </section>
+            
+            <p className="text-[14px] text-gray-600">{tool.description}</p>
+
+            <ModernButton
+              variant="outline"
+              icon={<tool.buttonIcon className="w-4 h-4" />}
+              fullWidth
+              className="text-[14px] font-medium"
+            >
+              {tool.buttonText}
+            </ModernButton>
+          </div>
+        </ModernCard>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
     </PageContainer>
 
     
@@ -797,22 +811,23 @@ interface CalculatorPageProps {
     </section>
 
     {/* CTA Section */}
-    <section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
+<section className="section-padding bg-gradient-to-br from-trees-primary to-trees-secondary relative overflow-hidden">
+  <div className="container mx-auto px-6 relative z-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="max-w-4xl mx-auto"
+    >
       
+      <h2 className="text-white text-[30px] font-semibold mb-6">
+        Ready to Start Your Project?
+      </h2>
 
-      <div className="container mx-auto px-6 relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
-          <h2 className="text-white mb-6">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl text-white/90 mb-10 leading-relaxed">
-            Get expert advice, quality products, and professional support for all your plywood needs
-          </p>
+     
+      <p className="text-[16px] text-white/90 mb-10 leading-relaxed">
+        Get expert advice, quality products, and professional support for all your plywood needs.
+      </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
             <MagneticButton strength={0.2}>
