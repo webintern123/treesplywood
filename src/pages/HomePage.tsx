@@ -597,7 +597,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1 }}
-          className="relative grid grid-cols-2 gap-8 mb-16"
+          className="relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
         >
           {/* Left Side */}
           <div className={step.side === 'left' ? 'text-right' : ''}>

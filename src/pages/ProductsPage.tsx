@@ -157,8 +157,8 @@ const filteredProducts =
   {/* Filters */}
   <section
     id="product-catalog"
-    className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm"
-  >
+    className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm mb-6 md:mb-8"
+    >
     <div className="container mx-auto px-6 py-6 text-[14px] font-medium">
       <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
         {/* Category Tabs */}
@@ -203,7 +203,7 @@ const filteredProducts =
   </section>
 
   {/* Section Header */}
-  <div className="container mx-auto px-6 my-6">
+  <div className="container mx-auto px-6 mt-8 md:mt-10">
     <ModernSectionHeader
       badge={categoryContent[selectedCategory].heading}
       badgeIcon={Star}
@@ -275,7 +275,7 @@ const filteredProducts =
                     {product.subcategory || product.category}
                   </div>
 
-                  <p className="text-[16px] font-normal text-gray-700 truncate">
+                  <p className="text-[14px] sm:text-[16px] font-normal text-gray-700 line-clamp-2">
                     {product.description}
                   </p>
 

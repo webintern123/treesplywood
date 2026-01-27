@@ -29,7 +29,7 @@ export function Certifications() {
   ];
 
   return (
-    <section className="glass-strong rounded-xl p-10">
+    <section className="glass-strong rounded-xl p-6 sm:p-10">
       {/* Header */}
       <div className="text-center mb-8">
         <h3 className="text-trees-primary text-[20px] font-semibold mb-2">
@@ -45,22 +45,35 @@ export function Certifications() {
         {certifications.map((cert, index) => (
           <div
             key={index}
-            className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
+            className="
+              bg-white/90 backdrop-blur-lg 
+              border border-gray-200 
+              rounded-xl 
+              p-5 
+              text-center 
+              shadow-md 
+              hover:shadow-xl 
+              transition-all duration-300 
+              flex flex-col items-center
+              min-h-[200px]
+            "
           >
             {/* Icon */}
             <div
-              className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${cert.color} rounded-full mb-4 group-hover:scale-110 transition-transform`}
+              className={`flex items-center justify-center w-14 h-14 bg-gradient-to-br ${cert.color} rounded-full mb-4`}
             >
-              <cert.icon className="w-8 h-8 text-white" />
+              <cert.icon className="w-7 h-7 text-white" />
             </div>
 
             {/* Name */}
-            <h4 className="font-semibold text-trees-secondary text-[16px] mb-1">
+            <h4 className="font-semibold text-trees-secondary text-[15px] leading-tight break-words">
               {cert.name}
             </h4>
 
             {/* Description */}
-            <p className="text-gray-600 text-[12px]">{cert.description}</p>
+            <p className="text-gray-600 text-[13px] mt-1 leading-snug break-words">
+              {cert.description}
+            </p>
           </div>
         ))}
       </div>
