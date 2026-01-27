@@ -1020,7 +1020,7 @@ export function WarrantyPage({ onNavigate }: WarrantyPageProps) {
                   <div className="bg-white rounded-xl p-5 border border-trees-primary/20">
                     <Phone className="w-6 h-6 text-trees-primary mx-auto mb-2" />
                     <p className="font-medium text-trees-secondary text-sm mb-1">Warranty Helpline</p>
-                    <p className="text-xs text-gray-700 mb-1">+91 9091744744</p>
+                    <p className="text-xs text-gray-700 mb-1">+91 9091688688</p>
                     <p className="text-xs text-gray-600">Mon-Sat, 9AM-6PM IST</p>
                   </div>
                   

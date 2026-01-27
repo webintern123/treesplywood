@@ -720,10 +720,10 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
                 icon: Phone,
                 title: 'Call Us',
                 desc: 'Have a quick question? Speak directly with our team.',
-                info: '+91 8712415760',
+                info: '+91 9091688688',
                 action: 'Call Now',
                 color: 'from-blue-500 to-blue-600',
-                onClick: () => window.location.href = 'tel:+91 8712415760'
+                onClick: () => window.location.href = 'tel:+91 9091688688'
               },
              {
   icon: Mail,
@@ -994,7 +994,7 @@ I need help regarding:`);
                   <Phone className="w-5 h-5" />
                   <p className="font-semibold text-sm text-white/80">Sales</p>
                 </div>
-                <p className="text-sm text-white/80">+91 9091744744</p>
+                <p className="text-sm text-white/80">+91 9091688688</p>
               </div>
               
               <div className="text-white/90">

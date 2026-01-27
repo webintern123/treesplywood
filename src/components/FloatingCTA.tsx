@@ -274,10 +274,15 @@ export function FloatingCTA({ onNavigate }: FloatingCTAProps) {
                 </div>
                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></div>
               </div>
-              <div>
-                <h3 className="text-white font-semibold">The Trees Assistant</h3>
-                <p className="text-white/80 text-xs">Online • Typically replies instantly</p>
-              </div>
+             <div className="mt-3">
+  <h3 className="text-white font-semibold leading-tight">
+    The Trees Assistant
+  </h3>
+  <p className="text-white/80 text-xs">
+    Online • Typically replies instantly
+  </p>
+</div>
+
             </div>
             <button
               onClick={toggleChat}
